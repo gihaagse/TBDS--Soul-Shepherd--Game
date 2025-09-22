@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="StateConfig" load_steps=2 format=3 uid="uid://cnavtidwobg7l"]
+
+[ext_resource type="Script" uid="uid://b0of0losbjpxk" path="res://Src/scripts/config/StateConfig.gd" id="1_g5ko2"]
+
+[resource]
+script = ExtResource("1_g5ko2")
+metadata/_custom_type_script = "uid://b0of0losbjpxk"

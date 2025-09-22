@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://cdotspjhkkxxf"]
+
+[ext_resource type="PackedScene" uid="uid://b4bxmwslf7t26" path="res://Src/Platform Geometry.tscn" id="1_vonw3"]
+[ext_resource type="PackedScene" uid="uid://bvuql2uj225l4" path="res://Src/scenes/TestPlayer.tscn" id="2_fncja"]
+
+[node name="level" type="Node2D"]
+
+[node name="StaticBody2D" parent="." instance=ExtResource("1_vonw3")]
+position = Vector2(0, 148)
+
+[node name="StaticBody2D2" parent="." instance=ExtResource("1_vonw3")]
+position = Vector2(-122, 106)
+
+[node name="StaticBody2D3" parent="." instance=ExtResource("1_vonw3")]
+position = Vector2(164, -5)
+rotation = 1.5707964
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="TestPlayer" parent="." instance=ExtResource("2_fncja")]
+position = Vector2(-22, 88)
