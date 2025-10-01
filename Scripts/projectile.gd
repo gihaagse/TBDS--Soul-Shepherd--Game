@@ -27,14 +27,15 @@ func _physics_process(_delta: float) -> void:
 		_on_body_entered(collision)
 
 func _on_body_entered(collision: KinematicCollision2D) -> void:
-	print("Hit!")
+	print("Body Hit!")
 	var hp = collision.get_collider().get_node_or_null("Health")
 	if hp and hp.has_method("take_damage"):
-		print("Working_code :D")
+		print("Body Working_code :D")
 		hp.take_damage(10)
 		queue_free()
 	else:
-		print("Broken_code")
+		print("Body Broken_code")
+		queue_free()
 
 
 
@@ -42,15 +43,18 @@ func _on_despawn_timeout() -> void:
 	queue_free()
 	
 func _on_area_2d_area_entered(area: Area2D) -> void:
-	print("Hit!")
 	if area.is_in_group("Melee"):
 		despawn.start()
 		direction = -direction
 		area_2d.set_collision_mask_value(2, true)
+		print("Parry")
+		return
+	print("Area2D Hit!")
 	var hp = area.get_node_or_null("Health")
 	if hp and hp.has_method("take_damage"):
-		print("Working_code :D")
+		print("Area2D Working_code :D")
 		hp.take_damage(10)
 		queue_free()
 	else:
-		print("Broken_code")
+		print("Area2D Broken_code")
+		queue_free()

@@ -1,22 +1,23 @@
-[gd_scene load_steps=44 format=3 uid="uid://c5ongupm07qh3"]
+[gd_scene load_steps=47 format=3 uid="uid://c5ongupm07qh3"]
 
-[ext_resource type="Script" uid="uid://bw7ujmm53vwsq" path="res://Scenes/Player/Scripts/playermain.gd" id="1_a3d8c"]
-[ext_resource type="PackedScene" uid="uid://khbs6icahh14" path="res://Scenes/Player/MeleeWeapon.tscn" id="1_htcer"]
+[ext_resource type="Script" uid="uid://bw7ujmm53vwsq" path="res://Player/Scripts/playermain.gd" id="1_a3d8c"]
+[ext_resource type="PackedScene" uid="uid://khbs6icahh14" path="res://Player/MeleeWeapon.tscn" id="1_htcer"]
 [ext_resource type="Texture2D" uid="uid://6x2g3xw7pdko" path="res://Assets/Tiny RPG Character Asset Pack v1.03 -Free Soldier&Orc/Characters(100x100)/Soldier/Soldier/Soldier-Attack01.png" id="2_gk6dx"]
-[ext_resource type="PackedScene" uid="uid://cvgjcwqn6k8eu" path="res://health.tscn" id="2_oikmp"]
+[ext_resource type="PackedScene" uid="uid://cvgjcwqn6k8eu" path="res://Scenes/health.tscn" id="2_oikmp"]
 [ext_resource type="Texture2D" uid="uid://d0c5idgfq6ym8" path="res://Assets/Tiny RPG Character Asset Pack v1.03 -Free Soldier&Orc/Characters(100x100)/Soldier/Soldier/Soldier.png" id="2_xpcdj"]
 [ext_resource type="Texture2D" uid="uid://u5j8flnr1bdo" path="res://Assets/Tiny RPG Character Asset Pack v1.03 -Free Soldier&Orc/Characters(100x100)/Soldier/Soldier/Soldier-Walk.png" id="3_0u5uq"]
 [ext_resource type="Script" uid="uid://d2q03jes32ygw" path="res://Scripts/FSM.gd" id="3_mtuoh"]
-[ext_resource type="Script" uid="uid://bob4e3bisalwi" path="res://Scenes/Player/Scripts/Player_Idle.gd" id="4_htcer"]
-[ext_resource type="Script" uid="uid://6010alpy0i3r" path="res://Scenes/Player/Scripts/Player_Move.gd" id="5_htcer"]
-[ext_resource type="Script" uid="uid://fsjhyfbnjf2i" path="res://Scenes/Player/Scripts/Player_Fall.gd" id="7_jlvik"]
-[ext_resource type="Script" uid="uid://p5k85sn5ogtw" path="res://Scenes/Player/Scripts/Player_Attack1.gd" id="8_jlvik"]
-[ext_resource type="Script" uid="uid://q385houao11" path="res://Scenes/Player/Scripts/Player_AirAttack1.gd" id="10_jhyir"]
-[ext_resource type="Script" uid="uid://3282nnsu13lp" path="res://Scenes/Player/Scripts/Player_Dash.gd" id="13_06tpx"]
-[ext_resource type="Script" uid="uid://75v06whe5qe4" path="res://Scenes/Player/Scripts/Player_Bow.gd" id="14_7g0yx"]
+[ext_resource type="Script" uid="uid://bob4e3bisalwi" path="res://Player/Scripts/Player_Idle.gd" id="4_htcer"]
+[ext_resource type="Script" uid="uid://6010alpy0i3r" path="res://Player/Scripts/Player_Move.gd" id="5_htcer"]
+[ext_resource type="Script" uid="uid://fsjhyfbnjf2i" path="res://Player/Scripts/Player_Fall.gd" id="7_jlvik"]
+[ext_resource type="Script" uid="uid://p5k85sn5ogtw" path="res://Player/Scripts/Player_Attack1.gd" id="8_jlvik"]
+[ext_resource type="Script" uid="uid://q385houao11" path="res://Player/Scripts/Player_AirAttack1.gd" id="10_jhyir"]
+[ext_resource type="Script" uid="uid://3282nnsu13lp" path="res://Player/Scripts/Player_Dash.gd" id="13_06tpx"]
+[ext_resource type="Script" uid="uid://75v06whe5qe4" path="res://Player/Scripts/Player_Bow.gd" id="14_7g0yx"]
+[ext_resource type="Script" uid="uid://dchumex8trwnx" path="res://Player/Scripts/arsenal.gd" id="14_dkpta"]
+[ext_resource type="Script" uid="uid://cjb2yxf6iu2g1" path="res://Player/Scripts/Player_Wallslide.gd" id="14_lfmf2"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_oikmp"]
-size = Vector2(12, 18)
+[sub_resource type="CircleShape2D" id="CircleShape2D_lfmf2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_06tpx"]
 atlas = ExtResource("2_gk6dx")
@@ -235,6 +236,8 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dkpta"]
+
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("finite_state_machine", "hp") groups=["Player"]]
 z_index = 5
 collision_layer = 4
@@ -244,16 +247,9 @@ hp = NodePath("Health")
 
 [node name="Health" parent="." instance=ExtResource("2_oikmp")]
 
-[node name="Weapon" parent="." node_paths=PackedStringArray("sprite") instance=ExtResource("1_htcer")]
-position = Vector2(14, 0)
-sprite = NodePath("../AnimatedSprite2D")
-animation_name = "Attack"
-frame_hit = Array[int]([0])
-damage = 10
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -2)
-shape = SubResource("RectangleShape2D_oikmp")
+shape = SubResource("CircleShape2D_lfmf2")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_gymyn")
@@ -267,7 +263,7 @@ script = ExtResource("3_mtuoh")
 initial_state = NodePath("Idling")
 sprite2D = NodePath("../AnimatedSprite2D")
 player = NodePath("..")
-weapon = NodePath("../Weapon")
+weapon = NodePath("../Holder/Weapon")
 shootPoint = NodePath("../ShootPoint")
 
 [node name="Idling" type="Node" parent="FiniteStateMachine"]
@@ -293,22 +289,42 @@ brake_force = 2
 
 [node name="Dash" type="Node" parent="FiniteStateMachine"]
 script = ExtResource("13_06tpx")
+dash_distance = 50.0
 walk_speed = 400
 is_gravity = false
 
 [node name="Timer" type="Timer" parent="FiniteStateMachine/Dash"]
-wait_time = 0.15
+one_shot = true
 
 [node name="Archery" type="Node" parent="FiniteStateMachine"]
 script = ExtResource("14_7g0yx")
 can_shoot = true
 
+[node name="Wallsliding" type="Node" parent="FiniteStateMachine"]
+script = ExtResource("14_lfmf2")
+
 [node name="ShootPoint" type="Node2D" parent="."]
 position = Vector2(14, 0)
+
+[node name="Holder" type="Node2D" parent="." node_paths=PackedStringArray("slots")]
+script = ExtResource("14_dkpta")
+slots = [NodePath("Weapon"), NodePath("glock")]
+
+[node name="glock" type="Area2D" parent="Holder"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Holder/glock"]
+position = Vector2(14, 0)
+shape = SubResource("RectangleShape2D_dkpta")
+
+[node name="Weapon" parent="Holder" node_paths=PackedStringArray("sprite") instance=ExtResource("1_htcer")]
+position = Vector2(14, 0)
+sprite = NodePath("../../AnimatedSprite2D")
+animation_name = "Attack"
+frame_hit = Array[int]([0])
+damage = 10
 
 [connection signal="player_hit" from="." to="Health" method="_on_player_player_hit"]
 [connection signal="animation_finished" from="AnimatedSprite2D" to="FiniteStateMachine/Attack1" method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="animation_finished" from="AnimatedSprite2D" to="FiniteStateMachine/AirAttack1" method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="animation_finished" from="AnimatedSprite2D" to="FiniteStateMachine/Archery" method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="taking_Damage" from="FiniteStateMachine/Attack1" to="Health" method="_on_attack_1_taking_damage"]
-[connection signal="timeout" from="FiniteStateMachine/Dash/Timer" to="FiniteStateMachine/Dash" method="_on_timer_timeout"]

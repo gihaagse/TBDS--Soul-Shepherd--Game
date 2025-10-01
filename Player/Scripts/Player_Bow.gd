@@ -2,7 +2,7 @@ extends PlayerState
 class_name Player_Bow
 
 @onready var main = get_tree().get_root().get_node("Level")
-@onready var projectile = load("res://projectile.tscn")
+@onready var projectile = load("res://Scenes/projectile.tscn")
 
 func Enter():
 	super()

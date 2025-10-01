@@ -1,9 +1,9 @@
 [gd_scene load_steps=9 format=3 uid="uid://be736cjab5e3w"]
 
-[ext_resource type="PackedScene" uid="uid://c2qbrpracjsi5" path="res://orc.tscn" id="1_1ainy"]
+[ext_resource type="PackedScene" uid="uid://c2qbrpracjsi5" path="res://Scenes/orc.tscn" id="1_1ainy"]
 [ext_resource type="Texture2D" uid="uid://jvylv1msq21o" path="res://Assets/brackeys_platformer_assets/sprites/world_tileset.png" id="1_u52ul"]
 [ext_resource type="Script" uid="uid://b2b6rmyyluckx" path="res://Scripts/camera_2d.gd" id="2_oi3di"]
-[ext_resource type="PackedScene" uid="uid://c5ongupm07qh3" path="res://Scenes/Player/player.tscn" id="2_vonw3"]
+[ext_resource type="PackedScene" uid="uid://c5ongupm07qh3" path="res://Player/player.tscn" id="2_vonw3"]
 [ext_resource type="Script" uid="uid://byn1je7flnjo3" path="res://Scripts/game_manager.gd" id="4_0b4ue"]
 [ext_resource type="FontFile" uid="uid://x2dwsfc3en6q" path="res://Assets/brackeys_platformer_assets/fonts/PixelOperator8.ttf" id="4_f2txt"]
 

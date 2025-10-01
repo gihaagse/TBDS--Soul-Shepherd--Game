@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://khbs6icahh14"]
 
-[ext_resource type="Script" uid="uid://bg5rfu6r4mbns" path="res://Scenes/Player/melee_weapon.gd" id="1_tmjy6"]
+[ext_resource type="Script" uid="uid://bg5rfu6r4mbns" path="res://Player/melee_weapon.gd" id="1_tmjy6"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_n04v7"]
 

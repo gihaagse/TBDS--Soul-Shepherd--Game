@@ -1,6 +1,6 @@
 [gd_scene load_steps=18 format=3 uid="uid://c2qbrpracjsi5"]
 
-[ext_resource type="PackedScene" uid="uid://cvgjcwqn6k8eu" path="res://health.tscn" id="1_3xw0u"]
+[ext_resource type="PackedScene" uid="uid://cvgjcwqn6k8eu" path="res://Scenes/health.tscn" id="1_3xw0u"]
 [ext_resource type="Script" uid="uid://bj3o2h06hj6ck" path="res://Scripts/enemy.gd" id="1_vumo0"]
 [ext_resource type="Texture2D" uid="uid://clxtedvmnmjck" path="res://Assets/Tiny RPG Character Asset Pack v1.03 -Free Soldier&Orc/Characters(100x100)/Orc/Orc/Orc-Idle.png" id="1_ws5q1"]
 [ext_resource type="Shader" uid="uid://o6ancnl5jgcr" path="res://Blink.gdshader" id="2_kapy6"]
