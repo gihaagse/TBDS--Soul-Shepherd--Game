@@ -305,6 +305,7 @@ dash_cooldown = NodePath("../../Timers/DashCooldown")
 
 [node name="Falling" type="Node" parent="FiniteStateMachine" node_paths=PackedStringArray("dash_cooldown")]
 script = ExtResource("7_jlvik")
+extra_jumps = 0
 dash_cooldown = NodePath("../../Timers/DashCooldown")
 brake_force = 2
 can_jump = false
