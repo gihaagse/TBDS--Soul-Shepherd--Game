@@ -403,7 +403,7 @@ offset_right = 1014.0
 offset_bottom = 376.0
 theme_override_fonts/font = ExtResource("4_q2tg5")
 theme_override_font_sizes/font_size = 8
-text = "a well timed attack
+text = "a well-timed attack
  can parry projectiles"
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true

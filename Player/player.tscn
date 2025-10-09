@@ -1,4 +1,4 @@
-[gd_scene load_steps=70 format=3 uid="uid://c5ongupm07qh3"]
+[gd_scene load_steps=79 format=3 uid="uid://c5ongupm07qh3"]
 
 [ext_resource type="Script" uid="uid://bw7ujmm53vwsq" path="res://Player/Scripts/playermain.gd" id="1_a3d8c"]
 [ext_resource type="PackedScene" uid="uid://khbs6icahh14" path="res://Player/MeleeWeapon.tscn" id="1_htcer"]
@@ -11,6 +11,7 @@
 [ext_resource type="Script" uid="uid://bob4e3bisalwi" path="res://Player/Scripts/Player_Idle.gd" id="4_htcer"]
 [ext_resource type="Script" uid="uid://6010alpy0i3r" path="res://Player/Scripts/Player_Move.gd" id="5_htcer"]
 [ext_resource type="Texture2D" uid="uid://det0un1vj4110" path="res://Assets/Sprites/panda_small.png" id="7_7emwf"]
+[ext_resource type="Texture2D" uid="uid://dyha5krb56o34" path="res://Assets/Sprites/Panda_SideProfile-Sheet.png" id="7_hshwv"]
 [ext_resource type="Script" uid="uid://fsjhyfbnjf2i" path="res://Player/Scripts/Player_Fall.gd" id="7_jlvik"]
 [ext_resource type="Script" uid="uid://p5k85sn5ogtw" path="res://Player/Scripts/Player_Attack1.gd" id="8_jlvik"]
 [ext_resource type="Script" uid="uid://q385houao11" path="res://Player/Scripts/Player_AirAttack1.gd" id="10_jhyir"]
@@ -106,6 +107,38 @@ region = Rect2(500, 0, 100, 100)
 [sub_resource type="AtlasTexture" id="AtlasTexture_oikmp"]
 atlas = ExtResource("3_0u5uq")
 region = Rect2(500, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m0h3t"]
+atlas = ExtResource("7_hshwv")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i4o1l"]
+atlas = ExtResource("7_hshwv")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j2n6q"]
+atlas = ExtResource("7_hshwv")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c6x0f"]
+atlas = ExtResource("7_hshwv")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jp1hh"]
+atlas = ExtResource("7_hshwv")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qs4pp"]
+atlas = ExtResource("7_hshwv")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iyprq"]
+atlas = ExtResource("7_hshwv")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f4lon"]
+atlas = ExtResource("7_hshwv")
+region = Rect2(256, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7emwf"]
 atlas = ExtResource("7_7emwf")
@@ -280,6 +313,35 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_m0h3t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i4o1l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j2n6q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c6x0f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jp1hh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qs4pp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iyprq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f4lon")
+}],
+"loop": true,
+"name": &"Panda_32",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_7emwf")
 }, {
 "duration": 1.0,
@@ -406,7 +468,7 @@ shape = SubResource("RectangleShape2D_lfmf2")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 material = SubResource("ShaderMaterial_b1ygp")
 sprite_frames = SubResource("SpriteFrames_gymyn")
-animation = &"Attack"
+animation = &"Panda_32"
 autoplay = "Idle"
 
 [node name="FiniteStateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state", "sprite2D", "player", "weapon", "shootPoint", "holder")]
