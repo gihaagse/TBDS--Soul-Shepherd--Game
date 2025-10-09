@@ -1,8 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://d0aadsv0uaoyf"]
+[gd_scene load_steps=11 format=3 uid="uid://d0aadsv0uaoyf"]
 
 [ext_resource type="Texture2D" uid="uid://hc0h4xm803hm" path="res://Assets/Sprites/Backgrounds/Background_NightSky.jpg" id="1_7usfj"]
 [ext_resource type="Script" uid="uid://8inuq8qijvff" path="res://Scripts/start_menu.gd" id="1_x858q"]
 [ext_resource type="FontFile" uid="uid://p47ydk5quyq2" path="res://Assets/brackeys_platformer_assets/fonts/PixelOperator8-Bold.ttf" id="3_x858q"]
+[ext_resource type="PackedScene" uid="uid://brc3fv7pjl1bv" path="res://Scenes/UI/Options_Menu.tscn" id="4_4yw8f"]
+[ext_resource type="AudioStream" uid="uid://c765oi3kij635" path="res://Assets/brackeys_platformer_assets/music/time_for_adventure.mp3" id="5_8p7f5"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kko6a"]
 resource_local_to_scene = true
@@ -82,15 +84,15 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -191.25
-offset_top = -104.0
-offset_right = 191.25
-offset_bottom = 216.0
+offset_left = -133.5
+offset_top = -67.0
+offset_right = 133.5
+offset_bottom = 189.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 8
 
-[node name="Button" type="Button" parent="VBoxContainer"]
+[node name="Start" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 5
 size_flags_vertical = 7
@@ -100,14 +102,14 @@ theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_x858q")
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxFlat_kex2f")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_kko6a")
 theme_override_styles/hover = SubResource("StyleBoxFlat_x858q")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_kko6a")
 text = "Start Game"
 
-[node name="Button2" type="Button" parent="VBoxContainer"]
+[node name="Customize" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 5
 size_flags_vertical = 7
@@ -117,14 +119,14 @@ theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_x858q")
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxFlat_kex2f")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_kko6a")
 theme_override_styles/hover = SubResource("StyleBoxFlat_x858q")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_kko6a")
 text = "Customize"
 
-[node name="Button3" type="Button" parent="VBoxContainer"]
+[node name="Options" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 5
 size_flags_vertical = 7
@@ -134,14 +136,14 @@ theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_x858q")
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxFlat_kex2f")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_kko6a")
 theme_override_styles/hover = SubResource("StyleBoxFlat_x858q")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_kko6a")
 text = "Options"
 
-[node name="Button4" type="Button" parent="VBoxContainer"]
+[node name="Exit" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 5
 size_flags_vertical = 7
@@ -151,7 +153,7 @@ theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_x858q")
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxFlat_kex2f")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_kko6a")
 theme_override_styles/hover = SubResource("StyleBoxFlat_x858q")
@@ -175,12 +177,21 @@ grow_vertical = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 8
 theme_override_fonts/font = ExtResource("3_x858q")
-theme_override_font_sizes/font_size = 100
+theme_override_font_sizes/font_size = 76
 text = "Soul Shepherd"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_customized_pressed"]
-[connection signal="pressed" from="VBoxContainer/Button3" to="." method="_on_options_pressed"]
-[connection signal="pressed" from="VBoxContainer/Button4" to="." method="_on_exit_pressed"]
+[node name="OptionsMenu" parent="." instance=ExtResource("4_4yw8f")]
+visible = false
+layout_mode = 1
+
+[node name="MusicStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_8p7f5")
+volume_db = -10.947
+autoplay = true
+
+[connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Customize" to="." method="_on_customized_pressed"]
+[connection signal="pressed" from="VBoxContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]

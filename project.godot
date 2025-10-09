@@ -17,14 +17,15 @@ config/icon="res://icon.svg"
 
 [display]
 
-window/size/viewport_width=1280
-window/size/viewport_height=720
+window/size/mode=3
+window/stretch/mode="canvas_items"
 
 [global_group]
 
 Player=""
 Enemy=""
 Melee=""
+hotkey_button=""
 
 [input]
 
