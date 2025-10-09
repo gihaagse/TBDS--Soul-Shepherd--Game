@@ -4,11 +4,13 @@ class_name Player_Dash
 var start_player_position
 @export var dash_distance : float = 15
 @export var dash_cooldown : Timer
+@onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 func Enter():
 	super()
 	start_player_position = player.position.x
-	sprite.play("Jump")
+	sprite.play("Panda_Jump")
+	audio_stream_player_2d.playing =true
 func Exit():
 	player.velocity.x = 0
 

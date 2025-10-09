@@ -12,6 +12,7 @@ var paused = false
 @onready var gpu_particles_2d: GPUParticles2D = $GPUParticles2D
 @export var velocity2D : Vector2
 @onready var game_manager: Node = %GameManager
+@onready var player_hitsfx: AudioStreamPlayer2D = $PlayerHit
 
 func _process(_delta: float) -> void:
 	velocity2D = velocity 
@@ -44,6 +45,8 @@ func _on_killzone_body_entered(body: Node2D) -> void:
 
 
 func _on_health_hp_changed() -> void:
+	if hp.hp >0:
+		player_hitsfx.playing =true
 	var tween = get_tree().create_tween()
 	tween.tween_method(SetShader_BlinkIntensity, 1.0, 0.0, 0.5)
 	

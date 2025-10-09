@@ -9,6 +9,7 @@ extends Area2D
 @onready var label: Label = $Label
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var gpu_particles_2d: GPUParticles2D = $GPUParticles2D
+@onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
 var old_hp : int
 func _ready() -> void:
 	old_hp = health.hp
@@ -18,6 +19,7 @@ func _process(_delta: float) -> void:
 	if old_hp != health.hp:
 		label.text = "HP: " + str(health.hp)
 		old_hp = health.hp
+		audio_stream_player_2d.playing = true
 
 
 func _on_health_hp_changed() -> void:

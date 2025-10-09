@@ -7,7 +7,7 @@ var double_jumps_left
 func Enter():
 	super()
 	double_jumps_left = extra_jumps
-	sprite.play("Jump")
+	sprite.play("Panda_Jump")
 
 func Update(_delta:float):
 	if player.is_on_floor():

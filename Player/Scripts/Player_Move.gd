@@ -3,7 +3,7 @@ class_name Player_Walk
 @export var dash_cooldown : Timer
 func Enter():
 	super()
-	sprite.play("Walk")
+	sprite.play("Panda_Walk")
 
 func Update(_delta:float):
 	if not player.is_on_floor():

@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://bytkribknq6yj"]
+[gd_scene load_steps=6 format=3 uid="uid://bytkribknq6yj"]
 
 [ext_resource type="Script" uid="uid://05ohepcl6sk" path="res://Scripts/projectile.gd" id="1_yr2qt"]
 [ext_resource type="Texture2D" uid="uid://djmc7yhmyfnuw" path="res://Assets/brackeys_platformer_assets/sprites/fruit.png" id="2_tl4hk"]
+[ext_resource type="AudioStream" uid="uid://uxnd7qf4lq85" path="res://Assets/Sounds/parry.wav" id="3_tl4hk"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qxf0c"]
 radius = 4.472136
@@ -31,6 +32,10 @@ collision_mask = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_dgwo2")
+
+[node name="parry" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_tl4hk")
+bus = &"Parry"
 
 [connection signal="timeout" from="Despawn" to="." method="_on_despawn_timeout"]
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

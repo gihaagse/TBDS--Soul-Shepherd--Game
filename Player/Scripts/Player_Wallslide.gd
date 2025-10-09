@@ -27,6 +27,7 @@ func Phys_Update(_delta:float):
 		player.velocity.y = Wallslide_cap
 		
 	if Input.is_action_just_pressed("Jump") and player.is_on_wall_only():
+		jumpsfx.playing = true
 		var dismount = move_speed if sprite.flip_h else -move_speed
 		player.velocity = Vector2(dismount ,-jump_force)
 		sprite.flip_h = true if dismount <0 else false

@@ -2,6 +2,7 @@ extends Node
 class_name HP
 @export var hp = 50
 @onready var timer: Timer = $Timer
+@onready var player_death: AudioStreamPlayer2D = $PlayerDeath
 
 signal hp_changed
 
@@ -9,6 +10,7 @@ func take_damage(dmg : int):
 	hp -= dmg
 	hp_changed.emit()
 	if get_parent().is_in_group("Player") and hp <= 0:
+		player_death.playing =true
 		Engine.time_scale = .2
 		timer.start()
 	elif(hp <= 0):

@@ -18,6 +18,7 @@ var slots : Array[Node2D]
 @export var is_gravity : bool = true
 @export var can_shoot : bool = false
 @export var airsStrafe : int = 20
+@export var jumpsfx: AudioStreamPlayer2D
 
 func Enter():
 	var parent = get_parent()
@@ -41,6 +42,7 @@ func Phys_Update(_delta:float):
 
 func movement(_delta:float):
 	if Input.is_action_just_pressed("Jump") and player.is_on_floor() and can_jump:
+		jumpsfx.playing = true
 		player.velocity.y = -jump_force
 	elif is_gravity:
 		player.velocity += player.get_gravity() * _delta

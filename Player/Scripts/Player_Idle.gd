@@ -4,7 +4,7 @@ class_name Player_Idle
 
 func Enter():
 	super()
-	sprite.play("Idle")
+	sprite.play("Panda_Idle")
 
 func Update(_delta:float):
 	if Input.get_axis("Left","Right"):
