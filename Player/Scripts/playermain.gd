@@ -14,7 +14,21 @@ var paused = false
 @onready var game_manager: Node = %GameManager
 @onready var player_hitsfx: AudioStreamPlayer2D = $PlayerHit
 
+func _ready() -> void:
+	pass
+
+func _input(event):
+	if paused:
+		return
+
+
+
 func _process(_delta: float) -> void:
+	if Input.is_action_just_pressed("Pause"):
+		pauseMenu()
+		
+	if paused:
+		return
 	velocity2D = velocity 
 	game_manager.updateLabel(finite_state_machine.current_state.name)
 	game_manager.updateHP(hp.hp)
@@ -24,18 +38,20 @@ func _process(_delta: float) -> void:
 		collision_shape_2d.disabled = true
 		game_manager.updateGameOver()
 
-	if Input.is_action_just_pressed("Escape"):
-		pauseMenu()
 		
 func pauseMenu():
 	if paused:
 		pause_menu.hide()
-		Engine.time_scale = 1
+		#Engine.time_scale = 1
+		get_tree().set_pause(false)
 	else:
 		pause_menu.show()
-		Engine.time_scale = 0
+		#Engine.time_scale = 0
+		get_tree().set_pause(true)
 	paused = !paused
 		
+
+	
 func SetShader_BlinkIntensity(newValue: float):
 	sprite.material.set_shader_parameter("blink_intensity", newValue)
 

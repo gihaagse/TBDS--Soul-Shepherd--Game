@@ -161,7 +161,7 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_kko6a")
 text = "Exit
 "
 
-[node name="Label" type="Label" parent="."]
+[node name="GameTitle" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
@@ -188,8 +188,9 @@ layout_mode = 1
 
 [node name="MusicStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_8p7f5")
-volume_db = -10.947
+volume_db = -4.105
 autoplay = true
+bus = &"Music"
 
 [connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/Customize" to="." method="_on_customized_pressed"]
