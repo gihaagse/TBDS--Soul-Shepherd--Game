@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bxr2wmcrcmml0"
+path="res://.godot/imported/JDSherbert - Wooden UI SFX Pack - Cancel - 1.wav-d415481cd724b70d4cf69c1b2eaa3bc7.sample"
+
+[deps]
+
+source_file="res://Assets/SFX/Dialgoue/JDSherbert - Wooden UI SFX Pack - Cancel - 1.wav"
+dest_files=["res://.godot/imported/JDSherbert - Wooden UI SFX Pack - Cancel - 1.wav-d415481cd724b70d4cf69c1b2eaa3bc7.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

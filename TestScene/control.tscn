@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://bg38p76at1ikg"]
+
+[ext_resource type="Script" uid="uid://dnorux7kicjxv" path="res://TestScene/control.gd" id="1_3f36p"]
+[ext_resource type="Resource" uid="uid://bbp52doyp35ev" path="res://Dialogue/resources/SungChinWoo.tres" id="2_52x06"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_3f36p")
+test_dialogue = ExtResource("2_52x06")
+
+[node name="StartDialogueButton" type="Button" parent="."]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Start Dialogue"

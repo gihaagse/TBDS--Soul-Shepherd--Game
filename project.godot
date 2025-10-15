@@ -15,6 +15,10 @@ run/main_scene="uid://d0aadsv0uaoyf"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+DialogueManager="*res://Dialogue/dialogue_system/DialogueManager.gd"
+
 [display]
 
 window/size/mode=3
