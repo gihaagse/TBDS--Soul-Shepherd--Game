@@ -60,6 +60,7 @@ shadow_offset = Vector2(0, 3.41)
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kko6a"]
 
 [node name="StartMenu" type="Control"]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

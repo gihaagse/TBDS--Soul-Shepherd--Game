@@ -42,7 +42,6 @@ func _process(_delta: float) -> void:
 func pauseMenu():
 	if paused:
 		pause_menu.hide()
-		#Engine.time_scale = 1
 		get_tree().set_pause(false)
 	else:
 		pause_menu.show()

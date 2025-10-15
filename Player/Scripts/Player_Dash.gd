@@ -5,6 +5,7 @@ var start_player_position
 @export var dash_distance : float = 15
 @export var dash_cooldown : Timer
 @onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
+@onready var canvas_layer: CanvasLayer = $"../../../CanvasLayer"
 
 func Enter():
 	super()
@@ -32,4 +33,5 @@ func Phys_Update(_delta:float):
 
 func _on_distance_travelled() -> void:
 	dash_cooldown.start()
+	canvas_layer.start_timer()
 	state_transition.emit(self, "Idling")

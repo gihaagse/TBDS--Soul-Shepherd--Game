@@ -5,6 +5,7 @@ extends Node
 @export var gameOverScreen : ColorRect
 func _ready() -> void:
 	print_rich("[img]res://errors/tweakboo.png[/img]")
+	get_tree().set_pause(false)
 
 func updateLabel(text):
 	if text:

@@ -20,6 +20,8 @@ func _on_continue_pressed() -> void:
 
 func _on_quit_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes/UI/Start_Menu.tscn")
+	#get_tree().set_pause(false)
+	
 
 func _on_options_pressed() -> void:
 	options_menu.set_process(true)
