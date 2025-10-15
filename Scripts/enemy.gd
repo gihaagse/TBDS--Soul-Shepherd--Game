@@ -1,25 +1,49 @@
-extends Area2D
+extends CharacterBody2D
 
-@onready var main = get_tree().get_root().get_node("level1")
+@onready var main = get_tree().get_root().get_node("Level")
 @onready var projectile = load("res://Scenes/projectile.tscn")
 @export var shootPoint : Node2D
-@export var can_shoot : bool = false
 
 @onready var health: HP = $Health
 @onready var label: Label = $Label
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var gpu_particles_2d: GPUParticles2D = $GPUParticles2D
-@onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
+@export var speed : int = 40
+@export var dir : int = 1
+var player: CharacterBody2D = null
+@export var playerInRange: bool = false
+@export var flippedSprite: bool = false
+@export var shotOffset: int = 15
+
+
 var old_hp : int
 func _ready() -> void:
 	old_hp = health.hp
+	var root = get_tree().get_current_scene()
+	if root and root.has_node("Player"):
+		player = root.get_node("Player")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	if old_hp != health.hp:
 		label.text = "HP: " + str(health.hp)
 		old_hp = health.hp
-		audio_stream_player_2d.playing = true
+		
+	if is_on_wall():
+		dir = dir * -1
+		_correct_sprite()
+
+	position.x += speed * dir * _delta
+	move_and_slide()
+	if playerInRange:
+		if (player.position.x - (position.x+150)) > 0:
+			dir = 1
+			flippedSprite = false
+			_correct_sprite()
+		elif (player.position.x - (position.x+150)) < 0:
+			dir = -1
+			flippedSprite = true
+			_correct_sprite()
 
 
 func _on_health_hp_changed() -> void:
@@ -33,13 +57,33 @@ func shoot():
 	var instance = projectile.instantiate()
 	instance.sprite = sprite
 	instance.spawnpos = shootPoint.global_position
-	instance.turn_on_body.append(3)
-	main.add_child.call_deferred(instance)
+	if dir == 1:
+		instance.spawnpos.x += shotOffset
+	elif dir == -1:
+		instance.spawnpos.x -= shotOffset
+		instance.speed = instance.speed * -1
+		main.add_child.call_deferred(instance)
 	
 func SetShader_BlinkIntensity(newValue: float):
 	sprite.material.set_shader_parameter("blink_intensity", newValue)
 
-
 func _on_timer_timeout() -> void:
-	if can_shoot:
-		shoot()
+	shoot()
+
+func _on_area_2d_body_shape_entered(body_rid: RID, body: CharacterBody2D, body_shape_index: int, local_shape_index: int) -> void:
+	playerInRange = true
+	speed = 60
+	$in_range_shoot_timer.start()
+
+func _on_area_2d_body_shape_exited(body_rid: RID, body: CharacterBody2D, body_shape_index: int, local_shape_index: int) -> void:
+	playerInRange = false
+	speed = 40
+	$in_range_shoot_timer.stop()
+
+func _correct_sprite() -> void:
+	if dir == 1 and $AnimatedSprite2D.scale.x == -1:
+		$AnimatedSprite2D.scale.x = $AnimatedSprite2D.scale.x * -1
+		flippedSprite = false
+	if dir == -1 and $AnimatedSprite2D.scale.x == 1:
+		$AnimatedSprite2D.scale.x = $AnimatedSprite2D.scale.x * -1
+		flippedSprite = true

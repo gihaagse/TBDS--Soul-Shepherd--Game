@@ -5,10 +5,6 @@
 [ext_resource type="Texture2D" uid="uid://clxtedvmnmjck" path="res://Assets/Tiny RPG Character Asset Pack v1.03 -Free Soldier&Orc/Characters(100x100)/Orc/Orc/Orc-Idle.png" id="1_ws5q1"]
 [ext_resource type="Shader" uid="uid://o6ancnl5jgcr" path="res://Blink.gdshader" id="2_kapy6"]
 [ext_resource type="FontFile" uid="uid://x2dwsfc3en6q" path="res://Assets/brackeys_platformer_assets/fonts/PixelOperator8.ttf" id="4_6hc3a"]
-[ext_resource type="AudioStream" uid="uid://bi3l61fpn0btr" path="res://Assets/Sounds/hitHurt.wav" id="6_2ecxu"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_3xw0u"]
-radius = 7.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6hc3a"]
 resource_local_to_scene = true
@@ -88,15 +84,18 @@ scale_min = 0.19999999
 color = Color(1, 0.07058824, 0.13333334, 1)
 color_ramp = SubResource("GradientTexture1D_31h1d")
 
-[node name="Enemy" type="Area2D" node_paths=PackedStringArray("shootPoint") groups=["Enemy"]]
-collision_layer = 2
+[sub_resource type="CircleShape2D" id="CircleShape2D_vumo0"]
+radius = 15.321566
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3xw0u"]
+radius = 7.0
+
+[node name="Enemy" type="CharacterBody2D" node_paths=PackedStringArray("shootPoint") groups=["Enemy"]]
+collision_mask = 5
 script = ExtResource("1_vumo0")
 shootPoint = NodePath("CollisionShape2D")
 
 [node name="Health" parent="." instance=ExtResource("1_3xw0u")]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_3xw0u")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 material = SubResource("ShaderMaterial_6hc3a")
@@ -125,14 +124,19 @@ explosiveness = 1.0
 trail_enabled = true
 process_material = SubResource("ParticleProcessMaterial_dfwqp")
 
-[node name="Timer" type="Timer" parent="."]
-wait_time = 5.0
-autostart = true
+[node name="in_range_shoot_timer" type="Timer" parent="."]
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("6_2ecxu")
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 4
 
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
-[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+scale = Vector2(4.425, 0.41)
+shape = SubResource("CircleShape2D_vumo0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_3xw0u")
+
 [connection signal="hp_changed" from="Health" to="." method="_on_health_hp_changed"]
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="in_range_shoot_timer" to="." method="_on_timer_timeout"]
+[connection signal="body_shape_entered" from="Area2D" to="." method="_on_area_2d_body_shape_entered"]
+[connection signal="body_shape_exited" from="Area2D" to="." method="_on_area_2d_body_shape_exited"]

@@ -246,7 +246,7 @@ sources/1 = SubResource("TileSetAtlasSource_d68a7")
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_lsmp6"]
 
-[node name="level1" type="Node2D"]
+[node name="Level" type="Node2D"]
 
 [node name="Player" parent="." node_paths=PackedStringArray("pause_menu") instance=ExtResource("1_c458c")]
 position = Vector2(160, 576)
@@ -419,6 +419,5 @@ position = Vector2(983, 586)
 [node name="Enemy2" parent="." instance=ExtResource("7_fvaf1")]
 z_index = 4
 position = Vector2(743, 378)
-can_shoot = true
 
 [connection signal="body_entered" from="killzone" to="Player" method="_on_killzone_body_entered"]
