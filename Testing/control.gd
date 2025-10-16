@@ -8,7 +8,7 @@ func _ready():
 	start_button.pressed.connect(_on_start_dialogue_pressed)
 	
 	# Load dialogue UI instantie
-	var dialogue_ui_scene = preload("res://TestScene/DialogueUI.tscn")
+	var dialogue_ui_scene = preload("res://Testing/DialogueUI.tscn")
 	var dialogue_ui = dialogue_ui_scene.instantiate()
 	add_child(dialogue_ui)
 
