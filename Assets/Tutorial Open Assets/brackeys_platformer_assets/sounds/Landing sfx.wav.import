@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://eb7gjbavvgb3"
+path="res://.godot/imported/Landing sfx.wav-c405ef1090a06fd4dfc4de567bbfaffd.sample"
+
+[deps]
+
+source_file="res://Assets/Tutorial Open Assets/brackeys_platformer_assets/sounds/Landing sfx.wav"
+dest_files=["res://.godot/imported/Landing sfx.wav-c405ef1090a06fd4dfc4de567bbfaffd.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

@@ -13,12 +13,16 @@ config_version=5
 config/name="State Machine"
 run/main_scene="uid://d0aadsv0uaoyf"
 config/features=PackedStringArray("4.5", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="res://Assets/Icons/icon.svg"
+
+[audio]
+
+buses/default_bus_layout="res://Resources/default_bus_layout.tres"
 
 [autoload]
 
-DialogueManager="*res://Dialogue/dialogue_system/DialogueManager.gd"
-UtilsEffect="*res://Autoloads/Utils_Effect.gd"
+DialogueManager="*res://Scripts/DialogueSystem/DialogueManager.gd"
+UtilsEffect="*res://Scripts/Autoloads/Utils_Effect.gd"
 
 [display]
 
