@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 @onready var main = get_tree().get_root().get_node("Level")
-@onready var projectile = load("res://Scenes/projectile.tscn")
+@onready var projectile = load("res://Scenes/Weapons/projectile.tscn")
 @export var shootPoint : Node2D
 
 @onready var health: HP = $Health

@@ -625,6 +625,7 @@ bus = &"Jump"
 
 [node name="PlayerHit" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("23_0liok")
+bus = &"Sfx"
 
 [node name="WalkingDustParticle" type="CPUParticles2D" parent="."]
 position = Vector2(0, 9)
