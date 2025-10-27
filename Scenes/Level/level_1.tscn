@@ -1,15 +1,16 @@
-[gd_scene load_steps=15 format=3 uid="uid://k0mron1debm7"]
+[gd_scene load_steps=16 format=3 uid="uid://k0mron1debm7"]
 
-[ext_resource type="PackedScene" uid="uid://c5ongupm07qh3" path="res://Player/player.tscn" id="1_c458c"]
-[ext_resource type="Texture2D" uid="uid://jvylv1msq21o" path="res://Assets/brackeys_platformer_assets/sprites/world_tileset.png" id="2_pvlc2"]
-[ext_resource type="Script" uid="uid://b2b6rmyyluckx" path="res://Scripts/camera_2d.gd" id="3_d68a7"]
+[ext_resource type="PackedScene" uid="uid://c5ongupm07qh3" path="res://Scenes/Player/player.tscn" id="1_c458c"]
+[ext_resource type="Texture2D" uid="uid://jvylv1msq21o" path="res://Assets/Tutorial Open Assets/brackeys_platformer_assets/sprites/world_tileset.png" id="2_pvlc2"]
+[ext_resource type="Script" uid="uid://b2b6rmyyluckx" path="res://Scripts/Player/General/camera_2d.gd" id="3_d68a7"]
 [ext_resource type="Texture2D" uid="uid://goes5l2sfyvw" path="res://Assets/Sprites/Tileset1.png" id="3_pvlc2"]
-[ext_resource type="FontFile" uid="uid://x2dwsfc3en6q" path="res://Assets/brackeys_platformer_assets/fonts/PixelOperator8.ttf" id="4_q2tg5"]
-[ext_resource type="Script" uid="uid://byn1je7flnjo3" path="res://Scripts/game_manager.gd" id="5_mt3j2"]
-[ext_resource type="Script" uid="uid://bpkjqkjnq8o6g" path="res://Scenes/killzone.gd" id="6_akeww"]
-[ext_resource type="PackedScene" uid="uid://brc3fv7pjl1bv" path="res://Scenes/UI/Options_Menu.tscn" id="7_d68a7"]
-[ext_resource type="PackedScene" uid="uid://c2qbrpracjsi5" path="res://Scenes/orc.tscn" id="7_fvaf1"]
-[ext_resource type="PackedScene" uid="uid://dbawdw77kghcn" path="res://Scenes/UI/Pause_Menu.tscn" id="8_hnohd"]
+[ext_resource type="FontFile" uid="uid://x2dwsfc3en6q" path="res://Assets/Tutorial Open Assets/brackeys_platformer_assets/fonts/PixelOperator8.ttf" id="4_q2tg5"]
+[ext_resource type="Script" uid="uid://byn1je7flnjo3" path="res://Scripts/Central/game_manager.gd" id="5_mt3j2"]
+[ext_resource type="Script" uid="uid://ce43l01wboarg" path="res://Scripts/UI/Overlay/canvas_layer.gd" id="5_q2tg5"]
+[ext_resource type="Script" uid="uid://bpkjqkjnq8o6g" path="res://Scripts/Player/General/killzone.gd" id="6_akeww"]
+[ext_resource type="PackedScene" uid="uid://brc3fv7pjl1bv" path="res://Scenes/UI/GameMenus/Options_Menu.tscn" id="7_d68a7"]
+[ext_resource type="PackedScene" uid="uid://c2qbrpracjsi5" path="res://Scenes/Enemies/orc.tscn" id="7_fvaf1"]
+[ext_resource type="PackedScene" uid="uid://dbawdw77kghcn" path="res://Scenes/UI/GameMenus/Pause_Menu.tscn" id="8_hnohd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7p6j4"]
 texture = ExtResource("2_pvlc2")
@@ -246,7 +247,7 @@ sources/1 = SubResource("TileSetAtlasSource_d68a7")
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_lsmp6"]
 
-[node name="level1" type="Node2D"]
+[node name="Level" type="Node2D"]
 
 [node name="Player" parent="." node_paths=PackedStringArray("pause_menu") instance=ExtResource("1_c458c")]
 position = Vector2(160, 576)
@@ -269,6 +270,7 @@ script = ExtResource("3_d68a7")
 player = NodePath("../Player")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+script = ExtResource("5_q2tg5")
 
 [node name="Current State" type="Label" parent="CanvasLayer"]
 offset_right = 40.0
@@ -324,6 +326,22 @@ z_index = 6
 
 [node name="OptionsMenu" parent="CanvasLayer" instance=ExtResource("7_d68a7")]
 visible = false
+
+[node name="DashTimer" type="Label" parent="CanvasLayer"]
+visible = false
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -74.0
+offset_top = -31.0
+offset_right = -34.0
+offset_bottom = -8.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Dash Timer"
+horizontal_alignment = 2
 
 [node name="GameManager" type="Node" parent="." node_paths=PackedStringArray("stateLabel", "hpLabel", "gameOverScreen")]
 unique_name_in_owner = true
@@ -419,6 +437,5 @@ position = Vector2(983, 586)
 [node name="Enemy2" parent="." instance=ExtResource("7_fvaf1")]
 z_index = 4
 position = Vector2(743, 378)
-can_shoot = true
 
 [connection signal="body_entered" from="killzone" to="Player" method="_on_killzone_body_entered"]

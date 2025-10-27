@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="PlayerKeybindResource" load_steps=5 format=3 uid="uid://bbjd6kqh8erfx"]
+
+[ext_resource type="Script" uid="uid://c5y0a2h637qs1" path="res://Resources/PlayerKeybindResource.gd" id="1_qt8pr"]
+
+[sub_resource type="InputEventKey" id="InputEventKey_ayleg"]
+device = -1
+physical_keycode = 32
+unicode = 32
+
+[sub_resource type="InputEventKey" id="InputEventKey_4pjib"]
+device = -1
+physical_keycode = 65
+unicode = 97
+
+[sub_resource type="InputEventKey" id="InputEventKey_2agyo"]
+device = -1
+physical_keycode = 68
+unicode = 100
+
+[resource]
+script = ExtResource("1_qt8pr")
+DEFAULT_LEFT_KEY = SubResource("InputEventKey_4pjib")
+DEFAULT_RIGHT_KEY = SubResource("InputEventKey_2agyo")
+DEFAULT_JUMP_KEY = SubResource("InputEventKey_ayleg")
+metadata/_custom_type_script = "uid://c5y0a2h637qs1"

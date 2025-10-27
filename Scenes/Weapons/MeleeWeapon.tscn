@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://khbs6icahh14"]
+
+[ext_resource type="Script" uid="uid://bg5rfu6r4mbns" path="res://Scripts/Weapons/melee_weapon.gd" id="1_tmjy6"]
+[ext_resource type="AudioStream" uid="uid://yuwiuj8yge1j" path="res://Assets/Audio/SFX/Player/slash.wav" id="2_57hot"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_n04v7"]
+
+[node name="Weapon" type="Area2D" groups=["Melee"]]
+collision_layer = 17
+collision_mask = 2
+script = ExtResource("1_tmjy6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_n04v7")
+debug_color = Color(1, 0.21568628, 0, 0.41960785)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_57hot")
+bus = &"Sword"
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

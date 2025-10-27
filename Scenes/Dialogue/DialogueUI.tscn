@@ -1,0 +1,140 @@
+[gd_scene load_steps=7 format=3 uid="uid://ndkp1vfqmr4g"]
+
+[ext_resource type="Script" uid="uid://bbw5ou7s4qspd" path="res://GameMenus/DialogueUI.gd" id="1_m828p"]
+[ext_resource type="Texture2D" uid="uid://ch2u1krxaf7n8" path="res://Assets/Icons/sjw icon.jpg" id="2_etdm6"]
+[ext_resource type="Texture2D" uid="uid://chcnq5a06tinn" path="res://Assets/Icons/Temporary text bubble.png" id="2_hflk8"]
+[ext_resource type="AudioStream" uid="uid://dcbhbbavrkkbw" path="res://Assets/Audio/SFX/Dialgoue/JDSherbert - Wooden UI SFX Pack - Cursor - 1.wav" id="4_b7wac"]
+[ext_resource type="AudioStream" uid="uid://clexkofyvxoxf" path="res://Assets/Audio/SFX/Dialgoue/JDSherbert - Wooden UI SFX Pack - Select - 1.wav" id="5_jlpoj"]
+[ext_resource type="AudioStream" uid="uid://6bhlt8rry1yv" path="res://Assets/Audio/SFX/Dialgoue/JDSherbert - Wooden UI SFX Pack - Confirm - 1.wav" id="6_jlpoj"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_m828p")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -324.0
+offset_top = -168.0
+offset_right = 320.0
+offset_bottom = 176.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(322, 343.27)
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 20
+
+[node name="MainContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="ProfileIconContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/MainContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.2
+
+[node name="NPCIcon" type="TextureRect" parent="PanelContainer/MarginContainer/MainContainer/ProfileIconContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_vertical = 2
+texture = ExtResource("2_etdm6")
+expand_mode = 5
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="NPCName" type="RichTextLabel" parent="PanelContainer/MarginContainer/MainContainer/ProfileIconContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_vertical = 2
+size_flags_stretch_ratio = 0.42
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/normal_font_size = 12
+text = "Mr.Aura"
+horizontal_alignment = 1
+
+[node name="Spacer" type="Control" parent="PanelContainer/MarginContainer/MainContainer/ProfileIconContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 5.0
+
+[node name="ContinueButton" type="Button" parent="PanelContainer/MarginContainer/MainContainer/ProfileIconContainer"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 8
+size_flags_stretch_ratio = 0.0
+theme_override_colors/font_color = Color(0.6872143, 0.68721527, 0.6872146, 1)
+text = "Continue"
+autowrap_mode = 2
+
+[node name="Spacer" type="Control" parent="PanelContainer/MarginContainer/MainContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.06
+
+[node name="NPCLinesAndChoicesContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/MainContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Spacer" type="Control" parent="PanelContainer/MarginContainer/MainContainer/NPCLinesAndChoicesContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.15
+
+[node name="TextBubble" type="TextureRect" parent="PanelContainer/MarginContainer/MainContainer/NPCLinesAndChoicesContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 1.9
+texture = ExtResource("2_hflk8")
+expand_mode = 5
+stretch_mode = 6
+
+[node name="NPCText" type="RichTextLabel" parent="PanelContainer/MarginContainer/MainContainer/NPCLinesAndChoicesContainer/TextBubble"]
+layout_mode = 0
+offset_left = 43.0
+offset_top = 25.0
+offset_right = 516.0
+offset_bottom = 240.0
+scale = Vector2(0.8, 0.8)
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 24
+text = "I see that you haven't farmed enough aura yet. Who allowed you to speak to me???"
+
+[node name="ChoicesContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/MainContainer/NPCLinesAndChoicesContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.6
+
+[node name="ChoiceTemplate" type="Button" parent="PanelContainer/MarginContainer/MainContainer/NPCLinesAndChoicesContainer/ChoicesContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 14
+text = "Option 1"
+autowrap_mode = 2
+
+[node name="ContinueButton" type="Button" parent="PanelContainer"]
+layout_mode = 2
+flat = true
+
+[node name="Node" type="Node" parent="."]
+
+[node name="Typing" type="AudioStreamPlayer2D" parent="Node"]
+stream = ExtResource("4_b7wac")
+volume_db = 7.5
+
+[node name="Continue" type="AudioStreamPlayer2D" parent="Node"]
+stream = ExtResource("5_jlpoj")
+volume_db = 15.0
+
+[node name="Choice" type="AudioStreamPlayer2D" parent="Node"]
+stream = ExtResource("6_jlpoj")
+volume_db = 6.0

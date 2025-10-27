@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c283ary013yu8"
+path="res://.godot/imported/one pice jump sfx.wav-5fab2bd431b85713cf5de86db257ff08.sample"
+
+[deps]
+
+source_file="res://Assets/Tutorial Open Assets/brackeys_platformer_assets/sounds/one pice jump sfx.wav"
+dest_files=["res://.godot/imported/one pice jump sfx.wav-5fab2bd431b85713cf5de86db257ff08.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
