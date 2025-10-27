@@ -3,6 +3,7 @@ extends CharacterBody2D
 @onready var main = get_tree().get_root().get_node("Level")
 @onready var projectile = load("res://Scenes/Weapons/projectile.tscn")
 @export var shootPoint : Node2D
+@export var groundPosOffset : float = 10
 
 @onready var health: HP = $Health
 @onready var label: Label = $Label
@@ -39,8 +40,8 @@ func _process(_delta: float) -> void:
 		
 	if is_on_wall() or !ground.is_colliding():
 		dir = dir * -1
+		ground.position.x = groundPosOffset if dir > 0 else groundPosOffset * -1
 		_correct_sprite()
-		ground.position.x = ground.position.x * dir
 
 	position.x += speed * dir * _delta
 	move_and_slide()
@@ -48,10 +49,12 @@ func _process(_delta: float) -> void:
 		if (player.position.x - position.x) > 0:
 			dir = 1
 			flippedSprite = false
+			ground.position.x = groundPosOffset
 			_correct_sprite()
 		elif (player.position.x - position.x) < 0:
 			dir = -1
 			flippedSprite = true
+			ground.position.x = groundPosOffset * -1
 			_correct_sprite()
 
 
