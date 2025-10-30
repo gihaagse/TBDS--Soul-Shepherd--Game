@@ -130,11 +130,16 @@ process_material = SubResource("ParticleProcessMaterial_dfwqp")
 collision_mask = 4
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+visible = false
 scale = Vector2(4.425, 0.41)
 shape = SubResource("CircleShape2D_vumo0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_3xw0u")
+
+[node name="GroundCheck" type="RayCast2D" parent="."]
+position = Vector2(10, 0)
+target_position = Vector2(0, 10)
 
 [connection signal="hp_changed" from="Health" to="." method="_on_health_hp_changed"]
 [connection signal="timeout" from="in_range_shoot_timer" to="." method="_on_timer_timeout"]
