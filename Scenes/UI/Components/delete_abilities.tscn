@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bu1njwcmxoh18"]
 
-[ext_resource type="Script" uid="uid://bl1l0pylu23xj" path="res://Scenes/UI/Components/delete_abilities.gd" id="1_mcoca"]
+[ext_resource type="Script" uid="uid://bl1l0pylu23xj" path="res://Scripts/UI/Components/delete_abilities.gd" id="1_mcoca"]
 
 [node name="DeleteAbilities" type="Control"]
 layout_mode = 3

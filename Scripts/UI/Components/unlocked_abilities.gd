@@ -24,18 +24,10 @@ func load_unlocked_abilities() -> void:
 		
 	var lines: Array = []
 	for ability in AbilityData.unlocked_abilities:
-		#print(self, ability)
 		var abName = AbilityData.get_ability_name_from_value(ability)
 		lines.append(abName)
 	ability_label.text = "\n".join(lines)
 
 func on_toggle_pressed() -> void:
+	$VBoxContainer/ShowButton.release_focus()
 	ability_label.visible = not ability_label.visible
-
-
-#func _unhandled_input(event):
-	#if ability_label.visible:
-		#if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and not \
-		#ability_label.get_global_rect().has_point(event.position) and not \
-		#show_button.get_global_rect().has_point(event.position):
-			#ability_label.visible = false

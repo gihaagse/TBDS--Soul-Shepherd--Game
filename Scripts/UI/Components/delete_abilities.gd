@@ -46,6 +46,7 @@ func ability_selected (index: int) -> void:
 
 
 func _on_button_pressed() -> void:
+	$VBoxContainer/Button.release_focus()
 	if AbilityData.unlocked_abilities.has(selected_ability):
 		AbilityData.unlocked_abilities.erase(selected_ability)
 		AbilityData.update_debug_ability_label.emit()

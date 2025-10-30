@@ -33,10 +33,15 @@ func on_child_transition(state : PlayerState, new_state_name : String):
 	if state != current_state:
 		return
 	
-	#var index = AbilityData.get_value_from_ability_name(new_state_name)
-	#print(index)
-	#if index not in AbilityData.unlocked_ablities:
-		#return
+	
+	var index = AbilityData.ability_list.get(new_state_name, null)
+	#print("de index is: ", index)
+	if index == null:
+		return
+		
+	if index not in AbilityData.unlocked_abilities:
+		print("Can't do this ability")
+		return
 		
 	var new_state : PlayerState = states.get(new_state_name.to_lower())
 	if !new_state:

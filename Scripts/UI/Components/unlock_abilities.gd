@@ -47,10 +47,11 @@ func ability_selected (index: int) -> void:
 
 
 func _on_button_pressed() -> void:
+	$VBoxContainer/Button.release_focus()
+
 	if not AbilityData.unlocked_abilities.has(selected_ability):
 		AbilityData.unlocked_abilities.append(selected_ability)
 		AbilityData.update_debug_ability_label.emit()
-		#refresh_button_options()
 		add_abilities_in_button()
 		AbilityData.update_delete_ability_buttons.emit()
 	else:
