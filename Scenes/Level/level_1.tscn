@@ -250,7 +250,7 @@ sources/1 = SubResource("TileSetAtlasSource_d68a7")
 [node name="Level" type="Node2D"]
 
 [node name="Player" parent="." node_paths=PackedStringArray("pause_menu") instance=ExtResource("1_c458c")]
-position = Vector2(160, 576)
+position = Vector2(775, 531)
 pause_menu = NodePath("../CanvasLayer/PauseMenu")
 
 [node name="TileMap" type="TileMap" parent="."]
