@@ -44,7 +44,7 @@ func Update(_delta:float) -> void:
 	if Input.is_action_just_pressed("LeftClick") and get_item_by_name("Bow", slots).visible:
 		state_transition.emit(self, "Archery")
 	if Input.is_action_pressed("WallSlide") and player.is_on_wall_only():
-		state_transition.emit(self, "WallSliding")
+		state_transition.emit(self, "Wallsliding")
 	if Input.is_action_just_pressed("Jump") and player.is_on_wall_only() and (Input.is_action_pressed("Left") or Input.is_action_pressed("Right")):
 		state_transition.emit(self, "WallJump")
 

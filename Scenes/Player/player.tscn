@@ -1,4 +1,4 @@
-[gd_scene load_steps=89 format=3 uid="uid://c5ongupm07qh3"]
+[gd_scene load_steps=90 format=3 uid="uid://c5ongupm07qh3"]
 
 [ext_resource type="Script" uid="uid://bw7ujmm53vwsq" path="res://Scripts/Player/General/playermain.gd" id="1_qr1w5"]
 [ext_resource type="PackedScene" uid="uid://cvgjcwqn6k8eu" path="res://Scenes/UI/Overlay/health.tscn" id="2_ythyg"]
@@ -19,6 +19,7 @@
 [ext_resource type="Script" uid="uid://75v06whe5qe4" path="res://Scripts/Player/States/Player_Bow.gd" id="17_ei2r2"]
 [ext_resource type="Script" uid="uid://cjb2yxf6iu2g1" path="res://Scripts/Player/States/Player_Wallslide.gd" id="18_j6uq4"]
 [ext_resource type="Script" uid="uid://dchumex8trwnx" path="res://Scripts/Player/General/arsenal.gd" id="19_h5u0x"]
+[ext_resource type="Script" uid="uid://b84gqgcp4m5db" path="res://Scripts/Player/States/Player_Walljump.gd" id="19_ythyg"]
 [ext_resource type="PackedScene" uid="uid://khbs6icahh14" path="res://Scenes/Weapons/MeleeWeapon.tscn" id="20_po18e"]
 [ext_resource type="AudioStream" uid="uid://c283ary013yu8" path="res://Assets/Tutorial Open Assets/brackeys_platformer_assets/sounds/one pice jump sfx.wav" id="21_v37cr"]
 [ext_resource type="AudioStream" uid="uid://eb7gjbavvgb3" path="res://Assets/Tutorial Open Assets/brackeys_platformer_assets/sounds/Landing sfx.wav" id="22_8d028"]
@@ -581,6 +582,14 @@ dash_cooldown = NodePath("../../Timers/DashCooldown")
 jumpsfx = NodePath("../../jumpsfx")
 
 [node name="Timer" type="Timer" parent="FiniteStateMachine/Wallsliding"]
+wait_time = 0.2
+one_shot = true
+
+[node name="Walljump" type="Node" parent="FiniteStateMachine" node_paths=PackedStringArray("jumpsfx")]
+script = ExtResource("19_ythyg")
+jumpsfx = NodePath("../../jumpsfx")
+
+[node name="Timer" type="Timer" parent="FiniteStateMachine/Walljump"]
 wait_time = 0.2
 one_shot = true
 

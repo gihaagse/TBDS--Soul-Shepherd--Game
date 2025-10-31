@@ -34,7 +34,7 @@ func on_child_transition(state : PlayerState, new_state_name : String):
 		return
 	
 	
-	var index = AbilityData.ability_list.get(new_state_name, null)
+	var index = AbilityData.get_value_from_ability_name(new_state_name)
 	#print("de index is: ", index)
 	if index == null:
 		return

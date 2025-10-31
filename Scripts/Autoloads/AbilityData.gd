@@ -64,7 +64,9 @@ func get_ability_name_from_value(value: int) -> String:
 	return "Unknown"
 
 func get_value_from_ability_name(ability_name: String) -> int:
+	var ability_name_lower = ability_name.to_lower()
 	for enum_name in AbilityData.ability_list.keys():
-		if enum_name == ability_name:
+		if enum_name.to_lower() == ability_name_lower:
 			return AbilityData.ability_list[enum_name]
 	return -1
+	
