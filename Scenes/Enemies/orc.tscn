@@ -57,9 +57,55 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_d22v1")
 }],
+"loop": false,
+"name": &"Attack_shoot",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kapy6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6hc3a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vumo0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_31h1d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dfwqp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d22v1")
+}],
 "loop": true,
 "name": &"Idle",
 "speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kapy6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6hc3a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vumo0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_31h1d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dfwqp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d22v1")
+}],
+"loop": true,
+"name": &"Walking",
+"speed": 5.0
 }]
 
 [sub_resource type="Gradient" id="Gradient_vumo0"]
@@ -100,9 +146,8 @@ shootPoint = NodePath("CollisionShape2D")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 material = SubResource("ShaderMaterial_6hc3a")
 sprite_frames = SubResource("SpriteFrames_wpvyt")
-animation = &"Idle"
+animation = &"Attack_shoot"
 autoplay = "Idle"
-frame_progress = 0.019300163
 
 [node name="Label" type="Label" parent="."]
 offset_left = -20.0
@@ -130,7 +175,6 @@ process_material = SubResource("ParticleProcessMaterial_dfwqp")
 collision_mask = 4
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
-visible = false
 scale = Vector2(4.425, 0.41)
 shape = SubResource("CircleShape2D_vumo0")
 
@@ -142,6 +186,7 @@ position = Vector2(10, 0)
 target_position = Vector2(0, 10)
 
 [connection signal="hp_changed" from="Health" to="." method="_on_health_hp_changed"]
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="timeout" from="in_range_shoot_timer" to="." method="_on_timer_timeout"]
 [connection signal="body_shape_entered" from="Area2D" to="." method="_on_area_2d_body_shape_entered"]
 [connection signal="body_shape_exited" from="Area2D" to="." method="_on_area_2d_body_shape_exited"]

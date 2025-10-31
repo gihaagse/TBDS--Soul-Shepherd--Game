@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://k0mron1debm7"]
+[gd_scene load_steps=18 format=3 uid="uid://k0mron1debm7"]
 
 [ext_resource type="PackedScene" uid="uid://c5ongupm07qh3" path="res://Scenes/Player/player.tscn" id="1_c458c"]
 [ext_resource type="Texture2D" uid="uid://jvylv1msq21o" path="res://Assets/Tutorial Open Assets/brackeys_platformer_assets/sprites/world_tileset.png" id="2_pvlc2"]
@@ -11,6 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://brc3fv7pjl1bv" path="res://Scenes/UI/GameMenus/Options_Menu.tscn" id="7_d68a7"]
 [ext_resource type="PackedScene" uid="uid://c2qbrpracjsi5" path="res://Scenes/Enemies/orc.tscn" id="7_fvaf1"]
 [ext_resource type="PackedScene" uid="uid://dbawdw77kghcn" path="res://Scenes/UI/GameMenus/Pause_Menu.tscn" id="8_hnohd"]
+[ext_resource type="PackedScene" uid="uid://51slswqsb6ej" path="res://Scenes/Enemies/monk_enemy.tscn" id="12_mt3j2"]
+[ext_resource type="PackedScene" uid="uid://bdnyl8hwfggvd" path="res://Scenes/Enemies/husk_enemy.tscn" id="13_akeww"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7p6j4"]
 texture = ExtResource("2_pvlc2")
@@ -437,5 +439,14 @@ position = Vector2(983, 586)
 [node name="Enemy2" parent="." instance=ExtResource("7_fvaf1")]
 z_index = 4
 position = Vector2(743, 378)
+
+[node name="Enemy3" parent="." instance=ExtResource("12_mt3j2")]
+z_index = 4
+position = Vector2(253, 603)
+
+[node name="Enemy4" parent="." instance=ExtResource("13_akeww")]
+z_index = 4
+position = Vector2(92, 594)
+can_move = false
 
 [connection signal="body_entered" from="killzone" to="Player" method="_on_killzone_body_entered"]
