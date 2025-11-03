@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://d3ww40qkxw5eq"]
 
-[ext_resource type="Script" uid="uid://bq8fmg2adhnar" path="res://dialogue_interact.gd" id="1_a3tgi"]
+[ext_resource type="Script" uid="uid://bq8fmg2adhnar" path="res://Scripts/DialogueSystem/dialogue_interact.gd" id="1_a3tgi"]
 [ext_resource type="Resource" uid="uid://bbp52doyp35ev" path="res://Resources/SungChinWoo.tres" id="2_0popp"]
 [ext_resource type="FontFile" uid="uid://du4o5kkhgafum" path="res://Assets/Fonts/PixelOperator8-Bold.ttf" id="8_rkvib"]
 
@@ -20,7 +20,7 @@ offset_bottom = -16.0
 theme_override_colors/font_color = Color(0.95445794, 3.6098063e-06, 1.347661e-06, 1)
 theme_override_fonts/font = ExtResource("8_rkvib")
 theme_override_font_sizes/font_size = 8
-text = "E- INTERACT"
+text = "F- INTERACT"
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 128
