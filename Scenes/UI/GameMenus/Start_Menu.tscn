@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://d0aadsv0uaoyf"]
 
 [ext_resource type="Texture2D" uid="uid://hc0h4xm803hm" path="res://Assets/Backgrounds/Background_NightSky.jpg" id="1_7usfj"]
-[ext_resource type="Script" uid="uid://8inuq8qijvff" path="res://GameMenus/start_menu.gd" id="1_x858q"]
+[ext_resource type="Script" uid="uid://8inuq8qijvff" path="res://Scripts/UI/GameMenus/start_menu.gd" id="1_x858q"]
 [ext_resource type="FontFile" uid="uid://p47ydk5quyq2" path="res://Assets/Tutorial Open Assets/brackeys_platformer_assets/fonts/PixelOperator8-Bold.ttf" id="3_x858q"]
 [ext_resource type="PackedScene" uid="uid://brc3fv7pjl1bv" path="res://Scenes/UI/GameMenus/Options_Menu.tscn" id="4_4yw8f"]
 [ext_resource type="AudioStream" uid="uid://c765oi3kij635" path="res://Assets/Tutorial Open Assets/brackeys_platformer_assets/music/time_for_adventure.mp3" id="5_8p7f5"]
