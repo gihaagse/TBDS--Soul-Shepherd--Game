@@ -1,4 +1,4 @@
-[gd_scene load_steps=90 format=3 uid="uid://c5ongupm07qh3"]
+[gd_scene load_steps=91 format=3 uid="uid://c5ongupm07qh3"]
 
 [ext_resource type="Script" uid="uid://bw7ujmm53vwsq" path="res://Scripts/Player/General/playermain.gd" id="1_qr1w5"]
 [ext_resource type="PackedScene" uid="uid://cvgjcwqn6k8eu" path="res://Scenes/UI/Overlay/health.tscn" id="2_ythyg"]
@@ -20,6 +20,7 @@
 [ext_resource type="Script" uid="uid://cjb2yxf6iu2g1" path="res://Scripts/Player/States/Player_Wallslide.gd" id="18_j6uq4"]
 [ext_resource type="Script" uid="uid://dchumex8trwnx" path="res://Scripts/Player/General/arsenal.gd" id="19_h5u0x"]
 [ext_resource type="Script" uid="uid://b84gqgcp4m5db" path="res://Scripts/Player/States/Player_Walljump.gd" id="19_ythyg"]
+[ext_resource type="Script" uid="uid://bmir0r6qwki3l" path="res://Scenes/Player/Player_Doublejump.gd" id="20_bmb2s"]
 [ext_resource type="PackedScene" uid="uid://khbs6icahh14" path="res://Scenes/Weapons/MeleeWeapon.tscn" id="20_po18e"]
 [ext_resource type="AudioStream" uid="uid://c283ary013yu8" path="res://Assets/Tutorial Open Assets/brackeys_platformer_assets/sounds/one pice jump sfx.wav" id="21_v37cr"]
 [ext_resource type="AudioStream" uid="uid://eb7gjbavvgb3" path="res://Assets/Tutorial Open Assets/brackeys_platformer_assets/sounds/Landing sfx.wav" id="22_8d028"]
@@ -542,7 +543,6 @@ jumpsfx = NodePath("../../jumpsfx")
 
 [node name="Falling" type="Node" parent="FiniteStateMachine" node_paths=PackedStringArray("dash_cooldown", "landing_sfx", "jumpsfx")]
 script = ExtResource("12_mwii3")
-extra_jumps = 0
 dash_cooldown = NodePath("../../Timers/DashCooldown")
 landing_sfx = NodePath("../../LandingSFX")
 brake_force = 2
@@ -592,6 +592,10 @@ jumpsfx = NodePath("../../jumpsfx")
 [node name="Timer" type="Timer" parent="FiniteStateMachine/Walljump"]
 wait_time = 0.2
 one_shot = true
+
+[node name="Doublejump" type="Node" parent="FiniteStateMachine" node_paths=PackedStringArray("jumpsfx")]
+script = ExtResource("20_bmb2s")
+jumpsfx = NodePath("../../jumpsfx")
 
 [node name="ShootPoint" type="Node2D" parent="."]
 position = Vector2(14, 0)

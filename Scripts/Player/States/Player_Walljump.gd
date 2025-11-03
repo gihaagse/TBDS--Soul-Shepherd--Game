@@ -16,12 +16,10 @@ func Enter():
 	#sprite.play("WallSlide")
 	wallslide_dust_particle = player.get_node("WallslideDustParticle")
 	wall_jump_particle = player.get_node("WallJumpParticle")
-	print("in de walljump state")
 	
 	var direction := Input.get_axis("Left", "Right")
 	
 	#if Input.is_action_just_released("Jump") and player.is_on_wall_only():
-	print("in walljump in code")
 	if wallslide_dust_particle.emitting:
 		wallslide_dust_particle.emitting = false
 	var animated_sprite = player.get_node("AnimatedSprite2D")

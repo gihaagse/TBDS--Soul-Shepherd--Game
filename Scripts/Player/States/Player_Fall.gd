@@ -1,9 +1,9 @@
 extends PlayerState
 class_name Player_Fall
 
-var double_jumps_left : int
+#var double_jumps_left : int
 
-@export var extra_jumps : int = 1
+#@export var extra_jumps : int = 1
 @export var dash_cooldown : Timer
 @export var landing_sfx : AudioStreamPlayer2D
 
@@ -24,9 +24,10 @@ var last_velocity_y : float = 0.0
 
 func Enter():
 	super()
-	double_jumps_left = extra_jumps
+	#double_jumps_left = extra_jumps
 	sprite.play("Panda_Jump")
 	last_velocity_y = 0.0
+	#print("Double jumps left: ", jumps_left)
 
 func Update(_delta:float) -> void:
 	if player.velocity.y > 0:
@@ -35,7 +36,7 @@ func Update(_delta:float) -> void:
 	if player.is_on_floor():
 		_play_landing_effects()
 		state_transition.emit(self, "Idling")
-		double_jumps_left = extra_jumps
+		jumps_left = 1
 
 	if Input.is_action_just_pressed("LeftClick") and get_item_by_name("Weapon", slots).visible:
 		state_transition.emit(self, "Attack1")
@@ -49,9 +50,8 @@ func Update(_delta:float) -> void:
 		state_transition.emit(self, "WallJump")
 
 func Phys_Update(_delta:float) -> void:
-	if Input.is_action_just_pressed("Jump") and not player.is_on_floor() and double_jumps_left > 0:
-		player.velocity.y = -jump_force
-		double_jumps_left -= 1
+	if Input.is_action_just_pressed("Jump") and not player.is_on_floor() and jumps_left > 0:
+		state_transition.emit(self, "Doublejump")
 	movement(_delta)
 
 func _play_landing_effects() -> void:

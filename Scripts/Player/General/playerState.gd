@@ -2,6 +2,7 @@ extends Node
 class_name PlayerState
 
 signal state_transition
+static var jumps_left: int = 1
 
 var player : CharacterBody2D
 var sprite : AnimatedSprite2D
