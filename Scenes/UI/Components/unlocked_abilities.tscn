@@ -1,0 +1,28 @@
+[gd_scene load_steps=2 format=3 uid="uid://b47i8obkx3ccv"]
+
+[ext_resource type="Script" uid="uid://uyff2h6tsqeq" path="res://Scripts/UI/Components/unlocked_abilities.gd" id="1_qo0gn"]
+
+[node name="UnlockedAbilities" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qo0gn")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+offset_right = 212.0
+offset_bottom = 58.0
+
+[node name="ShowButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "See current active abilities"
+
+[node name="abilityLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
+text = "abilities"

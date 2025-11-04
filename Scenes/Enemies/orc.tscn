@@ -1,10 +1,11 @@
-[gd_scene load_steps=19 format=3 uid="uid://c2qbrpracjsi5"]
+[gd_scene load_steps=20 format=3 uid="uid://c2qbrpracjsi5"]
 
 [ext_resource type="PackedScene" uid="uid://cvgjcwqn6k8eu" path="res://Scenes/UI/Overlay/health.tscn" id="1_3xw0u"]
 [ext_resource type="Script" uid="uid://bj3o2h06hj6ck" path="res://Scripts/Enemies/enemy.gd" id="1_vumo0"]
 [ext_resource type="Texture2D" uid="uid://clxtedvmnmjck" path="res://Assets/Tutorial Open Assets/Tiny RPG Character Asset Pack v1.03 -Free Soldier&Orc/Characters(100x100)/Orc/Orc/Orc-Idle.png" id="1_ws5q1"]
 [ext_resource type="Shader" uid="uid://o6ancnl5jgcr" path="res://Shaders/Blink.gdshader" id="2_kapy6"]
 [ext_resource type="FontFile" uid="uid://x2dwsfc3en6q" path="res://Assets/Tutorial Open Assets/brackeys_platformer_assets/fonts/PixelOperator8.ttf" id="4_6hc3a"]
+[ext_resource type="PackedScene" uid="uid://d3ww40qkxw5eq" path="res://Scenes/Dialogue/dialogue_interact.tscn" id="6_tq37w"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6hc3a"]
 resource_local_to_scene = true
@@ -57,9 +58,55 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_d22v1")
 }],
+"loop": false,
+"name": &"Attack_shoot",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kapy6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6hc3a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vumo0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_31h1d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dfwqp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d22v1")
+}],
 "loop": true,
 "name": &"Idle",
 "speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kapy6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6hc3a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vumo0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_31h1d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dfwqp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d22v1")
+}],
+"loop": true,
+"name": &"Walking",
+"speed": 5.0
 }]
 
 [sub_resource type="Gradient" id="Gradient_vumo0"]
@@ -100,9 +147,8 @@ shootPoint = NodePath("CollisionShape2D")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 material = SubResource("ShaderMaterial_6hc3a")
 sprite_frames = SubResource("SpriteFrames_wpvyt")
-animation = &"Idle"
+animation = &"Attack_shoot"
 autoplay = "Idle"
-frame_progress = 0.019300163
 
 [node name="Label" type="Label" parent="."]
 offset_left = -20.0
@@ -130,7 +176,6 @@ process_material = SubResource("ParticleProcessMaterial_dfwqp")
 collision_mask = 4
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
-visible = false
 scale = Vector2(4.425, 0.41)
 shape = SubResource("CircleShape2D_vumo0")
 
@@ -141,7 +186,10 @@ shape = SubResource("CircleShape2D_3xw0u")
 position = Vector2(10, 0)
 target_position = Vector2(0, 10)
 
+[node name="DialogueInteract" parent="." instance=ExtResource("6_tq37w")]
+
 [connection signal="hp_changed" from="Health" to="." method="_on_health_hp_changed"]
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="timeout" from="in_range_shoot_timer" to="." method="_on_timer_timeout"]
 [connection signal="body_shape_entered" from="Area2D" to="." method="_on_area_2d_body_shape_entered"]
 [connection signal="body_shape_exited" from="Area2D" to="." method="_on_area_2d_body_shape_exited"]

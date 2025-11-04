@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://b1wpf7mxi7ax8"]
+
+[ext_resource type="PackedScene" uid="uid://c2h4nou7l3e2w" path="res://Scenes/UI/Components/unlock_abilities.tscn" id="1_scrg1"]
+[ext_resource type="PackedScene" uid="uid://b47i8obkx3ccv" path="res://Scenes/UI/Components/unlocked_abilities.tscn" id="2_2qf85"]
+[ext_resource type="PackedScene" uid="uid://bu1njwcmxoh18" path="res://Scenes/UI/Components/delete_abilities.tscn" id="2_5iuyt"]
+
+[node name="AbilityDebugMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+offset_right = 360.0
+theme_override_constants/separation = 180
+
+[node name="UnlockAbilities" parent="HBoxContainer" instance=ExtResource("1_scrg1")]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="DeleteAbilities" parent="HBoxContainer" instance=ExtResource("2_5iuyt")]
+layout_mode = 2
+
+[node name="UnlockedAbilities" parent="HBoxContainer" instance=ExtResource("2_2qf85")]
+layout_mode = 2
+size_flags_horizontal = 3

@@ -1,0 +1,77 @@
+[gd_scene load_steps=9 format=3 uid="uid://cde6qxgsfv3w"]
+
+[sub_resource type="Curve" id="Curve_3ppkp"]
+_data = [Vector2(0, 0.6292135), 0.0, 1.9719098, 0, 0, Vector2(0.525641, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.49438208), -2.2899609, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_kqv6k"]
+curve = SubResource("Curve_3ppkp")
+
+[sub_resource type="Curve" id="Curve_pifho"]
+_limits = [0.0, 8.0, 0.0, 1.0]
+_data = [Vector2(0, 0), 0.0, 33.887646, 0, 0, Vector2(0.5, 8), 5.769384e-06, 5.769384e-06, 0, 0, Vector2(1, 0), -43.382065, 0.0, 0, 0]
+point_count = 3
+metadata/_snap_enabled = true
+metadata/_snap_count = 2
+
+[sub_resource type="Curve" id="Curve_sg45b"]
+_data = [Vector2(0, 0.28089893), 0.0, 0.6009629, 0, 0, Vector2(0.50427353, 0.52808994), 0.0, 0.0, 0, 0, Vector2(1, 0.23595512), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Curve" id="Curve_lw5td"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveXYZTexture" id="CurveXYZTexture_d0fdo"]
+curve_x = SubResource("Curve_pifho")
+curve_y = SubResource("Curve_sg45b")
+curve_z = SubResource("Curve_lw5td")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_xa8v4"]
+lifetime_randomness = 0.8
+emission_shape_scale = Vector3(3, 10, 1)
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+spread = 0.0
+initial_velocity_min = 125.0
+initial_velocity_max = 200.0
+gravity = Vector3(0, 0, 0)
+scale_min = 0.0
+scale_max = 1.1999999
+scale_curve = SubResource("CurveXYZTexture_d0fdo")
+scale_over_velocity_max = 1000.0
+alpha_curve = SubResource("CurveTexture_kqv6k")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ygmf8"]
+lifetime_randomness = 0.5
+emission_shape_scale = Vector3(3, 10, 1)
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+spread = 0.0
+initial_velocity_min = 125.0
+initial_velocity_max = 180.0
+gravity = Vector3(0, 0, 0)
+scale_min = 0.0
+scale_max = 1.1999999
+scale_curve = SubResource("CurveXYZTexture_d0fdo")
+scale_over_velocity_max = 386.03
+color = Color(0, 0, 0, 1)
+alpha_curve = SubResource("CurveTexture_kqv6k")
+
+[node name="DashLines" type="Node2D"]
+
+[node name="DashLinesParticleW" type="GPUParticles2D" parent="."]
+emitting = false
+amount = 50
+lifetime = 0.28
+randomness = 0.6
+fixed_fps = 60
+process_material = SubResource("ParticleProcessMaterial_xa8v4")
+
+[node name="DashLinesParticleB" type="GPUParticles2D" parent="."]
+emitting = false
+amount = 50
+lifetime = 0.28
+randomness = 0.6
+fixed_fps = 60
+process_material = SubResource("ParticleProcessMaterial_ygmf8")

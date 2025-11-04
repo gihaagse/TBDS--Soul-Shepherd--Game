@@ -1,4 +1,4 @@
-[gd_scene load_steps=85 format=3 uid="uid://c5ongupm07qh3"]
+[gd_scene load_steps=93 format=3 uid="uid://c5ongupm07qh3"]
 
 [ext_resource type="Script" uid="uid://bw7ujmm53vwsq" path="res://Scripts/Player/General/playermain.gd" id="1_qr1w5"]
 [ext_resource type="PackedScene" uid="uid://cvgjcwqn6k8eu" path="res://Scenes/UI/Overlay/health.tscn" id="2_ythyg"]
@@ -11,24 +11,94 @@
 [ext_resource type="Script" uid="uid://d2q03jes32ygw" path="res://Scripts/Central/FSM.gd" id="9_1agin"]
 [ext_resource type="Texture2D" uid="uid://ccdls2066rxv2" path="res://Assets/Sprites/panda_small_noHat.png" id="9_ythyg"]
 [ext_resource type="Script" uid="uid://bob4e3bisalwi" path="res://Scripts/Player/States/Player_Idle.gd" id="10_2jnj1"]
+[ext_resource type="AudioStream" uid="uid://de7lye0f5nucm" path="res://Assets/Audio/SFX/Player/dash sfx.wav" id="10_bmb2s"]
 [ext_resource type="Script" uid="uid://6010alpy0i3r" path="res://Scripts/Player/States/Player_Move.gd" id="11_enij7"]
 [ext_resource type="Script" uid="uid://fsjhyfbnjf2i" path="res://Scripts/Player/States/Player_Fall.gd" id="12_mwii3"]
 [ext_resource type="Script" uid="uid://p5k85sn5ogtw" path="res://Scripts/Player/States/Player_Attack1.gd" id="13_2aanf"]
 [ext_resource type="Script" uid="uid://q385houao11" path="res://Scripts/Player/States/Player_AirAttack1.gd" id="14_m6ahd"]
 [ext_resource type="Script" uid="uid://3282nnsu13lp" path="res://Scripts/Player/States/Player_Dash.gd" id="15_ogmfp"]
-[ext_resource type="AudioStream" uid="uid://yx5u5ux7t714" path="res://Assets/Audio/SFX/Player/dash2.wav" id="16_ixrbb"]
 [ext_resource type="Script" uid="uid://75v06whe5qe4" path="res://Scripts/Player/States/Player_Bow.gd" id="17_ei2r2"]
 [ext_resource type="Script" uid="uid://cjb2yxf6iu2g1" path="res://Scripts/Player/States/Player_Wallslide.gd" id="18_j6uq4"]
 [ext_resource type="Script" uid="uid://dchumex8trwnx" path="res://Scripts/Player/General/arsenal.gd" id="19_h5u0x"]
+[ext_resource type="Script" uid="uid://b84gqgcp4m5db" path="res://Scripts/Player/States/Player_Walljump.gd" id="19_ythyg"]
+[ext_resource type="Script" uid="uid://bmir0r6qwki3l" path="res://Scenes/Player/Player_Doublejump.gd" id="20_bmb2s"]
 [ext_resource type="PackedScene" uid="uid://khbs6icahh14" path="res://Scenes/Weapons/MeleeWeapon.tscn" id="20_po18e"]
 [ext_resource type="AudioStream" uid="uid://c283ary013yu8" path="res://Assets/Tutorial Open Assets/brackeys_platformer_assets/sounds/one pice jump sfx.wav" id="21_v37cr"]
 [ext_resource type="AudioStream" uid="uid://eb7gjbavvgb3" path="res://Assets/Tutorial Open Assets/brackeys_platformer_assets/sounds/Landing sfx.wav" id="22_8d028"]
 [ext_resource type="AudioStream" uid="uid://bi3l61fpn0btr" path="res://Assets/Audio/SFX/Player/hitHurt.wav" id="23_0liok"]
 [ext_resource type="Texture2D" uid="uid://k3lrs06wxgfa" path="res://Assets/Textures/test smoke texture.png" id="24_gyc8k"]
 [ext_resource type="Texture2D" uid="uid://c8kqnetnxng1o" path="res://Assets/Textures/test smoke texture lower res.png" id="25_qflxp"]
+[ext_resource type="PackedScene" uid="uid://cde6qxgsfv3w" path="res://Scenes/Effects/dash_lines.tscn" id="26_ythyg"]
+[ext_resource type="PackedScene" uid="uid://b3qfe4rcpk6rv" path="res://Scenes/Effects/dash_smoke.tscn" id="27_bmb2s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lfmf2"]
 size = Vector2(12, 18)
+
+[sub_resource type="Gradient" id="Gradient_pisgm"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_31h1d"]
+gradient = SubResource("Gradient_pisgm")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_b1ygp"]
+lifetime_randomness = 1.0
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 5.0
+direction = Vector3(0, -0.5, 0)
+spread = 90.0
+initial_velocity_min = 50.0
+initial_velocity_max = 100.0
+gravity = Vector3(0, 98, 0)
+damping_min = 50.000004
+damping_max = 100.00001
+scale_min = 0.19999999
+color = Color(1, 0.07058824, 0.13333334, 1)
+color_ramp = SubResource("GradientTexture1D_31h1d")
+
+[sub_resource type="Curve" id="Curve_gpjlu"]
+_data = [Vector2(0, 0.036308646), 0.0, 0.4345806, 0, 0, Vector2(1, 0), -0.24494608, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_qemgg"]
+colors = PackedColorArray(1, 1, 1, 1, 0.5529556, 0.55295557, 0.55295557, 1)
+
+[sub_resource type="Curve" id="Curve_8viyr"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -3.3108628, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_sm0op"]
+curve = SubResource("Curve_8viyr")
+
+[sub_resource type="Curve" id="Curve_755ss"]
+_data = [Vector2(0, 0.03), 0.0, 0.10927659, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+metadata/_snap_enabled = true
+metadata/_snap_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_bbimk"]
+curve = SubResource("Curve_755ss")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_m0h3t"]
+lifetime_randomness = 0.35
+particle_flag_disable_z = true
+angle_min = 214.80002
+angle_max = 720.0
+direction = Vector3(1, 12, 0)
+spread = 35.0
+initial_velocity_min = 367.63998
+initial_velocity_max = 529.39
+angular_velocity_min = -275.94
+angular_velocity_max = 231.44998
+orbit_velocity_min = -0.49999994
+orbit_velocity_max = 0.5000001
+gravity = Vector3(0, -1000, 0)
+radial_accel_min = -2.2351742e-06
+radial_accel_max = 34.559998
+damping_min = 58.087
+damping_max = 100.00001
+scale_curve = SubResource("CurveTexture_bbimk")
+alpha_curve = SubResource("CurveTexture_sm0op")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_b1ygp"]
 resource_local_to_scene = true
@@ -399,78 +469,13 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="Gradient" id="Gradient_pisgm"]
-colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_31h1d"]
-gradient = SubResource("Gradient_pisgm")
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_b1ygp"]
-lifetime_randomness = 1.0
-particle_flag_disable_z = true
-emission_shape = 1
-emission_sphere_radius = 5.0
-direction = Vector3(0, -0.5, 0)
-spread = 90.0
-initial_velocity_min = 50.0
-initial_velocity_max = 100.0
-gravity = Vector3(0, 98, 0)
-damping_min = 50.000004
-damping_max = 100.00001
-scale_min = 0.19999999
-color = Color(1, 0.07058824, 0.13333334, 1)
-color_ramp = SubResource("GradientTexture1D_31h1d")
-
-[sub_resource type="Curve" id="Curve_gpjlu"]
-_data = [Vector2(0, 0.036308646), 0.0, 0.4345806, 0, 0, Vector2(1, 0), -0.24494608, 0.0, 0, 0]
-point_count = 2
-
-[sub_resource type="Gradient" id="Gradient_qemgg"]
-colors = PackedColorArray(1, 1, 1, 1, 0.5529556, 0.55295557, 0.55295557, 1)
-
-[sub_resource type="Curve" id="Curve_8viyr"]
-_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -3.3108628, 0.0, 0, 0]
-point_count = 2
-
-[sub_resource type="CurveTexture" id="CurveTexture_sm0op"]
-curve = SubResource("Curve_8viyr")
-
-[sub_resource type="Curve" id="Curve_755ss"]
-_data = [Vector2(0, 0.03), 0.0, 0.10927659, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
-point_count = 2
-metadata/_snap_enabled = true
-metadata/_snap_count = 2
-
-[sub_resource type="CurveTexture" id="CurveTexture_bbimk"]
-curve = SubResource("Curve_755ss")
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_m0h3t"]
-lifetime_randomness = 0.35
-particle_flag_disable_z = true
-angle_min = 214.80002
-angle_max = 720.0
-direction = Vector3(1, 12, 0)
-spread = 35.0
-initial_velocity_min = 367.63998
-initial_velocity_max = 529.39
-angular_velocity_min = -275.94
-angular_velocity_max = 231.44998
-orbit_velocity_min = -0.49999994
-orbit_velocity_max = 0.5000001
-gravity = Vector3(0, -1000, 0)
-radial_accel_min = -2.2351742e-06
-radial_accel_max = 34.559998
-damping_min = 58.087
-damping_max = 100.00001
-scale_curve = SubResource("CurveTexture_bbimk")
-alpha_curve = SubResource("CurveTexture_sm0op")
-
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("finite_state_machine", "hp") groups=["Player"]]
 z_index = 5
 collision_layer = 4
 script = ExtResource("1_qr1w5")
 finite_state_machine = NodePath("FiniteStateMachine")
 hp = NodePath("Health")
+velocity2D = null
 
 [node name="Health" parent="." instance=ExtResource("2_ythyg")]
 
@@ -506,7 +511,6 @@ jumpsfx = NodePath("../../jumpsfx")
 
 [node name="Falling" type="Node" parent="FiniteStateMachine" node_paths=PackedStringArray("dash_cooldown", "landing_sfx", "jumpsfx")]
 script = ExtResource("12_mwii3")
-extra_jumps = 0
 dash_cooldown = NodePath("../../Timers/DashCooldown")
 landing_sfx = NodePath("../../LandingSFX")
 brake_force = 2
@@ -533,7 +537,8 @@ is_gravity = false
 jumpsfx = NodePath("../../jumpsfx")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="FiniteStateMachine/Dash"]
-stream = ExtResource("16_ixrbb")
+stream = ExtResource("10_bmb2s")
+volume_db = -15.0
 
 [node name="Archery" type="Node" parent="FiniteStateMachine" node_paths=PackedStringArray("jumpsfx")]
 script = ExtResource("17_ei2r2")
@@ -548,6 +553,18 @@ jumpsfx = NodePath("../../jumpsfx")
 [node name="Timer" type="Timer" parent="FiniteStateMachine/Wallsliding"]
 wait_time = 0.2
 one_shot = true
+
+[node name="Walljump" type="Node" parent="FiniteStateMachine" node_paths=PackedStringArray("jumpsfx")]
+script = ExtResource("19_ythyg")
+jumpsfx = NodePath("../../jumpsfx")
+
+[node name="Timer" type="Timer" parent="FiniteStateMachine/Walljump"]
+wait_time = 0.2
+one_shot = true
+
+[node name="Doublejump" type="Node" parent="FiniteStateMachine" node_paths=PackedStringArray("jumpsfx")]
+script = ExtResource("20_bmb2s")
+jumpsfx = NodePath("../../jumpsfx")
 
 [node name="ShootPoint" type="Node2D" parent="."]
 position = Vector2(14, 0)
@@ -670,6 +687,16 @@ speed_scale = 0.5
 explosiveness = 1.0
 fixed_fps = 60
 process_material = SubResource("ParticleProcessMaterial_m0h3t")
+
+[node name="DashLines" parent="." instance=ExtResource("26_ythyg")]
+
+[node name="DashSmoke" parent="." instance=ExtResource("27_bmb2s")]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_b1ygp")
+sprite_frames = SubResource("SpriteFrames_gymyn")
+animation = &"Panda_32"
+autoplay = "Idle"
 
 [connection signal="player_hit" from="." to="Health" method="_on_player_player_hit"]
 [connection signal="hp_changed" from="Health" to="." method="_on_health_hp_changed"]

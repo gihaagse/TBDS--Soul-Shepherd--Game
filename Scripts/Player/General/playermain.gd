@@ -1,4 +1,5 @@
 extends CharacterBody2D
+class_name Player
 
 signal player_hit
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
@@ -13,6 +14,8 @@ var paused = false
 @export var velocity2D : Vector2
 @onready var game_manager: Node = %GameManager
 @onready var player_hitsfx: AudioStreamPlayer2D = $PlayerHit
+
+
 
 func _ready() -> void:
 	pass
