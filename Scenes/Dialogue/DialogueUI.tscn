@@ -138,12 +138,12 @@ flat = true
 
 [node name="Typing" type="AudioStreamPlayer2D" parent="Node"]
 stream = ExtResource("4_b7wac")
-volume_db = 7.5
+volume_db = 5.0
 
 [node name="Continue" type="AudioStreamPlayer2D" parent="Node"]
 stream = ExtResource("5_jlpoj")
-volume_db = 15.0
+volume_db = 5.0
 
 [node name="Choice" type="AudioStreamPlayer2D" parent="Node"]
 stream = ExtResource("6_jlpoj")
-volume_db = 6.0
+volume_db = -7.5
