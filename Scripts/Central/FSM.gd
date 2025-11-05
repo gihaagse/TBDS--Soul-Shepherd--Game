@@ -32,6 +32,16 @@ func _physics_process(delta: float) -> void:
 func on_child_transition(state : PlayerState, new_state_name : String):
 	if state != current_state:
 		return
+	
+	
+	var index = AbilityData.get_value_from_ability_name(new_state_name)
+	#print("de index is: ", index)
+	if index == null:
+		print("Not in ablitylist")
+		return
+		
+	if index not in AbilityData.unlocked_abilities:
+		return
 		
 	var new_state : PlayerState = states.get(new_state_name.to_lower())
 	if !new_state:

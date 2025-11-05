@@ -21,7 +21,7 @@ func add_options_mode_items() -> void:
 		
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 	
 func on_window_mode_selected(index : int) -> void:
@@ -46,16 +46,12 @@ func select_current_window_mode() -> void:
 		DisplayServer.WINDOW_MODE_FULLSCREEN:
 			if borderless:
 				option_button.select(3)
-				print("fs")
 			else:
 				option_button.select(0)
-				print("fs no border")
 		DisplayServer.WINDOW_MODE_WINDOWED:
 			if borderless:
 				option_button.select(2)
-				print("win borderless")
 			else:
 				option_button.select(1)
-				print("window")
 		_:
 			pass

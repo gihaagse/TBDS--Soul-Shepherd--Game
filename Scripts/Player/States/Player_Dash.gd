@@ -18,11 +18,13 @@ func Exit():
 func Phys_Update(_delta:float):
 	if !dash_cooldown.is_stopped():
 		state_transition.emit(self, "Idling")
+		UtilsEffect.dash_effect(player, false)
 		return
 	else:
 		var direction = -1 if sprite.flip_h else 1
 		player.velocity.y = 0
 		player.velocity.x = direction * move_speed
+		UtilsEffect.dash_effect(player, true, direction)
 	player.move_and_slide()
 	if player.is_on_wall():
 		_on_distance_travelled()
@@ -34,4 +36,5 @@ func Phys_Update(_delta:float):
 func _on_distance_travelled() -> void:
 	dash_cooldown.start()
 	canvas_layer.start_timer()
+	UtilsEffect.dash_effect(player, false)
 	state_transition.emit(self, "Idling")

@@ -16,6 +16,7 @@ func start_dialogue(dialogue_resource: DialogueResource):
 	if is_dialogue_active:
 		return
 	
+	print("STARTING DIALOGUE")
 	current_dialogue = dialogue_resource
 	current_entry = dialogue_resource.dialogue_data
 	current_line_index = 0

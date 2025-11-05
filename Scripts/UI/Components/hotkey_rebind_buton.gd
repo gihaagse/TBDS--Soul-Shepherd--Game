@@ -9,7 +9,6 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	print("inputs uit")
 	set_process_unhandled_key_input(false)
 	set_action_name()
 	set_text_for_key()

@@ -1,0 +1,59 @@
+[gd_scene load_steps=9 format=3 uid="uid://b3qfe4rcpk6rv"]
+
+[ext_resource type="Texture2D" uid="uid://k3lrs06wxgfa" path="res://Assets/Textures/test smoke texture.png" id="1_771hu"]
+
+[sub_resource type="Curve" id="Curve_nlp85"]
+_data = [Vector2(0, 0.52808994), 0.0, 4.780388, 0, 0, Vector2(0.26495728, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.24719107), -3.4294078, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_uo1rv"]
+curve = SubResource("Curve_nlp85")
+
+[sub_resource type="Curve" id="Curve_qcxsn"]
+_data = [Vector2(0, 0), 0.0, 0.5477535, 0, 0, Vector2(0.24786326, 0.6067416), 3.9438193, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_sjeg0"]
+curve = SubResource("Curve_qcxsn")
+
+[sub_resource type="Curve" id="Curve_pp6px"]
+_limits = [0.01, 0.1, 0.0, 1.0]
+_data = [Vector2(0, 0.0136), 0.0, 0.0, 0, 0, Vector2(0.61, 0.0217), 0.015590281, 0.0, 0, 0]
+point_count = 2
+metadata/_snap_enabled = true
+metadata/_snap_count = 100
+
+[sub_resource type="CurveTexture" id="CurveTexture_lslf1"]
+curve = SubResource("Curve_pp6px")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_5iinx"]
+particle_flag_disable_z = true
+angle_min = -720.0
+angle_max = 720.0
+spread = 10.0
+initial_velocity_min = 75.0
+initial_velocity_max = 100.0
+angular_velocity_min = -1.6093254e-05
+angular_velocity_max = 719.99994
+orbit_velocity_min = -0.6999999
+orbit_velocity_max = 0.60000014
+orbit_velocity_curve = SubResource("CurveTexture_sjeg0")
+gravity = Vector3(0, 0, 0)
+scale_curve = SubResource("CurveTexture_lslf1")
+alpha_curve = SubResource("CurveTexture_uo1rv")
+
+[node name="DashSmoke" type="Node2D"]
+
+[node name="RoundSmoke" type="GPUParticles2D" parent="."]
+position = Vector2(3, -2)
+emitting = false
+amount = 30
+amount_ratio = 0.9
+texture = ExtResource("1_771hu")
+lifetime = 0.33
+one_shot = true
+speed_scale = 1.2
+explosiveness = 0.85
+randomness = 0.4
+fixed_fps = 60
+process_material = SubResource("ParticleProcessMaterial_5iinx")

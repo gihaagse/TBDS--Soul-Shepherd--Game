@@ -1,12 +1,13 @@
 extends CanvasLayer
+class_name  DialogueScene
 
-@onready var panel_container = $PanelContainer
-@onready var npc_name = $PanelContainer/MarginContainer/MainContainer/ProfileIconContainer/NPCName
-@onready var npc_text = $PanelContainer/MarginContainer/MainContainer/NPCLinesAndChoicesContainer/TextBubble/NPCText
-@onready var npc_icon = $PanelContainer/MarginContainer/MainContainer/ProfileIconContainer/NPCIcon
-@onready var choices_container = $PanelContainer/MarginContainer/MainContainer/NPCLinesAndChoicesContainer/ChoicesContainer
-@onready var continue_button = $PanelContainer/ContinueButton
-@onready var choice_template = $PanelContainer/MarginContainer/MainContainer/NPCLinesAndChoicesContainer/ChoicesContainer/ChoiceTemplate
+@onready var panel_container = $FullSize/PanelContainer
+@onready var npc_name = $FullSize/PanelContainer/MarginContainer/MainContainer/ProfileIconContainer/NPCName
+@onready var npc_text = $FullSize/PanelContainer/MarginContainer/MainContainer/NPCLinesAndChoicesContainer/TextBubble/NPCText
+@onready var npc_icon = $FullSize/PanelContainer/MarginContainer/MainContainer/ProfileIconContainer/NPCIcon
+@onready var choices_container = $FullSize/PanelContainer/MarginContainer/MainContainer/NPCLinesAndChoicesContainer/ChoicesContainer
+@onready var continue_button = $FullSize/PanelContainer/ContinueButton
+@onready var choice_template = $FullSize/PanelContainer/MarginContainer/MainContainer/NPCLinesAndChoicesContainer/ChoicesContainer/ChoiceTemplate
 
 @onready var typing_sfx = $Node/Typing
 @onready var continue_sfx = $Node/Continue
@@ -20,6 +21,7 @@ var text_speed: float = 0.03
 var animate_text_timer: Timer = null
 
 func _ready():
+	visible = false
 	DialogueManager.dialogue_started.connect(_on_dialogue_started)
 	DialogueManager.dialogue_ended.connect(_on_dialogue_ended)
 	DialogueManager.text_displayed.connect(_on_text_displayed)
@@ -38,6 +40,7 @@ func _ready():
 		animate_text_timer.timeout.connect(_on_animate_text_timer)
 
 func _on_dialogue_started(dialogue_resource: DialogueResource):
+	visible = true
 	npc_icon.texture = dialogue_resource.npc_icon
 	npc_name.text = dialogue_resource.name
 	

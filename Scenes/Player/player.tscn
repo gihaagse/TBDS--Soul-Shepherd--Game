@@ -9,22 +9,27 @@
 [ext_resource type="Texture2D" uid="uid://dyha5krb56o34" path="res://Assets/Sprites/Panda_SideProfile-Sheet.png" id="7_4no11"]
 [ext_resource type="Texture2D" uid="uid://det0un1vj4110" path="res://Assets/Sprites/panda_small.png" id="8_fcwna"]
 [ext_resource type="Script" uid="uid://d2q03jes32ygw" path="res://Scripts/Central/FSM.gd" id="9_1agin"]
+[ext_resource type="Texture2D" uid="uid://ccdls2066rxv2" path="res://Assets/Sprites/panda_small_noHat.png" id="9_ythyg"]
 [ext_resource type="Script" uid="uid://bob4e3bisalwi" path="res://Scripts/Player/States/Player_Idle.gd" id="10_2jnj1"]
+[ext_resource type="AudioStream" uid="uid://de7lye0f5nucm" path="res://Assets/Audio/SFX/Player/dash sfx.wav" id="10_bmb2s"]
 [ext_resource type="Script" uid="uid://6010alpy0i3r" path="res://Scripts/Player/States/Player_Move.gd" id="11_enij7"]
 [ext_resource type="Script" uid="uid://fsjhyfbnjf2i" path="res://Scripts/Player/States/Player_Fall.gd" id="12_mwii3"]
 [ext_resource type="Script" uid="uid://p5k85sn5ogtw" path="res://Scripts/Player/States/Player_Attack1.gd" id="13_2aanf"]
 [ext_resource type="Script" uid="uid://q385houao11" path="res://Scripts/Player/States/Player_AirAttack1.gd" id="14_m6ahd"]
 [ext_resource type="Script" uid="uid://3282nnsu13lp" path="res://Scripts/Player/States/Player_Dash.gd" id="15_ogmfp"]
-[ext_resource type="AudioStream" uid="uid://yx5u5ux7t714" path="res://Assets/Audio/SFX/Player/dash2.wav" id="16_ixrbb"]
 [ext_resource type="Script" uid="uid://75v06whe5qe4" path="res://Scripts/Player/States/Player_Bow.gd" id="17_ei2r2"]
 [ext_resource type="Script" uid="uid://cjb2yxf6iu2g1" path="res://Scripts/Player/States/Player_Wallslide.gd" id="18_j6uq4"]
 [ext_resource type="Script" uid="uid://dchumex8trwnx" path="res://Scripts/Player/General/arsenal.gd" id="19_h5u0x"]
+[ext_resource type="Script" uid="uid://b84gqgcp4m5db" path="res://Scripts/Player/States/Player_Walljump.gd" id="19_ythyg"]
+[ext_resource type="Script" uid="uid://bmir0r6qwki3l" path="res://Scenes/Player/Player_Doublejump.gd" id="20_bmb2s"]
 [ext_resource type="PackedScene" uid="uid://khbs6icahh14" path="res://Scenes/Weapons/MeleeWeapon.tscn" id="20_po18e"]
 [ext_resource type="AudioStream" uid="uid://c283ary013yu8" path="res://Assets/Tutorial Open Assets/brackeys_platformer_assets/sounds/one pice jump sfx.wav" id="21_v37cr"]
 [ext_resource type="AudioStream" uid="uid://eb7gjbavvgb3" path="res://Assets/Tutorial Open Assets/brackeys_platformer_assets/sounds/Landing sfx.wav" id="22_8d028"]
 [ext_resource type="AudioStream" uid="uid://bi3l61fpn0btr" path="res://Assets/Audio/SFX/Player/hitHurt.wav" id="23_0liok"]
 [ext_resource type="Texture2D" uid="uid://k3lrs06wxgfa" path="res://Assets/Textures/test smoke texture.png" id="24_gyc8k"]
 [ext_resource type="Texture2D" uid="uid://c8kqnetnxng1o" path="res://Assets/Textures/test smoke texture lower res.png" id="25_qflxp"]
+[ext_resource type="PackedScene" uid="uid://cde6qxgsfv3w" path="res://Scenes/Effects/dash_lines.tscn" id="26_ythyg"]
+[ext_resource type="PackedScene" uid="uid://b3qfe4rcpk6rv" path="res://Scenes/Effects/dash_smoke.tscn" id="27_bmb2s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lfmf2"]
 size = Vector2(12, 18)
@@ -58,30 +63,6 @@ region = Rect2(400, 0, 100, 100)
 [sub_resource type="AtlasTexture" id="AtlasTexture_hnuln"]
 atlas = ExtResource("4_ur3l4")
 region = Rect2(500, 0, 100, 100)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_eksi1"]
-atlas = ExtResource("5_2ahak")
-region = Rect2(300, 400, 100, 100)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_jincj"]
-atlas = ExtResource("5_2ahak")
-region = Rect2(400, 400, 100, 100)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_rqdc0"]
-atlas = ExtResource("5_2ahak")
-region = Rect2(500, 400, 100, 100)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qr1w5"]
-atlas = ExtResource("5_2ahak")
-region = Rect2(600, 400, 100, 100)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ythyg"]
-atlas = ExtResource("5_2ahak")
-region = Rect2(700, 400, 100, 100)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_bmb2s"]
-atlas = ExtResource("5_2ahak")
-region = Rect2(800, 400, 100, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fkybt"]
 atlas = ExtResource("5_2ahak")
@@ -162,6 +143,10 @@ region = Rect2(208, 0, 16, 16)
 [sub_resource type="AtlasTexture" id="AtlasTexture_m6nl3"]
 atlas = ExtResource("8_fcwna")
 region = Rect2(240, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bmb2s"]
+atlas = ExtResource("9_ythyg")
+region = Rect2(368, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hshwv"]
 atlas = ExtResource("8_fcwna")
@@ -262,29 +247,6 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_eksi1")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_jincj")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_rqdc0")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qr1w5")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ythyg")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_bmb2s")
-}],
-"loop": false,
-"name": &"Bow",
-"speed": 15.0
-}, {
-"frames": [{
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_fkybt")
 }, {
 "duration": 1.0,
@@ -367,6 +329,14 @@ animations = [{
 "loop": true,
 "name": &"Panda_Jump",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bmb2s")
+}],
+"loop": false,
+"name": &"Panda_Throw",
+"speed": 15.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -505,6 +475,7 @@ collision_layer = 4
 script = ExtResource("1_qr1w5")
 finite_state_machine = NodePath("FiniteStateMachine")
 hp = NodePath("Health")
+velocity2D = null
 
 [node name="Health" parent="." instance=ExtResource("2_ythyg")]
 
@@ -515,7 +486,7 @@ shape = SubResource("RectangleShape2D_lfmf2")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 material = SubResource("ShaderMaterial_b1ygp")
 sprite_frames = SubResource("SpriteFrames_gymyn")
-animation = &"Panda_32"
+animation = &"Panda_Throw"
 autoplay = "Idle"
 
 [node name="FiniteStateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state", "sprite2D", "player", "weapon", "shootPoint", "holder")]
@@ -540,7 +511,6 @@ jumpsfx = NodePath("../../jumpsfx")
 
 [node name="Falling" type="Node" parent="FiniteStateMachine" node_paths=PackedStringArray("dash_cooldown", "landing_sfx", "jumpsfx")]
 script = ExtResource("12_mwii3")
-extra_jumps = 0
 dash_cooldown = NodePath("../../Timers/DashCooldown")
 landing_sfx = NodePath("../../LandingSFX")
 brake_force = 2
@@ -567,7 +537,8 @@ is_gravity = false
 jumpsfx = NodePath("../../jumpsfx")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="FiniteStateMachine/Dash"]
-stream = ExtResource("16_ixrbb")
+stream = ExtResource("10_bmb2s")
+volume_db = -15.0
 
 [node name="Archery" type="Node" parent="FiniteStateMachine" node_paths=PackedStringArray("jumpsfx")]
 script = ExtResource("17_ei2r2")
@@ -582,6 +553,18 @@ jumpsfx = NodePath("../../jumpsfx")
 [node name="Timer" type="Timer" parent="FiniteStateMachine/Wallsliding"]
 wait_time = 0.2
 one_shot = true
+
+[node name="Walljump" type="Node" parent="FiniteStateMachine" node_paths=PackedStringArray("jumpsfx")]
+script = ExtResource("19_ythyg")
+jumpsfx = NodePath("../../jumpsfx")
+
+[node name="Timer" type="Timer" parent="FiniteStateMachine/Walljump"]
+wait_time = 0.2
+one_shot = true
+
+[node name="Doublejump" type="Node" parent="FiniteStateMachine" node_paths=PackedStringArray("jumpsfx")]
+script = ExtResource("20_bmb2s")
+jumpsfx = NodePath("../../jumpsfx")
 
 [node name="ShootPoint" type="Node2D" parent="."]
 position = Vector2(14, 0)
@@ -704,6 +687,10 @@ speed_scale = 0.5
 explosiveness = 1.0
 fixed_fps = 60
 process_material = SubResource("ParticleProcessMaterial_m0h3t")
+
+[node name="DashLines" parent="." instance=ExtResource("26_ythyg")]
+
+[node name="DashSmoke" parent="." instance=ExtResource("27_bmb2s")]
 
 [connection signal="player_hit" from="." to="Health" method="_on_player_player_hit"]
 [connection signal="hp_changed" from="Health" to="." method="_on_health_hp_changed"]

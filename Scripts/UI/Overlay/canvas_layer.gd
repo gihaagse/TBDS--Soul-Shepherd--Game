@@ -1,4 +1,5 @@
 extends CanvasLayer
+@onready var ability_debug_menu: Control = $AbilityDebugMenu
 
 @onready var dash_timer: Label = $DashTimer
 var is_timer_on: bool = false
@@ -12,6 +13,10 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	
+	if Input.is_action_just_pressed("AbilityDebug"):
+		ability_debug_menu.visible = !ability_debug_menu.visible
+		
 	if is_timer_on:
 		dash_timer.visible = true
 		time_left -= delta
