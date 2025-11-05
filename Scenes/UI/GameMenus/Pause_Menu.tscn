@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://dbawdw77kghcn"]
 
-[ext_resource type="Script" uid="uid://bf0cdtm3euki2" path="res://GameMenus/pause_menu.gd" id="1_ce0ii"]
+[ext_resource type="Script" uid="uid://bf0cdtm3euki2" path="res://Scripts/UI/GameMenus/pause_menu.gd" id="1_ce0ii"]
 [ext_resource type="Shader" uid="uid://dlo4kfu6qrdn1" path="res://Shaders/Pause_Menu.gdshader" id="2_futms"]
 [ext_resource type="FontFile" uid="uid://p47ydk5quyq2" path="res://Assets/Tutorial Open Assets/brackeys_platformer_assets/fonts/PixelOperator8-Bold.ttf" id="3_hqsf3"]
 

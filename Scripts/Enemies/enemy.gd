@@ -42,7 +42,7 @@ func _process(_delta: float) -> void:
 		label.text = "HP: " + str(health.hp)
 		old_hp = health.hp
 		
-	if is_on_wall() or !ground.is_colliding():
+	if (is_on_wall() or !ground.is_colliding()) and can_move:
 		dir = dir * -1
 		ground.position.x = groundPosOffset if dir > 0 else groundPosOffset * -1
 		_correct_sprite()
@@ -52,7 +52,7 @@ func _process(_delta: float) -> void:
 	if sprite.get_animation() != "Walking" and sprite.get_animation() != "Attack_shoot" and can_move:
 		sprite.play("Walking")
 	move_and_slide()
-	if playerInRange:
+	if playerInRange and can_move:
 		if (player.position.x - position.x) > 0:
 			dir = 1
 			flippedSprite = false

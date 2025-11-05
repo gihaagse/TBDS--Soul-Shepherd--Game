@@ -2,12 +2,12 @@ extends PlayerState
 class_name Player_Bow
 
 @onready var main = get_tree().get_root().get_node("Level")
-@onready var projectile = load("res://Scenes/Weapons/projectile.tscn")
+@onready var projectile = load("res://Scenes/Weapons/hat_projectile.tscn")
 
 func Enter():
 	super()
 	in_anim = true
-	sprite.play("Bow")
+	sprite.play("Panda_Throw")
 func Exit():
 	shoot()
 

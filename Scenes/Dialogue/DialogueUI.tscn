@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://ndkp1vfqmr4g"]
 
-[ext_resource type="Script" uid="uid://bbw5ou7s4qspd" path="res://GameMenus/DialogueUI.gd" id="1_m828p"]
+[ext_resource type="Script" uid="uid://bbw5ou7s4qspd" path="res://Scripts/UI/GameMenus/DialogueUI.gd" id="1_m828p"]
 [ext_resource type="Texture2D" uid="uid://ch2u1krxaf7n8" path="res://Assets/Icons/sjw icon.jpg" id="2_etdm6"]
 [ext_resource type="Texture2D" uid="uid://chcnq5a06tinn" path="res://Assets/Icons/Temporary text bubble.png" id="2_hflk8"]
 [ext_resource type="AudioStream" uid="uid://dcbhbbavrkkbw" path="res://Assets/Audio/SFX/Dialgoue/JDSherbert - Wooden UI SFX Pack - Cursor - 1.wav" id="4_b7wac"]

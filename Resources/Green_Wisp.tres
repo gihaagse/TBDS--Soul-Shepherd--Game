@@ -1,0 +1,18 @@
+[gd_resource type="SpriteFrames" load_steps=3 format=3 uid="uid://dg0vx2sffi824"]
+
+[ext_resource type="Texture2D" uid="uid://8hdqu3l5xtrs" path="res://Assets/Sprites/Green_Wisp.png" id="1_3516k"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nwxsa"]
+atlas = ExtResource("1_3516k")
+region = Rect2(0, 0, 80, 80)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nwxsa")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
