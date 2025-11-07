@@ -4,11 +4,14 @@ signal dialogue_started(dialogue_resource: DialogueResource)
 signal dialogue_ended
 signal text_displayed(text: String)
 signal choices_displayed(choices: Array[PlayerOption])
+signal dialogue_transition
 
 var current_dialogue: DialogueResource
 var current_entry: DialogueEntry
 var current_line_index: int = 0
 var is_dialogue_active: bool = false
+@onready var finite_state_machine: FSM = $FiniteStateMachine
+
 
 var dialogue_ui: Control
 
@@ -16,7 +19,7 @@ func start_dialogue(dialogue_resource: DialogueResource):
 	if is_dialogue_active:
 		return
 	
-	print("STARTING DIALOGUE")
+	dialogue_transition.emit()
 	current_dialogue = dialogue_resource
 	current_entry = dialogue_resource.dialogue_data
 	current_line_index = 0

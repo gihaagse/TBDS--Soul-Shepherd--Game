@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://cmjghmoo3wc7b"]
 
 [ext_resource type="Script" uid="uid://dec84lisrc3qw" path="res://Scripts/Weapons/hat_projectile.gd" id="1_cvexv"]
-[ext_resource type="Texture2D" uid="uid://bm18u1wsukfwa" path="res://Assets/Sprites/hat_throw.png" id="2_cvexv"]
+[ext_resource type="Texture2D" uid="uid://bm18u1wsukfwa" path="res://Assets/Sprites/Panda/hat_throw.png" id="2_cvexv"]
 [ext_resource type="AudioStream" uid="uid://uxnd7qf4lq85" path="res://Assets/Audio/SFX/Player/parry.wav" id="3_34cfo"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qxf0c"]

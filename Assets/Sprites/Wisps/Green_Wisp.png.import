@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b6pno2ks2oig0"
-path="res://.godot/imported/Red_devil.png-d9f15c73ee7c1a8a3d496e384a6cb1a5.ctex"
+uid="uid://8hdqu3l5xtrs"
+path="res://.godot/imported/Green_Wisp.png-7816946166b0e0c52be1542bff8036e3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Red_devil.png"
-dest_files=["res://.godot/imported/Red_devil.png-d9f15c73ee7c1a8a3d496e384a6cb1a5.ctex"]
+source_file="res://Assets/Sprites/Wisps/Green_Wisp.png"
+dest_files=["res://.godot/imported/Green_Wisp.png-7816946166b0e0c52be1542bff8036e3.ctex"]
 
 [params]
 

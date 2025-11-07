@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bm18u1wsukfwa"
-path="res://.godot/imported/hat_throw.png-f0e9fb154741d8de8119ff1deb9855c0.ctex"
+uid="uid://vqhb5wf34xtf"
+path="res://.godot/imported/Ghost.png-927f531b9db16b09888b2ce76f496d9d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/hat_throw.png"
-dest_files=["res://.godot/imported/hat_throw.png-f0e9fb154741d8de8119ff1deb9855c0.ctex"]
+source_file="res://Assets/Sprites/Wisps/Ghost.png"
+dest_files=["res://.godot/imported/Ghost.png-927f531b9db16b09888b2ce76f496d9d.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ccdls2066rxv2"
-path="res://.godot/imported/panda_small_noHat.png-897e18ff19f93a14a7319f354f0b4ed7.ctex"
+uid="uid://pkk1tn7ji5id"
+path="res://.godot/imported/No_Hat_Panda.png-7f68d2869862efc5b44183534b9f256a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/panda_small_noHat.png"
-dest_files=["res://.godot/imported/panda_small_noHat.png-897e18ff19f93a14a7319f354f0b4ed7.ctex"]
+source_file="res://Assets/Sprites/Panda/No_Hat_Panda.png"
+dest_files=["res://.godot/imported/No_Hat_Panda.png-7f68d2869862efc5b44183534b9f256a.ctex"]
 
 [params]
 
