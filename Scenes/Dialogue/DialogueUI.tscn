@@ -8,6 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://6bhlt8rry1yv" path="res://Assets/Audio/SFX/Dialgoue/JDSherbert - Wooden UI SFX Pack - Confirm - 1.wav" id="6_jlpoj"]
 
 [node name="DialogueUI" type="CanvasLayer"]
+process_mode = 3
 script = ExtResource("1_m828p")
 
 [node name="FullSize" type="Control" parent="."]
