@@ -26,8 +26,8 @@ func Exit():
 func Update(_delta:float):
 	if player.is_on_floor():
 		state_transition.emit(self, "Idling")
-	if not Input.get_axis("Left", "Right"):
-		state_transition.emit(self, "Falling")
+	#if not Input.get_axis("Left", "Right"):
+		#state_transition.emit(self, "Falling")
 	if not timer.time_left:
 		if player.is_on_wall() == false:
 			state_transition.emit(self, "Falling")

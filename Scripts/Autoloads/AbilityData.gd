@@ -7,6 +7,7 @@ signal update_debug_ability_label
 signal update_unlock_ability_buttons
 signal update_delete_ability_buttons
 
+
 enum ability_list {
 	Idling,
 	Walking,
@@ -71,3 +72,12 @@ func get_value_from_ability_name(ability_name: String) -> int:
 			return AbilityData.ability_list[enum_name]
 	return -1
 	
+func add_collected_ability_add_to_list(ability: ability_list) -> void:
+	#var ability_value = get_value_from_ability_name(ability_name)
+	#if ability_value not in unlocked_abilities:
+		#unlocked_abilities.append(ability_value)
+	if ability not in unlocked_abilities:
+		unlocked_abilities.append(ability)
+		update_debug_ability_label.emit()
+		update_delete_ability_buttons.emit()
+		update_unlock_ability_buttons.emit()

@@ -1,5 +1,5 @@
 extends CharacterBody2D
-class_name HatProjectile
+class_name Projectile
 
 @export var speed : float = 100.0
 @export var sprite : AnimatedSprite2D
@@ -32,11 +32,14 @@ func _physics_process(_delta: float) -> void:
 		_on_body_entered(collision)
 
 func _on_body_entered(collision: KinematicCollision2D) -> void:
-	var hp = collision.get_collider().get_node_or_null("Health")
-	if hp and hp.has_method("take_damage"):
+	var coll = collision.get_collider()
+	var hp = coll.get_node_or_null("Health")
+	if hp and hp.has_method("take_damage") and coll.collision_layer & (1<<0):
 		print("Body Working_code :D")
 		hp.take_damage(10)
-		queue_free()
+		collision_mask = (0<<0) | (1<<2)
+		despawn.start()
+		direction = -direction
 	else:
 		queue_free()
 
@@ -52,12 +55,15 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 		direction = -direction
 		area_2d.set_collision_mask_value(2, true)
 		area_2d.set_collision_mask_value(3, false)
+		collision_mask = (1<<0) | (1<<2)
 		print("Parry " + str(area.collision_layer))
 		return
 	var hp = area.get_node_or_null("Health")
 	if hp and hp.has_method("take_damage"):
 		print("Area2D Working_code :D")
 		hp.take_damage(10)
-		queue_free()
+		despawn.start()
+		direction = -direction
 	else:
-		queue_free()
+		despawn.start()
+		direction = -direction

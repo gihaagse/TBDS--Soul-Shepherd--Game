@@ -1,10 +1,15 @@
-[gd_scene load_steps=22 format=3 uid="uid://k0mron1debm7"]
+[gd_scene load_steps=27 format=3 uid="uid://k0mron1debm7"]
 
 [ext_resource type="PackedScene" uid="uid://c5ongupm07qh3" path="res://Scenes/Player/player.tscn" id="1_c458c"]
+[ext_resource type="PackedScene" uid="uid://cl45lm0hg20kf" path="res://Scenes/Items/soul.tscn" id="1_lrh7k"]
 [ext_resource type="Texture2D" uid="uid://jvylv1msq21o" path="res://Assets/Tutorial Open Assets/brackeys_platformer_assets/sprites/world_tileset.png" id="2_pvlc2"]
+[ext_resource type="SpriteFrames" uid="uid://diip4lnhcmedw" path="res://Resources/Ghost_Wisp.tres" id="2_qs4fp"]
 [ext_resource type="Script" uid="uid://b2b6rmyyluckx" path="res://Scripts/Player/General/camera_2d.gd" id="3_d68a7"]
 [ext_resource type="Texture2D" uid="uid://goes5l2sfyvw" path="res://Assets/Sprites/Tileset1.png" id="3_pvlc2"]
+[ext_resource type="SpriteFrames" uid="uid://dg0vx2sffi824" path="res://Resources/Green_Wisp.tres" id="3_uf8hr"]
 [ext_resource type="FontFile" uid="uid://x2dwsfc3en6q" path="res://Assets/Tutorial Open Assets/brackeys_platformer_assets/fonts/PixelOperator8.ttf" id="4_q2tg5"]
+[ext_resource type="SpriteFrames" uid="uid://dddu3nk2vhaqr" path="res://Resources/Red_Devil_Wisp.tres" id="4_qs4fp"]
+[ext_resource type="SpriteFrames" uid="uid://btqrxjedotkrq" path="res://Resources/Water_Wisp.tres" id="4_y7471"]
 [ext_resource type="Script" uid="uid://byn1je7flnjo3" path="res://Scripts/Central/game_manager.gd" id="5_mt3j2"]
 [ext_resource type="Script" uid="uid://ce43l01wboarg" path="res://Scripts/UI/Overlay/canvas_layer.gd" id="5_q2tg5"]
 [ext_resource type="Script" uid="uid://bpkjqkjnq8o6g" path="res://Scripts/Player/General/killzone.gd" id="6_akeww"]
@@ -260,6 +265,51 @@ shader_parameter/blink_intensity = 0.0
 
 [node name="Level" type="Node2D"]
 
+[node name="Soul" parent="." instance=ExtResource("1_lrh7k")]
+z_index = 6
+position = Vector2(928, 584)
+scale = Vector2(0.765, 0.765)
+custom_sprite_frames = ExtResource("2_qs4fp")
+custom_sprite_scale = Vector2(0.225, 0.225)
+
+[node name="Soul2" parent="." instance=ExtResource("1_lrh7k")]
+z_index = 6
+position = Vector2(887.00006, 584)
+scale = Vector2(0.765, 0.765)
+ability_name = 7
+custom_sprite_scale = Vector2(0.225, 0.225)
+
+[node name="Soul3" parent="." instance=ExtResource("1_lrh7k")]
+z_index = 6
+position = Vector2(1027, 581)
+scale = Vector2(0.765, 0.765)
+ability_name = 8
+custom_sprite_frames = ExtResource("4_y7471")
+custom_sprite_scale = Vector2(0.225, 0.225)
+
+[node name="Soul4" parent="." instance=ExtResource("1_lrh7k")]
+z_index = 6
+position = Vector2(1076, 581)
+scale = Vector2(0.765, 0.765)
+ability_name = 9
+custom_sprite_scale = Vector2(0.225, 0.225)
+
+[node name="Soul5" parent="." instance=ExtResource("1_lrh7k")]
+z_index = 6
+position = Vector2(839, 584)
+scale = Vector2(0.765, 0.765)
+ability_name = 9
+custom_sprite_frames = ExtResource("4_qs4fp")
+custom_sprite_scale = Vector2(0.225, 0.225)
+
+[node name="Soul6" parent="." instance=ExtResource("1_lrh7k")]
+z_index = 6
+position = Vector2(742, 580)
+scale = Vector2(0.765, 0.765)
+ability_name = 9
+custom_sprite_frames = ExtResource("3_uf8hr")
+custom_sprite_scale = Vector2(0.225, 0.225)
+
 [node name="Player" parent="." node_paths=PackedStringArray("pause_menu") instance=ExtResource("1_c458c")]
 position = Vector2(775, 531)
 pause_menu = NodePath("../CanvasLayer/PauseMenu")
@@ -459,6 +509,7 @@ material = SubResource("ShaderMaterial_hnohd")
 [node name="Enemy2" parent="." instance=ExtResource("7_fvaf1")]
 z_index = 4
 position = Vector2(743, 378)
+can_move = false
 
 [node name="DialogueUI" parent="." instance=ExtResource("13_fvaf1")]
 visible = false
@@ -470,7 +521,6 @@ position = Vector2(253, 603)
 [node name="Enemy4" parent="." instance=ExtResource("13_akeww")]
 z_index = 4
 position = Vector2(92, 594)
-can_move = false
 
 [connection signal="body_entered" from="killzone" to="Player" method="_on_killzone_body_entered"]
 
