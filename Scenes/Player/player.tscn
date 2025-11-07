@@ -18,11 +18,12 @@
 [ext_resource type="Script" uid="uid://p5k85sn5ogtw" path="res://Scripts/Player/States/Player_Attack1.gd" id="13_2aanf"]
 [ext_resource type="Script" uid="uid://q385houao11" path="res://Scripts/Player/States/Player_AirAttack1.gd" id="14_m6ahd"]
 [ext_resource type="Script" uid="uid://3282nnsu13lp" path="res://Scripts/Player/States/Player_Dash.gd" id="15_ogmfp"]
+[ext_resource type="Script" uid="uid://cmbrm5lqejt2q" path="res://Scripts/Player/States/Player_Dialogue.gd" id="15_rukb4"]
 [ext_resource type="Script" uid="uid://75v06whe5qe4" path="res://Scripts/Player/States/Player_Bow.gd" id="17_ei2r2"]
 [ext_resource type="Script" uid="uid://cjb2yxf6iu2g1" path="res://Scripts/Player/States/Player_Wallslide.gd" id="18_j6uq4"]
 [ext_resource type="Script" uid="uid://dchumex8trwnx" path="res://Scripts/Player/General/arsenal.gd" id="19_h5u0x"]
-[ext_resource type="Script" uid="uid://b84gqgcp4m5db" path="res://Scripts/Player/States/Player_Walljump.gd" id="19_ythyg"]
-[ext_resource type="Script" uid="uid://bmir0r6qwki3l" path="res://Scenes/Player/Player_Doublejump.gd" id="20_bmb2s"]
+[ext_resource type="Script" path="res://Scripts/Player/States/Player_Walljump.gd" id="19_ythyg"]
+[ext_resource type="Script" uid="uid://bmir0r6qwki3l" path="res://Scripts/Player/States/Player_Doublejump.gd" id="20_bmb2s"]
 [ext_resource type="PackedScene" uid="uid://khbs6icahh14" path="res://Scenes/Weapons/MeleeWeapon.tscn" id="20_po18e"]
 [ext_resource type="AudioStream" uid="uid://c283ary013yu8" path="res://Assets/Tutorial Open Assets/brackeys_platformer_assets/sounds/one pice jump sfx.wav" id="21_v37cr"]
 [ext_resource type="Script" uid="uid://b6lde07wjscdy" path="res://Scripts/Player/States/Player_Airgliding.gd" id="22_4no11"]
@@ -657,6 +658,8 @@ jumpsfx = NodePath("../../jumpsfx")
 
 [node name="Timer" type="Timer" parent="FiniteStateMachine/Airgliding"]
 wait_time = 0.075
+[node name="Dialogue" type="Node" parent="FiniteStateMachine"]
+script = ExtResource("15_rukb4")
 
 [node name="ShootPoint" type="Node2D" parent="."]
 position = Vector2(14, 0)

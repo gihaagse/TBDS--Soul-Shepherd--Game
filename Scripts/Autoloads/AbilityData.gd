@@ -8,7 +8,8 @@ extends Node
 	ability_list.Attack1,
 	ability_list.Airattack1, 
 	ability_list.Archery,
-	ability_list.Airgliding
+	ability_list.Airgliding,
+  ability_list.Dialogue
 ]
 
 signal update_debug_ability_label
@@ -28,6 +29,7 @@ enum ability_list {
 	DoubleJump,
 	WallJump,
 	Airgliding,
+	Dialogue,
 }
 
 const INFO: Dictionary = {
