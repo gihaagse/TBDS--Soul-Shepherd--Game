@@ -2,7 +2,11 @@ extends Node
 class_name PlayerState
 
 signal state_transition
+
 static var jumps_left: int = 1
+static var custom_gravity : Vector2 = Vector2(0,980)
+static var max_airglide_velocity: int  = 500
+static var in_gliding: bool = false
 
 var player : CharacterBody2D
 var sprite : AnimatedSprite2D
@@ -53,6 +57,9 @@ func Phys_Update(_delta:float):
 	pass
 
 func movement(_delta:float):
+	if player.is_on_floor():
+		custom_gravity = Vector2(0,980)
+	
 	run_particle_timer += _delta
 	if Input.is_action_just_pressed("Jump") and player.is_on_floor() and can_jump:
 		jumpsfx.playing = true
@@ -62,7 +69,9 @@ func movement(_delta:float):
 		jump_particle.restart()
 		jump_particle.emitting = true
 	elif is_gravity:
-		player.velocity += player.get_gravity() * _delta
+		player.velocity += custom_gravity * _delta
+		if player.velocity.length() >= max_airglide_velocity and in_gliding:
+			player.velocity = player.velocity.normalized() * max_airglide_velocity
 		
 	var direction := Input.get_axis("Left", "Right")
 	

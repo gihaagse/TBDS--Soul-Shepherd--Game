@@ -27,6 +27,7 @@ func apply_directional_blur(sprite, duration: float = 0.3, strength: float = 0.0
 	blur_material.set_shader_parameter("angle_degrees", angle)
 	sprite.material = blur_material
 	await get_tree().create_timer(duration).timeout
+	blur_material.set_shader_parameter("strength", 0)
 	if sprite and sprite.material:
 		sprite.material = original_material if original_material else null
 

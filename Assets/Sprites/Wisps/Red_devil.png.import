@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://det0un1vj4110"
-path="res://.godot/imported/panda_small.png-0f423d1ea0941feb3736ddd551430b33.ctex"
+uid="uid://b6pno2ks2oig0"
+path="res://.godot/imported/Red_devil.png-e0de716c254f50aa55d30fd125aa8083.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/panda_small.png"
-dest_files=["res://.godot/imported/panda_small.png-0f423d1ea0941feb3736ddd551430b33.ctex"]
+source_file="res://Assets/Sprites/Wisps/Red_devil.png"
+dest_files=["res://.godot/imported/Red_devil.png-e0de716c254f50aa55d30fd125aa8083.ctex"]
 
 [params]
 

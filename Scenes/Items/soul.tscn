@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bp7sgbdp1hk0m" path="res://Scripts/Items/soul.gd" id="1_0x1bq"]
 [ext_resource type="Texture2D" uid="uid://7kov610gmscg" path="res://Assets/Sprites/MonedaD.png" id="1_78pp8"]
-[ext_resource type="Texture2D" uid="uid://vqhb5wf34xtf" path="res://Assets/Sprites/Ghost.png" id="2_anvyd"]
+[ext_resource type="Texture2D" uid="uid://vqhb5wf34xtf" path="res://Assets/Sprites/Wisps/Ghost.png" id="2_anvyd"]
 [ext_resource type="FontFile" uid="uid://bunt72veb2o54" path="res://Assets/Fonts/Silkscreen-Regular.ttf" id="4_lnp0w"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_anvyd"]
@@ -67,7 +67,6 @@ animations = [{
 [node name="Soul" type="Node2D"]
 z_index = 6
 script = ExtResource("1_0x1bq")
-custom_sprite_scale = null
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_mask = 4
@@ -77,6 +76,7 @@ shape = SubResource("CapsuleShape2D_anvyd")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_uvmf7")
+frame_progress = 0.8758428
 
 [node name="abilityNameLabel" type="Label" parent="."]
 anchors_preset = 8
@@ -95,7 +95,7 @@ theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("4_lnp0w")
 theme_override_font_sizes/font_size = 8
-text = "Ability:"
+text = "Dash"
 horizontal_alignment = 1
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

@@ -1,9 +1,7 @@
 extends PlayerState
 class_name Player_Fall
 
-#var double_jumps_left : int
 
-#@export var extra_jumps : int = 1
 @export var dash_cooldown : Timer
 @export var landing_sfx : AudioStreamPlayer2D
 
@@ -21,6 +19,11 @@ class_name Player_Fall
 @export var min_squash_duration : float =  0.15
 
 var last_velocity_y : float = 0.0
+
+
+
+#@onready var jump_pressed_label: Label = $"../../../CanvasLayer/jump_pressed_label"
+#@onready var can_airglide_label: Label = $"../../../CanvasLayer/can_airglide_label"
 
 func Enter():
 	super()
@@ -44,14 +47,20 @@ func Update(_delta:float) -> void:
 		state_transition.emit(self, "Dash")
 	if Input.is_action_just_pressed("LeftClick") and get_item_by_name("Bow", slots).visible:
 		state_transition.emit(self, "Archery")
+		
 	if Input.is_action_pressed("WallSlide") and player.is_on_wall_only():
 		state_transition.emit(self, "Wallsliding")
 	if Input.is_action_just_pressed("Jump") and player.is_on_wall_only() and (Input.is_action_pressed("Left") or Input.is_action_pressed("Right")):
 		state_transition.emit(self, "WallJump")
+		
+	if Input.is_action_just_pressed("Jump") and not player.is_on_floor():
+		if jumps_left > 0 and AbilityData.unlocked_abilities.has(AbilityData.get_value_from_ability_name("Doublejump")):
+			state_transition.emit(self, "Doublejump")
+		else:
+			state_transition.emit(self, "Airgliding")
+		
 
 func Phys_Update(_delta:float) -> void:
-	if Input.is_action_just_pressed("Jump") and not player.is_on_floor() and jumps_left > 0:
-		state_transition.emit(self, "Doublejump")
 	movement(_delta)
 
 func _play_landing_effects() -> void:

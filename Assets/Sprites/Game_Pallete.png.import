@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bwo8xmw46ownf"
-path="res://.godot/imported/Water_soul_sprite.png-fa991315eeaff01215c26ee03bfccff1.ctex"
+uid="uid://c38ygdrqam42a"
+path="res://.godot/imported/Game_Pallete.png-d601edb4251b51dac683995aad8c5209.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Water_soul_sprite.png"
-dest_files=["res://.godot/imported/Water_soul_sprite.png-fa991315eeaff01215c26ee03bfccff1.ctex"]
+source_file="res://Assets/Sprites/Game_Pallete.png"
+dest_files=["res://.godot/imported/Game_Pallete.png-d601edb4251b51dac683995aad8c5209.ctex"]
 
 [params]
 

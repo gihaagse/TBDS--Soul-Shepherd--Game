@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://8hdqu3l5xtrs"
-path="res://.godot/imported/Green_Wisp.png-2150307c0baca57ab93c4c7a871173cf.ctex"
+uid="uid://det0un1vj4110"
+path="res://.godot/imported/panda_small.png-2683483e6b616be97234ec4df11a1f75.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Green_Wisp.png"
-dest_files=["res://.godot/imported/Green_Wisp.png-2150307c0baca57ab93c4c7a871173cf.ctex"]
+source_file="res://Assets/Sprites/Panda/panda_small.png"
+dest_files=["res://.godot/imported/panda_small.png-2683483e6b616be97234ec4df11a1f75.ctex"]
 
 [params]
 
