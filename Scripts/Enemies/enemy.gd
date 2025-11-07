@@ -55,28 +55,23 @@ func _process(_delta: float) -> void:
 		sprite.play("Walking")
 	move_and_slide()
 	
-	if raycastcheckright.is_colliding() and raycastcheckright.get_collider() == CharacterBody2D and can_move:
+	if playerInRange:
+		if raycastcheckleft.get_collider() == null and raycastcheckright.get_collider() == null:
+			_on_area_2d_body_shape_exited()
+		elif (raycastcheckleft.get_collider() == null or raycastcheckleft.get_collider().name != "Player") and (raycastcheckright.get_collider().name != "Player" or raycastcheckright.get_collider() == null):
+			_on_area_2d_body_shape_exited()
+	elif raycastcheckright.is_colliding() and raycastcheckright.get_collider().name == "Player" and can_move:
 		dir = 1
 		flippedSprite = false
 		ground.position.x = groundPosOffset
 		_correct_sprite()
 		_on_area_2d_body_shape_entered()
-	if raycastcheckleft.is_colliding() and raycastcheckleft.get_collider() == CharacterBody2D and can_move:
-		dir = 1
+	elif raycastcheckleft.is_colliding() and raycastcheckleft.get_collider().name == "Player" and can_move:
+		dir = -1
 		flippedSprite = false
 		ground.position.x = groundPosOffset
 		_correct_sprite()
 		_on_area_2d_body_shape_entered()
-		
-	if !raycastcheckright.is_colliding() or raycastcheckright.get_collider() != CharacterBody2D:
-		_on_area_2d_body_shape_exited()
-	if !raycastcheckleft.is_colliding() or raycastcheckleft.get_collider() != CharacterBody2D:
-		_on_area_2d_body_shape_exited()
-	
-	if raycastcheckleft.get_collider() != null:
-		print(raycastcheckleft.get_collider())
-	if raycastcheckright.get_collider() != null:
-		print(raycastcheckright.get_collider())
 	
 
 func _on_health_hp_changed() -> void:

@@ -444,11 +444,6 @@ metadata/_edit_use_anchors_ = true
 z_index = 4
 position = Vector2(983, 586)
 
-[node name="Enemy2" parent="." instance=ExtResource("7_fvaf1")]
-z_index = 4
-position = Vector2(743, 378)
-can_move = false
-
 [node name="DialogueUI" parent="." instance=ExtResource("13_fvaf1")]
 visible = false
 
