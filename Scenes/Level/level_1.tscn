@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://k0mron1debm7"]
+[gd_scene load_steps=18 format=3 uid="uid://k0mron1debm7"]
 
 [ext_resource type="PackedScene" uid="uid://c5ongupm07qh3" path="res://Scenes/Player/player.tscn" id="1_c458c"]
 [ext_resource type="PackedScene" uid="uid://cl45lm0hg20kf" path="res://Scenes/Items/soul.tscn" id="1_lrh7k"]
@@ -17,9 +17,6 @@
 [ext_resource type="PackedScene" uid="uid://c2qbrpracjsi5" path="res://Scenes/Enemies/orc.tscn" id="7_fvaf1"]
 [ext_resource type="PackedScene" uid="uid://dbawdw77kghcn" path="res://Scenes/UI/GameMenus/Pause_Menu.tscn" id="8_hnohd"]
 [ext_resource type="PackedScene" uid="uid://b1wpf7mxi7ax8" path="res://Scenes/UI/Overlay/ability_debug_menu.tscn" id="9_mt3j2"]
-[ext_resource type="Shader" uid="uid://o6ancnl5jgcr" path="res://Shaders/Blink.gdshader" id="12_akeww"]
-[ext_resource type="PackedScene" uid="uid://51slswqsb6ej" path="res://Scenes/Enemies/monk_enemy.tscn" id="12_mt3j2"]
-[ext_resource type="PackedScene" uid="uid://bdnyl8hwfggvd" path="res://Scenes/Enemies/husk_enemy.tscn" id="13_akeww"]
 [ext_resource type="PackedScene" uid="uid://ndkp1vfqmr4g" path="res://Scenes/Dialogue/DialogueUI.tscn" id="13_fvaf1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7p6j4"]
@@ -227,12 +224,12 @@ texture = ExtResource("3_pvlc2")
 6:5/0 = 0
 7:5/0 = 0
 8:5/0 = 0
-8:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -4.6763268, 8, 8, -8, 8)
+8:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -4.67633, 8, 8, -8, 8)
 9:5/0 = 0
-9:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -4.4964676, 8, -4.6763268, 8, 8, -8, 8)
+9:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -4.49647, 8, -4.67633, 8, 8, -8, 8)
 10:5/0 = 0
 10:5/0/z_index = 6
-10:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -4.4964676, 8, -8, 8, 8, -8, 8)
+10:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -4.49647, 8, -8, 8, 8, -8, 8)
 0:6/0 = 0
 1:6/0 = 0
 2:6/0 = 0
@@ -256,12 +253,6 @@ sources/0 = SubResource("TileSetAtlasSource_7p6j4")
 sources/1 = SubResource("TileSetAtlasSource_d68a7")
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_lsmp6"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_hnohd"]
-resource_local_to_scene = true
-shader = ExtResource("12_akeww")
-shader_parameter/blink_color = Color(1, 1, 1, 1)
-shader_parameter/blink_intensity = 0.0
 
 [node name="Level" type="Node2D"]
 
@@ -348,7 +339,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-color = Color(0.47788018, 0.47788012, 0.47788012, 0.25882354)
+color = Color(0.47788, 0.47788, 0.47788, 0.258824)
 
 [node name="Label" type="Label" parent="CanvasLayer/ColorRect"]
 layout_mode = 1
@@ -491,25 +482,7 @@ metadata/_edit_use_anchors_ = true
 z_index = 4
 position = Vector2(983, 586)
 
-[node name="AnimatedSprite2D" parent="Enemy" index="1"]
-material = SubResource("ShaderMaterial_hnohd")
-
-[node name="Enemy2" parent="." instance=ExtResource("7_fvaf1")]
-z_index = 4
-position = Vector2(743, 378)
-can_move = false
-
 [node name="DialogueUI" parent="." instance=ExtResource("13_fvaf1")]
 visible = false
 
-[node name="Enemy3" parent="." instance=ExtResource("12_mt3j2")]
-z_index = 4
-position = Vector2(253, 603)
-
-[node name="Enemy4" parent="." instance=ExtResource("13_akeww")]
-z_index = 4
-position = Vector2(92, 594)
-
 [connection signal="body_entered" from="killzone" to="Player" method="_on_killzone_body_entered"]
-
-[editable path="Enemy"]

@@ -20,6 +20,8 @@ var player: CharacterBody2D = null
 @onready var ground: RayCast2D = $GroundCheck
 @onready var gravity: float = 300.0
 @export var can_move: bool = true
+@onready var raycastcheckright: RayCast2D = $RayCast2DRight
+@onready var raycastcheckleft: RayCast2D = $RayCast2DLeft
 var ground_collider
 
 
@@ -33,6 +35,8 @@ func _ready() -> void:
 	Engine.max_fps = 60
 
 func _process(_delta: float) -> void:
+	ground.position.x = groundPosOffset if dir > 0 else groundPosOffset * -1
+		
 	if not is_on_floor():
 		velocity.y += gravity * _delta
 	else:
@@ -44,7 +48,6 @@ func _process(_delta: float) -> void:
 		
 	if (is_on_wall() or !ground.is_colliding()) and can_move:
 		dir = dir * -1
-		ground.position.x = groundPosOffset if dir > 0 else groundPosOffset * -1
 		_correct_sprite()
 
 	if can_move:
@@ -52,18 +55,29 @@ func _process(_delta: float) -> void:
 	if sprite.get_animation() != "Walking" and sprite.get_animation() != "Attack_shoot" and can_move:
 		sprite.play("Walking")
 	move_and_slide()
-	if playerInRange and can_move:
-		if (player.position.x - position.x) > 0:
-			dir = 1
-			flippedSprite = false
-			ground.position.x = groundPosOffset
-			_correct_sprite()
-		elif (player.position.x - position.x) < 0:
+	
+	if playerInRange:
+		if raycastcheckleft.get_collider() == null and raycastcheckright.get_collider() == null:
+			_on_area_2d_body_shape_exited()
+		elif (raycastcheckleft.get_collider() == null or raycastcheckleft.get_collider().name != "Player") and (raycastcheckright.get_collider().name != "Player" or raycastcheckright.get_collider() == null):
+			_on_area_2d_body_shape_exited()
+		elif raycastcheckleft.is_colliding():
 			dir = -1
-			flippedSprite = true
-			ground.position.x = groundPosOffset * -1
 			_correct_sprite()
-
+		elif raycastcheckright.is_colliding():
+			dir = 1
+			_correct_sprite()
+	elif raycastcheckright.is_colliding() and raycastcheckright.get_collider().name == "Player" and can_move:
+		dir = 1
+		flippedSprite = false
+		ground.position.x = groundPosOffset
+		_on_area_2d_body_shape_entered()
+	elif raycastcheckleft.is_colliding() and raycastcheckleft.get_collider().name == "Player" and can_move:
+		dir = -1
+		flippedSprite = false
+		ground.position.x = groundPosOffset
+		_on_area_2d_body_shape_entered()
+	
 
 func _on_health_hp_changed() -> void:
 	var tween = get_tree().create_tween()
@@ -90,12 +104,13 @@ func SetShader_BlinkIntensity(newValue: float):
 func _on_timer_timeout() -> void:
 	shoot()
 
-func _on_area_2d_body_shape_entered(body_rid: RID, body: CharacterBody2D, body_shape_index: int, local_shape_index: int) -> void:
+func _on_area_2d_body_shape_entered() -> void:
+	_correct_sprite()
 	playerInRange = true
 	speed = 60
 	$in_range_shoot_timer.start()
 
-func _on_area_2d_body_shape_exited(body_rid: RID, body: CharacterBody2D, body_shape_index: int, local_shape_index: int) -> void:
+func _on_area_2d_body_shape_exited() -> void:
 	playerInRange = false
 	speed = 40
 	$in_range_shoot_timer.stop()

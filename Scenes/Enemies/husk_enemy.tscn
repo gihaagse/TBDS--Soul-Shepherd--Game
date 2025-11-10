@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://bdnyl8hwfggvd"]
+[gd_scene load_steps=31 format=3 uid="uid://bdnyl8hwfggvd"]
 
 [ext_resource type="Script" uid="uid://qy73ni60h2l3" path="res://Scripts/Enemies/husk_enemy.gd" id="1_xkdwv"]
 [ext_resource type="PackedScene" uid="uid://cvgjcwqn6k8eu" path="res://Scenes/UI/Overlay/health.tscn" id="2_uo6b2"]
@@ -179,14 +179,11 @@ spread = 90.0
 initial_velocity_min = 50.0
 initial_velocity_max = 100.0
 gravity = Vector3(0, 98, 0)
-damping_min = 50.000004
-damping_max = 100.00001
-scale_min = 0.19999999
-color = Color(1, 0.07058824, 0.13333334, 1)
+damping_min = 50.0
+damping_max = 100.0
+scale_min = 0.2
+color = Color(1, 0.0705882, 0.133333, 1)
 color_ramp = SubResource("GradientTexture1D_31h1d")
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_vumo0"]
-radius = 15.321566
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3xw0u"]
 radius = 7.0
@@ -226,13 +223,6 @@ process_material = SubResource("ParticleProcessMaterial_dfwqp")
 
 [node name="in_range_shoot_timer" type="Timer" parent="."]
 
-[node name="Area2D" type="Area2D" parent="."]
-collision_mask = 4
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
-scale = Vector2(4.425, 0.41)
-shape = SubResource("CircleShape2D_vumo0")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_3xw0u")
 
@@ -240,8 +230,15 @@ shape = SubResource("CircleShape2D_3xw0u")
 position = Vector2(10, 0)
 target_position = Vector2(0, 10)
 
+[node name="RayCast2DRight" type="RayCast2D" parent="."]
+target_position = Vector2(68, 0)
+collision_mask = 4
+collide_with_areas = true
+
+[node name="RayCast2DLeft" type="RayCast2D" parent="."]
+target_position = Vector2(-68, 0)
+collision_mask = 4
+
 [connection signal="hp_changed" from="Health" to="." method="_on_health_hp_changed"]
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="timeout" from="in_range_shoot_timer" to="." method="_on_timer_timeout"]
-[connection signal="body_shape_entered" from="Area2D" to="." method="_on_area_2d_body_shape_entered"]
-[connection signal="body_shape_exited" from="Area2D" to="." method="_on_area_2d_body_shape_exited"]
