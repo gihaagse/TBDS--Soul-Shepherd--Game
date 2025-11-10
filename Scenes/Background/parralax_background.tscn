@@ -1,0 +1,48 @@
+[gd_scene load_steps=5 format=3 uid="uid://5jrffwap8tjk"]
+
+[ext_resource type="Texture2D" uid="uid://c1vbgt18bluhv" path="res://Assets/Background/mtfuji_background.png" id="1_tv6rm"]
+[ext_resource type="Texture2D" uid="uid://b6ewd2irkjyt" path="res://Assets/Background/clouds_background.png" id="2_5xsn2"]
+[ext_resource type="Texture2D" uid="uid://cfwjn5yoa4keh" path="res://Assets/Background/green_background.png" id="3_mkirg"]
+[ext_resource type="Texture2D" uid="uid://qopeprq1xhbw" path="res://Assets/Background/mountains_background.png" id="4_lekq8"]
+
+[node name="ParralaxBackground" type="Node2D"]
+
+[node name="Parallax2D" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.01, 0.4)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D"]
+scale = Vector2(1.2, 1.5)
+texture = ExtResource("1_tv6rm")
+
+[node name="Parallax2D2" type="Parallax2D" parent="."]
+z_index = 1
+scroll_scale = Vector2(0.1, 0.1)
+repeat_size = Vector2(320, 0)
+repeat_times = 5
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D2"]
+position = Vector2(0, 61)
+texture = ExtResource("2_5xsn2")
+
+[node name="Parallax2D3" type="Parallax2D" parent="."]
+z_index = 3
+scroll_scale = Vector2(0.3, 0.8)
+scroll_offset = Vector2(0, 30)
+repeat_size = Vector2(320, 0)
+repeat_times = 5
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D3"]
+position = Vector2(0, -105)
+scale = Vector2(1, 1.7)
+texture = ExtResource("3_mkirg")
+
+[node name="Parallax2D4" type="Parallax2D" parent="."]
+z_index = 2
+scroll_scale = Vector2(0.04, 0.6)
+repeat_size = Vector2(320, 0)
+repeat_times = 5
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D4"]
+position = Vector2(0, -53)
+scale = Vector2(1, 1.7)
+texture = ExtResource("4_lekq8")
