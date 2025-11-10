@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://c2qbrpracjsi5"]
+[gd_scene load_steps=33 format=3 uid="uid://c2qbrpracjsi5"]
 
 [ext_resource type="PackedScene" uid="uid://cvgjcwqn6k8eu" path="res://Scenes/UI/Overlay/health.tscn" id="1_3xw0u"]
 [ext_resource type="Script" uid="uid://bj3o2h06hj6ck" path="res://Scripts/Enemies/enemy.gd" id="1_vumo0"]
@@ -189,6 +189,8 @@ color_ramp = SubResource("GradientTexture1D_31h1d")
 [sub_resource type="CircleShape2D" id="CircleShape2D_3xw0u"]
 radius = 7.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_tq37w"]
+
 [node name="Enemy" type="CharacterBody2D" node_paths=PackedStringArray("shootPoint") groups=["Enemy"]]
 collision_mask = 5
 script = ExtResource("1_vumo0")
@@ -243,6 +245,13 @@ collide_with_areas = true
 [node name="RayCast2DLeft" type="RayCast2D" parent="."]
 target_position = Vector2(-68, 0)
 collision_mask = 4
+
+[node name="Hitbox" type="Area2D" parent="."]
+collision_layer = 129
+collision_mask = 129
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+shape = SubResource("CircleShape2D_tq37w")
 
 [connection signal="hp_changed" from="Health" to="." method="_on_health_hp_changed"]
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
