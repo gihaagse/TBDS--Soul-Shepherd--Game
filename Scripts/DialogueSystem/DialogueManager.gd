@@ -10,7 +10,7 @@ var current_dialogue: DialogueResource
 var current_entry: DialogueEntry
 var current_line_index: int = 0
 var is_dialogue_active: bool = false
-@onready var finite_state_machine: FSM = $FiniteStateMachine
+#@onready var finite_state_machine: FSM = $FiniteStateMachine
 
 
 var dialogue_ui: Control
@@ -57,6 +57,14 @@ func show_player_choices():
 	choices_displayed.emit(current_entry.player_options)
 
 func choose_option(option_index: int):
+	if not current_entry:
+		end_dialogue()
+		return
+	
+	if not current_entry["player_options"]:
+		end_dialogue()
+		return
+
 	if option_index >= current_entry.player_options.size():
 		return
 	
@@ -78,8 +86,8 @@ func process_rewards(rewards: Dictionary):
 		print("Reward given: ", reward_type, " = ", rewards[reward_type])
 
 func end_dialogue():
+	dialogue_ended.emit()
 	is_dialogue_active = false
 	current_dialogue = null
 	current_entry = null
 	current_line_index = 0
-	dialogue_ended.emit()

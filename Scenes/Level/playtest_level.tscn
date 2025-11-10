@@ -17,6 +17,9 @@
 [ext_resource type="SpriteFrames" uid="uid://dddu3nk2vhaqr" path="res://Resources/Wisps/Red_Devil_Wisp.tres" id="15_o1anj"]
 [ext_resource type="SpriteFrames" uid="uid://dg0vx2sffi824" path="res://Resources/Wisps/Green_Wisp.tres" id="16_2vemj"]
 [ext_resource type="PackedScene" uid="uid://c2qbrpracjsi5" path="res://Scenes/Enemies/orc.tscn" id="17_fc1sg"]
+[ext_resource type="PackedScene" uid="uid://d3ww40qkxw5eq" path="res://Scenes/Dialogue/dialogue_interact.tscn" id="11_p8kv5"]
+[ext_resource type="Resource" uid="uid://dgfnxjhqxasj7" path="res://Resources/Dialogue/FriendlyMonk1.tres" id="12_heeoc"]
+[ext_resource type="PackedScene" uid="uid://ndkp1vfqmr4g" path="res://Scenes/Dialogue/DialogueUI.tscn" id="13_heeoc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_aveji"]
 texture = ExtResource("1_o8n5m")
@@ -326,6 +329,14 @@ player = NodePath("../Player")
 [node name="ParralaxBackground" parent="." instance=ExtResource("10_um1rd")]
 z_index = 1
 position = Vector2(576, 203)
+
+[node name="DialogueInteract" parent="." instance=ExtResource("11_p8kv5")]
+z_index = 5
+position = Vector2(96, 230)
+dialogue = ExtResource("12_heeoc")
+
+[node name="DialogueUI" parent="." instance=ExtResource("13_heeoc")]
+visible = false
 
 [node name="killzone" type="Area2D" parent="."]
 position = Vector2(730, 303)

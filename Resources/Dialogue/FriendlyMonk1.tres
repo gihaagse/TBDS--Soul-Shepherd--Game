@@ -1,0 +1,65 @@
+[gd_resource type="Resource" script_class="DialogueResource" load_steps=14 format=3 uid="uid://dgfnxjhqxasj7"]
+
+[ext_resource type="Script" uid="uid://dqkie63v0gtnn" path="res://Scripts/DialogueSystem/DialogueResource.gd" id="1_d5y0y"]
+[ext_resource type="Script" uid="uid://b1dbmwvbqweuo" path="res://Scripts/DialogueSystem/PlayerOption.gd" id="1_q8wt3"]
+[ext_resource type="Script" uid="uid://blm225otwjvl" path="res://Scripts/DialogueSystem/DialogueEntry.gd" id="2_0jtoj"]
+[ext_resource type="Texture2D" uid="uid://cktnj13s7j7mv" path="res://Assets/Dialogue Icons/friendly_monk_speech_scaled.png" id="3_epi0f"]
+
+[sub_resource type="Resource" id="Resource_e1pum"]
+script = ExtResource("1_q8wt3")
+choice_text = "Thank you so much!"
+metadata/_custom_type_script = "uid://b1dbmwvbqweuo"
+
+[sub_resource type="Resource" id="Resource_jahjj"]
+script = ExtResource("2_0jtoj")
+npc_lines = Array[String](["Sure thing, follow this path and you will get there!"])
+player_options = Array[ExtResource("1_q8wt3")]([SubResource("Resource_e1pum")])
+metadata/_custom_type_script = "uid://blm225otwjvl"
+
+[sub_resource type="Resource" id="Resource_vsygy"]
+script = ExtResource("1_q8wt3")
+choice_text = "I got lost, can you navigate the way out of this forest?"
+npc_response = SubResource("Resource_jahjj")
+metadata/_custom_type_script = "uid://b1dbmwvbqweuo"
+
+[sub_resource type="Resource" id="Resource_f1blu"]
+script = ExtResource("2_0jtoj")
+npc_lines = Array[String](["The biggest treasure you will find here is this blessed land!"])
+metadata/_custom_type_script = "uid://blm225otwjvl"
+
+[sub_resource type="Resource" id="Resource_jgj4o"]
+script = ExtResource("1_q8wt3")
+choice_text = "I heard there was a treasure in this land."
+npc_response = SubResource("Resource_f1blu")
+metadata/_custom_type_script = "uid://b1dbmwvbqweuo"
+
+[sub_resource type="Resource" id="Resource_g4evc"]
+script = ExtResource("1_q8wt3")
+choice_text = "That sounds scary..."
+metadata/_custom_type_script = "uid://b1dbmwvbqweuo"
+
+[sub_resource type="Resource" id="Resource_e62dn"]
+script = ExtResource("2_0jtoj")
+npc_lines = Array[String](["They say there are lost souls in this land", "That havent found peace yet..."])
+player_options = Array[ExtResource("1_q8wt3")]([SubResource("Resource_g4evc")])
+metadata/_custom_type_script = "uid://blm225otwjvl"
+
+[sub_resource type="Resource" id="Resource_ixin6"]
+script = ExtResource("1_q8wt3")
+choice_text = "You call this beautiful? It feels cursed to me..."
+npc_response = SubResource("Resource_e62dn")
+metadata/_custom_type_script = "uid://b1dbmwvbqweuo"
+
+[sub_resource type="Resource" id="Resource_qil2t"]
+script = ExtResource("2_0jtoj")
+npc_lines = Array[String](["Hello my little friend!", "What are you doing in this beautiful land?"])
+player_options = Array[ExtResource("1_q8wt3")]([SubResource("Resource_vsygy"), SubResource("Resource_jgj4o"), SubResource("Resource_ixin6")])
+metadata/_custom_type_script = "uid://blm225otwjvl"
+
+[resource]
+script = ExtResource("1_d5y0y")
+npc_id = "friendly_monk_1"
+name = "Friendly Monk"
+npc_icon = ExtResource("3_epi0f")
+dialogue_data = SubResource("Resource_qil2t")
+metadata/_custom_type_script = "uid://dqkie63v0gtnn"
