@@ -4,6 +4,7 @@ class_name Player_Fall
 
 @export var dash_cooldown : Timer
 @export var landing_sfx : AudioStreamPlayer2D
+@export var max_jump_hold: float = 0.1
 
 @export var max_landing_shake : float = 3
 @export var min_landing_shake : float = 0.15
@@ -19,11 +20,14 @@ class_name Player_Fall
 @export var min_squash_duration : float =  0.15
 
 var last_velocity_y : float = 0.0
+var jump_hold_time: float = 0.0
+var is_jumping: bool = false
 
 func Enter():
 	super()
 	sprite.play("Panda_Jump")
 	last_velocity_y = 0.0
+	is_jumping = true
 
 func Update(_delta:float) -> void:
 	if player.velocity.y > 0:
@@ -54,6 +58,19 @@ func Update(_delta:float) -> void:
 		
 
 func Phys_Update(_delta:float) -> void:
+	#if Input.is_action_pressed("Jump") and player.velocity.y > 0 and is_jumping:
+		#print("")
+		#jump_hold_time += _delta
+		#if jump_hold_time <= max_jump_hold:
+			#player.velocity.y -= jump_force/3
+			#print("jump timer: ", jump_hold_time)
+			#print("max hold: ", max_jump_hold)
+			#player.velocity.y = lerp(player.velocity.y, -jump_force * 3.0, _delta * 2) # vloeiende versterking omhoog
+	
+	if Input.is_action_just_released("Jump") or jump_hold_time >= max_jump_hold:
+		jump_hold_time = 0
+		is_jumping = false
+		
 	movement(_delta)
 
 func _play_landing_effects() -> void:

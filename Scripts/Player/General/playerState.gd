@@ -5,8 +5,8 @@ signal state_transition
 
 static var jumps_left: int = 1
 static var custom_gravity : Vector2 = Vector2(0,980)
-static var max_airglide_velocity: int  = 500
 static var in_gliding: bool = false
+static var last_character_orientation: int = 0
 
 var player : CharacterBody2D
 var sprite : AnimatedSprite2D
@@ -19,10 +19,7 @@ var walking_dust_particle: CPUParticles2D
 var jump_particle: GPUParticles2D
 var run_particle_timer : float
 
-var jump_hold_time: float = 0.0
-var is_jumping: bool = false
-
-@export var max_jump_hold: float = 0.3
+@export var max_airglide_velocity: int  = 180
 @export var run_particle_offset := 0.25
 @export var move_speed : int = 120
 @export var jump_force : int = 300
@@ -70,9 +67,6 @@ func movement(_delta:float):
 	if Input.is_action_just_pressed("Jump") and player.is_on_floor() and can_jump:
 		jumpsfx.playing = true
 		player.velocity.y = -jump_force
-		is_jumping = true
-		jump_hold_time = 0.0
-		
 		UtilsEffect.stretch(sprite, .2, .175)
 		jump_particle.emitting = false
 		jump_particle.restart()
@@ -82,18 +76,15 @@ func movement(_delta:float):
 		if player.velocity.length() >= max_airglide_velocity and in_gliding:
 			player.velocity = player.velocity.normalized() * max_airglide_velocity
 	
-	if is_jumping and Input.is_action_pressed("Jump") and jump_hold_time < max_jump_hold:
-		print("higher game")
-		jump_hold_time += _delta
-		player.velocity.y = lerp(player.velocity.y, -jump_force * 3.0, _delta * 10) # vloeiende versterking omhoog
-	if Input.is_action_just_released("Jump") or jump_hold_time >= max_jump_hold:
-		is_jumping = false
+
 	var direction := Input.get_axis("Left", "Right")
+	if direction != 0:
+		last_character_orientation = direction
 	
-	if !in_anim and direction:
-		sprite.flip_h = direction < 0
-		weapon.position.x = -14 if direction < 0 else 14
-		shootPoint.position.x = -14 if direction < 0 else 14
+	if !in_anim and last_character_orientation:
+		sprite.flip_h = last_character_orientation < 0
+		weapon.position.x = -14 if last_character_orientation < 0 else 14
+		shootPoint.position.x = -14 if last_character_orientation < 0 else 14
 	
 	UtilsEffect.lean_run(sprite, _delta, direction)
 	if player.is_on_floor_only() and direction:

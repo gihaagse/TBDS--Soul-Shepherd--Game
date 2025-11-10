@@ -1,13 +1,12 @@
-[gd_scene load_steps=117 format=3 uid="uid://c5ongupm07qh3"]
+[gd_scene load_steps=102 format=3 uid="uid://c5ongupm07qh3"]
 
 [ext_resource type="Script" uid="uid://bw7ujmm53vwsq" path="res://Scripts/Player/General/playermain.gd" id="1_qr1w5"]
 [ext_resource type="PackedScene" uid="uid://cvgjcwqn6k8eu" path="res://Scenes/UI/Overlay/health.tscn" id="2_ythyg"]
 [ext_resource type="Shader" uid="uid://o6ancnl5jgcr" path="res://Shaders/Blink.gdshader" id="3_bmb2s"]
 [ext_resource type="Texture2D" uid="uid://6x2g3xw7pdko" path="res://Assets/Tutorial Open Assets/Tiny RPG Character Asset Pack v1.03 -Free Soldier&Orc/Characters(100x100)/Soldier/Soldier/Soldier-Attack01.png" id="4_ur3l4"]
 [ext_resource type="Texture2D" uid="uid://d0c5idgfq6ym8" path="res://Assets/Tutorial Open Assets/Tiny RPG Character Asset Pack v1.03 -Free Soldier&Orc/Characters(100x100)/Soldier/Soldier/Soldier.png" id="5_2ahak"]
-[ext_resource type="Texture2D" uid="uid://xoc326mubg4p" path="res://Assets/Sprites/Panda/Panda_hat.png" id="5_2jnj1"]
 [ext_resource type="Texture2D" uid="uid://u5j8flnr1bdo" path="res://Assets/Tutorial Open Assets/Tiny RPG Character Asset Pack v1.03 -Free Soldier&Orc/Characters(100x100)/Soldier/Soldier/Soldier-Walk.png" id="6_rukb4"]
-[ext_resource type="Texture2D" uid="uid://pkk1tn7ji5id" path="res://Assets/Sprites/Panda/panda_small_no_hat.png" id="8_1agin"]
+[ext_resource type="Texture2D" uid="uid://pkk1tn7ji5id" path="res://Assets/Sprites/Panda/No_Hat_Panda.png" id="8_1agin"]
 [ext_resource type="Texture2D" uid="uid://det0un1vj4110" path="res://Assets/Sprites/Panda/panda_small.png" id="8_fcwna"]
 [ext_resource type="Script" uid="uid://d2q03jes32ygw" path="res://Scripts/Central/FSM.gd" id="9_1agin"]
 [ext_resource type="Texture2D" uid="uid://bm18u1wsukfwa" path="res://Assets/Sprites/Panda/hat_throw.png" id="10_1agin"]
@@ -43,22 +42,6 @@ resource_local_to_scene = true
 shader = ExtResource("3_bmb2s")
 shader_parameter/blink_color = Color(1, 1, 1, 1)
 shader_parameter/blink_intensity = 0.0
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0pk7v"]
-atlas = ExtResource("8_1agin")
-region = Rect2(288, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_rblve"]
-atlas = ExtResource("8_1agin")
-region = Rect2(304, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_fn4qh"]
-atlas = ExtResource("8_1agin")
-region = Rect2(320, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_5omc3"]
-atlas = ExtResource("8_1agin")
-region = Rect2(336, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_06tpx"]
 atlas = ExtResource("4_ur3l4")
@@ -200,10 +183,6 @@ region = Rect2(128, 0, 16, 16)
 atlas = ExtResource("8_fcwna")
 region = Rect2(144, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_8g0gh"]
-atlas = ExtResource("10_fcwna")
-region = Rect2(160, 0, 16, 16)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_mtuoh"]
 atlas = ExtResource("5_2ahak")
 region = Rect2(0, 100, 100, 100)
@@ -240,23 +219,6 @@ region = Rect2(700, 100, 100, 100)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_0pk7v")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_rblve")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_fn4qh")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_5omc3")
-}],
-"loop": false,
-"name": &"Attack",
-"speed": 10.0
-}, {
-"frames": [{
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_06tpx")
 }, {
 "duration": 1.0,
@@ -275,7 +237,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_hnuln")
 }],
 "loop": false,
-"name": &"Attack_old",
+"name": &"Attack",
 "speed": 15.0
 }, {
 "frames": [{
@@ -402,14 +364,6 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_8g0gh")
-}],
-"loop": true,
-"name": &"Single_bamboo",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_mtuoh")
 }, {
 "duration": 1.0,
@@ -435,47 +389,6 @@ animations = [{
 }],
 "loop": true,
 "name": &"Walk",
-"speed": 10.0
-}, {
-"frames": [],
-"loop": true,
-"name": &"new_animation",
-"speed": 5.0
-}]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_pcwjh"]
-atlas = ExtResource("5_2jnj1")
-region = Rect2(272, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ejxfg"]
-atlas = ExtResource("5_2jnj1")
-region = Rect2(288, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_huyyu"]
-atlas = ExtResource("5_2jnj1")
-region = Rect2(304, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_m5eiq"]
-atlas = ExtResource("5_2jnj1")
-region = Rect2(320, 0, 16, 16)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_2jnj1"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_pcwjh")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ejxfg")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_huyyu")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_m5eiq")
-}],
-"loop": true,
-"name": &"Panda_Hat_Attack",
 "speed": 10.0
 }]
 
@@ -569,252 +482,6 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="Animation" id="Animation_pcwjh"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [1]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Bamboo_Stick:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [1.5707964]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Bamboo_Stick:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(2, 5)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Player_Cosmetics:animation")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"Panda_Hat_Attack"]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Player_Cosmetics:frame")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [1]
-}
-
-[sub_resource type="Animation" id="Animation_2jnj1"]
-resource_name = "AttackAnimation_Left"
-length = 0.1333
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"Attack"]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AnimatedSprite2D:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.033333335, 0.06666667, 0.10000001),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Bamboo_Stick:rotation")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.033333335, 0.06666667, 0.10000001, 0.1333),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [0.0, -0.7853982, -1.5707964, -0.7853982, 0.0]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Bamboo_Stick:position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.033333335, 0.06666667, 0.10000001, 0.1333),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(0, 4), Vector2(-2, 5), Vector2(-2, 5), Vector2(0, 5), Vector2(0, 4)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Player_Cosmetics:animation")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"Panda_Hat_Attack"]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Player_Cosmetics:frame")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0, 0.033333335, 0.06666667, 0.10000001),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("Player_Cosmetics:scale")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-1, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_1agin"]
-resource_name = "AttackAnimation_Right"
-length = 0.1333
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"Attack"]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AnimatedSprite2D:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.033333335, 0.06666667, 0.10000001),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Bamboo_Stick:rotation")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.033333335, 0.06666667, 0.10000001, 0.1333),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [0.0, 0.7853982, 1.5707964, 0.7853982, 0.0]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Bamboo_Stick:position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.033333335, 0.06666667, 0.10000001, 0.1333),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(0, 4), Vector2(2, 5), Vector2(2, 5), Vector2(0, 4.9999995), Vector2(0, 4)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Player_Cosmetics:animation")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"Panda_Hat_Attack"]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Player_Cosmetics:frame")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0, 0.033333335, 0.06666667, 0.10000001),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("Player_Cosmetics:scale")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1, 1)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_2jnj1"]
-_data = {
-&"AttackAnimation_Left": SubResource("Animation_2jnj1"),
-&"AttackAnimation_Right": SubResource("Animation_1agin"),
-&"RESET": SubResource("Animation_pcwjh")
-}
-
 [sub_resource type="Gradient" id="Gradient_pisgm"]
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
 
@@ -887,6 +554,7 @@ collision_layer = 4
 script = ExtResource("1_qr1w5")
 finite_state_machine = NodePath("FiniteStateMachine")
 hp = NodePath("Health")
+velocity2D = null
 
 [node name="Health" parent="." instance=ExtResource("2_ythyg")]
 
@@ -897,16 +565,8 @@ shape = SubResource("RectangleShape2D_lfmf2")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 material = SubResource("ShaderMaterial_b1ygp")
 sprite_frames = SubResource("SpriteFrames_gymyn")
-animation = &"Attack"
+animation = &"Panda_Jump_No_Hat"
 autoplay = "Idle"
-frame = 1
-
-[node name="Player_Cosmetics" type="AnimatedSprite2D" parent="."]
-visible = false
-position = Vector2(0, 1)
-sprite_frames = SubResource("SpriteFrames_2jnj1")
-animation = &"Panda_Hat_Attack"
-frame = 1
 
 [node name="Bamboo-glide" type="AnimatedSprite2D" parent="."]
 visible = false
@@ -914,20 +574,6 @@ position = Vector2(0, -2)
 sprite_frames = SubResource("SpriteFrames_j6uq4")
 animation = &"Hat_glide"
 frame_progress = 0.39128947
-
-[node name="Bamboo_Stick" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(2, 5)
-rotation = 1.5707964
-texture = ExtResource("10_fcwna")
-region_enabled = true
-region_rect = Rect2(160, 0, 16, 16)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_2jnj1")
-}
-speed_scale = 0.75
 
 [node name="FiniteStateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state", "sprite2D", "player", "weapon", "shootPoint", "holder")]
 script = ExtResource("9_1agin")
@@ -953,9 +599,30 @@ jumpsfx = NodePath("../../jumpsfx")
 script = ExtResource("12_mwii3")
 dash_cooldown = NodePath("../../Timers/DashCooldown")
 landing_sfx = NodePath("../../LandingSFX")
+max_landing_shake = null
+min_landing_shake = null
+max_blur_strength = null
+min_blur_strength = null
+max_duration = null
+min_duration = null
+max_landing_volume = null
+min_landing_volume = null
+max_squash_str = null
+min_squash_str = null
+max_squash_duration = null
+min_squash_duration = null
+max_jump_hold = null
+run_particle_offset = null
+move_speed = null
+jump_force = null
 brake_force = 2
 jumpsfx = NodePath("../../jumpsfx")
+can_move = null
 can_jump = false
+in_anim = null
+is_gravity = null
+can_shoot = null
+airsStrafe = null
 
 [node name="Attack1" type="Node" parent="FiniteStateMachine" node_paths=PackedStringArray("jumpsfx")]
 script = ExtResource("13_2aanf")
@@ -1029,7 +696,7 @@ slots = [NodePath("Weapon"), NodePath("Bow")]
 [node name="Weapon" parent="Holder" node_paths=PackedStringArray("sprite") instance=ExtResource("20_po18e")]
 position = Vector2(14, 0)
 sprite = NodePath("../../AnimatedSprite2D")
-animation_name = "Attack_old"
+animation_name = "Attack"
 frame_hit = Array[int]([0])
 damage = 10
 
@@ -1148,4 +815,3 @@ process_material = SubResource("ParticleProcessMaterial_m0h3t")
 [connection signal="animation_finished" from="AnimatedSprite2D" to="FiniteStateMachine/Attack1" method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="animation_finished" from="AnimatedSprite2D" to="FiniteStateMachine/AirAttack1" method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="animation_finished" from="AnimatedSprite2D" to="FiniteStateMachine/Archery" method="_on_animated_sprite_2d_animation_finished"]
-[connection signal="animation_finished" from="AnimationPlayer" to="FiniteStateMachine/Attack1" method="_on_animation_player_animation_finished"]

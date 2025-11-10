@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://pkk1tn7ji5id"
-path="res://.godot/imported/No_Hat_Panda.png-7f68d2869862efc5b44183534b9f256a.ctex"
+uid="uid://xoc326mubg4p"
+path="res://.godot/imported/Panda_hat.png-8851b051de72041b84bcabcc9ca26f5e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Panda/No_Hat_Panda.png"
-dest_files=["res://.godot/imported/No_Hat_Panda.png-7f68d2869862efc5b44183534b9f256a.ctex"]
+source_file="res://Assets/Sprites/Panda/Panda_hat.png"
+dest_files=["res://.godot/imported/Panda_hat.png-8851b051de72041b84bcabcc9ca26f5e.ctex"]
 
 [params]
 
