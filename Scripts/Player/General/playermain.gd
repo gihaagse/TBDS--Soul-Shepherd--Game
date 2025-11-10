@@ -24,8 +24,6 @@ func _input(event):
 	if paused:
 		return
 
-
-
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("Pause"):
 		pauseMenu()
@@ -36,10 +34,13 @@ func _process(_delta: float) -> void:
 	game_manager.updateLabel(finite_state_machine.current_state.name)
 	game_manager.updateHP(hp.hp)
 	if Input.is_action_just_pressed("reset"):
-		player_hit.emit(50)
-	if hp.hp <= 0:
-		collision_shape_2d.disabled = true
 		game_manager.updateGameOver()
+		collision_shape_2d.disabled = true
+	if hp.hp <= 0:
+		#game_manager.updateGameOver() #Change this to reset player ui
+		CheckPointManager.respawn_player_to_checkpoint.emit(self)
+		#collision_shape_2d.disabled = true
+		
 
 		
 func pauseMenu():

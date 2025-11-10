@@ -21,4 +21,7 @@ func _on_player_player_hit(dmg) -> void:
 
 func _on_timer_timeout() -> void:
 	Engine.time_scale = 1.0
-	get_tree().reload_current_scene()
+	#get_tree().reload_current_scene()
+	#if get_parent().is_in_group("Player"):
+		#var player : Player = get_parent()
+		#CheckPointManager.respawn_player_to_checkpoint.emit(player)
