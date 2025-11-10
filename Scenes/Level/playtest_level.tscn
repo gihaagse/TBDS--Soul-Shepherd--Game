@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dhoq3sp0l7yob"]
+[gd_scene load_steps=18 format=3 uid="uid://dhoq3sp0l7yob"]
 
 [ext_resource type="Script" uid="uid://byn1je7flnjo3" path="res://Scripts/Central/game_manager.gd" id="1_d3t52"]
 [ext_resource type="Texture2D" uid="uid://dfdfu6o1j3apv" path="res://Assets/Sprites/Playtest1.png" id="1_o8n5m"]
@@ -10,10 +10,10 @@
 [ext_resource type="PackedScene" uid="uid://b1wpf7mxi7ax8" path="res://Scenes/UI/Overlay/ability_debug_menu.tscn" id="7_jdr3a"]
 [ext_resource type="Script" uid="uid://b2b6rmyyluckx" path="res://Scripts/Player/General/camera_2d.gd" id="9_4tw43"]
 [ext_resource type="PackedScene" uid="uid://5jrffwap8tjk" path="res://Scenes/Background/parralax_background.tscn" id="10_um1rd"]
+[ext_resource type="Script" uid="uid://bpkjqkjnq8o6g" path="res://Scripts/Player/General/killzone.gd" id="11_jdr3a"]
 [ext_resource type="PackedScene" uid="uid://d3ww40qkxw5eq" path="res://Scenes/Dialogue/dialogue_interact.tscn" id="11_p8kv5"]
 [ext_resource type="Resource" uid="uid://dgfnxjhqxasj7" path="res://Resources/Dialogue/FriendlyMonk1.tres" id="12_heeoc"]
 [ext_resource type="PackedScene" uid="uid://ndkp1vfqmr4g" path="res://Scenes/Dialogue/DialogueUI.tscn" id="13_heeoc"]
-[ext_resource type="Script" uid="uid://bpkjqkjnq8o6g" path="res://Scripts/Player/General/killzone.gd" id="11_jdr3a"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_aveji"]
 texture = ExtResource("1_o8n5m")
@@ -331,6 +331,7 @@ dialogue = ExtResource("12_heeoc")
 
 [node name="DialogueUI" parent="." instance=ExtResource("13_heeoc")]
 visible = false
+
 [node name="killzone" type="Area2D" parent="."]
 position = Vector2(730, 303)
 collision_mask = 4
