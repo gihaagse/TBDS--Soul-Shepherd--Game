@@ -1,12 +1,14 @@
 extends Node
 class_name PlayerState
 
+@warning_ignore("unused_signal")
 signal state_transition
 
 static var jumps_left: int = 1
 static var custom_gravity : Vector2 = Vector2(0,980)
 static var in_gliding: bool = false
 static var last_character_orientation: int = 0
+static var can_double_jump: bool = false
 
 var player : CharacterBody2D
 var sprite : AnimatedSprite2D
@@ -62,15 +64,13 @@ func Phys_Update(_delta:float):
 func movement(_delta:float):
 	if player.is_on_floor():
 		custom_gravity = Vector2(0,980)
-	
+		#jumps_left = 1
+		#can_double_jump = false
+
 	run_particle_timer += _delta
 	if Input.is_action_just_pressed("Jump") and player.is_on_floor() and can_jump:
-		jumpsfx.playing = true
-		player.velocity.y = -jump_force
-		UtilsEffect.stretch(sprite, .2, .175)
-		jump_particle.emitting = false
-		jump_particle.restart()
-		jump_particle.emitting = true
+		jump_effect()
+		
 	elif is_gravity:
 		player.velocity += custom_gravity * _delta
 		if player.velocity.length() >= max_airglide_velocity and in_gliding:
@@ -79,6 +79,7 @@ func movement(_delta:float):
 
 	var direction := Input.get_axis("Left", "Right")
 	if direction != 0:
+		@warning_ignore("narrowing_conversion")
 		last_character_orientation = direction
 	
 	if !in_anim and last_character_orientation:
@@ -86,6 +87,7 @@ func movement(_delta:float):
 		weapon.position.x = -14 if last_character_orientation < 0 else 14
 		shootPoint.position.x = -14 if last_character_orientation < 0 else 14
 	
+	@warning_ignore("narrowing_conversion")
 	UtilsEffect.lean_run(sprite, _delta, direction)
 	if player.is_on_floor_only() and direction:
 		if run_particle_timer >= run_particle_offset:
@@ -108,3 +110,11 @@ func get_item_by_name(node_name: String, array: Array[Node2D]):
 	var found = array.filter(func(n): return n.name == node_name)
 	if found.size() > 0:
 		return found[0]
+		
+func jump_effect() -> void:
+	jumpsfx.playing = true
+	player.velocity.y = -jump_force
+	UtilsEffect.stretch(sprite, .2, .175)
+	jump_particle.emitting = false
+	jump_particle.restart()
+	jump_particle.emitting = true
