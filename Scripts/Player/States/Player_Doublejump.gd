@@ -9,6 +9,6 @@ func Enter():
 
 
 func Phys_Update(_delta:float) -> void:
-	player.velocity.y = -jump_force
+	jump_effect()
 	state_transition.emit(self, "Idling")
 	movement(_delta)

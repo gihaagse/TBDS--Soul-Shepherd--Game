@@ -27,11 +27,14 @@ func _input(event):
 
 
 func _process(_delta: float) -> void:
+	#print(Engine.get_frames_per_second())
+
 	if Input.is_action_just_pressed("Pause"):
 		pauseMenu()
 		
 	if paused:
 		return
+		
 	velocity2D = velocity 
 	game_manager.updateLabel(finite_state_machine.current_state.name)
 	game_manager.updateHP(hp.hp)

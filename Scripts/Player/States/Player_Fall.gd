@@ -4,8 +4,10 @@ class_name Player_Fall
 
 @export var dash_cooldown : Timer
 @export var landing_sfx : AudioStreamPlayer2D
-@export var max_jump_hold: float = 0.1
+@export var extra_hold_jump: float = 6.7
+@export var max_jump_hold_time: float = 1
 
+@export_group("fx")
 @export var max_landing_shake : float = 3
 @export var min_landing_shake : float = 0.15
 @export var max_blur_strength : float =  0.008
@@ -20,14 +22,17 @@ class_name Player_Fall
 @export var min_squash_duration : float =  0.15
 
 var last_velocity_y : float = 0.0
+var fall_hold_time: float = 0.0
+var max_fall_hold_time: float = 0.05
 var jump_hold_time: float = 0.0
-var is_jumping: bool = false
+
 
 func Enter():
 	super()
 	sprite.play("Panda_Jump")
 	last_velocity_y = 0.0
-	is_jumping = true
+	fall_hold_time = 0.0
+	jump_hold_time = 0.0
 
 func Update(_delta:float) -> void:
 	if player.velocity.y > 0:
@@ -35,8 +40,9 @@ func Update(_delta:float) -> void:
 
 	if player.is_on_floor():
 		_play_landing_effects()
-		state_transition.emit(self, "Idling")
 		jumps_left = 1
+		can_double_jump = false
+		state_transition.emit(self, "Idling")
 
 	if Input.is_action_just_pressed("LeftClick") and get_item_by_name("Weapon", slots).visible:
 		state_transition.emit(self, "Attack1")
@@ -50,26 +56,30 @@ func Update(_delta:float) -> void:
 	if Input.is_action_just_pressed("Jump") and player.is_on_wall_only() and (Input.is_action_pressed("Left") or Input.is_action_pressed("Right")):
 		state_transition.emit(self, "WallJump")
 		
-	if Input.is_action_just_pressed("Jump") and not player.is_on_floor():
-		if jumps_left > 0 and AbilityData.unlocked_abilities.has(AbilityData.get_value_from_ability_name("Doublejump")):
-			state_transition.emit(self, "Doublejump")
-		else:
-			state_transition.emit(self, "Airgliding")
-		
 
 func Phys_Update(_delta:float) -> void:
-	#if Input.is_action_pressed("Jump") and player.velocity.y > 0 and is_jumping:
-		#print("")
-		#jump_hold_time += _delta
-		#if jump_hold_time <= max_jump_hold:
-			#player.velocity.y -= jump_force/3
-			#print("jump timer: ", jump_hold_time)
-			#print("max hold: ", max_jump_hold)
-			#player.velocity.y = lerp(player.velocity.y, -jump_force * 3.0, _delta * 2) # vloeiende versterking omhoog
-	
-	if Input.is_action_just_released("Jump") or jump_hold_time >= max_jump_hold:
-		jump_hold_time = 0
-		is_jumping = false
+	if Input.is_action_pressed("Jump"):
+		jump_hold_time += _delta
+		if player.velocity.y <0 and jump_hold_time < max_jump_hold_time:
+			player.velocity.y -= extra_hold_jump
+		
+	if Input.is_action_pressed("Jump") and player.velocity.y >=0:
+		fall_hold_time += _delta
+		if fall_hold_time >= max_fall_hold_time:
+			state_transition.emit(self, "Airgliding")
+			
+		if Input.is_action_just_pressed("Jump") and can_double_jump and jumps_left > 0 and \
+		AbilityData.unlocked_abilities.has(AbilityData.get_value_from_ability_name("Doublejump")):
+			state_transition.emit(self, "Doublejump")
+			
+	elif Input.is_action_just_pressed("Jump") and can_double_jump and jumps_left > 0 and \
+	AbilityData.unlocked_abilities.has(AbilityData.get_value_from_ability_name("Doublejump")):
+			state_transition.emit(self, "Doublejump")
+			
+			
+	if Input.is_action_just_released("Jump"):
+		can_double_jump = true
+		
 		
 	movement(_delta)
 
