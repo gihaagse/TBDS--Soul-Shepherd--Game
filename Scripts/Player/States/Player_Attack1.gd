@@ -8,7 +8,7 @@ var done : bool
 func Enter():
 	super()
 	in_anim = true
-	sprite.play("Attack_old")
+	#sprite.play("Attack_old")
 	bamboo_stick.visible = true
 	player_cosmetics.visible = true
 	if last_character_orientation > 0:
