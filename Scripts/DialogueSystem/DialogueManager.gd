@@ -2,6 +2,7 @@ extends Node
 
 signal dialogue_started(dialogue_resource: DialogueResource)
 signal dialogue_ended
+signal dialogue_completely_ended
 signal text_displayed(text: String)
 signal choices_displayed(choices: Array[PlayerOption])
 signal dialogue_transition
@@ -19,11 +20,11 @@ func start_dialogue(dialogue_resource: DialogueResource):
 	if is_dialogue_active:
 		return
 	
+	is_dialogue_active = true
 	dialogue_transition.emit()
 	current_dialogue = dialogue_resource
 	current_entry = dialogue_resource.dialogue_data
 	current_line_index = 0
-	is_dialogue_active = true
 	
 	dialogue_started.emit(dialogue_resource)
 	display_current_line()
@@ -87,6 +88,8 @@ func process_rewards(rewards: Dictionary):
 
 func end_dialogue():
 	dialogue_ended.emit()
+	#Make sure to allow the tween to finish (.3 sec) then reset everything
+	await get_tree().create_timer(.5).timeout
 	is_dialogue_active = false
 	current_dialogue = null
 	current_entry = null
