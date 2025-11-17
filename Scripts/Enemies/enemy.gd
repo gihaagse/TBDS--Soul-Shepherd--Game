@@ -7,7 +7,7 @@ class_name enemy
 @export var shootPoint : Node2D
 @export var groundPosOffset : float = 10
 
-@onready var health: HP = $Health
+@onready var health: HP_Enemy = $Health
 @onready var label: Label = $Label
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var gpu_particles_2d: GPUParticles2D = $GPUParticles2D
