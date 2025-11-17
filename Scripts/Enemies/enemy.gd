@@ -22,7 +22,9 @@ var player: CharacterBody2D = null
 @export var can_move: bool = true
 @onready var raycastcheckright: RayCast2D = $RayCast2DRight
 @onready var raycastcheckleft: RayCast2D = $RayCast2DLeft
-var ground_collider
+var knockback_velocity: Vector2 = Vector2.ZERO
+var knockback_strength := 150.0
+var knockback_decay := 10.0
 
 
 var old_hp : int
@@ -50,10 +52,15 @@ func _process(_delta: float) -> void:
 		dir = dir * -1
 		_correct_sprite()
 
-	if can_move:
-		position.x += speed * dir * _delta
-	if sprite.get_animation() != "Walking" and sprite.get_animation() != "Attack_shoot" and can_move:
-		sprite.play("Walking")
+	if knockback_velocity.length() > 1:
+		velocity.x = knockback_velocity.x
+		knockback_velocity = knockback_velocity.move_toward(Vector2.ZERO, knockback_decay)
+	else:
+		if can_move:
+			velocity.x = speed * dir
+		else:
+			velocity.x = 0
+	
 	move_and_slide()
 	
 	if playerInRange:
@@ -85,6 +92,7 @@ func _on_health_hp_changed() -> void:
 	
 	gpu_particles_2d.restart()
 	gpu_particles_2d.emitting = true
+	apply_knockback(player.global_position)
 
 func shoot():
 	speed = 0
@@ -130,3 +138,7 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 		sprite.play("Walking")
 	else:
 		sprite.play("Idle")
+
+func apply_knockback(source_position: Vector2):
+	var direction = (global_position - source_position).normalized()
+	knockback_velocity = direction * knockback_strength

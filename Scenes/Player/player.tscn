@@ -1031,8 +1031,6 @@ slots = [NodePath("Weapon"), NodePath("Bow")]
 position = Vector2(14, 0)
 sprite = NodePath("../../AnimatedSprite2D")
 anim_player = NodePath("../../AnimationPlayer")
-animation_name_left = null
-animation_name_right = null
 frame_hit = Array[int]([0])
 damage = 10
 
