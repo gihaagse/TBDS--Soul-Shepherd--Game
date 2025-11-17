@@ -354,30 +354,32 @@ script = ExtResource("11_jdr3a")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="killzone"]
 shape = SubResource("WorldBoundaryShape2D_p8kv5")
 
-[node name="Soul" parent="." instance=ExtResource("12_t8xxn")]
+[node name="ItemContainer" type="Node" parent="."]
+
+[node name="Soul" parent="ItemContainer" instance=ExtResource("12_t8xxn")]
 position = Vector2(325, 148)
 scale = Vector2(0.765, 0.765)
 ability_name = 10
 custom_sprite_frames = ExtResource("13_fc1sg")
 
-[node name="Soul2" parent="." instance=ExtResource("12_t8xxn")]
+[node name="Soul2" parent="ItemContainer" instance=ExtResource("12_t8xxn")]
 position = Vector2(279, 149)
 scale = Vector2(0.765, 0.765)
 ability_name = 7
 custom_sprite_frames = ExtResource("15_o1anj")
 
-[node name="Soul3" parent="." instance=ExtResource("12_t8xxn")]
+[node name="Soul3" parent="ItemContainer" instance=ExtResource("12_t8xxn")]
 position = Vector2(206.00003, 105)
 scale = Vector2(0.765, 0.765)
 ability_name = 8
 custom_sprite_frames = ExtResource("14_dbpip")
 
-[node name="Soul4" parent="." instance=ExtResource("12_t8xxn")]
+[node name="Soul4" parent="ItemContainer" instance=ExtResource("12_t8xxn")]
 position = Vector2(245, 101)
 scale = Vector2(0.765, 0.765)
 ability_name = 9
 
-[node name="Soul6" parent="." instance=ExtResource("12_t8xxn")]
+[node name="Soul6" parent="ItemContainer" instance=ExtResource("12_t8xxn")]
 position = Vector2(236, 194)
 scale = Vector2(0.765, 0.765)
 custom_sprite_frames = ExtResource("16_2vemj")

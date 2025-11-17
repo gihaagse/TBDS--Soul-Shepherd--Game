@@ -23,7 +23,7 @@ func take_damage(dmg : int):
 		Engine.time_scale = .2
 		timer.start()
 	elif(hp <= 0):
-		await drop_item()
+		drop_item()
 		get_parent().queue_free()
 
 func _on_player_player_hit(dmg) -> void:
@@ -41,14 +41,7 @@ func drop_item() -> void:
 	var script = array_items_scripts[random_number]
 	current_item = scene.instantiate() as Node2D
 	current_item.global_position = item_spawn_point.global_position
-	#current_item.set_script(script)
-	var container: Node = null
-	if get_parent().has_node("ItemContainer"):
-		container = get_parent().get_node("ItemContainer")
-	elif get_tree().current_scene and get_tree().current_scene.has_node("ItemContainer"):
-		container = get_tree().current_scene.get_node("ItemContainer")
-	else:
-		container = get_tree().current_scene if get_tree().current_scene else get_parent()
+	current_item.set_script(script)
+	var container: Node = get_tree().current_scene.get_node("ItemContainer")
 
 	container.call_deferred("add_child", current_item)
-	print("item dropped")

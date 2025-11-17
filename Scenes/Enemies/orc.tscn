@@ -254,8 +254,6 @@ shape = SubResource("CircleShape2D_tq37w")
 
 [node name="ItemSpawnPoint" type="Marker2D" parent="."]
 
-[node name="ItemContainer" type="Node" parent="."]
-
 [connection signal="hp_changed" from="Health" to="." method="_on_health_hp_changed"]
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="timeout" from="in_range_shoot_timer" to="." method="_on_timer_timeout"]
