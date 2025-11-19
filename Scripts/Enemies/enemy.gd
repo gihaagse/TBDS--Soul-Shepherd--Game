@@ -15,9 +15,11 @@ class_name enemy
 @export var dir : int = 1
 var player: CharacterBody2D = null
 @export var playerInRange: bool = false
+@export var playerOnTop: bool = false
 @export var flippedSprite: bool = false
 @export var shotOffset: int = 15
 @onready var ground: RayCast2D = $GroundCheck
+@onready var TopCheck: RayCast2D = $TopCheck
 @onready var gravity: float = 300.0
 @export var can_move: bool = true
 @onready var raycastcheckright: RayCast2D = $RayCast2DRight
@@ -84,7 +86,12 @@ func _process(_delta: float) -> void:
 		flippedSprite = false
 		ground.position.x = groundPosOffset
 		_on_area_2d_body_shape_entered()
-	
+		
+	if playerOnTop:
+		if TopCheck.get_collider() == null or TopCheck.get_collider().name != "Player":
+			_player_not_on_top()
+	elif TopCheck.is_colliding() and TopCheck.get_collider().name == "Player":
+		_player_on_top()
 
 func _on_health_hp_changed() -> void:
 	var tween = get_tree().create_tween()
@@ -132,7 +139,6 @@ func _correct_sprite() -> void:
 		$AnimatedSprite2D.scale.x = $AnimatedSprite2D.scale.x * -1
 		flippedSprite = true
 
-
 func _on_animated_sprite_2d_animation_finished() -> void:
 	if can_move:
 		sprite.play("Walking")
@@ -142,3 +148,15 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 func apply_knockback(source_position: Vector2):
 	var direction = (global_position - source_position).normalized()
 	knockback_velocity = direction * knockback_strength
+
+func _on_top_check_cooldown_timeout() -> void:
+	_player_on_top()
+
+func _player_on_top() -> void:
+	player.hp.take_damage(10)
+	playerOnTop = true
+	$TopCheckCooldown.start()
+
+func _player_not_on_top() -> void:
+	playerOnTop = false
+	$TopCheckCooldown.stop()
