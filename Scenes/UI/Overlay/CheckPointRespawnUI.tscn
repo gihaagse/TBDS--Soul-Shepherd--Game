@@ -1,0 +1,202 @@
+[gd_scene load_steps=11 format=3 uid="uid://bajjogst0v58d"]
+
+[ext_resource type="Shader" uid="uid://dlo4kfu6qrdn1" path="res://Shaders/Pause_Menu.gdshader" id="1_d74uk"]
+[ext_resource type="Script" uid="uid://vw0t3agl3b2q" path="res://Scripts/CheckPoints/check_point_respawn_ui.gd" id="1_swhyt"]
+[ext_resource type="FontFile" uid="uid://du4o5kkhgafum" path="res://Assets/Fonts/PixelOperator8-Bold.ttf" id="2_swhyt"]
+[ext_resource type="FontFile" uid="uid://p47ydk5quyq2" path="res://Assets/Tutorial Open Assets/brackeys_platformer_assets/fonts/PixelOperator8-Bold.ttf" id="3_vtvwt"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hqsf3"]
+shader = ExtResource("1_d74uk")
+shader_parameter/amount = 2.000000095
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6i7br"]
+bg_color = Color(5.583167e-06, 0.76293916, 0.11628946, 1)
+border_width_left = 10
+border_width_top = 3
+corner_radius_top_left = 4625
+corner_radius_bottom_right = 1380
+corner_detail = 20
+shadow_color = Color(0, 0, 0, 1)
+shadow_size = 1
+shadow_offset = Vector2(0, 5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2ux8a"]
+content_margin_left = 16.0
+content_margin_top = 16.0
+content_margin_right = 16.0
+content_margin_bottom = 16.0
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 18
+corner_radius_top_right = 18
+corner_radius_bottom_right = 18
+corner_radius_bottom_left = 18
+corner_detail = 6
+shadow_size = 3
+shadow_offset = Vector2(0, 3.41)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ce0ii"]
+content_margin_left = 16.0
+content_margin_top = 16.0
+content_margin_right = 16.0
+content_margin_bottom = 16.0
+bg_color = Color(0.4045111, 0.40451115, 0.4045111, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+corner_detail = 6
+shadow_size = 3
+shadow_offset = Vector2(0, 3.41)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_futms"]
+content_margin_left = 16.0
+content_margin_top = 16.0
+content_margin_right = 16.0
+content_margin_bottom = 16.0
+bg_color = Color(0.8217887, 0.8217887, 0.8217885, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+corner_detail = 6
+shadow_size = 3
+shadow_offset = Vector2(0, 3.41)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hqsf3"]
+
+[node name="CheckPointRespawnUI" type="Control"]
+process_mode = 3
+z_index = 4
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_swhyt")
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = 4
+material = SubResource("ShaderMaterial_hqsf3")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -8258.0
+offset_top = -4519.0
+offset_right = 6159.0
+offset_bottom = 3552.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+z_index = 4
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -74.0
+offset_top = -76.0
+offset_right = 126.0
+offset_bottom = 85.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+z_index = 4
+custom_minimum_size = Vector2(400, 200)
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Panel" type="Panel" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_6i7br")
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Panel"]
+layout_mode = 0
+offset_left = 57.0
+offset_top = 26.5
+offset_right = 388.0
+offset_bottom = 99.5
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("2_swhyt")
+theme_override_font_sizes/font_size = 18
+text = "At which checkpoint 
+would you like 
+to respawn?"
+horizontal_alignment = 1
+
+[node name="Spacer2" type="Control" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.05
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.5
+alignment = 1
+
+[node name="Spacer2" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.2
+
+[node name="Closest" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+z_index = 4
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_vtvwt")
+theme_override_font_sizes/font_size = 17
+theme_override_styles/normal = SubResource("StyleBoxFlat_2ux8a")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ce0ii")
+theme_override_styles/hover = SubResource("StyleBoxFlat_futms")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_hqsf3")
+text = "CLOSEST"
+
+[node name="Spacer3" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.05
+
+[node name="Furthest" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+z_index = 4
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_vtvwt")
+theme_override_font_sizes/font_size = 17
+theme_override_styles/normal = SubResource("StyleBoxFlat_2ux8a")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ce0ii")
+theme_override_styles/hover = SubResource("StyleBoxFlat_futms")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_hqsf3")
+text = "FURTHEST"
+
+[node name="Spacer" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.2
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Closest" to="." method="_on_closest_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Furthest" to="." method="_on_furthest_pressed"]

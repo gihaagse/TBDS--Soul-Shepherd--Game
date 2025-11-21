@@ -29,6 +29,8 @@
 [ext_resource type="AudioStream" uid="uid://c283ary013yu8" path="res://Assets/Tutorial Open Assets/brackeys_platformer_assets/sounds/one pice jump sfx.wav" id="21_v37cr"]
 [ext_resource type="Script" uid="uid://b6lde07wjscdy" path="res://Scripts/Player/States/Player_Airgliding.gd" id="22_4no11"]
 [ext_resource type="AudioStream" uid="uid://eb7gjbavvgb3" path="res://Assets/Tutorial Open Assets/brackeys_platformer_assets/sounds/Landing sfx.wav" id="22_8d028"]
+[ext_resource type="AudioStream" uid="uid://bi3l61fpn0btr" path="res://Assets/Audio/SFX/Player/hitHurt.wav" id="23_0liok"]
+[ext_resource type="Script" uid="uid://bobohqjtqaok3" path="res://Scripts/Player/States/Player_Died.gd" id="23_fcwna"]
 [ext_resource type="Texture2D" uid="uid://k3lrs06wxgfa" path="res://Assets/Textures/test smoke texture.png" id="24_gyc8k"]
 [ext_resource type="Texture2D" uid="uid://c8kqnetnxng1o" path="res://Assets/Textures/test smoke texture lower res.png" id="25_qflxp"]
 [ext_resource type="Script" uid="uid://wifadrvhtulr" path="res://Scripts/Player/States/Player_Grapple.gd" id="26_enij7"]
@@ -1023,6 +1025,9 @@ jumpsfx = NodePath("../../jumpsfx")
 [node name="Grapple" type="Node" parent="FiniteStateMachine"]
 script = ExtResource("26_enij7")
 
+[node name="Died" type="Node" parent="FiniteStateMachine"]
+script = ExtResource("23_fcwna")
+
 [node name="ShootPoint" type="Node2D" parent="."]
 position = Vector2(14, 0)
 
@@ -1154,7 +1159,6 @@ process_material = SubResource("ParticleProcessMaterial_m0h3t")
 
 [node name="DashSmoke" parent="." instance=ExtResource("27_bmb2s")]
 
-[connection signal="player_hit" from="." to="Health" method="_on_player_player_hit"]
 [connection signal="hp_changed" from="Health" to="." method="_on_health_hp_changed"]
 [connection signal="animation_finished" from="AnimatedSprite2D" to="FiniteStateMachine/Attack1" method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="animation_finished" from="AnimatedSprite2D" to="FiniteStateMachine/AirAttack1" method="_on_animated_sprite_2d_animation_finished"]

@@ -1,6 +1,7 @@
-[gd_scene load_steps=23 format=3 uid="uid://k0mron1debm7"]
+[gd_scene load_steps=31 format=3 uid="uid://k0mron1debm7"]
 
 [ext_resource type="PackedScene" uid="uid://c5ongupm07qh3" path="res://Scenes/Player/player.tscn" id="1_c458c"]
+[ext_resource type="Script" uid="uid://dj20bsfxufi1e" path="res://Scripts/Level/level_1.gd" id="1_jrwi5"]
 [ext_resource type="PackedScene" uid="uid://cl45lm0hg20kf" path="res://Scenes/Items/soul.tscn" id="1_lrh7k"]
 [ext_resource type="Texture2D" uid="uid://jvylv1msq21o" path="res://Assets/Tutorial Open Assets/brackeys_platformer_assets/sprites/world_tileset.png" id="2_pvlc2"]
 [ext_resource type="SpriteFrames" uid="uid://diip4lnhcmedw" path="res://Resources/Wisps/Ghost_Wisp.tres" id="2_qs4fp"]
@@ -18,6 +19,9 @@
 [ext_resource type="PackedScene" uid="uid://dbawdw77kghcn" path="res://Scenes/UI/GameMenus/Pause_Menu.tscn" id="8_hnohd"]
 [ext_resource type="PackedScene" uid="uid://b1wpf7mxi7ax8" path="res://Scenes/UI/Overlay/ability_debug_menu.tscn" id="9_mt3j2"]
 [ext_resource type="PackedScene" uid="uid://ndkp1vfqmr4g" path="res://Scenes/Dialogue/DialogueUI.tscn" id="13_fvaf1"]
+[ext_resource type="PackedScene" uid="uid://c45jpc3kaflr4" path="res://Scenes/CheckPoints/CheckPoint.tscn" id="22_y7471"]
+[ext_resource type="PackedScene" uid="uid://bajjogst0v58d" path="res://Scenes/UI/Overlay/CheckPointRespawnUI.tscn" id="24_3juip"]
+[ext_resource type="Script" uid="uid://w2kplnyjgyql" path="res://Scenes/Level/start.gd" id="25_jn63p"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7p6j4"]
 texture = ExtResource("2_pvlc2")
@@ -255,6 +259,7 @@ sources/1 = SubResource("TileSetAtlasSource_d68a7")
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_lsmp6"]
 
 [node name="Level" type="Node2D"]
+script = ExtResource("1_jrwi5")
 
 [node name="Soul" parent="." instance=ExtResource("1_lrh7k")]
 position = Vector2(928, 584)
@@ -290,7 +295,7 @@ scale = Vector2(0.765, 0.765)
 custom_sprite_frames = ExtResource("3_uf8hr")
 
 [node name="Player" parent="." node_paths=PackedStringArray("pause_menu") instance=ExtResource("1_c458c")]
-position = Vector2(888, 370)
+position = Vector2(655, 562)
 pause_menu = NodePath("../CanvasLayer/PauseMenu")
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -318,6 +323,7 @@ offset_bottom = 23.0
 theme_override_fonts/font = ExtResource("4_q2tg5")
 theme_override_font_sizes/font_size = 32
 text = "State: "
+metadata/_edit_use_anchors_ = true
 
 [node name="HP" type="Label" parent="CanvasLayer"]
 anchors_preset = 2
@@ -390,6 +396,9 @@ anchor_left = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.0
 grow_vertical = 1
+
+[node name="CheckPointRespawnUI" parent="CanvasLayer" instance=ExtResource("24_3juip")]
+visible = false
 
 [node name="GameManager" type="Node" parent="." node_paths=PackedStringArray("stateLabel", "hpLabel", "gameOverScreen")]
 unique_name_in_owner = true
@@ -486,3 +495,33 @@ position = Vector2(983, 586)
 visible = false
 
 [connection signal="body_entered" from="killzone" to="Player" method="_on_killzone_body_entered"]
+[node name="Enemy3" parent="." instance=ExtResource("12_mt3j2")]
+z_index = 4
+position = Vector2(253, 603)
+
+[node name="Enemy4" parent="." instance=ExtResource("13_akeww")]
+z_index = 4
+position = Vector2(92, 594)
+
+[node name="CheckPoints" type="Node2D" parent="."]
+z_index = 3
+
+[node name="Area2D" parent="CheckPoints" instance=ExtResource("22_y7471")]
+position = Vector2(723, 593)
+checkppoint_id = 1
+
+[node name="Area2D2" parent="CheckPoints" instance=ExtResource("22_y7471")]
+position = Vector2(811, 590)
+checkppoint_id = 2
+
+[node name="Area2D3" parent="CheckPoints" instance=ExtResource("22_y7471")]
+position = Vector2(1035, 592)
+checkppoint_id = 3
+
+[node name="Start" type="Marker2D" parent="CheckPoints"]
+position = Vector2(60, 607)
+script = ExtResource("25_jn63p")
+
+[connection signal="body_entered" from="killzone" to="killzone" method="_on_body_entered"]
+
+[editable path="Enemy"]

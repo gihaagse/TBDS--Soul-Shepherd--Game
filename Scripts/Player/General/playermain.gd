@@ -14,10 +14,8 @@ signal player_hit
 @onready var player_hitsfx: AudioStreamPlayer2D = $PlayerHit
 
 
-
 func _ready() -> void:
 	pass
-
 
 
 func _process(_delta: float) -> void:
@@ -29,10 +27,13 @@ func _process(_delta: float) -> void:
 	game_manager.updateLabel(finite_state_machine.current_state.name)
 	game_manager.updateHP(hp.hp)
 	if Input.is_action_just_pressed("reset"):
-		player_hit.emit(50)
-	if hp.hp <= 0:
-		collision_shape_2d.disabled = true
 		game_manager.updateGameOver()
+		collision_shape_2d.disabled = true
+	if hp.hp <= 0:
+		pass
+		#game_manager.updateGameOver() #Change this to reset player ui
+		#collision_shape_2d.disabled = true
+		
 
 func SetShader_BlinkIntensity(newValue: float):
 	sprite.material.set_shader_parameter("blink_intensity", newValue)
@@ -43,10 +44,11 @@ func _on_killzone_body_entered(body: Node2D) -> void:
 
 
 func _on_health_hp_changed() -> void:
-	if hp.hp >0:
-		player_hitsfx.playing =true
-	var tween = get_tree().create_tween()
-	tween.tween_method(SetShader_BlinkIntensity, 1.0, 0.0, 0.5)
-	
-	gpu_particles_2d.restart()
-	gpu_particles_2d.emitting = true
+	pass
+	#if hp.hp > 0:
+		#player_hitsfx.playing =true
+	#var tween = get_tree().create_tween()
+	#tween.tween_method(SetShader_BlinkIntensity, 1.0, 0.0, 0.5)
+	#
+	#gpu_particles_2d.restart()
+	#gpu_particles_2d.emitting = true
