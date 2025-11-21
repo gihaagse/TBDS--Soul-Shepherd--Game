@@ -1,6 +1,7 @@
 extends Node
 
 @export var slots : Array[Node2D]
+@onready var game_manager: Node = $"../../GameManager"
 var index : int = 0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -15,3 +16,4 @@ func _process(_delta: float) -> void:
 			slots[index].visible = false
 			index = slot.get_index()
 			slots[index].visible = true
+			game_manager.updateEquip(slots[index].name)

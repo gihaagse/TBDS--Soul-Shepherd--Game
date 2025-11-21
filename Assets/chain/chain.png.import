@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ba6ubp05v8fe7"
-path="res://.godot/imported/walljump.png-dd503764dc365e4c3ceee8f81cb30e1b.ctex"
+uid="uid://bgsoesjwicybu"
+path="res://.godot/imported/chain.png-57184a45cf96f62be807440ac7e4e6f3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Icons/Abilities/walljump.png"
-dest_files=["res://.godot/imported/walljump.png-dd503764dc365e4c3ceee8f81cb30e1b.ctex"]
+source_file="res://Assets/chain/chain.png"
+dest_files=["res://.godot/imported/chain.png-57184a45cf96f62be807440ac7e4e6f3.ctex"]
 
 [params]
 
