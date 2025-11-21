@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://dhoq3sp0l7yob"]
+[gd_scene load_steps=28 format=3 uid="uid://dhoq3sp0l7yob"]
 
 [ext_resource type="Script" uid="uid://byn1je7flnjo3" path="res://Scripts/Central/game_manager.gd" id="1_d3t52"]
 [ext_resource type="Texture2D" uid="uid://dfdfu6o1j3apv" path="res://Assets/Sprites/Playtest1.png" id="1_o8n5m"]
@@ -23,6 +23,7 @@
 [ext_resource type="SpriteFrames" uid="uid://dg0vx2sffi824" path="res://Resources/Wisps/Green_Wisp.tres" id="16_2vemj"]
 [ext_resource type="PackedScene" uid="uid://c2qbrpracjsi5" path="res://Scenes/Enemies/orc.tscn" id="17_fc1sg"]
 [ext_resource type="SpriteFrames" uid="uid://ctjpgblgpxxr1" path="res://Resources/Wisps/Purple_Wisp.tres" id="18_4s5db"]
+[ext_resource type="PackedScene" uid="uid://dpatdmh4s5sg5" path="res://Scenes/GrapplingSystem/GrapplingHookSystem.tscn" id="24_agvfv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_aveji"]
 texture = ExtResource("1_o8n5m")
@@ -227,10 +228,11 @@ sources/0 = SubResource("TileSetAtlasSource_aveji")
 
 [node name="Level" type="Node2D"]
 
-[node name="GameManager" type="Node" parent="." node_paths=PackedStringArray("stateLabel", "hpLabel", "gameOverScreen")]
+[node name="GameManager" type="Node" parent="." node_paths=PackedStringArray("stateLabel", "equipLabel", "hpLabel", "gameOverScreen")]
 unique_name_in_owner = true
 script = ExtResource("1_d3t52")
 stateLabel = NodePath("../CanvasLayer/Current State")
+equipLabel = NodePath("../CanvasLayer/Current Equip")
 hpLabel = NodePath("../CanvasLayer/HP")
 gameOverScreen = NodePath("../CanvasLayer/ColorRect")
 
@@ -253,6 +255,15 @@ offset_bottom = 23.0
 theme_override_fonts/font = ExtResource("4_d3t52")
 theme_override_font_sizes/font_size = 32
 text = "State: "
+
+[node name="Current Equip" type="Label" parent="CanvasLayer"]
+visible = false
+offset_top = 38.0
+offset_right = 168.0
+offset_bottom = 70.0
+theme_override_fonts/font = ExtResource("4_d3t52")
+theme_override_font_sizes/font_size = 32
+text = "Equip: "
 
 [node name="HP" type="Label" parent="CanvasLayer"]
 anchors_preset = 2
@@ -370,7 +381,6 @@ custom_sprite_frames = ExtResource("13_fc1sg")
 [node name="Soul2" parent="." instance=ExtResource("12_t8xxn")]
 position = Vector2(281, 148.00002)
 scale = Vector2(0.765, 0.765)
-ability_name = 7
 custom_sprite_frames = ExtResource("18_4s5db")
 
 [node name="Soul3" parent="." instance=ExtResource("12_t8xxn")]
@@ -395,6 +405,9 @@ position = Vector2(388, -11)
 
 [node name="Enemy" parent="Node2D" instance=ExtResource("17_fc1sg")]
 position = Vector2(112, 215)
+
+[node name="GrapplingHookSystem" parent="." node_paths=PackedStringArray("player_ref") instance=ExtResource("24_agvfv")]
+player_ref = NodePath("../Player")
 
 [connection signal="body_entered" from="killzone" to="killzone" method="_on_body_entered"]
 

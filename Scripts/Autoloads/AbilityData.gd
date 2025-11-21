@@ -35,6 +35,7 @@ enum ability_list {
 	DoubleJump,
 	WallJump,
 	Airgliding,
+	Grapple,
 
 }
 
