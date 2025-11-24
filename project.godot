@@ -21,10 +21,11 @@ buses/default_bus_layout="res://Resources/default_bus_layout.tres"
 
 [autoload]
 
-DialogueManager="*res://Scripts/DialogueSystem/DialogueManager.gd"
+DialogueManager="*res://Scripts/Autoloads/DialogueManager.gd"
 UtilsEffect="*res://Scripts/Autoloads/Utils_Effect.gd"
 AbilityData="*res://Scripts/Autoloads/AbilityData.gd"
 TextboxPopupManager="*res://Scripts/Autoloads/TextboxPopupManager.gd"
+CheckPointManager="*res://Scripts/Autoloads/CheckPointManager.gd"
 
 [display]
 
@@ -99,6 +100,11 @@ Shift={
 , Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"button_index":10,"pressure":0.0,"pressed":true,"script":null)
 ]
 }
+3={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":51,"key_label":0,"unicode":51,"location":0,"echo":false,"script":null)
+]
+}
 WallSlide={
 "deadzone": 0.2,
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":65,"key_label":0,"unicode":97,"location":0,"echo":false,"script":null)
@@ -139,6 +145,7 @@ AbilityInfo={
 [layer_names]
 
 2d_physics/layer_8="InteractableArea"
+2d_physics/layer_9="CheckpointArea"
 AbilityDebug={
 "deadzone": 0.2,
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":69,"key_label":0,"unicode":101,"location":0,"echo":false,"script":null)

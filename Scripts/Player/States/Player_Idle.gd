@@ -1,10 +1,11 @@
 extends PlayerState
 class_name Player_Idle
 @export var dash_cooldown : Timer
-
+@onready var ghs : GHS = get_tree().get_root().get_node("Level").find_child("GrapplingHookSystem")
 func Enter():
 	super()
 	sprite.play("Panda_Idle")
+	ghs.can_grapple = true
 
 func Update(_delta:float):
 	if Input.get_axis("Left","Right"):
@@ -19,6 +20,12 @@ func Update(_delta:float):
 	#if Input.is_action_just_pressed("RightClick") and get_item_by_name("Bow", slots).visible:
 	if Input.is_action_just_pressed("RightClick"):
 		state_transition.emit(self, "Archery")
+	#if get_item_by_name("GrappleHook", slots).visible:
+		#ghs.can_grapple = true
+	#else: 
+		#ghs.can_grapple = false
+	if ghs.is_grappling:
+		state_transition.emit(self, "Grapple")
 
 func Phys_Update(_delta:float):
 	movement(_delta)

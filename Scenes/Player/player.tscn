@@ -1,4 +1,4 @@
-[gd_scene load_steps=117 format=3 uid="uid://c5ongupm07qh3"]
+[gd_scene load_steps=119 format=3 uid="uid://c5ongupm07qh3"]
 
 [ext_resource type="Script" uid="uid://bw7ujmm53vwsq" path="res://Scripts/Player/General/playermain.gd" id="1_qr1w5"]
 [ext_resource type="PackedScene" uid="uid://cvgjcwqn6k8eu" path="res://Scenes/UI/Overlay/health.tscn" id="2_ythyg"]
@@ -29,8 +29,10 @@
 [ext_resource type="AudioStream" uid="uid://c283ary013yu8" path="res://Assets/Tutorial Open Assets/brackeys_platformer_assets/sounds/one pice jump sfx.wav" id="21_v37cr"]
 [ext_resource type="Script" uid="uid://b6lde07wjscdy" path="res://Scripts/Player/States/Player_Airgliding.gd" id="22_4no11"]
 [ext_resource type="AudioStream" uid="uid://eb7gjbavvgb3" path="res://Assets/Tutorial Open Assets/brackeys_platformer_assets/sounds/Landing sfx.wav" id="22_8d028"]
+[ext_resource type="Script" uid="uid://bobohqjtqaok3" path="res://Scripts/Player/States/Player_Died.gd" id="23_fcwna"]
 [ext_resource type="Texture2D" uid="uid://k3lrs06wxgfa" path="res://Assets/Textures/test smoke texture.png" id="24_gyc8k"]
 [ext_resource type="Texture2D" uid="uid://c8kqnetnxng1o" path="res://Assets/Textures/test smoke texture lower res.png" id="25_qflxp"]
+[ext_resource type="Script" path="res://Scripts/Player/States/Player_Grapple.gd" id="26_enij7"]
 [ext_resource type="PackedScene" uid="uid://cde6qxgsfv3w" path="res://Scenes/Effects/dash_lines.tscn" id="26_ythyg"]
 [ext_resource type="PackedScene" uid="uid://b3qfe4rcpk6rv" path="res://Scenes/Effects/dash_smoke.tscn" id="27_bmb2s"]
 [ext_resource type="AudioStream" uid="uid://bwgoippum6cgf" path="res://Assets/Audio/SFX/Player/Knife Sword Katana stab.mp3" id="30_2jnj1"]
@@ -1015,12 +1017,18 @@ wait_time = 0.075
 script = ExtResource("15_rukb4")
 jumpsfx = NodePath("../../jumpsfx")
 
+[node name="Grapple" type="Node" parent="FiniteStateMachine"]
+script = ExtResource("26_enij7")
+
+[node name="Died" type="Node" parent="FiniteStateMachine"]
+script = ExtResource("23_fcwna")
+
 [node name="ShootPoint" type="Node2D" parent="."]
 position = Vector2(14, 0)
 
 [node name="Holder" type="Node2D" parent="." node_paths=PackedStringArray("slots")]
 script = ExtResource("19_h5u0x")
-slots = [NodePath("Weapon"), NodePath("Bow")]
+slots = [NodePath("Weapon"), NodePath("Bow"), NodePath("GrappleHook")]
 
 [node name="Bow" type="Area2D" parent="Holder"]
 
@@ -1030,6 +1038,8 @@ sprite = NodePath("../../AnimatedSprite2D")
 anim_player = NodePath("../../AnimationPlayer")
 frame_hit = Array[int]([0])
 damage = 10
+
+[node name="GrappleHook" type="Area2D" parent="Holder"]
 
 [node name="Timers" type="Node" parent="."]
 
