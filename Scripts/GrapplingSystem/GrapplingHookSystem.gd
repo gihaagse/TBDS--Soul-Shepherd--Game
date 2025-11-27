@@ -74,7 +74,7 @@ func _input(event):
 		return
 
 	# Left-click: try to grapple
-	if not is_grappling and event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_MIDDLE and event.pressed and can_grapple:
+	if not is_grappling and event is InputEventMouseButton and Input.is_action_just_pressed("Grapple") and event.pressed and can_grapple:
 		#var mouse_pos = get_global_mouse_position()
 		#var space_state = get_world_2d().direct_space_state
 #
@@ -96,7 +96,7 @@ func _input(event):
 		print("go")
 
 	# Right-click: detach
-	elif is_grappling and event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_MIDDLE and event.pressed:
+	elif is_grappling and event is InputEventMouseButton and Input.is_action_just_pressed("Grapple") and event.pressed:
 		if is_grappling:
 			detach_player(player_ref)
 			player_ref.global_rotation = 0

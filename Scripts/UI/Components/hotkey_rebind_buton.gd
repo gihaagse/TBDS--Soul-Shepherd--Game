@@ -38,6 +38,8 @@ func set_action_name() -> void:
 			label.text = "Sword Attack"
 		"RightClick": 
 			label.text = "Hat Throw"
+		"Grapple": 
+			label.text = "Grapple"
 
 func set_text_for_keyboard_key() -> void:
 	var action_events = InputMap.action_get_events(action_name)
