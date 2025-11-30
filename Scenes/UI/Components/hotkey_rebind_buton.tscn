@@ -9,6 +9,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 script = ExtResource("1_qtn82")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
@@ -23,7 +24,7 @@ grow_vertical = 2
 alignment = 1
 
 [node name="Label" type="Label" parent="HBoxContainer"]
-custom_minimum_size = Vector2(400, 30)
+custom_minimum_size = Vector2(300, 30)
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
 text = "ACTION"
@@ -32,7 +33,7 @@ vertical_alignment = 1
 [node name="VSeparator" type="VSeparator" parent="HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_constants/separation = 200
+theme_override_constants/separation = 100
 
 [node name="Button" type="Button" parent="HBoxContainer"]
 custom_minimum_size = Vector2(164, 0)
@@ -40,4 +41,16 @@ layout_mode = 2
 toggle_mode = true
 text = "ACTION_KEY"
 
+[node name="VSeparator2" type="VSeparator" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 50
+
+[node name="ControllerInputButton" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(225, 0)
+layout_mode = 2
+toggle_mode = true
+text = "ACTION_KEY"
+
 [connection signal="toggled" from="HBoxContainer/Button" to="." method="_on_button_toggled"]
+[connection signal="toggled" from="HBoxContainer/ControllerInputButton" to="." method="_on_controller_input_button_toggled"]

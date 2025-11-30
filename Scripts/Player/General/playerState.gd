@@ -26,6 +26,7 @@ var run_particle_timer : float
 @export var move_speed : int = 120
 @export var jump_force : int = 300
 @export var brake_force : int = 20
+@export var air_brake_force : int = 2000
 @export var jumpsfx: AudioStreamPlayer2D
 
 @export_group("bools")
@@ -61,20 +62,21 @@ func Update(_delta:float):
 func Phys_Update(_delta:float):
 	pass
 
-func movement(_delta:float):
+func movement(delta:float):
 	if player.is_on_floor():
 		custom_gravity = Vector2(0,980)
 		#jumps_left = 1
 		#can_double_jump = false
 
-	run_particle_timer += _delta
+	run_particle_timer += delta
 	if Input.is_action_just_pressed("Jump") and player.is_on_floor() and can_jump:
 		jump_effect()
 		
 	elif is_gravity:
-		player.velocity += custom_gravity * _delta
+		player.velocity += custom_gravity * delta
 		if player.velocity.length() >= max_airglide_velocity and in_gliding:
-			player.velocity = player.velocity.normalized() * max_airglide_velocity
+			player.velocity.y = move_toward(
+				player.velocity.y, player.velocity.normalized().y * max_airglide_velocity, air_brake_force * delta)
 	
 
 	var direction := Input.get_axis("Left", "Right")
@@ -88,7 +90,7 @@ func movement(_delta:float):
 		shootPoint.position.x = -14 if last_character_orientation < 0 else 14
 	
 	@warning_ignore("narrowing_conversion")
-	UtilsEffect.lean_run(sprite, _delta, direction)
+	UtilsEffect.lean_run(sprite, delta, direction)
 	if player.is_on_floor_only() and direction:
 		if run_particle_timer >= run_particle_offset:
 			walking_dust_particle.direction = Vector2(-direction, walking_dust_particle.direction.y)

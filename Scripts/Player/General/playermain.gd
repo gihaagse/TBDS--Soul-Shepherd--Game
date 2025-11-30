@@ -1,6 +1,7 @@
 extends CharacterBody2D
 class_name Player
 
+
 signal player_hit
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
 
@@ -18,10 +19,7 @@ func _ready() -> void:
 	pass
 
 
-func _process(_delta: float) -> void:
-	#print(Engine.get_frames_per_second())
-
-
+func _process(delta: float) -> void:
 		
 	velocity2D = velocity 
 	game_manager.updateLabel(finite_state_machine.current_state.name)

@@ -7,7 +7,9 @@ extends Control
 signal option_pressed
 
 func _ready() -> void:
+	$MarginContainer/VBoxContainer/Resume.grab_focus()
 	options_menu.exit_options_menu.connect(on_exit_options_menu)
+	OptionsManager._set_focus_all_on_children(self)
 
 
 

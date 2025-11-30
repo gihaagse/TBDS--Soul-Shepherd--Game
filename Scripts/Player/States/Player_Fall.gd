@@ -66,18 +66,21 @@ func Update(_delta:float) -> void:
 		state_transition.emit(self, "Grapple")
 
 func Phys_Update(_delta:float) -> void:
+	
 	if Input.is_action_pressed("Jump"):
 		jump_hold_time += _delta
 		if player.velocity.y <0 and jump_hold_time < max_jump_hold_time:
 			player.velocity.y -= extra_hold_jump
 		
 	if Input.is_action_pressed("Jump") and player.velocity.y >=0:
+
 		fall_hold_time += _delta
 		if fall_hold_time >= max_fall_hold_time:
 			state_transition.emit(self, "Airgliding")
 			
-		if Input.is_action_just_pressed("Jump") and can_double_jump and jumps_left > 0 and \
+		if Input.is_action_just_pressed("Jump") and jumps_left > 0 and \
 		AbilityData.unlocked_abilities.has(AbilityData.get_value_from_ability_name("Doublejump")):
+			print("going double jump")
 			state_transition.emit(self, "Doublejump")
 			
 	elif Input.is_action_just_pressed("Jump") and can_double_jump and jumps_left > 0 and \

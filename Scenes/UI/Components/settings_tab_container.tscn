@@ -15,6 +15,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 script = ExtResource("1_ecvj5")
 
 [node name="TabContainer" type="TabContainer" parent="."]
@@ -85,7 +86,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 24
-theme_override_constants/margin_top = 24
+theme_override_constants/margin_top = 50
 theme_override_constants/margin_right = 24
 theme_override_constants/margin_bottom = 24
 
@@ -96,24 +97,72 @@ layout_mode = 2
 layout_mode = 2
 theme_override_constants/separation = 64
 
+[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HSeparator" type="HSeparator" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(462.925, 0)
+layout_mode = 2
+
+[node name="KBM" type="Label" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = " KBM "
+
+[node name="HSeparator2" type="HSeparator" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(189.985, 0)
+layout_mode = 2
+
+[node name="KBM2" type="Label" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = " Controller "
+
+[node name="HSeparator3" type="HSeparator" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="MoveLeftButton" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("4_r374b")]
+layout_mode = 2
+
+[node name="MoveRightButton" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("4_r374b")]
+layout_mode = 2
+action_name = "Right"
+
+[node name="JumpButton" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("4_r374b")]
+layout_mode = 2
+action_name = "Jump"
+
 [node name="HSeparator" type="HSeparator" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 0
 theme_override_constants/separation = -400
 theme_override_styles/separator = SubResource("StyleBoxEmpty_go3u1")
 
-[node name="Hotkey_Rebind_Buton" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("4_r374b")]
+[node name="SwordAttackButton" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("4_r374b")]
 layout_mode = 2
+action_name = "LeftClick"
 
-[node name="Hotkey_Rebind_Buton2" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("4_r374b")]
+[node name="HatThrowButton" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("4_r374b")]
 layout_mode = 2
-action_name = "Right"
+action_name = "RightClick"
 
-[node name="Hotkey_Rebind_Buton3" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("4_r374b")]
+[node name="InteractButton" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("4_r374b")]
 layout_mode = 2
-action_name = "Jump"
+action_name = "Interact"
 
 [node name="HSeparator2" type="HSeparator" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 4
+theme_override_styles/separator = SubResource("StyleBoxEmpty_go3u1")
+
+[node name="DashButton" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("4_r374b")]
+layout_mode = 2
+action_name = "Shift"
+
+[node name="Grapple" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("4_r374b")]
+layout_mode = 2
+action_name = "Grapple"
+
+[node name="HSeparator3" type="HSeparator" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/separation = 4
 theme_override_styles/separator = SubResource("StyleBoxEmpty_go3u1")
