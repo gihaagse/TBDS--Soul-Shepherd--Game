@@ -5,6 +5,7 @@ const DEADZONE := 0.3
 var virtual_mouse_pos: Vector2
 var mouse_initialized := false
 
+
 func _ready():
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	var win_size: Vector2 = Vector2(DisplayServer.window_get_size())
@@ -35,3 +36,9 @@ func _process(delta: float) -> void:
 	virtual_mouse_pos.y = clamp(virtual_mouse_pos.y, 0.0, win_size.y - 1.0)
 
 	DisplayServer.warp_mouse(virtual_mouse_pos.round())
+	
+func _set_focus_all_on_children(node: Node) -> void:
+	for child in node.get_children():
+		if child is Control:
+			child.focus_mode = Control.FOCUS_ALL
+		_set_focus_all_on_children(child)

@@ -10,7 +10,7 @@ var active_indicators = {}
 func _ready():
 	ability_icons = load_ability_icons(icons_path)
 	AbilityData.connect("abilities_updated", Callable(self, "_update_ui"))
-
+	$MarginContainer/VBoxContainer/CenterContainer/GridContainer.grab_focus()
 func _process(_delta: float) -> void:
 	
 	_update_ui()

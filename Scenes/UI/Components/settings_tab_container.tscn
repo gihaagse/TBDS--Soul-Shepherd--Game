@@ -30,10 +30,9 @@ offset_bottom = -100.0
 grow_horizontal = 2
 grow_vertical = 2
 tab_alignment = 1
-current_tab = 1
+current_tab = 0
 
 [node name="Graphics" type="TabBar" parent="TabContainer"]
-visible = false
 layout_mode = 2
 metadata/_tab_index = 0
 
@@ -75,6 +74,7 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="Controls" type="TabBar" parent="TabContainer"]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 1
 
@@ -120,13 +120,6 @@ text = " Controller "
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 
-[node name="HSeparator" type="HSeparator" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer"]
-visible = false
-layout_mode = 2
-size_flags_vertical = 0
-theme_override_constants/separation = -400
-theme_override_styles/separator = SubResource("StyleBoxEmpty_go3u1")
-
 [node name="MoveLeftButton" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("4_r374b")]
 layout_mode = 2
 
@@ -138,13 +131,11 @@ action_name = "Right"
 layout_mode = 2
 action_name = "Jump"
 
-[node name="DashButton" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("4_r374b")]
+[node name="HSeparator" type="HSeparator" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
-action_name = "Shift"
-
-[node name="InteractButton" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("4_r374b")]
-layout_mode = 2
-action_name = "Interact"
+size_flags_vertical = 0
+theme_override_constants/separation = -400
+theme_override_styles/separator = SubResource("StyleBoxEmpty_go3u1")
 
 [node name="SwordAttackButton" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("4_r374b")]
 layout_mode = 2
@@ -154,11 +145,24 @@ action_name = "LeftClick"
 layout_mode = 2
 action_name = "RightClick"
 
+[node name="InteractButton" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("4_r374b")]
+layout_mode = 2
+action_name = "Interact"
+
+[node name="HSeparator2" type="HSeparator" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 4
+theme_override_styles/separator = SubResource("StyleBoxEmpty_go3u1")
+
+[node name="DashButton" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("4_r374b")]
+layout_mode = 2
+action_name = "Shift"
+
 [node name="Grapple" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("4_r374b")]
 layout_mode = 2
 action_name = "Grapple"
 
-[node name="HSeparator2" type="HSeparator" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer"]
+[node name="HSeparator3" type="HSeparator" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/separation = 4
 theme_override_styles/separator = SubResource("StyleBoxEmpty_go3u1")

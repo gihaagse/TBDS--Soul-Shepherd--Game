@@ -8,7 +8,8 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass
+	$TabContainer/Graphics/MarginContainer/ScrollContainer/VBoxContainer/Window_Mode_Button.grab_focus()
+	OptionsManager._set_focus_all_on_children(self)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -38,6 +39,6 @@ func options_menu_input() -> void:
 		change_tab(previous_tab)
 		
 	if Input.is_action_just_pressed("ui_cancel"):
-		get_tree().change_scene_to_file("res://Scenes/UI/Start_Menu.tscn")
+		get_tree().change_scene_to_file("res://Scenes/UI/GameMenus/Start_Menu.tscn")
 	
 	pass
