@@ -9,13 +9,14 @@ extends Control
 func _ready() -> void:
 	options_menu.exit_options_menu.connect(on_exit_options_menu)
 	v_box_container.visible = true
+	$VBoxContainer/Start.grab_focus()
+	OptionsManager._set_focus_all_on_children(self)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	pass
 
 func _on_start_pressed() -> void:
-	print("gedrukt op start")
 	get_tree().change_scene_to_file("res://Scenes/Level/playtest_level.tscn")
 	Engine.time_scale = 1
 

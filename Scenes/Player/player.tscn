@@ -1,4 +1,4 @@
-[gd_scene load_steps=117 format=3 uid="uid://c5ongupm07qh3"]
+[gd_scene load_steps=122 format=3 uid="uid://c5ongupm07qh3"]
 
 [ext_resource type="Script" uid="uid://bw7ujmm53vwsq" path="res://Scripts/Player/General/playermain.gd" id="1_qr1w5"]
 [ext_resource type="PackedScene" uid="uid://cvgjcwqn6k8eu" path="res://Scenes/UI/Overlay/health.tscn" id="2_ythyg"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://det0un1vj4110" path="res://Assets/Sprites/Panda/panda_small.png" id="8_fcwna"]
 [ext_resource type="Script" uid="uid://d2q03jes32ygw" path="res://Scripts/Central/FSM.gd" id="9_1agin"]
 [ext_resource type="Texture2D" uid="uid://bm18u1wsukfwa" path="res://Assets/Sprites/Panda/hat_throw.png" id="10_1agin"]
+[ext_resource type="Script" uid="uid://cfp24xkllqnau" path="res://Scripts/Player/General/trail.gd" id="10_2aanf"]
 [ext_resource type="Script" uid="uid://bob4e3bisalwi" path="res://Scripts/Player/States/Player_Idle.gd" id="10_2jnj1"]
 [ext_resource type="AudioStream" uid="uid://de7lye0f5nucm" path="res://Assets/Audio/SFX/Player/dash sfx.wav" id="10_bmb2s"]
 [ext_resource type="Texture2D" uid="uid://b0uxft6vb0ayw" path="res://Assets/Sprites/Bamboo_Parry.png" id="10_fcwna"]
@@ -29,11 +30,13 @@
 [ext_resource type="AudioStream" uid="uid://c283ary013yu8" path="res://Assets/Tutorial Open Assets/brackeys_platformer_assets/sounds/one pice jump sfx.wav" id="21_v37cr"]
 [ext_resource type="Script" uid="uid://b6lde07wjscdy" path="res://Scripts/Player/States/Player_Airgliding.gd" id="22_4no11"]
 [ext_resource type="AudioStream" uid="uid://eb7gjbavvgb3" path="res://Assets/Tutorial Open Assets/brackeys_platformer_assets/sounds/Landing sfx.wav" id="22_8d028"]
-[ext_resource type="AudioStream" uid="uid://bi3l61fpn0btr" path="res://Assets/Audio/SFX/Player/hitHurt.wav" id="23_0liok"]
+[ext_resource type="Script" uid="uid://bobohqjtqaok3" path="res://Scripts/Player/States/Player_Died.gd" id="23_fcwna"]
 [ext_resource type="Texture2D" uid="uid://k3lrs06wxgfa" path="res://Assets/Textures/test smoke texture.png" id="24_gyc8k"]
 [ext_resource type="Texture2D" uid="uid://c8kqnetnxng1o" path="res://Assets/Textures/test smoke texture lower res.png" id="25_qflxp"]
+[ext_resource type="Script" uid="uid://wifadrvhtulr" path="res://Scripts/Player/States/Player_Grapple.gd" id="26_enij7"]
 [ext_resource type="PackedScene" uid="uid://cde6qxgsfv3w" path="res://Scenes/Effects/dash_lines.tscn" id="26_ythyg"]
 [ext_resource type="PackedScene" uid="uid://b3qfe4rcpk6rv" path="res://Scenes/Effects/dash_smoke.tscn" id="27_bmb2s"]
+[ext_resource type="AudioStream" uid="uid://bwgoippum6cgf" path="res://Assets/Audio/SFX/Player/Knife Sword Katana stab.mp3" id="30_2jnj1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lfmf2"]
 size = Vector2(12, 19)
@@ -442,6 +445,12 @@ animations = [{
 "name": &"new_animation",
 "speed": 5.0
 }]
+
+[sub_resource type="Curve" id="Curve_m6ahd"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_ogmfp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pcwjh"]
 atlas = ExtResource("5_2jnj1")
@@ -884,6 +893,7 @@ alpha_curve = SubResource("CurveTexture_sm0op")
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("finite_state_machine", "hp") groups=["Player"]]
 z_index = 5
 collision_layer = 4
+floor_constant_speed = true
 script = ExtResource("1_qr1w5")
 finite_state_machine = NodePath("FiniteStateMachine")
 hp = NodePath("Health")
@@ -900,6 +910,17 @@ sprite_frames = SubResource("SpriteFrames_gymyn")
 animation = &"Attack"
 autoplay = "Idle"
 frame = 1
+
+[node name="trail" type="Line2D" parent="AnimatedSprite2D"]
+self_modulate = Color(1, 1, 1, 0.9411765)
+top_level = true
+z_index = 20
+width_curve = SubResource("Curve_m6ahd")
+gradient = SubResource("Gradient_ogmfp")
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+script = ExtResource("10_2aanf")
 
 [node name="Player_Cosmetics" type="AnimatedSprite2D" parent="."]
 visible = false
@@ -977,10 +998,6 @@ move_speed = 400
 jumpsfx = NodePath("../../jumpsfx")
 is_gravity = false
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="FiniteStateMachine/Dash"]
-stream = ExtResource("10_bmb2s")
-volume_db = -15.0
-
 [node name="Archery" type="Node" parent="FiniteStateMachine" node_paths=PackedStringArray("jumpsfx")]
 script = ExtResource("17_ei2r2")
 jumpsfx = NodePath("../../jumpsfx")
@@ -1018,12 +1035,18 @@ wait_time = 0.075
 script = ExtResource("15_rukb4")
 jumpsfx = NodePath("../../jumpsfx")
 
+[node name="Grapple" type="Node" parent="FiniteStateMachine"]
+script = ExtResource("26_enij7")
+
+[node name="Died" type="Node" parent="FiniteStateMachine"]
+script = ExtResource("23_fcwna")
+
 [node name="ShootPoint" type="Node2D" parent="."]
 position = Vector2(14, 0)
 
 [node name="Holder" type="Node2D" parent="." node_paths=PackedStringArray("slots")]
 script = ExtResource("19_h5u0x")
-slots = [NodePath("Weapon"), NodePath("Bow")]
+slots = [NodePath("Weapon"), NodePath("Bow"), NodePath("GrappleHook")]
 
 [node name="Bow" type="Area2D" parent="Holder"]
 
@@ -1031,10 +1054,10 @@ slots = [NodePath("Weapon"), NodePath("Bow")]
 position = Vector2(14, 0)
 sprite = NodePath("../../AnimatedSprite2D")
 anim_player = NodePath("../../AnimationPlayer")
-animation_name_left = null
-animation_name_right = null
 frame_hit = Array[int]([0])
 damage = 10
+
+[node name="GrappleHook" type="Area2D" parent="Holder"]
 
 [node name="Timers" type="Node" parent="."]
 
@@ -1061,7 +1084,8 @@ volume_db = 5.0
 bus = &"Jump"
 
 [node name="PlayerHit" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("23_0liok")
+stream = ExtResource("30_2jnj1")
+volume_db = -5.0
 bus = &"Sfx"
 
 [node name="WalkingDustParticle" type="CPUParticles2D" parent="."]
@@ -1145,6 +1169,11 @@ process_material = SubResource("ParticleProcessMaterial_m0h3t")
 [node name="DashLines" parent="." instance=ExtResource("26_ythyg")]
 
 [node name="DashSmoke" parent="." instance=ExtResource("27_bmb2s")]
+
+[node name="Dashsfx" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_bmb2s")
+volume_db = -15.0
+bus = &"Sfx"
 
 [connection signal="player_hit" from="." to="Health" method="_on_player_player_hit"]
 [connection signal="hp_changed" from="Health" to="." method="_on_health_hp_changed"]

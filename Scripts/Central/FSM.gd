@@ -24,6 +24,13 @@ func _ready() -> void:
 	DialogueManager.dialogue_transition.connect(func():
 		on_child_transition(current_state, "Dialogue")
 		)
+	
+	CheckPointManager.died_transition.connect(func(enabled: bool):
+		if enabled:
+			on_child_transition(current_state, "Died")
+		else:
+			on_child_transition(current_state, "Idling")
+		)
 
 func _process(delta: float) -> void:
 	if current_state:
@@ -32,24 +39,25 @@ func _process(delta: float) -> void:
 func _physics_process(delta: float) -> void:
 	if current_state:
 		current_state.Phys_Update(delta)
-		
+	
+	
+func _get_current_state():
+	return current_state
+
 func on_child_transition(state : PlayerState, new_state_name : String):
 	if state != current_state:
 		return
-		
+	
 	var index = AbilityData.get_value_from_ability_name(new_state_name)
-	#print("de index is: ", index)
 	if index == null:
 		return
-
-	if index not in AbilityData.unlocked_abilities:
+	
+	if index not in AbilityData.unlocked_abilities and new_state_name != "Died":
 		return
 	
 	var new_state : PlayerState = states.get(new_state_name.to_lower())
 	if !new_state:
 		return
-	
-
 	
 	if current_state:
 		current_state.Exit()
@@ -59,3 +67,4 @@ func on_child_transition(state : PlayerState, new_state_name : String):
 	new_state.Enter()
 	
 	current_state = new_state
+	

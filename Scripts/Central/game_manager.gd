@@ -1,6 +1,7 @@
 extends Node
 
 @export var stateLabel : Label
+@export var equipLabel : Label
 @export var hpLabel : Label
 @export var gameOverScreen : ColorRect
 func _ready() -> void:
@@ -10,6 +11,9 @@ func _ready() -> void:
 func updateLabel(text):
 	if text:
 		stateLabel.text = "State: " + str(text)
+func updateEquip(text):
+	if text:
+		equipLabel.text = "Equipment: " + str(text)
 		
 func updateHP(text):
 	if text:

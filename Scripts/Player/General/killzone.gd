@@ -7,4 +7,9 @@ func _ready() -> void:
 
 
 func _on_body_entered(body: Node2D) -> void:
-	get_tree().reload_current_scene()
+	var hp = body.get_node_or_null("Health")
+	if hp and hp.has_method("take_damage"):
+		print("Working_code :D")
+		hp.take_damage(50)
+	else:
+		print("Broken_code")

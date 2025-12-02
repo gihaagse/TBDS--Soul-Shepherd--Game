@@ -23,9 +23,11 @@ func load_unlocked_abilities() -> void:
 		return
 		
 	var lines: Array = []
+	
 	for ability in AbilityData.unlocked_abilities:
-		var abName = AbilityData.get_ability_name_from_value(ability)
-		lines.append(abName)
+		if ability != null:
+			var abName = AbilityData.get_ability_name_from_value(ability)
+			lines.append(abName)
 	ability_label.text = "\n".join(lines)
 
 func on_toggle_pressed() -> void:

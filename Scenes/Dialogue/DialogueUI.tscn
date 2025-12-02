@@ -27,9 +27,9 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -387.5
-offset_top = -248.25
+offset_top = -277.73
 offset_right = 387.5
-offset_bottom = -13.25
+offset_bottom = -17.72998
 grow_horizontal = 2
 grow_vertical = 0
 scale = Vector2(0.75, 0.75)
@@ -40,7 +40,7 @@ layout_mode = 2
 theme_override_constants/margin_left = 25
 theme_override_constants/margin_top = 25
 theme_override_constants/margin_right = 25
-theme_override_constants/margin_bottom = 20
+theme_override_constants/margin_bottom = 0
 
 [node name="MainContainer" type="HBoxContainer" parent="FullSize/PanelContainer/MarginContainer"]
 layout_mode = 2
@@ -48,11 +48,12 @@ layout_mode = 2
 [node name="ProfileIconContainer" type="VBoxContainer" parent="FullSize/PanelContainer/MarginContainer/MainContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_stretch_ratio = 0.2
+size_flags_stretch_ratio = 0.1
 
 [node name="NPCIcon" type="TextureRect" parent="FullSize/PanelContainer/MarginContainer/MainContainer/ProfileIconContainer"]
-custom_minimum_size = Vector2(100, 0)
+custom_minimum_size = Vector2(115, 0)
 layout_mode = 2
+size_flags_horizontal = 4
 size_flags_vertical = 2
 texture = ExtResource("2_etdm6")
 expand_mode = 5
@@ -60,7 +61,7 @@ stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
 [node name="NPCName" type="RichTextLabel" parent="FullSize/PanelContainer/MarginContainer/MainContainer/ProfileIconContainer"]
-custom_minimum_size = Vector2(0, 50)
+custom_minimum_size = Vector2(145, 50)
 layout_mode = 2
 size_flags_vertical = 2
 size_flags_stretch_ratio = 0.42
@@ -74,13 +75,13 @@ layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 5.0
 
-[node name="ContinueButton" type="Button" parent="FullSize/PanelContainer/MarginContainer/MainContainer/ProfileIconContainer"]
+[node name="ContinueLabel" type="Label" parent="FullSize/PanelContainer/MarginContainer/MainContainer/ProfileIconContainer"]
 visible = false
+custom_minimum_size = Vector2(145, 0)
 layout_mode = 2
-size_flags_vertical = 8
-size_flags_stretch_ratio = 0.0
-theme_override_colors/font_color = Color(0.6872143, 0.68721527, 0.6872146, 1)
-text = "Continue"
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 14
+text = "[SPACE] to continue.."
 autowrap_mode = 2
 
 [node name="Spacer" type="Control" parent="FullSize/PanelContainer/MarginContainer/MainContainer"]
@@ -92,13 +93,6 @@ size_flags_stretch_ratio = 0.06
 [node name="NPCLinesAndChoicesContainer" type="VBoxContainer" parent="FullSize/PanelContainer/MarginContainer/MainContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-
-[node name="Spacer" type="Control" parent="FullSize/PanelContainer/MarginContainer/MainContainer/NPCLinesAndChoicesContainer"]
-visible = false
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-size_flags_stretch_ratio = 0.0
 
 [node name="TextBubble" type="TextureRect" parent="FullSize/PanelContainer/MarginContainer/MainContainer/NPCLinesAndChoicesContainer"]
 layout_mode = 2
@@ -127,9 +121,38 @@ visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 14
+theme_override_font_sizes/font_size = 13
 text = "Option 1"
-autowrap_mode = 2
+alignment = 0
+autowrap_mode = 3
+
+[node name="Number" type="Label" parent="FullSize/PanelContainer/MarginContainer/MainContainer/NPCLinesAndChoicesContainer/ChoicesContainer/ChoiceTemplate"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -25.0
+offset_bottom = 25.0
+grow_horizontal = 0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 4
+theme_override_constants/shadow_outline_size = 7
+theme_override_font_sizes/font_size = 16
+text = "1"
+horizontal_alignment = 2
+justification_flags = 162
+
+[node name="Spacer2" type="Control" parent="FullSize/PanelContainer/MarginContainer/MainContainer/NPCLinesAndChoicesContainer"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.2
 
 [node name="ContinueButton" type="Button" parent="FullSize/PanelContainer"]
 layout_mode = 2

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c34agacxnhwgp"
-path="res://.godot/imported/walljump.png-dd503764dc365e4c3ceee8f81cb30e1b.ctex"
+uid="uid://ba6ubp05v8fe7"
+path="res://.godot/imported/WallJump.png-714407cc268f27a1624f265b4b2ae33c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Icons/Abilities/walljump.png"
-dest_files=["res://.godot/imported/walljump.png-dd503764dc365e4c3ceee8f81cb30e1b.ctex"]
+source_file="res://Assets/Icons/Abilities/WallJump.png"
+dest_files=["res://.godot/imported/WallJump.png-714407cc268f27a1624f265b4b2ae33c.ctex"]
 
 [params]
 
@@ -23,7 +23,7 @@ compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""

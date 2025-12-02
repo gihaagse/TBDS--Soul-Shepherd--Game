@@ -22,6 +22,7 @@ func Update(_delta:float):
 func shoot():
 	var instance = projectile.instantiate()
 	instance.sprite = sprite
+	instance.player = player
 	instance.spawnpos = shootPoint.global_position
 	instance.turn_on_area.append(2)
 	main.add_child.call_deferred(instance)

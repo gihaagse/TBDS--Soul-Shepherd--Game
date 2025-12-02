@@ -1,28 +1,20 @@
 extends Control
-
 @export var cooldown_indicator_scene: PackedScene = preload("res://Scenes/UI/Components/ability_icon_timers.tscn")
 @export var icons_path: String = "res://assets/icons/abilities"
-@onready var grid_container: GridContainer = $GridContainer
+@onready var grid_container: GridContainer = $MarginContainer/VBoxContainer/CenterContainer/GridContainer
 
 var ability_icons = {}
 var active_indicators = {} 
 
+
 func _ready():
 	ability_icons = load_ability_icons(icons_path)
 	AbilityData.connect("abilities_updated", Callable(self, "_update_ui"))
-	AbilityData.connect("cooldown_started", Callable(self, "_on_cooldown_start"))
+	$MarginContainer/VBoxContainer/CenterContainer/GridContainer.grab_focus()
+func _process(_delta: float) -> void:
+	
 	_update_ui()
-
-func _process(delta: float) -> void:
-	AbilityData.process_cooldowns(delta)
-	for ability in active_indicators.keys():
-		var fraction = 0
-		if ability in AbilityData.active_cooldown_timers:
-			var timer = AbilityData.active_cooldown_timers[ability]
-			var max_cd = AbilityData.cooldowns.get(ability, 1)
-			fraction = timer / max_cd if max_cd > 0 else 0
-		active_indicators[ability].set_cooldown_fraction(fraction)
-
+	
 func load_ability_icons(path: String) -> Dictionary:
 	var icons = {}
 	var dir = DirAccess.open(path)
@@ -57,8 +49,7 @@ func _update_ui() -> void:
 				indicator.set_icon(icon)
 				active_indicators[ability] = indicator
 				indicator.set_cooldown_fraction(0)
+				indicator.set_default_info_label_text(ability)
+				indicator.set_minimum_size()
 			else:
 				pass
-func _on_cooldown_start(ability):
-	if ability in active_indicators:
-		active_indicators[ability].set_cooldown_fraction(1)

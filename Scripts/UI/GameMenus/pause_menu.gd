@@ -2,11 +2,14 @@ extends Control
 @onready var player: CharacterBody2D = $"../../Player"
 @onready var options_menu: OptionsMenu = $"../OptionsMenu"
 @onready var pause_menu: Control = $"."
+@onready var canvas_layer: CanvasLayer = $".."
 
 signal option_pressed
 
 func _ready() -> void:
+	$MarginContainer/VBoxContainer/Resume.grab_focus()
 	options_menu.exit_options_menu.connect(on_exit_options_menu)
+	OptionsManager._set_focus_all_on_children(self)
 
 
 
@@ -16,7 +19,7 @@ func _process(_delta: float) -> void:
 
 
 func _on_continue_pressed() -> void:
-	player.pauseMenu()
+	canvas_layer.pauseMenu()
 
 func _on_quit_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes/UI/GameMenus/Start_Menu.tscn")

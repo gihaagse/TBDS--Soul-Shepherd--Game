@@ -1,0 +1,100 @@
+[gd_scene load_steps=5 format=3 uid="uid://3nx8i28smrqo"]
+
+[ext_resource type="Script" uid="uid://crcjhie8552r3" path="res://Scripts/UI/Overlay/ability_info.gd" id="1_nsbas"]
+[ext_resource type="Shader" uid="uid://dlo4kfu6qrdn1" path="res://Shaders/Pause_Menu.gdshader" id="2_7l3wo"]
+[ext_resource type="PackedScene" uid="uid://b4argu08l2t5b" path="res://Scenes/UI/Components/ability_icon_timers.tscn" id="3_438mq"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hqsf3"]
+shader = ExtResource("2_7l3wo")
+shader_parameter/amount = 1.126000053485
+
+[node name="Ability_info" type="Control"]
+process_mode = 3
+z_index = 4
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nsbas")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = 4
+material = SubResource("ShaderMaterial_hqsf3")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -8258.0
+offset_top = -4519.0
+offset_right = 6159.0
+offset_bottom = 3552.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+z_index = 4
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+z_index = 4
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Control" type="Control" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 24
+text = "This is your ability list.
+Press on the buttons to view the controls."
+horizontal_alignment = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/VBoxContainer/CenterContainer"]
+layout_mode = 2
+
+[node name="AbilityIconTimers" parent="MarginContainer/VBoxContainer/CenterContainer/GridContainer" instance=ExtResource("3_438mq")]
+visible = false
+layout_mode = 2
+
+[node name="AbilityIconTimers2" parent="MarginContainer/VBoxContainer/CenterContainer/GridContainer" instance=ExtResource("3_438mq")]
+visible = false
+layout_mode = 2
+
+[node name="AbilityIconTimers3" parent="MarginContainer/VBoxContainer/CenterContainer/GridContainer" instance=ExtResource("3_438mq")]
+visible = false
+layout_mode = 2
+
+[node name="AbilityIconTimers4" parent="MarginContainer/VBoxContainer/CenterContainer/GridContainer" instance=ExtResource("3_438mq")]
+visible = false
+layout_mode = 2
+
+[node name="AbilityIconTimers5" parent="MarginContainer/VBoxContainer/CenterContainer/GridContainer" instance=ExtResource("3_438mq")]
+visible = false
+layout_mode = 2
+
+[node name="AbilityIconTimers6" parent="MarginContainer/VBoxContainer/CenterContainer/GridContainer" instance=ExtResource("3_438mq")]
+visible = false
+layout_mode = 2
+
+[node name="AbilityIconTimers7" parent="MarginContainer/VBoxContainer/CenterContainer/GridContainer" instance=ExtResource("3_438mq")]
+visible = false
+layout_mode = 2
+
+[node name="AbilityIconTimers8" parent="MarginContainer/VBoxContainer/CenterContainer/GridContainer" instance=ExtResource("3_438mq")]
+visible = false
+layout_mode = 2

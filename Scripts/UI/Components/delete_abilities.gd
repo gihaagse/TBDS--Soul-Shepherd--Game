@@ -18,7 +18,6 @@ func _process(_delta: float) -> void:
 
 func add_abilities_in_button () -> void:
 	if AbilityData.ability_list == null:
-		print("is null")
 		return
 		
 	ability_options.clear()
@@ -42,7 +41,7 @@ func ability_selected (index: int) -> void:
 		selected_ability = selected_value
 		
 	else:
-		print("Onbekende ability: ", selected_text)
+		push_error("Onbekende ability: ", selected_text)
 
 
 func _on_button_pressed() -> void:
@@ -54,4 +53,4 @@ func _on_button_pressed() -> void:
 		AbilityData.update_unlock_ability_buttons.emit()
 
 	else:
-		print("Ability al verwijderd")
+		push_error("Ability al verwijderd")

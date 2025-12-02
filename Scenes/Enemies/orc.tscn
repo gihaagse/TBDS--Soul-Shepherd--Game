@@ -191,6 +191,7 @@ radius = 7.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_tq37w"]
 
 [node name="Enemy" type="CharacterBody2D" node_paths=PackedStringArray("shootPoint") groups=["Enemy"]]
+collision_layer = 257
 collision_mask = 5
 script = ExtResource("1_vumo0")
 shootPoint = NodePath("CollisionShape2D")

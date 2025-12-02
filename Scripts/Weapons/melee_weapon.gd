@@ -10,15 +10,21 @@ extends Area2D
 @onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
 @onready var animation_player: AnimationPlayer = $"../../AnimationPlayer"
 
+var play_sound: bool = true
+
 func _ready() -> void:
 	collision_shape_2d.disabled = true
 
 func _process(_delta: float) -> void:
 	if anim_player.current_animation == animation_name_left or animation_player.current_animation == animation_name_right and sprite.frame in frame_hit:
-		collision_shape_2d.disabled = false
-		audio_stream_player_2d.playing = true
+		if play_sound:
+			collision_shape_2d.disabled = false
+			audio_stream_player_2d.playing = true
+			play_sound = false
 	else:
 		collision_shape_2d.disabled = true
+		play_sound = true
+		
 	
 
 

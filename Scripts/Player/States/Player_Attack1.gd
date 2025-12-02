@@ -5,6 +5,7 @@ class_name Player_Attack1
 @onready var player_cosmetics: AnimatedSprite2D = $"../../Player_Cosmetics"
 
 var done : bool
+
 func Enter():
 	super()
 	AbilityData.start_cooldown(AbilityData.ability_list.Attack1)
@@ -16,8 +17,10 @@ func Enter():
 	if last_character_orientation > 0:
 		animation_player.play("AttackAnimation_Right")
 		player_cosmetics.rotation_degrees = 90
+		bamboo_stick.flip_h = true
 	elif last_character_orientation < 0:
 		animation_player.play("AttackAnimation_Left")
+		bamboo_stick.flip_h = false
 	else:
 		animation_player.play("AttackAnimation_Right")
 

@@ -20,6 +20,12 @@ func Enter():
 	bamboo_glide.scale.x = 2.0
 	timer.connect("timeout", Callable(self, "_flip_sprite"))
 
+func Exit():
+	timer.stop()
+	bamboo_glide.visible = false
+	in_gliding = false
+	custom_gravity = default_gravity
+
 func Update(_delta:float) -> void:
 	var sprite_rotation_deg = sprite.rotation_degrees
 	var angle_rad = deg_to_rad(sprite_rotation_deg)
@@ -29,25 +35,19 @@ func Update(_delta:float) -> void:
 	
 
 func Phys_Update(_delta:float) -> void:
-
-	
-	
 	if player.is_on_floor_only():
-		_exit_state()
+		state_transition.emit(self, "Falling")
 			
 	if player.velocity.y >= 0:
 		custom_gravity = airglide_gravity
 	
 	if Input.is_action_just_released("Jump"):
-		_exit_state()
+		state_transition.emit(self, "Falling")
 		
 	movement(_delta)
+	
 func _exit_state() -> void:
-	timer.stop()
-	bamboo_glide.visible = false
-	in_gliding = false
-	custom_gravity = default_gravity
-	state_transition.emit(self, "Falling")
+	pass
 	
 func _flip_sprite() -> void:
 	sprite.scale.x *= -1

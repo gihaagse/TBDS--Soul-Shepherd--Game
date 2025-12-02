@@ -28,12 +28,15 @@ enum ability_list {
 	Attack1,
 	Airattack1,
 	Archery,
+	Dialogue,
+	
 	Dash,
 	Wallsliding,
 	DoubleJump,
 	WallJump,
 	Airgliding,
-	Dialogue,
+	Grapple,
+
 }
 
 var cooldowns: Dictionary = {
@@ -46,13 +49,22 @@ var cooldowns: Dictionary = {
 var active_cooldown_timers = {}
 
 const INFO: Dictionary = {
+	ability_list.Attack1:{
+		"name": "Swing Attack",
+		"description": "Press Left Mouse Button to perform a SWING ATTACK!"
+	},
+	ability_list.Archery: {
+		"name": "Bamboo Hat Throw",
+		"description": "Press Right Mouse Button to throw your hat for a RANGED ATTACK!"
+	},
 	ability_list.Dash: {
 		"name": "Dash",
-		"description": "Press 'Shift' to Dash!"
+		"description": "Press 'Shift' to Dash forwards!"
 	},
 	ability_list.DoubleJump:{
 		"name": "Double Jump",
-		"description": "Press 'Jump' again in the air to Double Jump! \nLand on the ground to refresh the Double Jump"
+		"description": "Press 'Jump' again in the air to Double Jump! 
+		\n Land on the ground to refresh the Double Jump"
 	},
 	ability_list.WallJump: {
 		"name": "Wall Jump",
@@ -62,9 +74,12 @@ const INFO: Dictionary = {
 		"name": "Wall Slide",
 		"description": "Move into a wall while falling to slow down and Wall Slide!"
 	},
+	ability_list.Airgliding: {
+		"name": "Air Gliding",
+		"description": "Hold space in the air to glide down!"
+		
+	}
 }
-# Called when the node enters the scene tree for the first time.
-
 
 
 func _ready() -> void:

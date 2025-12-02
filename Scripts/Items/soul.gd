@@ -1,15 +1,18 @@
 extends Node2D
 
-@export var ability_name: AbilityData.ability_list = AbilityData.ability_list.Dash
+@export var ability: AbilityData.ability_list = AbilityData.ability_list.Airgliding
 @export var custom_sprite_frames: SpriteFrames
 
 @onready var collision_shape_2d: CollisionShape2D = $Area2D/CollisionShape2D
 
-@onready var ability_name_label: Label = $abilityNameLabel
+@onready var ability_label: Label = $abilityNameLabel
 @export var desired_size: Vector2 = Vector2(16, 16)  
 
+var lines: Array[String]
+var vertical_message_offset: Vector2 = Vector2(0,0)
 
 func _ready() -> void:
+	
 	if custom_sprite_frames:
 		$AnimatedSprite2D.sprite_frames = custom_sprite_frames
 		
@@ -32,10 +35,18 @@ func _ready() -> void:
 		$AnimatedSprite2D.scale = Vector2(1,1)
 	
 	$AnimatedSprite2D.play("default")
-	ability_name_label.text = AbilityData.ability_list.keys()[ability_name]
+	ability_label.text = AbilityData.ability_list.keys()[ability]
 	
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	
 	if body is Player:
-		AbilityData.add_collected_ability_add_to_list(ability_name)
+		AbilityData.add_collected_ability_add_to_list(ability)
+		
+	lines.append("You've unlocked the %s Ability" % AbilityData.get_ability_name_from_value(ability))
+	
+	if ability in AbilityData.INFO.keys():
+		lines.append(AbilityData.INFO[ability]["description"])
+		
+		TextboxPopupManager.start_dialogue(body.global_position + vertical_message_offset, lines)
 		self.queue_free()
+		
