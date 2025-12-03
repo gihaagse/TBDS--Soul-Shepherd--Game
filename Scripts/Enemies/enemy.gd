@@ -131,12 +131,13 @@ func _on_area_2d_body_shape_exited() -> void:
 	$in_range_shoot_timer.stop()
 
 func _correct_sprite() -> void:
-	if dir == 1 and $AnimatedSprite2D.scale.x == -1:
-		$AnimatedSprite2D.scale.x = $AnimatedSprite2D.scale.x * -1
-		flippedSprite = false
-	if dir == -1 and $AnimatedSprite2D.scale.x == 1:
-		$AnimatedSprite2D.scale.x = $AnimatedSprite2D.scale.x * -1
-		flippedSprite = true
+	if is_on_floor():
+		if dir == 1 and $AnimatedSprite2D.scale.x == -1:
+			$AnimatedSprite2D.scale.x = $AnimatedSprite2D.scale.x * -1
+			flippedSprite = false
+		if dir == -1 and $AnimatedSprite2D.scale.x == 1:
+			$AnimatedSprite2D.scale.x = $AnimatedSprite2D.scale.x * -1
+			flippedSprite = true
 
 func _on_animated_sprite_2d_animation_finished() -> void:
 	if can_move:
