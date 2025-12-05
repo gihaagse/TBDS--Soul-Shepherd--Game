@@ -13,7 +13,7 @@ signal player_hit
 @export var velocity2D : Vector2
 @onready var game_manager: Node = %GameManager
 @onready var player_hitsfx: AudioStreamPlayer2D = $PlayerHit
-
+@onready var ray_down: RayCast2D = $Ground
 
 func _ready() -> void:
 	pass
@@ -51,3 +51,14 @@ func _on_health_hp_changed() -> void:
 	#
 	#gpu_particles_2d.restart()
 	#gpu_particles_2d.emitting = true
+	
+
+func has_ground_below() -> bool:
+	if not ray_down.is_colliding():
+		return false
+	var collider = ray_down.get_collider()
+	# Optional: check collision_layer to make sure it's actually ground
+	# Assuming ground is layer 1:
+	if collider is CollisionObject2D and (collider.collision_layer & (1 << 0)) != 0:
+		return true
+	return false

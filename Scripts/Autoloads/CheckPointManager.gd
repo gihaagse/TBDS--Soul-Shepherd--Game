@@ -9,11 +9,15 @@ var unlocked_checkpoints : Array = []
 
 @onready var unlocked_texture = preload("res://Assets/Sprites/checkpoint/Checkpoint Unlocked.png")
 @onready var player_stored : Player =  get_tree().current_scene.get_node("Player")
+var camera_main : CameraMain
 
 var checkpoints_in_game
 
 func _ready() -> void:
 	player_choice.connect(_on_choice_made)
+
+func register_camera(camera: CameraMain):
+	camera_main = camera
 
 func register_start(Start: Marker2D):
 	unlocked_checkpoints.append({
@@ -76,16 +80,16 @@ func get_spawn_checkpoint(player: Player):
 	return best_checkpoint
 
 func _on_player_died(player: Player):
-	died_transition.emit(true)
+	died_transition.emit(true) # this signal sets state to died in FSM
 	
 	if not player_stored:
 		player_stored = player
 	
 	Engine.time_scale = .05
 	player.collision_shape_2d.disabled = true
-	player_died.emit()
+	player_died.emit() #This signal enables the UI of checkpoint respawn
 
-func _on_choice_made(preference: String):
+func _on_choice_made(preference: String): #This func gets called from UI script when choice is made
 	perefernce_checkpoint = preference
 	_respawn_player_to_checkpoint(player_stored)
 
@@ -97,6 +101,7 @@ func _respawn_player_to_checkpoint(player: Player):
 	
 	var best_checkpoint = get_spawn_checkpoint(player)
 	player.position = best_checkpoint["position"] 
+	camera_main._on_respawn()
 	
 	died_transition.emit(false)
 	
