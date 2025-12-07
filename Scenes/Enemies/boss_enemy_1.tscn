@@ -1,92 +1,92 @@
-[gd_scene load_steps=33 format=3 uid="uid://c2qbrpracjsi5"]
+[gd_scene load_steps=33 format=3 uid="uid://bu78o5fps1jsf"]
 
-[ext_resource type="PackedScene" uid="uid://cvgjcwqn6k8eu" path="res://Scenes/UI/Overlay/health.tscn" id="1_3xw0u"]
-[ext_resource type="Script" uid="uid://bj3o2h06hj6ck" path="res://Scripts/Enemies/enemy.gd" id="1_vumo0"]
-[ext_resource type="Shader" uid="uid://o6ancnl5jgcr" path="res://Shaders/Blink.gdshader" id="2_kapy6"]
-[ext_resource type="Script" uid="uid://dlgatnu5tx5lj" path="res://Scripts/Enemies/health_enemy.gd" id="3_tq37w"]
-[ext_resource type="FontFile" uid="uid://x2dwsfc3en6q" path="res://Assets/Tutorial Open Assets/brackeys_platformer_assets/fonts/PixelOperator8.ttf" id="4_6hc3a"]
-[ext_resource type="Texture2D" uid="uid://cw7w05q12u5bv" path="res://Assets/Sprites/husk.png" id="4_tq37w"]
+[ext_resource type="Script" uid="uid://cuyrxjtu26bru" path="res://Scripts/Enemies/boss_enemy_1.gd" id="1_v0yt4"]
+[ext_resource type="PackedScene" uid="uid://cvgjcwqn6k8eu" path="res://Scenes/UI/Overlay/health.tscn" id="2_rkuo3"]
+[ext_resource type="Script" uid="uid://dlgatnu5tx5lj" path="res://Scripts/Enemies/health_enemy.gd" id="3_aesm5"]
+[ext_resource type="Shader" uid="uid://o6ancnl5jgcr" path="res://Shaders/Blink.gdshader" id="4_styb1"]
+[ext_resource type="Texture2D" uid="uid://cw7w05q12u5bv" path="res://Assets/Sprites/husk.png" id="5_ktat4"]
+[ext_resource type="FontFile" uid="uid://x2dwsfc3en6q" path="res://Assets/Tutorial Open Assets/brackeys_platformer_assets/fonts/PixelOperator8.ttf" id="6_04yeg"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6hc3a"]
 resource_local_to_scene = true
-shader = ExtResource("2_kapy6")
+shader = ExtResource("4_styb1")
 shader_parameter/blink_color = Color(1, 1, 1, 1)
 shader_parameter/blink_intensity = 0.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ny6sd"]
-atlas = ExtResource("4_tq37w")
+atlas = ExtResource("5_ktat4")
 region = Rect2(0, 32, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_adlby"]
-atlas = ExtResource("4_tq37w")
+atlas = ExtResource("5_ktat4")
 region = Rect2(16, 32, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pub4n"]
-atlas = ExtResource("4_tq37w")
+atlas = ExtResource("5_ktat4")
 region = Rect2(32, 32, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_q4xed"]
-atlas = ExtResource("4_tq37w")
+atlas = ExtResource("5_ktat4")
 region = Rect2(48, 32, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_q4toe"]
-atlas = ExtResource("4_tq37w")
+atlas = ExtResource("5_ktat4")
 region = Rect2(64, 32, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cv1h1"]
-atlas = ExtResource("4_tq37w")
+atlas = ExtResource("5_ktat4")
 region = Rect2(80, 32, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_o5hv7"]
-atlas = ExtResource("4_tq37w")
+atlas = ExtResource("5_ktat4")
 region = Rect2(96, 32, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_q14j8"]
-atlas = ExtResource("4_tq37w")
+atlas = ExtResource("5_ktat4")
 region = Rect2(112, 32, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_15v5j"]
-atlas = ExtResource("4_tq37w")
+atlas = ExtResource("5_ktat4")
 region = Rect2(128, 32, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uvm7r"]
-atlas = ExtResource("4_tq37w")
+atlas = ExtResource("5_ktat4")
 region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2i0ii"]
-atlas = ExtResource("4_tq37w")
+atlas = ExtResource("5_ktat4")
 region = Rect2(16, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2l31v"]
-atlas = ExtResource("4_tq37w")
+atlas = ExtResource("5_ktat4")
 region = Rect2(0, 16, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uk263"]
-atlas = ExtResource("4_tq37w")
+atlas = ExtResource("5_ktat4")
 region = Rect2(16, 16, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1l4s1"]
-atlas = ExtResource("4_tq37w")
+atlas = ExtResource("5_ktat4")
 region = Rect2(32, 16, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4tmc8"]
-atlas = ExtResource("4_tq37w")
+atlas = ExtResource("5_ktat4")
 region = Rect2(48, 16, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oxdsm"]
-atlas = ExtResource("4_tq37w")
+atlas = ExtResource("5_ktat4")
 region = Rect2(64, 16, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ovk68"]
-atlas = ExtResource("4_tq37w")
+atlas = ExtResource("5_ktat4")
 region = Rect2(80, 16, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m3phr"]
-atlas = ExtResource("4_tq37w")
+atlas = ExtResource("5_ktat4")
 region = Rect2(96, 16, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cd0bd"]
-atlas = ExtResource("4_tq37w")
+atlas = ExtResource("5_ktat4")
 region = Rect2(112, 16, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_wpvyt"]
@@ -191,14 +191,15 @@ radius = 7.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tq37w"]
 
-[node name="Enemy" type="CharacterBody2D" node_paths=PackedStringArray("shootPoint") groups=["Enemy"]]
-collision_layer = 257
+[node name="boss_enemy_1" type="CharacterBody2D" node_paths=PackedStringArray("shootPoint") groups=["Enemy"]]
 collision_mask = 5
-script = ExtResource("1_vumo0")
+script = ExtResource("1_v0yt4")
 shootPoint = NodePath("CollisionShape2D")
+walk_speed = 20
+sprint_speed = 40
 
-[node name="Health" parent="." instance=ExtResource("1_3xw0u")]
-script = ExtResource("3_tq37w")
+[node name="Health" parent="." instance=ExtResource("2_rkuo3")]
+script = ExtResource("3_aesm5")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 material = SubResource("ShaderMaterial_6hc3a")
@@ -213,7 +214,7 @@ offset_left = -20.0
 offset_top = -26.0
 offset_right = 20.0
 offset_bottom = -3.0
-theme_override_fonts/font = ExtResource("4_6hc3a")
+theme_override_fonts/font = ExtResource("6_04yeg")
 theme_override_font_sizes/font_size = 8
 text = "HP: 50"
 horizontal_alignment = 1
@@ -261,7 +262,16 @@ shape = SubResource("CircleShape2D_tq37w")
 
 [node name="ItemSpawnPoint" type="Marker2D" parent="."]
 
+[node name="JumpTimer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[node name="HatSplitTimer" type="Timer" parent="."]
+wait_time = 0.1
+
 [connection signal="hp_changed" from="Health" to="." method="_on_health_hp_changed"]
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="timeout" from="in_range_shoot_timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="TopCheckCooldown" to="." method="_on_top_check_cooldown_timeout"]
+[connection signal="timeout" from="JumpTimer" to="." method="_on_jump_timer_timeout"]
+[connection signal="timeout" from="HatSplitTimer" to="." method="_on_hat_split_timer_timeout"]
