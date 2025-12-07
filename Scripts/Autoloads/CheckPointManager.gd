@@ -25,7 +25,6 @@ func register_start(Start: Marker2D):
 		"position": Start.global_position,
 		"node": Start
 	})
-	print(unlocked_checkpoints)
 	
 func checkpoint_unlocked(checkpoint: CheckPoint):
 	for unlocked_cp in unlocked_checkpoints:
@@ -94,7 +93,8 @@ func _on_choice_made(preference: String): #This func gets called from UI script 
 	_respawn_player_to_checkpoint(player_stored)
 
 func _respawn_player_to_checkpoint(player: Player):
-	player.hp.hp = 50
+	player.velocity.y = 0
+	player.hp.hp = 100
 	
 	Engine.time_scale = 1
 	player.collision_shape_2d.disabled = false

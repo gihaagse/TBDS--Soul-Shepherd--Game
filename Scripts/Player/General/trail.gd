@@ -24,7 +24,6 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	
 	if not trail_speed_initialized and fsm.current_state is PlayerState:
-		print("hogridaa")
 		min_trail_speed = fsm.current_state.fall_speed_threshold - 5.0
 		trail_speed_initialized = true
 		
