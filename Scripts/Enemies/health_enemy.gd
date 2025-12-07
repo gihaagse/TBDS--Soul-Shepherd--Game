@@ -23,7 +23,7 @@ func take_damage(dmg : int):
 		Engine.time_scale = .2
 		timer.start()
 	elif(hp <= 0):
-		drop_item()
+		#drop_item()
 		get_parent().queue_free()
 
 func _on_player_player_hit(dmg) -> void:
