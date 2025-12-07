@@ -42,7 +42,6 @@ func Update(_delta:float) -> void:
 	if player.is_on_floor():
 		_play_landing_effects()
 		jumps_left = max_double_jumps
-		jumps_updated.emit(jumps_left)
 		can_double_jump = false
 		state_transition.emit(self, "Idling")
 

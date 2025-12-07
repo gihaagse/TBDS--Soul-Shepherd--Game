@@ -4,7 +4,6 @@ class_name PlayerState
 
 @warning_ignore("unused_signal")
 signal state_transition
-signal jumps_updated(jumps: int)
 
 const max_double_jumps: int = 2
 static var jumps_left: int = max_double_jumps
@@ -46,7 +45,6 @@ var run_particle_timer : float
 @export var airsStrafe : int = 20
 
 var jump_ui : Node2D
-
 func _ready() -> void:
 	level_camera = get_tree().current_scene.get_node("Camera2D")
 	
@@ -61,7 +59,6 @@ func Enter():
 	jump_particle = player.get_node("JumpParticle")
 	
 	jump_ui = player.get_node_or_null("JumpUI")
-	
 	hp = player.get_node_or_null("Health")
 	if hp == null:
 		print("hp not found")
@@ -112,7 +109,6 @@ func movement(delta:float):
 		weapon.position.x = -14 if last_character_orientation < 0 else 14
 		shootPoint.position.x = -14 if last_character_orientation < 0 else 14
 		
-		print("setting jumpui location")
 		if jump_ui:
 			jump_ui.set_side(last_character_orientation > 0)
 		

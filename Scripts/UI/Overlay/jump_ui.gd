@@ -11,6 +11,9 @@ var side_offset_x := 10
 
 var current_max_jumps: int = -1
 
+func _ready() -> void:
+	set_side()
+	
 func _process(_delta):
 	var state = fsm.current_state
 	var jumps_left: int = state.jumps_left
@@ -42,7 +45,6 @@ func _update_textures(jumps_left: int) -> void:
 		var index_from_end := count - 1 - i
 		ball.texture = full_ball if index_from_end < jumps_left else empty_ball
 
-func set_side(is_facing_right: bool) -> void:
+func set_side(is_facing_right: bool = 1) -> void:
 	var side := -side_offset_x if is_facing_right else side_offset_x
 	position = center_offset + Vector2(side, 0)
-	print(position)

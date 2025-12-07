@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://dhoq3sp0l7yob"]
+[gd_scene load_steps=31 format=3 uid="uid://dhoq3sp0l7yob"]
 
 [ext_resource type="Script" uid="uid://byn1je7flnjo3" path="res://Scripts/Central/game_manager.gd" id="1_d3t52"]
 [ext_resource type="Texture2D" uid="uid://dfdfu6o1j3apv" path="res://Assets/Sprites/Playtest1.png" id="1_o8n5m"]
@@ -25,6 +25,7 @@
 [ext_resource type="PackedScene" uid="uid://dpatdmh4s5sg5" path="res://Scenes/GrapplingSystem/GrapplingHookSystem.tscn" id="24_agvfv"]
 [ext_resource type="PackedScene" uid="uid://c45jpc3kaflr4" path="res://Scenes/CheckPoints/CheckPoint.tscn" id="25_muu7q"]
 [ext_resource type="Script" uid="uid://dtfsguwdnfr7m" path="res://Scripts/CheckPoints/start.gd" id="26_0qu4d"]
+[ext_resource type="AudioStream" uid="uid://cbtn1bitrynwi" path="res://Assets/Audio/Music/sample.wav" id="26_lxrd0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_aveji"]
 texture = ExtResource("1_o8n5m")
@@ -431,7 +432,7 @@ layer_2/modulate = Color(1, 1, 1, 0)
 layer_2/tile_data = PackedInt32Array(983039, 458754, 11, 917503, 458754, 11, 851967, 458754, 11, 786431, 458754, 11, 720895, 458754, 11, 655359, 458754, 11, 589823, 458754, 11, 65535, 458754, 11, 131071, 458754, 11, 196607, 458754, 11, 262143, 458754, 11, 327679, 458754, 11, 393215, 458754, 11, 458751, 458754, 11, 524287, 458754, 11, -393013, 458754, 11, -327477, 458754, 11, -261941, 458754, 11, -196405, 458754, 11, -130869, 458754, 11, -65333, 458754, 11, 203, 458754, 11, 65739, 458754, 11, 131275, 458754, 11)
 
 [node name="Player" parent="." instance=ExtResource("2_aveji")]
-position = Vector2(62, -360)
+position = Vector2(-27, -14)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 process_mode = 3
@@ -600,6 +601,12 @@ position = Vector2(112, 215)
 
 [node name="GrapplingHookSystem" parent="." node_paths=PackedStringArray("player_ref") instance=ExtResource("24_agvfv")]
 player_ref = NodePath("../Player")
+
+[node name="Level1Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("26_lxrd0")
+volume_db = -50.0
+autoplay = true
+bus = &"Music"
 
 [connection signal="body_entered" from="killzone" to="killzone" method="_on_body_entered"]
 

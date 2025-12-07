@@ -23,14 +23,14 @@ func options_menu_input() -> void:
 	if OptionsManager.is_any_rebinding():
 		return
 		
-	if Input.is_action_just_pressed("KeyboardArrowRight"):
+	if Input.is_action_just_pressed("KeyboardArrowRight") or Input.is_action_just_pressed("R1"):
 		if tab_container.current_tab >= tab_container.get_tab_count() - 1:
 			change_tab(0)
 			return
 			
 		var next_tab = tab_container.current_tab + 1
 		change_tab(next_tab) 
-	if Input.is_action_just_pressed("KeyboardArrowLeft"):
+	if Input.is_action_just_pressed("KeyboardArrowLeft") or Input.is_action_just_pressed("L1"):
 		if tab_container.current_tab == 0:
 			change_tab(tab_container.get_tab_count() -1)
 			return

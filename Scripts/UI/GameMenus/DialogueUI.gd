@@ -14,6 +14,7 @@ class_name  DialogueScene
 @onready var continue_sfx = $Node/Continue
 @onready var choice_sfx = $Node/Choice
 
+var selected_choice_index: int = 0
 var choice_buttons: Array[Button] = []
 var is_animating_text := false
 var full_line: String = ""
@@ -94,6 +95,7 @@ func _on_animate_text_timer():
 func _on_choices_displayed(choices: Array[PlayerOption]):
 	show_choices(choices)
 	hide_continue_button()
+	update_choice_selection(selected_choice_index)
 
 func hide_choices():
 	for button in choice_buttons:
@@ -144,20 +146,62 @@ func hide_continue_button():
 func _input(event):
 	if not DialogueManager.is_dialogue_active: 
 		return
-	
 	if ending_tween:
 		return
-	
-	if event is InputEventKey and event.pressed and not event.is_echo():
-		if event.keycode == Key.KEY_SPACE and continue_button.visible and continue_label.visible:
-			_on_continue()
+
+	# CONTROLLER - X/A button voor continue/select
+	if event is InputEventJoypadButton and event.is_released and not event.is_echo():
+		print("Controller button: ", event.button_index)
+		
+		if event.button_index == JOY_BUTTON_A:  # X/A button
+			print("X/A pressed")
+			if continue_button.visible and continue_label.visible:
+				_on_continue()
+			elif choices_container.visible and choice_buttons.size() > 0:
+				print("Selecting choice: ", selected_choice_index)
+				_on_choice_selected(selected_choice_index)
+		
+		# D-pad scrollen
 		elif choices_container.visible and choice_buttons.size() > 0:
-			var index = -1
+			match event.button_index:
+				11:  # DPAD UP/LEFT
+					selected_choice_index = max(0, selected_choice_index - 1)
+					print("Controller left: ", selected_choice_index)
+					update_choice_selection(selected_choice_index)
+				12:  # DPAD DOWN/RIGHT
+					selected_choice_index = min(choice_buttons.size() - 1, selected_choice_index + 1)
+					print("Controller right: ", selected_choice_index)
+					update_choice_selection(selected_choice_index)
+
+	# KEYBOARD - Arrow keys scrollen + Space select
+	if event is InputEventKey and event.is_released and not event.is_echo():
+		if event.keycode == Key.KEY_SPACE:  # Space = select/continue
+			if continue_button.visible and continue_label.visible:
+				_on_continue()
+			elif choices_container.visible and choice_buttons.size() > 0:
+				_on_choice_selected(selected_choice_index)
+		
+		elif choices_container.visible and choice_buttons.size() > 0:
 			match event.keycode:
-				Key.KEY_1: index = 0
-				Key.KEY_2: index = 1
-				Key.KEY_3: index = 2
-				Key.KEY_4: index = 3
-				Key.KEY_5: index = 4
-			if index >= 0 and index < choice_buttons.size():
-				_on_choice_selected(index)
+				Key.KEY_LEFT, Key.KEY_UP:
+					selected_choice_index = max(0, selected_choice_index - 1)
+					print("Keyboard left: ", selected_choice_index)
+					update_choice_selection(selected_choice_index)
+				Key.KEY_RIGHT, Key.KEY_DOWN:
+					selected_choice_index = min(choice_buttons.size() - 1, selected_choice_index + 1)
+					print("Keyboard right: ", selected_choice_index)
+					update_choice_selection(selected_choice_index)
+					
+func update_choice_selection(index: int):
+	selected_choice_index = index
+	
+	# Reset ALLE buttons naar normaal
+	for i in range(choice_buttons.size()):
+		var button = choice_buttons[i]
+		button.modulate = Color.WHITE  # Normaal wit
+	
+	# Witte highlight voor geselecteerde
+	if index < choice_buttons.size():
+		choice_buttons[index].modulate = Color(1.0, 1.0, 1.0, 1.0)  # Volledig wit
+		choice_buttons[index].grab_focus()
+		print("Highlighted choice: ", index)
