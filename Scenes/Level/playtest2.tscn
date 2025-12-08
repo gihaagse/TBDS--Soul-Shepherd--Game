@@ -462,6 +462,7 @@ process_mode = 3
 script = ExtResource("5_w0jtt")
 
 [node name="Current State" type="Label" parent="CanvasLayer"]
+visible = false
 offset_right = 40.0
 offset_bottom = 23.0
 theme_override_fonts/font = ExtResource("6_17aq4")
