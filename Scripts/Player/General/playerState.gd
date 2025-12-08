@@ -9,7 +9,7 @@ const max_double_jumps: int = 2
 static var jumps_left: int = max_double_jumps
 static var custom_gravity : Vector2 = Vector2(0,980)
 static var in_gliding: bool = false
-static var last_character_orientation: int = 0
+static var last_character_orientation: float = 0.0
 static var can_double_jump: bool = false
 
 var hp: HP
@@ -100,7 +100,7 @@ func movement(delta:float):
 	
 
 	var direction := Input.get_axis("Left", "Right")
-	if direction != 0:
+	if abs(direction) > 0.05:
 		@warning_ignore("narrowing_conversion")
 		last_character_orientation = direction
 	
