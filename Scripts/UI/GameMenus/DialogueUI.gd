@@ -207,7 +207,7 @@ func _input(event):
 					update_choice_selection()
 			
 	elif event is InputEventJoypadMotion and choices_container.visible and choice_buttons.size() > 0:
-			if event.axis == JOY_AXIS_LEFT_X:
+			if event.axis == JOY_AXIS_LEFT_X or event.axis == JOY_AXIS_RIGHT_X:
 				var deadzone: float = .99
 				if abs(event.axis_value) > deadzone:
 					if event.axis_value < -deadzone:  # Left
