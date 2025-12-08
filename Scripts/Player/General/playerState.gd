@@ -24,7 +24,7 @@ var walking_dust_particle: CPUParticles2D
 var jump_particle: GPUParticles2D
 var run_particle_timer : float
 
-@export var fall_speed_threshold := 666
+@export var fall_speed_threshold := 600
 @export var max_fall_speed := 1500
 @export var max_fall_damage := 99
 
