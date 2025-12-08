@@ -27,7 +27,7 @@
 [ext_resource type="Script" uid="uid://dtfsguwdnfr7m" path="res://Scripts/CheckPoints/start.gd" id="26_0qu4d"]
 [ext_resource type="AudioStream" uid="uid://cbtn1bitrynwi" path="res://Assets/Audio/Music/sample.wav" id="26_lxrd0"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_aveji"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0qu4d"]
 texture = ExtResource("1_o8n5m")
 10:0/0 = 0
 11:0/0 = 0
@@ -224,7 +224,7 @@ texture = ExtResource("1_o8n5m")
 0:0/0/modulate = Color(0, 0, 0, 1)
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_17glx"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lxrd0"]
 texture = ExtResource("3_48i7b")
 7:4/0 = 0
 7:4/0/physics_layer_1/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -395,6 +395,7 @@ texture = ExtResource("3_48i7b")
 2:12/0 = 0
 1:12/0 = 0
 0:12/0 = 0
+0:12/0/physics_layer_1/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 0:10/0 = 0
 0:8/0 = 0
 
@@ -404,8 +405,8 @@ physics_layer_1/collision_layer = 512
 physics_layer_1/collision_mask = 512
 physics_layer_2/collision_layer = 1024
 physics_layer_2/collision_mask = 1024
-sources/0 = SubResource("TileSetAtlasSource_aveji")
-sources/2 = SubResource("TileSetAtlasSource_17glx")
+sources/0 = SubResource("TileSetAtlasSource_0qu4d")
+sources/2 = SubResource("TileSetAtlasSource_lxrd0")
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_p8kv5"]
 
