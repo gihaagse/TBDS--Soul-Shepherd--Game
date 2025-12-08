@@ -44,6 +44,7 @@ func _ready() -> void:
 	Engine.max_fps = 60
 	speed = walk_speed
 	_on_animated_sprite_2d_animation_finished()
+	$Label.set_text("HP: " + str(health.hp))
 
 func _process(_delta: float) -> void:
 	_correct_sprite()

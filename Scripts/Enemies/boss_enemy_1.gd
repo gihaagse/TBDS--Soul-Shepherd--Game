@@ -6,9 +6,10 @@ class_name boss_enemy_1
 @onready var JumpTimer : Timer = $JumpTimer
 
 func _ready() -> void:
-	projectile = load("res://Scenes/Weapons/hat_projectile.tscn")
+	projectile = load("res://Scenes/Weapons/enemy_hat_projectile.tscn")
 	super._ready()
 	JumpTimer.start()
+	speed = 0
 
 func _process(_delta: float) -> void:
 	super._process(_delta)
@@ -26,6 +27,7 @@ func jump():
 	ground.set_enabled(false)
 
 func shoot():
+	print("test")
 	super.shoot()
 	$HatSplitTimer.start()
 
@@ -38,3 +40,4 @@ func _on_hat_split_timer_timeout() -> void:
 		instance.velocity = latest_hat.velocity
 		main.add_child.call_deferred(instance)
 		await get_tree().process_frame
+	$HatSplitTimer.stop()

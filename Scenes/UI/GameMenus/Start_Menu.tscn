@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://d0aadsv0uaoyf"]
+[gd_scene load_steps=13 format=3 uid="uid://d0aadsv0uaoyf"]
 
 [ext_resource type="Script" uid="uid://8inuq8qijvff" path="res://Scripts/UI/GameMenus/start_menu.gd" id="1_x858q"]
 [ext_resource type="Texture2D" uid="uid://d1bef2u8knxo3" path="res://Assets/Background/titlescreen.png" id="2_n5ja1"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://brc3fv7pjl1bv" path="res://Scenes/UI/GameMenus/Options_Menu.tscn" id="4_4yw8f"]
 [ext_resource type="AudioStream" uid="uid://bipnhi5kx3r28" path="res://Assets/Audio/Music/SoulShephard.wav" id="5_md32f"]
 [ext_resource type="Texture2D" uid="uid://kq5hfqfgie2u" path="res://Assets/logo/Transparent logo 2.png" id="6_3tla5"]
+[ext_resource type="Texture2D" uid="uid://bt6mdc6kg0ylv" path="res://Assets/Background/overcome_death2.png" id="6_n5ja1"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kko6a"]
 resource_local_to_scene = true
@@ -59,6 +60,9 @@ shadow_size = 3
 shadow_offset = Vector2(0, 3.41)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kko6a"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3tla5"]
+texture = ExtResource("6_n5ja1")
 
 [node name="StartMenu" type="Control"]
 process_mode = 3
@@ -191,20 +195,24 @@ layout_mode = 1
 
 [node name="MusicStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_md32f")
-volume_db = -25.0
 autoplay = true
 bus = &"Music"
 
-[node name="Logo" type="TextureRect" parent="."]
-layout_mode = 0
-offset_left = 264.0
-offset_top = 3.0
-offset_right = 884.7915
-offset_bottom = 266.0
-texture = ExtResource("6_3tla5")
-expand_mode = 1
+[node name="Panel2" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_3tla5")
+
+[node name="GameStartTimer" type="Timer" parent="."]
+wait_time = 3.0
 
 [connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/Customize" to="." method="_on_customized_pressed"]
 [connection signal="pressed" from="VBoxContainer/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]
+[connection signal="timeout" from="GameStartTimer" to="." method="_on_game_start_timer_timeout"]

@@ -1,6 +1,6 @@
 extends Node
 class_name HP_Enemy
-@export var hp = 50
+@export var hp: int
 @onready var timer: Timer = $Timer
 @onready var player_death: AudioStreamPlayer2D = $PlayerDeath
 var current_item : Node2D
