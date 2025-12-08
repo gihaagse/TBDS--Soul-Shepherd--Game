@@ -1,7 +1,7 @@
-[gd_scene load_steps=30 format=3 uid="uid://lahfkubql7vo"]
+[gd_scene load_steps=31 format=3 uid="uid://lahfkubql7vo"]
 
 [ext_resource type="Texture2D" uid="uid://dfdfu6o1j3apv" path="res://Assets/Sprites/Playtest1.png" id="1_f065d"]
-[ext_resource type="Script" uid="uid://beypopj8ttlnq" path="res://Scripts/Level/playtest_2.gd" id="1_qt3gr"]
+[ext_resource type="Script" path="res://Scripts/Level/playtest_2.gd" id="1_qt3gr"]
 [ext_resource type="Texture2D" uid="uid://j1w6x4hpn3ou" path="res://Assets/Icons/Sung Chin Woo Icon.png" id="2_mu72t"]
 [ext_resource type="Script" uid="uid://byn1je7flnjo3" path="res://Scripts/Central/game_manager.gd" id="3_pv5y6"]
 [ext_resource type="PackedScene" uid="uid://c5ongupm07qh3" path="res://Scenes/Player/player.tscn" id="4_qt3gr"]
@@ -593,6 +593,24 @@ script = ExtResource("19_8j3de")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="killzone"]
 shape = SubResource("WorldBoundaryShape2D_snitv")
 
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Enemy" parent="Node2D" instance=ExtResource("25_17aq4")]
+z_index = 9
+position = Vector2(318, 229)
+
+[node name="Enemy2" parent="Node2D" instance=ExtResource("25_17aq4")]
+z_index = 9
+position = Vector2(1698, 131)
+
+[node name="Enemy3" parent="Node2D" instance=ExtResource("25_17aq4")]
+z_index = 9
+position = Vector2(921, 167)
+
+[node name="boss_enemy_1" parent="Node2D" instance=ExtResource("24_w0jtt")]
+z_index = 9
+position = Vector2(3075, 133)
+
 [node name="GrapplingHookSystem" parent="." node_paths=PackedStringArray("player_ref") instance=ExtResource("20_lt7pv")]
 player_ref = NodePath("../Player")
 
@@ -624,26 +642,6 @@ checkppoint_id = 4
 [node name="Start" type="Marker2D" parent="CheckPoints"]
 position = Vector2(15, 216)
 script = ExtResource("23_qt3gr")
-
-[node name="Node2D4" type="Node2D" parent="."]
-
-[node name="boss_enemy_1" parent="Node2D4" instance=ExtResource("24_w0jtt")]
-position = Vector2(3075, 133)
-
-[node name="Node2D3" type="Node2D" parent="."]
-
-[node name="Enemy" parent="Node2D3" instance=ExtResource("25_17aq4")]
-position = Vector2(1698, 131)
-
-[node name="Node2D2" type="Node2D" parent="."]
-
-[node name="Enemy" parent="Node2D2" instance=ExtResource("25_17aq4")]
-position = Vector2(921, 167)
-
-[node name="Node2D" type="Node2D" parent="."]
-
-[node name="Enemy" parent="Node2D" instance=ExtResource("25_17aq4")]
-position = Vector2(318, 229)
 
 [connection signal="body_entered" from="killzone" to="killzone" method="_on_body_entered"]
 

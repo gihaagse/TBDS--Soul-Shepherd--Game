@@ -203,6 +203,7 @@ shootPoint = NodePath("CollisionShape2D")
 
 [node name="Health" parent="." instance=ExtResource("1_3xw0u")]
 script = ExtResource("3_tq37w")
+hp = 50
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 material = SubResource("ShaderMaterial_6hc3a")
