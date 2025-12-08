@@ -56,8 +56,6 @@ func Update(_delta:float) -> void:
 		
 	if Input.is_action_pressed("WallSlide") and player.is_on_wall_only():
 		state_transition.emit(self, "Wallsliding")
-	if Input.is_action_just_pressed("Jump") and player.is_on_wall_only() and (Input.is_action_pressed("Left") or Input.is_action_pressed("Right")):
-		state_transition.emit(self, "WallJump")
 	#if get_item_by_name("GrappleHook", slots).visible:
 		#ghs.can_grapple = true
 	#else: 
@@ -66,6 +64,9 @@ func Update(_delta:float) -> void:
 		state_transition.emit(self, "Grapple")
 
 func Phys_Update(_delta:float) -> void:
+	if Input.is_action_just_pressed("Jump") and player.is_on_wall_only() and (Input.is_action_pressed("Left") or Input.is_action_pressed("Right")):
+		print("going walljump")
+		state_transition.emit(self, "Walljump")
 	
 	if Input.is_action_pressed("Jump"):
 		jump_hold_time += _delta
