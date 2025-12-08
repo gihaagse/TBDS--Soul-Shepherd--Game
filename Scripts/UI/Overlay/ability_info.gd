@@ -11,6 +11,7 @@ func _ready():
 	ability_icons = load_ability_icons(icons_path)
 	AbilityData.connect("abilities_updated", Callable(self, "_update_ui"))
 	$MarginContainer/VBoxContainer/CenterContainer/GridContainer.grab_focus()
+	
 func _process(_delta: float) -> void:
 	
 	_update_ui()
@@ -53,3 +54,5 @@ func _update_ui() -> void:
 				indicator.set_minimum_size()
 			else:
 				pass
+	OptionsManager._set_focus_all_on_children(self)
+	
