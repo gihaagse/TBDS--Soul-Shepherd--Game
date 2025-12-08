@@ -621,6 +621,7 @@ position = Vector2(388, -11)
 position = Vector2(112, 225)
 
 [node name="GrapplingHookSystem" parent="." node_paths=PackedStringArray("player_ref") instance=ExtResource("24_agvfv")]
+visible = false
 player_ref = NodePath("../Player")
 
 [node name="Level1Music" type="AudioStreamPlayer" parent="."]
