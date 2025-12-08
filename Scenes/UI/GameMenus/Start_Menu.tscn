@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://d0aadsv0uaoyf"]
+[gd_scene load_steps=14 format=3 uid="uid://d0aadsv0uaoyf"]
 
 [ext_resource type="Script" uid="uid://8inuq8qijvff" path="res://Scripts/UI/GameMenus/start_menu.gd" id="1_x858q"]
 [ext_resource type="Texture2D" uid="uid://d1bef2u8knxo3" path="res://Assets/Background/titlescreen.png" id="2_n5ja1"]
@@ -197,6 +197,15 @@ layout_mode = 1
 stream = ExtResource("5_md32f")
 autoplay = true
 bus = &"Music"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 294.0
+offset_top = 3.0
+offset_right = 871.0
+offset_bottom = 277.0
+texture = ExtResource("6_3tla5")
+expand_mode = 1
 
 [node name="Panel2" type="Panel" parent="."]
 visible = false
