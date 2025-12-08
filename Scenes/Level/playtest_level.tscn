@@ -663,6 +663,7 @@ ability = 7
 custom_sprite_frames = ExtResource("29_1nbn6")
 
 [node name="Soul5" parent="Souls" instance=ExtResource("12_t8xxn")]
+visible = false
 position = Vector2(661, 181)
 scale = Vector2(0.765, 0.765)
 ability = 12
