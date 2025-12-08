@@ -90,7 +90,7 @@ func _on_player_died(player: Player):
 	if not player_stored:
 		player_stored = player
 	
-	Engine.time_scale = .05
+	#Engine.time_scale = .05
 	player.collision_shape_2d.disabled = true
 	player_died.emit() #This signal enables the UI of checkpoint respawn
 
