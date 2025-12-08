@@ -17,8 +17,8 @@ func _process(_delta: float) -> void:
 	pass
 
 func _on_start_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scenes/Level/playtest_level.tscn")
-	Engine.time_scale = 1
+	$Panel2.visible = true
+	$GameStartTimer.start()
 
 func _on_customized_pressed() -> void:
 	print("This scene does not exist yet")
@@ -40,3 +40,8 @@ func on_exit_options_menu() -> void:
 func _on_exit_pressed() -> void:
 	get_tree().quit()
 	
+
+
+func _on_game_start_timer_timeout() -> void:
+	get_tree().change_scene_to_file("res://Scenes/Level/playtest2.tscn")
+	Engine.time_scale = 1
