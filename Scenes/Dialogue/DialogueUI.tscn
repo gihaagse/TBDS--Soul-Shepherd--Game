@@ -76,12 +76,11 @@ size_flags_vertical = 3
 size_flags_stretch_ratio = 5.0
 
 [node name="ContinueLabel" type="Label" parent="FullSize/PanelContainer/MarginContainer/MainContainer/ProfileIconContainer"]
-visible = false
 custom_minimum_size = Vector2(145, 0)
 layout_mode = 2
 size_flags_vertical = 6
 theme_override_font_sizes/font_size = 14
-text = "[SPACE] to continue.."
+text = "[SPACE] or [A] to continue.."
 autowrap_mode = 2
 
 [node name="Spacer" type="Control" parent="FullSize/PanelContainer/MarginContainer/MainContainer"]
