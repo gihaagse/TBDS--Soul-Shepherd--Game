@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://lahfkubql7vo"]
+[gd_scene load_steps=30 format=3 uid="uid://lahfkubql7vo"]
 
 [ext_resource type="Texture2D" uid="uid://dfdfu6o1j3apv" path="res://Assets/Sprites/Playtest1.png" id="1_f065d"]
 [ext_resource type="Texture2D" uid="uid://j1w6x4hpn3ou" path="res://Assets/Icons/Sung Chin Woo Icon.png" id="2_mu72t"]
@@ -23,6 +23,8 @@
 [ext_resource type="AudioStream" uid="uid://cbtn1bitrynwi" path="res://Assets/Audio/Music/sample.wav" id="21_v2evn"]
 [ext_resource type="PackedScene" uid="uid://c45jpc3kaflr4" path="res://Scenes/CheckPoints/CheckPoint.tscn" id="22_pv5y6"]
 [ext_resource type="Script" uid="uid://dtfsguwdnfr7m" path="res://Scripts/CheckPoints/start.gd" id="23_qt3gr"]
+[ext_resource type="PackedScene" uid="uid://bu78o5fps1jsf" path="res://Scenes/Enemies/boss_enemy_1.tscn" id="24_w0jtt"]
+[ext_resource type="PackedScene" uid="uid://c2qbrpracjsi5" path="res://Scenes/Enemies/orc.tscn" id="25_17aq4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j3um3"]
 texture = ExtResource("1_f065d")
@@ -619,6 +621,26 @@ checkppoint_id = 4
 [node name="Start" type="Marker2D" parent="CheckPoints"]
 position = Vector2(14, 209)
 script = ExtResource("23_qt3gr")
+
+[node name="Node2D4" type="Node2D" parent="."]
+
+[node name="boss_enemy_1" parent="Node2D4" instance=ExtResource("24_w0jtt")]
+position = Vector2(3075, 133)
+
+[node name="Node2D3" type="Node2D" parent="."]
+
+[node name="Enemy" parent="Node2D3" instance=ExtResource("25_17aq4")]
+position = Vector2(1698, 131)
+
+[node name="Node2D2" type="Node2D" parent="."]
+
+[node name="Enemy" parent="Node2D2" instance=ExtResource("25_17aq4")]
+position = Vector2(921, 167)
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Enemy" parent="Node2D" instance=ExtResource("25_17aq4")]
+position = Vector2(318, 229)
 
 [connection signal="body_entered" from="killzone" to="killzone" method="_on_body_entered"]
 
