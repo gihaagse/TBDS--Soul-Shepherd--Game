@@ -52,7 +52,7 @@ func _ready():
 	add_child(select_cooldown_timer)
 
 	scroll_cooldown_timer = Timer.new()
-	scroll_cooldown_timer.wait_time = 0.25
+	scroll_cooldown_timer.wait_time = 0.15
 	scroll_cooldown_timer.one_shot = true
 	add_child(scroll_cooldown_timer)
 
@@ -164,7 +164,7 @@ func update_choice_selection():
 	# Reset ALLE buttons naar normaal
 	if not choice_buttons.is_empty() and choice_buttons[selected_choice_index]:
 			choice_buttons[selected_choice_index].modulate = Color(0.432, 1.0, 0.401, 1.0)
-			choice_buttons[selected_choice_index].grab_focus()
+			#choice_buttons[selected_choice_index].grab_focus()
 			choice_buttons[selected_choice_index].get_node("Number").text = "< >"
 	
 	for i in range(choice_buttons.size()):
@@ -185,11 +185,11 @@ func _input(event):
 		return
 	if ending_tween:
 		return
-
+	
 	# CONTROLLER - X/A button voor continue/select
 	if event is InputEventJoypadButton and event.is_pressed and event.is_released() and not event.is_echo():
 		if not can_select(): return
-		if event.button_index == JOY_BUTTON_A:  
+		if event.button_index == JOY_BUTTON_A:
 			if continue_button.visible and continue_label.visible:
 				select_cooldown_timer.start()
 				_on_continue()
@@ -199,12 +199,26 @@ func _input(event):
 
 		elif choices_container.visible and choice_buttons.size() > 0:
 			match event.button_index:
-				11:
+				13:
 					selected_choice_index = max(0, selected_choice_index - 1)
 					update_choice_selection()
-				12: 
+				14:
 					selected_choice_index = min(choice_buttons.size() - 1, selected_choice_index + 1)
 					update_choice_selection()
+			
+	elif event is InputEventJoypadMotion and choices_container.visible and choice_buttons.size() > 0:
+			if event.axis == JOY_AXIS_LEFT_X or event.axis == JOY_AXIS_RIGHT_X:
+				var deadzone: float = .99
+				if abs(event.axis_value) > deadzone:
+					if event.axis_value < -deadzone:  # Left
+						selected_choice_index = max(0, selected_choice_index - 1)
+						update_choice_selection()
+						print("JOYSTICK LEFT: ", selected_choice_index)
+					elif event.axis_value > deadzone:  # Right
+						selected_choice_index = min(choice_buttons.size() - 1, selected_choice_index + 1)
+						update_choice_selection()
+						print("JOYSTICK RIGHT: ", selected_choice_index)
+			
 
 	if event is InputEventKey and event.is_pressed and event.is_released() and not event.is_echo():
 		if event.keycode == Key.KEY_SPACE:
@@ -218,10 +232,9 @@ func _input(event):
 		
 		elif choices_container.visible and choice_buttons.size() > 0:
 			match event.keycode:
-				Key.KEY_LEFT:
+				Key.KEY_LEFT, Key.KEY_A:
 					selected_choice_index = max(0, selected_choice_index - 1)
 					update_choice_selection()
-				Key.KEY_RIGHT:
+				Key.KEY_RIGHT, Key.KEY_D:
 					selected_choice_index = min(choice_buttons.size() - 1, selected_choice_index + 1)
 					update_choice_selection()
-					
