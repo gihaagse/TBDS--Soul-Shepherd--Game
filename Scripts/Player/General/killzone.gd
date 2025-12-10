@@ -10,6 +10,6 @@ func _on_body_entered(body: Node2D) -> void:
 	var hp = body.get_node_or_null("Health")
 	if hp and hp.has_method("take_damage"):
 		print("Working_code :D")
-		hp.take_damage(50)
+		hp.take_damage(100)
 	else:
 		print("Broken_code")

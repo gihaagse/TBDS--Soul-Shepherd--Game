@@ -43,14 +43,14 @@ func _on_killzone_body_entered(body: Node2D) -> void:
 
 
 func _on_health_hp_changed() -> void:
-	pass
-	#if hp.hp > 0:
-		#player_hitsfx.playing =true
-	#var tween = get_tree().create_tween()
-	#tween.tween_method(SetShader_BlinkIntensity, 1.0, 0.0, 0.5)
-	#
-	#gpu_particles_2d.restart()
-	#gpu_particles_2d.emitting = true
+	print("damage")
+	if hp.hp > 0:
+		player_hitsfx.playing =true
+	var tween = get_tree().create_tween()
+	tween.tween_method(SetShader_BlinkIntensity, 1.0, 0.0, 0.5)
+	
+	gpu_particles_2d.restart()
+	gpu_particles_2d.emitting = true
 	
 
 func has_ground_below() -> bool:

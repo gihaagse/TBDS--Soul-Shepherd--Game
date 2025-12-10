@@ -2,6 +2,30 @@ extends Node
 
 var directional_blurr: Shader = load("res://Shaders/directional_blurr.gdshader")
 
+func damage_effect(player_shader_material: ShaderMaterial) -> void:
+	
+	if player_shader_material:
+		player_shader_material.set_shader_parameter("damage_active", true)
+	else:
+		print("No shader material")
+		return
+		
+		
+	player_shader_material.set_shader_parameter("damage_active", true)
+	player_shader_material.set_shader_parameter("damage_time", 1.5)
+	player_shader_material.set_shader_parameter("shake_intensity", 1.0)
+	player_shader_material.set_shader_parameter("distortion", 0.8)
+   
+	var tween = create_tween()
+	tween.parallel().tween_property(player_shader_material, "shader_parameter/damage_time", 0.0, 0.6)
+	tween.parallel().tween_property(player_shader_material, "shader_parameter/shake_intensity", 0.0, 0.4)
+	tween.parallel().tween_property(player_shader_material, "shader_parameter/distortion", 0.0, 0.5)
+	
+	tween.tween_callback(func():
+		player_shader_material.set_shader_parameter("damage_active", false)
+	)
+	
+
 func screenshake(camera: Camera2D, magnitude: float = 8.0, duration: float = 0.18, frequency: float = 30.0) -> void:
 	if not camera: return
 	

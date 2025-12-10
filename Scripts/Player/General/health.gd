@@ -6,12 +6,16 @@ class_name HP
 @onready var player_death_sfx: AudioStreamPlayer2D = $PlayerDeathSfx
 @onready var bone_break_sfx: AudioStreamPlayer2D = $BoneBreakSfx
 
+@onready var player_animated_sprite = get_parent().get_node("AnimatedSprite2D")
+@onready var player_shader_material = player_animated_sprite.material as ShaderMaterial
 
 signal hp_changed
 
 enum DamageType { NORMAL, FALL, SWORD, PROJECTILE}
 
 func take_damage(dmg : int, damage_type: DamageType = DamageType.NORMAL):
+	UtilsEffect.damage_effect(player_shader_material)
+	
 	hp -= dmg
 	_play_damage_sfx(damage_type)
 	hp_changed.emit()

@@ -41,4 +41,9 @@ func _set_focus_all_on_children(node: Node) -> void:
 	for child in node.get_children():
 		if child is Control:
 			child.focus_mode = Control.FOCUS_ALL
+			if not child.mouse_entered.is_connected(_on_control_mouse_entered):
+				child.mouse_entered.connect(_on_control_mouse_entered.bind(child))
 		_set_focus_all_on_children(child)
+		
+func _on_control_mouse_entered(control: Control) -> void:
+	control.grab_focus()

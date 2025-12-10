@@ -69,38 +69,38 @@ func try_grapple_at(target_pos: Vector2):
 		detach_player(player_ref)
 		is_grappling = false
 
-func _input(event):
-	if player_ref == null:
-		return
-
-	# Left-click: try to grapple
-	if not is_grappling and Input.is_action_just_pressed("Grapple") and can_grapple:
-		#var mouse_pos = get_global_mouse_position()
-		#var space_state = get_world_2d().direct_space_state
+#func _input(event):
+	#if player_ref == null:
+		#return
 #
-		## Create query parameters
-		#var query = PhysicsPointQueryParameters2D.new()
-		#query.position = mouse_pos
-		#query.collide_with_areas = true
-		#query.collide_with_bodies = true
-		#query.collision_mask = 0x7FFFFFFF
+	## Left-click: try to grapple
+	#if not is_grappling and Input.is_action_just_pressed("Grapple") and can_grapple:
+		##var mouse_pos = get_global_mouse_position()
+		##var space_state = get_world_2d().direct_space_state
+##
+		### Create query parameters
+		##var query = PhysicsPointQueryParameters2D.new()
+		##query.position = mouse_pos
+		##query.collide_with_areas = true
+		##query.collide_with_bodies = true
+		##query.collision_mask = 0x7FFFFFFF
+##
+		### Perform the intersection
+		##var result = space_state.intersect_point(query, 32)
+##
+		##if result.size() > 0:
+			##var collider = result[0].collider
+			##print("Clicked:", collider.name)
+		#try_grapple_at(get_global_mouse_position())
+		#player_ref.global_rotation = 0
+		#print("go")
 #
-		## Perform the intersection
-		#var result = space_state.intersect_point(query, 32)
-#
-		#if result.size() > 0:
-			#var collider = result[0].collider
-			#print("Clicked:", collider.name)
-		try_grapple_at(get_global_mouse_position())
-		player_ref.global_rotation = 0
-		print("go")
-
-	# Right-click: detach
-	elif is_grappling and Input.is_action_just_pressed("Grapple"):
-		if is_grappling:
-			detach_player(player_ref)
-			player_ref.global_rotation = 0
-			is_grappling = false
+	## Right-click: detach
+	#elif is_grappling and Input.is_action_just_pressed("Grapple"):
+		#if is_grappling:
+			#detach_player(player_ref)
+			#player_ref.global_rotation = 0
+			#is_grappling = false
 			
 func attach_player(player: Node2D) -> int:
 	if grapple_anchor.global_position.distance_to(player.global_position) > max_radius or player_original_parent != null:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=122 format=3 uid="uid://c5ongupm07qh3"]
+[gd_scene load_steps=124 format=3 uid="uid://c5ongupm07qh3"]
 
 [ext_resource type="Script" uid="uid://bw7ujmm53vwsq" path="res://Scripts/Player/General/playermain.gd" id="1_qr1w5"]
 [ext_resource type="PackedScene" uid="uid://cvgjcwqn6k8eu" path="res://Scenes/UI/Overlay/health.tscn" id="2_ythyg"]
@@ -33,10 +33,11 @@
 [ext_resource type="Script" uid="uid://bobohqjtqaok3" path="res://Scripts/Player/States/Player_Died.gd" id="23_fcwna"]
 [ext_resource type="Texture2D" uid="uid://k3lrs06wxgfa" path="res://Assets/Textures/test smoke texture.png" id="24_gyc8k"]
 [ext_resource type="Texture2D" uid="uid://c8kqnetnxng1o" path="res://Assets/Textures/test smoke texture lower res.png" id="25_qflxp"]
-[ext_resource type="Script" path="res://Scripts/Player/States/Player_Grapple.gd" id="26_enij7"]
+[ext_resource type="Script" uid="uid://wifadrvhtulr" path="res://Scripts/Player/States/Player_Grapple.gd" id="26_enij7"]
 [ext_resource type="PackedScene" uid="uid://cde6qxgsfv3w" path="res://Scenes/Effects/dash_lines.tscn" id="26_ythyg"]
 [ext_resource type="PackedScene" uid="uid://b3qfe4rcpk6rv" path="res://Scenes/Effects/dash_smoke.tscn" id="27_bmb2s"]
 [ext_resource type="AudioStream" uid="uid://bwgoippum6cgf" path="res://Assets/Audio/SFX/Player/Knife Sword Katana stab.mp3" id="30_2jnj1"]
+[ext_resource type="Script" uid="uid://c0udclb84tqt1" path="res://Scripts/UI/Overlay/jump_ui.gd" id="38_m6ahd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lfmf2"]
 size = Vector2(12, 19)
@@ -46,6 +47,10 @@ resource_local_to_scene = true
 shader = ExtResource("3_bmb2s")
 shader_parameter/blink_color = Color(1, 1, 1, 1)
 shader_parameter/blink_intensity = 0.0
+shader_parameter/damage_active = false
+shader_parameter/damage_time = 0.0
+shader_parameter/shake_intensity = 0.0
+shader_parameter/distortion = 0.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0pk7v"]
 atlas = ExtResource("8_1agin")
@@ -890,9 +895,12 @@ damping_max = 100.00001
 scale_curve = SubResource("CurveTexture_bbimk")
 alpha_curve = SubResource("CurveTexture_sm0op")
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_m6ahd"]
+load_path = "res://.godot/imported/green_ball.png-faf5193f9c80959af8ce2bec1f312451.ctex"
+
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("finite_state_machine", "hp") groups=["Player"]]
 z_index = 5
-collision_layer = 4
+collision_layer = 5
 floor_constant_speed = true
 script = ExtResource("1_qr1w5")
 finite_state_machine = NodePath("FiniteStateMachine")
@@ -975,6 +983,8 @@ jumpsfx = NodePath("../../jumpsfx")
 script = ExtResource("12_mwii3")
 dash_cooldown = NodePath("../../Timers/DashCooldown")
 landing_sfx = NodePath("../../LandingSFX")
+extra_hold_jump = 6.7
+max_jump_hold_time = 1.0
 brake_force = 2
 jumpsfx = NodePath("../../jumpsfx")
 can_jump = false
@@ -1174,6 +1184,33 @@ process_material = SubResource("ParticleProcessMaterial_m0h3t")
 stream = ExtResource("10_bmb2s")
 volume_db = -15.0
 bus = &"Sfx"
+
+[node name="JumpUI" type="Node2D" parent="."]
+position = Vector2(-20, -30)
+script = ExtResource("38_m6ahd")
+
+[node name="BallMargin" type="MarginContainer" parent="JumpUI"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="JumpContainer" type="VBoxContainer" parent="JumpUI/BallMargin"]
+layout_mode = 2
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="JumpUI/BallMargin/JumpContainer"]
+custom_minimum_size = Vector2(6, 6)
+layout_mode = 2
+texture = SubResource("CompressedTexture2D_m6ahd")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect2" type="TextureRect" parent="JumpUI/BallMargin/JumpContainer"]
+custom_minimum_size = Vector2(6, 6)
+layout_mode = 2
+texture = SubResource("CompressedTexture2D_m6ahd")
+expand_mode = 1
+stretch_mode = 5
 
 [node name="Border_RayCasts" type="Node2D" parent="."]
 

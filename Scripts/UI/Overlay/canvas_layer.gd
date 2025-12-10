@@ -4,6 +4,7 @@ extends CanvasLayer
 @onready var ability_info: Control = $Ability_info
 
 @onready var dash_timer: Label = $DashTimer
+
 var is_timer_on: bool = false
 var dash_time: float = 1.0
 var time_left: float = dash_time

@@ -5,7 +5,7 @@
 [ext_resource type="AudioStream" uid="uid://uxnd7qf4lq85" path="res://Assets/Audio/SFX/Player/parry.wav" id="3_tl4hk"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qxf0c"]
-radius = 4.472136
+radius = 4.47214
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dgwo2"]
 radius = 4.47

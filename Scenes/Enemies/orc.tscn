@@ -1,8 +1,9 @@
-[gd_scene load_steps=32 format=3 uid="uid://c2qbrpracjsi5"]
+[gd_scene load_steps=33 format=3 uid="uid://c2qbrpracjsi5"]
 
 [ext_resource type="PackedScene" uid="uid://cvgjcwqn6k8eu" path="res://Scenes/UI/Overlay/health.tscn" id="1_3xw0u"]
 [ext_resource type="Script" uid="uid://bj3o2h06hj6ck" path="res://Scripts/Enemies/enemy.gd" id="1_vumo0"]
 [ext_resource type="Shader" uid="uid://o6ancnl5jgcr" path="res://Shaders/Blink.gdshader" id="2_kapy6"]
+[ext_resource type="Script" uid="uid://dlgatnu5tx5lj" path="res://Scripts/Enemies/health_enemy.gd" id="3_tq37w"]
 [ext_resource type="FontFile" uid="uid://x2dwsfc3en6q" path="res://Assets/Tutorial Open Assets/brackeys_platformer_assets/fonts/PixelOperator8.ttf" id="4_6hc3a"]
 [ext_resource type="Texture2D" uid="uid://cw7w05q12u5bv" path="res://Assets/Sprites/husk.png" id="4_tq37w"]
 
@@ -11,6 +12,10 @@ resource_local_to_scene = true
 shader = ExtResource("2_kapy6")
 shader_parameter/blink_color = Color(1, 1, 1, 1)
 shader_parameter/blink_intensity = 0.0
+shader_parameter/damage_active = false
+shader_parameter/damage_time = 0.0
+shader_parameter/shake_intensity = 0.0
+shader_parameter/distortion = 0.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ny6sd"]
 atlas = ExtResource("4_tq37w")
@@ -197,6 +202,8 @@ script = ExtResource("1_vumo0")
 shootPoint = NodePath("CollisionShape2D")
 
 [node name="Health" parent="." instance=ExtResource("1_3xw0u")]
+script = ExtResource("3_tq37w")
+hp = 50
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 material = SubResource("ShaderMaterial_6hc3a")
@@ -235,6 +242,12 @@ shape = SubResource("CircleShape2D_3xw0u")
 position = Vector2(10, 0)
 target_position = Vector2(0, 10)
 
+[node name="TopCheck" type="RayCast2D" parent="."]
+target_position = Vector2(0, -12)
+collision_mask = 4
+
+[node name="TopCheckCooldown" type="Timer" parent="."]
+
 [node name="RayCast2DRight" type="RayCast2D" parent="."]
 target_position = Vector2(68, 0)
 collision_mask = 4
@@ -251,6 +264,9 @@ collision_mask = 129
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
 shape = SubResource("CircleShape2D_tq37w")
 
+[node name="ItemSpawnPoint" type="Marker2D" parent="."]
+
 [connection signal="hp_changed" from="Health" to="." method="_on_health_hp_changed"]
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="timeout" from="in_range_shoot_timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="TopCheckCooldown" to="." method="_on_top_check_cooldown_timeout"]

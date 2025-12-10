@@ -3,17 +3,17 @@ extends Node
 @onready var unlocked_abilities: Array = []
 
 #Recomment this for the real game to only unlock default abilities
-#@onready var default_abilities: Array = [
-	#ability_list.Idling, 
-	#ability_list.Walking, 
-	#ability_list.Falling, 
-	#ability_list.Attack1,
-	#ability_list.Airattack1, 
-	#ability_list.Archery,
-	#ability_list.Dialogue
-#]
+@onready var default_abilities: Array = [
+	ability_list.Idling, 
+	ability_list.Walking, 
+	ability_list.Falling, 
+	ability_list.Attack1,
+	ability_list.Airattack1, 
+	ability_list.Archery,
+	ability_list.Dialogue
+]
 
-@onready var default_abilities: Array = ability_list.values()
+#@onready var default_abilities: Array = ability_list.values()
 
 signal update_debug_ability_label
 signal update_unlock_ability_buttons
@@ -64,7 +64,7 @@ const INFO: Dictionary = {
 	ability_list.DoubleJump:{
 		"name": "Double Jump",
 		"description": "Press 'Jump' again in the air to Double Jump! 
-		\n Land on the ground to refresh the Double Jump"
+		\nLand on the ground to refresh the Double Jump"
 	},
 	ability_list.WallJump: {
 		"name": "Wall Jump",
@@ -76,8 +76,12 @@ const INFO: Dictionary = {
 	},
 	ability_list.Airgliding: {
 		"name": "Air Gliding",
-		"description": "Hold space in the air to glide down!"
+		"description": "Hold 'Space' in the air to glide down!"
 		
+	},
+	ability_list.Grapple: {
+		"name": "Grappling Hook",
+		"description": "Press 'Scrollwheel' button on a platform to grapple!"
 	}
 }
 

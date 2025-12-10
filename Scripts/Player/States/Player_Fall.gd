@@ -4,8 +4,8 @@ class_name Player_Fall
 @onready var ghs : GHS = get_tree().get_root().get_node("Level").find_child("GrapplingHookSystem")
 @export var dash_cooldown : Timer
 @export var landing_sfx : AudioStreamPlayer2D
-@export var extra_hold_jump: float = 6.7
-@export var max_jump_hold_time: float = 1
+@export var extra_hold_jump: float = 6.3
+@export var max_jump_hold_time: float = 1.5
 
 @export_group("fx")
 @export var max_landing_shake : float = 3
@@ -41,7 +41,7 @@ func Update(_delta:float) -> void:
 
 	if player.is_on_floor():
 		_play_landing_effects()
-		jumps_left = 1
+		jumps_left = max_double_jumps
 		can_double_jump = false
 		state_transition.emit(self, "Idling")
 
@@ -56,8 +56,6 @@ func Update(_delta:float) -> void:
 		
 	if Input.is_action_pressed("WallSlide") and player.is_on_wall_only():
 		state_transition.emit(self, "Wallsliding")
-	if Input.is_action_just_pressed("Jump") and player.is_on_wall_only() and (Input.is_action_pressed("Left") or Input.is_action_pressed("Right")):
-		state_transition.emit(self, "WallJump")
 	#if get_item_by_name("GrappleHook", slots).visible:
 		#ghs.can_grapple = true
 	#else: 
@@ -66,6 +64,9 @@ func Update(_delta:float) -> void:
 		state_transition.emit(self, "Grapple")
 
 func Phys_Update(_delta:float) -> void:
+	if Input.is_action_just_pressed("Jump") and player.is_on_wall_only() and (Input.is_action_pressed("Left") or Input.is_action_pressed("Right")):
+		print("going walljump")
+		state_transition.emit(self, "Walljump")
 	
 	if Input.is_action_pressed("Jump"):
 		jump_hold_time += _delta
