@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://det0un1vj4110" path="res://Assets/Sprites/Panda/panda_small.png" id="8_fcwna"]
 [ext_resource type="Script" uid="uid://d2q03jes32ygw" path="res://Scripts/Central/FSM.gd" id="9_1agin"]
 [ext_resource type="Texture2D" uid="uid://bm18u1wsukfwa" path="res://Assets/Sprites/Panda/hat_throw.png" id="10_1agin"]
-[ext_resource type="Script" uid="uid://cfp24xkllqnau" path="res://Scripts/Player/General/trail.gd" id="10_2aanf"]
+[ext_resource type="Script" path="res://Scripts/Player/General/trail.gd" id="10_2aanf"]
 [ext_resource type="Script" uid="uid://bob4e3bisalwi" path="res://Scripts/Player/States/Player_Idle.gd" id="10_2jnj1"]
 [ext_resource type="AudioStream" uid="uid://de7lye0f5nucm" path="res://Assets/Audio/SFX/Player/dash sfx.wav" id="10_bmb2s"]
 [ext_resource type="Texture2D" uid="uid://b0uxft6vb0ayw" path="res://Assets/Sprites/Bamboo_Parry.png" id="10_fcwna"]

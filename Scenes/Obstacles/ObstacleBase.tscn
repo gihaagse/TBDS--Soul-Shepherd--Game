@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cfkwmufn75fdb"]
+
+[ext_resource type="Script" uid="uid://cj4kr2wes7rbb" path="res://Scripts/Obstacles/ObstacleBase.gd" id="1_qgf5x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x616x"]
+size = Vector2(148, 20)
+
+[node name="Obstacle" type="Area2D"]
+collision_layer = 2048
+script = ExtResource("1_qgf5x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_x616x")
+
+[node name="MainSprite" type="Sprite2D" parent="."]

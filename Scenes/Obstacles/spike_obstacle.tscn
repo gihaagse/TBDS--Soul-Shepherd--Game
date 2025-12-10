@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://dfjdf8l7ofvt1"]
+
+[ext_resource type="PackedScene" uid="uid://cfkwmufn75fdb" path="res://Scenes/Obstacles/ObstacleBase.tscn" id="1_klwbm"]
+[ext_resource type="Script" uid="uid://jppvuh61r6mt" path="res://Scripts/Obstacles/spike_obstacle.gd" id="2_pdtpn"]
+[ext_resource type="Texture2D" uid="uid://bghgefb6uqttf" path="res://Assets/Sprites/Obstacles/Floor trap spikes.png" id="3_tunq0"]
+[ext_resource type="Texture2D" uid="uid://doj87hyu2jg0s" path="res://Assets/Sprites/Obstacles/Floor trap.png" id="4_brogy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tunq0"]
+size = Vector2(128, 27.428568)
+
+[node name="SpikeObstacle" instance=ExtResource("1_klwbm")]
+script = ExtResource("2_pdtpn")
+damage = 5.0
+effect_type = "damage"
+one_time_use = true
+
+[node name="Spikes" type="Sprite2D" parent="." index="1"]
+position = Vector2(5, 0)
+scale = Vector2(1, 0.765625)
+texture = ExtResource("3_tunq0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spikes" index="0"]
+position = Vector2(-5, -0.6530609)
+shape = SubResource("RectangleShape2D_tunq0")
+
+[node name="MainSprite" parent="." index="2"]
+position = Vector2(0, -18)
+texture = ExtResource("4_brogy")
