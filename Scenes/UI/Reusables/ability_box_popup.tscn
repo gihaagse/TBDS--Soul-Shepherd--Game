@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://usgiuqnlphst"]
 
-[ext_resource type="Texture2D" uid="uid://fjtsfq4dln7c" path="res://Assets/Miscellaneous/Popup Box Sprite.png" id="1_514rq"]
 [ext_resource type="Script" uid="uid://bbr1m11gtihmn" path="res://Scripts/Reusables/ability_box_popup.gd" id="1_gpo42"]
+[ext_resource type="Texture2D" uid="uid://d2bk5dxjffrvq" path="res://Assets/Icons/Abilities/PopupBoxSprite16px.png" id="2_masxj"]
 [ext_resource type="FontFile" uid="uid://bunt72veb2o54" path="res://Assets/Fonts/Silkscreen-Regular.ttf" id="3_masxj"]
 
 [node name="MarginContainer" type="MarginContainer"]
@@ -12,11 +12,12 @@ script = ExtResource("1_gpo42")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 layout_mode = 2
-texture = ExtResource("1_514rq")
-patch_margin_left = 16
-patch_margin_top = 16
-patch_margin_right = 16
-patch_margin_bottom = 16
+texture = ExtResource("2_masxj")
+region_rect = Rect2(0, 0, 16, 16)
+patch_margin_left = 11
+patch_margin_top = 11
+patch_margin_right = 11
+patch_margin_bottom = 13
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 2
