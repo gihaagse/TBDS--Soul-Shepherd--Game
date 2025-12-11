@@ -56,6 +56,7 @@ func pauseMenu():
 		get_tree().set_pause(false)
 	else:
 		pause_menu.show()
+		pause_menu.regain_menu_focus()
 		#Engine.time_scale = 0
 		get_tree().set_pause(true)
 	

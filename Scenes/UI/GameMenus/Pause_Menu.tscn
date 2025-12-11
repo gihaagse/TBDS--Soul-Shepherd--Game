@@ -50,7 +50,7 @@ corner_detail = 6
 shadow_size = 3
 shadow_offset = Vector2(0, 3.41)
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hqsf3"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lnl5e"]
 
 [node name="PauseMenu" type="Control"]
 process_mode = 3
@@ -102,6 +102,8 @@ z_index = 4
 layout_mode = 2
 size_flags_horizontal = 5
 size_flags_vertical = 7
+focus_neighbor_top = NodePath("../Quit")
+focus_neighbor_bottom = NodePath("../Options")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
@@ -112,7 +114,7 @@ theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_2ux8a")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_ce0ii")
 theme_override_styles/hover = SubResource("StyleBoxFlat_futms")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_hqsf3")
+theme_override_styles/focus = SubResource("StyleBoxFlat_lnl5e")
 text = "Resume
 "
 
@@ -121,6 +123,8 @@ z_index = 4
 layout_mode = 2
 size_flags_horizontal = 5
 size_flags_vertical = 7
+focus_neighbor_top = NodePath("../Resume")
+focus_neighbor_bottom = NodePath("../Quit")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
@@ -131,7 +135,7 @@ theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_2ux8a")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_ce0ii")
 theme_override_styles/hover = SubResource("StyleBoxFlat_futms")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_hqsf3")
+theme_override_styles/focus = SubResource("StyleBoxFlat_lnl5e")
 text = "Options"
 
 [node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
@@ -139,6 +143,8 @@ z_index = 4
 layout_mode = 2
 size_flags_horizontal = 5
 size_flags_vertical = 7
+focus_neighbor_top = NodePath("../Options")
+focus_neighbor_bottom = NodePath("../Resume")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
@@ -149,10 +155,13 @@ theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_2ux8a")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_ce0ii")
 theme_override_styles/hover = SubResource("StyleBoxFlat_futms")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_hqsf3")
+theme_override_styles/focus = SubResource("StyleBoxFlat_lnl5e")
 text = "Quit
 "
 
+[connection signal="focus_entered" from="MarginContainer/VBoxContainer/Resume" to="." method="_on_any_button_focus_entered"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Resume" to="." method="_on_continue_pressed"]
+[connection signal="focus_entered" from="MarginContainer/VBoxContainer/Options" to="." method="_on_any_button_focus_entered"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="focus_entered" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_any_button_focus_entered"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

@@ -140,3 +140,6 @@ func process_cooldowns(delta: float) -> void:
 			
 	for ability in to_be_removed:
 		active_cooldown_timers.erase(ability)
+		
+func reset_abilities() -> void:
+	unlocked_abilities = default_abilities.duplicate()

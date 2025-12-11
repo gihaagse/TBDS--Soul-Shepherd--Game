@@ -1,10 +1,15 @@
 extends Node
 
-const CURSOR_SPEED := 800.0
-const DEADZONE := 0.3
+const CURSOR_SPEED := 1000.0
+const DEADZONE := 0.1
 var virtual_mouse_pos: Vector2
 var mouse_initialized := false
+var last_joy_input_time: int = 0
 
+signal input_scheme_changed(scheme: String)
+
+enum Scheme { KEYBOARD_MOUSE, GAMEPAD }
+var current_scheme: Scheme = Scheme.KEYBOARD_MOUSE
 
 func _ready():
 	process_mode = Node.PROCESS_MODE_ALWAYS
@@ -24,12 +29,17 @@ func _process(delta: float) -> void:
 		Input.get_joy_axis(0, JOY_AXIS_RIGHT_Y)
 	)
 
-	if joy_vec.length() < DEADZONE:
+	var raw_length := joy_vec.length()
+	if raw_length < DEADZONE:
 		return
 
-	joy_vec = joy_vec.normalized()
+	last_joy_input_time = Time.get_ticks_msec()
 
-	virtual_mouse_pos += joy_vec * CURSOR_SPEED * delta
+	var direction := joy_vec.normalized()
+	var intensity = inverse_lerp(DEADZONE, 1.0, raw_length)
+	intensity = ease(intensity, 2.5) 
+
+	virtual_mouse_pos += direction * intensity * CURSOR_SPEED * delta
 
 	var win_size: Vector2 = Vector2(DisplayServer.window_get_size())
 	virtual_mouse_pos.x = clamp(virtual_mouse_pos.x, 0.0, win_size.x - 1.0)
@@ -47,3 +57,23 @@ func _set_focus_all_on_children(node: Node) -> void:
 		
 func _on_control_mouse_entered(control: Control) -> void:
 	control.grab_focus()
+	
+func _input(event: InputEvent) -> void:
+	if event is InputEventKey or event is InputEventMouseButton:
+		_set_scheme(Scheme.KEYBOARD_MOUSE)
+	elif event is InputEventMouseMotion:
+		if Time.get_ticks_msec() - last_joy_input_time < 200:
+			return
+
+		if event.velocity.length() > 50:
+			_set_scheme(Scheme.KEYBOARD_MOUSE)
+			
+	elif event is InputEventJoypadButton or event is InputEventJoypadMotion:
+		if event is InputEventJoypadMotion and abs(event.axis_value) < 0.2:
+			return 
+		_set_scheme(Scheme.GAMEPAD)
+
+func _set_scheme(new_scheme: Scheme) -> void:
+	if current_scheme != new_scheme:
+		current_scheme = new_scheme
+		emit_signal("input_scheme_changed", "kbm" if new_scheme == Scheme.KEYBOARD_MOUSE else "controller")

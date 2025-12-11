@@ -9,7 +9,7 @@ extends Node2D
 @export var desired_size: Vector2 = Vector2(16, 16)  
 
 var lines: Array[String]
-var vertical_message_offset: Vector2 = Vector2(0,0)
+var vertical_message_offset: Vector2 = Vector2(0, 10)
 
 func _ready() -> void:
 	

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dg2itvny2alg2"
-path="res://.godot/imported/blue_ball.png-cd1ab3b565a8dd617b92ea17bb47b241.ctex"
+uid="uid://btkuwvmqsv16"
+path="res://.godot/imported/TopButtonKey.png-8e8ea1d074a2b3ded7cc8e5dbb184de6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Tutorial Open Assets/brackeys_platformer_assets/sounds/blue_ball.png"
-dest_files=["res://.godot/imported/blue_ball.png-cd1ab3b565a8dd617b92ea17bb47b241.ctex"]
+source_file="res://Assets/UI/TopButtonKey.png"
+dest_files=["res://.godot/imported/TopButtonKey.png-8e8ea1d074a2b3ded7cc8e5dbb184de6.ctex"]
 
 [params]
 

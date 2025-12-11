@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ccgsahoi1021p"
-path="res://.godot/imported/blue_ball.png-a9d2b100ca8b11541e60f116365389c2.ctex"
+uid="uid://bwdyjrr5et27e"
+path="res://.godot/imported/PopupBoxSprite16px.png-cc614ab1ca59d97b69d41eb85fbfc0a2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/UI/blue_ball.png"
-dest_files=["res://.godot/imported/blue_ball.png-a9d2b100ca8b11541e60f116365389c2.ctex"]
+source_file="res://Assets/Icons/PopupBoxSprite16px.png"
+dest_files=["res://.godot/imported/PopupBoxSprite16px.png-cc614ab1ca59d97b69d41eb85fbfc0a2.ctex"]
 
 [params]
 
@@ -23,7 +23,7 @@ compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
