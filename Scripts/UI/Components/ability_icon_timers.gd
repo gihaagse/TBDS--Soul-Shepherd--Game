@@ -7,6 +7,8 @@ extends Control
 @onready var label_button: Button = $HBoxContainer/IconButtonResizer/LabelButton
 @onready var ability_icon_button: Button = $HBoxContainer/AbilityIconButton
 
+var ability: AbilityData.ability_list
+
 signal clicked_on_a_button
 
 var ability_name: String = ""
@@ -23,8 +25,9 @@ func set_cooldown_fraction(fraction: float) -> void:
 	progress_overlay.value = fraction
 	
 	
-func set_default_info_label_text(ability: int) -> void:
-	ability_description = AbilityData.INFO[ability]["description"]
+func set_default_info_label_text(incoming_ability: AbilityData.ability_list) -> void:
+	ability = incoming_ability
+	ability_description = AbilityData.get_ability_description(ability)
 	ability_name = AbilityData.INFO[ability]["name"]
 	info_label.text = ability_name
 	
@@ -35,9 +38,11 @@ func set_minimum_size() -> void:
 
 func _on_ability_icon_button_pressed() -> void:
 	on_button_pressed()
+	ability_description = AbilityData.get_ability_description(ability)
 	
 func _on_label_button_pressed() -> void:
 	on_button_pressed()
+	ability_description = AbilityData.get_ability_description(ability)
 
 func on_button_pressed() -> void:
 	button_pressed = !button_pressed
