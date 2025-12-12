@@ -25,11 +25,18 @@ var last_velocity_y : float = 0.0
 var fall_hold_time: float = 0.0
 var max_fall_hold_time: float = 0.05
 var jump_hold_time: float = 0.0
+var can_glide : bool
 
 
 func Enter():
 	super()
-	sprite.play("Panda_Jump")
+	if PlayerPro.projectile:
+		sprite.play("Panda_Jump_No_Hat")
+		can_glide = false
+	else:
+		sprite.play("Panda_Jump")
+		can_glide = true
+	PlayerPro.projectile_exists.connect(_update_bool)
 	last_velocity_y = 0.0
 	fall_hold_time = 0.0
 	jump_hold_time = 0.0
@@ -51,7 +58,7 @@ func Update(_delta:float) -> void:
 	if Input.is_action_just_pressed("Shift") and dash_cooldown.is_stopped():
 		state_transition.emit(self, "Dash")
 	#if Input.is_action_just_pressed("RightClick") and get_item_by_name("Bow", slots).visible:
-	if Input.is_action_just_pressed("RightClick"):
+	if Input.is_action_just_pressed("RightClick") and not PlayerPro.projectile:
 		state_transition.emit(self, "Archery")
 		
 	if Input.is_action_pressed("WallSlide") and player.is_on_wall_only():
@@ -76,7 +83,7 @@ func Phys_Update(_delta:float) -> void:
 	if Input.is_action_pressed("Jump") and player.velocity.y >=0:
 
 		fall_hold_time += _delta
-		if fall_hold_time >= max_fall_hold_time:
+		if fall_hold_time >= max_fall_hold_time and can_glide:
 			state_transition.emit(self, "Airgliding")
 			
 		if Input.is_action_just_pressed("Jump") and jumps_left > 0 and \
@@ -111,3 +118,6 @@ func _play_landing_effects() -> void:
 	landing_sfx.volume_db = volume
 	landing_sfx.play()
 	UtilsEffect.squash(sprite, squash_duration, squash_str)
+	
+func _update_bool():
+	can_glide = true

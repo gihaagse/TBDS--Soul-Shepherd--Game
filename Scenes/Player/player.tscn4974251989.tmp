@@ -1,4 +1,4 @@
-[gd_scene load_steps=137 format=3 uid="uid://c5ongupm07qh3"]
+[gd_scene load_steps=135 format=3 uid="uid://c5ongupm07qh3"]
 
 [ext_resource type="Script" uid="uid://bw7ujmm53vwsq" path="res://Scripts/Player/General/playermain.gd" id="1_qr1w5"]
 [ext_resource type="PackedScene" uid="uid://cvgjcwqn6k8eu" path="res://Scenes/UI/Overlay/health.tscn" id="2_ythyg"]
@@ -753,58 +753,6 @@ tracks/6/keys = {
 "values": [Vector2(-1, 1)]
 }
 
-[sub_resource type="Animation" id="Animation_m6ahd"]
-resource_name = "AttackAnimation_Left_No_Hat"
-length = 0.1333
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"Attack"]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AnimatedSprite2D:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.033333335, 0.06666667, 0.10000001),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Bamboo_Stick:rotation")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.033333335, 0.06666667, 0.10000001, 0.1333),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [0.0, -0.7853982, -1.5707964, -0.7853982, 0.0]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Bamboo_Stick:position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.033333335, 0.06666667, 0.10000001, 0.1333),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(0, 4), Vector2(-2, 5), Vector2(-2, 5), Vector2(0, 5), Vector2(0, 4)]
-}
-
 [sub_resource type="Animation" id="Animation_1agin"]
 resource_name = "AttackAnimation_Right"
 length = 0.1333
@@ -893,58 +841,6 @@ tracks/6/keys = {
 "values": [Vector2(1, 1)]
 }
 
-[sub_resource type="Animation" id="Animation_ogmfp"]
-resource_name = "AttackAnimation_Right_No_Hat"
-length = 0.1333
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"Attack"]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AnimatedSprite2D:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.033333335, 0.06666667, 0.10000001),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Bamboo_Stick:rotation")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.033333335, 0.06666667, 0.10000001, 0.1333),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [0.0, 0.7853982, 1.5707964, 0.7853982, 0.0]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Bamboo_Stick:position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.033333335, 0.06666667, 0.10000001, 0.1333),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(0, 4), Vector2(2, 5), Vector2(2, 5), Vector2(0, 4.9999995), Vector2(0, 4)]
-}
-
 [sub_resource type="Animation" id="Animation_pcwjh"]
 length = 0.001
 tracks/0/type = "value"
@@ -1011,9 +907,7 @@ tracks/4/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_2jnj1"]
 _data = {
 &"AttackAnimation_Left": SubResource("Animation_2jnj1"),
-&"AttackAnimation_Left_No_Hat": SubResource("Animation_m6ahd"),
 &"AttackAnimation_Right": SubResource("Animation_1agin"),
-&"AttackAnimation_Right_No_Hat": SubResource("Animation_ogmfp"),
 &"RESET": SubResource("Animation_pcwjh")
 }
 
@@ -1103,7 +997,7 @@ shape = SubResource("RectangleShape2D_lfmf2")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 material = SubResource("ShaderMaterial_b1ygp")
 sprite_frames = SubResource("SpriteFrames_gymyn")
-animation = &"Attack"
+animation = &"Panda_Throw"
 autoplay = "Idle"
 frame = 1
 
@@ -1121,6 +1015,7 @@ script = ExtResource("10_2aanf")
 [node name="Player_Cosmetics" type="AnimatedSprite2D" parent="."]
 visible = false
 position = Vector2(0, 1)
+scale = Vector2(-1, 1)
 sprite_frames = SubResource("SpriteFrames_2jnj1")
 animation = &"Panda_Hat_Attack"
 frame = 1
@@ -1164,7 +1059,22 @@ can_move = false
 [node name="Walking" type="Node" parent="FiniteStateMachine" node_paths=PackedStringArray("dash_cooldown", "jumpsfx")]
 script = ExtResource("11_enij7")
 dash_cooldown = NodePath("../../Timers/DashCooldown")
+fall_speed_threshold = null
+max_fall_speed = null
+max_fall_damage = null
+max_airglide_velocity = null
+run_particle_offset = null
+move_speed = null
+jump_force = null
+brake_force = null
+air_brake_force = null
 jumpsfx = NodePath("../../jumpsfx")
+can_move = null
+can_jump = null
+in_anim = null
+is_gravity = null
+can_shoot = null
+airsStrafe = null
 
 [node name="Falling" type="Node" parent="FiniteStateMachine" node_paths=PackedStringArray("dash_cooldown", "landing_sfx", "jumpsfx")]
 script = ExtResource("12_mwii3")

@@ -13,7 +13,10 @@ func Enter():
 	in_anim = true
 	#sprite.play("Attack_old")
 	bamboo_stick.visible = true
-	player_cosmetics.visible = true
+	if PlayerPro.projectile:
+		player_cosmetics.visible = false
+	else:
+		player_cosmetics.visible = true
 	if last_character_orientation > 0:
 		animation_player.play("AttackAnimation_Right")
 		player_cosmetics.rotation_degrees = 90

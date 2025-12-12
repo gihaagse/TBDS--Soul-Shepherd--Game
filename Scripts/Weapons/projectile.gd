@@ -1,5 +1,5 @@
 extends CharacterBody2D
-class_name HatProjectile
+class_name Projectile
 
 @export var speed : float = 100.0
 @export var sprite : AnimatedSprite2D

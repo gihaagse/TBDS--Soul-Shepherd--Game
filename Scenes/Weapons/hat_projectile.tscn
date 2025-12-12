@@ -10,7 +10,7 @@ radius = 4.5
 [sub_resource type="CircleShape2D" id="CircleShape2D_dgwo2"]
 radius = 4.47
 
-[node name="Projectile" type="CharacterBody2D"]
+[node name="HatProjectile" type="CharacterBody2D" groups=["player_pro"]]
 z_index = 9
 collision_layer = 4096
 script = ExtResource("1_cvexv")

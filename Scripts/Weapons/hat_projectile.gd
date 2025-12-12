@@ -1,5 +1,5 @@
 extends CharacterBody2D
-class_name Projectile
+class_name Hat_Projectile
 
 @export var speed : float = 100.0
 @export var sprite : AnimatedSprite2D
@@ -12,6 +12,7 @@ var retrn : bool = false
 @onready var despawn: Timer = $Despawn
 @onready var area_2d: Area2D = $Area2D
 @onready var parry: AudioStreamPlayer2D = $Parry
+signal projectile_exists
 
 func _ready() -> void:
 	direction = -1 if sprite.flip_h else 1
@@ -20,6 +21,7 @@ func _ready() -> void:
 		area_2d.set_collision_mask_value(num, true)
 	for num in turn_on_body:
 		collision_mask = (1 << (num - 1)) | (1 << 0)
+	projectile_exists.emit()
 	despawn.start()
 	
 func _physics_process(_delta: float) -> void:
@@ -33,6 +35,8 @@ func _physics_process(_delta: float) -> void:
 		velocity = self.position.direction_to(player.position) * speed
 	if retrn and self.position.distance_to(player.position) < 20:
 		queue_free()
+		PlayerPro.projectile = null
+		PlayerPro.projectile_exists.emit()
 
 	var collision = move_and_collide(velocity * _delta)
 	if collision:
@@ -57,6 +61,8 @@ func _on_body_entered(collision: KinematicCollision2D) -> void:
 
 func _on_despawn_timeout() -> void:
 	queue_free()
+	PlayerPro.projectile = null
+	PlayerPro.projectile_exists.emit()
 	
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	#if area.is_in_group("Melee"):

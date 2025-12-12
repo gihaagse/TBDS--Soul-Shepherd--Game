@@ -166,10 +166,10 @@ func set_text_for_controller_key() -> void:
 	for action_event in action_events:
 		if action_event is InputEventJoypadButton:
 			var btn_index = action_event.button_index
-			joypad_button_text = get_joypad_button_string(btn_index)
+			joypad_button_text = OptionsManager.get_joypad_button_string(btn_index)
 			
 		elif action_event is InputEventJoypadMotion:
-			joypad_motion_text = get_joypad_motion_name(action_event)
+			joypad_motion_text = OptionsManager.get_joypad_motion_name(action_event)
 	
 	if joypad_button_text and joypad_motion_text:
 		controller_input_button.text = "%s or %s" % [joypad_button_text, joypad_motion_text]
@@ -179,46 +179,3 @@ func set_text_for_controller_key() -> void:
 		controller_input_button.text = joypad_motion_text
 	else:
 		controller_input_button.text = "No input bound"
-
-
-func get_joypad_button_string(button_index: int) -> String:
-	var names = {
-		0: "A/Cross",
-		1: "B/Circle",
-		2: "X/Square",
-		3: "Y/Triangle",
-		
-		4: "Back",
-		5: "Home",
-		6: "Options",
-		
-		7: "LS/L3",
-		8: "RS/R3",
-		
-		9: "LB/L1",
-		10: "RB/R1",
-		
-		11: "D-Pad Up",
-		12: "D-Pad Down",
-		13: "D-Pad Left",
-		14: "D-Pad Right"
-	}
-	return names.get(button_index, "Unknown Button %d" % button_index)
-
-
-func get_joypad_motion_name(event: InputEventJoypadMotion) -> String:
-	match event.axis:
-		0:
-			return "LS Horizontal"
-		1:
-			return "LS Vertical"
-		2:
-			return "RS Horizontal"
-		3:
-			return "RS Vertical"
-		4:
-			return "Left Trigger"
-		5:
-			return "Right Trigger"
-		_:
-			return "Unknown Axis"

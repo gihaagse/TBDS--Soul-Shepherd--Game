@@ -32,7 +32,7 @@
 [ext_resource type="SpriteFrames" uid="uid://dg0vx2sffi824" path="res://Resources/Wisps/Green_Wisp.tres" id="30_tqefj"]
 [ext_resource type="Script" uid="uid://b7008awu7lly6" path="res://Scenes/Level/next_level.gd" id="31_naxo4"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0qu4d"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x4l1k"]
 texture = ExtResource("1_o8n5m")
 10:0/0 = 0
 11:0/0 = 0
@@ -245,7 +245,7 @@ texture = ExtResource("1_o8n5m")
 19:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, -8, -8, -8, -8, 8, 8)
 3:7/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lxrd0"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_naxo4"]
 texture = ExtResource("3_48i7b")
 7:4/0 = 0
 7:4/0/physics_layer_1/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -426,8 +426,8 @@ physics_layer_1/collision_layer = 512
 physics_layer_1/collision_mask = 512
 physics_layer_2/collision_layer = 1024
 physics_layer_2/collision_mask = 1024
-sources/0 = SubResource("TileSetAtlasSource_0qu4d")
-sources/2 = SubResource("TileSetAtlasSource_lxrd0")
+sources/0 = SubResource("TileSetAtlasSource_x4l1k")
+sources/2 = SubResource("TileSetAtlasSource_naxo4")
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_p8kv5"]
 
@@ -652,6 +652,18 @@ scale = Vector2(0.765, 0.765)
 ability = 9
 custom_sprite_frames = ExtResource("13_fc1sg")
 
+[node name="Soul4" parent="Souls" instance=ExtResource("12_t8xxn")]
+position = Vector2(-85, -12)
+scale = Vector2(0.765, 0.765)
+ability = 9
+custom_sprite_frames = ExtResource("13_fc1sg")
+
+[node name="Soul5" parent="Souls" instance=ExtResource("12_t8xxn")]
+position = Vector2(-132, -12)
+scale = Vector2(0.765, 0.765)
+ability = 9
+custom_sprite_frames = ExtResource("13_fc1sg")
+
 [node name="Soul2" parent="Souls" instance=ExtResource("12_t8xxn")]
 position = Vector2(1022.00006, 134)
 scale = Vector2(0.765, 0.765)
@@ -678,6 +690,7 @@ custom_sprite_frames = ExtResource("30_tqefj")
 [node name="Next_level" type="Area2D" parent="."]
 position = Vector2(3264, -112)
 script = ExtResource("31_naxo4")
+level_name = "Playtest2"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Next_level"]
 shape = SubResource("RectangleShape2D_naxo4")

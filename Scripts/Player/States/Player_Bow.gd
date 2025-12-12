@@ -25,6 +25,7 @@ func shoot():
 	instance.player = player
 	instance.spawnpos = shootPoint.global_position
 	instance.turn_on_area.append(2)
+	PlayerPro.projectile = instance
 	main.add_child.call_deferred(instance)
 
 func Phys_Update(_delta:float):

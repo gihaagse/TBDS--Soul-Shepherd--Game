@@ -1,5 +1,11 @@
 extends Node
 
+enum platforms{
+	kbm,
+	controller
+}
+var current_platform: platforms = platforms.kbm
+
 @onready var unlocked_abilities: Array = []
 
 #Recomment this for the real game to only unlock default abilities
@@ -48,22 +54,32 @@ var cooldowns: Dictionary = {
 
 var active_cooldown_timers = {}
 
+const ABILITY_ACTION: Dictionary = {
+	ability_list.Attack1: "LeftClick",
+	ability_list.Archery: "RightClick",
+	ability_list.Dash: "Shift",
+	ability_list.DoubleJump: "Jump",
+	ability_list.WallJump: "Jump",
+	ability_list.Airgliding: "Jump",
+	ability_list.Grapple: "Grapple"
+}
+
 const INFO: Dictionary = {
 	ability_list.Attack1:{
 		"name": "Swing Attack",
-		"description": "Press Left Mouse Button to perform a SWING ATTACK!"
+		"description": "Press '%s' to perform a SWING ATTACK!" 
 	},
 	ability_list.Archery: {
 		"name": "Bamboo Hat Throw",
-		"description": "Press Right Mouse Button to throw your hat for a RANGED ATTACK!"
+		"description": "Press '%s' to throw your hat for a RANGED ATTACK!"
 	},
 	ability_list.Dash: {
 		"name": "Dash",
-		"description": "Press 'Shift' to Dash forwards!"
+		"description": "Press '%s' to Dash forwards!"
 	},
 	ability_list.DoubleJump:{
 		"name": "Double Jump",
-		"description": "Press 'Jump' again in the air to Double Jump! 
+		"description": "Press '%s' again in the air to Double Jump! 
 		\nLand on the ground to refresh the Double Jump"
 	},
 	ability_list.WallJump: {
@@ -76,18 +92,20 @@ const INFO: Dictionary = {
 	},
 	ability_list.Airgliding: {
 		"name": "Air Gliding",
-		"description": "Hold 'Space' in the air to glide down!"
+		"description": "Hold '%s' in the air to glide down!"
 		
 	},
 	ability_list.Grapple: {
 		"name": "Grappling Hook",
-		"description": "Press 'Scrollwheel' button on a platform to grapple!"
+		"description": "Press '%s' on a platform to grapple!"
 	}
 }
 
 
 func _ready() -> void:
 	load_default_abilities()
+	OptionsManager.input_scheme_changed.connect(_on_input_scheme_changed)
+
 	#pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -143,3 +161,50 @@ func process_cooldowns(delta: float) -> void:
 		
 func reset_abilities() -> void:
 	unlocked_abilities = default_abilities.duplicate()
+
+func _on_input_scheme_changed(scheme_name: String) -> void:
+	if scheme_name == "kbm":
+		current_platform = platforms.kbm
+	else:
+		current_platform = platforms.controller
+		
+func get_action_label(action_name: String) -> String:
+	var events := InputMap.action_get_events(action_name)
+	if events.is_empty():
+		return "Unbound"
+
+	var ev: InputEvent = null
+
+	for e in events:
+		if current_platform == platforms.kbm:
+			if e is InputEventKey or e is InputEventMouseButton:
+				ev = e
+				break
+		elif current_platform == platforms.controller:
+			if e is InputEventJoypadButton or e is InputEventJoypadMotion:
+				ev = e
+				break
+
+	if ev == null:
+		return "Unbound"
+
+	if ev is InputEventMouseButton:
+		return "Mouse %d" % ev.button_index
+
+	if ev is InputEventKey:
+		return OS.get_keycode_string(ev.physical_keycode)
+
+	if ev is InputEventJoypadButton:
+		return OptionsManager.get_joypad_button_string(ev.button_index)
+
+	if ev is InputEventJoypadMotion:
+		return OptionsManager.get_joypad_motion_name(ev)
+
+	return "Unknown"
+
+
+func get_ability_description(ability_id) -> String:
+	var data: Dictionary = INFO[ability_id]
+	var action_name: String = ABILITY_ACTION[ability_id]
+	var bind_text := get_action_label(action_name)
+	return data["description"] % bind_text

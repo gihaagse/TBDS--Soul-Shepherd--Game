@@ -27,6 +27,7 @@ AbilityData="*res://Scripts/Autoloads/AbilityData.gd"
 TextboxPopupManager="*res://Scripts/Autoloads/TextboxPopupManager.gd"
 CheckPointManager="*res://Scripts/Autoloads/CheckPointManager.gd"
 OptionsManager="*res://Scripts/Autoloads/OptionsManager.gd"
+PlayerPro="*res://Scripts/Autoloads/player_pro.gd"
 
 [display]
 
@@ -38,6 +39,7 @@ Player=""
 Enemy=""
 Melee=""
 hotkey_button=""
+player_pro=""
 
 [input]
 

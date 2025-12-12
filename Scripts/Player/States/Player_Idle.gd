@@ -4,7 +4,11 @@ class_name Player_Idle
 @onready var ghs : GHS = get_tree().get_root().get_node("Level").find_child("GrapplingHookSystem")
 func Enter():
 	super()
-	sprite.play("Panda_Idle")
+	if PlayerPro.projectile:
+		sprite.play("Panda_Idle_No_Hat")
+	else:
+		sprite.play("Panda_Idle")
+	PlayerPro.projectile_exists.connect(_update_anim)
 	ghs.can_grapple = true
 
 func Update(_delta:float):
@@ -18,14 +22,16 @@ func Update(_delta:float):
 	if Input.is_action_just_pressed("Shift") and dash_cooldown.is_stopped():
 		state_transition.emit(self, "Dash")
 	#if Input.is_action_just_pressed("RightClick") and get_item_by_name("Bow", slots).visible:
-	if Input.is_action_just_pressed("RightClick"):
+	if Input.is_action_just_pressed("RightClick") and not PlayerPro.projectile:
 		state_transition.emit(self, "Archery")
 	#if get_item_by_name("GrappleHook", slots).visible:
 		#ghs.can_grapple = true
-	#else: 
+	#else: s
 		#ghs.can_grapple = false
 	if ghs.is_grappling:
 		state_transition.emit(self, "Grapple")
 
 func Phys_Update(_delta:float):
 	movement(_delta)
+func _update_anim():
+	sprite.play("Panda_Idle")

@@ -45,7 +45,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	lines.append("You've unlocked the %s Ability" % AbilityData.get_ability_name_from_value(ability))
 	
 	if ability in AbilityData.INFO.keys():
-		lines.append(AbilityData.INFO[ability]["description"])
+		lines.append(AbilityData.get_ability_description(ability))
 		
 		TextboxPopupManager.start_dialogue(body.global_position + vertical_message_offset, lines)
 		self.queue_free()

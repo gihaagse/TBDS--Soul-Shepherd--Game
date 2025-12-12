@@ -77,3 +77,45 @@ func _set_scheme(new_scheme: Scheme) -> void:
 	if current_scheme != new_scheme:
 		current_scheme = new_scheme
 		emit_signal("input_scheme_changed", "kbm" if new_scheme == Scheme.KEYBOARD_MOUSE else "controller")
+
+func get_joypad_button_string(button_index: int) -> String:
+	var names = {
+		0: "A/Cross",
+		1: "B/Circle",
+		2: "X/Square",
+		3: "Y/Triangle",
+		
+		4: "Back",
+		5: "Home",
+		6: "Options",
+		
+		7: "LS/L3",
+		8: "RS/R3",
+		
+		9: "LB/L1",
+		10: "RB/R1",
+		
+		11: "D-Pad Up",
+		12: "D-Pad Down",
+		13: "D-Pad Left",
+		14: "D-Pad Right"
+	}
+	return names.get(button_index, "Unknown Button %d" % button_index)
+
+
+func get_joypad_motion_name(event: InputEventJoypadMotion) -> String:
+	match event.axis:
+		0:
+			return "LS Horizontal"
+		1:
+			return "LS Vertical"
+		2:
+			return "RS Horizontal"
+		3:
+			return "RS Vertical"
+		4:
+			return "Left Trigger"
+		5:
+			return "Right Trigger"
+		_:
+			return "Unknown Axis"

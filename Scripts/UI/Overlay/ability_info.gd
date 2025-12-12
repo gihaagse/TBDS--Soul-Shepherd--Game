@@ -20,7 +20,7 @@ func load_ability_icons(path: String) -> Dictionary:
 	var icons = {}
 	var dir = DirAccess.open(path)
 	if not dir:
-		push_error("Map niet gevonden: %s" % path)
+		push_error("Map not found: %s" % path)
 		return icons
 	dir.list_dir_begin()
 	var file_name = dir.get_next()
