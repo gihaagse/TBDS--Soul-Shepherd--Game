@@ -10,8 +10,21 @@ var turn_on_body : Array[int]
 @onready var despawn: Timer = $Despawn
 @onready var area_2d: Area2D = $Area2D
 @onready var parry: AudioStreamPlayer2D = $Parry
+var start_pos: Vector2
+var end_pos: Vector2
+var control_point: Vector2
+@export var control_point_offset := Vector2(50, -50)
+var t := 0.0
+@export var duration := 1.5
+@onready var enemy_hat = load("res://Scenes/Weapons/enemy_hat_projectile.tscn")
+@onready var main = get_tree().get_root().get_node("Level")
+var is_first: bool = true
 
 func _ready() -> void:
+	if is_first:
+		$HatSplitTimer.start()
+	else:
+		despawn.wait_time -= 1
 	if direction == -1:
 		sprite.flip_h
 	global_position = spawnpos
@@ -23,10 +36,24 @@ func _ready() -> void:
 	
 func _physics_process(_delta: float) -> void:
 	velocity.x = direction * speed
-
+	if $HatSplitTimer.time_left == 1.0:
+		start_pos = global_position
+		start_pos.x = start_pos.x + 100
+		end_pos = start_pos
+		end_pos.x = end_pos.x + 100
+		control_point = global_position + control_point_offset
+		print(start_pos)
+		print(end_pos)
 	var collision = move_and_collide(velocity * _delta)
 	if collision:
 		_on_body_entered(collision)
+	
+	t += _delta / duration
+	t = clamp(t, 0, 1)
+
+	#6global_position = bezier(start_pos, control_point, end_pos, t)
+	
+	#print(global_position)
 
 func _on_body_entered(collision: KinematicCollision2D) -> void:
 	var coll = collision.get_collider()
@@ -39,8 +66,9 @@ func _on_body_entered(collision: KinematicCollision2D) -> void:
 		direction = -direction
 	else:
 		queue_free()
-
-
+	
+func bezier(p0: Vector2, p1: Vector2, p2: Vector2, t: float) -> Vector2:
+	return ((1 - t) * (1 - t) * p0) + (2 * (1 - t) * t * p1) + (t * t * p2)
 
 func _on_despawn_timeout() -> void:
 	queue_free()
@@ -65,3 +93,16 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 	else:
 		despawn.start()
 		direction = -direction
+		
+func _on_hat_split_timer_timeout() -> void:
+	print("skibedi")
+	var instance = enemy_hat.instantiate()
+	instance.sprite = sprite
+	instance.spawnpos = global_position
+	instance.spawnpos.y = instance.spawnpos.y - 10
+	instance.velocity = velocity
+	instance.direction = direction
+	instance.is_first = false
+	main.add_child.call_deferred(instance)
+	await get_tree().process_frame
+	$HatSplitTimer.stop()

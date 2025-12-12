@@ -38,16 +38,3 @@ func pre_shoot():
 
 func shoot():
 	super.shoot()
-	$HatSplitTimer.start()
-
-func _on_hat_split_timer_timeout() -> void:
-	if is_instance_valid(latest_hat):
-		var instance = projectile.instantiate()
-		instance.sprite = sprite
-		instance.spawnpos = latest_hat.global_position
-		instance.spawnpos.y = instance.spawnpos.y - 10
-		instance.velocity = latest_hat.velocity
-		instance.direction = latest_hat.direction
-		main.add_child.call_deferred(instance)
-		await get_tree().process_frame
-	$HatSplitTimer.stop()

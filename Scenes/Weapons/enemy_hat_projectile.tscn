@@ -37,5 +37,8 @@ shape = SubResource("CircleShape2D_dgwo2")
 [node name="Parry" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_dq5po")
 
+[node name="HatSplitTimer" type="Timer" parent="."]
+
 [connection signal="timeout" from="Despawn" to="." method="_on_despawn_timeout"]
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="timeout" from="HatSplitTimer" to="." method="_on_hat_split_timer_timeout"]

@@ -314,8 +314,6 @@ shape = SubResource("CircleShape2D_tq37w")
 wait_time = 2.0
 autostart = true
 
-[node name="HatSplitTimer" type="Timer" parent="."]
-
 [node name="JumpChecker" type="RayCast2D" parent="."]
 target_position = Vector2(0, 10)
 
@@ -335,4 +333,3 @@ show_percentage = false
 [connection signal="timeout" from="in_range_shoot_timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="TopCheckCooldown" to="." method="_on_top_check_cooldown_timeout"]
 [connection signal="timeout" from="JumpTimer" to="." method="_on_jump_timer_timeout"]
-[connection signal="timeout" from="HatSplitTimer" to="." method="_on_hat_split_timer_timeout"]
