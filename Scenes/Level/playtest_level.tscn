@@ -1,7 +1,9 @@
+[gd_scene load_steps=39 format=3 uid="uid://dhoq3sp0l7yob"]
 [gd_scene load_steps=38 format=3 uid="uid://dhoq3sp0l7yob"]
 
 [ext_resource type="Script" uid="uid://byn1je7flnjo3" path="res://Scripts/Central/game_manager.gd" id="1_d3t52"]
 [ext_resource type="Texture2D" uid="uid://dfdfu6o1j3apv" path="res://Assets/Sprites/Playtest1.png" id="1_o8n5m"]
+[ext_resource type="Script" uid="uid://c2jeph0pjh467" path="res://Scripts/Level/playtest_level.gd" id="1_tqefj"]
 [ext_resource type="PackedScene" uid="uid://c5ongupm07qh3" path="res://Scenes/Player/player.tscn" id="2_aveji"]
 [ext_resource type="Texture2D" uid="uid://j1w6x4hpn3ou" path="res://Assets/Icons/Sung Chin Woo Icon.png" id="3_48i7b"]
 [ext_resource type="Script" uid="uid://ce43l01wboarg" path="res://Scripts/UI/Overlay/canvas_layer.gd" id="3_lr37r"]
@@ -20,6 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://cl45lm0hg20kf" path="res://Scenes/Items/soul.tscn" id="12_t8xxn"]
 [ext_resource type="Texture2D" uid="uid://bpawmr3tt1vu8" path="res://Assets/Sprites/Dialogue Sprites/monk_sitting_sprite.png" id="13_4s5db"]
 [ext_resource type="PackedScene" uid="uid://ndkp1vfqmr4g" path="res://Scenes/Dialogue/DialogueUI.tscn" id="13_heeoc"]
+[ext_resource type="PackedScene" uid="uid://c34kdnga4axvp" path="res://Scenes/Obstacles/obstacle_falling_tiles.tscn" id="17_1nbn6"]
 [ext_resource type="PackedScene" uid="uid://c64nl2fkq45ge" path="res://Scenes/UI/Overlay/UiButtonKey.tscn" id="13_naxo4"]
 [ext_resource type="PackedScene" uid="uid://c2qbrpracjsi5" path="res://Scenes/Enemies/orc.tscn" id="22_x4l1k"]
 [ext_resource type="PackedScene" uid="uid://c45jpc3kaflr4" path="res://Scenes/CheckPoints/CheckPoint.tscn" id="25_muu7q"]
@@ -30,7 +33,8 @@
 [ext_resource type="SpriteFrames" uid="uid://dddu3nk2vhaqr" path="res://Resources/Wisps/Red_Devil_Wisp.tres" id="28_naxo4"]
 [ext_resource type="SpriteFrames" uid="uid://btqrxjedotkrq" path="res://Resources/Wisps/Water_Wisp.tres" id="29_tqefj"]
 [ext_resource type="SpriteFrames" uid="uid://dg0vx2sffi824" path="res://Resources/Wisps/Green_Wisp.tres" id="30_tqefj"]
-[ext_resource type="Script" uid="uid://b7008awu7lly6" path="res://Scenes/Level/next_level.gd" id="31_naxo4"]
+[ext_resource type="PackedScene" uid="uid://d2jbqn300os54" path="res://Scenes/Obstacles/obstacle_spike.tscn" id="31_1nbn6"]
+[ext_resource type="Script" path="res://Scenes/Level/next_level.gd" id="31_naxo4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x4l1k"]
 texture = ExtResource("1_o8n5m")
@@ -435,6 +439,7 @@ sources/2 = SubResource("TileSetAtlasSource_naxo4")
 size = Vector2(30, 30)
 
 [node name="Level" type="Node2D"]
+script = ExtResource("1_tqefj")
 
 [node name="GameManager" type="Node" parent="." node_paths=PackedStringArray("stateLabel", "equipLabel", "hpLabel", "gameOverScreen")]
 unique_name_in_owner = true
@@ -573,24 +578,54 @@ player = NodePath("../Player")
 z_index = 10
 
 [node name="Area2D" parent="CheckPoints" instance=ExtResource("25_muu7q")]
-position = Vector2(400, 205)
+position = Vector2(399, 215)
 checkppoint_id = 1
 
 [node name="Area2D2" parent="CheckPoints" instance=ExtResource("25_muu7q")]
-position = Vector2(825, 144)
+position = Vector2(825, 151)
 checkppoint_id = 2
 
 [node name="Area2D3" parent="CheckPoints" instance=ExtResource("25_muu7q")]
-position = Vector2(2487, 191)
+position = Vector2(2487, 199)
 checkppoint_id = 3
 
 [node name="Area2D4" parent="CheckPoints" instance=ExtResource("25_muu7q")]
-position = Vector2(3199, 50)
+position = Vector2(3199, 55)
 checkppoint_id = 4
 
 [node name="Start" type="Marker2D" parent="CheckPoints"]
 position = Vector2(-77, -12)
 script = ExtResource("26_0qu4d")
+
+[node name="Obstacles" type="Node2D" parent="."]
+z_index = 5
+position = Vector2(1, 18)
+
+[node name="falling_tiles" type="Node2D" parent="Obstacles"]
+position = Vector2(589, 129)
+
+[node name="obstacle_falling_tiles" parent="Obstacles/falling_tiles" instance=ExtResource("17_1nbn6")]
+position = Vector2(-107, -48)
+
+[node name="obstacle_falling_tiles2" parent="Obstacles/falling_tiles" instance=ExtResource("17_1nbn6")]
+position = Vector2(-91, -48)
+
+[node name="obstacle_falling_tiles3" parent="Obstacles/falling_tiles" instance=ExtResource("17_1nbn6")]
+position = Vector2(-75, -48)
+
+[node name="obstacle_falling_tiles4" parent="Obstacles/falling_tiles" instance=ExtResource("17_1nbn6")]
+position = Vector2(-123, -48)
+
+[node name="obstacle_falling_tiles5" parent="Obstacles/falling_tiles" instance=ExtResource("17_1nbn6")]
+position = Vector2(-139, -48)
+
+[node name="obstacle_falling_tiles6" parent="Obstacles/falling_tiles" instance=ExtResource("17_1nbn6")]
+position = Vector2(-139, -48)
+
+[node name="spikes" type="Node2D" parent="Obstacles"]
+
+[node name="obstacle_spike" parent="Obstacles/spikes" instance=ExtResource("31_1nbn6")]
+position = Vector2(233, 187)
 
 [node name="ParralaxBackground" parent="." instance=ExtResource("10_um1rd")]
 z_index = 1
