@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://c2qbrpracjsi5"]
+[gd_scene load_steps=35 format=3 uid="uid://c2qbrpracjsi5"]
 
 [ext_resource type="PackedScene" uid="uid://cvgjcwqn6k8eu" path="res://Scenes/UI/Overlay/health.tscn" id="1_3xw0u"]
 [ext_resource type="Script" uid="uid://bj3o2h06hj6ck" path="res://Scripts/Enemies/enemy.gd" id="1_vumo0"]
@@ -195,6 +195,15 @@ radius = 7.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tq37w"]
 
+[sub_resource type="Theme" id="Theme_tq37w"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tq37w"]
+bg_color = Color(1, 0, 0, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
 [node name="Enemy" type="CharacterBody2D" node_paths=PackedStringArray("shootPoint") groups=["Enemy"]]
 collision_layer = 257
 collision_mask = 5
@@ -214,6 +223,7 @@ frame = 8
 frame_progress = 1.0
 
 [node name="Label" type="Label" parent="."]
+visible = false
 offset_left = -20.0
 offset_top = -26.0
 offset_right = 20.0
@@ -265,6 +275,17 @@ collision_mask = 129
 shape = SubResource("CircleShape2D_tq37w")
 
 [node name="ItemSpawnPoint" type="Marker2D" parent="."]
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+offset_left = -6.0
+offset_top = -16.0
+offset_right = 6.0
+offset_bottom = -12.0
+theme = SubResource("Theme_tq37w")
+theme_override_colors/font_color = Color(0, 0.9490196, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 0, 0, 1)
+theme_override_styles/fill = SubResource("StyleBoxFlat_tq37w")
+show_percentage = false
 
 [connection signal="hp_changed" from="Health" to="." method="_on_health_hp_changed"]
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

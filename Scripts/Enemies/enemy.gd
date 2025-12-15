@@ -32,6 +32,7 @@ var knockback_decay := 10.0
 @export var can_jump: bool
 var projectile_index_number: int
 var latest_hat : Node
+@onready var hp_bar: ProgressBar = $ProgressBar
 
 
 var old_hp : int
@@ -45,6 +46,8 @@ func _ready() -> void:
 	speed = walk_speed
 	_on_animated_sprite_2d_animation_finished()
 	$Label.set_text("HP: " + str(health.hp))
+	hp_bar.value = health.hp
+	hp_bar.max_value = health.hp
 
 func _process(_delta: float) -> void:
 	_correct_sprite()
@@ -108,6 +111,10 @@ func _on_health_hp_changed() -> void:
 	gpu_particles_2d.restart()
 	gpu_particles_2d.emitting = true
 	apply_knockback(player.global_position)
+	hp_bar.value = health.hp
+
+func pre_shoot():
+	shoot()
 
 func shoot():
 	speed = 0
@@ -119,14 +126,14 @@ func shoot():
 		latest_hat.spawnpos.x += shotOffset
 	elif dir == -1:
 		latest_hat.spawnpos.x -= shotOffset
-		latest_hat.speed = latest_hat.speed * -1
+	latest_hat.direction = dir
 	main.add_child.call_deferred(latest_hat)
 	
 func SetShader_BlinkIntensity(newValue: float):
 	sprite.material.set_shader_parameter("blink_intensity", newValue)
 
 func _on_timer_timeout() -> void:
-	shoot()
+	pre_shoot()
 
 func _on_area_2d_body_shape_entered() -> void:
 	#_correct_sprite()

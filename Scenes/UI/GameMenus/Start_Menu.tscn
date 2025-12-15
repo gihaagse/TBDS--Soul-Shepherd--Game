@@ -207,7 +207,7 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_3tla5")
 
 [node name="GameStartTimer" type="Timer" parent="."]
-wait_time = 3.0
+wait_time = 0.2
 
 [connection signal="focus_entered" from="VBoxContainer/Start" to="." method="_on_any_button_focus_entered"]
 [connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]

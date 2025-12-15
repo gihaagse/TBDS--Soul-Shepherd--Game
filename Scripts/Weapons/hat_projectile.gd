@@ -58,7 +58,6 @@ func _on_body_entered(collision: KinematicCollision2D) -> void:
 		despawn.stop()
 
 
-
 func _on_despawn_timeout() -> void:
 	queue_free()
 	PlayerPro.projectile = null

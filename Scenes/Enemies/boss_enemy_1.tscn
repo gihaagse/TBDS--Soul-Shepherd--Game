@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://bu78o5fps1jsf"]
+[gd_scene load_steps=39 format=3 uid="uid://bu78o5fps1jsf"]
 
 [ext_resource type="Script" uid="uid://cuyrxjtu26bru" path="res://Scripts/Enemies/boss_enemy_1.gd" id="1_v0yt4"]
 [ext_resource type="PackedScene" uid="uid://cvgjcwqn6k8eu" path="res://Scenes/UI/Overlay/health.tscn" id="2_rkuo3"]
@@ -228,12 +228,19 @@ radius = 7.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tq37w"]
 
+[sub_resource type="Theme" id="Theme_v0yt4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rkuo3"]
+bg_color = Color(1, 0, 0, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
 [node name="boss_enemy_1" type="CharacterBody2D" node_paths=PackedStringArray("shootPoint") groups=["Enemy"]]
 collision_mask = 5
 script = ExtResource("1_v0yt4")
 shootPoint = NodePath("CollisionShape2D")
-walk_speed = 20
-sprint_speed = 40
 
 [node name="Health" parent="." instance=ExtResource("2_rkuo3")]
 script = ExtResource("3_aesm5")
@@ -246,6 +253,7 @@ autoplay = "Idle"
 frame_progress = 0.0725533
 
 [node name="Label" type="Label" parent="."]
+visible = false
 offset_left = -20.0
 offset_top = -26.0
 offset_right = 20.0
@@ -257,6 +265,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+visible = false
 emitting = false
 amount = 20
 lifetime = 0.8
@@ -266,6 +275,7 @@ trail_enabled = true
 process_material = SubResource("ParticleProcessMaterial_dfwqp")
 
 [node name="in_range_shoot_timer" type="Timer" parent="."]
+wait_time = 0.5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_3xw0u")
@@ -281,11 +291,13 @@ collision_mask = 4
 [node name="TopCheckCooldown" type="Timer" parent="."]
 
 [node name="RayCast2DRight" type="RayCast2D" parent="."]
+scale = Vector2(1, 10)
 target_position = Vector2(68, 0)
 collision_mask = 4
 collide_with_areas = true
 
 [node name="RayCast2DLeft" type="RayCast2D" parent="."]
+scale = Vector2(1, 10)
 target_position = Vector2(-68, 0)
 collision_mask = 4
 
@@ -302,11 +314,22 @@ shape = SubResource("CircleShape2D_tq37w")
 wait_time = 2.0
 autostart = true
 
-[node name="HatSplitTimer" type="Timer" parent="."]
+[node name="JumpChecker" type="RayCast2D" parent="."]
+target_position = Vector2(0, 10)
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+offset_left = -6.0
+offset_top = -16.0
+offset_right = 6.0
+offset_bottom = -12.0
+theme = SubResource("Theme_v0yt4")
+theme_override_colors/font_color = Color(0, 0.9490196, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 0, 0, 1)
+theme_override_styles/fill = SubResource("StyleBoxFlat_rkuo3")
+show_percentage = false
 
 [connection signal="hp_changed" from="Health" to="." method="_on_health_hp_changed"]
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="timeout" from="in_range_shoot_timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="TopCheckCooldown" to="." method="_on_top_check_cooldown_timeout"]
 [connection signal="timeout" from="JumpTimer" to="." method="_on_jump_timer_timeout"]
-[connection signal="timeout" from="HatSplitTimer" to="." method="_on_hat_split_timer_timeout"]
