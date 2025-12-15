@@ -13,12 +13,13 @@ var turn_on_body : Array[int]
 var start_pos: Vector2
 var end_pos: Vector2
 var control_point: Vector2
-@export var control_point_offset := Vector2(50, -50)
+@export var control_point_offset := Vector2(50, -25)
 var t := 0.0
 @export var duration := 1.5
 @onready var enemy_hat = load("res://Scenes/Weapons/enemy_hat_projectile.tscn")
 @onready var main = get_tree().get_root().get_node("Level")
 var is_first: bool = true
+var first_time: bool = true
 
 func _ready() -> void:
 	if is_first:
@@ -36,14 +37,16 @@ func _ready() -> void:
 	
 func _physics_process(_delta: float) -> void:
 	velocity.x = direction * speed
-	if $HatSplitTimer.time_left == 1.0:
+	if ($HatSplitTimer.is_stopped() or !is_first) and start_pos == Vector2(0.0, 0.0):#time_left == 1.0:
+		t = 0.0
 		start_pos = global_position
-		start_pos.x = start_pos.x + 100
+		#start_pos.x = start_pos.x + (100*direction)
 		end_pos = start_pos
-		end_pos.x = end_pos.x + 100
-		control_point = global_position + control_point_offset
-		print(start_pos)
-		print(end_pos)
+		end_pos.x = end_pos.x + (100*direction)
+		if is_first:
+			control_point_offset.y = control_point_offset.y * -1
+		control_point_offset.x = control_point_offset.x * direction
+		control_point = start_pos + control_point_offset
 	var collision = move_and_collide(velocity * _delta)
 	if collision:
 		_on_body_entered(collision)
@@ -51,7 +54,11 @@ func _physics_process(_delta: float) -> void:
 	t += _delta / duration
 	t = clamp(t, 0, 1)
 
-	#6global_position = bezier(start_pos, control_point, end_pos, t)
+	if $HatSplitTimer.is_stopped() and first_time:
+		global_position = bezier(start_pos, control_point, end_pos, t)
+	
+	if global_position == end_pos:
+		first_time = false
 	
 	#print(global_position)
 

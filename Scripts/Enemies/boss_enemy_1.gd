@@ -33,7 +33,7 @@ func jump(small_jump_speed = null):
 	ground.set_enabled(false)
 
 func pre_shoot():
-	jump(-75)
+	jump(-100)
 	just_jumped = true
 
 func shoot():
