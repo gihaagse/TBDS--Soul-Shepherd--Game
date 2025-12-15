@@ -61,7 +61,8 @@ const ABILITY_ACTION: Dictionary = {
 	ability_list.DoubleJump: "Jump",
 	ability_list.WallJump: "Jump",
 	ability_list.Airgliding: "Jump",
-	ability_list.Grapple: "Grapple"
+	ability_list.Grapple: "Grapple",
+	#ability_list.Wallsliding: ""
 }
 
 const INFO: Dictionary = {
