@@ -10,7 +10,12 @@ var start_player_position
 func Enter():
 	super()
 	start_player_position = player.position.x
-	sprite.play("Panda_Jump")
+	if PlayerPro.projectile:
+		sprite.play("Panda_Jump_No_Hat")
+	else:
+		sprite.play("Panda_Jump")
+	if not PlayerPro.projectile_exists.is_connected(_update_anim):
+		PlayerPro.projectile_exists.connect(_update_anim)
 	dashsfx.playing =true
 func Exit():
 	player.velocity.x = 0
@@ -41,3 +46,6 @@ func _on_distance_travelled() -> void:
 
 	UtilsEffect.dash_effect(player, false)
 	state_transition.emit(self, "Idling")
+	
+func _update_anim():
+	sprite.play("Panda_Jump")

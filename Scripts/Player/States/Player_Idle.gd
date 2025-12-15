@@ -8,7 +8,8 @@ func Enter():
 		sprite.play("Panda_Idle_No_Hat")
 	else:
 		sprite.play("Panda_Idle")
-	PlayerPro.projectile_exists.connect(_update_anim)
+	if not PlayerPro.projectile_exists.is_connected(_update_anim):
+		PlayerPro.projectile_exists.connect(_update_anim)
 	ghs.can_grapple = true
 
 func Update(_delta:float):

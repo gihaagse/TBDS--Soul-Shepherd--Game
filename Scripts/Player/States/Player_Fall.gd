@@ -36,7 +36,8 @@ func Enter():
 	else:
 		sprite.play("Panda_Jump")
 		can_glide = true
-	PlayerPro.projectile_exists.connect(_update_bool)
+	if not PlayerPro.projectile_exists.is_connected(_update_bool):
+		PlayerPro.projectile_exists.connect(_update_bool)
 	last_velocity_y = 0.0
 	fall_hold_time = 0.0
 	jump_hold_time = 0.0
