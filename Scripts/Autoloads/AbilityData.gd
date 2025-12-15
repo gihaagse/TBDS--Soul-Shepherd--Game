@@ -41,7 +41,6 @@ enum ability_list {
 	DoubleJump,
 	WallJump,
 	Airgliding,
-	Grapple,
 
 }
 
@@ -61,8 +60,8 @@ const ABILITY_ACTION: Dictionary = {
 	ability_list.DoubleJump: "Jump",
 	ability_list.WallJump: "Jump",
 	ability_list.Airgliding: "Jump",
-	ability_list.Grapple: "Grapple",
 	#ability_list.Wallsliding: ""
+
 }
 
 const INFO: Dictionary = {
@@ -96,10 +95,6 @@ const INFO: Dictionary = {
 		"description": "Hold '%s' in the air to glide down!"
 		
 	},
-	ability_list.Grapple: {
-		"name": "Grappling Hook",
-		"description": "Press '%s' on a platform to grapple!"
-	}
 }
 
 

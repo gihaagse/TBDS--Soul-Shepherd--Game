@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://lahfkubql7vo"]
+[gd_scene load_steps=30 format=3 uid="uid://lahfkubql7vo"]
 
 [ext_resource type="Texture2D" uid="uid://dfdfu6o1j3apv" path="res://Assets/Sprites/Playtest1.png" id="1_f065d"]
 [ext_resource type="Script" uid="uid://beypopj8ttlnq" path="res://Scripts/Level/playtest_2.gd" id="1_qt3gr"]
@@ -20,7 +20,6 @@
 [ext_resource type="Texture2D" uid="uid://bpawmr3tt1vu8" path="res://Assets/Sprites/Dialogue Sprites/monk_sitting_sprite.png" id="17_s082u"]
 [ext_resource type="PackedScene" uid="uid://ndkp1vfqmr4g" path="res://Scenes/Dialogue/DialogueUI.tscn" id="18_to0vw"]
 [ext_resource type="Script" uid="uid://bpkjqkjnq8o6g" path="res://Scripts/Player/General/killzone.gd" id="19_8j3de"]
-[ext_resource type="PackedScene" uid="uid://dpatdmh4s5sg5" path="res://Scenes/GrapplingSystem/GrapplingHookSystem.tscn" id="20_lt7pv"]
 [ext_resource type="AudioStream" uid="uid://cbtn1bitrynwi" path="res://Assets/Audio/Music/sample.wav" id="21_v2evn"]
 [ext_resource type="PackedScene" uid="uid://c45jpc3kaflr4" path="res://Scenes/CheckPoints/CheckPoint.tscn" id="22_pv5y6"]
 [ext_resource type="Script" uid="uid://dtfsguwdnfr7m" path="res://Scripts/CheckPoints/start.gd" id="23_qt3gr"]
@@ -609,9 +608,6 @@ position = Vector2(921, 167)
 [node name="boss_enemy_1" parent="Node2D" instance=ExtResource("24_w0jtt")]
 z_index = 9
 position = Vector2(3075, 133)
-
-[node name="GrapplingHookSystem" parent="." node_paths=PackedStringArray("player_ref") instance=ExtResource("20_lt7pv")]
-player_ref = NodePath("../Player")
 
 [node name="Level1Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("21_v2evn")

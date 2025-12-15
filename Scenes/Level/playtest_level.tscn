@@ -22,7 +22,6 @@
 [ext_resource type="PackedScene" uid="uid://ndkp1vfqmr4g" path="res://Scenes/Dialogue/DialogueUI.tscn" id="13_heeoc"]
 [ext_resource type="PackedScene" uid="uid://c64nl2fkq45ge" path="res://Scenes/UI/Overlay/UiButtonKey.tscn" id="13_naxo4"]
 [ext_resource type="PackedScene" uid="uid://c2qbrpracjsi5" path="res://Scenes/Enemies/orc.tscn" id="22_x4l1k"]
-[ext_resource type="PackedScene" uid="uid://dpatdmh4s5sg5" path="res://Scenes/GrapplingSystem/GrapplingHookSystem.tscn" id="24_agvfv"]
 [ext_resource type="PackedScene" uid="uid://c45jpc3kaflr4" path="res://Scenes/CheckPoints/CheckPoint.tscn" id="25_muu7q"]
 [ext_resource type="Script" uid="uid://dtfsguwdnfr7m" path="res://Scripts/CheckPoints/start.gd" id="26_0qu4d"]
 [ext_resource type="AudioStream" uid="uid://cbtn1bitrynwi" path="res://Assets/Audio/Music/sample.wav" id="26_lxrd0"]
@@ -633,9 +632,6 @@ position = Vector2(1756, 179)
 
 [node name="Enemy4" parent="Node2D" instance=ExtResource("22_x4l1k")]
 position = Vector2(2774, 39)
-
-[node name="GrapplingHookSystem" parent="." node_paths=PackedStringArray("player_ref") instance=ExtResource("24_agvfv")]
-player_ref = NodePath("../Player")
 
 [node name="Level1Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("26_lxrd0")
