@@ -159,3 +159,57 @@ func dash_effect(character: CharacterBody2D, enable: bool, direction: float = 0)
 	else:
 		bLines.emitting = false
 		wLines.emitting = false
+
+func apply_knockback(character: CharacterBody2D, direction: float, strength: float):
+	var knockback_velocity = Vector2.from_angle(direction) * strength
+	character.velocity = knockback_velocity
+	character.velocity.y = -165.0
+	
+	character.move_and_slide()
+
+func shake_sprite(target: Node2D, duration: float = 0.25, intensity: float = 2.5, speed: float = 20.0) -> void:
+	if target == null or not is_instance_valid(target):
+		return
+	
+	var original_pos: Vector2 = target.position
+	
+	# Create tween ON the target instead of on the tree
+	var tween := target.create_tween()
+	tween.set_parallel(true)
+	
+	tween.tween_method(
+		func(t: float) -> void:
+			if not is_instance_valid(target):
+				return  # target got freed → do nothing
+			var decay := 1.0 - t
+			var offset := Vector2(
+				randf_range(-1.0, 1.0),
+				randf_range(-0.5, 0.5)
+			) * intensity * decay
+			target.position = original_pos + offset,
+		0.0, 1.0, duration
+	).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+	
+	tween.tween_callback(
+		func() -> void:
+			if is_instance_valid(target):
+				target.position = original_pos
+	).set_delay(duration)
+	
+func fade_sprite(target: CanvasItem, duration: float = 0.4, to_alpha: float = 0.0) -> void:
+	if target == null or not is_instance_valid(target):
+		return
+	
+	var tween := get_tree().create_tween()
+	
+	# Zorg dat we van de huidige alpha naar to_alpha gaan
+	var start_color: Color = target.modulate
+	var end_color: Color = start_color
+	end_color.a = clamp(to_alpha, 0.0, 1.0)
+	
+	tween.tween_property(
+		target,
+		"modulate",
+		end_color,
+		duration
+	).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
