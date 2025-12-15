@@ -60,7 +60,7 @@ const ABILITY_ACTION: Dictionary = {
 	ability_list.DoubleJump: "Jump",
 	ability_list.WallJump: "Jump",
 	ability_list.Airgliding: "Jump",
-	#ability_list.Wallsliding: ""
+	ability_list.Wallsliding: ""
 
 }
 
@@ -202,5 +202,9 @@ func get_action_label(action_name: String) -> String:
 func get_ability_description(ability_id) -> String:
 	var data: Dictionary = INFO[ability_id]
 	var action_name: String = ABILITY_ACTION[ability_id]
+	
+	if action_name == "" or not ("%s" in data["description"]):
+		return data["description"]
+	
 	var bind_text := get_action_label(action_name)
 	return data["description"] % bind_text
