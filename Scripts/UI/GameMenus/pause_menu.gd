@@ -18,7 +18,8 @@ func _ready() -> void:
 
 # Called every frame. 'delta' ids the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	pass
+	if Input.is_action_just_pressed("Escape"):
+		_on_quit_pressed()
 
 
 func _on_continue_pressed() -> void:
@@ -26,6 +27,7 @@ func _on_continue_pressed() -> void:
 
 func _on_quit_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes/UI/GameMenus/Start_Menu.tscn")
+	AbilityData.reset_abilities()
 	#get_tree().set_pause(false)
 	
 
@@ -33,6 +35,7 @@ func _on_options_pressed() -> void:
 	options_menu.set_process(true)
 	options_menu.visible = true
 	pause_menu.visible = false
+
 	
 func on_exit_options_menu() -> void:
 	options_menu.set_process(false)

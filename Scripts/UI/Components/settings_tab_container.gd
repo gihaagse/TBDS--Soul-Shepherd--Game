@@ -10,6 +10,7 @@ extends Control
 func _ready() -> void:
 	$TabContainer/Graphics/MarginContainer/ScrollContainer/VBoxContainer/Window_Mode_Button.grab_focus()
 	OptionsManager._set_focus_all_on_children(self)
+	set_process(false)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

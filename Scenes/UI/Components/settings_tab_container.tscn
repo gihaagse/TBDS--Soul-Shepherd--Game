@@ -34,6 +34,8 @@ current_tab = 0
 
 [node name="Graphics" type="TabBar" parent="TabContainer"]
 layout_mode = 2
+focus_neighbor_left = NodePath("../Sound")
+focus_neighbor_right = NodePath("../Controls")
 metadata/_tab_index = 0
 
 [node name="MarginContainer" type="MarginContainer" parent="TabContainer/Graphics"]
@@ -76,6 +78,8 @@ layout_mode = 2
 [node name="Controls" type="TabBar" parent="TabContainer"]
 visible = false
 layout_mode = 2
+focus_neighbor_left = NodePath("../Graphics")
+focus_neighbor_right = NodePath("../Sound")
 metadata/_tab_index = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="TabContainer/Controls"]
@@ -170,6 +174,8 @@ theme_override_styles/separator = SubResource("StyleBoxEmpty_go3u1")
 [node name="Sound" type="TabBar" parent="TabContainer"]
 visible = false
 layout_mode = 2
+focus_neighbor_left = NodePath("../Controls")
+focus_neighbor_right = NodePath("../Graphics")
 metadata/_tab_index = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="TabContainer/Sound"]
