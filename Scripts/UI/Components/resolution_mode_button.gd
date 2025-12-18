@@ -11,6 +11,7 @@ const RESOLUTION_DICTIONARY : Dictionary = {
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	focus_entered.connect(_on_focus_entered)
 	option_button.item_selected.connect(on_resolution_selected)
 	add_resolution_items()
 
@@ -31,3 +32,5 @@ func centre_window():
 	var window_size = get_window().get_size_with_decorations()
 	get_window().set_position(centre_screen - window_size/2)
 	
+func _on_focus_entered():
+	option_button.grab_focus()

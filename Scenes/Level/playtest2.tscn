@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://lahfkubql7vo"]
+[gd_scene load_steps=32 format=3 uid="uid://lahfkubql7vo"]
 
 [ext_resource type="Texture2D" uid="uid://dfdfu6o1j3apv" path="res://Assets/Sprites/Playtest1.png" id="1_f065d"]
 [ext_resource type="Script" uid="uid://beypopj8ttlnq" path="res://Scripts/Level/playtest_2.gd" id="1_qt3gr"]
@@ -20,12 +20,13 @@
 [ext_resource type="Texture2D" uid="uid://bpawmr3tt1vu8" path="res://Assets/Sprites/Dialogue Sprites/monk_sitting_sprite.png" id="17_s082u"]
 [ext_resource type="PackedScene" uid="uid://ndkp1vfqmr4g" path="res://Scenes/Dialogue/DialogueUI.tscn" id="18_to0vw"]
 [ext_resource type="Script" uid="uid://bpkjqkjnq8o6g" path="res://Scripts/Player/General/killzone.gd" id="19_8j3de"]
-[ext_resource type="PackedScene" uid="uid://dpatdmh4s5sg5" path="res://Scenes/GrapplingSystem/GrapplingHookSystem.tscn" id="20_lt7pv"]
 [ext_resource type="AudioStream" uid="uid://cbtn1bitrynwi" path="res://Assets/Audio/Music/sample.wav" id="21_v2evn"]
 [ext_resource type="PackedScene" uid="uid://c45jpc3kaflr4" path="res://Scenes/CheckPoints/CheckPoint.tscn" id="22_pv5y6"]
 [ext_resource type="Script" uid="uid://dtfsguwdnfr7m" path="res://Scripts/CheckPoints/start.gd" id="23_qt3gr"]
 [ext_resource type="PackedScene" uid="uid://bu78o5fps1jsf" path="res://Scenes/Enemies/boss_enemy_1.tscn" id="24_w0jtt"]
 [ext_resource type="PackedScene" uid="uid://c2qbrpracjsi5" path="res://Scenes/Enemies/orc.tscn" id="25_17aq4"]
+[ext_resource type="PackedScene" uid="uid://c34kdnga4axvp" path="res://Scenes/Obstacles/obstacle_falling_tiles.tscn" id="26_0nra7"]
+[ext_resource type="PackedScene" uid="uid://d2jbqn300os54" path="res://Scenes/Obstacles/obstacle_spike.tscn" id="27_6qp0l"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j3um3"]
 texture = ExtResource("1_f065d")
@@ -610,9 +611,6 @@ position = Vector2(921, 167)
 z_index = 9
 position = Vector2(3075, 133)
 
-[node name="GrapplingHookSystem" parent="." node_paths=PackedStringArray("player_ref") instance=ExtResource("20_lt7pv")]
-player_ref = NodePath("../Player")
-
 [node name="Level1Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("21_v2evn")
 volume_db = -50.0
@@ -641,6 +639,36 @@ checkppoint_id = 4
 [node name="Start" type="Marker2D" parent="CheckPoints"]
 position = Vector2(15, 216)
 script = ExtResource("23_qt3gr")
+
+[node name="Obstacles" type="Node2D" parent="."]
+z_index = 5
+position = Vector2(22, 49)
+
+[node name="falling_tiles" type="Node2D" parent="Obstacles"]
+position = Vector2(244, 209)
+
+[node name="obstacle_falling_tiles" parent="Obstacles/falling_tiles" instance=ExtResource("26_0nra7")]
+position = Vector2(-107, -48)
+
+[node name="obstacle_falling_tiles2" parent="Obstacles/falling_tiles" instance=ExtResource("26_0nra7")]
+position = Vector2(-91, -48)
+
+[node name="obstacle_falling_tiles3" parent="Obstacles/falling_tiles" instance=ExtResource("26_0nra7")]
+position = Vector2(-75, -48)
+
+[node name="obstacle_falling_tiles4" parent="Obstacles/falling_tiles" instance=ExtResource("26_0nra7")]
+position = Vector2(-123, -48)
+
+[node name="obstacle_falling_tiles5" parent="Obstacles/falling_tiles" instance=ExtResource("26_0nra7")]
+position = Vector2(-139, -48)
+
+[node name="obstacle_falling_tiles6" parent="Obstacles/falling_tiles" instance=ExtResource("26_0nra7")]
+position = Vector2(-139, -48)
+
+[node name="spikes" type="Node2D" parent="Obstacles"]
+
+[node name="obstacle_spike" parent="Obstacles/spikes" instance=ExtResource("27_6qp0l")]
+position = Vector2(233, 187)
 
 [connection signal="body_entered" from="killzone" to="killzone" method="_on_body_entered"]
 

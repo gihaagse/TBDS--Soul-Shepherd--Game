@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://c34kdnga4axvp"]
+
+[ext_resource type="PackedScene" uid="uid://bbkjx56vjerl0" path="res://Scenes/Obstacles/obstacle_base.tscn" id="1_glt4l"]
+[ext_resource type="Script" uid="uid://be5wwaa5oxx87" path="res://Scripts/Obstacles/obstacle_falling_tiles.gd" id="2_0o4b1"]
+[ext_resource type="Texture2D" uid="uid://c1ks65rgcegvt" path="res://Assets/Sprites/Obstacles/breakable_blocks 1 tiles.png" id="3_0o4b1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_05l05"]
+size = Vector2(18, 16)
+
+[node name="obstacle_falling_tiles" instance=ExtResource("1_glt4l")]
+script = ExtResource("2_0o4b1")
+active_for = 1.5
+activation_delay = 0.1
+one_time_use = 1
+
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2(0, -9)
+
+[node name="MainSpirte" parent="." index="1"]
+texture = ExtResource("3_0o4b1")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." index="2"]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" index="0"]
+visible = false
+shape = SubResource("RectangleShape2D_05l05")

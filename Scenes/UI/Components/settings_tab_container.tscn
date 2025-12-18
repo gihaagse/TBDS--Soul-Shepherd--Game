@@ -1,14 +1,21 @@
-[gd_scene load_steps=7 format=3 uid="uid://4x4xba4uufsy"]
+[gd_scene load_steps=11 format=3 uid="uid://4x4xba4uufsy"]
 
 [ext_resource type="Script" uid="uid://0xoeqjulyd4f" path="res://Scripts/UI/Components/settings_tab_container.gd" id="1_ecvj5"]
+[ext_resource type="Script" uid="uid://b4ft6vt5vy8w5" path="res://Scripts/UI/Components/tab_container.gd" id="2_awh7l"]
 [ext_resource type="PackedScene" uid="uid://c7prb52ve78u2" path="res://Scenes/UI/Components/window_mode_button.tscn" id="2_jxgsd"]
 [ext_resource type="PackedScene" uid="uid://bx53giwjpw5na" path="res://Scenes/UI/Components/resolution_mode_button.tscn" id="3_awh7l"]
 [ext_resource type="PackedScene" uid="uid://b2te38aprosng" path="res://Scenes/UI/Components/hotkey_rebind_buton.tscn" id="4_r374b"]
+[ext_resource type="PackedScene" uid="uid://d2ijk6dxvytlk" path="res://Scenes/UI/Components/VSyncButton.tscn" id="5_awh7l"]
 [ext_resource type="PackedScene" uid="uid://bkitqemrhw6m1" path="res://Scenes/UI/Components/audio_slider_settings.tscn" id="5_ofdyr"]
+[ext_resource type="Script" uid="uid://8g3cawsffywh" path="res://Scripts/UI/Components/scroll_container.gd" id="6_r374b"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jxgsd"]
+bg_color = Color(0.805058, 0.81792855, 0.31761068, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_go3u1"]
 
 [node name="Settings_Tab_Container" type="Control"]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -31,9 +38,14 @@ grow_horizontal = 2
 grow_vertical = 2
 tab_alignment = 1
 current_tab = 0
+script = ExtResource("2_awh7l")
 
 [node name="Graphics" type="TabBar" parent="TabContainer"]
 layout_mode = 2
+focus_neighbor_left = NodePath("../Sound")
+focus_neighbor_right = NodePath("../Controls")
+focus_neighbor_bottom = NodePath("MarginContainer/ScrollContainer/VBoxContainer/Window_Mode_Button/HBoxContainer/OptionButton")
+theme_override_styles/tab_focus = SubResource("StyleBoxFlat_jxgsd")
 metadata/_tab_index = 0
 
 [node name="MarginContainer" type="MarginContainer" parent="TabContainer/Graphics"]
@@ -50,16 +62,12 @@ theme_override_constants/margin_bottom = 24
 
 [node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/Graphics/MarginContainer"]
 layout_mode = 2
+follow_focus = true
+script = ExtResource("6_r374b")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Graphics/MarginContainer/ScrollContainer"]
 layout_mode = 2
 theme_override_constants/separation = 128
-
-[node name="HSeparator2" type="HSeparator" parent="TabContainer/Graphics/MarginContainer/ScrollContainer/VBoxContainer"]
-visible = false
-layout_mode = 2
-theme_override_constants/separation = 4
-theme_override_styles/separator = SubResource("StyleBoxEmpty_go3u1")
 
 [node name="HSeparator" type="HSeparator" parent="TabContainer/Graphics/MarginContainer/ScrollContainer/VBoxContainer"]
 visible = false
@@ -69,13 +77,33 @@ theme_override_styles/separator = SubResource("StyleBoxEmpty_go3u1")
 
 [node name="Window_Mode_Button" parent="TabContainer/Graphics/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("2_jxgsd")]
 layout_mode = 2
+focus_neighbor_top = NodePath("../../../..")
+focus_neighbor_bottom = NodePath("../Resolution_Mode_button")
+
+[node name="OptionButton" parent="TabContainer/Graphics/MarginContainer/ScrollContainer/VBoxContainer/Window_Mode_Button/HBoxContainer" index="2"]
+focus_neighbor_bottom = NodePath("../../../Resolution_Mode_button/HBoxContainer/OptionButton")
 
 [node name="Resolution_Mode_button" parent="TabContainer/Graphics/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("3_awh7l")]
 layout_mode = 2
 
+[node name="OptionButton" parent="TabContainer/Graphics/MarginContainer/ScrollContainer/VBoxContainer/Resolution_Mode_button/HBoxContainer" index="2"]
+focus_neighbor_top = NodePath("../../../Window_Mode_Button/HBoxContainer/OptionButton")
+
+[node name="VSyncButton" parent="TabContainer/Graphics/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("5_awh7l")]
+layout_mode = 2
+
+[node name="HSeparator2" type="HSeparator" parent="TabContainer/Graphics/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 4
+theme_override_styles/separator = SubResource("StyleBoxEmpty_go3u1")
+
 [node name="Controls" type="TabBar" parent="TabContainer"]
 visible = false
 layout_mode = 2
+focus_neighbor_left = NodePath("../Graphics")
+focus_neighbor_right = NodePath("../Sound")
+focus_neighbor_bottom = NodePath("MarginContainer/ScrollContainer/VBoxContainer/MoveLeftButton")
+theme_override_styles/tab_focus = SubResource("StyleBoxFlat_jxgsd")
 metadata/_tab_index = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="TabContainer/Controls"]
@@ -83,6 +111,8 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -51.0
+offset_right = 51.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 24
@@ -92,16 +122,21 @@ theme_override_constants/margin_bottom = 24
 
 [node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/Controls/MarginContainer"]
 layout_mode = 2
+size_flags_horizontal = 4
+focus_mode = 2
+horizontal_scroll_mode = 0
+script = ExtResource("6_r374b")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Controls/MarginContainer/ScrollContainer"]
 layout_mode = 2
 theme_override_constants/separation = 64
+alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
 
 [node name="HSeparator" type="HSeparator" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(462.925, 0)
+custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
 
 [node name="KBM" type="Label" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer"]
@@ -109,7 +144,7 @@ layout_mode = 2
 text = " KBM "
 
 [node name="HSeparator2" type="HSeparator" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(189.985, 0)
+custom_minimum_size = Vector2(185, 0)
 layout_mode = 2
 
 [node name="KBM2" type="Label" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer"]
@@ -117,18 +152,24 @@ layout_mode = 2
 text = " Controller "
 
 [node name="HSeparator3" type="HSeparator" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(200, 0)
+custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 
 [node name="MoveLeftButton" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("4_r374b")]
 layout_mode = 2
+focus_neighbor_top = NodePath("../../../..")
+focus_neighbor_bottom = NodePath("../MoveRightButton")
 
 [node name="MoveRightButton" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("4_r374b")]
 layout_mode = 2
+focus_neighbor_top = NodePath("../MoveLeftButton")
+focus_neighbor_bottom = NodePath("../JumpButton")
 action_name = "Right"
 
 [node name="JumpButton" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("4_r374b")]
 layout_mode = 2
+focus_neighbor_top = NodePath("../MoveRightButton")
+focus_neighbor_bottom = NodePath("../SwordAttackButton")
 action_name = "Jump"
 
 [node name="HSeparator" type="HSeparator" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer"]
@@ -139,14 +180,20 @@ theme_override_styles/separator = SubResource("StyleBoxEmpty_go3u1")
 
 [node name="SwordAttackButton" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("4_r374b")]
 layout_mode = 2
+focus_neighbor_top = NodePath("../JumpButton")
+focus_neighbor_bottom = NodePath("../HatThrowButton")
 action_name = "LeftClick"
 
 [node name="HatThrowButton" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("4_r374b")]
 layout_mode = 2
+focus_neighbor_top = NodePath("../SwordAttackButton")
+focus_neighbor_bottom = NodePath("../InteractButton")
 action_name = "RightClick"
 
 [node name="InteractButton" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("4_r374b")]
 layout_mode = 2
+focus_neighbor_top = NodePath("../HatThrowButton")
+focus_neighbor_bottom = NodePath("../DashButton")
 action_name = "Interact"
 
 [node name="HSeparator2" type="HSeparator" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer"]
@@ -156,11 +203,8 @@ theme_override_styles/separator = SubResource("StyleBoxEmpty_go3u1")
 
 [node name="DashButton" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("4_r374b")]
 layout_mode = 2
+focus_neighbor_top = NodePath("../InteractButton")
 action_name = "Shift"
-
-[node name="Grapple" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("4_r374b")]
-layout_mode = 2
-action_name = "Grapple"
 
 [node name="HSeparator3" type="HSeparator" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
@@ -170,6 +214,10 @@ theme_override_styles/separator = SubResource("StyleBoxEmpty_go3u1")
 [node name="Sound" type="TabBar" parent="TabContainer"]
 visible = false
 layout_mode = 2
+focus_neighbor_left = NodePath("../Controls")
+focus_neighbor_right = NodePath("../Graphics")
+focus_neighbor_bottom = NodePath("MarginContainer/ScrollContainer/VBoxContainer/Audio_Slider_Settings")
+theme_override_styles/tab_focus = SubResource("StyleBoxFlat_jxgsd")
 metadata/_tab_index = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="TabContainer/Sound"]
@@ -186,6 +234,7 @@ theme_override_constants/margin_bottom = 24
 
 [node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/Sound/MarginContainer"]
 layout_mode = 2
+follow_focus = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Sound/MarginContainer/ScrollContainer"]
 layout_mode = 2
@@ -199,17 +248,25 @@ theme_override_styles/separator = SubResource("StyleBoxEmpty_go3u1")
 
 [node name="Audio_Slider_Settings" parent="TabContainer/Sound/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("5_ofdyr")]
 layout_mode = 2
+focus_neighbor_top = NodePath("../../../..")
+focus_neighbor_bottom = NodePath("../Audio_Slider_Settings2")
 bus_name = "Master"
 
 [node name="Audio_Slider_Settings2" parent="TabContainer/Sound/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("5_ofdyr")]
 layout_mode = 2
+focus_neighbor_top = NodePath("../Audio_Slider_Settings")
+focus_neighbor_bottom = NodePath("../Audio_Slider_Settings3")
 bus_name = "Music"
 
 [node name="Audio_Slider_Settings3" parent="TabContainer/Sound/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("5_ofdyr")]
 layout_mode = 2
+focus_neighbor_top = NodePath("../Audio_Slider_Settings2")
 
 [node name="HSeparator2" type="HSeparator" parent="TabContainer/Sound/MarginContainer/ScrollContainer/VBoxContainer"]
 visible = false
 layout_mode = 2
 theme_override_constants/separation = 4
 theme_override_styles/separator = SubResource("StyleBoxEmpty_go3u1")
+
+[editable path="TabContainer/Graphics/MarginContainer/ScrollContainer/VBoxContainer/Window_Mode_Button"]
+[editable path="TabContainer/Graphics/MarginContainer/ScrollContainer/VBoxContainer/Resolution_Mode_button"]

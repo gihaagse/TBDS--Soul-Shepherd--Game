@@ -41,7 +41,6 @@ enum ability_list {
 	DoubleJump,
 	WallJump,
 	Airgliding,
-	Grapple,
 
 }
 
@@ -61,7 +60,8 @@ const ABILITY_ACTION: Dictionary = {
 	ability_list.DoubleJump: "Jump",
 	ability_list.WallJump: "Jump",
 	ability_list.Airgliding: "Jump",
-	ability_list.Grapple: "Grapple"
+	ability_list.Wallsliding: ""
+
 }
 
 const INFO: Dictionary = {
@@ -95,10 +95,6 @@ const INFO: Dictionary = {
 		"description": "Hold '%s' in the air to glide down!"
 		
 	},
-	ability_list.Grapple: {
-		"name": "Grappling Hook",
-		"description": "Press '%s' on a platform to grapple!"
-	}
 }
 
 
@@ -206,5 +202,9 @@ func get_action_label(action_name: String) -> String:
 func get_ability_description(ability_id) -> String:
 	var data: Dictionary = INFO[ability_id]
 	var action_name: String = ABILITY_ACTION[ability_id]
+	
+	if action_name == "" or not ("%s" in data["description"]):
+		return data["description"]
+	
 	var bind_text := get_action_label(action_name)
 	return data["description"] % bind_text

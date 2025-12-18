@@ -7,11 +7,16 @@ signal died_transition
 var unlocked_checkpoints : Array = []
 @export var perefernce_checkpoint = true
 
-@onready var unlocked_texture = preload("res://Assets/Sprites/checkpoint/Checkpoint Unlocked.png")
+@onready var unlocked_texture = preload("res://Assets/Sprites/checkpoint/checkpoint_unlocked.png")
 @onready var player_stored : Player =  get_tree().current_scene.get_node("Player")
 var camera_main : CameraMain
 
 var checkpoints_in_game
+
+var obstacles_root: Node2D
+var obstacles_packed: PackedScene
+var obstacles_parent: Node
+var obstacles_index: int
 
 func _ready() -> void:
 	player_choice.connect(_on_choice_made)
@@ -26,8 +31,26 @@ func register_start(Start: Marker2D):
 		"node": Start
 	})
 	
-	print("Start: ", unlocked_checkpoints)
-	
+func register_root_obstacle(obstacle: Node2D):
+	if obstacle.name == "Obstacles":
+		obstacles_root = obstacle
+		obstacles_parent = obstacles_root.get_parent()
+		obstacles_index = obstacles_root.get_index()
+		
+		_set_owner_recursive(obstacles_root, obstacles_root)
+		
+		obstacles_packed = PackedScene.new()
+		var err := obstacles_packed.pack(obstacles_root)
+		if err != OK:
+			push_error("Failed to pack Obstacles: %s" % err)
+		else:
+			print("REGISTERING = ", obstacles_root, " children: ", obstacles_root.get_children())
+
+func _set_owner_recursive(node: Node, owner: Node) -> void:
+	for child in node.get_children():
+		child.owner = owner
+		_set_owner_recursive(child, owner)
+
 func checkpoint_unlocked(checkpoint: CheckPoint):
 	for unlocked_cp in unlocked_checkpoints:
 		if unlocked_cp["id"] == checkpoint.checkppoint_id:
@@ -49,8 +72,7 @@ func play_unlock_effects(checkpoint: CheckPoint):
 	var Sprite2D_node : Sprite2D = checkpoint.get_node("Sprite2D")
 	if Sprite2D_node:
 		Sprite2D_node.texture = unlocked_texture
-	
-	
+
 func get_spawn_checkpoint(player: Player):
 	if unlocked_checkpoints.is_empty():
 		var start_checkpoint = checkpoints_in_game.get_node("Start")
@@ -99,6 +121,7 @@ func _on_choice_made(preference: String): #This func gets called from UI script 
 	_respawn_player_to_checkpoint(player_stored)
 
 func _respawn_player_to_checkpoint(player: Player):
+	reset_obstacles_subtree()
 	player.velocity.y = 0
 	player.hp.hp = 100
 	
@@ -112,3 +135,11 @@ func _respawn_player_to_checkpoint(player: Player):
 	died_transition.emit(false)
 	
 	await get_tree().create_timer(.5).timeout
+
+func reset_obstacles_subtree() -> void:
+	if is_instance_valid(obstacles_root):
+		obstacles_root.queue_free()
+	
+	obstacles_root = obstacles_packed.instantiate()
+	obstacles_parent.add_child(obstacles_root)
+	obstacles_parent.move_child(obstacles_root, obstacles_index)

@@ -14,6 +14,7 @@ func _ready() -> void:
 	add_options_mode_items()
 	option_button.item_selected.connect(on_window_mode_selected)
 	select_current_window_mode()
+	connect("focus_entered", _on_focus_entered)
 
 func add_options_mode_items() -> void:
 	for window_mode in WINDOW_MODE_ARRAY:
@@ -55,3 +56,6 @@ func select_current_window_mode() -> void:
 				option_button.select(1)
 		_:
 			pass
+
+func _on_focus_entered():
+	option_button.grab_focus()

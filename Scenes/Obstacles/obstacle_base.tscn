@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://bbkjx56vjerl0"]
+
+[ext_resource type="Script" uid="uid://curk3qedng0er" path="res://Scripts/Obstacles/obstacle_base.gd" id="1_05l05"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_05l05"]
+size = Vector2(16, 2)
+
+[node name="obstacle_base" type="Area2D"]
+collision_layer = 2048
+script = ExtResource("1_05l05")
+effect_type = Array[int]([5])
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_05l05")
+
+[node name="MainSpirte" type="Sprite2D" parent="."]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

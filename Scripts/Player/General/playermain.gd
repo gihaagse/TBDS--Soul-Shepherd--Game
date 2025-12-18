@@ -16,7 +16,7 @@ signal player_hit
 @onready var ray_down: RayCast2D = $Ground
 
 func _ready() -> void:
-	pass
+	add_to_group("player")
 
 
 func _process(delta: float) -> void:

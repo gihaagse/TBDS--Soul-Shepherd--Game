@@ -86,8 +86,7 @@ func _on_button_toggled(toggled_on: bool) -> void:
 
 
 func set_can_rebind(can: bool)-> void:
-	if can:
-		can_rebind = can
+	can_rebind = can
 	set_process_input(can) 
 
 
@@ -106,7 +105,7 @@ func _input(event: InputEvent) -> void:
 	button.button_pressed = false
 	controller_input_button.button_pressed = false
 	
-	get_viewport().set_input_as_handled()  
+	#get_viewport().set_input_as_handled()  
 
 
 func rebind_action_key(event: InputEvent) -> void:
@@ -136,7 +135,7 @@ func rebind_action_key(event: InputEvent) -> void:
 	set_text_for_keyboard_key()
 	set_text_for_controller_key()
 	set_action_name()
-
+	get_parent().grab_focus()
 
 func _on_controller_input_button_toggled(toggled_on: bool) -> void:
 	if toggled_on:

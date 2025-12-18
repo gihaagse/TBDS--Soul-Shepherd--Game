@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://c45jpc3kaflr4"]
 
 [ext_resource type="Script" uid="uid://dgjexs1tbguv4" path="res://Scripts/CheckPoints/check_point.gd" id="1_74oeb"]
-[ext_resource type="Texture2D" uid="uid://dwk3un2dyeg0b" path="res://Assets/Sprites/checkpoint/Checkpoint locked.png" id="2_i76d7"]
+[ext_resource type="Texture2D" uid="uid://cbhuf3tx6hex1" path="res://Assets/Sprites/checkpoint/checkpoint_not_unlocked.png" id="2_i76d7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i76d7"]
 size = Vector2(20, 141)
@@ -21,7 +21,6 @@ position = Vector2(34, -37)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -23)
-scale = Vector2(0.023437502, 0.023437504)
 texture = ExtResource("2_i76d7")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

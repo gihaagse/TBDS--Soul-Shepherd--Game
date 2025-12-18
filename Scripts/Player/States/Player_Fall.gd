@@ -1,7 +1,6 @@
 extends PlayerState
 class_name Player_Fall
 
-@onready var ghs : GHS = get_tree().get_root().get_node("Level").find_child("GrapplingHookSystem")
 @export var dash_cooldown : Timer
 @export var landing_sfx : AudioStreamPlayer2D
 @export var extra_hold_jump: float = 6.3
@@ -36,11 +35,11 @@ func Enter():
 	else:
 		sprite.play("Panda_Jump")
 		can_glide = true
-	PlayerPro.projectile_exists.connect(_update_bool)
+	if not PlayerPro.projectile_exists.is_connected(_update_bool):
+		PlayerPro.projectile_exists.connect(_update_bool)
 	last_velocity_y = 0.0
 	fall_hold_time = 0.0
 	jump_hold_time = 0.0
-	ghs.can_grapple = true
 
 func Update(_delta:float) -> void:
 	if player.velocity.y > 0:
@@ -63,12 +62,6 @@ func Update(_delta:float) -> void:
 		
 	if Input.is_action_pressed("WallSlide") and player.is_on_wall_only():
 		state_transition.emit(self, "Wallsliding")
-	#if get_item_by_name("GrappleHook", slots).visible:
-		#ghs.can_grapple = true
-	#else: 
-		#ghs.can_grapple = false
-	if ghs.is_grappling:
-		state_transition.emit(self, "Grapple")
 
 func Phys_Update(_delta:float) -> void:
 	if Input.is_action_just_pressed("Jump") and player.is_on_wall_only() and (Input.is_action_pressed("Left") or Input.is_action_pressed("Right")):

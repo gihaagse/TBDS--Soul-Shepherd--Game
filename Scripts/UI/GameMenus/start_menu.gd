@@ -28,6 +28,7 @@ func _on_options_pressed() -> void:
 	options_menu.set_process(true)
 	options_menu.visible = true
 	$Logo.visible = false
+	options_menu.focus_on_default()
 	
 
 func on_exit_options_menu() -> void:
@@ -50,6 +51,6 @@ func regain_menu_focus():
 		$VBoxContainer/Start.call_deferred("grab_focus")
 		
 func _on_game_start_timer_timeout() -> void:
-	#get_tree().change_scene_to_file("res://Scenes/Level/playtest_level.tscn")
-	get_tree().change_scene_to_file("res://Scenes/Level/playtest2.tscn")
+	get_tree().change_scene_to_file("res://Scenes/Level/playtest_level.tscn")
+	#get_tree().change_scene_to_file("res://Scenes/Level/playtest2.tscn")d
 	Engine.time_scale = 1
