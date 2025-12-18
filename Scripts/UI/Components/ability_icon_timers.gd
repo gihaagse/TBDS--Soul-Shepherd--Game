@@ -35,7 +35,10 @@ func set_minimum_size() -> void:
 	var horizontal_size = info_label.get_size().x
 	custom_minimum_size.x = horizontal_size * 3
 
-
+func refresh_description() -> void:
+	print("refreshing")
+	ability_description = AbilityData.get_ability_description(ability)
+	
 func _on_ability_icon_button_pressed() -> void:
 	on_button_pressed()
 	ability_description = AbilityData.get_ability_description(ability)

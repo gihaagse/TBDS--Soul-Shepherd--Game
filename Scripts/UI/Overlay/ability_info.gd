@@ -56,3 +56,7 @@ func _update_ui() -> void:
 				pass
 	OptionsManager._set_focus_all_on_children(self)
 	
+func refresh_all_indicators() -> void:
+	for indicator in active_indicators.values():
+		if is_instance_valid(indicator):
+			indicator.refresh_description()

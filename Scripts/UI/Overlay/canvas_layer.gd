@@ -63,6 +63,7 @@ func pauseMenu():
 	paused = !paused
 	
 func AbilityInfoMenu():
+	ability_info.refresh_all_indicators()
 	if pause_menu.visible:
 		return
 		
