@@ -21,7 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://cl45lm0hg20kf" path="res://Scenes/Items/soul.tscn" id="12_t8xxn"]
 [ext_resource type="Texture2D" uid="uid://bpawmr3tt1vu8" path="res://Assets/Sprites/Dialogue Sprites/monk_sitting_sprite.png" id="13_4s5db"]
 [ext_resource type="PackedScene" uid="uid://ndkp1vfqmr4g" path="res://Scenes/Dialogue/DialogueUI.tscn" id="13_heeoc"]
-[ext_resource type="PackedScene" uid="uid://c64nl2fkq45ge" path="res://Scenes/UI/Overlay/UiButtonKey.tscn" id="13_naxo4"]
+[ext_resource type="PackedScene" uid="uid://c64nl2fkq45ge" path="res://Scenes/UI/Overlay/AbilityInfoButton.tscn" id="13_naxo4"]
 [ext_resource type="PackedScene" uid="uid://c34kdnga4axvp" path="res://Scenes/Obstacles/obstacle_falling_tiles.tscn" id="17_1nbn6"]
 [ext_resource type="PackedScene" uid="uid://c2qbrpracjsi5" path="res://Scenes/Enemies/orc.tscn" id="22_x4l1k"]
 [ext_resource type="PackedScene" uid="uid://c45jpc3kaflr4" path="res://Scenes/CheckPoints/CheckPoint.tscn" id="25_muu7q"]

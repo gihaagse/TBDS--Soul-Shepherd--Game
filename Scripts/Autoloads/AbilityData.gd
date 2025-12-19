@@ -31,10 +31,11 @@ enum ability_list {
 	Idling,
 	Walking,
 	Falling,
+	Dialogue,
+	
 	Attack1,
 	Airattack1,
 	Archery,
-	Dialogue,
 	
 	Dash,
 	Wallsliding,
@@ -200,6 +201,9 @@ func get_action_label(action_name: String) -> String:
 
 
 func get_ability_description(ability_id) -> String:
+	for i in range (4):
+		if ability_id == i:
+			return ""
 	var data: Dictionary = INFO[ability_id]
 	var action_name: String = ABILITY_ACTION[ability_id]
 	

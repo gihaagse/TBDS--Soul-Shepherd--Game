@@ -63,6 +63,7 @@ func pauseMenu():
 	paused = !paused
 	
 func AbilityInfoMenu():
+	ability_info.refresh_all_indicators()
 	if pause_menu.visible:
 		return
 		
@@ -70,7 +71,10 @@ func AbilityInfoMenu():
 		ability_info.hide()
 		get_tree().set_pause(false)
 	else:
+		ability_info.set_focus = false
 		ability_info.show()
+		ability_info._update_ui() 
+		ability_info.set_focus_on_first()
 		#Engine.time_scale = 0
 		get_tree().set_pause(true)
 		

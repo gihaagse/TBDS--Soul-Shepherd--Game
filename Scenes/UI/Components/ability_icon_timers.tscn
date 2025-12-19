@@ -13,6 +13,9 @@ corner_radius_bottom_left = 8
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m1jvo"]
 bg_color = Color(0, 0, 0, 0.5882353)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_left = 8
 
 [sub_resource type="Theme" id="Theme_65bkr"]
 
@@ -49,6 +52,7 @@ grow_vertical = 2
 [node name="AbilityIconButton" type="Button" parent="HBoxContainer"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
+focus_neighbor_right = NodePath("../IconButtonResizer/LabelButton")
 theme_override_styles/normal = SubResource("StyleBoxFlat_65bkr")
 theme_override_styles/hover = SubResource("StyleBoxFlat_m1jvo")
 
@@ -61,6 +65,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 texture = ExtResource("1_x7buu")
 expand_mode = 1
 
@@ -94,6 +99,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
+focus_neighbor_left = NodePath("../../AbilityIconButton")
 theme_override_styles/normal = SubResource("StyleBoxFlat_rk7uf")
 theme_override_styles/hover = SubResource("StyleBoxFlat_ivwyb")
 
