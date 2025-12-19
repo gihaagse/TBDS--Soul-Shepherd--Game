@@ -11,6 +11,7 @@ var hat_offset = Vector2(0,-2)
 
 func Enter():
 	super()
+	AbilityData.start_cooldown(AbilityData.ability_list.Airgliding)
 	sprite.play("Panda_Jump_No_Hat")
 	bamboo_glide.visible = true
 	bamboo_glide.play("Hat_glide")
@@ -26,7 +27,7 @@ func Exit():
 	in_gliding = false
 	custom_gravity = default_gravity
 
-func Update(_delta:float) -> void:
+func Phys_Update(_delta:float) -> void:
 	var sprite_rotation_deg = sprite.rotation_degrees
 	var angle_rad = deg_to_rad(sprite_rotation_deg)
 	var rotated_offset = hat_offset.rotated(angle_rad)
@@ -34,7 +35,7 @@ func Update(_delta:float) -> void:
 	bamboo_glide.rotation_degrees = sprite_rotation_deg
 	
 
-func Phys_Update(_delta:float) -> void:
+func Update(_delta:float) -> void:
 	if player.is_on_floor_only():
 		state_transition.emit(self, "Falling")
 			
@@ -43,7 +44,9 @@ func Phys_Update(_delta:float) -> void:
 	
 	if Input.is_action_just_released("Jump"):
 		state_transition.emit(self, "Falling")
-		
+	
+	if Input.is_action_just_pressed("Shift"):
+		state_transition.emit(self, "Dash")
 	movement(_delta)
 	
 func _exit_state() -> void:
