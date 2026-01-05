@@ -33,6 +33,7 @@ var knockback_decay := 10.0
 var projectile_index_number: int
 var latest_hat : Node
 @onready var hp_bar: ProgressBar = $ProgressBar
+var stage: int = 0
 
 
 var old_hp : int
@@ -46,8 +47,8 @@ func _ready() -> void:
 	speed = walk_speed
 	_on_animated_sprite_2d_animation_finished()
 	$Label.set_text("HP: " + str(health.hp))
-	hp_bar.value = health.hp
 	hp_bar.max_value = health.hp
+	hp_bar.value = health.hp
 
 func _process(_delta: float) -> void:
 	_correct_sprite()
@@ -64,7 +65,6 @@ func _process(_delta: float) -> void:
 		
 	if (is_on_wall() or (!ground.is_colliding() and ground.enabled)) and can_move:
 		dir = dir * -1
-		#_correct_sprite()
 
 	if knockback_velocity.length() > 1:
 		velocity.x = knockback_velocity.x
@@ -83,10 +83,8 @@ func _process(_delta: float) -> void:
 			_on_area_2d_body_shape_exited()
 		elif raycastcheckleft.is_colliding():
 			dir = -1
-			#_correct_sprite()
 		elif raycastcheckright.is_colliding():
 			dir = 1
-			#_correct_sprite()
 	elif raycastcheckright.is_colliding() and raycastcheckright.get_collider().name == "Player" and can_move:
 		dir = 1
 		flippedSprite = false
@@ -127,6 +125,7 @@ func shoot():
 	elif dir == -1:
 		latest_hat.spawnpos.x -= shotOffset
 	latest_hat.direction = dir
+	latest_hat.boss_stage = stage
 	main.add_child.call_deferred(latest_hat)
 	
 func SetShader_BlinkIntensity(newValue: float):
@@ -136,7 +135,6 @@ func _on_timer_timeout() -> void:
 	pre_shoot()
 
 func _on_area_2d_body_shape_entered() -> void:
-	#_correct_sprite()
 	playerInRange = true
 	speed = sprint_speed
 	can_jump = false
