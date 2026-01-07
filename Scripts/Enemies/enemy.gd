@@ -127,7 +127,7 @@ func shoot():
 	elif dir == -1:
 		latest_hat.spawnpos.x -= shotOffset
 	latest_hat.direction = dir
-dd	main.add_child.call_deferred(latest_hat)
+	main.add_child.call_deferred(latest_hat)
 	
 func SetShader_BlinkIntensity(newValue: float):
 	sprite.material.set_shader_parameter("blink_intensity", newValue)
