@@ -29,6 +29,7 @@ CheckPointManager="*res://Scripts/Autoloads/CheckPointManager.gd"
 OptionsManager="*res://Scripts/Autoloads/OptionsManager.gd"
 PlayerPro="*res://Scripts/Autoloads/player_pro.gd"
 ItemDropManager="*res://Scripts/Autoloads/ItemDropManager.gd"
+KeyManager="*res://Scripts/Autoloads/KeyManager.gd"
 
 [display]
 

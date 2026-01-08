@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=3 uid="uid://dlo0qlmn2vs1c"]
+[gd_scene load_steps=60 format=3 uid="uid://dlo0qlmn2vs1c"]
 
 [ext_resource type="Script" uid="uid://byn1je7flnjo3" path="res://Scripts/Central/game_manager.gd" id="1_6qsb6"]
 [ext_resource type="Script" uid="uid://c2jeph0pjh467" path="res://Scripts/Level/playtest_level.gd" id="1_vps0q"]
@@ -21,6 +21,7 @@
 [ext_resource type="AudioStream" uid="uid://cbtn1bitrynwi" path="res://Assets/Audio/Music/sample.wav" id="17_6y4we"]
 [ext_resource type="Script" uid="uid://b7008awu7lly6" path="res://Scenes/Level/next_level.gd" id="18_4bd1t"]
 [ext_resource type="Script" uid="uid://hfj0hgwiyiqu" path="res://Scripts/Central/event_trigger.gd" id="21_7y4qy"]
+[ext_resource type="Script" uid="uid://cbirdwbh5p7se" path="res://Scripts/Obstacles/gate_crystal.gd" id="21_syi08"]
 [ext_resource type="PackedScene" uid="uid://c2qbrpracjsi5" path="res://Scenes/Enemies/orc.tscn" id="22_vps0q"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y8y6m"]
@@ -614,7 +615,7 @@ tracks/1/keys = {
 tracks/2/type = "method"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Events/Gate_Crystal1")
+tracks/2/path = NodePath("Events/Event_Trigger6")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -628,7 +629,7 @@ tracks/2/keys = {
 tracks/3/type = "method"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Events/Event_Trigger6")
+tracks/3/path = NodePath("Events/Gate_Crystal1")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -636,7 +637,7 @@ tracks/3/keys = {
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
-"method": &"queue_free"
+"method": &"key_collect"
 }]
 }
 
@@ -672,7 +673,7 @@ tracks/1/keys = {
 tracks/2/type = "method"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Events/Gate_Crystal2")
+tracks/2/path = NodePath("Events/Event_Trigger9")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -686,29 +687,29 @@ tracks/2/keys = {
 tracks/3/type = "method"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Events/Event_Trigger9")
+tracks/3/path = NodePath("Moving_platforms")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "values": [{
-"args": [],
-"method": &"queue_free"
+"args": [&"Moving", -1, 1.0, false],
+"method": &"play"
 }]
 }
 tracks/4/type = "method"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Moving_platforms")
+tracks/4/path = NodePath("Events/Gate_Crystal2")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0),
+"times": PackedFloat32Array(0.033333335),
 "transitions": PackedFloat32Array(1),
 "values": [{
-"args": [&"Moving", -1, 1.0, false],
-"method": &"play"
+"args": [],
+"method": &"key_collect"
 }]
 }
 
@@ -778,6 +779,9 @@ size = Vector2(40, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_obal1"]
 size = Vector2(16, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1hwo8"]
+size = Vector2(96.5, 90.25)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1v0ja"]
 size = Vector2(30, 30)
@@ -1188,6 +1192,7 @@ region_rect = Rect2(128, 128, 16, 16)
 [node name="Gate_Crystal1" type="StaticBody2D" parent="Events"]
 z_index = 5
 position = Vector2(1352, 224)
+script = ExtResource("21_syi08")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Events/Gate_Crystal1"]
 shape = SubResource("RectangleShape2D_obal1")
@@ -1197,9 +1202,19 @@ texture = ExtResource("2_5lk6k")
 region_enabled = true
 region_rect = Rect2(144, 96, 16, 32)
 
+[node name="UnlockArea" type="Area2D" parent="Events/Gate_Crystal1"]
+collision_layer = 0
+collision_mask = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Events/Gate_Crystal1/UnlockArea"]
+position = Vector2(0, -30)
+shape = SubResource("RectangleShape2D_1hwo8")
+
 [node name="Gate_Crystal2" type="StaticBody2D" parent="Events"]
 z_index = 5
 position = Vector2(2536, 224)
+script = ExtResource("21_syi08")
+door_id = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Events/Gate_Crystal2"]
 shape = SubResource("RectangleShape2D_obal1")
@@ -1208,6 +1223,14 @@ shape = SubResource("RectangleShape2D_obal1")
 texture = ExtResource("2_5lk6k")
 region_enabled = true
 region_rect = Rect2(144, 96, 16, 32)
+
+[node name="UnlockArea" type="Area2D" parent="Events/Gate_Crystal2"]
+collision_layer = 0
+collision_mask = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Events/Gate_Crystal2/UnlockArea"]
+position = Vector2(0, -30)
+shape = SubResource("RectangleShape2D_1hwo8")
 
 [node name="Obstacles" type="Node2D" parent="."]
 
@@ -1331,4 +1354,6 @@ shape = SubResource("RectangleShape2D_sinv2")
 [connection signal="body_entered" from="Events/Event_Trigger10" to="Events/Event_Trigger10" method="_on_body_entered"]
 [connection signal="body_entered" from="Events/Key1" to="Events/Key1" method="_on_body_entered"]
 [connection signal="body_entered" from="Events/Key2" to="Events/Key2" method="_on_body_entered"]
+[connection signal="body_entered" from="Events/Gate_Crystal1/UnlockArea" to="Events/Gate_Crystal1" method="_on_unlock_area_body_entered"]
+[connection signal="body_entered" from="Events/Gate_Crystal2/UnlockArea" to="Events/Gate_Crystal2" method="_on_unlock_area_body_entered"]
 [connection signal="body_entered" from="Next_level" to="Next_level" method="_on_body_entered"]
