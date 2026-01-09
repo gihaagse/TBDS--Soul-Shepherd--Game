@@ -11,7 +11,7 @@ func _ready() -> void:
 	super._ready()
 	JumpTimer.start()
 	speed = 0
-	stage = 2
+	stage = 1
 	if stage > 1:
 		health.hp = 200
 

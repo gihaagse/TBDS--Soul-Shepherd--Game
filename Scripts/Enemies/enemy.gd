@@ -3,7 +3,7 @@ extends CharacterBody2D
 class_name enemy
 
 @onready var main = get_tree().get_root().get_node("Level")
-@onready var projectile = load("res://Scenes/Weapons/projectile.tscn")
+@onready var projectile = load("res://Scenes/Weapons/enemy_hat_projectile.tscn")
 @export var shootPoint : Node2D
 @export var groundPosOffset : float = 10
 
