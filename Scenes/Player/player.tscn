@@ -1089,6 +1089,7 @@ load_path = "res://.godot/imported/green_ball.png-faf5193f9c80959af8ce2bec1f3124
 z_index = 5
 collision_layer = 5
 floor_constant_speed = true
+floor_snap_length = 4.0
 script = ExtResource("1_qr1w5")
 finite_state_machine = NodePath("FiniteStateMachine")
 hp = NodePath("Health")

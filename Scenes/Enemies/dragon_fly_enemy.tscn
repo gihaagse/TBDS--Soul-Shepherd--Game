@@ -1,0 +1,163 @@
+[gd_scene load_steps=21 format=3 uid="uid://dgm6tcibml5l"]
+
+[ext_resource type="Script" uid="uid://mywgm2hgcr4j" path="res://Scripts/Enemies/dragon_fly_enemy.gd" id="1_u1ejo"]
+[ext_resource type="PackedScene" uid="uid://cvgjcwqn6k8eu" path="res://Scenes/UI/Overlay/health.tscn" id="2_3kcs8"]
+[ext_resource type="Script" uid="uid://dlgatnu5tx5lj" path="res://Scripts/Enemies/health_enemy.gd" id="3_1u6uc"]
+[ext_resource type="Shader" uid="uid://o6ancnl5jgcr" path="res://Shaders/Blink.gdshader" id="4_qp755"]
+[ext_resource type="Texture2D" uid="uid://bxn53nopbmiwg" path="res://Assets/Sprites/dragonfly.png" id="5_u1ejo"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6hc3a"]
+resource_local_to_scene = true
+shader = ExtResource("4_qp755")
+shader_parameter/blink_color = Color(1, 1, 1, 1)
+shader_parameter/blink_intensity = 0.0
+shader_parameter/damage_active = false
+shader_parameter/damage_time = 0.0
+shader_parameter/shake_intensity = 0.0
+shader_parameter/distortion = 0.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r3sco"]
+atlas = ExtResource("5_u1ejo")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3kcs8"]
+atlas = ExtResource("5_u1ejo")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1u6uc"]
+atlas = ExtResource("5_u1ejo")
+region = Rect2(32, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qp755"]
+atlas = ExtResource("5_u1ejo")
+region = Rect2(48, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w3mfo"]
+atlas = ExtResource("5_u1ejo")
+region = Rect2(64, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_75ntf"]
+atlas = ExtResource("5_u1ejo")
+region = Rect2(80, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wpvyt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r3sco")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3kcs8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1u6uc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qp755")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w3mfo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_75ntf")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 15.0
+}]
+
+[sub_resource type="Gradient" id="Gradient_vumo0"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_31h1d"]
+gradient = SubResource("Gradient_vumo0")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_dfwqp"]
+lifetime_randomness = 1.0
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 5.0
+direction = Vector3(0, -0.5, 0)
+spread = 90.0
+initial_velocity_min = 50.0
+initial_velocity_max = 100.0
+gravity = Vector3(0, 98, 0)
+damping_min = 50.0
+damping_max = 100.0
+scale_min = 0.2
+color = Color(1, 0.0705882, 0.133333, 1)
+color_ramp = SubResource("GradientTexture1D_31h1d")
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3xw0u"]
+radius = 7.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tq37w"]
+
+[sub_resource type="Theme" id="Theme_tq37w"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tq37w"]
+bg_color = Color(1, 0, 0, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="Dragon Enemy" type="CharacterBody2D" groups=["Enemy"]]
+collision_layer = 257
+collision_mask = 5
+script = ExtResource("1_u1ejo")
+
+[node name="Health" parent="." instance=ExtResource("2_3kcs8")]
+script = ExtResource("3_1u6uc")
+hp = 50
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_6hc3a")
+sprite_frames = SubResource("SpriteFrames_wpvyt")
+animation = &"Idle"
+autoplay = "Idle"
+frame_progress = 0.68276346
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+emitting = false
+amount = 20
+lifetime = 0.8
+one_shot = true
+explosiveness = 1.0
+trail_enabled = true
+process_material = SubResource("ParticleProcessMaterial_dfwqp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_3xw0u")
+
+[node name="TopCheck" type="RayCast2D" parent="."]
+scale = Vector2(2.655, 1)
+target_position = Vector2(0, -12)
+collision_mask = 4
+
+[node name="TopCheckCooldown" type="Timer" parent="."]
+
+[node name="Hitbox" type="Area2D" parent="."]
+collision_layer = 129
+collision_mask = 129
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+shape = SubResource("CircleShape2D_tq37w")
+
+[node name="ItemSpawnPoint" type="Marker2D" parent="."]
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+offset_left = -6.0
+offset_top = -16.0
+offset_right = 6.0
+offset_bottom = -12.0
+theme = SubResource("Theme_tq37w")
+theme_override_colors/font_color = Color(0, 0.9490196, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 0, 0, 1)
+theme_override_styles/fill = SubResource("StyleBoxFlat_tq37w")
+show_percentage = false
+
+[connection signal="hp_changed" from="Health" to="." method="_on_health_hp_changed"]
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="timeout" from="TopCheckCooldown" to="." method="_on_top_check_cooldown_timeout"]
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]

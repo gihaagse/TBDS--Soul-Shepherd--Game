@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://dgriy1udfe26i"]
+
+[ext_resource type="Texture2D" uid="uid://booiwg6cvjuft" path="res://Assets/Background/mountain_background_sky.png" id="1_p83b8"]
+[ext_resource type="Texture2D" uid="uid://b6ewd2irkjyt" path="res://Assets/Background/clouds_background.png" id="2_8g3hx"]
+
+[node name="ParralaxBackground2-2" type="Node2D"]
+
+[node name="Parallax2D" type="Parallax2D" parent="."]
+z_index = 1
+scroll_scale = Vector2(0.05, 0.05)
+repeat_size = Vector2(320, 0)
+repeat_times = 5
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D"]
+scale = Vector2(1, 2)
+texture = ExtResource("1_p83b8")
+
+[node name="Parallax2D2" type="Parallax2D" parent="."]
+z_index = 2
+scroll_scale = Vector2(0.05, 0.05)
+repeat_size = Vector2(320, 0)
+repeat_times = 5
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D2"]
+texture = ExtResource("2_8g3hx")
+offset = Vector2(17.195, 0)
