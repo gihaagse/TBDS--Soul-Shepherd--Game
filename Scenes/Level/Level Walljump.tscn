@@ -23,8 +23,7 @@
 [ext_resource type="Script" uid="uid://b7008awu7lly6" path="res://Scenes/Level/next_level.gd" id="20_3etm0"]
 [ext_resource type="PackedScene" uid="uid://d2jbqn300os54" path="res://Scenes/Obstacles/obstacle_spike.tscn" id="20_qyhax"]
 [ext_resource type="Script" uid="uid://hfj0hgwiyiqu" path="res://Scripts/Central/event_trigger.gd" id="21_ndi56"]
-[ext_resource type="AudioStream" uid="uid://ccsxoflpun44s" path="res://Assets/Audio/SFX/Level/UpdatePing.wav" id="22_xfoqn"]
-[ext_resource type="AudioStream" uid="uid://da6smarrpkoir" path="res://Assets/Audio/SFX/Level/PickupKey.wav" id="23_ot837"]
+[ext_resource type="Script" uid="uid://cbirdwbh5p7se" path="res://Scripts/Obstacles/gate_crystal.gd" id="24_j1inx"]
 [ext_resource type="PackedScene" uid="uid://cl45lm0hg20kf" path="res://Scenes/Items/soul.tscn" id="26_ifyxa"]
 [ext_resource type="SpriteFrames" uid="uid://1pu7u640aosc" path="res://Resources/Wisps/Fire_Wisp.tres" id="27_m1v2j"]
 
@@ -511,7 +510,7 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
-"method": &"queue_free"
+"method": &"key_collect"
 }]
 }
 
@@ -527,6 +526,9 @@ size = Vector2(200, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_obal1"]
 size = Vector2(16, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j1inx"]
+size = Vector2(96.5, 90.25)
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_jfuqr")
@@ -561,7 +563,7 @@ position = Vector2(36, 200)
 script = ExtResource("6_qyhax")
 
 [node name="Player" parent="." instance=ExtResource("7_ifyxa")]
-position = Vector2(40, 197)
+position = Vector2(1712, -160)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 process_mode = 3
@@ -745,7 +747,7 @@ bus = &"Music"
 position = Vector2(1824, 336)
 collision_mask = 4
 script = ExtResource("20_3etm0")
-level_name = "Level 1-1"
+level_name = "Level 1-2"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Next_level"]
 shape = SubResource("RectangleShape2D_1v0ja")
@@ -814,6 +816,7 @@ region_rect = Rect2(128, 128, 16, 16)
 z_index = 5
 position = Vector2(1824, 312)
 rotation = -1.5707964
+script = ExtResource("24_j1inx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Events/Gate_Crystal1"]
 shape = SubResource("RectangleShape2D_obal1")
@@ -823,13 +826,13 @@ texture = ExtResource("3_rg2we")
 region_enabled = true
 region_rect = Rect2(144, 96, 16, 32)
 
-[node name="UpdatePing" type="AudioStreamPlayer2D" parent="Events"]
-stream = ExtResource("22_xfoqn")
-max_distance = 5000.0
+[node name="UnlockArea" type="Area2D" parent="Events/Gate_Crystal1"]
+collision_layer = 0
+collision_mask = 5
 
-[node name="KeyPickup" type="AudioStreamPlayer2D" parent="Events"]
-stream = ExtResource("23_ot837")
-max_distance = 5000.0
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Events/Gate_Crystal1/UnlockArea"]
+position = Vector2(0, -30)
+shape = SubResource("RectangleShape2D_j1inx")
 
 [node name="Souls" type="Node2D" parent="."]
 
@@ -843,3 +846,4 @@ custom_sprite_frames = ExtResource("27_m1v2j")
 [connection signal="body_entered" from="Next_level" to="Next_level" method="_on_body_entered"]
 [connection signal="body_entered" from="Events/Event_Trigger" to="Events/Event_Trigger" method="_on_body_entered"]
 [connection signal="body_entered" from="Events/Key1" to="Events/Key1" method="_on_body_entered"]
+[connection signal="body_entered" from="Events/Gate_Crystal1/UnlockArea" to="Events/Gate_Crystal1" method="_on_unlock_area_body_entered"]
