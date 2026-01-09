@@ -51,6 +51,8 @@ func _ready() -> void:
 	hp_bar.value = health.hp
 
 func _process(_delta: float) -> void:
+	if !can_move:
+		speed = 0
 	_correct_sprite()
 	ground.position.x = groundPosOffset if dir > 0 else groundPosOffset * -1
 		

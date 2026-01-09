@@ -21,12 +21,15 @@ func _process(_delta: float) -> void:
 	if is_on_floor() and !ground.enabled:
 		ground.set_enabled(true)
 	if just_jumped and velocity.y == 0:
+		velocity.y = 0
 		shoot()
+	if just_jumped and ground.is_colliding():
 		just_jumped = false
-		if stage > 2:
-			$stage_3_timer.start()
+		can_move = true
 	if speed != 0:
 		sprite.play("Walking")
+	else:
+		sprite.play("Idle")
 
 func _on_jump_timer_timeout() -> void:
 	$JumpChecker.position.x = dir*speed
@@ -41,12 +44,12 @@ func jump(small_jump_speed = null):
 	ground.set_enabled(false)
 
 func pre_shoot():
-	jump(-100)
+	can_move = false
+	jump(-200)
 	just_jumped = true
 
 func shoot():
 	print('skibidi')
-
 
 func _on_stage_3_timer_timeout() -> void:
 	shoot()
