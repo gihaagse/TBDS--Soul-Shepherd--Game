@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://dhoq3sp0l7yob"]
+[gd_scene load_steps=42 format=3 uid="uid://dhoq3sp0l7yob"]
 
 [ext_resource type="Script" uid="uid://byn1je7flnjo3" path="res://Scripts/Central/game_manager.gd" id="1_d3t52"]
 [ext_resource type="Texture2D" uid="uid://dfdfu6o1j3apv" path="res://Assets/Sprites/Playtest1.png" id="1_o8n5m"]
@@ -21,8 +21,10 @@
 [ext_resource type="PackedScene" uid="uid://cl45lm0hg20kf" path="res://Scenes/Items/soul.tscn" id="12_t8xxn"]
 [ext_resource type="Texture2D" uid="uid://bpawmr3tt1vu8" path="res://Assets/Sprites/Dialogue Sprites/monk_sitting_sprite.png" id="13_4s5db"]
 [ext_resource type="PackedScene" uid="uid://ndkp1vfqmr4g" path="res://Scenes/Dialogue/DialogueUI.tscn" id="13_heeoc"]
-[ext_resource type="PackedScene" uid="uid://c64nl2fkq45ge" path="res://Scenes/UI/Overlay/UiButtonKey.tscn" id="13_naxo4"]
+[ext_resource type="PackedScene" uid="uid://c64nl2fkq45ge" path="res://Scenes/UI/Overlay/AbilityInfoButton.tscn" id="13_naxo4"]
 [ext_resource type="PackedScene" uid="uid://c34kdnga4axvp" path="res://Scenes/Obstacles/obstacle_falling_tiles.tscn" id="17_1nbn6"]
+[ext_resource type="PackedScene" uid="uid://dm61xmst0522o" path="res://Scenes/Items/magic_bamboo.tscn" id="18_nbtf1"]
+[ext_resource type="Texture2D" uid="uid://c8dol58rb8t5j" path="res://Assets/Sprites/Magic Bamboo/+5 hp magic bamboo.png" id="21_h1nq4"]
 [ext_resource type="PackedScene" uid="uid://c2qbrpracjsi5" path="res://Scenes/Enemies/orc.tscn" id="22_x4l1k"]
 [ext_resource type="PackedScene" uid="uid://c45jpc3kaflr4" path="res://Scenes/CheckPoints/CheckPoint.tscn" id="25_muu7q"]
 [ext_resource type="Script" uid="uid://dtfsguwdnfr7m" path="res://Scripts/CheckPoints/start.gd" id="26_0qu4d"]
@@ -461,7 +463,7 @@ layer_2/modulate = Color(1, 1, 1, 0)
 layer_2/tile_data = PackedInt32Array(983039, 458754, 11, 917503, 458754, 11, 851967, 458754, 11, 786431, 458754, 11, 720895, 458754, 11, 655359, 458754, 11, 589823, 458754, 11, 65535, 458754, 11, 131071, 458754, 11, 196607, 458754, 11, 262143, 458754, 11, 327679, 458754, 11, 393215, 458754, 11, 458751, 458754, 11, 524287, 458754, 11, -393013, 458754, 11, -327477, 458754, 11, -261941, 458754, 11, -196405, 458754, 11, -130869, 458754, 11, -65333, 458754, 11, 203, 458754, 11, 65739, 458754, 11, 131275, 458754, 11)
 
 [node name="Player" parent="." instance=ExtResource("2_aveji")]
-position = Vector2(-44, -52)
+position = Vector2(-50, -43)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 process_mode = 3
@@ -625,6 +627,17 @@ position = Vector2(-139, -48)
 
 [node name="obstacle_spike" parent="Obstacles/spikes" instance=ExtResource("31_1nbn6")]
 position = Vector2(233, 187)
+
+[node name="MagicBamboo" type="Node2D" parent="Obstacles"]
+z_index = 4
+position = Vector2(-1, -17)
+
+[node name="MagicBamboo" parent="Obstacles/MagicBamboo" instance=ExtResource("18_nbtf1")]
+z_index = 5
+position = Vector2(-112, -123)
+texture = ExtResource("21_h1nq4")
+heal_amount = 5
+COLOR = Color(0, 0.59607846, 0.8627451, 1)
 
 [node name="ParralaxBackground" parent="." instance=ExtResource("10_um1rd")]
 z_index = 1

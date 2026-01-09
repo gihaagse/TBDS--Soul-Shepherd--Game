@@ -63,8 +63,28 @@ vertical_alignment = 1
 [node name="Settings_Tab_Container" parent="MarginContainer/VBoxContainer" instance=ExtResource("4_3u1ve")]
 layout_mode = 2
 size_flags_vertical = 3
+focus_neighbor_top = NodePath("../Exit")
+focus_neighbor_bottom = NodePath("TabContainer/Graphics/MarginContainer/ScrollContainer/VBoxContainer/Window_Mode_Button/HBoxContainer/OptionButton")
+
+[node name="TabContainer" parent="MarginContainer/VBoxContainer/Settings_Tab_Container" index="0"]
+current_tab = 0
+
+[node name="Graphics" parent="MarginContainer/VBoxContainer/Settings_Tab_Container/TabContainer" index="1"]
+visible = true
+
+[node name="OptionButton" parent="MarginContainer/VBoxContainer/Settings_Tab_Container/TabContainer/Graphics/MarginContainer/ScrollContainer/VBoxContainer/Resolution_Mode_button/HBoxContainer" index="2"]
+focus_neighbor_bottom = NodePath("../../../../../../../../../Exit")
+
+[node name="Controls" parent="MarginContainer/VBoxContainer/Settings_Tab_Container/TabContainer" index="2"]
+visible = false
 
 [node name="Exit" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 8
+focus_neighbor_top = NodePath("../Settings_Tab_Container")
+focus_neighbor_bottom = NodePath("../Settings_Tab_Container")
 text = "Exit"
+
+[editable path="MarginContainer/VBoxContainer/Settings_Tab_Container"]
+[editable path="MarginContainer/VBoxContainer/Settings_Tab_Container/TabContainer/Graphics/MarginContainer/ScrollContainer/VBoxContainer/Window_Mode_Button"]
+[editable path="MarginContainer/VBoxContainer/Settings_Tab_Container/TabContainer/Graphics/MarginContainer/ScrollContainer/VBoxContainer/Resolution_Mode_button"]

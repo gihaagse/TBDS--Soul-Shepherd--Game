@@ -13,15 +13,23 @@ var turn_on_body : Array[int]
 var start_pos: Vector2
 var end_pos: Vector2
 var control_point: Vector2
-@export var control_point_offset := Vector2(50, -50)
+@export var control_point_offset := Vector2(50, -25)
 var t := 0.0
 @export var duration := 1.5
 @onready var enemy_hat = load("res://Scenes/Weapons/enemy_hat_projectile.tscn")
 @onready var main = get_tree().get_root().get_node("Level")
 var is_first: bool = true
+var first_time: bool = true
+var boss_stage: int
+var hat_number: int = 1
+var hat_position_offset: float
 
 func _ready() -> void:
-	if is_first:
+	if boss_stage == 1:
+		hat_position_offset = 9
+	if boss_stage > 1:
+		hat_position_offset = 9
+	if hat_number == 1:
 		$HatSplitTimer.start()
 	else:
 		despawn.wait_time -= 1
@@ -36,14 +44,20 @@ func _ready() -> void:
 	
 func _physics_process(_delta: float) -> void:
 	velocity.x = direction * speed
-	if $HatSplitTimer.time_left == 1.0:
+	if ((hat_number == 1 and $HatSplitTimer.is_stopped()) or hat_number == 2) and start_pos == Vector2(0.0, 0.0):
+		t = 0.0
 		start_pos = global_position
-		start_pos.x = start_pos.x + 100
+		if boss_stage > 1:
+			if hat_number == 1:
+				start_pos.y = start_pos.y + 15
+			if hat_number == 2:
+				start_pos.y = start_pos.y - 15
 		end_pos = start_pos
-		end_pos.x = end_pos.x + 100
-		control_point = global_position + control_point_offset
-		print(start_pos)
-		print(end_pos)
+		end_pos.x = end_pos.x + (100*direction)
+		if hat_number == 1:
+			control_point_offset.y = control_point_offset.y * -1
+		control_point_offset.x = control_point_offset.x * direction
+		control_point = start_pos + control_point_offset
 	var collision = move_and_collide(velocity * _delta)
 	if collision:
 		_on_body_entered(collision)
@@ -51,9 +65,11 @@ func _physics_process(_delta: float) -> void:
 	t += _delta / duration
 	t = clamp(t, 0, 1)
 
-	#6global_position = bezier(start_pos, control_point, end_pos, t)
+	if $HatSplitTimer.is_stopped() and first_time and hat_number != 3:
+		global_position = bezier(start_pos, control_point, end_pos, t)
 	
-	#print(global_position)
+	if global_position == end_pos:
+		first_time = false
 
 func _on_body_entered(collision: KinematicCollision2D) -> void:
 	var coll = collision.get_collider()
@@ -95,14 +111,24 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 		direction = -direction
 		
 func _on_hat_split_timer_timeout() -> void:
-	print("skibedi")
+	if boss_stage > 1:
+		add_hat(2)
+		add_hat(3)
+	else:
+		global_position.y = global_position.y + hat_position_offset
+		add_hat(2)
+	$HatSplitTimer.stop()
+	
+func add_hat(_hat_number: int) -> void:
 	var instance = enemy_hat.instantiate()
 	instance.sprite = sprite
 	instance.spawnpos = global_position
-	instance.spawnpos.y = instance.spawnpos.y - 10
+	if _hat_number == 2:
+		instance.spawnpos.y = instance.spawnpos.y - hat_position_offset*2
+	if _hat_number == 3:
+		instance.spawnpos.y = instance.spawnpos.y - hat_position_offset
 	instance.velocity = velocity
 	instance.direction = direction
-	instance.is_first = false
+	instance.hat_number = _hat_number
+	instance.boss_stage = boss_stage
 	main.add_child.call_deferred(instance)
-	await get_tree().process_frame
-	$HatSplitTimer.stop()

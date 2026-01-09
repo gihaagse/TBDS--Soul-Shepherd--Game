@@ -4,6 +4,8 @@ func _ready() -> void:
 	_focus_current_tab()
 	tab_changed.connect(_on_tab_changed)
 	OptionsManager._set_focus_all_on_children(self)
+	focus_entered.connect(_on_focus_entered)
+
 
 func _on_tab_changed(_tab: int) -> void:
 	_focus_current_tab()
@@ -22,3 +24,6 @@ func _focus_current_tab() -> void:
 	var first_control := tab_control.get_node_or_null("ScrollContainer/VBoxContainer/Window_Mode_Button")
 	if first_control:
 		first_control.grab_focus()
+
+func _on_focus_entered() -> void:
+	print("tabcontainer got the focus instead")

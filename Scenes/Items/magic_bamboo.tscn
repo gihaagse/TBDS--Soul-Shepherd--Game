@@ -1,0 +1,50 @@
+[gd_scene load_steps=7 format=3 uid="uid://dm61xmst0522o"]
+
+[ext_resource type="Script" uid="uid://khd724pvd3w2" path="res://Scripts/Items/magic_bamboo.gd" id="1_4capw"]
+[ext_resource type="Texture2D" uid="uid://dmv57vx1668nw" path="res://Assets/Sprites/Magic Bamboo/+ 15 hp magic bamboo.png" id="2_80raw"]
+[ext_resource type="PackedScene" uid="uid://b4butim8mv1dk" path="res://Assets/Particles/explosion.tscn" id="3_33tjw"]
+[ext_resource type="FontFile" uid="uid://cojj5fwwf0jhx" path="res://Assets/Fonts/PixelOperator8.ttf" id="3_80raw"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_80raw"]
+bounce = 0.4
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4capw"]
+size = Vector2(22, 22)
+
+[node name="RigidBody2D" type="RigidBody2D"]
+collision_layer = 4096
+mass = 0.2
+physics_material_override = SubResource("PhysicsMaterial_80raw")
+script = ExtResource("1_4capw")
+is_active = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_4capw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -1)
+texture = ExtResource("2_80raw")
+
+[node name="Explosion" parent="." instance=ExtResource("3_33tjw")]
+
+[node name="Label" type="Label" parent="."]
+z_index = 10
+offset_left = -35.0
+offset_top = -29.0
+offset_right = 41.0
+offset_bottom = -6.0
+theme_override_colors/font_color = Color(2.0404259e-05, 1.1758686, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0.6153196, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("3_80raw")
+theme_override_font_sizes/font_size = 12
+
+[node name="Area2D" type="Area2D" parent="."]
+visible = false
+collision_layer = 4096
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_4capw")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

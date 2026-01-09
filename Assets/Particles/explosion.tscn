@@ -1,0 +1,40 @@
+[gd_scene load_steps=3 format=3 uid="uid://b4butim8mv1dk"]
+
+[sub_resource type="Curve" id="Curve_7rj46"]
+_limits = [0.0, 1.0, 0.0, 2.0]
+_data = [Vector2(0, 1), 0.0, 1.8008173, 0, 0, Vector2(1.9534885, 0.13483155), 0.7306111, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_q7epf"]
+offsets = PackedFloat32Array(0, 0.739726, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.86986303, 0.86986303, 0.86986303, 1, 1, 1, 1, 0)
+
+[node name="Explosion" type="CPUParticles2D"]
+emitting = false
+amount = 65
+lifetime = 0.5
+one_shot = true
+explosiveness = 1.0
+lifetime_randomness = 0.65
+emission_shape = 3
+emission_rect_extents = Vector2(1, 1)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 50.0
+initial_velocity_max = 90.0
+angular_velocity_min = -75.0
+angular_velocity_max = 75.0
+orbit_velocity_min = -1.0
+orbit_velocity_max = 1.0
+linear_accel_min = 25.0
+linear_accel_max = 50.0
+radial_accel_min = -75.0
+radial_accel_max = 75.0
+tangential_accel_max = 100.0
+damping_min = 10.0
+damping_max = 15.0
+scale_amount_min = 1.5
+scale_amount_max = 3.5
+scale_amount_curve = SubResource("Curve_7rj46")
+color = Color(1, 0, 0, 1)
+color_ramp = SubResource("Gradient_q7epf")

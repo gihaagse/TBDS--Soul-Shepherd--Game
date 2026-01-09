@@ -1,6 +1,6 @@
-[gd_resource type="SpriteFrames" load_steps=14 format=3 uid="uid://1pu7u640aosc"]
+[gd_resource type="SpriteFrames" load_steps=15 format=3 uid="uid://1pu7u640aosc"]
 
-[ext_resource type="Texture2D" uid="uid://b6pno2ks2oig0" path="res://Assets/Sprites/Wisps/Red_devil.png" id="1_lwyhh"]
+[ext_resource type="Texture2D" uid="uid://dnfhn83chffmp" path="res://Assets/Sprites/Wisps/Vuur_sprite_1.png" id="1_lwyhh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fbaso"]
 atlas = ExtResource("1_lwyhh")
@@ -50,6 +50,10 @@ region = Rect2(160, 0, 16, 16)
 atlas = ExtResource("1_lwyhh")
 region = Rect2(176, 0, 16, 16)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_undfg"]
+atlas = ExtResource("1_lwyhh")
+region = Rect2(192, 0, 16, 16)
+
 [resource]
 animations = [{
 "frames": [{
@@ -88,8 +92,11 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_eyl3b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_undfg")
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 24.0
 }]

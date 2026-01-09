@@ -12,8 +12,9 @@ class_name HP
 signal hp_changed
 
 enum DamageType { NORMAL, FALL, SWORD, PROJECTILE}
+enum HealType { NORMAL}
 
-func take_damage(dmg : int, damage_type: DamageType = DamageType.NORMAL):
+func take_damage(dmg : int, damage_type: DamageType = DamageType.NORMAL, ):
 	UtilsEffect.damage_effect(player_shader_material)
 	
 	hp -= dmg
@@ -47,3 +48,11 @@ func _on_timer_timeout() -> void:
 	#if get_parent().is_in_group("Player"):
 		#var player : Player = get_parent()
 		#CheckPointManager.respawn_player_to_checkpoint.emit(player)
+
+func health_heal(amount : int, heal_type: HealType = HealType.NORMAL):
+	if hp + amount > 100:
+		hp = 100
+	else: 
+		hp += amount
+	$HealingSFX.playing = true
+	$HealingSFX._on_started()

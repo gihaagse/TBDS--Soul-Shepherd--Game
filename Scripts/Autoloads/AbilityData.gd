@@ -31,10 +31,11 @@ enum ability_list {
 	Idling,
 	Walking,
 	Falling,
+	Dialogue,
+	
 	Attack1,
 	Airattack1,
 	Archery,
-	Dialogue,
 	
 	Dash,
 	Wallsliding,
@@ -48,7 +49,10 @@ var cooldowns: Dictionary = {
 	ability_list.Dash: 1.0,
 	ability_list.Attack1: 0.5,
 	ability_list.Archery: 0.5,
-	ability_list.WallJump: 0.2
+	ability_list.WallJump: 0.5,
+	ability_list.DoubleJump: 0.5,
+	ability_list.Airgliding: 1.0,
+	ability_list.Wallsliding: 0.5
 }
 
 var active_cooldown_timers = {}
@@ -200,6 +204,9 @@ func get_action_label(action_name: String) -> String:
 
 
 func get_ability_description(ability_id) -> String:
+	for i in range (4):
+		if ability_id == i:
+			return ""
 	var data: Dictionary = INFO[ability_id]
 	var action_name: String = ABILITY_ACTION[ability_id]
 	

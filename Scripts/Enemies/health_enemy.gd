@@ -23,6 +23,7 @@ func take_damage(dmg : int):
 		Engine.time_scale = .2
 		timer.start()
 	elif(hp <= 0):
+		_on_death_drops()
 		#drop_item()
 		get_parent().queue_free()
 
@@ -45,3 +46,15 @@ func drop_item() -> void:
 	var container: Node = get_tree().current_scene.get_node("ItemContainer")
 
 	container.call_deferred("add_child", current_item)
+
+func _on_death_drops():
+	var parent = get_parent()
+	var items_to_drop = parent.get_node_or_null("Drops")
+	var spawn_point: Marker2D = parent.get_node_or_null("ItemSpawnPoint")
+	
+	if items_to_drop:
+		print("items_to_drop children:", items_to_drop.get_children())
+
+	if items_to_drop and spawn_point:
+		for item in items_to_drop.get_children():
+			ItemDropManager.drop_item(item, spawn_point.global_position)

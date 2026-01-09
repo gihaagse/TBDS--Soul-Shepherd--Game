@@ -45,7 +45,7 @@ func _physics_process(_delta: float) -> void:
 func _on_body_entered(collision: KinematicCollision2D) -> void:
 	var coll = collision.get_collider()
 	var hp = coll.get_node_or_null("Health")
-	print("bop ")
+	#print("bop ")
 	if hp and hp.has_method("take_damage"):
 		print("Body Working_code :D")
 		hp.take_damage(10)

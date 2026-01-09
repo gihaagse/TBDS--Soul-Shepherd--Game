@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://d2ijk6dxvytlk"]
+
+[ext_resource type="PackedScene" uid="uid://coie7l7g1bhv0" path="res://Scenes/UI/Components/options_display_button.tscn" id="1_i5465"]
+[ext_resource type="Script" uid="uid://b6b3apfcqn6j8" path="res://Scripts/UI/Components/resolution_button.gd" id="2_vdcbf"]
+
+[node name="VSyncButton" instance=ExtResource("1_i5465")]
+script = ExtResource("2_vdcbf")
+
+[node name="Label" parent="HBoxContainer" index="0"]
+text = "V-Sync"

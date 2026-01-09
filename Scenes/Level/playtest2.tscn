@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://lahfkubql7vo"]
+[gd_scene load_steps=33 format=3 uid="uid://lahfkubql7vo"]
 
 [ext_resource type="Texture2D" uid="uid://dfdfu6o1j3apv" path="res://Assets/Sprites/Playtest1.png" id="1_f065d"]
 [ext_resource type="Script" uid="uid://beypopj8ttlnq" path="res://Scripts/Level/playtest_2.gd" id="1_qt3gr"]
@@ -22,11 +22,13 @@
 [ext_resource type="Script" uid="uid://bpkjqkjnq8o6g" path="res://Scripts/Player/General/killzone.gd" id="19_8j3de"]
 [ext_resource type="AudioStream" uid="uid://cbtn1bitrynwi" path="res://Assets/Audio/Music/sample.wav" id="21_v2evn"]
 [ext_resource type="PackedScene" uid="uid://c45jpc3kaflr4" path="res://Scenes/CheckPoints/CheckPoint.tscn" id="22_pv5y6"]
+[ext_resource type="PackedScene" uid="uid://dgm6tcibml5l" path="res://Scenes/Enemies/dragon_fly_enemy.tscn" id="23_0nra7"]
 [ext_resource type="Script" uid="uid://dtfsguwdnfr7m" path="res://Scripts/CheckPoints/start.gd" id="23_qt3gr"]
 [ext_resource type="PackedScene" uid="uid://bu78o5fps1jsf" path="res://Scenes/Enemies/boss_enemy_1.tscn" id="24_w0jtt"]
 [ext_resource type="PackedScene" uid="uid://c2qbrpracjsi5" path="res://Scenes/Enemies/orc.tscn" id="25_17aq4"]
 [ext_resource type="PackedScene" uid="uid://c34kdnga4axvp" path="res://Scenes/Obstacles/obstacle_falling_tiles.tscn" id="26_0nra7"]
 [ext_resource type="PackedScene" uid="uid://d2jbqn300os54" path="res://Scenes/Obstacles/obstacle_spike.tscn" id="27_6qp0l"]
+[ext_resource type="PackedScene" uid="uid://dm61xmst0522o" path="res://Scenes/Items/magic_bamboo.tscn" id="28_6qp0l"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j3um3"]
 texture = ExtResource("1_f065d")
@@ -461,7 +463,7 @@ hpLabel = NodePath("../CanvasLayer/HP")
 gameOverScreen = NodePath("../CanvasLayer/ColorRect")
 
 [node name="Player" parent="." instance=ExtResource("4_qt3gr")]
-position = Vector2(52, 212)
+position = Vector2(2972, 116)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 process_mode = 3
@@ -595,10 +597,6 @@ shape = SubResource("WorldBoundaryShape2D_snitv")
 
 [node name="Node2D" type="Node2D" parent="."]
 
-[node name="Enemy" parent="Node2D" instance=ExtResource("25_17aq4")]
-z_index = 9
-position = Vector2(318, 229)
-
 [node name="Enemy2" parent="Node2D" instance=ExtResource("25_17aq4")]
 z_index = 9
 position = Vector2(1698, 131)
@@ -610,6 +608,13 @@ position = Vector2(921, 167)
 [node name="boss_enemy_1" parent="Node2D" instance=ExtResource("24_w0jtt")]
 z_index = 9
 position = Vector2(3075, 133)
+
+[node name="Enemy4" parent="Node2D" instance=ExtResource("23_0nra7")]
+z_index = 9
+position = Vector2(126, 174)
+
+[node name="GrapplingHookSystem" parent="." node_paths=PackedStringArray("player_ref") instance=ExtResource("20_lt7pv")]
+player_ref = NodePath("../Player")
 
 [node name="Level1Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("21_v2evn")
@@ -669,6 +674,15 @@ position = Vector2(-139, -48)
 
 [node name="obstacle_spike" parent="Obstacles/spikes" instance=ExtResource("27_6qp0l")]
 position = Vector2(233, 187)
+
+[node name="MagicBamboo" type="Node2D" parent="Obstacles"]
+z_index = 4
+position = Vector2(-1, -17)
+
+[node name="MagicBamboo" parent="Obstacles/MagicBamboo" instance=ExtResource("28_6qp0l")]
+position = Vector2(-110, -11)
+heal_amount = 10
+COLOR = Color(0, 0.59607846, 0.8627451, 1)
 
 [connection signal="body_entered" from="killzone" to="killzone" method="_on_body_entered"]
 

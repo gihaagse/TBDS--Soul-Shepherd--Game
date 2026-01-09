@@ -44,9 +44,9 @@ func start(body: Node2D) -> void:
 func apply_effects(player: Player, effect_type : EffectTypes):
 	match effect_type:
 		EffectTypes.FALLING_TILE:
-			UtilsEffect.shake_sprite($MainSpirte, active_for - .5)
+			UtilsEffect.shake_sprite($MainSpirte, active_for / 3 * 2, 3, 1000)
 			await get_tree().create_timer(.5).timeout 
-			UtilsEffect.fade_sprite($MainSpirte, active_for - 1.0)
+			UtilsEffect.fade_sprite($MainSpirte, active_for / 3 * 2)
 		_:
 			pass
 		

@@ -9,7 +9,7 @@ size = Vector2(18, 16)
 
 [node name="obstacle_falling_tiles" instance=ExtResource("1_glt4l")]
 script = ExtResource("2_0o4b1")
-active_for = 1.5
+active_for = 1.0
 activation_delay = 0.1
 one_time_use = 1
 

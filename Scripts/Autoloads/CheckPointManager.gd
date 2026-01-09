@@ -136,6 +136,9 @@ func _respawn_player_to_checkpoint(player: Player):
 	
 	await get_tree().create_timer(.5).timeout
 
+func get_root():
+	return obstacles_root
+
 func reset_obstacles_subtree() -> void:
 	if is_instance_valid(obstacles_root):
 		obstacles_root.queue_free()
@@ -143,3 +146,5 @@ func reset_obstacles_subtree() -> void:
 	obstacles_root = obstacles_packed.instantiate()
 	obstacles_parent.add_child(obstacles_root)
 	obstacles_parent.move_child(obstacles_root, obstacles_index)
+	
+	

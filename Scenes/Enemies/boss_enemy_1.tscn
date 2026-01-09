@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://bu78o5fps1jsf"]
+[gd_scene load_steps=41 format=3 uid="uid://bu78o5fps1jsf"]
 
 [ext_resource type="Script" uid="uid://cuyrxjtu26bru" path="res://Scripts/Enemies/boss_enemy_1.gd" id="1_v0yt4"]
 [ext_resource type="PackedScene" uid="uid://cvgjcwqn6k8eu" path="res://Scenes/UI/Overlay/health.tscn" id="2_rkuo3"]
@@ -6,6 +6,8 @@
 [ext_resource type="Shader" uid="uid://o6ancnl5jgcr" path="res://Shaders/Blink.gdshader" id="4_styb1"]
 [ext_resource type="Texture2D" uid="uid://oq7kaex2808h" path="res://Assets/Sprites/first_boss.png" id="5_v0yt4"]
 [ext_resource type="FontFile" uid="uid://x2dwsfc3en6q" path="res://Assets/Tutorial Open Assets/brackeys_platformer_assets/fonts/PixelOperator8.ttf" id="6_04yeg"]
+[ext_resource type="PackedScene" uid="uid://dm61xmst0522o" path="res://Scenes/Items/magic_bamboo.tscn" id="7_aesm5"]
+[ext_resource type="Texture2D" uid="uid://utw0u8msxwh0" path="res://Assets/Sprites/Magic Bamboo/+25 hp magic bamboo.png" id="8_styb1"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6hc3a"]
 resource_local_to_scene = true
@@ -328,8 +330,21 @@ theme_override_colors/font_outline_color = Color(1, 0, 0, 1)
 theme_override_styles/fill = SubResource("StyleBoxFlat_rkuo3")
 show_percentage = false
 
+[node name="Drops" type="Node2D" parent="."]
+z_index = 5
+
+[node name="MagicBamboo" parent="Drops" instance=ExtResource("7_aesm5")]
+texture = ExtResource("8_styb1")
+heal_amount = 25
+COLOR = Color(0.7921569, 0.32156864, 0.7882353, 1)
+drop_chance = 15
+is_active = false
+[node name="stage_3_timer" type="Timer" parent="."]
+wait_time = 0.5
+
 [connection signal="hp_changed" from="Health" to="." method="_on_health_hp_changed"]
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="timeout" from="in_range_shoot_timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="TopCheckCooldown" to="." method="_on_top_check_cooldown_timeout"]
 [connection signal="timeout" from="JumpTimer" to="." method="_on_jump_timer_timeout"]
+[connection signal="timeout" from="stage_3_timer" to="." method="_on_stage_3_timer_timeout"]

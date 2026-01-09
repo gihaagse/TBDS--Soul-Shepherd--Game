@@ -8,8 +8,9 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	$TabContainer/Graphics/MarginContainer/ScrollContainer/VBoxContainer/Window_Mode_Button.grab_focus()
+	#$TabContainer/Graphics/MarginContainer/ScrollContainer/VBoxContainer/Window_Mode_Button.grab_focus()
 	OptionsManager._set_focus_all_on_children(self)
+	focus_entered.connect(_on_focus_entered)
 	set_process(false)
 
 
@@ -30,7 +31,7 @@ func options_menu_input() -> void:
 			return
 			
 		var next_tab = tab_container.current_tab + 1
-		change_tab(next_tab) 
+		change_tab(next_tab)
 	if Input.is_action_just_pressed("KeyboardArrowLeft") or Input.is_action_just_pressed("L1"):
 		if tab_container.current_tab == 0:
 			change_tab(tab_container.get_tab_count() -1)
@@ -43,3 +44,9 @@ func options_menu_input() -> void:
 		get_tree().change_scene_to_file("res://Scenes/UI/GameMenus/Start_Menu.tscn")
 	
 	pass
+	
+func _on_focus_entered() -> void:
+	var tab_bar: TabBar = tab_container.get_tab_control(0)
+	tab_bar.focus_mode = Control.FOCUS_ALL  
+	tab_bar.grab_focus()
+	print("From exit", tab_bar)

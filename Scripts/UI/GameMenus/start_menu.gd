@@ -28,6 +28,7 @@ func _on_options_pressed() -> void:
 	options_menu.set_process(true)
 	options_menu.visible = true
 	$Logo.visible = false
+	options_menu.focus_on_default()
 	
 
 func on_exit_options_menu() -> void:
