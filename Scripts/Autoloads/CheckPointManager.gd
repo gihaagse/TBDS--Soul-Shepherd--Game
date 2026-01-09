@@ -25,6 +25,7 @@ func register_camera(camera: CameraMain):
 	camera_main = camera
 
 func register_start(Start: Marker2D):
+	print(Start)
 	unlocked_checkpoints.append({
 		"id": Start.checkppoint_id,
 		"position": Start.global_position,
