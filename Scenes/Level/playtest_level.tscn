@@ -29,7 +29,7 @@
 [ext_resource type="PackedScene" uid="uid://c45jpc3kaflr4" path="res://Scenes/CheckPoints/CheckPoint.tscn" id="25_muu7q"]
 [ext_resource type="Script" uid="uid://dtfsguwdnfr7m" path="res://Scripts/CheckPoints/start.gd" id="26_0qu4d"]
 [ext_resource type="AudioStream" uid="uid://cbtn1bitrynwi" path="res://Assets/Audio/Music/sample.wav" id="26_lxrd0"]
-[ext_resource type="SpriteFrames" uid="uid://1pu7u640aosc" path="res://Resources/Wisps/Fire_Wisp.tres" id="27_1nbn6"]
+[ext_resource type="SpriteFrames" uid="uid://cgtj4wt3ql8r1" path="res://Resources/Wisps/Fire_Wisp.tres" id="27_1nbn6"]
 [ext_resource type="SpriteFrames" uid="uid://ctjpgblgpxxr1" path="res://Resources/Wisps/Purple_Wisp.tres" id="27_x4l1k"]
 [ext_resource type="SpriteFrames" uid="uid://dddu3nk2vhaqr" path="res://Resources/Wisps/Red_Devil_Wisp.tres" id="28_naxo4"]
 [ext_resource type="SpriteFrames" uid="uid://btqrxjedotkrq" path="res://Resources/Wisps/Water_Wisp.tres" id="29_tqefj"]
@@ -566,7 +566,6 @@ visible = false
 visible = false
 
 [node name="AbilityInfoButton" parent="CanvasLayer" instance=ExtResource("13_naxo4")]
-anchors_preset = 6
 offset_top = -224.0
 offset_bottom = -184.0
 
