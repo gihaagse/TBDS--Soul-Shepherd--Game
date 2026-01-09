@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=3 uid="uid://dlo0qlmn2vs1c"]
+[gd_scene load_steps=63 format=3 uid="uid://dlo0qlmn2vs1c"]
 
 [ext_resource type="Script" uid="uid://byn1je7flnjo3" path="res://Scripts/Central/game_manager.gd" id="1_6qsb6"]
 [ext_resource type="Script" uid="uid://c2jeph0pjh467" path="res://Scripts/Level/playtest_level.gd" id="1_vps0q"]
@@ -22,7 +22,9 @@
 [ext_resource type="Script" uid="uid://b7008awu7lly6" path="res://Scenes/Level/next_level.gd" id="18_4bd1t"]
 [ext_resource type="Script" uid="uid://hfj0hgwiyiqu" path="res://Scripts/Central/event_trigger.gd" id="21_7y4qy"]
 [ext_resource type="Script" uid="uid://cbirdwbh5p7se" path="res://Scripts/Obstacles/gate_crystal.gd" id="21_syi08"]
+[ext_resource type="PackedScene" uid="uid://dm61xmst0522o" path="res://Scenes/Items/magic_bamboo.tscn" id="22_trt50"]
 [ext_resource type="PackedScene" uid="uid://c2qbrpracjsi5" path="res://Scenes/Enemies/orc.tscn" id="22_vps0q"]
+[ext_resource type="Texture2D" uid="uid://c8dol58rb8t5j" path="res://Assets/Sprites/Magic Bamboo/+5 hp magic bamboo.png" id="23_6x5t7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vps0q"]
 texture = ExtResource("2_5lk6k")
@@ -452,25 +454,13 @@ tracks/0/keys = {
 "values": ["You Are a Panda.
 Use the \"A\" and \"D\" keys or \"Left Joystick\" to move around."]
 }
-tracks/1/type = "value"
+tracks/1/type = "method"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Events/UpdatePing:playing")
+tracks/1/path = NodePath("Events/Event_Trigger")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/2/type = "method"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Events/Event_Trigger")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
 "times": PackedFloat32Array(0.1),
 "transitions": PackedFloat32Array(1),
 "values": [{
@@ -494,25 +484,44 @@ tracks/0/keys = {
 "update": 1,
 "values": ["Wait for the moving platforms to continue."]
 }
-tracks/1/type = "value"
+tracks/1/type = "method"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Events/UpdatePing:playing")
+tracks/1/path = NodePath("Events/Event_Trigger10")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_fby5h"]
+resource_name = "Event_Trigger11"
+length = 0.10000334
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Tips:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
+"values": ["Tutorial Complete.
+Enter the gate to travel deeper into the jungle."]
 }
-tracks/2/type = "method"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Events/Event_Trigger10")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Events/Event_Trigger11")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
 "times": PackedFloat32Array(0.1),
 "transitions": PackedFloat32Array(1),
 "values": [{
@@ -536,25 +545,13 @@ tracks/0/keys = {
 "update": 1,
 "values": ["Use \"Spacebar\" to jump"]
 }
-tracks/1/type = "value"
+tracks/1/type = "method"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Events/UpdatePing:playing")
+tracks/1/path = NodePath("Events/Event_Trigger2")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/2/type = "method"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Events/Event_Trigger2")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
 "times": PackedFloat32Array(0.1),
 "transitions": PackedFloat32Array(1),
 "values": [{
@@ -578,25 +575,13 @@ tracks/0/keys = {
 "update": 1,
 "values": ["Hold \"Spacebar\" to jump higher"]
 }
-tracks/1/type = "value"
+tracks/1/type = "method"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Events/UpdatePing:playing")
+tracks/1/path = NodePath("Events/Event_Trigger3")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/2/type = "method"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Events/Event_Trigger3")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
 "times": PackedFloat32Array(0.1),
 "transitions": PackedFloat32Array(1),
 "values": [{
@@ -621,25 +606,13 @@ tracks/0/keys = {
 "values": ["Be careful for hazards in the area.
 These can be fatal."]
 }
-tracks/1/type = "value"
+tracks/1/type = "method"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Events/UpdatePing:playing")
+tracks/1/path = NodePath("Events/Event_Trigger4")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/2/type = "method"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Events/Event_Trigger4")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
 "times": PackedFloat32Array(0.1),
 "transitions": PackedFloat32Array(1),
 "values": [{
@@ -664,25 +637,13 @@ tracks/0/keys = {
 "values": ["The Bamboo forest is crawling with enemies.
 Use \"Left Mouse Click\" to defeat them with your bamboo staff."]
 }
-tracks/1/type = "value"
+tracks/1/type = "method"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Events/UpdatePing:playing")
+tracks/1/path = NodePath("Events/Event_Trigger5")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/2/type = "method"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Events/Event_Trigger5")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
 "times": PackedFloat32Array(0.1),
 "transitions": PackedFloat32Array(1),
 "values": [{
@@ -707,25 +668,13 @@ tracks/0/keys = {
 "values": ["The gate is locked.
 I think I saw a key a little ways back."]
 }
-tracks/1/type = "value"
+tracks/1/type = "method"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Events/UpdatePing:playing")
+tracks/1/path = NodePath("Events/Event_Trigger6")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/2/type = "method"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Events/Event_Trigger6")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
 "times": PackedFloat32Array(0.1),
 "transitions": PackedFloat32Array(1),
 "values": [{
@@ -750,25 +699,13 @@ tracks/0/keys = {
 "values": ["Gravity is not kind to pandas.
 Careful not to fall from too high."]
 }
-tracks/1/type = "value"
+tracks/1/type = "method"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Events/UpdatePing:playing")
+tracks/1/path = NodePath("Events/Event_Trigger7")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/2/type = "method"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Events/Event_Trigger7")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
 "times": PackedFloat32Array(0.1),
 "transitions": PackedFloat32Array(1),
 "values": [{
@@ -793,25 +730,13 @@ tracks/0/keys = {
 "values": ["The Key is out of reach.
 Use \"Right Click\" to throw your bamboo hat to fetch it."]
 }
-tracks/1/type = "value"
+tracks/1/type = "method"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Events/UpdatePing:playing")
+tracks/1/path = NodePath("Events/Event_Trigger8")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/2/type = "method"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Events/Event_Trigger8")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
 "times": PackedFloat32Array(0.1),
 "transitions": PackedFloat32Array(1),
 "values": [{
@@ -836,25 +761,13 @@ tracks/0/keys = {
 "values": ["This gate is locked.
 You need to find a key."]
 }
-tracks/1/type = "value"
+tracks/1/type = "method"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Events/UpdatePing:playing")
+tracks/1/path = NodePath("Events/Event_Trigger9")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/2/type = "method"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Events/Event_Trigger9")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
 "times": PackedFloat32Array(0.1),
 "transitions": PackedFloat32Array(1),
 "values": [{
@@ -919,18 +832,6 @@ tracks/3/keys = {
 "args": [],
 "method": &"key_collect"
 }]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Events/KeyPickup:playing")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_y8y6m"]
@@ -1004,18 +905,6 @@ tracks/4/keys = {
 "method": &"key_collect"
 }]
 }
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Events/KeyPickup:playing")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
 
 [sub_resource type="Animation" id="Animation_77mva"]
 length = 0.001
@@ -1030,73 +919,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [""]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Events/UpdatePing:playing")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Events/KeyPickup:playing")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-
-[sub_resource type="Animation" id="Animation_fby5h"]
-resource_name = "Event_Trigger11"
-length = 0.10000334
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("CanvasLayer/Tips:text")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["Tutorial Complete.
-Enter the gate to travel deeper into the jungle."]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Events/UpdatePing:playing")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/2/type = "method"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Events/Event_Trigger11")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0.1),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"queue_free"
-}]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_77mva"]
@@ -1148,15 +970,12 @@ size = Vector2(60, 20)
 size = Vector2(40, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1hwo8"]
-size = Vector2(200, 20)
+size = Vector2(96.5, 90.25)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qkp6a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_obal1"]
 size = Vector2(16, 32)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1hwo8"]
-size = Vector2(96.5, 90.25)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1v0ja"]
 size = Vector2(30, 30)
@@ -1611,6 +1430,17 @@ position = Vector2(0, -30)
 shape = SubResource("RectangleShape2D_1hwo8")
 
 [node name="Obstacles" type="Node2D" parent="."]
+
+[node name="MagicBamboo" type="Node2D" parent="Obstacles"]
+z_index = 4
+position = Vector2(-1, -17)
+
+[node name="MagicBamboo" parent="Obstacles/MagicBamboo" instance=ExtResource("22_trt50")]
+z_index = 5
+position = Vector2(-112, -123)
+texture = ExtResource("23_6x5t7")
+heal_amount = 5
+COLOR = Color(0, 0.59607846, 0.8627451, 1)
 
 [node name="Next_level" type="Area2D" parent="."]
 position = Vector2(3808, 48)
