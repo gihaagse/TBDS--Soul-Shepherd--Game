@@ -25,7 +25,7 @@
 [ext_resource type="Script" uid="uid://hfj0hgwiyiqu" path="res://Scripts/Central/event_trigger.gd" id="21_ndi56"]
 [ext_resource type="Script" uid="uid://cbirdwbh5p7se" path="res://Scripts/Obstacles/gate_crystal.gd" id="24_j1inx"]
 [ext_resource type="PackedScene" uid="uid://cl45lm0hg20kf" path="res://Scenes/Items/soul.tscn" id="26_ifyxa"]
-[ext_resource type="SpriteFrames" uid="uid://1pu7u640aosc" path="res://Resources/Wisps/Fire_Wisp.tres" id="27_m1v2j"]
+[ext_resource type="SpriteFrames" uid="uid://cgtj4wt3ql8r1" path="res://Resources/Wisps/Fire_Wisp.tres" id="27_m1v2j"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_b4qox"]
 texture = ExtResource("3_rg2we")
@@ -563,7 +563,7 @@ position = Vector2(36, 200)
 script = ExtResource("6_qyhax")
 
 [node name="Player" parent="." instance=ExtResource("7_ifyxa")]
-position = Vector2(1712, -160)
+position = Vector2(36, 200)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 process_mode = 3
