@@ -1,7 +1,7 @@
 [gd_scene load_steps=29 format=3 uid="uid://dgsjthq5orhyf"]
 
 [ext_resource type="Texture2D" uid="uid://c3jf58yvjljmy" path="res://Assets/Sprites/tileset2.png" id="1_1705u"]
-[ext_resource type="Script" path="res://Scenes/Level/level_2_2.gd" id="1_w2h8h"]
+[ext_resource type="Script" uid="uid://dhm65txe15dn0" path="res://Scenes/Level/level_2_2.gd" id="1_w2h8h"]
 [ext_resource type="PackedScene" uid="uid://c5ongupm07qh3" path="res://Scenes/Player/player.tscn" id="2_25kfv"]
 [ext_resource type="Texture2D" uid="uid://goes5l2sfyvw" path="res://Assets/Sprites/Tileset1.png" id="2_ywklp"]
 [ext_resource type="Script" uid="uid://ce43l01wboarg" path="res://Scripts/UI/Overlay/canvas_layer.gd" id="3_3ngbt"]
@@ -18,7 +18,7 @@
 [ext_resource type="SpriteFrames" uid="uid://1pu7u640aosc" path="res://Resources/Wisps/Fire_Wisp.tres" id="15_qgpry"]
 [ext_resource type="SpriteFrames" uid="uid://dg0vx2sffi824" path="res://Resources/Wisps/Green_Wisp.tres" id="16_v8s0u"]
 [ext_resource type="SpriteFrames" uid="uid://dddu3nk2vhaqr" path="res://Resources/Wisps/Red_Devil_Wisp.tres" id="17_b3vhu"]
-[ext_resource type="PackedScene" path="res://Scenes/Background/parralax_background_2_2.tscn" id="18_b3vhu"]
+[ext_resource type="PackedScene" uid="uid://dgriy1udfe26i" path="res://Scenes/Background/parralax_background_2_2.tscn" id="18_b3vhu"]
 [ext_resource type="PackedScene" uid="uid://c45jpc3kaflr4" path="res://Scenes/CheckPoints/CheckPoint.tscn" id="20_yvtrx"]
 [ext_resource type="Script" uid="uid://dtfsguwdnfr7m" path="res://Scripts/CheckPoints/start.gd" id="21_iy8e7"]
 [ext_resource type="Script" uid="uid://bpkjqkjnq8o6g" path="res://Scripts/Player/General/killzone.gd" id="22_yvtrx"]

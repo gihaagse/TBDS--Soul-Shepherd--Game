@@ -30,6 +30,7 @@ OptionsManager="*res://Scripts/Autoloads/OptionsManager.gd"
 PlayerPro="*res://Scripts/Autoloads/player_pro.gd"
 ItemDropManager="*res://Scripts/Autoloads/ItemDropManager.gd"
 KeyManager="*res://Scripts/Autoloads/KeyManager.gd"
+SaveData="*res://Scripts/Autoloads/SaveData.gd"
 
 [display]
 

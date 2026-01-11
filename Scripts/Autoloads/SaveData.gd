@@ -1,7 +1,7 @@
 extends Node
-class_name SaveManager
 
 const SAVE_LOCATION := "user://SaveFile.save"
+signal saving
 
 var save_contents: Dictionary = {
 	"max_level": 1,
@@ -33,8 +33,9 @@ func _load() -> void:
 		save_contents = data
 
 func set_level_progress(level: int, part: int) -> void:
-	var current_l: int = int(save_contents["max_level"])  # <-- Cast!
-	var current_p: int = int(save_contents["max_part"])   # <-- Cast!
+	saving.emit()
+	var current_l: int = int(save_contents["max_level"]) 
+	var current_p: int = int(save_contents["max_part"])  
 	
 	if level > current_l or (level == current_l and part > current_p):
 		save_contents["max_level"] = level
@@ -42,6 +43,7 @@ func set_level_progress(level: int, part: int) -> void:
 		save()
 
 func reset_game() -> void:
+	saving.emit()
 	save_contents = {
 		"max_level": 1,
 		"max_part": 1
@@ -55,4 +57,4 @@ func get_max_part() -> int:
 	return int(save_contents["max_part"])
 
 func get_last_section() -> String:
-	return "%d_%d" % [int(save_contents["max_level"]), int(save_contents["max_part"])]
+	return "%d-%d" % [int(save_contents["max_level"]), int(save_contents["max_part"])]

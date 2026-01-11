@@ -1,31 +1,31 @@
 [gd_scene load_steps=60 format=3 uid="uid://dlo0qlmn2vs1c"]
 
-[ext_resource type="Script" uid="uid://byn1je7flnjo3" path="res://Scripts/Central/game_manager.gd" id="1_6qsb6"]
-[ext_resource type="Script" uid="uid://c2jeph0pjh467" path="res://Scripts/Level/playtest_level.gd" id="1_vps0q"]
-[ext_resource type="Texture2D" uid="uid://dfdfu6o1j3apv" path="res://Assets/Sprites/Playtest1.png" id="2_5lk6k"]
-[ext_resource type="Texture2D" uid="uid://j1w6x4hpn3ou" path="res://Assets/Icons/Sung Chin Woo Icon.png" id="3_3gi3r"]
-[ext_resource type="PackedScene" uid="uid://c45jpc3kaflr4" path="res://Scenes/CheckPoints/CheckPoint.tscn" id="4_3gi3r"]
-[ext_resource type="PackedScene" uid="uid://c5ongupm07qh3" path="res://Scenes/Player/player.tscn" id="4_7y4qy"]
-[ext_resource type="Script" uid="uid://dtfsguwdnfr7m" path="res://Scripts/CheckPoints/start.gd" id="5_7y4qy"]
-[ext_resource type="Script" uid="uid://ce43l01wboarg" path="res://Scripts/UI/Overlay/canvas_layer.gd" id="5_vps0q"]
-[ext_resource type="FontFile" uid="uid://x2dwsfc3en6q" path="res://Assets/Tutorial Open Assets/brackeys_platformer_assets/fonts/PixelOperator8.ttf" id="6_syi08"]
-[ext_resource type="PackedScene" uid="uid://dbawdw77kghcn" path="res://Scenes/UI/GameMenus/Pause_Menu.tscn" id="7_77mva"]
-[ext_resource type="PackedScene" uid="uid://brc3fv7pjl1bv" path="res://Scenes/UI/GameMenus/Options_Menu.tscn" id="8_trt50"]
-[ext_resource type="PackedScene" uid="uid://b1wpf7mxi7ax8" path="res://Scenes/UI/Overlay/ability_debug_menu.tscn" id="9_6x5t7"]
-[ext_resource type="PackedScene" uid="uid://bdqpqswjpdvot" path="res://Scenes/UI/Overlay/ability_grid.tscn" id="10_sinv2"]
-[ext_resource type="PackedScene" uid="uid://3nx8i28smrqo" path="res://Scenes/UI/GameMenus/Ability_Info.tscn" id="11_qkp6a"]
-[ext_resource type="PackedScene" uid="uid://bajjogst0v58d" path="res://Scenes/UI/Overlay/CheckPointRespawnUI.tscn" id="12_fby5h"]
-[ext_resource type="Script" uid="uid://b2b6rmyyluckx" path="res://Scripts/Player/General/camera_2d.gd" id="13_487g3"]
-[ext_resource type="PackedScene" uid="uid://5jrffwap8tjk" path="res://Scenes/Background/parralax_background.tscn" id="14_obal1"]
-[ext_resource type="Script" uid="uid://bpkjqkjnq8o6g" path="res://Scripts/Player/General/killzone.gd" id="15_io8sh"]
-[ext_resource type="AudioStream" uid="uid://cbtn1bitrynwi" path="res://Assets/Audio/Music/sample.wav" id="17_6y4we"]
-[ext_resource type="Script" uid="uid://b7008awu7lly6" path="res://Scenes/Level/next_level.gd" id="18_4bd1t"]
-[ext_resource type="Script" uid="uid://hfj0hgwiyiqu" path="res://Scripts/Central/event_trigger.gd" id="21_7y4qy"]
-[ext_resource type="Script" uid="uid://cbirdwbh5p7se" path="res://Scripts/Obstacles/gate_crystal.gd" id="21_syi08"]
-[ext_resource type="PackedScene" uid="uid://c2qbrpracjsi5" path="res://Scenes/Enemies/orc.tscn" id="22_vps0q"]
+[ext_resource type="Script" uid="uid://c2jeph0pjh467" path="res://Scripts/Level/playtest_level.gd" id="1_4bcqd"]
+[ext_resource type="Script" uid="uid://byn1je7flnjo3" path="res://Scripts/Central/game_manager.gd" id="2_fiy4m"]
+[ext_resource type="Texture2D" uid="uid://dfdfu6o1j3apv" path="res://Assets/Sprites/Playtest1.png" id="3_761oq"]
+[ext_resource type="Texture2D" uid="uid://j1w6x4hpn3ou" path="res://Assets/Icons/Sung Chin Woo Icon.png" id="4_jfsde"]
+[ext_resource type="PackedScene" uid="uid://c45jpc3kaflr4" path="res://Scenes/CheckPoints/CheckPoint.tscn" id="5_imv4w"]
+[ext_resource type="Script" uid="uid://dtfsguwdnfr7m" path="res://Scripts/CheckPoints/start.gd" id="6_26g8j"]
+[ext_resource type="PackedScene" uid="uid://c5ongupm07qh3" path="res://Scenes/Player/player.tscn" id="7_6skth"]
+[ext_resource type="Script" uid="uid://ce43l01wboarg" path="res://Scripts/UI/Overlay/canvas_layer.gd" id="8_5dr80"]
+[ext_resource type="FontFile" uid="uid://x2dwsfc3en6q" path="res://Assets/Tutorial Open Assets/brackeys_platformer_assets/fonts/PixelOperator8.ttf" id="9_b6pkf"]
+[ext_resource type="PackedScene" uid="uid://dbawdw77kghcn" path="res://Scenes/UI/GameMenus/Pause_Menu.tscn" id="10_j1x2j"]
+[ext_resource type="PackedScene" uid="uid://brc3fv7pjl1bv" path="res://Scenes/UI/GameMenus/Options_Menu.tscn" id="11_8jqki"]
+[ext_resource type="PackedScene" uid="uid://b1wpf7mxi7ax8" path="res://Scenes/UI/Overlay/ability_debug_menu.tscn" id="12_xdu28"]
+[ext_resource type="PackedScene" uid="uid://bdqpqswjpdvot" path="res://Scenes/UI/Overlay/ability_grid.tscn" id="13_s0mbj"]
+[ext_resource type="PackedScene" uid="uid://3nx8i28smrqo" path="res://Scenes/UI/GameMenus/Ability_Info.tscn" id="14_fmhbg"]
+[ext_resource type="PackedScene" uid="uid://bajjogst0v58d" path="res://Scenes/UI/Overlay/CheckPointRespawnUI.tscn" id="15_lpv7w"]
+[ext_resource type="Script" uid="uid://b2b6rmyyluckx" path="res://Scripts/Player/General/camera_2d.gd" id="16_w85r1"]
+[ext_resource type="PackedScene" uid="uid://5jrffwap8tjk" path="res://Scenes/Background/parralax_background.tscn" id="17_ab6ox"]
+[ext_resource type="Script" uid="uid://bpkjqkjnq8o6g" path="res://Scripts/Player/General/killzone.gd" id="18_mn8ec"]
+[ext_resource type="AudioStream" uid="uid://cbtn1bitrynwi" path="res://Assets/Audio/Music/sample.wav" id="19_hyn4w"]
+[ext_resource type="Script" uid="uid://hfj0hgwiyiqu" path="res://Scripts/Central/event_trigger.gd" id="20_xexco"]
+[ext_resource type="Script" uid="uid://cbirdwbh5p7se" path="res://Scripts/Obstacles/gate_crystal.gd" id="21_ywtrp"]
+[ext_resource type="Script" uid="uid://b7008awu7lly6" path="res://Scenes/Level/next_level.gd" id="22_5jmqk"]
+[ext_resource type="PackedScene" uid="uid://c2qbrpracjsi5" path="res://Scenes/Enemies/orc.tscn" id="23_bccc1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y8y6m"]
-texture = ExtResource("2_5lk6k")
+texture = ExtResource("3_761oq")
 10:0/0 = 0
 11:0/0 = 0
 12:0/0 = 0
@@ -246,7 +246,7 @@ texture = ExtResource("2_5lk6k")
 12:10/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vfbj7"]
-texture = ExtResource("3_3gi3r")
+texture = ExtResource("4_jfsde")
 7:4/0 = 0
 7:4/0/physics_layer_1/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 3:8/0 = 0
@@ -875,11 +875,12 @@ _data = {
 size = Vector2(48, 16)
 
 [node name="Level" type="Node2D"]
-script = ExtResource("1_vps0q")
+position = Vector2(1, 0)
+script = ExtResource("1_4bcqd")
 
 [node name="GameManager" type="Node" parent="." node_paths=PackedStringArray("stateLabel", "equipLabel", "hpLabel", "gameOverScreen")]
 unique_name_in_owner = true
-script = ExtResource("1_6qsb6")
+script = ExtResource("2_fiy4m")
 stateLabel = NodePath("../CanvasLayer/Current State")
 equipLabel = NodePath("../CanvasLayer/Current Equip")
 hpLabel = NodePath("../CanvasLayer/HP")
@@ -900,42 +901,42 @@ layer_2/tile_data = PackedInt32Array(-393013, 458754, 11, -327477, 458754, 11, -
 [node name="CheckPoints" type="Node2D" parent="."]
 z_index = 10
 
-[node name="Area2D" parent="CheckPoints" instance=ExtResource("4_3gi3r")]
+[node name="Area2D" parent="CheckPoints" instance=ExtResource("5_imv4w")]
 visible = false
 position = Vector2(400, 205)
 checkppoint_id = 1
 
-[node name="Area2D2" parent="CheckPoints" instance=ExtResource("4_3gi3r")]
+[node name="Area2D2" parent="CheckPoints" instance=ExtResource("5_imv4w")]
 visible = false
 position = Vector2(825, 144)
 checkppoint_id = 2
 
-[node name="Area2D3" parent="CheckPoints" instance=ExtResource("4_3gi3r")]
+[node name="Area2D3" parent="CheckPoints" instance=ExtResource("5_imv4w")]
 visible = false
 position = Vector2(2487, 191)
 checkppoint_id = 3
 
-[node name="Area2D4" parent="CheckPoints" instance=ExtResource("4_3gi3r")]
+[node name="Area2D4" parent="CheckPoints" instance=ExtResource("5_imv4w")]
 visible = false
 position = Vector2(3199, 50)
 checkppoint_id = 4
 
 [node name="Start" type="Marker2D" parent="CheckPoints"]
 position = Vector2(75, 219)
-script = ExtResource("5_7y4qy")
+script = ExtResource("6_26g8j")
 
-[node name="Player" parent="." instance=ExtResource("4_7y4qy")]
-position = Vector2(95, 226)
+[node name="Player" parent="." instance=ExtResource("7_6skth")]
+position = Vector2(95, 229)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 process_mode = 3
-script = ExtResource("5_vps0q")
+script = ExtResource("8_5dr80")
 
 [node name="Current State" type="Label" parent="CanvasLayer"]
 visible = false
 offset_right = 40.0
 offset_bottom = 23.0
-theme_override_fonts/font = ExtResource("6_syi08")
+theme_override_fonts/font = ExtResource("9_b6pkf")
 theme_override_font_sizes/font_size = 32
 text = "State: "
 
@@ -944,7 +945,7 @@ visible = false
 offset_top = 38.0
 offset_right = 168.0
 offset_bottom = 70.0
-theme_override_fonts/font = ExtResource("6_syi08")
+theme_override_fonts/font = ExtResource("9_b6pkf")
 theme_override_font_sizes/font_size = 32
 text = "Equip: "
 
@@ -955,7 +956,7 @@ anchor_bottom = 1.0
 offset_top = -32.0
 offset_right = 76.0
 grow_vertical = 0
-theme_override_fonts/font = ExtResource("6_syi08")
+theme_override_fonts/font = ExtResource("9_b6pkf")
 theme_override_font_sizes/font_size = 32
 text = "HP:"
 
@@ -983,17 +984,17 @@ offset_right = 20.0
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("6_syi08")
+theme_override_fonts/font = ExtResource("9_b6pkf")
 theme_override_font_sizes/font_size = 64
 text = "Game Over"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("7_77mva")]
+[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("10_j1x2j")]
 visible = false
 z_index = 6
 
-[node name="OptionsMenu" parent="CanvasLayer" instance=ExtResource("8_trt50")]
+[node name="OptionsMenu" parent="CanvasLayer" instance=ExtResource("11_8jqki")]
 visible = false
 
 [node name="DashTimer" type="Label" parent="CanvasLayer"]
@@ -1007,7 +1008,7 @@ grow_horizontal = 0
 text = "Dash Timer"
 horizontal_alignment = 2
 
-[node name="AbilityDebugMenu" parent="CanvasLayer" instance=ExtResource("9_6x5t7")]
+[node name="AbilityDebugMenu" parent="CanvasLayer" instance=ExtResource("12_xdu28")]
 visible = false
 anchors_preset = 5
 anchor_left = 0.5
@@ -1015,17 +1016,17 @@ anchor_right = 0.5
 anchor_bottom = 0.0
 grow_vertical = 1
 
-[node name="AbilityGrid" parent="CanvasLayer" instance=ExtResource("10_sinv2")]
+[node name="AbilityGrid" parent="CanvasLayer" instance=ExtResource("13_s0mbj")]
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
 grow_horizontal = 0
 grow_vertical = 0
 
-[node name="Ability_info" parent="CanvasLayer" instance=ExtResource("11_qkp6a")]
+[node name="Ability_info" parent="CanvasLayer" instance=ExtResource("14_fmhbg")]
 visible = false
 
-[node name="CheckPointRespawnUI" parent="CanvasLayer" instance=ExtResource("12_fby5h")]
+[node name="CheckPointRespawnUI" parent="CanvasLayer" instance=ExtResource("15_lpv7w")]
 visible = false
 
 [node name="Tips" type="Label" parent="CanvasLayer"]
@@ -1045,23 +1046,23 @@ horizontal_alignment = 1
 [node name="CameraMain" type="Camera2D" parent="." node_paths=PackedStringArray("player")]
 zoom = Vector2(4, 4)
 limit_left = 0
-script = ExtResource("13_487g3")
+script = ExtResource("16_w85r1")
 player = NodePath("../Player")
 
-[node name="ParralaxBackground" parent="." instance=ExtResource("14_obal1")]
+[node name="ParralaxBackground" parent="." instance=ExtResource("17_ab6ox")]
 z_index = 1
 position = Vector2(0, 324)
 
 [node name="killzone" type="Area2D" parent="."]
 position = Vector2(730, 400)
 collision_mask = 4
-script = ExtResource("15_io8sh")
+script = ExtResource("18_mn8ec")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="killzone"]
 shape = SubResource("WorldBoundaryShape2D_5ljwd")
 
 [node name="Level1Music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("17_6y4we")
+stream = ExtResource("19_hyn4w")
 volume_db = -30.0
 autoplay = true
 bus = &"Music"
@@ -1073,7 +1074,7 @@ libraries = {
 
 [node name="Event_Trigger" type="Area2D" parent="Events" node_paths=PackedStringArray("tip_label")]
 position = Vector2(95, 229)
-script = ExtResource("21_7y4qy")
+script = ExtResource("20_xexco")
 tip_label = NodePath("../../CanvasLayer/Tips")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Events/Event_Trigger"]
@@ -1081,7 +1082,7 @@ shape = SubResource("RectangleShape2D_7y4qy")
 
 [node name="Event_Trigger2" type="Area2D" parent="Events" node_paths=PackedStringArray("tip_label")]
 position = Vector2(274, 229)
-script = ExtResource("21_7y4qy")
+script = ExtResource("20_xexco")
 tip_label = NodePath("../../CanvasLayer/Tips")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Events/Event_Trigger2"]
@@ -1089,7 +1090,7 @@ shape = SubResource("RectangleShape2D_vps0q")
 
 [node name="Event_Trigger3" type="Area2D" parent="Events" node_paths=PackedStringArray("tip_label")]
 position = Vector2(504, 226)
-script = ExtResource("21_7y4qy")
+script = ExtResource("20_xexco")
 tip = "Hold \"Spacebar\" to jump higher"
 tip_label = NodePath("../../CanvasLayer/Tips")
 
@@ -1098,7 +1099,7 @@ shape = SubResource("RectangleShape2D_syi08")
 
 [node name="Event_Trigger4" type="Area2D" parent="Events" node_paths=PackedStringArray("tip_label")]
 position = Vector2(656, 226)
-script = ExtResource("21_7y4qy")
+script = ExtResource("20_xexco")
 tip = "Be careful for hazards in the area.\\nThese can damage and even be fatal."
 tip_label = NodePath("../../CanvasLayer/Tips")
 
@@ -1107,7 +1108,7 @@ shape = SubResource("RectangleShape2D_77mva")
 
 [node name="Event_Trigger5" type="Area2D" parent="Events" node_paths=PackedStringArray("tip_label")]
 position = Vector2(1512, 229)
-script = ExtResource("21_7y4qy")
+script = ExtResource("20_xexco")
 tip = "The Bamboo forest is crawling with enemies.\\n Use \"Left Mouse Click\" to defeat them with your bamboo staff"
 tip_label = NodePath("../../CanvasLayer/Tips")
 
@@ -1116,7 +1117,7 @@ shape = SubResource("RectangleShape2D_trt50")
 
 [node name="Event_Trigger6" type="Area2D" parent="Events" node_paths=PackedStringArray("tip_label")]
 position = Vector2(1304, 229)
-script = ExtResource("21_7y4qy")
+script = ExtResource("20_xexco")
 tip = "The gate is locked.\\n I think I saw a key a little ways back."
 tip_label = NodePath("../../CanvasLayer/Tips")
 
@@ -1125,7 +1126,7 @@ shape = SubResource("RectangleShape2D_io8sh")
 
 [node name="Event_Trigger7" type="Area2D" parent="Events" node_paths=PackedStringArray("tip_label")]
 position = Vector2(2192, -56)
-script = ExtResource("21_7y4qy")
+script = ExtResource("20_xexco")
 tip = "Gravity is not kind to pandas.\\nCareful not to fall from too high."
 tip_label = NodePath("../../CanvasLayer/Tips")
 
@@ -1134,7 +1135,7 @@ shape = SubResource("RectangleShape2D_6x5t7")
 
 [node name="Event_Trigger8" type="Area2D" parent="Events" node_paths=PackedStringArray("tip_label")]
 position = Vector2(2184, 229)
-script = ExtResource("21_7y4qy")
+script = ExtResource("20_xexco")
 tip = "The Key is out of reach.\\nUse \"Right Click\" to throw your bamboo hat to fetch it."
 tip_label = NodePath("../../CanvasLayer/Tips")
 
@@ -1143,7 +1144,7 @@ shape = SubResource("RectangleShape2D_fby5h")
 
 [node name="Event_Trigger9" type="Area2D" parent="Events" node_paths=PackedStringArray("tip_label")]
 position = Vector2(2480, 229)
-script = ExtResource("21_7y4qy")
+script = ExtResource("20_xexco")
 tip = "This gate is locked.\\nYou need to find a key."
 tip_label = NodePath("../../CanvasLayer/Tips")
 
@@ -1152,7 +1153,7 @@ shape = SubResource("RectangleShape2D_487g3")
 
 [node name="Event_Trigger10" type="Area2D" parent="Events" node_paths=PackedStringArray("tip_label")]
 position = Vector2(2536, 229)
-script = ExtResource("21_7y4qy")
+script = ExtResource("20_xexco")
 tip = "This gate is locked.\\nYou need to find a key."
 tip_label = NodePath("../../CanvasLayer/Tips")
 
@@ -1163,14 +1164,14 @@ shape = SubResource("RectangleShape2D_ubed8")
 z_index = 5
 position = Vector2(912, 312)
 collision_mask = 4100
-script = ExtResource("21_7y4qy")
+script = ExtResource("20_xexco")
 tip_label = NodePath("../../CanvasLayer/Tips")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Events/Key1"]
 shape = SubResource("RectangleShape2D_qkp6a")
 
 [node name="Sprite2D" type="Sprite2D" parent="Events/Key1"]
-texture = ExtResource("2_5lk6k")
+texture = ExtResource("3_761oq")
 region_enabled = true
 region_rect = Rect2(128, 128, 16, 16)
 
@@ -1178,27 +1179,27 @@ region_rect = Rect2(128, 128, 16, 16)
 z_index = 5
 position = Vector2(2088, 229)
 collision_mask = 4100
-script = ExtResource("21_7y4qy")
+script = ExtResource("20_xexco")
 tip_label = NodePath("../../CanvasLayer/Tips")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Events/Key2"]
 shape = SubResource("RectangleShape2D_qkp6a")
 
 [node name="Sprite2D" type="Sprite2D" parent="Events/Key2"]
-texture = ExtResource("2_5lk6k")
+texture = ExtResource("3_761oq")
 region_enabled = true
 region_rect = Rect2(128, 128, 16, 16)
 
 [node name="Gate_Crystal1" type="StaticBody2D" parent="Events"]
 z_index = 5
 position = Vector2(1352, 224)
-script = ExtResource("21_syi08")
+script = ExtResource("21_ywtrp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Events/Gate_Crystal1"]
 shape = SubResource("RectangleShape2D_obal1")
 
 [node name="Sprite2D" type="Sprite2D" parent="Events/Gate_Crystal1"]
-texture = ExtResource("2_5lk6k")
+texture = ExtResource("3_761oq")
 region_enabled = true
 region_rect = Rect2(144, 96, 16, 32)
 
@@ -1213,14 +1214,14 @@ shape = SubResource("RectangleShape2D_1hwo8")
 [node name="Gate_Crystal2" type="StaticBody2D" parent="Events"]
 z_index = 5
 position = Vector2(2536, 224)
-script = ExtResource("21_syi08")
+script = ExtResource("21_ywtrp")
 door_id = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Events/Gate_Crystal2"]
 shape = SubResource("RectangleShape2D_obal1")
 
 [node name="Sprite2D" type="Sprite2D" parent="Events/Gate_Crystal2"]
-texture = ExtResource("2_5lk6k")
+texture = ExtResource("3_761oq")
 region_enabled = true
 region_rect = Rect2(144, 96, 16, 32)
 
@@ -1237,28 +1238,28 @@ shape = SubResource("RectangleShape2D_1hwo8")
 [node name="Next_level" type="Area2D" parent="."]
 position = Vector2(3808, 48)
 collision_mask = 4
-script = ExtResource("18_4bd1t")
-level_name = "Playtest2"
+script = ExtResource("22_5jmqk")
+level_name = "level_2-2"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Next_level"]
 shape = SubResource("RectangleShape2D_1v0ja")
 
 [node name="Enemies" type="Node2D" parent="."]
 
-[node name="Enemy" parent="Enemies" instance=ExtResource("22_vps0q")]
+[node name="Enemy" parent="Enemies" instance=ExtResource("23_bccc1")]
 z_index = 7
 position = Vector2(1544, 234)
 can_move = false
 
-[node name="Enemy2" parent="Enemies" instance=ExtResource("22_vps0q")]
+[node name="Enemy2" parent="Enemies" instance=ExtResource("23_bccc1")]
 z_index = 7
 position = Vector2(1856, 229)
 
-[node name="Enemy3" parent="Enemies" instance=ExtResource("22_vps0q")]
+[node name="Enemy3" parent="Enemies" instance=ExtResource("23_bccc1")]
 z_index = 7
 position = Vector2(1992, 120)
 
-[node name="Enemy4" parent="Enemies" instance=ExtResource("22_vps0q")]
+[node name="Enemy4" parent="Enemies" instance=ExtResource("23_bccc1")]
 z_index = 7
 position = Vector2(1688, 8)
 
@@ -1275,18 +1276,18 @@ position = Vector2(2600, 248)
 
 [node name="Sprite2D" type="Sprite2D" parent="Moving_platforms/Moving_Platform"]
 position = Vector2(16, 0)
-texture = ExtResource("2_5lk6k")
+texture = ExtResource("3_761oq")
 region_enabled = true
 region_rect = Rect2(64, 160, 16, 16)
 
 [node name="Sprite2D2" type="Sprite2D" parent="Moving_platforms/Moving_Platform"]
-texture = ExtResource("2_5lk6k")
+texture = ExtResource("3_761oq")
 region_enabled = true
 region_rect = Rect2(64, 160, 16, 16)
 
 [node name="Sprite2D3" type="Sprite2D" parent="Moving_platforms/Moving_Platform"]
 position = Vector2(-16, 0)
-texture = ExtResource("2_5lk6k")
+texture = ExtResource("3_761oq")
 region_enabled = true
 region_rect = Rect2(64, 160, 16, 16)
 
@@ -1299,18 +1300,18 @@ position = Vector2(2904, 248)
 
 [node name="Sprite2D" type="Sprite2D" parent="Moving_platforms/Moving_Platform2"]
 position = Vector2(16, 0)
-texture = ExtResource("2_5lk6k")
+texture = ExtResource("3_761oq")
 region_enabled = true
 region_rect = Rect2(64, 160, 16, 16)
 
 [node name="Sprite2D2" type="Sprite2D" parent="Moving_platforms/Moving_Platform2"]
-texture = ExtResource("2_5lk6k")
+texture = ExtResource("3_761oq")
 region_enabled = true
 region_rect = Rect2(64, 160, 16, 16)
 
 [node name="Sprite2D3" type="Sprite2D" parent="Moving_platforms/Moving_Platform2"]
 position = Vector2(-16, 0)
-texture = ExtResource("2_5lk6k")
+texture = ExtResource("3_761oq")
 region_enabled = true
 region_rect = Rect2(64, 160, 16, 16)
 
@@ -1323,18 +1324,18 @@ position = Vector2(3240, 248)
 
 [node name="Sprite2D" type="Sprite2D" parent="Moving_platforms/Moving_Platform3"]
 position = Vector2(16, 0)
-texture = ExtResource("2_5lk6k")
+texture = ExtResource("3_761oq")
 region_enabled = true
 region_rect = Rect2(64, 160, 16, 16)
 
 [node name="Sprite2D2" type="Sprite2D" parent="Moving_platforms/Moving_Platform3"]
-texture = ExtResource("2_5lk6k")
+texture = ExtResource("3_761oq")
 region_enabled = true
 region_rect = Rect2(64, 160, 16, 16)
 
 [node name="Sprite2D3" type="Sprite2D" parent="Moving_platforms/Moving_Platform3"]
 position = Vector2(-16, 0)
-texture = ExtResource("2_5lk6k")
+texture = ExtResource("3_761oq")
 region_enabled = true
 region_rect = Rect2(64, 160, 16, 16)
 
