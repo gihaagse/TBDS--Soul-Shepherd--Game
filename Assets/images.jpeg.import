@@ -7,7 +7,7 @@ valid=false
 
 [deps]
 
-source_file="res://Assets/Textures/images.jpeg"
+source_file="res://Assets/images.jpeg"
 
 [params]
 
