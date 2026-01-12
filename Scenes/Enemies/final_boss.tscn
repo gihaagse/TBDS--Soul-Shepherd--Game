@@ -1,4 +1,4 @@
-[gd_scene load_steps=67 format=3 uid="uid://b76woqie8uxl7"]
+[gd_scene load_steps=72 format=3 uid="uid://b76woqie8uxl7"]
 
 [ext_resource type="Script" uid="uid://bkmtjfc44s6bw" path="res://Scripts/Enemies/final_boss.gd" id="1_td638"]
 [ext_resource type="PackedScene" uid="uid://cvgjcwqn6k8eu" path="res://Scenes/UI/Overlay/health.tscn" id="2_td638"]
@@ -19,6 +19,26 @@ shader_parameter/damage_active = false
 shader_parameter/damage_time = 0.0
 shader_parameter/shake_intensity = 0.0
 shader_parameter/distortion = 0.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_td638"]
+atlas = ExtResource("5_1nrsg")
+region = Rect2(0, 288, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1nrsg"]
+atlas = ExtResource("5_1nrsg")
+region = Rect2(32, 288, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4e5dc"]
+atlas = ExtResource("5_1nrsg")
+region = Rect2(64, 288, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g0x84"]
+atlas = ExtResource("5_1nrsg")
+region = Rect2(96, 288, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_66bqj"]
+atlas = ExtResource("5_1nrsg")
+region = Rect2(128, 288, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jnvov"]
 atlas = ExtResource("5_1nrsg")
@@ -210,6 +230,26 @@ region = Rect2(224, 32, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_wpvyt"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_td638")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1nrsg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4e5dc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g0x84")
+}, {
+"duration": 90.0,
+"texture": SubResource("AtlasTexture_66bqj")
+}],
+"loop": false,
+"name": &"Attack_Ground_Slam",
+"speed": 15.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_jnvov")
@@ -425,18 +465,7 @@ radius = 60.0
 [node name="Final_boss" type="CharacterBody2D" node_paths=PackedStringArray("shootPoint") groups=["Enemy"]]
 collision_mask = 5
 script = ExtResource("1_td638")
-jump_speed = null
 shootPoint = NodePath("CollisionShape2D")
-groundPosOffset = null
-walk_speed = null
-sprint_speed = null
-dir = null
-playerInRange = null
-playerOnTop = null
-flippedSprite = null
-shotOffset = null
-can_move = null
-can_jump = null
 
 [node name="Health" parent="." instance=ExtResource("2_td638")]
 script = ExtResource("3_1nrsg")
@@ -444,8 +473,9 @@ script = ExtResource("3_1nrsg")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 material = SubResource("ShaderMaterial_6hc3a")
 sprite_frames = SubResource("SpriteFrames_wpvyt")
-animation = &"Idle"
+animation = &"Attack_Ground_Slam"
 autoplay = "Idle"
+frame_progress = 1.0
 
 [node name="Label" type="Label" parent="."]
 visible = false
@@ -552,7 +582,6 @@ shape = SubResource("CircleShape2D_td638")
 disabled = true
 
 [node name="WalkTimer" type="Timer" parent="."]
-wait_time = 1.5
 one_shot = true
 
 [connection signal="hp_changed" from="Health" to="." method="_on_health_hp_changed"]

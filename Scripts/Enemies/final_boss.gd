@@ -6,8 +6,9 @@ class_name final_boss
 @onready var JumpTimer : Timer = $JumpTimer
 @onready var WalkTimer: Timer = $WalkTimer
 @onready var ShockwaveArea : CollisionShape2D = $Shockwave/CollisionShape2D
+@onready var player_hp = load("res://Scripts/Player/General/health.gd")
 var just_jumped: bool = false
-var latest_dir : int
+var taken_shockwave_damage : bool
 
 func _ready() -> void:
 	projectile = load("res://Scenes/Weapons/enemy_hat_projectile.tscn")
@@ -18,7 +19,6 @@ func _ready() -> void:
 	if stage > 1:
 		health.hp = 200
 
-
 func _process(_delta: float) -> void:
 	super._process(_delta)
 	if is_on_floor() and !ground.enabled:
@@ -26,14 +26,16 @@ func _process(_delta: float) -> void:
 	if just_jumped and velocity.y > 0 and !ground.is_colliding():
 		if gravity != 2000:
 			gravity = 2000
+			print("skalfjsdlj")
+			sprite.play("Attack_Ground_Slam")
 	if just_jumped and ground.is_colliding():
 		just_jumped = false
 		gravity = 300
 		WalkTimer.start()
-		shoot()
-	if speed != 0:
+		shoot("ground_attack")
+	if speed != 0 and ground.is_colliding():
 		sprite.play("Walking")
-	else:
+	elif speed == 0 and ground.is_colliding() and !sprite.is_playing():
 		sprite.play("Idle")
 
 func _on_jump_timer_timeout() -> void:
@@ -53,12 +55,9 @@ func pre_shoot():
 	jump(-200)
 	just_jumped = true
 
-func shoot():
-	ShockwaveArea.set_disabled(false)
-
-func _on_stage_3_timer_timeout() -> void:
-	shoot()
-	$stage_3_timer.stop()
+func shoot(attack: String):
+	if attack == "Shockwave":
+		ShockwaveArea.set_disabled(false)
 	
 func _on_animated_sprite_2d_animation_finished() -> void:
 	sprite.play("Idle")
@@ -66,8 +65,11 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 func _on_walk_timer_timeout() -> void:
 	can_move = true
 	ShockwaveArea.set_disabled(true)
-
+	taken_shockwave_damage = false
+	sprite.play("Idle")
 
 func _on_shockwave_body_entered(body: Node2D) -> void:
-	if body.name == "Player":
-		Player.damage()
+	if !taken_shockwave_damage:
+		if body.name == "Player":
+			player.hp.take_damage(10)
+			taken_shockwave_damage = true

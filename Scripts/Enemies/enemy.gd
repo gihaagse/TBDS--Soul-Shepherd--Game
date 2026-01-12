@@ -114,9 +114,9 @@ func _on_health_hp_changed() -> void:
 	hp_bar.value = health.hp
 
 func pre_shoot():
-	shoot()
+	shoot("")
 
-func shoot():
+func shoot(attack: String):
 	speed = 0
 	sprite.play("Attack_shoot")
 	latest_hat = projectile.instantiate()

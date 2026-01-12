@@ -42,9 +42,9 @@ func pre_shoot():
 	jump(-100)
 	just_jumped = true
 
-func shoot():
-	super.shoot()
+func shoot(attack: String):
+	super.shoot("")
 
 func _on_stage_3_timer_timeout() -> void:
-	shoot()
+	shoot("")
 	$stage_3_timer.stop()
