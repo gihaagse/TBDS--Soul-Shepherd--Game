@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://brc3fv7pjl1bv"]
+[gd_scene load_steps=9 format=3 uid="uid://brc3fv7pjl1bv"]
 
 [ext_resource type="FontFile" uid="uid://x2dwsfc3en6q" path="res://Assets/Tutorial Open Assets/brackeys_platformer_assets/fonts/PixelOperator8.ttf" id="1_58xgj"]
 [ext_resource type="Script" uid="uid://c5lxs2ugkc6bn" path="res://Scripts/UI/GameMenus/options_menu.gd" id="1_63i4o"]
@@ -9,6 +9,11 @@
 texture = ExtResource("2_3u1ve")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3u1ve"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jxgsd"]
+bg_color = Color(0.805058, 0.81792855, 0.31761068, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_go3u1"]
 
 [node name="OptionsMenu" type="Control"]
 process_mode = 3
@@ -67,16 +72,42 @@ focus_neighbor_top = NodePath("../Exit")
 focus_neighbor_bottom = NodePath("TabContainer/Graphics/MarginContainer/ScrollContainer/VBoxContainer/Window_Mode_Button/HBoxContainer/OptionButton")
 
 [node name="TabContainer" parent="MarginContainer/VBoxContainer/Settings_Tab_Container" index="0"]
-current_tab = 0
+current_tab = 2
 
 [node name="Graphics" parent="MarginContainer/VBoxContainer/Settings_Tab_Container/TabContainer" index="1"]
-visible = true
+visible = false
+theme_override_styles/tab_focus = SubResource("StyleBoxFlat_jxgsd")
+
+[node name="HSeparator" parent="MarginContainer/VBoxContainer/Settings_Tab_Container/TabContainer/Graphics/MarginContainer/ScrollContainer/VBoxContainer" index="0"]
+theme_override_styles/separator = SubResource("StyleBoxEmpty_go3u1")
 
 [node name="OptionButton" parent="MarginContainer/VBoxContainer/Settings_Tab_Container/TabContainer/Graphics/MarginContainer/ScrollContainer/VBoxContainer/Resolution_Mode_button/HBoxContainer" index="2"]
 focus_neighbor_bottom = NodePath("../../../../../../../../../Exit")
 
+[node name="HSeparator2" parent="MarginContainer/VBoxContainer/Settings_Tab_Container/TabContainer/Graphics/MarginContainer/ScrollContainer/VBoxContainer" index="4"]
+theme_override_styles/separator = SubResource("StyleBoxEmpty_go3u1")
+
 [node name="Controls" parent="MarginContainer/VBoxContainer/Settings_Tab_Container/TabContainer" index="2"]
-visible = false
+theme_override_styles/tab_focus = SubResource("StyleBoxFlat_jxgsd")
+
+[node name="HSeparator" parent="MarginContainer/VBoxContainer/Settings_Tab_Container/TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer" index="4"]
+theme_override_styles/separator = SubResource("StyleBoxEmpty_go3u1")
+
+[node name="HSeparator2" parent="MarginContainer/VBoxContainer/Settings_Tab_Container/TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer" index="8"]
+theme_override_styles/separator = SubResource("StyleBoxEmpty_go3u1")
+
+[node name="HSeparator3" parent="MarginContainer/VBoxContainer/Settings_Tab_Container/TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer" index="10"]
+theme_override_styles/separator = SubResource("StyleBoxEmpty_go3u1")
+
+[node name="Sound" parent="MarginContainer/VBoxContainer/Settings_Tab_Container/TabContainer" index="3"]
+visible = true
+theme_override_styles/tab_focus = SubResource("StyleBoxFlat_jxgsd")
+
+[node name="HSeparator" parent="MarginContainer/VBoxContainer/Settings_Tab_Container/TabContainer/Sound/MarginContainer/ScrollContainer/VBoxContainer" index="0"]
+theme_override_styles/separator = SubResource("StyleBoxEmpty_go3u1")
+
+[node name="HSeparator2" parent="MarginContainer/VBoxContainer/Settings_Tab_Container/TabContainer/Sound/MarginContainer/ScrollContainer/VBoxContainer" index="4"]
+theme_override_styles/separator = SubResource("StyleBoxEmpty_go3u1")
 
 [node name="Exit" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
