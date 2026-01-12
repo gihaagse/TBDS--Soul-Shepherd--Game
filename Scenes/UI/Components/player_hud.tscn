@@ -1,0 +1,54 @@
+[gd_scene load_steps=6 format=3 uid="uid://bpp47tnrfdrab"]
+
+[ext_resource type="Texture2D" uid="uid://dw6sk6gwwpmpi" path="res://Assets/UI/PlayerHUD outline.png" id="1_e3qon"]
+[ext_resource type="Texture2D" uid="uid://cvt1je2qfirp8" path="res://Assets/UI/PlayerHUD bar.png" id="2_bfkir"]
+[ext_resource type="FontFile" uid="uid://cojj5fwwf0jhx" path="res://Assets/Fonts/PixelOperator8.ttf" id="4_7qd4q"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bfkir"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7qd4q"]
+bg_color = Color(0.3529412, 0.77254903, 0.30980393, 1)
+
+[node name="PlayerHUD" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Outline" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_e3qon")
+
+[node name="BarClipped" type="TextureRect" parent="Outline"]
+clip_children = 1
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_bfkir")
+
+[node name="ActualBar" type="ProgressBar" parent="Outline/BarClipped"]
+layout_mode = 0
+offset_left = 821.0
+offset_top = 815.0
+offset_right = 1941.0
+offset_bottom = 893.0
+theme_override_styles/background = SubResource("StyleBoxFlat_bfkir")
+theme_override_styles/fill = SubResource("StyleBoxFlat_7qd4q")
+value = 100.0
+show_percentage = false
+
+[node name="Label" type="Label" parent="Outline"]
+layout_mode = 0
+offset_left = 827.0
+offset_top = 692.0
+offset_right = 1090.0
+offset_bottom = 795.0
+theme_override_constants/outline_size = 25
+theme_override_fonts/font = ExtResource("4_7qd4q")
+theme_override_font_sizes/font_size = 100
+text = "100"
