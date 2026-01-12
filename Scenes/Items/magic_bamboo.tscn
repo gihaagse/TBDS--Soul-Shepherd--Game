@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://dm61xmst0522o"]
+[gd_scene load_steps=8 format=3 uid="uid://dm61xmst0522o"]
 
 [ext_resource type="Script" uid="uid://khd724pvd3w2" path="res://Scripts/Items/magic_bamboo.gd" id="1_4capw"]
 [ext_resource type="Texture2D" uid="uid://dmv57vx1668nw" path="res://Assets/Sprites/Magic Bamboo/+ 15 hp magic bamboo.png" id="2_80raw"]
 [ext_resource type="PackedScene" uid="uid://b4butim8mv1dk" path="res://Assets/Particles/explosion.tscn" id="3_33tjw"]
 [ext_resource type="FontFile" uid="uid://cojj5fwwf0jhx" path="res://Assets/Fonts/PixelOperator8.ttf" id="3_80raw"]
+[ext_resource type="PackedScene" uid="uid://0cal43cpchp1" path="res://Scenes/UI/Components/health_label.tscn" id="5_eswji"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_80raw"]
 bounce = 0.4
@@ -28,6 +29,7 @@ texture = ExtResource("2_80raw")
 [node name="Explosion" parent="." instance=ExtResource("3_33tjw")]
 
 [node name="Label" type="Label" parent="."]
+visible = false
 z_index = 10
 offset_left = -35.0
 offset_top = -29.0
@@ -46,5 +48,7 @@ collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_4capw")
+
+[node name="HealthLabel" parent="." instance=ExtResource("5_eswji")]
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

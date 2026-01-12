@@ -829,7 +829,8 @@ position = Vector2(8264, 478)
 position = Vector2(3808, 48)
 collision_mask = 4
 script = ExtResource("20_76nua")
-level_name = "Playtest2"
+level_name = "level_2_1"
+next_part = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Next_level"]
 shape = SubResource("RectangleShape2D_miuwv")

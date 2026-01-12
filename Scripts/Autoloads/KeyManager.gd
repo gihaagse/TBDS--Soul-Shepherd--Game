@@ -24,4 +24,5 @@ func add_following_key(player: Node2D) -> void:
 	following_key.add_key_to_player(player)
 
 func remove_following_key() -> void:
-	current_active_key.queue_free()
+	if current_active_key:
+		current_active_key.queue_free()

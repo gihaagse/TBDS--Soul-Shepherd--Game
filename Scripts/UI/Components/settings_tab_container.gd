@@ -2,6 +2,7 @@ class_name SettingsTabContainer
 extends Control
 
 @onready var tab_container: TabContainer = $TabContainer as TabContainer
+@onready var continue_level_label: Label = $TabContainer/SaveData/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer/ContinueLevelLabel
 
 #signal Exit_options_Menu
 
@@ -12,7 +13,8 @@ func _ready() -> void:
 	OptionsManager._set_focus_all_on_children(self)
 	focus_entered.connect(_on_focus_entered)
 	set_process(false)
-
+	SaveData.saving.connect(_update_level_label)
+	_update_level_label()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
@@ -50,3 +52,11 @@ func _on_focus_entered() -> void:
 	tab_bar.focus_mode = Control.FOCUS_ALL  
 	tab_bar.grab_focus()
 	print("From exit", tab_bar)
+
+
+func _on_reset_continue_pressed() -> void:
+	SaveData.reset_game()
+	SaveData.saving.emit()
+
+func _update_level_label() -> void:
+	continue_level_label.text = "Last Level: level %s" %SaveData.get_last_section()

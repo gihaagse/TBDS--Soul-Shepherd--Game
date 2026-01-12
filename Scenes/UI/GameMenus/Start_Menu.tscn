@@ -102,7 +102,7 @@ layout_mode = 2
 size_flags_horizontal = 5
 size_flags_vertical = 7
 focus_neighbor_top = NodePath("../Exit")
-focus_neighbor_bottom = NodePath("../Customize")
+focus_neighbor_bottom = NodePath("../Continue")
 mouse_filter = 1
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
@@ -117,7 +117,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_x858q")
 theme_override_styles/focus = SubResource("StyleBoxFlat_x858q")
 text = "Start Game"
 
-[node name="Customize" type="Button" parent="VBoxContainer"]
+[node name="Continue" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 5
 size_flags_vertical = 7
@@ -135,13 +135,13 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_kex2f")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_kko6a")
 theme_override_styles/hover = SubResource("StyleBoxFlat_x858q")
 theme_override_styles/focus = SubResource("StyleBoxFlat_x858q")
-text = "Customize"
+text = "Continue"
 
 [node name="Options" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 5
 size_flags_vertical = 7
-focus_neighbor_top = NodePath("../Customize")
+focus_neighbor_top = NodePath("../Continue")
 focus_neighbor_bottom = NodePath("../Exit")
 mouse_filter = 1
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -211,8 +211,8 @@ wait_time = 0.2
 
 [connection signal="focus_entered" from="VBoxContainer/Start" to="." method="_on_any_button_focus_entered"]
 [connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
-[connection signal="focus_entered" from="VBoxContainer/Customize" to="." method="_on_any_button_focus_entered"]
-[connection signal="pressed" from="VBoxContainer/Customize" to="." method="_on_customized_pressed"]
+[connection signal="focus_entered" from="VBoxContainer/Continue" to="." method="_on_any_button_focus_entered"]
+[connection signal="pressed" from="VBoxContainer/Continue" to="." method="_on_continue_pressed"]
 [connection signal="focus_entered" from="VBoxContainer/Options" to="." method="_on_any_button_focus_entered"]
 [connection signal="pressed" from="VBoxContainer/Options" to="." method="_on_options_pressed"]
 [connection signal="focus_entered" from="VBoxContainer/Exit" to="." method="_on_any_button_focus_entered"]

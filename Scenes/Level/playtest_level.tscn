@@ -734,7 +734,7 @@ custom_sprite_frames = ExtResource("30_tqefj")
 position = Vector2(3264, -112)
 collision_mask = 4
 script = ExtResource("31_naxo4")
-level_name = "Playtest2"
+level_name = "level_1-1"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Next_level"]
 shape = SubResource("RectangleShape2D_naxo4")

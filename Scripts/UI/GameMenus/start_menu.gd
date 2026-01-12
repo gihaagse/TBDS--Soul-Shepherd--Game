@@ -19,8 +19,15 @@ func _on_start_pressed() -> void:
 	$Panel2.visible = true
 	$GameStartTimer.start()
 
-func _on_customized_pressed() -> void:
-	print("This scene does not exist yet")
+func _on_continue_pressed() -> void:
+	print("continuing...")
+	var section := SaveData.get_last_section()  
+	var scene_path := "res://Scenes/Level/Level_%s.tscn" % section 
+   
+	if ResourceLoader.exists(scene_path):
+		get_tree().change_scene_to_file(scene_path)
+	else:
+		print("Level %s niet gevonden!" % section)
 
 
 func _on_options_pressed() -> void:
