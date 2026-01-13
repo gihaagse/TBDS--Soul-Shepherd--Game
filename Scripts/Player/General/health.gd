@@ -1,5 +1,6 @@
 extends Node
 class_name HP
+const MAX_HP : int = 100
 @export var hp = 100
 @onready var timer: Timer = $Timer
 

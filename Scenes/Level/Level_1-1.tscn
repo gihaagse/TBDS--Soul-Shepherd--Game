@@ -22,7 +22,7 @@
 [ext_resource type="Script" uid="uid://hfj0hgwiyiqu" path="res://Scripts/Central/event_trigger.gd" id="20_xexco"]
 [ext_resource type="Script" uid="uid://cbirdwbh5p7se" path="res://Scripts/Obstacles/gate_crystal.gd" id="21_ywtrp"]
 [ext_resource type="Script" uid="uid://b7008awu7lly6" path="res://Scenes/Level/next_level.gd" id="22_5jmqk"]
-[ext_resource type="PackedScene" uid="uid://c2qbrpracjsi5" path="res://Scenes/Enemies/orc.tscn" id="23_bccc1"]
+[ext_resource type="PackedScene" uid="uid://c2qbrpracjsi5" path="res://Scenes/Enemies/husk.tscn" id="23_bccc1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y8y6m"]
 texture = ExtResource("3_761oq")
@@ -593,10 +593,10 @@ tracks/0/path = NodePath("CanvasLayer/Tips:text")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
+"times": PackedFloat32Array(0.033333335),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["The gate has been unlocked."]
+"values": ["You can now unlock the next gate!"]
 }
 tracks/1/type = "method"
 tracks/1/imported = false
@@ -654,7 +654,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["The gate has been unlocked."]
+"values": ["You can now unlock the next gate!"]
 }
 tracks/1/type = "method"
 tracks/1/imported = false
@@ -1208,7 +1208,7 @@ collision_layer = 0
 collision_mask = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Events/Gate_Crystal1/UnlockArea"]
-position = Vector2(0, -30)
+position = Vector2(-1, -27)
 shape = SubResource("RectangleShape2D_1hwo8")
 
 [node name="Gate_Crystal2" type="StaticBody2D" parent="Events"]
@@ -1239,7 +1239,8 @@ shape = SubResource("RectangleShape2D_1hwo8")
 position = Vector2(3808, 48)
 collision_mask = 4
 script = ExtResource("22_5jmqk")
-level_name = "level_2-2"
+level_name = "level_1-2"
+next_level = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Next_level"]
 shape = SubResource("RectangleShape2D_1v0ja")

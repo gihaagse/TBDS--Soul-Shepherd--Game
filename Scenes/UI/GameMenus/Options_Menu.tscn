@@ -71,11 +71,7 @@ size_flags_vertical = 3
 focus_neighbor_top = NodePath("../Exit")
 focus_neighbor_bottom = NodePath("TabContainer/Graphics/MarginContainer/ScrollContainer/VBoxContainer/Window_Mode_Button/HBoxContainer/OptionButton")
 
-[node name="TabContainer" parent="MarginContainer/VBoxContainer/Settings_Tab_Container" index="0"]
-current_tab = 2
-
 [node name="Graphics" parent="MarginContainer/VBoxContainer/Settings_Tab_Container/TabContainer" index="1"]
-visible = false
 theme_override_styles/tab_focus = SubResource("StyleBoxFlat_jxgsd")
 
 [node name="HSeparator" parent="MarginContainer/VBoxContainer/Settings_Tab_Container/TabContainer/Graphics/MarginContainer/ScrollContainer/VBoxContainer" index="0"]
@@ -100,7 +96,6 @@ theme_override_styles/separator = SubResource("StyleBoxEmpty_go3u1")
 theme_override_styles/separator = SubResource("StyleBoxEmpty_go3u1")
 
 [node name="Sound" parent="MarginContainer/VBoxContainer/Settings_Tab_Container/TabContainer" index="3"]
-visible = true
 theme_override_styles/tab_focus = SubResource("StyleBoxFlat_jxgsd")
 
 [node name="HSeparator" parent="MarginContainer/VBoxContainer/Settings_Tab_Container/TabContainer/Sound/MarginContainer/ScrollContainer/VBoxContainer" index="0"]

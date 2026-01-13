@@ -43,13 +43,13 @@ func apply_effects(player: Player, effect_type : EffectTypes):
 			print(damage_trap)
 		EffectTypes.KNOCKBACK:
 			var dir := _get_knockback_dir(player)
-			UtilsEffect.apply_knockback(player, dir, 200)
+			var angle := dir.angle()
+			UtilsEffect.apply_knockback(player, angle, 200)
 			call_deferred("_gravity_timer", player)
 		EffectTypes.SLOW:
 			pass
 		_:
 			pass
-
 func _gravity_timer(player: Player) -> void:
 	var state = player.finite_state_machine._get_current_state()
 	state.custom_gravity = Vector2(0,100)

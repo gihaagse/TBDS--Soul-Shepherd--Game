@@ -57,15 +57,8 @@ func _on_trigger_ended():
 func disable_trap():
 	is_enabled = false
 
-func _get_knockback_dir(player: Player) -> float:
-	var vx := player.velocity.x
-
-	if vx > 0.0:
-		return 0.0      # moving right → knockback right
-	elif vx < 0.0:
-		return PI       # moving left → knockback left
-	else:
-		return -PI / 2  # standing still → straight up (change if you want)
+func _get_knockback_dir(player: Player) -> Vector2:
+	return -global_transform.y.normalized()
 
 func remove_trap():
 	queue_free()

@@ -37,11 +37,10 @@ offset_bottom = -100.0
 grow_horizontal = 2
 grow_vertical = 2
 tab_alignment = 1
-current_tab = 3
+current_tab = 0
 script = ExtResource("2_awh7l")
 
 [node name="Graphics" type="TabBar" parent="TabContainer"]
-visible = false
 layout_mode = 2
 focus_neighbor_left = NodePath("../Sound")
 focus_neighbor_right = NodePath("../Controls")
@@ -270,6 +269,7 @@ theme_override_constants/separation = 4
 theme_override_styles/separator = SubResource("StyleBoxEmpty_go3u1")
 
 [node name="SaveData" type="TabBar" parent="TabContainer"]
+visible = false
 layout_mode = 2
 focus_neighbor_left = NodePath("../Controls")
 focus_neighbor_right = NodePath("../Graphics")
