@@ -1,11 +1,10 @@
 extends Node2D
 
-@export var custom_sprite_frames: SpriteFrames
+var custom_sprite_frames: SpriteFrames
 
 @onready var collision_shape_2d: CollisionShape2D = $Area2D/CollisionShape2D
 
-@export var desired_size: Vector2 = Vector2(16, 16)  
-
+@export var desired_size: Vector2 = Vector2(11,11)
 @export var dialogue: ScrollDialogue
 
 
@@ -32,7 +31,18 @@ func _ready() -> void:
 					shape.radius = desired_size.x / 2
 					shape.height = max(0, desired_size.y - (shape.radius * 2))
 	else:
-		$AnimatedSprite2D.scale = Vector2(1,1)
+		var sprite_frames = $AnimatedSprite2D.sprite_frames
+		var frame_tex = sprite_frames.get_frame_texture("default", 0)
+		if frame_tex:
+			var original_size = frame_tex.get_size()
+			var scale_factor = Vector2(
+				desired_size.x / original_size.x,
+				desired_size.y / original_size.y
+			)
+			$AnimatedSprite2D.scale = scale_factor
+		else:
+			push_warning("No texture")
+
 	
 	$AnimatedSprite2D.play("default")
 	

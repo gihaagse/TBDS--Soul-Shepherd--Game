@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b72byh3ml7srb"
-path="res://.godot/imported/Purple_ghost.png-2ce1a0e6ae001325ca463c438c345f2e.ctex"
+uid="uid://dyla6kr8o1jr2"
+path="res://.godot/imported/scroll.png-edd93cf96dba56b03dfb65735c7c7ffd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Wisps/Purple_ghost.png"
-dest_files=["res://.godot/imported/Purple_ghost.png-2ce1a0e6ae001325ca463c438c345f2e.ctex"]
+source_file="res://Assets/Sprites/scroll.png"
+dest_files=["res://.godot/imported/scroll.png-edd93cf96dba56b03dfb65735c7c7ffd.ctex"]
 
 [params]
 
