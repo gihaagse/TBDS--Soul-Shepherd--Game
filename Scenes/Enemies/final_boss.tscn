@@ -42,71 +42,71 @@ region = Rect2(128, 288, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jnvov"]
 atlas = ExtResource("5_1nrsg")
-region = Rect2(0, 64, 32, 32)
+region = Rect2(0, 96, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_odhw8"]
 atlas = ExtResource("5_1nrsg")
-region = Rect2(32, 64, 32, 32)
+region = Rect2(32, 96, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xmiba"]
 atlas = ExtResource("5_1nrsg")
-region = Rect2(64, 64, 32, 32)
+region = Rect2(64, 96, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_661cb"]
 atlas = ExtResource("5_1nrsg")
-region = Rect2(96, 64, 32, 32)
+region = Rect2(96, 96, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8nexp"]
 atlas = ExtResource("5_1nrsg")
-region = Rect2(128, 64, 32, 32)
+region = Rect2(128, 96, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2vtto"]
 atlas = ExtResource("5_1nrsg")
-region = Rect2(160, 64, 32, 32)
+region = Rect2(160, 96, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qiuc3"]
 atlas = ExtResource("5_1nrsg")
-region = Rect2(192, 64, 32, 32)
+region = Rect2(192, 96, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1pymy"]
 atlas = ExtResource("5_1nrsg")
-region = Rect2(224, 64, 32, 32)
+region = Rect2(224, 96, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sliqg"]
 atlas = ExtResource("5_1nrsg")
-region = Rect2(256, 64, 32, 32)
+region = Rect2(256, 96, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_673hh"]
 atlas = ExtResource("5_1nrsg")
-region = Rect2(288, 64, 32, 32)
+region = Rect2(288, 96, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1s15c"]
 atlas = ExtResource("5_1nrsg")
-region = Rect2(320, 64, 32, 32)
+region = Rect2(320, 96, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wec7b"]
 atlas = ExtResource("5_1nrsg")
-region = Rect2(352, 64, 32, 32)
+region = Rect2(352, 96, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3gxua"]
 atlas = ExtResource("5_1nrsg")
-region = Rect2(384, 64, 32, 32)
+region = Rect2(384, 96, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7suod"]
 atlas = ExtResource("5_1nrsg")
-region = Rect2(416, 64, 32, 32)
+region = Rect2(416, 96, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ec26o"]
 atlas = ExtResource("5_1nrsg")
-region = Rect2(448, 64, 32, 32)
+region = Rect2(448, 96, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2twon"]
 atlas = ExtResource("5_1nrsg")
-region = Rect2(480, 64, 32, 32)
+region = Rect2(480, 96, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mtsoh"]
 atlas = ExtResource("5_1nrsg")
-region = Rect2(512, 64, 32, 32)
+region = Rect2(512, 96, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rthrw"]
 atlas = ExtResource("5_1nrsg")
@@ -266,9 +266,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_mtsoh")
 }],
-"loop": true,
+"loop": false,
 "name": &"Attack_punch",
-"speed": 60.0
+"speed": 30.0
 }, {
 "frames": [],
 "loop": false,
@@ -410,8 +410,10 @@ script = ExtResource("3_1nrsg")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 material = SubResource("ShaderMaterial_6hc3a")
 sprite_frames = SubResource("SpriteFrames_wpvyt")
-animation = &"Clap"
+animation = &"Attack_punch"
 autoplay = "Idle"
+frame = 16
+frame_progress = 1.0
 
 [node name="Label" type="Label" parent="."]
 visible = false

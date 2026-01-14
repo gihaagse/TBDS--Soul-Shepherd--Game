@@ -10,6 +10,7 @@ class_name final_boss
 var just_jumped: bool = false
 
 func _ready() -> void:
+	health.hp_changed.connect(_boss_hit)
 	$in_range_shoot_timer.wait_time = 1
 	projectile = load("res://Scenes/Weapons/enemy_hat_projectile.tscn")
 	super._ready()
@@ -52,8 +53,10 @@ func jump(small_jump_speed = null):
 func pre_shoot():
 	if raycastcheckleft.is_colliding() and (raycastcheckleft.get_collision_point().x - global_position.x >= -20):
 		shoot("punch")
+		can_move = false
 	elif raycastcheckright.is_colliding() and (raycastcheckright.get_collision_point().x - global_position.x <= 20):
 		shoot("punch")
+		can_move = false
 	else:
 		if randi_range(1,2) == 1:
 			can_move = false
@@ -78,7 +81,26 @@ func shoot(attack: String):
 		ShockwaveArea.position.y = 8.64
 		ShockwaveArea.set_disabled(false)
 	elif attack == "punch":
-		print("punch")
+		sprite.play("Attack_punch")
+		WalkTimer.start(1)
+		if (raycastcheckleft.is_colliding() and (raycastcheckleft.get_collision_point().x - global_position.x >= -20)) or raycastcheckright.is_colliding() and (raycastcheckright.get_collision_point().x - global_position.x <= 20):
+			player.hp.take_damage(10)
+	elif attack == "projectile" and !raycastcheckleft.is_colliding() and !raycastcheckright.is_colliding():
+		if global_position.x - player.global_position.x > 0:
+			dir = -1
+		else:
+			dir = 1
+		latest_hat = projectile.instantiate()
+		latest_hat.sprite = sprite
+		latest_hat.spawnpos = shootPoint.global_position
+		if dir == 1:
+			latest_hat.spawnpos.x += shotOffset
+		elif dir == -1:
+			latest_hat.spawnpos.x -= shotOffset
+		latest_hat.spawnpos.y -= 12
+		latest_hat.direction = dir
+		latest_hat.boss_stage = 1
+		main.add_child.call_deferred(latest_hat)
 	
 func _on_animated_sprite_2d_animation_finished(anim_name: String) -> void:
 	sprite.play("Idle")
@@ -91,3 +113,6 @@ func _on_walk_timer_timeout() -> void:
 func _on_shockwave_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
 		player.hp.take_damage(10)
+		
+func _boss_hit() -> void:
+	shoot("projectile")
