@@ -21,7 +21,7 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 		
-	velocity2D = velocity 
+	velocity2D = velocity
 	#game_manager.updateLabel(finite_state_machine.current_state.name)
 	game_manager.updateHP(hp)
 	if Input.is_action_just_pressed("reset"):
@@ -41,16 +41,12 @@ func SetShader_BlinkIntensity(newValue: float):
 func _on_killzone_body_entered(body: Node2D) -> void:
 	player_hit.emit(50)
 
-
 func _on_health_hp_changed() -> void:
 	print("damage")
 	if hp.hp > 0:
 		player_hitsfx.playing =true
 	var tween = get_tree().create_tween()
 	tween.tween_method(SetShader_BlinkIntensity, 1.0, 0.0, 0.5)
-	
-	gpu_particles_2d.restart()
-	gpu_particles_2d.emitting = true
 	
 
 func has_ground_below() -> bool:

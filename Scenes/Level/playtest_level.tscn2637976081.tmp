@@ -581,12 +581,10 @@ offset_bottom = -202.0
 scale = Vector2(0.2, 0.2)
 
 [node name="Current Level" type="Label" parent="CanvasLayer"]
-offset_left = 8.0
-offset_top = 10.0
-offset_right = 276.0
-offset_bottom = 72.0
+offset_left = 3.0
+offset_right = 217.0
+offset_bottom = 36.0
 theme_override_fonts/font = ExtResource("16_nyero")
-theme_override_font_sizes/font_size = 20
 text = "Current Level: 
 level_1-1"
 
