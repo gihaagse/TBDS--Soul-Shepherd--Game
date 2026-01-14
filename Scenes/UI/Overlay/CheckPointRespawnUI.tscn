@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://bajjogst0v58d"]
+[gd_scene load_steps=12 format=3 uid="uid://bajjogst0v58d"]
 
 [ext_resource type="Shader" uid="uid://dlo4kfu6qrdn1" path="res://Shaders/Pause_Menu.gdshader" id="1_d74uk"]
 [ext_resource type="Script" uid="uid://vw0t3agl3b2q" path="res://Scripts/CheckPoints/check_point_respawn_ui.gd" id="1_swhyt"]
 [ext_resource type="FontFile" uid="uid://du4o5kkhgafum" path="res://Assets/Fonts/PixelOperator8-Bold.ttf" id="2_swhyt"]
 [ext_resource type="FontFile" uid="uid://p47ydk5quyq2" path="res://Assets/Tutorial Open Assets/brackeys_platformer_assets/fonts/PixelOperator8-Bold.ttf" id="3_vtvwt"]
+[ext_resource type="PackedScene" uid="uid://cije46t0cpojo" path="res://Scenes/UI/Overlay/HoverInfo.tscn" id="5_vtvwt"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_hqsf3"]
 shader = ExtResource("1_d74uk")
@@ -64,7 +65,7 @@ shadow_offset = Vector2(0, 3.41)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hqsf3"]
 
-[node name="CheckPointRespawnUI" type="Control"]
+[node name="CheckPointRespawnUI" type="Control" node_paths=PackedStringArray("HoverPlane")]
 process_mode = 3
 z_index = 4
 layout_mode = 3
@@ -78,6 +79,7 @@ grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 script = ExtResource("1_swhyt")
+HoverPlane = NodePath("MarginContainer/VBoxContainer/HoverPlane")
 metadata/_edit_use_anchors_ = true
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -87,10 +89,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -8258.0
-offset_top = -4519.0
-offset_right = 6159.0
-offset_bottom = 3552.0
+offset_left = -8271.0
+offset_top = -4353.0
+offset_right = 6146.0
+offset_bottom = 3718.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -102,16 +104,16 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -74.0
-offset_top = -76.0
-offset_right = 126.0
-offset_bottom = 85.0
+offset_left = -199.0
+offset_top = -163.0
+offset_right = 251.0
+offset_bottom = 162.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 z_index = 4
-custom_minimum_size = Vector2(450, 200)
+custom_minimum_size = Vector2(450, 300)
 layout_mode = 2
 theme_override_constants/separation = 8
 
@@ -163,7 +165,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_2ux8a")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_ce0ii")
 theme_override_styles/hover = SubResource("StyleBoxFlat_futms")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_hqsf3")
-text = "BEGIN"
+text = "START"
 
 [node name="Spacer2" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
@@ -185,7 +187,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_2ux8a")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_ce0ii")
 theme_override_styles/hover = SubResource("StyleBoxFlat_futms")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_hqsf3")
-text = "CLOSEST"
+text = "NEAREST"
 
 [node name="Spacer3" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
@@ -215,6 +217,30 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.2
 
+[node name="Spacer3" type="Control" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.08
+
+[node name="HoverPlane" parent="MarginContainer/VBoxContainer" instance=ExtResource("5_vtvwt")]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.9
+
+[node name="HoverText" parent="MarginContainer/VBoxContainer/HoverPlane" index="0"]
+offset_right = 437.0
+offset_bottom = 104.0
+horizontal_alignment = 1
+
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/HBoxContainer/Begin" to="." method="_on_begin_mouse_entered"]
+[connection signal="mouse_exited" from="MarginContainer/VBoxContainer/HBoxContainer/Begin" to="." method="_on_begin_mouse_exited"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Begin" to="." method="_on_begin_pressed"]
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/HBoxContainer/Closest" to="." method="_on_closest_mouse_entered"]
+[connection signal="mouse_exited" from="MarginContainer/VBoxContainer/HBoxContainer/Closest" to="." method="_on_closest_mouse_exited"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Closest" to="." method="_on_closest_pressed"]
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/HBoxContainer/Furthest" to="." method="_on_furthest_mouse_entered"]
+[connection signal="mouse_exited" from="MarginContainer/VBoxContainer/HBoxContainer/Furthest" to="." method="_on_furthest_mouse_exited"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Furthest" to="." method="_on_furthest_pressed"]
+
+[editable path="MarginContainer/VBoxContainer/HoverPlane"]

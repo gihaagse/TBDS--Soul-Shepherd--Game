@@ -1,4 +1,4 @@
-[gd_scene load_steps=136 format=3 uid="uid://c5ongupm07qh3"]
+[gd_scene load_steps=134 format=3 uid="uid://c5ongupm07qh3"]
 
 [ext_resource type="Script" uid="uid://bw7ujmm53vwsq" path="res://Scripts/Player/General/playermain.gd" id="1_qr1w5"]
 [ext_resource type="PackedScene" uid="uid://cvgjcwqn6k8eu" path="res://Scenes/UI/Overlay/health.tscn" id="2_ythyg"]
@@ -36,7 +36,8 @@
 [ext_resource type="PackedScene" uid="uid://cde6qxgsfv3w" path="res://Scenes/Effects/dash_lines.tscn" id="26_ythyg"]
 [ext_resource type="PackedScene" uid="uid://b3qfe4rcpk6rv" path="res://Scenes/Effects/dash_smoke.tscn" id="27_bmb2s"]
 [ext_resource type="AudioStream" uid="uid://bwgoippum6cgf" path="res://Assets/Audio/SFX/Player/Knife Sword Katana stab.mp3" id="30_2jnj1"]
-[ext_resource type="Script" uid="uid://c0udclb84tqt1" path="res://Scripts/UI/Overlay/jump_ui.gd" id="38_m6ahd"]
+[ext_resource type="Script" path="res://Scripts/UI/Overlay/jump_ui.gd" id="38_m6ahd"]
+[ext_resource type="PackedScene" uid="uid://cg5703l8qujlb" path="res://Assets/Particles/BloodParticle.tscn" id="38_ogmfp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lfmf2"]
 size = Vector2(12, 19)
@@ -1016,28 +1017,6 @@ _data = {
 &"RESET": SubResource("Animation_pcwjh")
 }
 
-[sub_resource type="Gradient" id="Gradient_pisgm"]
-colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_31h1d"]
-gradient = SubResource("Gradient_pisgm")
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_b1ygp"]
-lifetime_randomness = 1.0
-particle_flag_disable_z = true
-emission_shape = 1
-emission_sphere_radius = 5.0
-direction = Vector3(0, -0.5, 0)
-spread = 90.0
-initial_velocity_min = 50.0
-initial_velocity_max = 100.0
-gravity = Vector3(0, 98, 0)
-damping_min = 50.000004
-damping_max = 100.00001
-scale_min = 0.19999999
-color = Color(1, 0.07058824, 0.13333334, 1)
-color_ramp = SubResource("GradientTexture1D_31h1d")
-
 [sub_resource type="Curve" id="Curve_gpjlu"]
 _data = [Vector2(0, 0.036308646), 0.0, 0.4345806, 0, 0, Vector2(1, 0), -0.24494608, 0.0, 0, 0]
 point_count = 2
@@ -1286,15 +1265,6 @@ damage = 10
 [node name="DashCooldown" type="Timer" parent="Timers"]
 one_shot = true
 
-[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
-emitting = false
-amount = 20
-lifetime = 0.8
-one_shot = true
-explosiveness = 1.0
-trail_enabled = true
-process_material = SubResource("ParticleProcessMaterial_b1ygp")
-
 [node name="jumpsfx" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("21_v37cr")
 volume_db = 2.0
@@ -1425,6 +1395,8 @@ expand_mode = 1
 stretch_mode = 5
 
 [node name="Border_RayCasts" type="Node2D" parent="."]
+
+[node name="BloodParticle" parent="." instance=ExtResource("38_ogmfp")]
 
 [connection signal="player_hit" from="." to="Health" method="_on_player_player_hit"]
 [connection signal="hp_changed" from="Health" to="." method="_on_health_hp_changed"]
