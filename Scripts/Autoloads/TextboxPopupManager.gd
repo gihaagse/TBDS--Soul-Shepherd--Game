@@ -13,6 +13,7 @@ var can_advance_line := false
 var can_close := false
 
 func start_dialogue(position: Vector2, lines: Array[String]):
+	print("received lines: ", lines)
 	if is_dialogue_active:
 		return
 	

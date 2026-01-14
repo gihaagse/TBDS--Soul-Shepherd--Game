@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://1sjuovd6m30t"
-path="res://.godot/imported/green_wisp.png-27c429a1ba9b25933ce777d9ca29b9fb.ctex"
+path="res://.godot/imported/Green_Wisp.png-7816946166b0e0c52be1542bff8036e3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Wisps/green_wisp.png"
-dest_files=["res://.godot/imported/green_wisp.png-27c429a1ba9b25933ce777d9ca29b9fb.ctex"]
+source_file="res://Assets/Sprites/Wisps/Green_Wisp.png"
+dest_files=["res://.godot/imported/Green_Wisp.png-7816946166b0e0c52be1542bff8036e3.ctex"]
 
 [params]
 
