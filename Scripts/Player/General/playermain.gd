@@ -23,7 +23,7 @@ func _process(delta: float) -> void:
 		
 	velocity2D = velocity
 	#game_manager.updateLabel(finite_state_machine.current_state.name)
-	#game_manager.updateHP(hp)
+	game_manager.updateHP(hp)
 	if Input.is_action_just_pressed("reset"):
 		var current_state = $FiniteStateMachine._get_current_state()
 		if current_state != $FiniteStateMachine/Died:

@@ -21,6 +21,7 @@ func updateEquip(text):
 		
 func updateHP(hp):
 	var playerHud = get_tree().current_scene.get_node_or_null("CanvasLayer/PlayerHUD")
+	
 	if not playerHud:
 		push_error("PlayerHUD not found!")
 		return
@@ -45,6 +46,7 @@ func updateHP(hp):
 		push_error("LABEL not found!")
 		return
 	
+	print("passed all checks")
 	# Calculate health percentage
 	var health_percent = float(hp.hp) / float(hp.MAX_HP)
 	health_percent = clamp(health_percent, 0.0, 1.0)
