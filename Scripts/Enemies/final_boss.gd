@@ -26,7 +26,6 @@ func _process(_delta: float) -> void:
 	if just_jumped and velocity.y > 0 and !ground.is_colliding():
 		if gravity != 2000:
 			gravity = 2000
-			print("skalfjsdlj")
 			sprite.play("Attack_Ground_Slam")
 	if just_jumped and ground.is_colliding():
 		just_jumped = false
@@ -51,13 +50,27 @@ func jump(small_jump_speed = null):
 	ground.set_enabled(false)
 
 func pre_shoot():
-	can_move = false
-	jump(-200)
-	just_jumped = true
+	if raycastcheckleft.is_colliding() and (raycastcheckleft.get_collision_point().x - global_position.x >= -20):
+		shoot("punch")
+	elif raycastcheckright.is_colliding() and (raycastcheckright.get_collision_point().x - global_position.x <= 20):
+		shoot("punch")
+	else:
+		if randi_range(1,2) == 3:
+			can_move = false
+			jump(-200)
+			just_jumped = true
+		else:
+			shoot("clap")
 
 func shoot(attack: String):
-	if attack == "Shockwave":
+	if attack == "clap":
+		can_move = false
+		sprite.play("Clap")
+		WalkTimer.start(1)
+	elif attack == "ground_attack":
 		ShockwaveArea.set_disabled(false)
+	elif attack == "punch":
+		print("punch")
 	
 func _on_animated_sprite_2d_animation_finished() -> void:
 	sprite.play("Idle")
