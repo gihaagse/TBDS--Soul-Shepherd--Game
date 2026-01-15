@@ -32,6 +32,14 @@ func _show_text_box():
 	can_close = false
 	can_advance_line = false
 	
+	_slowdown_game_time()
+
+func _slowdown_game_time():
+	var tween = get_tree().create_tween()
+	Engine.time_scale = 0.2  
+	tween.tween_property(Engine, "time_scale", 1.0, 1.0)  
+
+	
 func _on_text_box_finished_displaying(): 
 	can_advance_line = true
 	await get_tree().create_timer(0.5).timeout
