@@ -18,8 +18,8 @@
 [ext_resource type="Script" uid="uid://b2b6rmyyluckx" path="res://Scripts/Player/General/camera_2d.gd" id="15_0jdw0"]
 [ext_resource type="PackedScene" uid="uid://5jrffwap8tjk" path="res://Scenes/Background/parralax_background.tscn" id="16_nbhok"]
 [ext_resource type="Script" uid="uid://bpkjqkjnq8o6g" path="res://Scripts/Player/General/killzone.gd" id="17_4fxhd"]
-[ext_resource type="AudioStream" uid="uid://cbtn1bitrynwi" path="res://Assets/Audio/Music/sample.wav" id="18_jdq3c"]
 [ext_resource type="Script" uid="uid://hfj0hgwiyiqu" path="res://Scripts/Central/event_trigger.gd" id="19_8qp3c"]
+[ext_resource type="AudioStream" uid="uid://cg3qpni1dsx7g" path="res://Assets/Audio/Music/Rush 1-2.wav" id="19_yidc1"]
 [ext_resource type="Script" uid="uid://b7008awu7lly6" path="res://Scenes/Level/next_level.gd" id="20_76nua"]
 [ext_resource type="PackedScene" uid="uid://c34kdnga4axvp" path="res://Scenes/Obstacles/obstacle_falling_tiles.tscn" id="21_qftv3"]
 [ext_resource type="PackedScene" uid="uid://cl45lm0hg20kf" path="res://Scenes/Items/soul.tscn" id="22_llcl8"]
@@ -517,12 +517,11 @@ size = Vector2(48, 16)
 [node name="Level" type="Node2D"]
 script = ExtResource("1_w71j4")
 
-[node name="GameManager" type="Node" parent="." node_paths=PackedStringArray("stateLabel", "equipLabel", "hpLabel", "gameOverScreen")]
+[node name="GameManager" type="Node" parent="." node_paths=PackedStringArray("stateLabel", "equipLabel", "gameOverScreen")]
 unique_name_in_owner = true
 script = ExtResource("1_1a5qi")
 stateLabel = NodePath("../CanvasLayer/Current State")
 equipLabel = NodePath("../CanvasLayer/Current Equip")
-hpLabel = NodePath("../CanvasLayer/HP")
 gameOverScreen = NodePath("../CanvasLayer/ColorRect")
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -692,7 +691,7 @@ position = Vector2(166, 200)
 shape = SubResource("WorldBoundaryShape2D_flvdr")
 
 [node name="Level1Music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("18_jdq3c")
+stream = ExtResource("19_yidc1")
 volume_db = -30.0
 autoplay = true
 bus = &"Music"
