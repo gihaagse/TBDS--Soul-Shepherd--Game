@@ -42,7 +42,7 @@ func _on_killzone_body_entered(body: Node2D) -> void:
 	player_hit.emit(50)
 
 func _on_health_hp_changed() -> void:
-	print("damage")
+	#print("damage")
 	if hp.hp > 0:
 		player_hitsfx.playing =true
 	var tween = get_tree().create_tween()
