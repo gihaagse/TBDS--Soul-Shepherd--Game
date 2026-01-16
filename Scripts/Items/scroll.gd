@@ -50,5 +50,15 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	
 	if body is Player:
 		TextboxPopupManager.start_dialogue(body.global_position + vertical_message_offset, dialogue.scroll_dialogue)
+		var scroll_contents = "\n".join(dialogue.scroll_dialogue)
+		var found_scrolls: Array = SaveData.save_contents.get("found_scroll_dialogue", [])
+		
+		if scroll_contents not in found_scrolls:
+			print("Adding scroll data")
+			if not SaveData.save_contents.has("found_scroll_dialogue"):
+				SaveData.save_contents["found_scroll_dialogue"] = []
+			SaveData.save_contents["found_scroll_dialogue"].append(scroll_contents)
+			SaveData.save()
 		self.queue_free()
+
 		

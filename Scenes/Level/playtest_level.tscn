@@ -38,8 +38,9 @@
 [ext_resource type="SpriteFrames" uid="uid://dg0vx2sffi824" path="res://Resources/Wisps/Green_Wisp.tres" id="30_tqefj"]
 [ext_resource type="PackedScene" uid="uid://d2jbqn300os54" path="res://Scenes/Obstacles/obstacle_spike.tscn" id="31_1nbn6"]
 [ext_resource type="Script" uid="uid://b7008awu7lly6" path="res://Scenes/Level/next_level.gd" id="31_naxo4"]
-[ext_resource type="PackedScene" uid="uid://bdhxnuny30cml" path="res://Scenes/Items/scroll.tscn" id="37_qejra"]
+[ext_resource type="PackedScene" path="res://Scenes/Items/scroll.tscn" id="37_qejra"]
 [ext_resource type="Resource" uid="uid://ba42w4pgbrt7k" path="res://Resources/Scroll/TestDialogueScroll.tres" id="38_vie2q"]
+[ext_resource type="Resource" uid="uid://dqr0x3xikciia" path="res://Resources/Scroll/TestScroll2.tres" id="39_vie2q"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x4l1k"]
 texture = ExtResource("1_o8n5m")
@@ -673,8 +674,8 @@ position = Vector2(128, 228)
 dialogue = ExtResource("12_heeoc")
 
 [node name="Sprite2D" parent="DialogueInteract" index="2"]
-position = Vector2(-1, 2.9999943)
-scale = Vector2(0.06, 0.062)
+position = Vector2(-1, 3.9999943)
+scale = Vector2(0.065, 0.062)
 texture = ExtResource("13_4s5db")
 
 [node name="DialogueUI" parent="." instance=ExtResource("13_heeoc")]
@@ -759,6 +760,11 @@ custom_sprite_frames = ExtResource("30_tqefj")
 z_index = 20
 position = Vector2(122, 152)
 dialogue = ExtResource("38_vie2q")
+
+[node name="Scroll2" parent="Souls" instance=ExtResource("37_qejra")]
+z_index = 20
+position = Vector2(204, 100)
+dialogue = ExtResource("39_vie2q")
 
 [node name="Next_level" type="Area2D" parent="."]
 position = Vector2(3264, -112)

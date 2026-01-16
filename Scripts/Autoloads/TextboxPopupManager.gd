@@ -32,24 +32,33 @@ func _show_text_box():
 	can_close = false
 	can_advance_line = false
 	
+	_slowdown_game_time()
+
+func _slowdown_game_time():
+	var tween = get_tree().create_tween()
+	Engine.time_scale = 0.2  
+	tween.tween_property(Engine, "time_scale", 1.0, 1.0)  
+
+	
 func _on_text_box_finished_displaying(): 
 	can_advance_line = true
-	await get_tree().create_timer(0.5).timeout
+	await get_tree().create_timer(0.2).timeout
 	can_close = true
 	
 func _unhandled_input(event: InputEvent) -> void:
-	if(
-		can_close &&
-		is_dialogue_active &&
-		can_advance_line
-	):
-		text_box.queue_free()
-		
-		current_line_index += 1
-		if current_line_index >= dialogue_lines.size():
-			is_dialogue_active = false
-			current_line_index  = 0
-			return
-			
-		_show_text_box()
+	if not (can_close and is_dialogue_active and can_advance_line):
+		return
 	
+	if (event is InputEventKey or 
+		(event is InputEventJoypadButton and event.device >= 0) or 
+		(event is InputEventJoypadMotion and event.device >= 0)) and event.is_pressed():
+		_advance_dialogue()
+
+func _advance_dialogue():
+	text_box.queue_free()
+	current_line_index += 1
+	if current_line_index >= dialogue_lines.size():
+		is_dialogue_active = false
+		current_line_index = 0
+		return
+	_show_text_box()

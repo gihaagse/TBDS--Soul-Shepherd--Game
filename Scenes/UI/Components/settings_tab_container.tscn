@@ -330,9 +330,52 @@ layout_mode = 2
 [node name="ResetContinueButton" type="Button" parent="TabContainer/SaveData/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
-text = "Reset Level progress"
+text = "Reset Game progress"
 
 [node name="HSeparator2" type="HSeparator" parent="TabContainer/SaveData/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 4
+theme_override_styles/separator = SubResource("StyleBoxEmpty_go3u1")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="TabContainer/SaveData/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 56
+alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="TabContainer/SaveData/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 4
+theme_override_styles/separator = SubResource("StyleBoxEmpty_go3u1")
+
+[node name="UnlockedLoreLabel" type="Label" parent="TabContainer/SaveData/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(10, 0.025)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 32
+text = "Unlocked Lore: "
+
+[node name="HorSpacer" type="Control" parent="TabContainer/SaveData/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer2"]
+visible = false
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[node name="VSeparator" type="VSeparator" parent="TabContainer/SaveData/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+
+[node name="HorSpacer2" type="Control" parent="TabContainer/SaveData/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer2"]
+visible = false
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[node name="LoreLabel" type="Label" parent="TabContainer/SaveData/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(10, 0.025)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 16
+text = "
+"
+
+[node name="HSeparator2" type="HSeparator" parent="TabContainer/SaveData/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
 theme_override_constants/separation = 4
 theme_override_styles/separator = SubResource("StyleBoxEmpty_go3u1")

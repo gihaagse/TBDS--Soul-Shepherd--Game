@@ -3,6 +3,7 @@ extends Control
 
 @onready var tab_container: TabContainer = $TabContainer as TabContainer
 @onready var continue_level_label: Label = $TabContainer/SaveData/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer/ContinueLevelLabel
+@onready var lore_label: Label = $TabContainer/SaveData/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer2/LoreLabel
 
 #signal Exit_options_Menu
 
@@ -15,6 +16,7 @@ func _ready() -> void:
 	set_process(false)
 	SaveData.saving.connect(_update_level_label)
 	_update_level_label()
+	show_lore()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
@@ -53,10 +55,13 @@ func _on_focus_entered() -> void:
 	tab_bar.grab_focus()
 	print("From exit", tab_bar)
 
-
+func show_lore() -> void:
+	lore_label.text = SaveData.get_found_scrolls_text()
+	
 func _on_reset_continue_pressed() -> void:
 	SaveData.reset_game()
 	SaveData.saving.emit()
 
 func _update_level_label() -> void:
 	continue_level_label.text = "Last Level: level %s" %SaveData.get_last_section()
+	show_lore()

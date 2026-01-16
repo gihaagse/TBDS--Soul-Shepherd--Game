@@ -339,6 +339,7 @@ heal_amount = 25
 COLOR = Color(0.7921569, 0.32156864, 0.7882353, 1)
 drop_chance = 15
 is_active = false
+
 [node name="stage_3_timer" type="Timer" parent="."]
 wait_time = 0.5
 

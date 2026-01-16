@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dkfl51penurm3"
+path="res://.godot/imported/Jungle Level 1-3.wav-5bfa56d9a034bee1dc3c821336d524ad.sample"
+
+[deps]
+
+source_file="res://Assets/Audio/Music/Jungle Level 1-3.wav"
+dest_files=["res://.godot/imported/Jungle Level 1-3.wav-5bfa56d9a034bee1dc3c821336d524ad.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=2
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

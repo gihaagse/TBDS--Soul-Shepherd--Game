@@ -1,6 +1,6 @@
 [gd_scene load_steps=39 format=3 uid="uid://bkb1hbs8mvgj2"]
 
-[ext_resource type="Script" uid="uid://bj3o2h06hj6ck" path="res://Scripts/Enemies/enemy.gd" id="1_joiax"]
+[ext_resource type="Script" uid="uid://2vqfh8nuh3mc" path="res://Scripts/Enemies/ninja.gd" id="1_joiax"]
 [ext_resource type="PackedScene" uid="uid://cvgjcwqn6k8eu" path="res://Scenes/UI/Overlay/health.tscn" id="2_hkrva"]
 [ext_resource type="Script" uid="uid://dlgatnu5tx5lj" path="res://Scripts/Enemies/health_enemy.gd" id="3_s70sf"]
 [ext_resource type="Shader" uid="uid://o6ancnl5jgcr" path="res://Shaders/Blink.gdshader" id="4_bv2jq"]
@@ -230,11 +230,10 @@ corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
-[node name="Enemy" type="CharacterBody2D" node_paths=PackedStringArray("shootPoint") groups=["Enemy"]]
+[node name="Enemy" type="CharacterBody2D" groups=["Enemy"]]
 collision_layer = 257
 collision_mask = 5
 script = ExtResource("1_joiax")
-shootPoint = NodePath("CollisionShape2D")
 
 [node name="Health" parent="." instance=ExtResource("2_hkrva")]
 script = ExtResource("3_s70sf")

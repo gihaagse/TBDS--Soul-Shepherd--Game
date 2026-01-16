@@ -21,7 +21,7 @@ func _process(_delta: float) -> void:
 	if is_on_floor() and !ground.enabled:
 		ground.set_enabled(true)
 	if just_jumped and velocity.y == 0:
-		shoot()
+		shoot("")
 		just_jumped = false
 		if stage > 2:
 			$stage_3_timer.start()
@@ -42,10 +42,9 @@ func pre_shoot():
 	jump(-100)
 	just_jumped = true
 
-func shoot():
-	super.shoot()
-
+func shoot(attack: String):
+	super.shoot("")
 
 func _on_stage_3_timer_timeout() -> void:
-	shoot()
+	shoot("")
 	$stage_3_timer.stop()

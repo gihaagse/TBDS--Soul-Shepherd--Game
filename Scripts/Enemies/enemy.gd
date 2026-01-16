@@ -45,13 +45,15 @@ func _ready() -> void:
 		player = root.get_node("Player")
 	Engine.max_fps = 60
 	speed = walk_speed
-	_on_animated_sprite_2d_animation_finished()
+	_on_animated_sprite_2d_animation_finished("")
 	$Label.set_text("HP: " + str(health.hp))
 	hp_bar.max_value = health.hp
 	hp_bar.value = health.hp
 
 
 func _process(_delta: float) -> void:
+	if !can_move:
+		speed = 0
 	_correct_sprite()
 	ground.position.x = groundPosOffset if dir > 0 else groundPosOffset * -1
 		
@@ -114,13 +116,13 @@ func _on_health_hp_changed() -> void:
 	hp_bar.value = health.hp
 
 func pre_shoot():
-	shoot()
+	shoot("")
 
-func shoot():
+func shoot(attack: String):
 	speed = 0
 	sprite.play("Attack_shoot")
 	latest_hat = projectile.instantiate()
-	#latest_hat.sprite = sprite
+	#latest_hat.sprite = spritem
 	latest_hat.spawnpos = shootPoint.global_position
 	if dir == 1:
 		latest_hat.spawnpos.x += shotOffset
@@ -157,8 +159,8 @@ func _correct_sprite() -> void:
 			$AnimatedSprite2D.scale.x = $AnimatedSprite2D.scale.x * -1
 			flippedSprite = true
 
-func _on_animated_sprite_2d_animation_finished() -> void:
-	if can_move:
+func _on_animated_sprite_2d_animation_finished(anim_name: String) -> void:
+	if speed != 0:
 		sprite.play("Walking")
 	else:
 		sprite.play("Idle")

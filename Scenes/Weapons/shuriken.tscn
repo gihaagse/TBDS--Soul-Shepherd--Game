@@ -1,0 +1,62 @@
+[gd_scene load_steps=9 format=3 uid="uid://du656xt7daf8"]
+
+[ext_resource type="Script" uid="uid://bptkuxgfcssdv" path="res://Scripts/Weapons/shuriken_projectile.gd" id="1_6ha5i"]
+[ext_resource type="Texture2D" uid="uid://mx6lj5xhqw12" path="res://Assets/Sprites/shuriken_projectile.png" id="2_6ha5i"]
+[ext_resource type="AudioStream" uid="uid://uxnd7qf4lq85" path="res://Assets/Audio/SFX/Player/parry.wav" id="3_qqpoc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y5kt6"]
+atlas = ExtResource("2_6ha5i")
+region = Rect2(0, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qqpoc"]
+atlas = ExtResource("2_6ha5i")
+region = Rect2(8, 0, 8, 8)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qlofh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y5kt6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qqpoc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qxf0c"]
+radius = 4.47214
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dgwo2"]
+radius = 4.47
+
+[node name="Projectile" type="CharacterBody2D"]
+z_index = 4
+collision_mask = 5
+script = ExtResource("1_6ha5i")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_qlofh")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_qxf0c")
+
+[node name="Despawn" type="Timer" parent="."]
+wait_time = 2.0
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_dgwo2")
+
+[node name="Parry" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_qqpoc")
+
+[connection signal="timeout" from="Despawn" to="." method="_on_despawn_timeout"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

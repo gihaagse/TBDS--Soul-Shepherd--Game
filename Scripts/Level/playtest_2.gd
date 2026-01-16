@@ -6,7 +6,7 @@ extends Node2D
 func _ready() -> void:
 	CheckPointManager.register_start(start)
 	var obstacles: Node2D = $Obstacles
-	CheckPointManager.register_root_obstacle(obstacles)
+	#CheckPointManager.register_root_obstacle(obstacles)
 
 
 
