@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dg72g3xtsu4b6"
+path="res://.godot/imported/RemixedTitle - Maybeuseforcutscenes.wav-3252155a7eeafb36ab3d6f0547d68327.sample"
+
+[deps]
+
+source_file="res://Assets/Audio/Music/RemixedTitle - Maybeuseforcutscenes.wav"
+dest_files=["res://.godot/imported/RemixedTitle - Maybeuseforcutscenes.wav-3252155a7eeafb36ab3d6f0547d68327.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=2
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

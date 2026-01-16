@@ -1,6 +1,6 @@
 [gd_scene load_steps=49 format=3 uid="uid://7xmeecoh36yq"]
 
-[ext_resource type="Script" uid="uid://bj3o2h06hj6ck" path="res://Scripts/Enemies/enemy.gd" id="1_33s03"]
+[ext_resource type="Script" uid="uid://dd7f0ja3pf181" path="res://Scripts/Enemies/yeti_enemy.gd" id="1_33s03"]
 [ext_resource type="PackedScene" uid="uid://cvgjcwqn6k8eu" path="res://Scenes/UI/Overlay/health.tscn" id="2_povus"]
 [ext_resource type="Script" uid="uid://dlgatnu5tx5lj" path="res://Scripts/Enemies/health_enemy.gd" id="3_ydcqs"]
 [ext_resource type="Shader" uid="uid://o6ancnl5jgcr" path="res://Shaders/Blink.gdshader" id="4_xnpam"]

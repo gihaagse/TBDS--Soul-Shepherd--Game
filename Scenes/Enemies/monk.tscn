@@ -4,8 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://cvgjcwqn6k8eu" path="res://Scenes/UI/Overlay/health.tscn" id="2_y1e6x"]
 [ext_resource type="Script" uid="uid://dlgatnu5tx5lj" path="res://Scripts/Enemies/health_enemy.gd" id="3_pij3o"]
 [ext_resource type="Shader" uid="uid://o6ancnl5jgcr" path="res://Shaders/Blink.gdshader" id="4_v4iq5"]
-[ext_resource type="Texture2D" uid="uid://bcxot07cgukag" path="res://Assets/Sprites/monk.png" id="5_a0dwi"]
 [ext_resource type="FontFile" uid="uid://x2dwsfc3en6q" path="res://Assets/Tutorial Open Assets/brackeys_platformer_assets/fonts/PixelOperator8.ttf" id="6_tjay0"]
+[ext_resource type="Texture2D" uid="uid://bcxot07cgukag" path="res://Assets/Sprites/monk.png" id="6_y1e6x"]
 [ext_resource type="PackedScene" uid="uid://dm61xmst0522o" path="res://Scenes/Items/magic_bamboo.tscn" id="7_tqvhf"]
 [ext_resource type="Texture2D" uid="uid://utw0u8msxwh0" path="res://Assets/Sprites/Magic Bamboo/+25 hp magic bamboo.png" id="8_w06vo"]
 
@@ -20,95 +20,95 @@ shader_parameter/shake_intensity = 0.0
 shader_parameter/distortion = 0.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y1e6x"]
-atlas = ExtResource("5_a0dwi")
+atlas = ExtResource("6_y1e6x")
 region = Rect2(0, 64, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pij3o"]
-atlas = ExtResource("5_a0dwi")
+atlas = ExtResource("6_y1e6x")
 region = Rect2(16, 64, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_v4iq5"]
-atlas = ExtResource("5_a0dwi")
+atlas = ExtResource("6_y1e6x")
 region = Rect2(32, 64, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_15d37"]
-atlas = ExtResource("5_a0dwi")
+atlas = ExtResource("6_y1e6x")
 region = Rect2(0, 112, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tjay0"]
-atlas = ExtResource("5_a0dwi")
+atlas = ExtResource("6_y1e6x")
 region = Rect2(16, 112, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tqvhf"]
-atlas = ExtResource("5_a0dwi")
+atlas = ExtResource("6_y1e6x")
 region = Rect2(32, 112, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_w06vo"]
-atlas = ExtResource("5_a0dwi")
+atlas = ExtResource("6_y1e6x")
 region = Rect2(48, 112, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_f5pbm"]
-atlas = ExtResource("5_a0dwi")
+atlas = ExtResource("6_y1e6x")
 region = Rect2(64, 112, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_v144j"]
-atlas = ExtResource("5_a0dwi")
+atlas = ExtResource("6_y1e6x")
 region = Rect2(80, 112, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2aj5f"]
-atlas = ExtResource("5_a0dwi")
+atlas = ExtResource("6_y1e6x")
 region = Rect2(96, 112, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xtmgo"]
-atlas = ExtResource("5_a0dwi")
+atlas = ExtResource("6_y1e6x")
 region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x07gs"]
-atlas = ExtResource("5_a0dwi")
+atlas = ExtResource("6_y1e6x")
 region = Rect2(16, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4art6"]
-atlas = ExtResource("5_a0dwi")
+atlas = ExtResource("6_y1e6x")
 region = Rect2(0, 16, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4c4d8"]
-atlas = ExtResource("5_a0dwi")
+atlas = ExtResource("6_y1e6x")
 region = Rect2(16, 16, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ipt5x"]
-atlas = ExtResource("5_a0dwi")
+atlas = ExtResource("6_y1e6x")
 region = Rect2(0, 48, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b4xmo"]
-atlas = ExtResource("5_a0dwi")
+atlas = ExtResource("6_y1e6x")
 region = Rect2(0, 32, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_525sw"]
-atlas = ExtResource("5_a0dwi")
+atlas = ExtResource("6_y1e6x")
 region = Rect2(16, 32, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dxbr6"]
-atlas = ExtResource("5_a0dwi")
+atlas = ExtResource("6_y1e6x")
 region = Rect2(32, 32, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m8fft"]
-atlas = ExtResource("5_a0dwi")
+atlas = ExtResource("6_y1e6x")
 region = Rect2(48, 32, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3nhx2"]
-atlas = ExtResource("5_a0dwi")
+atlas = ExtResource("6_y1e6x")
 region = Rect2(64, 32, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r8smd"]
-atlas = ExtResource("5_a0dwi")
+atlas = ExtResource("6_y1e6x")
 region = Rect2(80, 32, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d04oq"]
-atlas = ExtResource("5_a0dwi")
+atlas = ExtResource("6_y1e6x")
 region = Rect2(96, 32, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y1awp"]
-atlas = ExtResource("5_a0dwi")
+atlas = ExtResource("6_y1e6x")
 region = Rect2(112, 32, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_wpvyt"]
@@ -244,10 +244,11 @@ corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
-[node name="Enemy" type="CharacterBody2D" groups=["Enemy"]]
+[node name="Enemy" type="CharacterBody2D" node_paths=PackedStringArray("shootPoint") groups=["Enemy"]]
 collision_layer = 257
 collision_mask = 5
 script = ExtResource("1_a0dwi")
+shootPoint = NodePath("CollisionShape2D")
 
 [node name="Health" parent="." instance=ExtResource("2_y1e6x")]
 script = ExtResource("3_pij3o")
@@ -256,8 +257,10 @@ hp = 50
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 material = SubResource("ShaderMaterial_6hc3a")
 sprite_frames = SubResource("SpriteFrames_wpvyt")
-animation = &"Jump"
+animation = &"Walking"
 autoplay = "Idle"
+frame = 1
+frame_progress = 0.8031546
 
 [node name="Label" type="Label" parent="."]
 visible = false

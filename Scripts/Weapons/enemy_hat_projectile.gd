@@ -92,13 +92,13 @@ func _on_despawn_timeout() -> void:
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.is_in_group("Melee"):
 		print("Melee")
-		parry.playing =true
+		#parry.playing =true
 		despawn.start()
 		direction = -direction
 		area_2d.set_collision_mask_value(2, true)
 		area_2d.set_collision_mask_value(3, false)
 		collision_mask = (1<<0) | (1<<2)
-		print("Parry " + str(area.collision_layer))
+		#print("Parry " + str(area.collision_layer))
 		return
 	var hp = area.get_node_or_null("Health")
 	if hp and hp.has_method("take_damage"):

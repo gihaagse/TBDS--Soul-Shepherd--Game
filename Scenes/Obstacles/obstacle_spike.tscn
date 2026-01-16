@@ -14,7 +14,7 @@ size = Vector2(54, 44)
 [node name="obstacle_spike" instance=ExtResource("1_6m387")]
 scale = Vector2(0.8, 1)
 script = ExtResource("2_eaotn")
-damage_trap = 5
+damage_trap = 20
 effect_type = Array[int]([0, 1, 2, 3])
 active_for = 2.0
 activation_delay = 0.3

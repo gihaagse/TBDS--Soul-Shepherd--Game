@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="ScrollDialogue" load_steps=2 format=3 uid="uid://dqr0x3xikciia"]
+
+[ext_resource type="Script" uid="uid://8comeh3keae4" path="res://Resources/Scroll/ScrollResource.gd" id="1_pjvef"]
+
+[resource]
+script = ExtResource("1_pjvef")
+scroll_dialogue = Array[String](["Here I use a numner: 2", "Tenminste 12 characters"])
+metadata/_custom_type_script = "uid://8comeh3keae4"

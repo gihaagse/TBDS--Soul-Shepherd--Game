@@ -22,10 +22,10 @@
 [ext_resource type="Script" uid="uid://bpkjqkjnq8o6g" path="res://Scripts/Player/General/killzone.gd" id="19_8j3de"]
 [ext_resource type="PackedScene" uid="uid://dpatdmh4s5sg5" path="res://Scenes/GrapplingSystem/GrapplingHookSystem.tscn" id="20_lt7pv"]
 [ext_resource type="AudioStream" uid="uid://cbtn1bitrynwi" path="res://Assets/Audio/Music/sample.wav" id="21_v2evn"]
+[ext_resource type="PackedScene" uid="uid://b76woqie8uxl7" path="res://Scenes/Enemies/final_boss.tscn" id="22_0nra7"]
 [ext_resource type="PackedScene" uid="uid://c45jpc3kaflr4" path="res://Scenes/CheckPoints/CheckPoint.tscn" id="22_pv5y6"]
 [ext_resource type="PackedScene" uid="uid://dgm6tcibml5l" path="res://Scenes/Enemies/dragon_fly_enemy.tscn" id="23_0nra7"]
 [ext_resource type="Script" uid="uid://dtfsguwdnfr7m" path="res://Scripts/CheckPoints/start.gd" id="23_qt3gr"]
-[ext_resource type="PackedScene" uid="uid://bu78o5fps1jsf" path="res://Scenes/Enemies/boss_enemy_1.tscn" id="24_w0jtt"]
 [ext_resource type="PackedScene" uid="uid://c2qbrpracjsi5" path="res://Scenes/Enemies/orc.tscn" id="25_17aq4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j3um3"]
@@ -598,14 +598,34 @@ shape = SubResource("WorldBoundaryShape2D_snitv")
 [node name="Enemy2" parent="Node2D" instance=ExtResource("25_17aq4")]
 z_index = 9
 position = Vector2(1698, 131)
+groundPosOffset = 10.0
+walk_speed = 40
+sprint_speed = 60
+dir = 1
+playerInRange = false
+playerOnTop = false
+flippedSprite = false
+shotOffset = 15
+can_move = true
+can_jump = false
 
 [node name="Enemy3" parent="Node2D" instance=ExtResource("25_17aq4")]
 z_index = 9
 position = Vector2(921, 167)
+groundPosOffset = 10.0
+walk_speed = 40
+sprint_speed = 60
+dir = 1
+playerInRange = false
+playerOnTop = false
+flippedSprite = false
+shotOffset = 15
+can_move = true
+can_jump = false
 
-[node name="boss_enemy_1" parent="Node2D" instance=ExtResource("24_w0jtt")]
+[node name="Final_boss" parent="Node2D" instance=ExtResource("22_0nra7")]
 z_index = 9
-position = Vector2(3075, 133)
+position = Vector2(3075, 128)
 
 [node name="Enemy4" parent="Node2D" instance=ExtResource("23_0nra7")]
 z_index = 9

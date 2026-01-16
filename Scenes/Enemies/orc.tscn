@@ -211,6 +211,16 @@ collision_layer = 257
 collision_mask = 5
 script = ExtResource("1_vumo0")
 shootPoint = NodePath("CollisionShape2D")
+groundPosOffset = null
+walk_speed = null
+sprint_speed = null
+dir = null
+playerInRange = null
+playerOnTop = null
+flippedSprite = null
+shotOffset = null
+can_move = null
+can_jump = null
 
 [node name="Health" parent="." instance=ExtResource("1_3xw0u")]
 script = ExtResource("3_tq37w")

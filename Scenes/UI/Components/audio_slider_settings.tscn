@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://bkitqemrhw6m1"]
+[gd_scene load_steps=4 format=3 uid="uid://bkitqemrhw6m1"]
 
 [ext_resource type="Script" uid="uid://jrx4wfx0tdsj" path="res://Scripts/UI/Components/audio_slider_settings.gd" id="1_iph8a"]
+[ext_resource type="AudioStream" uid="uid://v4alihho7m0e" path="res://Assets/Audio/SFX/General/Quick Reverb Fart - Sound Effect.mp3" id="2_nsx7q"]
+[ext_resource type="AudioStream" uid="uid://77cgds4auyky" path="res://Assets/Audio/SFX/General/SixSevenSFX.mp3" id="3_pmbt3"]
 
 [node name="Audio_Slider_Settings" type="Control"]
 layout_mode = 3
@@ -43,4 +45,15 @@ text = "99.2"
 [node name="VSeparator2" type="VSeparator" parent="HBoxContainer"]
 layout_mode = 2
 
+[node name="PreviewPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_nsx7q")
+
+[node name="SixSevenEasterEgg" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_pmbt3")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
+
 [connection signal="value_changed" from="HBoxContainer/HSlider" to="." method="_on_h_slider_value_changed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -5,7 +5,8 @@ signal saving
 
 var save_contents: Dictionary = {
 	"max_level": 1,
-	"max_part": 1
+	"max_part": 1,
+	"found_scroll_dialogue": []
 }
 
 func _ready() -> void:
@@ -17,6 +18,7 @@ func save() -> void:
 		return
 	file.store_var(save_contents)
 	file.close()
+	#debug_print_contents()
 
 func _load() -> void:
 	if not FileAccess.file_exists(SAVE_LOCATION):
@@ -31,6 +33,9 @@ func _load() -> void:
 
 	if data is Dictionary:
 		save_contents = data
+		if not save_contents.has("found_scroll_dialogue") or not (save_contents["found_scroll_dialogue"] is Array):
+			save_contents["found_scroll_dialogue"] = []  
+
 
 func set_level_progress(level: int, part: int) -> void:
 	saving.emit()
@@ -46,7 +51,8 @@ func reset_game() -> void:
 	saving.emit()
 	save_contents = {
 		"max_level": 1,
-		"max_part": 1
+		"max_part": 1,
+		"found_scroll_dialogue": []
 	}
 	save()
 
@@ -58,3 +64,34 @@ func get_max_part() -> int:
 
 func get_last_section() -> String:
 	return "%d-%d" % [int(save_contents["max_level"]), int(save_contents["max_part"])]
+
+func get_found_scrolls_text() -> String:
+		
+	var scrolls = save_contents["found_scroll_dialogue"] as Array
+	if scrolls.is_empty():
+		return "No scrolls found"
+	
+	var text = "Found scrolls (%d):\n\n" % scrolls.size()
+	for i in range(scrolls.size()):
+		var scroll = scrolls[i] as String
+		text += "[%d] %s\n\n" % [i+1, scroll.left(50) + "..."]
+	
+	return text
+	
+func debug_print_contents():
+	print("=== SAVE CONTENTS ===")
+	print("max_level: ", save_contents.get("max_level", "MISSING"))
+	print("max_part: ", save_contents.get("max_part", "MISSING"))
+	print("scrolls count: ", save_contents.get("found_scroll_dialogue", []).size())
+	print("scrolls: ", save_contents.get("found_scroll_dialogue", []))
+	print("====================")
+
+func debug_read_file_raw():
+	var file = FileAccess.open(SAVE_LOCATION, FileAccess.READ)
+	if file:
+		print("Raw file size: ", file.get_length())
+		file.seek(0)
+		print("Raw bytes: ", file.get_buffer(file.get_length()).hex_encode())
+		file.close()
+	else:
+		print("No save file found")

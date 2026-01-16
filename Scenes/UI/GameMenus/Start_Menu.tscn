@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://d1bef2u8knxo3" path="res://Assets/Background/titlescreen.png" id="2_n5ja1"]
 [ext_resource type="FontFile" uid="uid://p47ydk5quyq2" path="res://Assets/Tutorial Open Assets/brackeys_platformer_assets/fonts/PixelOperator8-Bold.ttf" id="3_x858q"]
 [ext_resource type="PackedScene" uid="uid://brc3fv7pjl1bv" path="res://Scenes/UI/GameMenus/Options_Menu.tscn" id="4_4yw8f"]
-[ext_resource type="AudioStream" uid="uid://bipnhi5kx3r28" path="res://Assets/Audio/Music/SoulShephard.wav" id="5_md32f"]
+[ext_resource type="AudioStream" uid="uid://bunfws4ojf6qm" path="res://Assets/Audio/Music/Titletry2 Title Theme.wav" id="5_3tla5"]
 [ext_resource type="Texture2D" uid="uid://kq5hfqfgie2u" path="res://Assets/logo/Transparent logo 2.png" id="6_3tla5"]
 [ext_resource type="Texture2D" uid="uid://bt6mdc6kg0ylv" path="res://Assets/Background/overcome_death2.png" id="6_n5ja1"]
 
@@ -183,7 +183,8 @@ visible = false
 layout_mode = 1
 
 [node name="MusicStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("5_md32f")
+stream = ExtResource("5_3tla5")
+volume_db = -20.0
 autoplay = true
 bus = &"Music"
 

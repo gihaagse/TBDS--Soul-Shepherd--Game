@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://df7x13ignki5d"]
+[gd_scene load_steps=39 format=3 uid="uid://df7x13ignki5d"]
 
 [ext_resource type="Script" uid="uid://dhm65txe15dn0" path="res://Scenes/Level/level_2_3.gd" id="1_gqvfv"]
 [ext_resource type="Texture2D" uid="uid://c3jf58yvjljmy" path="res://Assets/Sprites/tileset2.png" id="2_kjop5"]
@@ -15,7 +15,6 @@
 [ext_resource type="PackedScene" uid="uid://dgriy1udfe26i" path="res://Scenes/Background/parralax_background_2_2.tscn" id="13_fnceo"]
 [ext_resource type="PackedScene" uid="uid://c45jpc3kaflr4" path="res://Scenes/CheckPoints/CheckPoint.tscn" id="14_usg2s"]
 [ext_resource type="Script" uid="uid://dtfsguwdnfr7m" path="res://Scripts/CheckPoints/start.gd" id="15_wudwi"]
-[ext_resource type="PackedScene" uid="uid://bfks2a63jpch2" path="res://Scenes/Enemies/orc.tscn" id="16_7jbgu"]
 [ext_resource type="PackedScene" uid="uid://t6qqa47vckdt" path="res://Scenes/Enemies/husk.tscn" id="17_600jd"]
 [ext_resource type="PackedScene" uid="uid://7xmeecoh36yq" path="res://Scenes/Enemies/yeti.tscn" id="18_rxdva"]
 [ext_resource type="Script" uid="uid://bpkjqkjnq8o6g" path="res://Scripts/Player/General/killzone.gd" id="19_l3ols"]
@@ -691,10 +690,8 @@ script = ExtResource("15_wudwi")
 [node name="Enemies" type="Node2D" parent="."]
 z_index = 5
 
-[node name="Enemy" parent="Enemies" instance=ExtResource("16_7jbgu")]
-z_index = 4
-position = Vector2(838, 167)
-can_jump = true
+[node name="Enemy" parent="Enemies" instance=ExtResource("17_600jd")]
+position = Vector2(806, 168)
 
 [node name="Enemy2" parent="Enemies" instance=ExtResource("17_600jd")]
 position = Vector2(1020, 120)

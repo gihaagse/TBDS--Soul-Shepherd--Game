@@ -32,20 +32,20 @@ func register_start(Start: Marker2D):
 		"node": Start
 	})
 	
-func register_root_obstacle(obstacle: Node2D):
-	if obstacle.name == "Obstacles":
-		obstacles_root = obstacle
-		obstacles_parent = obstacles_root.get_parent()
-		obstacles_index = obstacles_root.get_index()
-		
-		_set_owner_recursive(obstacles_root, obstacles_root)
-		
-		obstacles_packed = PackedScene.new()
-		var err := obstacles_packed.pack(obstacles_root)
-		if err != OK:
-			push_error("Failed to pack Obstacles: %s" % err)
-		else:
-			print("REGISTERING = ", obstacles_root, " children: ", obstacles_root.get_children())
+#func register_root_obstacle(obstacle: Node2D):
+	#if obstacle.name == "Obstacles":
+		#obstacles_root = obstacle
+		#obstacles_parent = obstacles_root.get_parent()
+		#obstacles_index = obstacles_root.get_index()
+		#
+		#_set_owner_recursive(obstacles_root, obstacles_root)
+		#
+		#obstacles_packed = PackedScene.new()
+		#var err := obstacles_packed.pack(obstacles_root)
+		#if err != OK:
+			#push_error("Failed to pack Obstacles: %s" % err)
+		#else:
+			#print("REGISTERING = ", obstacles_root, " children: ", obstacles_root.get_children())
 
 func _set_owner_recursive(node: Node, owner: Node) -> void:
 	for child in node.get_children():
