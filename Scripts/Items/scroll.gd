@@ -54,7 +54,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		var found_scrolls: Array = SaveData.save_contents.get("found_scroll_dialogue", [])
 		
 		if scroll_contents not in found_scrolls:
-			print("Adding scroll data")
+			#print("Adding scroll data")
 			if not SaveData.save_contents.has("found_scroll_dialogue"):
 				SaveData.save_contents["found_scroll_dialogue"] = []
 			SaveData.save_contents["found_scroll_dialogue"].append(scroll_contents)

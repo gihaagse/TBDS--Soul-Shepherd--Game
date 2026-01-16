@@ -12,7 +12,7 @@ func has_key(level_id: LevelID, door_id: DoorID) -> bool:
 	return level_doors.get(door_id, false)
 
 func collect_key(level_id: LevelID, door_id: DoorID, body: Node2D) -> void:
-	print("Collected body: ", body)
+	#print("Collected body: ", body)
 	if not keys_per_level.has(level_id):
 		keys_per_level[level_id] = {}
 	keys_per_level[level_id][door_id] = true

@@ -26,6 +26,3 @@ func on_exit_pressed() -> void:
 func focus_on_default() -> void:
 	tab_container.get_tab_control(0).grab_focus()
 	
-	print(tab_container.get_tab_control(0))
-	print(tab_container.get_tab_control(1))
-	print(tab_container.get_tab_control(2))

@@ -20,14 +20,14 @@ func _on_start_pressed() -> void:
 	$GameStartTimer.start()
 
 func _on_continue_pressed() -> void:
-	print("continuing...")
+	#print("continuing...")
 	var section := SaveData.get_last_section()  
 	var scene_path := "res://Scenes/Level/Level_%s.tscn" % section 
    
 	if ResourceLoader.exists(scene_path):
 		get_tree().change_scene_to_file(scene_path)
 	else:
-		print("Level %s niet gevonden!" % section)
+		print("Level %s not found!" % section)
 
 
 func _on_options_pressed() -> void:

@@ -53,7 +53,7 @@ func _on_focus_entered() -> void:
 	var tab_bar: TabBar = tab_container.get_tab_control(0)
 	tab_bar.focus_mode = Control.FOCUS_ALL  
 	tab_bar.grab_focus()
-	print("From exit", tab_bar)
+	#print("From exit", tab_bar)
 
 func show_lore() -> void:
 	lore_label.text = SaveData.get_found_scrolls_text()
