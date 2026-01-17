@@ -789,11 +789,13 @@ COLOR = Color(0, 0.59607846, 0.8627451, 1)
 [node name="Souls" type="Node2D" parent="."]
 
 [node name="Soul" parent="Souls" instance=ExtResource("18_amwa5")]
+z_index = 9
 position = Vector2(1134, 232)
 ability = 8
 custom_sprite_frames = ExtResource("19_istrg")
 
 [node name="Soul2" parent="Souls" instance=ExtResource("18_amwa5")]
+z_index = 9
 position = Vector2(3871, -1919)
 custom_sprite_frames = ExtResource("20_5lnw5")
 
