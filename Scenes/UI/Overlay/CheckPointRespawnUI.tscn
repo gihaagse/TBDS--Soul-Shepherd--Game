@@ -231,7 +231,9 @@ size_flags_stretch_ratio = 0.9
 [node name="HoverText" parent="MarginContainer/VBoxContainer/HoverPlane" index="0"]
 offset_right = 437.0
 offset_bottom = 104.0
+theme_override_fonts/font = ExtResource("3_vtvwt")
 horizontal_alignment = 1
+autowrap_mode = 3
 
 [connection signal="mouse_entered" from="MarginContainer/VBoxContainer/HBoxContainer/Begin" to="." method="_on_begin_mouse_entered"]
 [connection signal="mouse_exited" from="MarginContainer/VBoxContainer/HBoxContainer/Begin" to="." method="_on_begin_mouse_exited"]
