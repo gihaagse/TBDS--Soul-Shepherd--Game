@@ -519,6 +519,7 @@ one_shot = true
 
 [node name="ShockwaveGround" parent="." instance=ExtResource("10_1nrsg")]
 position = Vector2(-1, 15)
+emitting = false
 
 [node name="ShockwaveAir" parent="." instance=ExtResource("11_jnvov")]
 

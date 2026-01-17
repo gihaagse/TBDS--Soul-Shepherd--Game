@@ -4,7 +4,7 @@
 
 [sub_resource type="Curve" id="Curve_uwq57"]
 _limits = [0.0, 100.0, 0.0, 1.0]
-_data = [Vector2(0.50883394, 0.7994232), 0.0, 0.0, 0, 0, Vector2(1, 100), 345.35202, 0.0, 0, 0]
+_data = [Vector2(0.3180212, 0), 0.0, 40.079056, 0, 0, Vector2(0.7809188, 49.927322), 345.35202, 0.0, 0, 0]
 point_count = 2
 
 [sub_resource type="CurveTexture" id="CurveTexture_1k8nv"]
@@ -26,17 +26,17 @@ angle_min = -350.0
 angle_max = 350.00003
 direction = Vector3(0, 0, 0)
 spread = 0.0
-initial_velocity_min = 5.0
-initial_velocity_max = 10.0
+initial_velocity_min = 62.46
+initial_velocity_max = 71.88
 angular_velocity_min = -200.00002
 angular_velocity_max = 719.99994
-orbit_velocity_min = -0.14999992
-orbit_velocity_max = 0.1500001
+orbit_velocity_min = -0.09999991
+orbit_velocity_max = 0.1000001
 radial_velocity_min = -2.2351742e-05
 radial_velocity_max = 24.919977
 gravity = Vector3(0, 0, 0)
-damping_min = 32.087
-damping_max = 51.090004
+damping_min = 28.252
+damping_max = 39.252003
 damping_curve = SubResource("CurveTexture_1k8nv")
 scale_min = 0.04
 scale_max = 0.049999997
@@ -50,8 +50,10 @@ emitting = false
 amount = 40
 sub_emitter = NodePath(".")
 texture = ExtResource("1_neqdq")
-lifetime = 0.8
+lifetime = 2.0
+interp_to_end = 0.01
 one_shot = true
+speed_scale = 1.2
 explosiveness = 0.95
-randomness = 0.57
+randomness = 0.55
 process_material = SubResource("ParticleProcessMaterial_vp6qg")
