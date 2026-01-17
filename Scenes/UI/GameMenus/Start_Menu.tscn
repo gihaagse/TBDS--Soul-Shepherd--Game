@@ -211,6 +211,7 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_3tla5")
 wait_time = 0.2
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
