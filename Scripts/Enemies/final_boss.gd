@@ -25,7 +25,6 @@ func _process(_delta: float) -> void:
 	if is_on_floor() and !ground.enabled:
 		ground.set_enabled(true)
 	if just_jumped and velocity.y > 0 and !ground.is_colliding():
-		print("asldfjsadf")
 		if gravity != 2000:
 			gravity = 2000
 			sprite.play("Attack_Ground_Slam")
@@ -34,7 +33,7 @@ func _process(_delta: float) -> void:
 		gravity = 300
 		WalkTimer.start()
 		shoot("ground_attack")
-	if speed != 0 and ground.is_colliding():
+	if speed != 0 and ground.is_colliding() and can_move:
 		sprite.play("Walking")
 	elif speed == 0 and ground.is_colliding() and !sprite.is_playing():
 		sprite.play("Idle")
@@ -45,13 +44,12 @@ func _on_jump_timer_timeout() -> void:
 		jump()
 	
 func jump(small_jump_speed = null):
-	print("asdflkjj")
-	print(gravity)
 	if small_jump_speed == null:
 		velocity.y = jump_speed
 	else:
 		velocity.y = small_jump_speed
 	ground.set_enabled(false)
+	sprite.play("Jumping")
 
 func pre_shoot():
 	if raycastcheckleft.is_colliding() and (raycastcheckleft.get_collision_point().x - global_position.x >= -20):
@@ -61,14 +59,14 @@ func pre_shoot():
 		shoot("punch")
 		can_move = false
 	else:
-		if true: #randi_range(1,2) == 1:
-			print("skibedi")
+		if randi_range(1,2) == 1:
 			can_move = false
 			jump(-200)
 			just_jumped = true
 		else:
-			print("clip")
+			sprite.stop()
 			sprite.play("Clap")
+			print("sprite: " + str(sprite.get_animation()))
 			shoot("clap")
 
 func shoot(attack: String):

@@ -60,7 +60,8 @@ func _process(_delta: float) -> void:
 	if not is_on_floor():
 		velocity.y += gravity * _delta
 	else:
-		velocity.y = 0
+		#velocity.y = 0
+		pass
 
 	
 	if old_hp != health.hp:
