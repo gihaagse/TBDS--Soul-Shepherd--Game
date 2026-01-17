@@ -27,7 +27,7 @@
 [ext_resource type="Texture2D" uid="uid://bpawmr3tt1vu8" path="res://Assets/Sprites/Dialogue Sprites/monk_sitting_sprite.png" id="21_fmhbg"]
 [ext_resource type="PackedScene" uid="uid://ndkp1vfqmr4g" path="res://Scenes/Dialogue/DialogueUI.tscn" id="22_lpv7w"]
 [ext_resource type="PackedScene" uid="uid://bfks2a63jpch2" path="res://Scenes/Enemies/orc.tscn" id="24_w85r1"]
-[ext_resource type="PackedScene" uid="uid://bs6hijimb1akk" path="res://Scenes/Enemies/final_boss.tscn" id="25_ab6ox"]
+[ext_resource type="PackedScene" uid="uid://b76woqie8uxl7" path="res://Scenes/Enemies/final_boss.tscn" id="25_ab6ox"]
 [ext_resource type="PackedScene" uid="uid://dgm6tcibml5l" path="res://Scenes/Enemies/dragon_fly_enemy.tscn" id="26_mn8ec"]
 [ext_resource type="PackedScene" uid="uid://dpatdmh4s5sg5" path="res://Scenes/GrapplingSystem/GrapplingHookSystem.tscn" id="27_hyn4w"]
 

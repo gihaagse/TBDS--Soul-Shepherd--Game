@@ -44,8 +44,8 @@ func options_menu_input() -> void:
 		var previous_tab = tab_container.current_tab -1
 		change_tab(previous_tab)
 		
-	if Input.is_action_just_pressed("ui_cancel"):
-		get_tree().change_scene_to_file("res://Scenes/UI/GameMenus/Start_Menu.tscn")
+	#if Input.is_action_just_pressed("ui_cancel"):
+		#get_tree().change_scene_to_file("res://Scenes/UI/GameMenus/Start_Menu.tscn")
 	
 	pass
 	

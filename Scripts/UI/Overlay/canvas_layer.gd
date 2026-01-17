@@ -2,6 +2,7 @@ extends CanvasLayer
 @onready var ability_debug_menu: Control = $AbilityDebugMenu
 @onready var pause_menu: Control = $PauseMenu
 @onready var ability_info: Control = $Ability_info
+@onready var options_menu: OptionsMenu = $OptionsMenu
 
 @onready var dash_timer: Label = $DashTimer
 
@@ -48,10 +49,14 @@ func _process(delta: float) -> void:
 func start_timer() -> void:
 	is_timer_on = true
 	
+	
 func pauseMenu():
 	if ability_info.visible:
 		AbilityInfoMenu()
-	
+		
+	if options_menu.visible:
+		options_menu.hide()
+		
 	if paused:
 		pause_menu.hide()
 		get_tree().set_pause(false)
