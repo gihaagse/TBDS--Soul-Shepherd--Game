@@ -3,6 +3,18 @@ extends Control
 @onready var options_menu: OptionsMenu = $OptionsMenu as OptionsMenu
 @onready var v_box_container: VBoxContainer = $VBoxContainer as VBoxContainer
 
+@onready var continue_panel: ColorRect = $ContinuePanel
+@onready var continue_timer: Timer = $ContinueTimer
+@onready var continue_text_label: RichTextLabel = $ContinuePanel/ContinueTextLabel
+
+var full_text := """This is your first time playing the game.
+
+
+You will start at the tutorial level."""
+
+var current_char := 0
+var typing_complete := false
+
 var _last_focused: Control
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -16,14 +28,27 @@ func _process(_delta: float) -> void:
 	pass
 
 func _on_start_pressed() -> void:
-	$Panel2.visible = true
-	$GameStartTimer.start()
+	continue_panel.visible = true
+	continue_text_label.text = ""  
+	current_char = 0
+	_type_text()
+	
+		
+	#$Panel2.visible = true
+	#$GameStartTimer.start()
 
 func _on_continue_pressed() -> void:
 	#print("continuing...")
 	var section := SaveData.get_last_section()  
 	var scene_path := "res://Scenes/Level/Level_%s.tscn" % section 
    
+	if section == "0-0":  
+		continue_panel.visible = true
+		continue_text_label.text = ""  
+		current_char = 0
+		_type_text()
+		return
+
 	if ResourceLoader.exists(scene_path):
 		get_tree().change_scene_to_file(scene_path)
 	else:
@@ -57,7 +82,29 @@ func regain_menu_focus():
 	else:
 		$VBoxContainer/Start.call_deferred("grab_focus")
 		
+		
 func _on_game_start_timer_timeout() -> void:
 	get_tree().change_scene_to_file("res://Scenes/Level/Level_0-0.tscn")
 	#get_tree().change_scene_to_file("res://Scenes/Level/playtest2.tscn")d
 	Engine.time_scale = 1
+
+
+func _type_text():
+	if current_char < full_text.length():
+		continue_text_label.text += full_text[current_char]
+		current_char += 1
+		continue_timer.start(0.03)
+	else:
+		typing_complete = true  
+		continue_timer.stop()   
+		continue_timer.start(2.0)
+
+
+func _on_continue_timer_timeout():
+	if not typing_complete: 
+		_type_text()
+	else:
+		print("10s done!")
+		continue_panel.visible = false
+		$Panel2.visible = true
+		$GameStartTimer.start()
