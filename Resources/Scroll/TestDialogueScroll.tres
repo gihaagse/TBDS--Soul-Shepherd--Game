@@ -4,5 +4,5 @@
 
 [resource]
 script = ExtResource("1_mn8ud")
-scroll_dialogue = Array[String](["This is the first line", "This is the second line"])
+scroll_dialogue = Array[String](["You have collected a scroll!"])
 metadata/_custom_type_script = "uid://8comeh3keae4"
