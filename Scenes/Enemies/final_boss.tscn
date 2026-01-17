@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=3 uid="uid://b76woqie8uxl7"]
+[gd_scene load_steps=63 format=3 uid="uid://b76woqie8uxl7"]
 
 [ext_resource type="Script" uid="uid://bkmtjfc44s6bw" path="res://Scripts/Enemies/final_boss.gd" id="1_td638"]
 [ext_resource type="PackedScene" uid="uid://cvgjcwqn6k8eu" path="res://Scenes/UI/Overlay/health.tscn" id="2_td638"]

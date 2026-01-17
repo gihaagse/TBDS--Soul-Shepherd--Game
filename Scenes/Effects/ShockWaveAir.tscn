@@ -46,10 +46,12 @@ scale_over_velocity_max = 314.63998
 color = Color(0.621144, 0.7836697, 0.9956799, 1)
 
 [node name="ShockwaveAir" type="GPUParticles2D"]
+emitting = false
 amount = 40
 sub_emitter = NodePath(".")
 texture = ExtResource("1_neqdq")
 lifetime = 0.8
+one_shot = true
 explosiveness = 0.95
 randomness = 0.57
 process_material = SubResource("ParticleProcessMaterial_vp6qg")
