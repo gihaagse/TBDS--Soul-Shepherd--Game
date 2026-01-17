@@ -51,7 +51,6 @@ func _on_player_died():
 	if not visible:
 		visible = true
 		begin.grab_focus()
-		print("grabin focus")
 
 func _on_choice_made(perefernce_checkpoint: String):
 	visible = false
