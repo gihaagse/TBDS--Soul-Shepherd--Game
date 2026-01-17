@@ -4,8 +4,8 @@ const SAVE_LOCATION := "user://SaveFile.save"
 signal saving
 
 var save_contents: Dictionary = {
-	"max_level": 1,
-	"max_part": 1,
+	"max_level": 0,
+	"max_part": 0,
 	"found_scroll_dialogue": []
 }
 
@@ -50,8 +50,8 @@ func set_level_progress(level: int, part: int) -> void:
 func reset_game() -> void:
 	saving.emit()
 	save_contents = {
-		"max_level": 1,
-		"max_part": 1,
+		"max_level": 0,
+		"max_part": 0,
 		"found_scroll_dialogue": []
 	}
 	save()

@@ -23,7 +23,7 @@
 [ext_resource type="FontFile" uid="uid://p47ydk5quyq2" path="res://Assets/Tutorial Open Assets/brackeys_platformer_assets/fonts/PixelOperator8-Bold.ttf" id="18_hc8gb"]
 [ext_resource type="AudioStream" uid="uid://cbtn1bitrynwi" path="res://Assets/Audio/Music/sample.wav" id="19_sp8ht"]
 [ext_resource type="Script" uid="uid://hfj0hgwiyiqu" path="res://Scripts/Central/event_trigger.gd" id="20_766jn"]
-[ext_resource type="Script" path="res://Scripts/Obstacles/gate_crystal.gd" id="21_yjter"]
+[ext_resource type="Script" uid="uid://cbirdwbh5p7se" path="res://Scripts/Obstacles/gate_crystal.gd" id="21_yjter"]
 [ext_resource type="PackedScene" uid="uid://dm61xmst0522o" path="res://Scenes/Items/magic_bamboo.tscn" id="22_0a10j"]
 [ext_resource type="Texture2D" uid="uid://c8dol58rb8t5j" path="res://Assets/Sprites/Magic Bamboo/+5 hp magic bamboo.png" id="23_xo2ep"]
 [ext_resource type="Script" uid="uid://b7008awu7lly6" path="res://Scenes/Level/next_level.gd" id="24_avfl4"]
@@ -883,12 +883,9 @@ size = Vector2(48, 16)
 position = Vector2(1, 0)
 script = ExtResource("1_qwuc5")
 
-[node name="GameManager" type="Node" parent="." node_paths=PackedStringArray("stateLabel", "equipLabel", "gameOverScreen")]
+[node name="GameManager" type="Node" parent="."]
 unique_name_in_owner = true
 script = ExtResource("2_ybknx")
-stateLabel = NodePath("")
-equipLabel = NodePath("")
-gameOverScreen = NodePath("")
 
 [node name="TileMap" type="TileMap" parent="."]
 z_index = 5

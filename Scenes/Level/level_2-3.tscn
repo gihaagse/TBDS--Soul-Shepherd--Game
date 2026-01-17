@@ -37,7 +37,7 @@
 [ext_resource type="Script" uid="uid://b7008awu7lly6" path="res://Scenes/Level/next_level.gd" id="28_1joaj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_25kfv"]
-texture = ExtResource("2_0swme")
+texture = ExtResource("2_dvdi7")
 1:0/0 = 0
 1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(0.719435, 3.0576, 8, -0.539576, 8, 8, -8, 8)
 2:0/0 = 0
@@ -220,7 +220,7 @@ texture = ExtResource("2_0swme")
 2:6/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kjowu"]
-texture = ExtResource("3_3lt66")
+texture = ExtResource("3_h4ofq")
 1:0/0 = 0
 2:0/0 = 0
 3:0/0 = 0
@@ -548,7 +548,7 @@ size = Vector2(48, 16)
 size = Vector2(30, 30)
 
 [node name="Level" type="Node2D"]
-script = ExtResource("1_3yx86")
+script = ExtResource("1_gdp4l")
 
 [node name="TileMap" type="TileMap" parent="."]
 z_index = 4
@@ -563,27 +563,27 @@ layer_1/tile_data = PackedInt32Array(983110, 65536, 5, 983111, 65536, 5, 983112,
 
 [node name="GameManager" type="Node" parent="."]
 unique_name_in_owner = true
-script = ExtResource("4_0swme")
+script = ExtResource("4_mqnby")
 
 [node name="CameraMain" type="Camera2D" parent="." node_paths=PackedStringArray("player")]
 zoom = Vector2(2, 2)
 limit_left = 0
 limit_right = 5000
-script = ExtResource("4_gb2tu")
+script = ExtResource("5_tigu1")
 player = NodePath("../Player")
 
-[node name="Player" parent="." instance=ExtResource("5_voudn")]
+[node name="Player" parent="." instance=ExtResource("6_pvriu")]
 position = Vector2(48, 296)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 process_mode = 3
-script = ExtResource("6_s1rtq")
+script = ExtResource("7_s1paa")
 
 [node name="Current State" type="Label" parent="CanvasLayer"]
 visible = false
 offset_right = 40.0
 offset_bottom = 23.0
-theme_override_fonts/font = ExtResource("7_gdp4l")
+theme_override_fonts/font = ExtResource("8_4ck4l")
 theme_override_font_sizes/font_size = 32
 text = "State: "
 
@@ -592,7 +592,7 @@ visible = false
 offset_top = 38.0
 offset_right = 168.0
 offset_bottom = 70.0
-theme_override_fonts/font = ExtResource("7_gdp4l")
+theme_override_fonts/font = ExtResource("8_4ck4l")
 theme_override_font_sizes/font_size = 32
 text = "Equip: "
 
@@ -604,7 +604,7 @@ anchor_bottom = 1.0
 offset_top = -32.0
 offset_right = 76.0
 grow_vertical = 0
-theme_override_fonts/font = ExtResource("7_gdp4l")
+theme_override_fonts/font = ExtResource("8_4ck4l")
 theme_override_font_sizes/font_size = 32
 text = "HP:"
 
@@ -632,17 +632,17 @@ offset_right = 20.0
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("7_gdp4l")
+theme_override_fonts/font = ExtResource("8_4ck4l")
 theme_override_font_sizes/font_size = 64
 text = "Game Over"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("8_dvdi7")]
+[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("9_7jyuy")]
 visible = false
 z_index = 6
 
-[node name="OptionsMenu" parent="CanvasLayer" instance=ExtResource("9_h4ofq")]
+[node name="OptionsMenu" parent="CanvasLayer" instance=ExtResource("10_86860")]
 visible = false
 
 [node name="DashTimer" type="Label" parent="CanvasLayer"]
@@ -656,7 +656,7 @@ grow_horizontal = 0
 text = "Dash Timer"
 horizontal_alignment = 2
 
-[node name="AbilityDebugMenu" parent="CanvasLayer" instance=ExtResource("10_mqnby")]
+[node name="AbilityDebugMenu" parent="CanvasLayer" instance=ExtResource("11_y2nwt")]
 visible = false
 anchors_preset = 5
 anchor_left = 0.5
@@ -664,24 +664,24 @@ anchor_right = 0.5
 anchor_bottom = 0.0
 grow_vertical = 1
 
-[node name="AbilityGrid" parent="CanvasLayer" instance=ExtResource("11_tigu1")]
+[node name="AbilityGrid" parent="CanvasLayer" instance=ExtResource("12_amwa5")]
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
 grow_horizontal = 0
 grow_vertical = 0
 
-[node name="Ability_info" parent="CanvasLayer" instance=ExtResource("12_pvriu")]
+[node name="Ability_info" parent="CanvasLayer" instance=ExtResource("13_istrg")]
 visible = false
 
-[node name="CheckPointRespawnUI" parent="CanvasLayer" instance=ExtResource("13_s1paa")]
+[node name="CheckPointRespawnUI" parent="CanvasLayer" instance=ExtResource("14_5lnw5")]
 visible = false
 
-[node name="AbilityInfoButton" parent="CanvasLayer" instance=ExtResource("15_voudn")]
+[node name="AbilityInfoButton" parent="CanvasLayer" instance=ExtResource("15_faqj2")]
 offset_top = -224.0
 offset_bottom = -184.0
 
-[node name="PlayerHUD" parent="CanvasLayer" instance=ExtResource("16_s1rtq")]
+[node name="PlayerHUD" parent="CanvasLayer" instance=ExtResource("16_tvr8e")]
 offset_left = 12.0
 offset_top = 446.0
 offset_right = -1140.0
@@ -693,7 +693,7 @@ offset_left = 8.0
 offset_top = 10.0
 offset_right = 276.0
 offset_bottom = 72.0
-theme_override_fonts/font = ExtResource("17_gdp4l")
+theme_override_fonts/font = ExtResource("17_421w2")
 theme_override_font_sizes/font_size = 20
 text = "Current Level: 
 2-3"
@@ -703,74 +703,74 @@ z_index = 5
 
 [node name="falling_tiles" type="Node2D" parent="Obstacles"]
 
-[node name="obstacle_falling_tiles" parent="Obstacles/falling_tiles" instance=ExtResource("14_4ck4l")]
+[node name="obstacle_falling_tiles" parent="Obstacles/falling_tiles" instance=ExtResource("18_pli2m")]
 position = Vector2(1514, 7)
 
-[node name="obstacle_falling_tiles2" parent="Obstacles/falling_tiles" instance=ExtResource("14_4ck4l")]
+[node name="obstacle_falling_tiles2" parent="Obstacles/falling_tiles" instance=ExtResource("18_pli2m")]
 position = Vector2(1530, 7)
 
-[node name="obstacle_falling_tiles9" parent="Obstacles/falling_tiles" instance=ExtResource("14_4ck4l")]
+[node name="obstacle_falling_tiles9" parent="Obstacles/falling_tiles" instance=ExtResource("18_pli2m")]
 position = Vector2(1575, -32)
 
-[node name="obstacle_falling_tiles3" parent="Obstacles/falling_tiles" instance=ExtResource("14_4ck4l")]
+[node name="obstacle_falling_tiles3" parent="Obstacles/falling_tiles" instance=ExtResource("18_pli2m")]
 position = Vector2(1575, -48)
 
-[node name="obstacle_falling_tiles4" parent="Obstacles/falling_tiles" instance=ExtResource("14_4ck4l")]
+[node name="obstacle_falling_tiles4" parent="Obstacles/falling_tiles" instance=ExtResource("18_pli2m")]
 position = Vector2(1575, -64)
 
-[node name="obstacle_falling_tiles5" parent="Obstacles/falling_tiles" instance=ExtResource("14_4ck4l")]
+[node name="obstacle_falling_tiles5" parent="Obstacles/falling_tiles" instance=ExtResource("18_pli2m")]
 position = Vector2(1519, -64)
 
-[node name="obstacle_falling_tiles6" parent="Obstacles/falling_tiles" instance=ExtResource("14_4ck4l")]
+[node name="obstacle_falling_tiles6" parent="Obstacles/falling_tiles" instance=ExtResource("18_pli2m")]
 position = Vector2(1503, -64)
 
-[node name="obstacle_falling_tiles7" parent="Obstacles/falling_tiles" instance=ExtResource("14_4ck4l")]
+[node name="obstacle_falling_tiles7" parent="Obstacles/falling_tiles" instance=ExtResource("18_pli2m")]
 position = Vector2(1560, -122)
 
-[node name="obstacle_falling_tiles8" parent="Obstacles/falling_tiles" instance=ExtResource("14_4ck4l")]
+[node name="obstacle_falling_tiles8" parent="Obstacles/falling_tiles" instance=ExtResource("18_pli2m")]
 position = Vector2(1576, -122)
 
-[node name="obstacle_falling_tiles10" parent="Obstacles/falling_tiles" instance=ExtResource("14_4ck4l")]
+[node name="obstacle_falling_tiles10" parent="Obstacles/falling_tiles" instance=ExtResource("18_pli2m")]
 position = Vector2(1592, -168)
 
-[node name="obstacle_falling_tiles11" parent="Obstacles/falling_tiles" instance=ExtResource("14_4ck4l")]
+[node name="obstacle_falling_tiles11" parent="Obstacles/falling_tiles" instance=ExtResource("18_pli2m")]
 position = Vector2(1608, -168)
 
 [node name="spikes" type="Node2D" parent="Obstacles"]
 
-[node name="obstacle_spike" parent="Obstacles/spikes" instance=ExtResource("15_7jyuy")]
+[node name="obstacle_spike" parent="Obstacles/spikes" instance=ExtResource("19_4ah0m")]
 z_index = 4
 position = Vector2(1253, 253)
 
-[node name="obstacle_spike2" parent="Obstacles/spikes" instance=ExtResource("15_7jyuy")]
+[node name="obstacle_spike2" parent="Obstacles/spikes" instance=ExtResource("19_4ah0m")]
 z_index = 4
 position = Vector2(1175, 253)
 
-[node name="obstacle_spike3" parent="Obstacles/spikes" instance=ExtResource("15_7jyuy")]
+[node name="obstacle_spike3" parent="Obstacles/spikes" instance=ExtResource("19_4ah0m")]
 z_index = 4
 position = Vector2(2136, -579)
 
-[node name="obstacle_spike4" parent="Obstacles/spikes" instance=ExtResource("15_7jyuy")]
+[node name="obstacle_spike4" parent="Obstacles/spikes" instance=ExtResource("19_4ah0m")]
 z_index = 4
 position = Vector2(2216, -579)
 
-[node name="obstacle_spike5" parent="Obstacles/spikes" instance=ExtResource("15_7jyuy")]
+[node name="obstacle_spike5" parent="Obstacles/spikes" instance=ExtResource("19_4ah0m")]
 z_index = 4
 position = Vector2(2312, -579)
 
-[node name="obstacle_spike6" parent="Obstacles/spikes" instance=ExtResource("15_7jyuy")]
+[node name="obstacle_spike6" parent="Obstacles/spikes" instance=ExtResource("19_4ah0m")]
 z_index = 4
 position = Vector2(2408, -579)
 
-[node name="obstacle_spike7" parent="Obstacles/spikes" instance=ExtResource("15_7jyuy")]
+[node name="obstacle_spike7" parent="Obstacles/spikes" instance=ExtResource("19_4ah0m")]
 z_index = 4
 position = Vector2(3781, -1571)
 
-[node name="obstacle_spike8" parent="Obstacles/spikes" instance=ExtResource("15_7jyuy")]
+[node name="obstacle_spike8" parent="Obstacles/spikes" instance=ExtResource("19_4ah0m")]
 z_index = 4
 position = Vector2(3989, -1779)
 
-[node name="obstacle_spike9" parent="Obstacles/spikes" instance=ExtResource("15_7jyuy")]
+[node name="obstacle_spike9" parent="Obstacles/spikes" instance=ExtResource("19_4ah0m")]
 z_index = 4
 position = Vector2(4013, -1897)
 rotation = -1.5708
@@ -779,23 +779,23 @@ rotation = -1.5708
 z_index = 4
 position = Vector2(-1, -17)
 
-[node name="MagicBamboo" parent="Obstacles/MagicBamboo" instance=ExtResource("16_86860")]
+[node name="MagicBamboo" parent="Obstacles/MagicBamboo" instance=ExtResource("20_d20ke")]
 z_index = 5
 position = Vector2(-383, -148)
-texture = ExtResource("17_y2nwt")
+texture = ExtResource("21_bod3k")
 heal_amount = 5
 COLOR = Color(0, 0.59607846, 0.8627451, 1)
 
 [node name="Souls" type="Node2D" parent="."]
 
-[node name="Soul" parent="Souls" instance=ExtResource("18_amwa5")]
+[node name="Soul" parent="Souls" instance=ExtResource("22_1joaj")]
 position = Vector2(1134, 232)
 ability = 8
-custom_sprite_frames = ExtResource("19_istrg")
+custom_sprite_frames = ExtResource("23_5dcs2")
 
-[node name="Soul2" parent="Souls" instance=ExtResource("18_amwa5")]
+[node name="Soul2" parent="Souls" instance=ExtResource("22_1joaj")]
 position = Vector2(3871, -1919)
-custom_sprite_frames = ExtResource("20_5lnw5")
+custom_sprite_frames = ExtResource("24_c1vjm")
 
 [node name="Scrolls" type="Node2D" parent="."]
 
@@ -805,98 +805,98 @@ dialogue = ExtResource("26_p4xu6")
 
 [node name="Scroll2" parent="Scrolls" instance=ExtResource("25_stt6h")]
 position = Vector2(456, -394)
-dialogue = ExtResource("26_pdsuj")
+dialogue = ExtResource("26_7r618")
 
 [node name="Scroll3" parent="Scrolls" instance=ExtResource("25_stt6h")]
 position = Vector2(3144, -1003)
-dialogue = ExtResource("26_pdsuj")
+dialogue = ExtResource("26_7r618")
 
-[node name="ParralaxBackground2-2" parent="." instance=ExtResource("21_faqj2")]
+[node name="ParralaxBackground2-2" parent="." instance=ExtResource("27_ikm0d")]
 position = Vector2(531, 303)
 
 [node name="CheckPoints" type="Node2D" parent="."]
 z_index = 10
 
-[node name="Area2D1" parent="CheckPoints" instance=ExtResource("22_tvr8e")]
+[node name="Area2D1" parent="CheckPoints" instance=ExtResource("28_nkqg0")]
 position = Vector2(999, 135)
 checkppoint_id = 1
 
-[node name="Area2D2" parent="CheckPoints" instance=ExtResource("22_tvr8e")]
+[node name="Area2D2" parent="CheckPoints" instance=ExtResource("28_nkqg0")]
 position = Vector2(2091, -569)
 checkppoint_id = 2
 
-[node name="Area2D3" parent="CheckPoints" instance=ExtResource("22_tvr8e")]
+[node name="Area2D3" parent="CheckPoints" instance=ExtResource("28_nkqg0")]
 position = Vector2(2758, -297)
 checkppoint_id = 3
 
-[node name="Area2D4" parent="CheckPoints" instance=ExtResource("22_tvr8e")]
+[node name="Area2D4" parent="CheckPoints" instance=ExtResource("28_nkqg0")]
 position = Vector2(3680, -1561)
 checkppoint_id = 4
 
 [node name="Start" type="Marker2D" parent="CheckPoints"]
 position = Vector2(10, 295)
-script = ExtResource("23_421w2")
+script = ExtResource("29_b3nn7")
 
 [node name="Enemies" type="Node2D" parent="."]
 z_index = 5
 
-[node name="Enemy" parent="Enemies" instance=ExtResource("24_pli2m")]
+[node name="Enemy" parent="Enemies" instance=ExtResource("30_yxx7h")]
 position = Vector2(806, 168)
 
-[node name="Enemy2" parent="Enemies" instance=ExtResource("24_pli2m")]
+[node name="Enemy2" parent="Enemies" instance=ExtResource("30_yxx7h")]
 position = Vector2(1020, 120)
 
-[node name="Enemy3" parent="Enemies" instance=ExtResource("25_4ah0m")]
+[node name="Enemy3" parent="Enemies" instance=ExtResource("31_4ij5i")]
 position = Vector2(2344, -734)
 
-[node name="Enemy4" parent="Enemies" instance=ExtResource("25_4ah0m")]
+[node name="Enemy4" parent="Enemies" instance=ExtResource("31_4ij5i")]
 position = Vector2(2663, -1337)
 
-[node name="Enemy5" parent="Enemies" instance=ExtResource("25_4ah0m")]
+[node name="Enemy5" parent="Enemies" instance=ExtResource("31_4ij5i")]
 position = Vector2(2986, -1401)
 
-[node name="Enemy6" parent="Enemies" instance=ExtResource("25_4ah0m")]
+[node name="Enemy6" parent="Enemies" instance=ExtResource("31_4ij5i")]
 position = Vector2(3340, -1545)
 
-[node name="Enemy7" parent="Enemies" instance=ExtResource("25_4ah0m")]
+[node name="Enemy7" parent="Enemies" instance=ExtResource("31_4ij5i")]
 position = Vector2(2684, -313)
 
-[node name="Enemy8" parent="Enemies" instance=ExtResource("25_4ah0m")]
+[node name="Enemy8" parent="Enemies" instance=ExtResource("31_4ij5i")]
 position = Vector2(2969, -372)
 
-[node name="Enemy9" parent="Enemies" instance=ExtResource("25_4ah0m")]
+[node name="Enemy9" parent="Enemies" instance=ExtResource("31_4ij5i")]
 position = Vector2(3161, -441)
 
-[node name="Enemy10" parent="Enemies" instance=ExtResource("25_4ah0m")]
+[node name="Enemy10" parent="Enemies" instance=ExtResource("31_4ij5i")]
 position = Vector2(2981, -505)
 
-[node name="Enemy11" parent="Enemies" instance=ExtResource("25_4ah0m")]
+[node name="Enemy11" parent="Enemies" instance=ExtResource("31_4ij5i")]
 position = Vector2(3207, -553)
 
-[node name="Enemy12" parent="Enemies" instance=ExtResource("25_4ah0m")]
+[node name="Enemy12" parent="Enemies" instance=ExtResource("31_4ij5i")]
 position = Vector2(3053, -617)
 
-[node name="Enemy13" parent="Enemies" instance=ExtResource("25_4ah0m")]
+[node name="Enemy13" parent="Enemies" instance=ExtResource("31_4ij5i")]
 position = Vector2(3058, -697)
 
-[node name="Enemy14" parent="Enemies" instance=ExtResource("25_4ah0m")]
+[node name="Enemy14" parent="Enemies" instance=ExtResource("31_4ij5i")]
 position = Vector2(3256, -762)
 
-[node name="Enemy15" parent="Enemies" instance=ExtResource("25_4ah0m")]
+[node name="Enemy15" parent="Enemies" instance=ExtResource("31_4ij5i")]
 position = Vector2(3082, -826)
 
-[node name="Enemy16" parent="Enemies" instance=ExtResource("25_4ah0m")]
+[node name="Enemy16" parent="Enemies" instance=ExtResource("31_4ij5i")]
 position = Vector2(3274, -874)
 
-[node name="Enemy17" parent="Enemies" instance=ExtResource("25_4ah0m")]
+[node name="Enemy17" parent="Enemies" instance=ExtResource("31_4ij5i")]
 position = Vector2(3416, -1019)
 
-[node name="Enemy18" parent="Enemies" instance=ExtResource("25_4ah0m")]
+[node name="Enemy18" parent="Enemies" instance=ExtResource("31_4ij5i")]
 position = Vector2(4356, -2121)
 
 [node name="killzone" type="Area2D" parent="."]
 collision_mask = 4
-script = ExtResource("26_d20ke")
+script = ExtResource("32_wj1gc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="killzone"]
 position = Vector2(520, 457)
@@ -924,18 +924,18 @@ position = Vector2(2600, 248)
 
 [node name="Sprite2D" type="Sprite2D" parent="Moving_platforms/Moving_Platform"]
 position = Vector2(16, 0)
-texture = ExtResource("27_bod3k")
+texture = ExtResource("33_1opsg")
 region_enabled = true
 region_rect = Rect2(64, 160, 16, 16)
 
 [node name="Sprite2D2" type="Sprite2D" parent="Moving_platforms/Moving_Platform"]
-texture = ExtResource("27_bod3k")
+texture = ExtResource("33_1opsg")
 region_enabled = true
 region_rect = Rect2(64, 160, 16, 16)
 
 [node name="Sprite2D3" type="Sprite2D" parent="Moving_platforms/Moving_Platform"]
 position = Vector2(-16, 0)
-texture = ExtResource("27_bod3k")
+texture = ExtResource("33_1opsg")
 region_enabled = true
 region_rect = Rect2(64, 160, 16, 16)
 
@@ -948,18 +948,18 @@ position = Vector2(2904, 248)
 
 [node name="Sprite2D" type="Sprite2D" parent="Moving_platforms/Moving_Platform2"]
 position = Vector2(16, 0)
-texture = ExtResource("27_bod3k")
+texture = ExtResource("33_1opsg")
 region_enabled = true
 region_rect = Rect2(64, 160, 16, 16)
 
 [node name="Sprite2D2" type="Sprite2D" parent="Moving_platforms/Moving_Platform2"]
-texture = ExtResource("27_bod3k")
+texture = ExtResource("33_1opsg")
 region_enabled = true
 region_rect = Rect2(64, 160, 16, 16)
 
 [node name="Sprite2D3" type="Sprite2D" parent="Moving_platforms/Moving_Platform2"]
 position = Vector2(-16, 0)
-texture = ExtResource("27_bod3k")
+texture = ExtResource("33_1opsg")
 region_enabled = true
 region_rect = Rect2(64, 160, 16, 16)
 
@@ -972,18 +972,18 @@ position = Vector2(3240, 248)
 
 [node name="Sprite2D" type="Sprite2D" parent="Moving_platforms/Moving_Platform3"]
 position = Vector2(16, 0)
-texture = ExtResource("27_bod3k")
+texture = ExtResource("33_1opsg")
 region_enabled = true
 region_rect = Rect2(64, 160, 16, 16)
 
 [node name="Sprite2D2" type="Sprite2D" parent="Moving_platforms/Moving_Platform3"]
-texture = ExtResource("27_bod3k")
+texture = ExtResource("33_1opsg")
 region_enabled = true
 region_rect = Rect2(64, 160, 16, 16)
 
 [node name="Sprite2D3" type="Sprite2D" parent="Moving_platforms/Moving_Platform3"]
 position = Vector2(-16, 0)
-texture = ExtResource("27_bod3k")
+texture = ExtResource("33_1opsg")
 region_enabled = true
 region_rect = Rect2(64, 160, 16, 16)
 
@@ -996,18 +996,18 @@ position = Vector2(2280, -1320)
 
 [node name="Sprite2D" type="Sprite2D" parent="Moving_platforms/Moving_Platform4"]
 position = Vector2(16, 0)
-texture = ExtResource("27_bod3k")
+texture = ExtResource("33_1opsg")
 region_enabled = true
 region_rect = Rect2(64, 160, 16, 16)
 
 [node name="Sprite2D2" type="Sprite2D" parent="Moving_platforms/Moving_Platform4"]
-texture = ExtResource("27_bod3k")
+texture = ExtResource("33_1opsg")
 region_enabled = true
 region_rect = Rect2(64, 160, 16, 16)
 
 [node name="Sprite2D3" type="Sprite2D" parent="Moving_platforms/Moving_Platform4"]
 position = Vector2(-16, 0)
-texture = ExtResource("27_bod3k")
+texture = ExtResource("33_1opsg")
 region_enabled = true
 region_rect = Rect2(64, 160, 16, 16)
 
@@ -1017,7 +1017,7 @@ shape = SubResource("RectangleShape2D_v8vj6")
 [node name="Next_level" type="Area2D" parent="."]
 position = Vector2(4953, -2127)
 collision_mask = 4
-script = ExtResource("28_1joaj")
+script = ExtResource("34_q2j8j")
 level_name = "Level Walljump"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Next_level"]
