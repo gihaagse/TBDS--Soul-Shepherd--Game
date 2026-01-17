@@ -18,7 +18,7 @@ class_name CameraMain
 @export var left_cam_offset := 60.0
 @export var right_cam_offset := -90.0
 
-@export var offset_lerp_speed := 10.0 
+@export var offset_lerp_speed := 3.0 
 
 var target_pos: Vector2
 
