@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="ScrollDialogue" load_steps=2 format=3 uid="uid://cxl15j34qwahb"]
+
+[ext_resource type="Script" uid="uid://8comeh3keae4" path="res://Resources/Scroll/ScrollResource.gd" id="1_deovx"]
+
+[resource]
+script = ExtResource("1_deovx")
+scroll_dialogue = Array[String](["We messed up.", "You know that kid I was talking about?", "He finally did something stupid enough to put us all in hot water.", "He burnt that youngsters hut, burnt him and his “friend”.", "I asked kindly for you to do something, I thought it was not allowed in your tenets to have companions, and after your dismissal, the jealousy of young men led to the loss of life.", "Now everyone is on edge.", "Talks of seeing ghostly black and white apparitions with monks clothing, animals nearby going feral and scaring the folk.", "We need help.", "Please listen to us and send any form of help.", "Please."])
+metadata/_custom_type_script = "uid://8comeh3keae4"

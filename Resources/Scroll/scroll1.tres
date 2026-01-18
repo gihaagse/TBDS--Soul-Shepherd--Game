@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="ScrollDialogue" load_steps=2 format=3 uid="uid://c1oql5tsw3f8k"]
+
+[ext_resource type="Script" uid="uid://8comeh3keae4" path="res://Resources/Scroll/ScrollResource.gd" id="1_2frfe"]
+
+[resource]
+script = ExtResource("1_2frfe")
+scroll_dialogue = Array[String](["The Tree of Life must be quelled.", "If the souls are not returned to their rightful place by the tree’s roots, they will deteriorate and become restless.", "The lands beyond cannot be ventured, and is only for souls to depart to, so they can expedite into another land.", "One we all will join one day.", "For those who have now shed the shackles of life, for those who will do it one day, for yourself, and for everyone, lead lost souls to the Gates of The Tree of Life, so none of us may ever wither. "])
+metadata/_custom_type_script = "uid://8comeh3keae4"

@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="ScrollDialogue" load_steps=2 format=3 uid="uid://db2nuuqxfa352"]
+
+[ext_resource type="Script" uid="uid://8comeh3keae4" path="res://Resources/Scroll/ScrollResource.gd" id="1_n0t3w"]
+
+[resource]
+script = ExtResource("1_n0t3w")
+scroll_dialogue = Array[String](["Man those are some weird monks.", "This place is as safe as can be!", "Yeah sure, I got to watch my step every now and then, but that can be said about any wilderness trip!", "This place doesn’t even have any dangerous animals from what I can tell, so there is no danger I can think of.", "Thinking about it, I don’t think I saw any animals here?", "That just means this place is probably way more civilized than those people care to admit! ", "I bet they are keeping this place a secret so they can use it to relax themselves, this place is as good a place to camp as any!"])
+metadata/_custom_type_script = "uid://8comeh3keae4"

@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://df7x13ignki5d"]
+[gd_scene load_steps=44 format=3 uid="uid://df7x13ignki5d"]
 
 [ext_resource type="Script" uid="uid://dhm65txe15dn0" path="res://Scenes/Level/level_2_3.gd" id="1_3yx86"]
 [ext_resource type="Resource" uid="uid://4v7wvh5s6b0b" path="res://Resources/AbilityUnlocking/level_2-3.tres" id="2_6hcqd"]
@@ -29,9 +29,13 @@
 [ext_resource type="Script" uid="uid://dtfsguwdnfr7m" path="res://Scripts/CheckPoints/start.gd" id="23_421w2"]
 [ext_resource type="PackedScene" uid="uid://t6qqa47vckdt" path="res://Scenes/Enemies/husk.tscn" id="24_pli2m"]
 [ext_resource type="PackedScene" uid="uid://7xmeecoh36yq" path="res://Scenes/Enemies/yeti.tscn" id="25_4ah0m"]
+[ext_resource type="PackedScene" uid="uid://bdhxnuny30cml" path="res://Scenes/Items/scroll.tscn" id="25_stt6h"]
 [ext_resource type="Script" uid="uid://bpkjqkjnq8o6g" path="res://Scripts/Player/General/killzone.gd" id="26_d20ke"]
+[ext_resource type="Resource" uid="uid://blx868278ft4w" path="res://Resources/Scroll/scroll11.tres" id="26_pdsuj"]
 [ext_resource type="Texture2D" uid="uid://dfdfu6o1j3apv" path="res://Assets/Sprites/Playtest1.png" id="27_bod3k"]
+[ext_resource type="Resource" uid="uid://b6gut84bheyp0" path="res://Resources/Scroll/scroll12.tres" id="27_pdsuj"]
 [ext_resource type="Script" uid="uid://b7008awu7lly6" path="res://Scenes/Level/next_level.gd" id="28_1joaj"]
+[ext_resource type="Resource" uid="uid://dtmcjwc62dpe8" path="res://Resources/Scroll/scroll13.tres" id="28_p4xu6"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_iy8e7"]
 distance = -17.0
@@ -181,6 +185,7 @@ script = ExtResource("4_gb2tu")
 player = NodePath("../Player")
 
 [node name="Player" parent="." instance=ExtResource("5_voudn")]
+z_index = 10
 position = Vector2(48, 296)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -386,14 +391,33 @@ texture = ExtResource("17_y2nwt")
 heal_amount = 5
 COLOR = Color(0, 0.59607846, 0.8627451, 1)
 
-[node name="Soul" parent="." instance=ExtResource("18_amwa5")]
+[node name="Souls" type="Node2D" parent="."]
+
+[node name="Soul" parent="Souls" instance=ExtResource("18_amwa5")]
 position = Vector2(1134, 232)
 ability = 8
 custom_sprite_frames = ExtResource("19_istrg")
 
-[node name="Soul2" parent="." instance=ExtResource("18_amwa5")]
+[node name="Soul2" parent="Souls" instance=ExtResource("18_amwa5")]
 position = Vector2(3871, -1919)
 custom_sprite_frames = ExtResource("20_5lnw5")
+
+[node name="Scrolls" type="Node2D" parent="."]
+
+[node name="Scroll11" parent="Scrolls" instance=ExtResource("25_stt6h")]
+z_index = 20
+position = Vector2(520, 96)
+dialogue = ExtResource("26_pdsuj")
+
+[node name="Scroll12" parent="Scrolls" instance=ExtResource("25_stt6h")]
+z_index = 20
+position = Vector2(456, -395)
+dialogue = ExtResource("27_pdsuj")
+
+[node name="Scroll13" parent="Scrolls" instance=ExtResource("25_stt6h")]
+z_index = 20
+position = Vector2(3144, -1003)
+dialogue = ExtResource("28_p4xu6")
 
 [node name="ParralaxBackground2-2" parent="." instance=ExtResource("21_faqj2")]
 position = Vector2(531, 303)

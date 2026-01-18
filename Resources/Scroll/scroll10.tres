@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="ScrollDialogue" load_steps=2 format=3 uid="uid://dhm4l8ekfvix3"]
+
+[ext_resource type="Script" uid="uid://8comeh3keae4" path="res://Resources/Scroll/ScrollResource.gd" id="1_qc227"]
+
+[resource]
+script = ExtResource("1_qc227")
+scroll_dialogue = Array[String](["Rukudai.", "My student is… lost.", "The way you were… ", "The way you are.", "He is coming with the same foolish ambition that you had.", "To stop death, to avoid it, just because he has been stung by it.", "He thinks he can overcome it because he was able to delay it.", "He is… prodigious, talented.", "The best of my students.", "The best of my… sons…", "He will come with the soul of his loved one, tucked close to him.", "When he does… when I fail to stop him… show mercy.", "For the years of unjust end you have inflicted upon so many souls, for the sake of my part in that atrocity, for the past we once shared…", "I want you to spare only these two.", "Allow only these two to survive, nothing more nothing less.", "I never asked for anything until now, I never dared but now…", "Please.", "I beg you. "])
+metadata/_custom_type_script = "uid://8comeh3keae4"

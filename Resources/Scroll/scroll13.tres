@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="ScrollDialogue" load_steps=2 format=3 uid="uid://dtmcjwc62dpe8"]
+
+[ext_resource type="Script" uid="uid://8comeh3keae4" path="res://Resources/Scroll/ScrollResource.gd" id="1_hdo4j"]
+
+[resource]
+script = ExtResource("1_hdo4j")
+scroll_dialogue = Array[String](["I have changed into something less than human…", "Something… More.", "In my journey I came across souls departing from the bodies I piled up, departing from the Tree of Life, and using the Soul Arts, consumed them.", "And the power was… exhilarating, I knew nothing like it in my many years of life.", "Such a source of power we let go to waste, letting them make their way back into the tree.", "Not anymore.", "Now?", "I now control life and death.", "I now decide who gets to come back.", "And the answer?", "Is NO ONE.", "My love didn’t come back, and Jaimaru did NOTHING.", "Despite all his words, all his claims of care, he didn’t.", "Though that is to be expected.", "He is a pushover, a nobody, a PAWN!", "And I, as the ruler of the kingdom of death, will make the best use of this pawn.", "After the… incident I caused, he is to succeed the role of a headmonk.", "He knows now what I am capable of.", "He knows what will happen if he doesn’t keep bringing souls to my domain.", "I will come, and collect my due.", "And in the eyes of a predator, the living and the dead aren’t different.", "All that remains, is the power behind them."])
+metadata/_custom_type_script = "uid://8comeh3keae4"

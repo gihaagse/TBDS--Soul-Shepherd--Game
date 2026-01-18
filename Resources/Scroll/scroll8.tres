@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="ScrollDialogue" load_steps=2 format=3 uid="uid://bldj55wy85i6y"]
+
+[ext_resource type="Script" uid="uid://8comeh3keae4" path="res://Resources/Scroll/ScrollResource.gd" id="1_s3pon"]
+
+[resource]
+script = ExtResource("1_s3pon")
+scroll_dialogue = Array[String](["Day 6 of the mining expedition.", "In our search for untainted lands, and more importantly, resources, I have been travelling deeper and deeper into the supposed “land of no return”.", "If our business is to survive, we need to take risks.", "I need to take risks, just as my grandfather did when he formed our business in the first place.", "We might be lacking workers right now but once I find the ores and gems of legend in these caves, I will bring our company back from death."])
+metadata/_custom_type_script = "uid://8comeh3keae4"

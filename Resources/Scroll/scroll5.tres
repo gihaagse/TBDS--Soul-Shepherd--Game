@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="ScrollDialogue" load_steps=2 format=3 uid="uid://ca77n1t4rvbuj"]
+
+[ext_resource type="Script" uid="uid://8comeh3keae4" path="res://Resources/Scroll/ScrollResource.gd" id="1_cgthj"]
+
+[resource]
+script = ExtResource("1_cgthj")
+scroll_dialogue = Array[String](["Survivor log.", "Ideas seem to be past their level.", "Critical reasoning and philosophy is never the focal point of any cult-like organization, nor can it be changed from within.", "I tried.", "With death at the door and life at our hands, what else could be clearer but action when it is not only possible, but necessary?", "The dead won’t always be the people we don’t know, and the thing they call “calmness of heart” is the silencing of their own humanity.", "They won’t be able to do that forever.", "I won’t be able to do that forever.", "If the push comes to show, I know where to go."])
+metadata/_custom_type_script = "uid://8comeh3keae4"

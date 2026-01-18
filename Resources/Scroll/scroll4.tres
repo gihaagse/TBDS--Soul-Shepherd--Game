@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="ScrollDialogue" load_steps=2 format=3 uid="uid://bwhfvf26i0ep5"]
+
+[ext_resource type="Script" uid="uid://8comeh3keae4" path="res://Resources/Scroll/ScrollResource.gd" id="1_vdrmy"]
+
+[resource]
+script = ExtResource("1_vdrmy")
+scroll_dialogue = Array[String](["This place is dressed in all the beauties of the world, and as with all beauties, it is plagued by plunderers.", "Whatever this force, this thing is, it is not one I know.", "I haven’t even been able to fathom the depth of darkness anything would need to seep into just to become comparable to the horror of this… thing.", "Yet whatever it is, it is another one of nature’s children, and as one of the chosen, I am the prime candidate to bring balance to squabbles between siblings."])
+metadata/_custom_type_script = "uid://8comeh3keae4"

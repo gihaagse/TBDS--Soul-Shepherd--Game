@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="ScrollDialogue" load_steps=2 format=3 uid="uid://b6gut84bheyp0"]
+
+[ext_resource type="Script" uid="uid://8comeh3keae4" path="res://Resources/Scroll/ScrollResource.gd" id="1_itw2w"]
+
+[resource]
+script = ExtResource("1_itw2w")
+scroll_dialogue = Array[String](["Blood and death on these… these damned claws!", "I have lost my humanity, my soul, and the only thing, only one that filled that soul with light.", "The damned headmonk and his obtuse ways about death is the only reason I am in this place anyway.", "If he is so worthless to do anything about it, I won’t be.", "I know someone has tried it before, I know it from their sour faces and telling silences.", "I will take that same journey and many more if that is what it takes to fix this.", "I will do what it takes to overcome death."])
+metadata/_custom_type_script = "uid://8comeh3keae4"

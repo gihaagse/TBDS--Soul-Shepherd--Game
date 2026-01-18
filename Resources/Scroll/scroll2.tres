@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="ScrollDialogue" load_steps=2 format=3 uid="uid://djemipvmm5y8y"]
+
+[ext_resource type="Script" uid="uid://8comeh3keae4" path="res://Resources/Scroll/ScrollResource.gd" id="1_wbbcc"]
+
+[resource]
+script = ExtResource("1_wbbcc")
+scroll_dialogue = Array[String](["I keep this aspect of my past, a sin, a grave danger to us all.", "I do this as the penance to my life.", "I understand, while this soul leaves the core of who I failed, it does not translate to me saving them.", "It does not change the past.", "It does nothing but sully the future.", "But I cannot leave you to the claws of fate.", "Not again.", "Not when I know what awaits you behind the gates.", "Forgive me for the pain I put you in life and torture I put you at death, I simply cannot let you go."])
+metadata/_custom_type_script = "uid://8comeh3keae4"
