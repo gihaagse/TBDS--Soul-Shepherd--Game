@@ -64,6 +64,6 @@ func _boss_hit() -> void:
 	pre_shoot()
 
 func _on_npc_died():
-	print(dialogue)
 	if dialogue:
+		await get_tree().create_timer(1).timeout
 		DialogueManager.start_dialogue(dialogue)

@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://bpp47tnrfdrab" path="res://Scenes/UI/Components/player_hud.tscn" id="17_txocl"]
 [ext_resource type="FontFile" uid="uid://p47ydk5quyq2" path="res://Assets/Tutorial Open Assets/brackeys_platformer_assets/fonts/PixelOperator8-Bold.ttf" id="18_vepe8"]
 [ext_resource type="Texture2D" uid="uid://ccx5i1mil6ubv" path="res://Assets/Backgrounds/boss_arena_background.png" id="19_dbf7t"]
+[ext_resource type="PackedScene" uid="uid://ndkp1vfqmr4g" path="res://Scenes/Dialogue/DialogueUI.tscn" id="19_pw0tg"]
 [ext_resource type="Script" uid="uid://bpkjqkjnq8o6g" path="res://Scripts/Player/General/killzone.gd" id="20_xto7o"]
 [ext_resource type="AudioStream" uid="uid://cbtn1bitrynwi" path="res://Assets/Audio/Music/sample.wav" id="21_pnbfv"]
 [ext_resource type="PackedScene" uid="uid://dm61xmst0522o" path="res://Scenes/Items/magic_bamboo.tscn" id="22_ysjws"]
@@ -665,6 +666,9 @@ theme_override_fonts/font = ExtResource("18_vepe8")
 theme_override_font_sizes/font_size = 20
 text = "Current Level:
 Boss Arena 1"
+
+[node name="DialogueUI" parent="." instance=ExtResource("19_pw0tg")]
+visible = false
 
 [node name="ParralaxBackground" type="Node2D" parent="."]
 z_index = 1
