@@ -74,7 +74,7 @@ func get_found_scrolls_text() -> String:
 	var text = "Found scrolls (%d):\n\n" % scrolls.size()
 	for i in range(scrolls.size()):
 		var scroll = scrolls[i] as String
-		text += "[%d] %s\n\n" % [i+1, scroll.left(50) + "..."]
+		text += "[%d] %s\n\n" % [i+1, scroll]
 	
 	return text
 	

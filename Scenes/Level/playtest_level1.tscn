@@ -38,7 +38,7 @@
 [ext_resource type="SpriteFrames" uid="uid://ctjpgblgpxxr1" path="res://Resources/Wisps/Purple_Wisp.tres" id="36_5khvb"]
 [ext_resource type="SpriteFrames" uid="uid://dddu3nk2vhaqr" path="res://Resources/Wisps/Red_Devil_Wisp.tres" id="37_afnil"]
 [ext_resource type="PackedScene" uid="uid://bdhxnuny30cml" path="res://Scenes/Items/scroll.tscn" id="38_6ffbj"]
-[ext_resource type="Resource" uid="uid://ba42w4pgbrt7k" path="res://Resources/Scroll/TestDialogueScroll.tres" id="39_8cwry"]
+[ext_resource type="Resource" uid="uid://blx868278ft4w" path="res://Resources/Scroll/scroll11.tres" id="39_gc84g"]
 [ext_resource type="Resource" uid="uid://dqr0x3xikciia" path="res://Resources/Scroll/TestScroll2.tres" id="40_1e7rd"]
 [ext_resource type="Script" uid="uid://b7008awu7lly6" path="res://Scenes/Level/next_level.gd" id="41_ldl48"]
 [ext_resource type="Shader" uid="uid://bnksrflwfix8q" path="res://Shaders/water_shader.gdshader" id="42_gc84g"]
@@ -774,7 +774,7 @@ custom_sprite_frames = ExtResource("34_p88bb")
 [node name="Scroll" parent="Souls" instance=ExtResource("38_6ffbj")]
 z_index = 20
 position = Vector2(122, 152)
-dialogue = ExtResource("39_8cwry")
+dialogue = ExtResource("39_gc84g")
 
 [node name="Scroll2" parent="Souls" instance=ExtResource("38_6ffbj")]
 z_index = 20
