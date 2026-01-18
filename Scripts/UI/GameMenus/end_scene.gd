@@ -6,11 +6,39 @@ extends Control
 @onready var skip_button: Button = $PageContainer/CurrentPage/DialogBox/VBoxContainer/SkipButton
 
 var pages: Array[Dictionary] = [
-	{"image": preload("res://Assets/Backgrounds/aesthetic-pixel-art-of-city-japanese-shrine.jpg"), 
-	"text": "This is dummy text for the first page."},
+	{"image": preload("res://Assets/Backgrounds/Endingpanel1.png"), 
+	"text": "The arduous journey is over. 
 	
-	{"image": preload("res://Assets/Backgrounds/red-shrine-entrance.jpg"), 
-	"text": "Now, the text for the second page is displayed."},
+	The Panda, The Monk, The Hero, 
+	completed his task, defying death, 
+	if only for a brief period.  
+	
+	The souls, finally completing their part in the cycle of life, 
+	returned to the Tree of Life, the first to do so in decades. 
+	
+	Their appreciation remained for The Panda, 
+	if only for moments, as they departed on to the new stage in their existence."},
+	
+	{"image": preload("res://Assets/Backgrounds/Endingpanel2.png"), 
+	"text": "With his task complete, 
+	The Hero departed alongside his love into The Tree, 
+	with hopes that he could once more defy death in there, 
+	remain together for as long as they could, 
+	and take that next step together if they can. 
+	As he took his first steps to the tree, 
+	the creature he borrowed for the journey slumped back onto its feet, 
+	unsure how it got there, but appreciated the view regardless."},
+	
+	{"image": preload("res://Assets/Backgrounds/Endingpanel3.png"), 
+	"text": "With death no longer being the harbinger of doom, 
+	but instead, the messenger to the next stage, 
+	the lands seemingly let out a sigh of relief. 
+	Though the journey past death was still unknown, 
+	the knowledge of the journey itself brought a calm to all who would have to venture it one day. 
+	Death was not overcome, nor defied, but instead, delayed. 
+	But now, perhaps it did not have to be. 
+	Perhaps now, death is where it needs to be, 
+	just as our Hero is."},
 ]
 
 var current_page_index: int = 0
