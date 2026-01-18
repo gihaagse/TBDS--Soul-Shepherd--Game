@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://df7x13ignki5d"]
+[gd_scene load_steps=57 format=3 uid="uid://df7x13ignki5d"]
 
 [ext_resource type="Script" uid="uid://dhm65txe15dn0" path="res://Scenes/Level/level_2_3.gd" id="1_3yx86"]
 [ext_resource type="Texture2D" uid="uid://c3jf58yvjljmy" path="res://Assets/Sprites/tileset2.png" id="2_0swme"]
@@ -35,6 +35,8 @@
 [ext_resource type="Resource" uid="uid://ba42w4pgbrt7k" path="res://Resources/Scroll/TestDialogueScroll.tres" id="26_pdsuj"]
 [ext_resource type="Texture2D" uid="uid://dfdfu6o1j3apv" path="res://Assets/Sprites/Playtest1.png" id="27_bod3k"]
 [ext_resource type="Script" uid="uid://b7008awu7lly6" path="res://Scenes/Level/next_level.gd" id="28_1joaj"]
+[ext_resource type="Shader" uid="uid://o6ancnl5jgcr" path="res://Shaders/Blink.gdshader" id="32_p4xu6"]
+[ext_resource type="Texture2D" uid="uid://dmv57vx1668nw" path="res://Assets/Sprites/Magic Bamboo/+ 15 hp magic bamboo.png" id="34_d67lg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_25kfv"]
 texture = ExtResource("2_0swme")
@@ -425,6 +427,96 @@ texture = ExtResource("3_3lt66")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_25kfv")
 sources/1 = SubResource("TileSetAtlasSource_kjowu")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_d67lg"]
+resource_local_to_scene = true
+shader = ExtResource("32_p4xu6")
+shader_parameter/blink_color = Color(1, 1, 1, 1)
+shader_parameter/blink_intensity = 0.0
+shader_parameter/damage_active = false
+shader_parameter/damage_time = 0.0
+shader_parameter/shake_intensity = 0.0
+shader_parameter/distortion = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_p4xu6"]
+resource_local_to_scene = true
+shader = ExtResource("32_p4xu6")
+shader_parameter/blink_color = Color(1, 1, 1, 1)
+shader_parameter/blink_intensity = 0.0
+shader_parameter/damage_active = false
+shader_parameter/damage_time = 0.0
+shader_parameter/shake_intensity = 0.0
+shader_parameter/distortion = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1glto"]
+resource_local_to_scene = true
+shader = ExtResource("32_p4xu6")
+shader_parameter/blink_color = Color(1, 1, 1, 1)
+shader_parameter/blink_intensity = 0.0
+shader_parameter/damage_active = false
+shader_parameter/damage_time = 0.0
+shader_parameter/shake_intensity = 0.0
+shader_parameter/distortion = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xsnww"]
+resource_local_to_scene = true
+shader = ExtResource("32_p4xu6")
+shader_parameter/blink_color = Color(1, 1, 1, 1)
+shader_parameter/blink_intensity = 0.0
+shader_parameter/damage_active = false
+shader_parameter/damage_time = 0.0
+shader_parameter/shake_intensity = 0.0
+shader_parameter/distortion = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_joog4"]
+resource_local_to_scene = true
+shader = ExtResource("32_p4xu6")
+shader_parameter/blink_color = Color(1, 1, 1, 1)
+shader_parameter/blink_intensity = 0.0
+shader_parameter/damage_active = false
+shader_parameter/damage_time = 0.0
+shader_parameter/shake_intensity = 0.0
+shader_parameter/distortion = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fnceo"]
+resource_local_to_scene = true
+shader = ExtResource("32_p4xu6")
+shader_parameter/blink_color = Color(1, 1, 1, 1)
+shader_parameter/blink_intensity = 0.0
+shader_parameter/damage_active = false
+shader_parameter/damage_time = 0.0
+shader_parameter/shake_intensity = 0.0
+shader_parameter/distortion = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_usg2s"]
+resource_local_to_scene = true
+shader = ExtResource("32_p4xu6")
+shader_parameter/blink_color = Color(1, 1, 1, 1)
+shader_parameter/blink_intensity = 0.0
+shader_parameter/damage_active = false
+shader_parameter/damage_time = 0.0
+shader_parameter/shake_intensity = 0.0
+shader_parameter/distortion = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wudwi"]
+resource_local_to_scene = true
+shader = ExtResource("32_p4xu6")
+shader_parameter/blink_color = Color(1, 1, 1, 1)
+shader_parameter/blink_intensity = 0.0
+shader_parameter/damage_active = false
+shader_parameter/damage_time = 0.0
+shader_parameter/shake_intensity = 0.0
+shader_parameter/distortion = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7jbgu"]
+resource_local_to_scene = true
+shader = ExtResource("32_p4xu6")
+shader_parameter/blink_color = Color(1, 1, 1, 1)
+shader_parameter/blink_intensity = 0.0
+shader_parameter/damage_active = false
+shader_parameter/damage_time = 0.0
+shader_parameter/shake_intensity = 0.0
+shader_parameter/distortion = 0.0
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_iy8e7"]
 distance = -17.0
@@ -843,11 +935,24 @@ z_index = 5
 [node name="Enemy" parent="Enemies" instance=ExtResource("24_pli2m")]
 position = Vector2(806, 168)
 
+[node name="AnimatedSprite2D" parent="Enemies/Enemy" index="1"]
+material = SubResource("ShaderMaterial_d67lg")
+
+[node name="MagicBamboo" parent="Enemies/Enemy/Drops" index="0"]
+COLOR = Color(0, 0.8039216, 0.9764706, 1)
+drop_chance = 10
+
 [node name="Enemy2" parent="Enemies" instance=ExtResource("24_pli2m")]
 position = Vector2(1020, 120)
 
 [node name="Enemy3" parent="Enemies" instance=ExtResource("25_4ah0m")]
 position = Vector2(2344, -734)
+
+[node name="AnimatedSprite2D" parent="Enemies/Enemy3" index="1"]
+material = SubResource("ShaderMaterial_p4xu6")
+
+[node name="MagicBamboo" parent="Enemies/Enemy3/Drops" index="0"]
+drop_chance = 5
 
 [node name="Enemy4" parent="Enemies" instance=ExtResource("25_4ah0m")]
 position = Vector2(2663, -1337)
@@ -855,11 +960,26 @@ position = Vector2(2663, -1337)
 [node name="Enemy5" parent="Enemies" instance=ExtResource("25_4ah0m")]
 position = Vector2(2986, -1401)
 
+[node name="AnimatedSprite2D" parent="Enemies/Enemy5" index="1"]
+material = SubResource("ShaderMaterial_1glto")
+
+[node name="MagicBamboo" parent="Enemies/Enemy5/Drops" index="0"]
+drop_chance = 15
+
 [node name="Enemy6" parent="Enemies" instance=ExtResource("25_4ah0m")]
 position = Vector2(3340, -1545)
 
 [node name="Enemy7" parent="Enemies" instance=ExtResource("25_4ah0m")]
 position = Vector2(2684, -313)
+
+[node name="AnimatedSprite2D" parent="Enemies/Enemy7" index="1"]
+material = SubResource("ShaderMaterial_xsnww")
+
+[node name="MagicBamboo" parent="Enemies/Enemy7/Drops" index="0"]
+texture = ExtResource("34_d67lg")
+heal_amount = 5
+COLOR = Color(0.3529412, 0.77254903, 0.30980393, 1)
+drop_chance = 50
 
 [node name="Enemy8" parent="Enemies" instance=ExtResource("25_4ah0m")]
 position = Vector2(2969, -372)
@@ -867,11 +987,29 @@ position = Vector2(2969, -372)
 [node name="Enemy9" parent="Enemies" instance=ExtResource("25_4ah0m")]
 position = Vector2(3161, -441)
 
+[node name="AnimatedSprite2D" parent="Enemies/Enemy9" index="1"]
+material = SubResource("ShaderMaterial_joog4")
+
+[node name="MagicBamboo" parent="Enemies/Enemy9/Drops" index="0"]
+texture = ExtResource("17_y2nwt")
+heal_amount = 10
+COLOR = Color(0, 0.8039216, 0.9764706, 1)
+drop_chance = 35
+
 [node name="Enemy10" parent="Enemies" instance=ExtResource("25_4ah0m")]
 position = Vector2(2981, -505)
 
 [node name="Enemy11" parent="Enemies" instance=ExtResource("25_4ah0m")]
 position = Vector2(3207, -553)
+
+[node name="AnimatedSprite2D" parent="Enemies/Enemy11" index="1"]
+material = SubResource("ShaderMaterial_fnceo")
+
+[node name="MagicBamboo" parent="Enemies/Enemy11/Drops" index="0"]
+texture = ExtResource("34_d67lg")
+heal_amount = 5
+COLOR = Color(0.3529412, 0.77254903, 0.30980393, 1)
+drop_chance = 50
 
 [node name="Enemy12" parent="Enemies" instance=ExtResource("25_4ah0m")]
 position = Vector2(3053, -617)
@@ -879,17 +1017,38 @@ position = Vector2(3053, -617)
 [node name="Enemy13" parent="Enemies" instance=ExtResource("25_4ah0m")]
 position = Vector2(3058, -697)
 
+[node name="AnimatedSprite2D" parent="Enemies/Enemy13" index="1"]
+material = SubResource("ShaderMaterial_usg2s")
+
+[node name="MagicBamboo" parent="Enemies/Enemy13/Drops" index="0"]
+texture = ExtResource("17_y2nwt")
+heal_amount = 10
+COLOR = Color(0, 0.8039216, 0.9764706, 1)
+drop_chance = 35
+
 [node name="Enemy14" parent="Enemies" instance=ExtResource("25_4ah0m")]
 position = Vector2(3256, -762)
 
 [node name="Enemy15" parent="Enemies" instance=ExtResource("25_4ah0m")]
 position = Vector2(3082, -826)
 
+[node name="AnimatedSprite2D" parent="Enemies/Enemy15" index="1"]
+material = SubResource("ShaderMaterial_wudwi")
+
+[node name="MagicBamboo" parent="Enemies/Enemy15/Drops" index="0"]
+drop_chance = 7
+
 [node name="Enemy16" parent="Enemies" instance=ExtResource("25_4ah0m")]
 position = Vector2(3274, -874)
 
 [node name="Enemy17" parent="Enemies" instance=ExtResource("25_4ah0m")]
 position = Vector2(3416, -1019)
+
+[node name="AnimatedSprite2D" parent="Enemies/Enemy17" index="1"]
+material = SubResource("ShaderMaterial_7jbgu")
+
+[node name="MagicBamboo" parent="Enemies/Enemy17/Drops" index="0"]
+drop_chance = 10
 
 [node name="Enemy18" parent="Enemies" instance=ExtResource("25_4ah0m")]
 position = Vector2(4356, -2121)
@@ -1025,3 +1184,13 @@ shape = SubResource("RectangleShape2D_58mxi")
 
 [connection signal="body_entered" from="killzone" to="killzone" method="_on_body_entered"]
 [connection signal="body_entered" from="Next_level" to="Next_level" method="_on_body_entered"]
+
+[editable path="Enemies/Enemy"]
+[editable path="Enemies/Enemy3"]
+[editable path="Enemies/Enemy5"]
+[editable path="Enemies/Enemy7"]
+[editable path="Enemies/Enemy9"]
+[editable path="Enemies/Enemy11"]
+[editable path="Enemies/Enemy13"]
+[editable path="Enemies/Enemy15"]
+[editable path="Enemies/Enemy17"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://lahfkubql7vo"]
+[gd_scene load_steps=39 format=3 uid="uid://lahfkubql7vo"]
 
 [ext_resource type="Script" uid="uid://beypopj8ttlnq" path="res://Scripts/Level/playtest_2.gd" id="1_5dr80"]
 [ext_resource type="Script" uid="uid://byn1je7flnjo3" path="res://Scripts/Central/game_manager.gd" id="2_fiy4m"]
@@ -28,6 +28,8 @@
 [ext_resource type="PackedScene" uid="uid://ndkp1vfqmr4g" path="res://Scenes/Dialogue/DialogueUI.tscn" id="22_lpv7w"]
 [ext_resource type="PackedScene" uid="uid://bfks2a63jpch2" path="res://Scenes/Enemies/orc.tscn" id="24_w85r1"]
 [ext_resource type="PackedScene" uid="uid://b76woqie8uxl7" path="res://Scenes/Enemies/final_boss.tscn" id="25_ab6ox"]
+[ext_resource type="Shader" uid="uid://o6ancnl5jgcr" path="res://Shaders/Blink.gdshader" id="25_b6pkf"]
+[ext_resource type="Texture2D" uid="uid://c8dol58rb8t5j" path="res://Assets/Sprites/Magic Bamboo/+5 hp magic bamboo.png" id="26_j1x2j"]
 [ext_resource type="PackedScene" uid="uid://dgm6tcibml5l" path="res://Scenes/Enemies/dragon_fly_enemy.tscn" id="26_mn8ec"]
 [ext_resource type="PackedScene" uid="uid://dpatdmh4s5sg5" path="res://Scenes/GrapplingSystem/GrapplingHookSystem.tscn" id="27_hyn4w"]
 
@@ -439,6 +441,26 @@ sources/2 = SubResource("TileSetAtlasSource_5dcil")
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_snitv"]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_j1x2j"]
+resource_local_to_scene = true
+shader = ExtResource("25_b6pkf")
+shader_parameter/blink_color = Color(1, 1, 1, 1)
+shader_parameter/blink_intensity = 0.0
+shader_parameter/damage_active = false
+shader_parameter/damage_time = 0.0
+shader_parameter/shake_intensity = 0.0
+shader_parameter/distortion = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8jqki"]
+resource_local_to_scene = true
+shader = ExtResource("25_b6pkf")
+shader_parameter/blink_color = Color(1, 1, 1, 1)
+shader_parameter/blink_intensity = 0.0
+shader_parameter/damage_active = false
+shader_parameter/damage_time = 0.0
+shader_parameter/shake_intensity = 0.0
+shader_parameter/distortion = 0.0
+
 [node name="Level" type="Node2D" node_paths=PackedStringArray("start")]
 script = ExtResource("1_5dr80")
 start = NodePath("CheckPoints/Start")
@@ -631,6 +653,13 @@ shotOffset = 15
 can_move = true
 can_jump = false
 
+[node name="AnimatedSprite2D" parent="Node2D/Enemy2" index="1"]
+material = SubResource("ShaderMaterial_j1x2j")
+
+[node name="MagicBamboo" parent="Node2D/Enemy2/Drops" index="0"]
+heal_amount = 20
+drop_chance = 25
+
 [node name="Enemy3" parent="Node2D" instance=ExtResource("24_w85r1")]
 z_index = 9
 position = Vector2(921, 167)
@@ -644,6 +673,14 @@ flippedSprite = false
 shotOffset = 15
 can_move = true
 can_jump = false
+
+[node name="AnimatedSprite2D" parent="Node2D/Enemy3" index="1"]
+material = SubResource("ShaderMaterial_8jqki")
+
+[node name="MagicBamboo" parent="Node2D/Enemy3/Drops" index="0"]
+texture = ExtResource("26_j1x2j")
+heal_amount = 10
+drop_chance = 25
 
 [node name="Final_boss" parent="Node2D" instance=ExtResource("25_ab6ox")]
 z_index = 9
@@ -688,3 +725,5 @@ script = ExtResource("6_26g8j")
 [connection signal="body_entered" from="killzone" to="killzone" method="_on_body_entered"]
 
 [editable path="DialogueInteract"]
+[editable path="Node2D/Enemy2"]
+[editable path="Node2D/Enemy3"]

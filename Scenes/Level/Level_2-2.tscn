@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://jy7lpdbdrphw"]
+[gd_scene load_steps=51 format=3 uid="uid://jy7lpdbdrphw"]
 
 [ext_resource type="Script" uid="uid://c2jeph0pjh467" path="res://Scripts/Level/playtest_level.gd" id="1_lwhji"]
 [ext_resource type="Script" uid="uid://byn1je7flnjo3" path="res://Scripts/Central/game_manager.gd" id="2_hi12w"]
@@ -34,6 +34,8 @@
 [ext_resource type="PackedScene" uid="uid://cl45lm0hg20kf" path="res://Scenes/Items/soul.tscn" id="29_dbt3o"]
 [ext_resource type="SpriteFrames" uid="uid://cgtj4wt3ql8r1" path="res://Resources/Wisps/Fire_Wisp.tres" id="30_nmhk6"]
 [ext_resource type="PackedScene" uid="uid://t6qqa47vckdt" path="res://Scenes/Enemies/husk.tscn" id="31_y3dvd"]
+[ext_resource type="Shader" uid="uid://o6ancnl5jgcr" path="res://Shaders/Blink.gdshader" id="35_aylqp"]
+[ext_resource type="Texture2D" uid="uid://dmv57vx1668nw" path="res://Assets/Sprites/Magic Bamboo/+ 15 hp magic bamboo.png" id="36_nju6f"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ekp0b"]
 texture = ExtResource("3_oxqp5")
@@ -472,15 +474,32 @@ shader_parameter/tint_color = Color(1, 1, 1, 1)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_miuwv"]
 size = Vector2(30, 30)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_u45l3"]
+resource_local_to_scene = true
+shader = ExtResource("35_aylqp")
+shader_parameter/blink_color = Color(1, 1, 1, 1)
+shader_parameter/blink_intensity = 0.0
+shader_parameter/damage_active = false
+shader_parameter/damage_time = 0.0
+shader_parameter/shake_intensity = 0.0
+shader_parameter/distortion = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_n2dxn"]
+resource_local_to_scene = true
+shader = ExtResource("35_aylqp")
+shader_parameter/blink_color = Color(1, 1, 1, 1)
+shader_parameter/blink_intensity = 0.0
+shader_parameter/damage_active = false
+shader_parameter/damage_time = 0.0
+shader_parameter/shake_intensity = 0.0
+shader_parameter/distortion = 0.0
+
 [node name="Level" type="Node2D"]
 script = ExtResource("1_lwhji")
 
-[node name="GameManager" type="Node" parent="." node_paths=PackedStringArray("stateLabel", "equipLabel", "gameOverScreen")]
+[node name="GameManager" type="Node" parent="."]
 unique_name_in_owner = true
 script = ExtResource("2_hi12w")
-stateLabel = NodePath("")
-equipLabel = NodePath("")
-gameOverScreen = NodePath("")
 
 [node name="TileMap" type="TileMap" parent="."]
 z_index = 5
@@ -1225,7 +1244,7 @@ position = Vector2(-1, -17)
 z_index = 5
 position = Vector2(-112, -123)
 texture = ExtResource("27_klmf3")
-heal_amount = 5
+heal_amount = 10
 COLOR = Color(0, 0.59607846, 0.8627451, 1)
 
 [node name="MagicBamboo2" type="Node2D" parent="Obstacles"]
@@ -1235,7 +1254,7 @@ position = Vector2(1183, 135)
 [node name="MagicBamboo" parent="Obstacles/MagicBamboo2" instance=ExtResource("26_xbulm")]
 z_index = 5
 texture = ExtResource("27_klmf3")
-heal_amount = 5
+heal_amount = 10
 COLOR = Color(0, 0.59607846, 0.8627451, 1)
 
 [node name="Next_level" type="Area2D" parent="."]
@@ -1259,9 +1278,27 @@ custom_sprite_frames = ExtResource("30_nmhk6")
 z_index = 7
 position = Vector2(2080, 135)
 
+[node name="AnimatedSprite2D" parent="Enemy" index="1"]
+material = SubResource("ShaderMaterial_u45l3")
+
+[node name="MagicBamboo" parent="Enemy/Drops" index="0"]
+texture = ExtResource("36_nju6f")
+heal_amount = 5
+COLOR = Color(0.3529412, 0.77254903, 0.30980393, 1)
+drop_chance = 10
+
 [node name="Enemy2" parent="." instance=ExtResource("31_y3dvd")]
 z_index = 7
 position = Vector2(2391, 135)
+
+[node name="AnimatedSprite2D" parent="Enemy2" index="1"]
+material = SubResource("ShaderMaterial_n2dxn")
+
+[node name="MagicBamboo" parent="Enemy2/Drops" index="0"]
+texture = ExtResource("36_nju6f")
+heal_amount = 5
+COLOR = Color(0.3529412, 0.77254903, 0.30980393, 1)
+drop_chance = 15
 
 [connection signal="body_entered" from="killzone" to="killzone" method="_on_body_entered"]
 [connection signal="body_entered" from="Events/Key1" to="Events/Key1" method="_on_body_entered"]
@@ -1302,3 +1339,6 @@ position = Vector2(2391, 135)
 [connection signal="body_exited" from="Obstacles/spikes/obstacle_spike12" to="Obstacles/spikes/obstacle_spike12" method="_on_body_exited"]
 [connection signal="body_entered" from="Obstacles/spikes/obstacle_spike12/Spikes" to="Obstacles/spikes/obstacle_spike12" method="_on_spikes_body_entered"]
 [connection signal="body_entered" from="Next_level" to="Next_level" method="_on_body_entered"]
+
+[editable path="Enemy"]
+[editable path="Enemy2"]

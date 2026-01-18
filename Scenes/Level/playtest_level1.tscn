@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://dhoq3sp0l7yob"]
+[gd_scene load_steps=51 format=3 uid="uid://dhoq3sp0l7yob"]
 
 [ext_resource type="Script" uid="uid://c2jeph0pjh467" path="res://Scripts/Level/playtest_level.gd" id="1_w8hid"]
 [ext_resource type="Script" uid="uid://byn1je7flnjo3" path="res://Scripts/Central/game_manager.gd" id="2_jwh51"]
@@ -41,6 +41,9 @@
 [ext_resource type="Resource" uid="uid://ba42w4pgbrt7k" path="res://Resources/Scroll/TestDialogueScroll.tres" id="39_8cwry"]
 [ext_resource type="Resource" uid="uid://dqr0x3xikciia" path="res://Resources/Scroll/TestScroll2.tres" id="40_1e7rd"]
 [ext_resource type="Script" uid="uid://b7008awu7lly6" path="res://Scenes/Level/next_level.gd" id="41_ldl48"]
+[ext_resource type="Shader" uid="uid://bnksrflwfix8q" path="res://Shaders/water_shader.gdshader" id="42_gc84g"]
+[ext_resource type="Texture2D" uid="uid://mt2mmrjacjo4" path="res://Assets/Textures/Water texture.jpg" id="43_kpun4"]
+[ext_resource type="Texture2D" uid="uid://bxjcqsbkwns5q" path="res://Assets/Textures/blox texture.png" id="44_prsbu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x4l1k"]
 texture = ExtResource("3_i7dwg")
@@ -444,6 +447,18 @@ sources/2 = SubResource("TileSetAtlasSource_naxo4")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_naxo4"]
 size = Vector2(30, 30)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ub8r1"]
+shader = ExtResource("42_gc84g")
+shader_parameter/wave_strength = 0.03
+shader_parameter/wave_speed = 1.5
+shader_parameter/wave_scale = 10.0
+shader_parameter/water_texture = ExtResource("43_kpun4")
+shader_parameter/water_opacity = 1.0
+shader_parameter/top_wave_amplitude = 0.08
+shader_parameter/top_wave_frequency = 6.0
+shader_parameter/top_edge_softness = 0.12
+shader_parameter/top_edge_offset = 0.05
+
 [node name="Level" type="Node2D"]
 script = ExtResource("1_w8hid")
 
@@ -774,6 +789,15 @@ level_name = "level_1-1"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Next_level"]
 shape = SubResource("RectangleShape2D_naxo4")
+
+[node name="Node2D2" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D2"]
+z_index = 10
+material = SubResource("ShaderMaterial_ub8r1")
+position = Vector2(824.25, 562)
+scale = Vector2(3.3349998, 2.2199998)
+texture = ExtResource("44_prsbu")
 
 [connection signal="body_entered" from="killzone" to="killzone" method="_on_body_entered"]
 [connection signal="body_entered" from="Next_level" to="Next_level" method="_on_body_entered"]
