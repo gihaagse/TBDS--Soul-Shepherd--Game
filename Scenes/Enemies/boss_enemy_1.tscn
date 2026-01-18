@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cuyrxjtu26bru" path="res://Scripts/Enemies/boss_enemy_1.gd" id="1_v0yt4"]
 [ext_resource type="PackedScene" uid="uid://cvgjcwqn6k8eu" path="res://Scenes/UI/Overlay/health.tscn" id="2_rkuo3"]
+[ext_resource type="Resource" uid="uid://cy4d3ayt1onr3" path="res://Resources/Dialogue/jaimaru_dialogue.tres" id="2_styb1"]
 [ext_resource type="Script" uid="uid://dlgatnu5tx5lj" path="res://Scripts/Enemies/health_enemy.gd" id="3_aesm5"]
 [ext_resource type="Shader" uid="uid://o6ancnl5jgcr" path="res://Shaders/Blink.gdshader" id="4_styb1"]
 [ext_resource type="Texture2D" uid="uid://oq7kaex2808h" path="res://Assets/Sprites/first_boss.png" id="5_v0yt4"]
@@ -243,6 +244,7 @@ corner_radius_bottom_left = 8
 [node name="boss_enemy_1" type="CharacterBody2D" node_paths=PackedStringArray("shootPoint") groups=["Enemy"]]
 collision_mask = 5
 script = ExtResource("1_v0yt4")
+dialogue = ExtResource("2_styb1")
 shootPoint = NodePath("CollisionShape2D")
 
 [node name="Health" parent="." instance=ExtResource("2_rkuo3")]

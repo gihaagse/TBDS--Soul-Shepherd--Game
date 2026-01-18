@@ -25,6 +25,7 @@ var hat_number: int = 1
 var hat_position_offset: float
 
 func _ready() -> void:
+	sprite = $AnimatedSprite2D
 	if boss_stage == 1:
 		hat_position_offset = 9
 	if boss_stage > 1:
