@@ -1,4 +1,4 @@
-[gd_scene load_steps=67 format=3 uid="uid://jy7lpdbdrphw"]
+[gd_scene load_steps=70 format=3 uid="uid://jy7lpdbdrphw"]
 
 [ext_resource type="Script" uid="uid://c2jeph0pjh467" path="res://Scripts/Level/playtest_level.gd" id="1_lwhji"]
 [ext_resource type="Script" uid="uid://byn1je7flnjo3" path="res://Scripts/Central/game_manager.gd" id="2_hi12w"]
@@ -19,7 +19,6 @@
 [ext_resource type="PackedScene" uid="uid://bajjogst0v58d" path="res://Scenes/UI/Overlay/CheckPointRespawnUI.tscn" id="15_rwm1q"]
 [ext_resource type="Script" uid="uid://b2b6rmyyluckx" path="res://Scripts/Player/General/camera_2d.gd" id="16_64hvq"]
 [ext_resource type="PackedScene" uid="uid://c64nl2fkq45ge" path="res://Scenes/UI/Overlay/AbilityInfoButton.tscn" id="16_f53dv"]
-[ext_resource type="PackedScene" uid="uid://5jrffwap8tjk" path="res://Scenes/Background/parralax_background.tscn" id="17_b8qmi"]
 [ext_resource type="PackedScene" uid="uid://bpp47tnrfdrab" path="res://Scenes/UI/Components/player_hud.tscn" id="17_ov71p"]
 [ext_resource type="Script" uid="uid://bpkjqkjnq8o6g" path="res://Scripts/Player/General/killzone.gd" id="18_3utw7"]
 [ext_resource type="FontFile" uid="uid://p47ydk5quyq2" path="res://Assets/Tutorial Open Assets/brackeys_platformer_assets/fonts/PixelOperator8-Bold.ttf" id="18_aylqp"]
@@ -39,6 +38,10 @@
 [ext_resource type="Script" uid="uid://cstgtmfhmy3fb" path="res://Scripts/Obstacles/camera_drag_zone.gd" id="35_aylqp"]
 [ext_resource type="PackedScene" uid="uid://dn8a3x4q0yekn" path="res://Scenes/Obstacles/camera_drag_zone.tscn" id="35_ov71p"]
 [ext_resource type="Script" uid="uid://cbirdwbh5p7se" path="res://Scripts/Obstacles/gate_crystal.gd" id="38_u45l3"]
+[ext_resource type="PackedScene" uid="uid://du22uckdgymx7" path="res://Scenes/Background/parralax_background_2-2.tscn" id="39_n2dxn"]
+[ext_resource type="PackedScene" uid="uid://bdhxnuny30cml" path="res://Scenes/Items/scroll.tscn" id="40_qovpi"]
+[ext_resource type="Resource" uid="uid://bfday7yf54w1b" path="res://Resources/Scroll/scroll9.tres" id="41_l63tk"]
+[ext_resource type="Resource" uid="uid://dhm4l8ekfvix3" path="res://Resources/Scroll/scroll10.tres" id="42_v2jrc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ekp0b"]
 texture = ExtResource("3_oxqp5")
@@ -1063,7 +1066,7 @@ position = Vector2(75, 219)
 script = ExtResource("6_aylqp")
 
 [node name="Player" parent="." instance=ExtResource("7_nju6f")]
-z_index = 8
+z_index = 10
 position = Vector2(75, 219)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -1198,10 +1201,6 @@ drag_top_margin = 0.0
 drag_bottom_margin = 0.6
 script = ExtResource("16_64hvq")
 player = NodePath("../Player")
-
-[node name="ParralaxBackground" parent="." instance=ExtResource("17_b8qmi")]
-z_index = 1
-position = Vector2(0, 324)
 
 [node name="killzone" type="Area2D" parent="."]
 position = Vector2(730, 400)
@@ -2188,6 +2187,21 @@ collision_mask = 5
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Events/Gate_Crystal3/UnlockArea"]
 position = Vector2(0, -30)
 shape = SubResource("RectangleShape2D_v2jrc")
+
+[node name="ParralaxBackground" parent="." instance=ExtResource("39_n2dxn")]
+position = Vector2(0, 322)
+
+[node name="Scrolls" type="Node2D" parent="."]
+
+[node name="Scroll9" parent="Scrolls" instance=ExtResource("40_qovpi")]
+z_index = 20
+position = Vector2(1234, -350)
+dialogue = ExtResource("41_l63tk")
+
+[node name="Scroll10" parent="Scrolls" instance=ExtResource("40_qovpi")]
+z_index = 20
+position = Vector2(1288, 343)
+dialogue = ExtResource("42_v2jrc")
 
 [connection signal="body_entered" from="killzone" to="killzone" method="_on_body_entered"]
 [connection signal="body_entered" from="killzone2" to="killzone2" method="_on_body_entered"]
