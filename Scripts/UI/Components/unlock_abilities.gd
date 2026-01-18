@@ -57,7 +57,7 @@ func _on_button_pressed() -> void:
 		add_abilities_in_button()
 		AbilityData.update_delete_ability_buttons.emit()
 	else:
-		print("Ability is al toegevoegd")
+		print("Ability already added")
 		
 
 	

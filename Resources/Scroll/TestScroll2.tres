@@ -4,5 +4,5 @@
 
 [resource]
 script = ExtResource("1_pjvef")
-scroll_dialogue = Array[String](["Here I use a numner: 2", "Tenminste 12 characters"])
+scroll_dialogue = Array[String](["This is some text", "123456789 1"])
 metadata/_custom_type_script = "uid://8comeh3keae4"

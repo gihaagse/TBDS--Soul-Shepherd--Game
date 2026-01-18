@@ -23,6 +23,7 @@ animations = [{
 }]
 
 [node name="Scroll" type="Node2D"]
+z_index = 4
 script = ExtResource("1_84tcs")
 
 [node name="Area2D" type="Area2D" parent="."]

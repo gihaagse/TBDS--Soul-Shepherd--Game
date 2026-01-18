@@ -13,7 +13,7 @@ var can_advance_line := false
 var can_close := false
 
 func start_dialogue(position: Vector2, lines: Array[String]):
-	print("received lines: ", lines)
+	#print("received lines: ", lines)
 	if is_dialogue_active:
 		return
 	
@@ -32,7 +32,7 @@ func _show_text_box():
 	can_close = false
 	can_advance_line = false
 	
-	_slowdown_game_time()
+	#_slowdown_game_time()
 
 func _slowdown_game_time():
 	var tween = get_tree().create_tween()

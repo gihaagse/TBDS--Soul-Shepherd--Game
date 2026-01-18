@@ -1,12 +1,13 @@
-[gd_scene load_steps=13 format=3 uid="uid://d0aadsv0uaoyf"]
+[gd_scene load_steps=14 format=3 uid="uid://d0aadsv0uaoyf"]
 
 [ext_resource type="Script" uid="uid://8inuq8qijvff" path="res://Scripts/UI/GameMenus/start_menu.gd" id="1_x858q"]
 [ext_resource type="Texture2D" uid="uid://d1bef2u8knxo3" path="res://Assets/Background/titlescreen.png" id="2_n5ja1"]
 [ext_resource type="FontFile" uid="uid://p47ydk5quyq2" path="res://Assets/Tutorial Open Assets/brackeys_platformer_assets/fonts/PixelOperator8-Bold.ttf" id="3_x858q"]
 [ext_resource type="PackedScene" uid="uid://brc3fv7pjl1bv" path="res://Scenes/UI/GameMenus/Options_Menu.tscn" id="4_4yw8f"]
 [ext_resource type="AudioStream" uid="uid://bunfws4ojf6qm" path="res://Assets/Audio/Music/Titletry2 Title Theme.wav" id="5_3tla5"]
-[ext_resource type="Texture2D" uid="uid://kq5hfqfgie2u" path="res://Assets/logo/Transparent logo 2.png" id="6_3tla5"]
+[ext_resource type="Texture2D" uid="uid://cfpijpxo8llju" path="res://Assets/logo/soul_shepherd_title_black_outline.png" id="6_3tla5"]
 [ext_resource type="Texture2D" uid="uid://bt6mdc6kg0ylv" path="res://Assets/Background/overcome_death2.png" id="6_n5ja1"]
+[ext_resource type="FontFile" uid="uid://duldosjt5mdmx" path="res://Assets/Fonts/PressStart2P-Regular.ttf" id="8_vcq06"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kko6a"]
 resource_local_to_scene = true
@@ -115,7 +116,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_kex2f")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_kko6a")
 theme_override_styles/hover = SubResource("StyleBoxFlat_x858q")
 theme_override_styles/focus = SubResource("StyleBoxFlat_x858q")
-text = "Start Game"
+text = "New Game"
 
 [node name="Continue" type="Button" parent="VBoxContainer"]
 layout_mode = 2
@@ -208,7 +209,42 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_3tla5")
 
 [node name="GameStartTimer" type="Timer" parent="."]
-wait_time = 0.2
+wait_time = 1.5
+
+[node name="ContinuePanel" type="ColorRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="ContinueTextLabel" type="RichTextLabel" parent="ContinuePanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -417.0
+offset_top = -110.125
+offset_right = 417.0
+offset_bottom = 110.125
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("8_vcq06")
+theme_override_font_sizes/normal_font_size = 36
+text = "This is your first time playing the game.
+
+
+You will start at the tutorial level."
+
+[node name="ContinueTimer" type="Timer" parent="."]
+wait_time = 4.0
+one_shot = true
 
 [connection signal="focus_entered" from="VBoxContainer/Start" to="." method="_on_any_button_focus_entered"]
 [connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
@@ -219,3 +255,4 @@ wait_time = 0.2
 [connection signal="focus_entered" from="VBoxContainer/Exit" to="." method="_on_any_button_focus_entered"]
 [connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]
 [connection signal="timeout" from="GameStartTimer" to="." method="_on_game_start_timer_timeout"]
+[connection signal="timeout" from="ContinueTimer" to="." method="_on_continue_timer_timeout"]

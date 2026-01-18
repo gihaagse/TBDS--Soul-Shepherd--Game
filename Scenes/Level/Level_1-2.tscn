@@ -1,7 +1,8 @@
-[gd_scene load_steps=39 format=3 uid="uid://gwyk1dfn0jtx"]
+[gd_scene load_steps=43 format=3 uid="uid://gwyk1dfn0jtx"]
 
 [ext_resource type="Script" uid="uid://byn1je7flnjo3" path="res://Scripts/Central/game_manager.gd" id="1_1a5qi"]
 [ext_resource type="Script" uid="uid://c2jeph0pjh467" path="res://Scripts/Level/playtest_level.gd" id="1_w71j4"]
+[ext_resource type="Resource" uid="uid://bbnx68rjbop6b" path="res://Resources/AbilityUnlocking/level_1-2.tres" id="2_bnvaj"]
 [ext_resource type="Texture2D" uid="uid://dfdfu6o1j3apv" path="res://Assets/Sprites/Playtest1.png" id="2_n65qx"]
 [ext_resource type="Texture2D" uid="uid://j1w6x4hpn3ou" path="res://Assets/Icons/Sung Chin Woo Icon.png" id="3_2njap"]
 [ext_resource type="PackedScene" uid="uid://c45jpc3kaflr4" path="res://Scenes/CheckPoints/CheckPoint.tscn" id="4_fefyl"]
@@ -18,6 +19,9 @@
 [ext_resource type="Script" uid="uid://b2b6rmyyluckx" path="res://Scripts/Player/General/camera_2d.gd" id="15_0jdw0"]
 [ext_resource type="PackedScene" uid="uid://5jrffwap8tjk" path="res://Scenes/Background/parralax_background.tscn" id="16_nbhok"]
 [ext_resource type="Script" uid="uid://bpkjqkjnq8o6g" path="res://Scripts/Player/General/killzone.gd" id="17_4fxhd"]
+[ext_resource type="PackedScene" uid="uid://c64nl2fkq45ge" path="res://Scenes/UI/Overlay/AbilityInfoButton.tscn" id="17_ebf81"]
+[ext_resource type="PackedScene" uid="uid://bpp47tnrfdrab" path="res://Scenes/UI/Components/player_hud.tscn" id="18_bnvaj"]
+[ext_resource type="FontFile" uid="uid://p47ydk5quyq2" path="res://Assets/Tutorial Open Assets/brackeys_platformer_assets/fonts/PixelOperator8-Bold.ttf" id="19_3fxnq"]
 [ext_resource type="Script" uid="uid://hfj0hgwiyiqu" path="res://Scripts/Central/event_trigger.gd" id="19_8qp3c"]
 [ext_resource type="AudioStream" uid="uid://cg3qpni1dsx7g" path="res://Assets/Audio/Music/Rush 1-2.wav" id="19_yidc1"]
 [ext_resource type="Script" uid="uid://b7008awu7lly6" path="res://Scenes/Level/next_level.gd" id="20_76nua"]
@@ -516,13 +520,11 @@ size = Vector2(48, 16)
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_w71j4")
+carried_abilities = ExtResource("2_bnvaj")
 
-[node name="GameManager" type="Node" parent="." node_paths=PackedStringArray("stateLabel", "equipLabel", "gameOverScreen")]
+[node name="GameManager" type="Node" parent="."]
 unique_name_in_owner = true
 script = ExtResource("1_1a5qi")
-stateLabel = NodePath("../CanvasLayer/Current State")
-equipLabel = NodePath("../CanvasLayer/Current Equip")
-gameOverScreen = NodePath("../CanvasLayer/ColorRect")
 
 [node name="TileMap" type="TileMap" parent="."]
 z_index = 5
@@ -556,6 +558,12 @@ script = ExtResource("5_llcl8")
 [node name="Player" parent="." instance=ExtResource("6_w71j4")]
 position = Vector2(78, 229)
 
+[node name="CameraMain" type="Camera2D" parent="." node_paths=PackedStringArray("player")]
+zoom = Vector2(3, 3)
+limit_left = 0
+script = ExtResource("15_0jdw0")
+player = NodePath("../Player")
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 process_mode = 3
 script = ExtResource("7_3r3yc")
@@ -578,6 +586,7 @@ theme_override_font_sizes/font_size = 32
 text = "Equip: "
 
 [node name="HP" type="Label" parent="CanvasLayer"]
+visible = false
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
@@ -657,25 +666,26 @@ visible = false
 [node name="CheckPointRespawnUI" parent="CanvasLayer" instance=ExtResource("14_yckt2")]
 visible = false
 
-[node name="Tips" type="Label" parent="CanvasLayer"]
-texture_filter = 2
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -0.5
-offset_top = 100.0
-offset_right = 0.5
-offset_bottom = 145.0
-grow_horizontal = 2
-theme_override_constants/outline_size = 1
-theme_override_font_sizes/font_size = 32
-horizontal_alignment = 1
+[node name="AbilityInfoButton" parent="CanvasLayer" instance=ExtResource("17_ebf81")]
+offset_top = -224.0
+offset_bottom = -184.0
 
-[node name="CameraMain" type="Camera2D" parent="." node_paths=PackedStringArray("player")]
-zoom = Vector2(4, 4)
-limit_left = 0
-script = ExtResource("15_0jdw0")
-player = NodePath("../Player")
+[node name="PlayerHUD" parent="CanvasLayer" instance=ExtResource("18_bnvaj")]
+offset_left = 12.0
+offset_top = 446.0
+offset_right = -1140.0
+offset_bottom = -202.0
+scale = Vector2(0.2, 0.2)
+
+[node name="Current Level" type="Label" parent="CanvasLayer"]
+offset_left = 8.0
+offset_top = 10.0
+offset_right = 276.0
+offset_bottom = 72.0
+theme_override_fonts/font = ExtResource("19_3fxnq")
+theme_override_font_sizes/font_size = 20
+text = "Current Level: 
+1-2"
 
 [node name="ParralaxBackground" parent="." instance=ExtResource("16_nbhok")]
 z_index = 1

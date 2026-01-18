@@ -145,7 +145,7 @@ func movement(delta:float):
 			var damage = damage_ratio * max_fall_damage 
 
 			if hp and hp.has_method("take_damage"):
-				print("taking fall damage: ", damage)
+				#print("taking fall damage: ", damage)
 				hp.take_damage(damage, hp.DamageType.FALL)
 				
 func get_item_by_name(node_name: String, array: Array[Node2D]):

@@ -16,7 +16,7 @@ func updateLabel(text):
 	if text:
 		stateLabel.text = "State: " + str(text)
 func updateEquip(text):
-	if text:
+	if text and equipLabel:
 		equipLabel.text = "Equipment: " + str(text)
 		
 func updateHP(hp):
@@ -46,7 +46,6 @@ func updateHP(hp):
 		push_error("LABEL not found!")
 		return
 	
-	print("passed all checks")
 	# Calculate health percentage
 	var health_percent = float(hp.hp) / float(hp.MAX_HP)
 	health_percent = clamp(health_percent, 0.0, 1.0)

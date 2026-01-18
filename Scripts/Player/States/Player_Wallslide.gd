@@ -53,7 +53,7 @@ func Phys_Update(_delta:float):
 			wallslide_dust_particle.emitting = false
 		
 		state_transition.emit(self, "Walljump")
-		print("wallslide walljump")
+		#print("wallslide walljump")
 		weapon.position.x = -14 if sprite.flip_h else 14
 		timer.start()
 	player.move_and_slide()

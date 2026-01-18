@@ -44,8 +44,8 @@ func options_menu_input() -> void:
 		var previous_tab = tab_container.current_tab -1
 		change_tab(previous_tab)
 		
-	if Input.is_action_just_pressed("ui_cancel"):
-		get_tree().change_scene_to_file("res://Scenes/UI/GameMenus/Start_Menu.tscn")
+	#if Input.is_action_just_pressed("ui_cancel"):
+		#get_tree().change_scene_to_file("res://Scenes/UI/GameMenus/Start_Menu.tscn")
 	
 	pass
 	
@@ -53,7 +53,7 @@ func _on_focus_entered() -> void:
 	var tab_bar: TabBar = tab_container.get_tab_control(0)
 	tab_bar.focus_mode = Control.FOCUS_ALL  
 	tab_bar.grab_focus()
-	print("From exit", tab_bar)
+	#print("From exit", tab_bar)
 
 func show_lore() -> void:
 	lore_label.text = SaveData.get_found_scrolls_text()

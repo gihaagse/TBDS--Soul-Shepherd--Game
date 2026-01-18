@@ -2,6 +2,7 @@ extends Control
 class_name CheckPointRespawnUI
 
 @export var HoverPlane: Panel 
+@onready var begin: Button = $MarginContainer/VBoxContainer/HBoxContainer/Begin
 var currentHoveringButton = null
 var hoverText: Label
 var hoverStyleBox: StyleBoxFlat
@@ -12,6 +13,7 @@ const defaultShadowAlpha = 153
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	CheckPointManager.player_died.connect(_on_player_died)
+	OptionsManager._set_focus_all_on_children(self)
 	hoverText = HoverPlane.get_node("HoverText")
 	hoverStyleBox = HoverPlane.get_theme_stylebox("panel").duplicate()
 	HoverPlane.add_theme_stylebox_override("panel", hoverStyleBox)
@@ -48,6 +50,7 @@ func makeHoverPlaneInvis():
 func _on_player_died():
 	if not visible:
 		visible = true
+		begin.grab_focus()
 
 func _on_choice_made(perefernce_checkpoint: String):
 	visible = false

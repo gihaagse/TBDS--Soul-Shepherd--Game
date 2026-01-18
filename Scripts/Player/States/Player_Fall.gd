@@ -65,7 +65,7 @@ func Update(_delta:float) -> void:
 
 func Phys_Update(_delta:float) -> void:
 	if Input.is_action_just_pressed("Jump") and player.is_on_wall_only() and (Input.is_action_pressed("Left") or Input.is_action_pressed("Right")):
-		print("going walljump")
+		#print("going walljump")
 		state_transition.emit(self, "Walljump")
 	
 	if Input.is_action_pressed("Jump"):

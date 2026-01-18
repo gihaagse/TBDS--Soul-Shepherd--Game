@@ -161,7 +161,6 @@ func hide_continue_button():
 	continue_label.visible = false
 
 func update_choice_selection(): 
-	# Reset ALLE buttons naar normaal
 	if not choice_buttons.is_empty() and choice_buttons[selected_choice_index]:
 			choice_buttons[selected_choice_index].modulate = Color(0.432, 1.0, 0.401, 1.0)
 			#choice_buttons[selected_choice_index].grab_focus()
@@ -186,7 +185,6 @@ func _input(event):
 	if ending_tween:
 		return
 	
-	# CONTROLLER - X/A button voor continue/select
 	if event is InputEventJoypadButton and event.is_pressed and event.is_released() and not event.is_echo():
 		if not can_select(): return
 		if event.button_index == JOY_BUTTON_A:
@@ -210,14 +208,14 @@ func _input(event):
 			if event.axis == JOY_AXIS_LEFT_X or event.axis == JOY_AXIS_RIGHT_X:
 				var deadzone: float = .99
 				if abs(event.axis_value) > deadzone:
-					if event.axis_value < -deadzone:  # Left
+					if event.axis_value < -deadzone:  
 						selected_choice_index = max(0, selected_choice_index - 1)
 						update_choice_selection()
-						print("JOYSTICK LEFT: ", selected_choice_index)
-					elif event.axis_value > deadzone:  # Right
+						#print("JOYSTICK LEFT: ", selected_choice_index)
+					elif event.axis_value > deadzone: 
 						selected_choice_index = min(choice_buttons.size() - 1, selected_choice_index + 1)
 						update_choice_selection()
-						print("JOYSTICK RIGHT: ", selected_choice_index)
+						#print("JOYSTICK RIGHT: ", selected_choice_index)
 			
 
 	if event is InputEventKey and event.is_pressed and event.is_released() and not event.is_echo():

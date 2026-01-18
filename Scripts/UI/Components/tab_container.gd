@@ -26,4 +26,5 @@ func _focus_current_tab() -> void:
 		first_control.grab_focus()
 
 func _on_focus_entered() -> void:
-	print("tabcontainer got the focus instead")
+	#print("tabcontainer got the focus instead")
+	pass

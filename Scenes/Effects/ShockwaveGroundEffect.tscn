@@ -1,0 +1,58 @@
+[gd_scene load_steps=7 format=3 uid="uid://by4jaxexqmjti"]
+
+[ext_resource type="Texture2D" uid="uid://bxjcqsbkwns5q" path="res://Assets/Textures/blox texture.png" id="1_5m0k1"]
+
+[sub_resource type="Curve" id="Curve_uwq57"]
+_limits = [0.0, 100.0, 0.0, 1.0]
+_data = [Vector2(0.40282685, 3.633728), 0.0, 0.0, 0, 0, Vector2(1, 100), 345.35202, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_1k8nv"]
+curve = SubResource("Curve_uwq57")
+
+[sub_resource type="Curve" id="Curve_5m0k1"]
+_data = [Vector2(0, 0.5181687), 0.0, 3.676326, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_v0u8a"]
+curve = SubResource("Curve_5m0k1")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_searh"]
+particle_flag_disable_z = true
+emission_shape_offset = Vector3(45, 0, 0)
+emission_shape = 3
+emission_box_extents = Vector3(45, 1, 0)
+angle_min = -350.0
+angle_max = 350.00003
+spread = 0.0
+initial_velocity_min = 50.0
+initial_velocity_max = 75.0
+angular_velocity_min = -200.00002
+angular_velocity_max = 719.99994
+orbit_velocity_min = -0.024999905
+orbit_velocity_max = 0.1120001
+radial_velocity_min = -2.2351742e-05
+radial_velocity_max = 24.919977
+damping_min = 57.944004
+damping_max = 76.94701
+damping_curve = SubResource("CurveTexture_1k8nv")
+scale_min = 0.04
+scale_max = 0.049999997
+scale_curve = SubResource("CurveTexture_v0u8a")
+scale_over_velocity_min = 94.71
+scale_over_velocity_max = 314.63998
+color = Color(0.6786012, 0.4994595, 0, 1)
+
+[node name="ShockwaveGround" type="GPUParticles2D"]
+emitting = false
+amount = 40
+sub_emitter = NodePath(".")
+texture = ExtResource("1_5m0k1")
+lifetime = 2.0
+interp_to_end = 0.01
+one_shot = true
+speed_scale = 1.2
+explosiveness = 0.95
+randomness = 0.57
+visibility_rect = Rect2(-87.5, -50, 175, 100)
+process_material = SubResource("ParticleProcessMaterial_searh")

@@ -18,10 +18,9 @@ func _ready() -> void:
 
 # Called every frame. 'delta' ids the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	if Input.is_action_just_pressed("Escape"):
-		_on_quit_pressed()
+	pass
 
-
+	
 func _on_continue_pressed() -> void:
 	canvas_layer.pauseMenu()
 

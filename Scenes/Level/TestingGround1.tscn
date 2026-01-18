@@ -1,14 +1,14 @@
 [gd_scene load_steps=9 format=3 uid="uid://be736cjab5e3w"]
 
-[ext_resource type="PackedScene" uid="uid://c2qbrpracjsi5" path="res://Scenes/Enemies/husk.tscn" id="1_1ainy"]
-[ext_resource type="Texture2D" uid="uid://jvylv1msq21o" path="res://Assets/Tutorial Open Assets/brackeys_platformer_assets/sprites/world_tileset.png" id="1_u52ul"]
-[ext_resource type="Script" uid="uid://b2b6rmyyluckx" path="res://Scripts/Player/General/camera_2d.gd" id="2_oi3di"]
-[ext_resource type="PackedScene" uid="uid://c5ongupm07qh3" path="res://Scenes/Player/player.tscn" id="2_vonw3"]
-[ext_resource type="Script" uid="uid://byn1je7flnjo3" path="res://Scripts/Central/game_manager.gd" id="4_0b4ue"]
-[ext_resource type="FontFile" uid="uid://x2dwsfc3en6q" path="res://Assets/Tutorial Open Assets/brackeys_platformer_assets/fonts/PixelOperator8.ttf" id="4_f2txt"]
+[ext_resource type="PackedScene" uid="uid://t6qqa47vckdt" path="res://Scenes/Enemies/husk.tscn" id="1_llpdw"]
+[ext_resource type="Texture2D" uid="uid://jvylv1msq21o" path="res://Assets/Tutorial Open Assets/brackeys_platformer_assets/sprites/world_tileset.png" id="2_awxv1"]
+[ext_resource type="Script" uid="uid://b2b6rmyyluckx" path="res://Scripts/Player/General/camera_2d.gd" id="3_62jt2"]
+[ext_resource type="PackedScene" uid="uid://c5ongupm07qh3" path="res://Scenes/Player/player.tscn" id="4_avxd8"]
+[ext_resource type="FontFile" uid="uid://x2dwsfc3en6q" path="res://Assets/Tutorial Open Assets/brackeys_platformer_assets/fonts/PixelOperator8.ttf" id="5_vr4tk"]
+[ext_resource type="Script" uid="uid://byn1je7flnjo3" path="res://Scripts/Central/game_manager.gd" id="6_1d7tk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vonw3"]
-texture = ExtResource("1_u52ul")
+texture = ExtResource("2_awxv1")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:0/0 = 0
@@ -179,10 +179,9 @@ position = Vector2(-149, -68)
 
 [node name="Enemies" type="Node" parent="."]
 
-[node name="Enemy" parent="Enemies" instance=ExtResource("1_1ainy")]
+[node name="Enemy" parent="Enemies" instance=ExtResource("1_llpdw")]
 z_index = 4
 position = Vector2(-61, 54)
-can_shoot = true
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_oi3di")
@@ -196,10 +195,10 @@ layer_1/tile_data = PackedInt32Array(524211, 131072, 15, 589747, 131072, 15, 655
 [node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("player")]
 position = Vector2(160, 90)
 zoom = Vector2(4, 4)
-script = ExtResource("2_oi3di")
+script = ExtResource("3_62jt2")
 player = NodePath("../Player")
 
-[node name="Player" parent="." instance=ExtResource("2_vonw3")]
+[node name="Player" parent="." instance=ExtResource("4_avxd8")]
 position = Vector2(130, 78)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -207,7 +206,7 @@ position = Vector2(130, 78)
 [node name="Current State" type="Label" parent="CanvasLayer"]
 offset_right = 40.0
 offset_bottom = 23.0
-theme_override_fonts/font = ExtResource("4_f2txt")
+theme_override_fonts/font = ExtResource("5_vr4tk")
 theme_override_font_sizes/font_size = 32
 text = "State: "
 
@@ -218,7 +217,7 @@ anchor_bottom = 1.0
 offset_top = -23.0
 offset_right = 38.0
 grow_vertical = 0
-theme_override_fonts/font = ExtResource("4_f2txt")
+theme_override_fonts/font = ExtResource("5_vr4tk")
 theme_override_font_sizes/font_size = 32
 text = "HP:"
 
@@ -246,15 +245,14 @@ offset_right = 20.0
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("4_f2txt")
+theme_override_fonts/font = ExtResource("5_vr4tk")
 theme_override_font_sizes/font_size = 64
 text = "Game Over"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="GameManager" type="Node" parent="." node_paths=PackedStringArray("stateLabel", "hpLabel", "gameOverScreen")]
+[node name="GameManager" type="Node" parent="." node_paths=PackedStringArray("stateLabel", "gameOverScreen")]
 unique_name_in_owner = true
-script = ExtResource("4_0b4ue")
+script = ExtResource("6_1d7tk")
 stateLabel = NodePath("../CanvasLayer/Current State")
-hpLabel = NodePath("../CanvasLayer/HP")
 gameOverScreen = NodePath("../CanvasLayer/ColorRect")

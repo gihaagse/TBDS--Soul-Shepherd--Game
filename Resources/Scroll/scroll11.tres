@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="ScrollDialogue" load_steps=2 format=3 uid="uid://blx868278ft4w"]
+
+[ext_resource type="Script" uid="uid://8comeh3keae4" path="res://Resources/Scroll/ScrollResource.gd" id="1_a0ulv"]
+
+[resource]
+script = ExtResource("1_a0ulv")
+scroll_dialogue = Array[String](["Headmonk Jaimaru.", "I have respected you, not only for your position as a pillar in our country’s system, but also as a person.", "You have impressed me many times with your initiative and your wisdom.", "However, these accomplishments are NOTHING next to the failure you have shown, letting an entire town burn, and by a student of your own no less.", "The soul arts being abused to possess animals and using this wrath to maul and burn, in purpose of revenge over the dealings of adolescent love?", "I expected better out of one who has been teaching dutifully for decades such as yourself, however it seems like age has been catching up with you.", "Unless I can satisfy our countrymen with the head of the beast that caused the destruction, you can be sure that we will discuss your “retirement” very shortly.", "His Excellency, The Emperor."])
+metadata/_custom_type_script = "uid://8comeh3keae4"

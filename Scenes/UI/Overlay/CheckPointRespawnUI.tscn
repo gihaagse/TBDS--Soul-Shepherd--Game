@@ -154,6 +154,8 @@ alignment = 1
 z_index = 4
 layout_mode = 2
 size_flags_horizontal = 3
+focus_neighbor_left = NodePath("../Furthest")
+focus_neighbor_right = NodePath("../Closest")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
@@ -176,6 +178,8 @@ size_flags_stretch_ratio = 0.08
 z_index = 4
 layout_mode = 2
 size_flags_horizontal = 3
+focus_neighbor_left = NodePath("../Begin")
+focus_neighbor_right = NodePath("../Furthest")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
@@ -198,6 +202,8 @@ size_flags_stretch_ratio = 0.08
 z_index = 4
 layout_mode = 2
 size_flags_horizontal = 3
+focus_neighbor_left = NodePath("../Closest")
+focus_neighbor_right = NodePath("../Begin")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
@@ -231,7 +237,9 @@ size_flags_stretch_ratio = 0.9
 [node name="HoverText" parent="MarginContainer/VBoxContainer/HoverPlane" index="0"]
 offset_right = 437.0
 offset_bottom = 104.0
+theme_override_fonts/font = ExtResource("3_vtvwt")
 horizontal_alignment = 1
+autowrap_mode = 3
 
 [connection signal="mouse_entered" from="MarginContainer/VBoxContainer/HBoxContainer/Begin" to="." method="_on_begin_mouse_entered"]
 [connection signal="mouse_exited" from="MarginContainer/VBoxContainer/HBoxContainer/Begin" to="." method="_on_begin_mouse_exited"]

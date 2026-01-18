@@ -23,7 +23,7 @@ func _process(delta: float) -> void:
 		
 	velocity2D = velocity
 	#game_manager.updateLabel(finite_state_machine.current_state.name)
-	#game_manager.updateHP(hp)
+	game_manager.updateHP(hp)
 	if Input.is_action_just_pressed("reset"):
 		var current_state = $FiniteStateMachine._get_current_state()
 		if current_state != $FiniteStateMachine/Died:
@@ -42,7 +42,7 @@ func _on_killzone_body_entered(body: Node2D) -> void:
 	player_hit.emit(50)
 
 func _on_health_hp_changed() -> void:
-	print("damage")
+	#print("damage")
 	if hp.hp > 0:
 		player_hitsfx.playing =true
 	var tween = get_tree().create_tween()

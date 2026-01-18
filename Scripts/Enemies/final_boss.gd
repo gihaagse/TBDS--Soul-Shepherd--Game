@@ -33,7 +33,7 @@ func _process(_delta: float) -> void:
 		gravity = 300
 		WalkTimer.start()
 		shoot("ground_attack")
-	if speed != 0 and ground.is_colliding():
+	if speed != 0 and ground.is_colliding() and can_move:
 		sprite.play("Walking")
 	elif speed == 0 and ground.is_colliding() and !sprite.is_playing():
 		sprite.play("Idle")
@@ -49,6 +49,7 @@ func jump(small_jump_speed = null):
 	else:
 		velocity.y = small_jump_speed
 	ground.set_enabled(false)
+	sprite.play("Jumping")
 
 func pre_shoot():
 	if raycastcheckleft.is_colliding() and (raycastcheckleft.get_collision_point().x - global_position.x >= -20):
@@ -63,7 +64,9 @@ func pre_shoot():
 			jump(-200)
 			just_jumped = true
 		else:
+			sprite.stop()
 			sprite.play("Clap")
+			print("sprite: " + str(sprite.get_animation()))
 			shoot("clap")
 
 func shoot(attack: String):

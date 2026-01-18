@@ -310,8 +310,6 @@ COLOR = Color(0.7921569, 0.32156864, 0.7882353, 1)
 drop_chance = 100
 is_active = false
 
-[node name="Tollie" type="Node2D" parent="Drops"]
-
 [connection signal="hp_changed" from="Health" to="." method="_on_health_hp_changed"]
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="timeout" from="in_range_shoot_timer" to="." method="_on_timer_timeout"]
