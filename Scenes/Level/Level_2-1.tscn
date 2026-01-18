@@ -930,7 +930,7 @@ bus = &"Music"
 position = Vector2(1824, 336)
 collision_mask = 4
 script = ExtResource("24_pqc52")
-level_name = "Level -2"
+level_name = "Level_2-2"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Next_level"]
 shape = SubResource("RectangleShape2D_1v0ja")
@@ -1040,19 +1040,6 @@ scale = Vector2(2, 2)
 collision_layer = 256
 walk_speed = 100
 sprint_speed = 100
-
-[node name="ParralaxBackground" parent="."]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-position = Vector2(0, 322)
-script = null
 
 [connection signal="body_entered" from="killzone" to="killzone" method="_on_body_entered"]
 [connection signal="body_entered" from="Next_level" to="Next_level" method="_on_body_entered"]
