@@ -26,6 +26,7 @@ position = Vector2(0, -14)
 shape = SubResource("RectangleShape2D_wwxgf")
 
 [node name="MainSpirte" parent="." index="1"]
+z_index = 1
 position = Vector2(0, -5)
 scale = Vector2(1.4, 1)
 texture = ExtResource("3_eaotn")
@@ -38,7 +39,6 @@ position = Vector2(0, 25)
 shape = SubResource("RectangleShape2D_q62ug")
 
 [node name="SpikesSprite" type="Sprite2D" parent="Spikes" index="1"]
-z_index = -1
 position = Vector2(0, 4)
 texture = ExtResource("4_6jj55")
 

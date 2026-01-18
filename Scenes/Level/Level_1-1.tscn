@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://lahfkubql7vo"]
+[gd_scene load_steps=37 format=3 uid="uid://lahfkubql7vo"]
 
 [ext_resource type="Script" uid="uid://beypopj8ttlnq" path="res://Scripts/Level/playtest_2.gd" id="1_5dr80"]
 [ext_resource type="Script" uid="uid://byn1je7flnjo3" path="res://Scripts/Central/game_manager.gd" id="2_fiy4m"]
@@ -27,9 +27,11 @@
 [ext_resource type="Texture2D" uid="uid://bpawmr3tt1vu8" path="res://Assets/Sprites/Dialogue Sprites/monk_sitting_sprite.png" id="21_fmhbg"]
 [ext_resource type="PackedScene" uid="uid://ndkp1vfqmr4g" path="res://Scenes/Dialogue/DialogueUI.tscn" id="22_lpv7w"]
 [ext_resource type="PackedScene" uid="uid://bfks2a63jpch2" path="res://Scenes/Enemies/orc.tscn" id="24_w85r1"]
-[ext_resource type="PackedScene" uid="uid://bs6hijimb1akk" path="res://Scenes/Enemies/final_boss.tscn" id="25_ab6ox"]
+[ext_resource type="PackedScene" uid="uid://b76woqie8uxl7" path="res://Scenes/Enemies/final_boss.tscn" id="25_ab6ox"]
 [ext_resource type="PackedScene" uid="uid://dgm6tcibml5l" path="res://Scenes/Enemies/dragon_fly_enemy.tscn" id="26_mn8ec"]
 [ext_resource type="PackedScene" uid="uid://dpatdmh4s5sg5" path="res://Scenes/GrapplingSystem/GrapplingHookSystem.tscn" id="27_hyn4w"]
+[ext_resource type="PackedScene" uid="uid://dm61xmst0522o" path="res://Scenes/Items/magic_bamboo.tscn" id="31_j1x2j"]
+[ext_resource type="Texture2D" uid="uid://c8dol58rb8t5j" path="res://Assets/Sprites/Magic Bamboo/+5 hp magic bamboo.png" id="32_8jqki"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j3um3"]
 texture = ExtResource("3_761oq")
@@ -684,6 +686,19 @@ checkppoint_id = 4
 [node name="Start" type="Marker2D" parent="CheckPoints"]
 position = Vector2(15, 216)
 script = ExtResource("6_26g8j")
+
+[node name="Obstacles" type="Node2D" parent="."]
+
+[node name="MagicBamboo" type="Node2D" parent="Obstacles"]
+z_index = 4
+position = Vector2(-1, -17)
+
+[node name="MagicBamboo" parent="Obstacles/MagicBamboo" instance=ExtResource("31_j1x2j")]
+z_index = 5
+position = Vector2(-112, -123)
+texture = ExtResource("32_8jqki")
+heal_amount = 5
+COLOR = Color(0, 0.59607846, 0.8627451, 1)
 
 [connection signal="body_entered" from="killzone" to="killzone" method="_on_body_entered"]
 

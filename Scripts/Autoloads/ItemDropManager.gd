@@ -21,7 +21,7 @@ func drop_item(item, position: Vector2):
 		drop_instance.global_position = position
 		if ("is_active" in drop_instance):
 			drop_instance.is_active = true
-		new_parent.call_deferred("add_child", drop_instance)
+			new_parent.call_deferred("add_child", drop_instance)
 	
 func _passes_drop_roll(item) -> bool:
 	if not ("drop_chance" in item):
