@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://cy60eohui7ya1"]
+
+[ext_resource type="Texture2D" uid="uid://crkx8omocil3" path="res://Assets/Background/cave_background.png" id="1_bto7h"]
+[ext_resource type="Texture2D" uid="uid://c4mf1sjwou53i" path="res://Assets/Background/cave_background_rocks.png" id="2_ywoqv"]
+
+[node name="ParralaxBackground" type="Node2D"]
+
+[node name="Parallax2D" type="Parallax2D" parent="."]
+z_index = 1
+scroll_scale = Vector2(0.1, 0.02)
+repeat_size = Vector2(320, 0)
+repeat_times = 5
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D"]
+texture = ExtResource("1_bto7h")
+
+[node name="Parallax2D2" type="Parallax2D" parent="."]
+z_index = 3
+scroll_scale = Vector2(0.2, 0.01)
+repeat_size = Vector2(320, 0)
+repeat_times = 5
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D2"]
+texture = ExtResource("2_ywoqv")
+offset = Vector2(17.195, 0)
