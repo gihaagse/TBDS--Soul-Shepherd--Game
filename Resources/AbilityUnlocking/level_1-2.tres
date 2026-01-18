@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="AbilityUnlocking" load_steps=2 format=3 uid="uid://bbnx68rjbop6b"]
+
+[ext_resource type="Script" uid="uid://vqodl6u1ooq2" path="res://Resources/AbilityUnlocking/AbilityUnlocking.gd" id="1_ui4ym"]
+
+[resource]
+script = ExtResource("1_ui4ym")
+unlocked_abilities = Array[int]([7, 11])
+metadata/_custom_type_script = "uid://vqodl6u1ooq2"

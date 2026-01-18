@@ -29,7 +29,7 @@
 [ext_resource type="Script" uid="uid://b7008awu7lly6" path="res://Scenes/Level/next_level.gd" id="24_pqc52"]
 [ext_resource type="Texture2D" uid="uid://dmv57vx1668nw" path="res://Assets/Sprites/Magic Bamboo/+ 15 hp magic bamboo.png" id="25_hoehn"]
 [ext_resource type="Script" uid="uid://hfj0hgwiyiqu" path="res://Scripts/Central/event_trigger.gd" id="25_tr82u"]
-[ext_resource type="Script" path="res://Scripts/Obstacles/gate_crystal.gd" id="26_tdunj"]
+[ext_resource type="Script" uid="uid://cbirdwbh5p7se" path="res://Scripts/Obstacles/gate_crystal.gd" id="26_tdunj"]
 [ext_resource type="PackedScene" uid="uid://cl45lm0hg20kf" path="res://Scenes/Items/soul.tscn" id="27_imhjm"]
 [ext_resource type="SpriteFrames" uid="uid://cgtj4wt3ql8r1" path="res://Resources/Wisps/Fire_Wisp.tres" id="28_demn2"]
 [ext_resource type="PackedScene" uid="uid://t6qqa47vckdt" path="res://Scenes/Enemies/husk.tscn" id="29_8n4ft"]
