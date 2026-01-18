@@ -118,6 +118,7 @@ func load_default_abilities() -> void:
 		if ability in default_abilities:
 			unlocked_abilities.append(ability)
 
+
 func get_ability_name_from_value(value: int) -> String:
 	for key in AbilityData.ability_list.keys():
 		if AbilityData.ability_list[key] == value:

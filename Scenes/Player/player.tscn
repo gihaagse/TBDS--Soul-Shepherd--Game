@@ -1065,7 +1065,7 @@ alpha_curve = SubResource("CurveTexture_sm0op")
 load_path = "res://.godot/imported/green_ball.png-faf5193f9c80959af8ce2bec1f312451.ctex"
 
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("finite_state_machine", "hp") groups=["Player"]]
-z_index = 6
+z_index = 7
 collision_layer = 5
 floor_constant_speed = true
 floor_snap_length = 4.0

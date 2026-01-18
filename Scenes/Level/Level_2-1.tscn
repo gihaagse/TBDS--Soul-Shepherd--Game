@@ -28,7 +28,7 @@
 [ext_resource type="AudioStream" uid="uid://cbtn1bitrynwi" path="res://Assets/Audio/Music/sample.wav" id="23_hsbfp"]
 [ext_resource type="Script" uid="uid://b7008awu7lly6" path="res://Scenes/Level/next_level.gd" id="24_pqc52"]
 [ext_resource type="Script" uid="uid://hfj0hgwiyiqu" path="res://Scripts/Central/event_trigger.gd" id="25_tr82u"]
-[ext_resource type="Script" path="res://Scripts/Obstacles/gate_crystal.gd" id="26_tdunj"]
+[ext_resource type="Script" uid="uid://cbirdwbh5p7se" path="res://Scripts/Obstacles/gate_crystal.gd" id="26_tdunj"]
 [ext_resource type="PackedScene" uid="uid://cl45lm0hg20kf" path="res://Scenes/Items/soul.tscn" id="27_imhjm"]
 [ext_resource type="SpriteFrames" uid="uid://cgtj4wt3ql8r1" path="res://Resources/Wisps/Fire_Wisp.tres" id="28_demn2"]
 [ext_resource type="PackedScene" uid="uid://t6qqa47vckdt" path="res://Scenes/Enemies/husk.tscn" id="29_8n4ft"]
@@ -539,12 +539,9 @@ size = Vector2(96.5, 90.25)
 [node name="Level" type="Node2D"]
 script = ExtResource("1_a337h")
 
-[node name="GameManager" type="Node" parent="." node_paths=PackedStringArray("stateLabel", "equipLabel", "gameOverScreen")]
+[node name="GameManager" type="Node" parent="."]
 unique_name_in_owner = true
 script = ExtResource("2_tcjxv")
-stateLabel = NodePath("")
-equipLabel = NodePath("")
-gameOverScreen = NodePath("")
 
 [node name="TileMap" type="TileMap" parent="."]
 z_index = 5
@@ -829,21 +826,19 @@ libraries = {
 &"": SubResource("AnimationLibrary_m1v2j")
 }
 
-[node name="Event_Trigger" type="Area2D" parent="Events" node_paths=PackedStringArray("tip_label")]
+[node name="Event_Trigger" type="Area2D" parent="Events"]
 position = Vector2(95, 229)
 collision_mask = 4
 script = ExtResource("25_tr82u")
-tip_label = NodePath("")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Events/Event_Trigger"]
 shape = SubResource("RectangleShape2D_7y4qy")
 
-[node name="Key1" type="Area2D" parent="Events" node_paths=PackedStringArray("tip_label")]
+[node name="Key1" type="Area2D" parent="Events"]
 z_index = 5
 position = Vector2(1744, -152)
 collision_mask = 4100
 script = ExtResource("25_tr82u")
-tip_label = NodePath("")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Events/Key1"]
 shape = SubResource("RectangleShape2D_qkp6a")

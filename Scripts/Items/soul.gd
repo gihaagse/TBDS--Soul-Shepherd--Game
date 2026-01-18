@@ -25,12 +25,12 @@ func _ready() -> void:
 			)
 			$AnimatedSprite2D.scale = scale_factor
 			
-			var shape_node = collision_shape_2d
-			if shape_node and shape_node.shape:
-				var shape = shape_node.shape
-				if shape is CapsuleShape2D:
-					shape.radius = desired_size.x / 2
-					shape.height = max(0, desired_size.y - (shape.radius * 2))
+			if collision_shape_2d and collision_shape_2d.shape is CapsuleShape2D:
+				var new_shape = CapsuleShape2D.new()
+				new_shape.radius = desired_size.x / 2.0
+				new_shape.height = desired_size.y * 1.5  
+				collision_shape_2d.shape = new_shape
+				print("NEW - radius: ", new_shape.radius, " height: ", new_shape.height)
 	else:
 		$AnimatedSprite2D.scale = Vector2(1,1)
 	
@@ -49,4 +49,11 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		
 		TextboxPopupManager.start_dialogue(body.global_position + vertical_message_offset, lines)
 		self.queue_free()
-		
+	
+	if collision_shape_2d.shape is CapsuleShape2D:
+		var capsule = collision_shape_2d.shape as CapsuleShape2D
+		print("Radius: ", capsule.radius)
+		print("Height: ", capsule.height)
+	else:
+		print("Geen CapsuleShape2D!")
+	
