@@ -1,6 +1,7 @@
-[gd_scene load_steps=39 format=3 uid="uid://df7x13ignki5d"]
+[gd_scene load_steps=40 format=3 uid="uid://df7x13ignki5d"]
 
 [ext_resource type="Script" uid="uid://dhm65txe15dn0" path="res://Scenes/Level/level_2_3.gd" id="1_3yx86"]
+[ext_resource type="Resource" uid="uid://4v7wvh5s6b0b" path="res://Resources/AbilityUnlocking/level_2-3.tres" id="2_6hcqd"]
 [ext_resource type="TileSet" uid="uid://4n1q2jwjysv0" path="res://Assets/level_2-3.tres" id="2_xs3h8"]
 [ext_resource type="Script" uid="uid://byn1je7flnjo3" path="res://Scripts/Central/game_manager.gd" id="4_0swme"]
 [ext_resource type="Script" uid="uid://b2b6rmyyluckx" path="res://Scripts/Player/General/camera_2d.gd" id="4_gb2tu"]
@@ -155,6 +156,7 @@ size = Vector2(30, 30)
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_3yx86")
+carried_abilities = ExtResource("2_6hcqd")
 
 [node name="TileMap" type="TileMap" parent="."]
 z_index = 4

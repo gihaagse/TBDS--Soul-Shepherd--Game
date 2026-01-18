@@ -1,6 +1,7 @@
-[gd_scene load_steps=43 format=3 uid="uid://dyxv627b4icnf"]
+[gd_scene load_steps=44 format=3 uid="uid://dyxv627b4icnf"]
 
 [ext_resource type="Script" uid="uid://c2jeph0pjh467" path="res://Scripts/Level/playtest_level.gd" id="1_oqnoi"]
+[ext_resource type="Resource" uid="uid://bbgldcvdisw3m" path="res://Resources/AbilityUnlocking/level_1-3.tres" id="2_4mtjj"]
 [ext_resource type="Script" uid="uid://byn1je7flnjo3" path="res://Scripts/Central/game_manager.gd" id="2_o7txn"]
 [ext_resource type="Texture2D" uid="uid://dfdfu6o1j3apv" path="res://Assets/Sprites/Playtest1.png" id="3_4mtjj"]
 [ext_resource type="Texture2D" uid="uid://j1w6x4hpn3ou" path="res://Assets/Icons/Sung Chin Woo Icon.png" id="4_0a8bn"]
@@ -520,6 +521,7 @@ size = Vector2(48, 16)
 
 [node name="Level2" type="Node2D"]
 script = ExtResource("1_oqnoi")
+carried_abilities = ExtResource("2_4mtjj")
 
 [node name="GameManager" type="Node" parent="."]
 unique_name_in_owner = true
@@ -964,29 +966,6 @@ next_part = 1
 shape = SubResource("RectangleShape2D_miuwv")
 
 [node name="Souls" type="Node2D" parent="."]
-
-[node name="Dash" parent="Souls" instance=ExtResource("27_iidxh")]
-position = Vector2(144, 234)
-scale = Vector2(0.765, 0.765)
-ability = 7
-custom_sprite_frames = ExtResource("28_ibx2y")
-
-[node name="Dash2" parent="Souls" instance=ExtResource("27_iidxh")]
-position = Vector2(160, 234)
-scale = Vector2(0.765, 0.765)
-ability = 9
-custom_sprite_frames = ExtResource("28_ibx2y")
-
-[node name="Dash3" parent="Souls" instance=ExtResource("27_iidxh")]
-position = Vector2(177, 234)
-scale = Vector2(0.765, 0.765)
-custom_sprite_frames = ExtResource("28_ibx2y")
-
-[node name="Dash4" parent="Souls" instance=ExtResource("27_iidxh")]
-position = Vector2(195.00002, 234)
-scale = Vector2(0.765, 0.765)
-ability = 8
-custom_sprite_frames = ExtResource("28_ibx2y")
 
 [node name="Dash5" parent="Souls" instance=ExtResource("27_iidxh")]
 position = Vector2(3880, 24)

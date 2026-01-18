@@ -1,7 +1,8 @@
-[gd_scene load_steps=55 format=3 uid="uid://jy7lpdbdrphw"]
+[gd_scene load_steps=56 format=3 uid="uid://jy7lpdbdrphw"]
 
 [ext_resource type="Script" uid="uid://c2jeph0pjh467" path="res://Scripts/Level/playtest_level.gd" id="1_lwhji"]
 [ext_resource type="Script" uid="uid://byn1je7flnjo3" path="res://Scripts/Central/game_manager.gd" id="2_hi12w"]
+[ext_resource type="Resource" uid="uid://w4w68vjoa8rp" path="res://Resources/AbilityUnlocking/level_2-2.tres" id="2_nju6f"]
 [ext_resource type="Texture2D" uid="uid://dfdfu6o1j3apv" path="res://Assets/Sprites/Playtest1.png" id="3_oxqp5"]
 [ext_resource type="Texture2D" uid="uid://j1w6x4hpn3ou" path="res://Assets/Icons/Sung Chin Woo Icon.png" id="4_f53dv"]
 [ext_resource type="PackedScene" uid="uid://c45jpc3kaflr4" path="res://Scenes/CheckPoints/CheckPoint.tscn" id="5_ov71p"]
@@ -494,6 +495,7 @@ size = Vector2(50, 20)
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_lwhji")
+carried_abilities = ExtResource("2_nju6f")
 
 [node name="GameManager" type="Node" parent="."]
 unique_name_in_owner = true
@@ -1485,7 +1487,7 @@ COLOR = Color(0, 0.59607846, 0.8627451, 1)
 position = Vector2(3608, -288)
 collision_mask = 4
 script = ExtResource("28_drrrq")
-level_name = "Playtest2"
+level_name = "Level_2-3"
 next_part = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Next_level"]

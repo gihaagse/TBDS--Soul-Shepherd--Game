@@ -63,5 +63,9 @@ func _on_reset_continue_pressed() -> void:
 	SaveData.saving.emit()
 
 func _update_level_label() -> void:
-	continue_level_label.text = "Last Level: level %s" %SaveData.get_last_section()
+	var section = SaveData.get_last_section()
+	if section == "0-0":
+		continue_level_label.text = "Last Level: Tutorial"
+	else:
+		continue_level_label.text = "Last Level: level %s" % section
 	show_lore()
