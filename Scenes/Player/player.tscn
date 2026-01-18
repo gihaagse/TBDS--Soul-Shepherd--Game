@@ -36,7 +36,7 @@
 [ext_resource type="PackedScene" uid="uid://cde6qxgsfv3w" path="res://Scenes/Effects/dash_lines.tscn" id="26_ythyg"]
 [ext_resource type="PackedScene" uid="uid://b3qfe4rcpk6rv" path="res://Scenes/Effects/dash_smoke.tscn" id="27_bmb2s"]
 [ext_resource type="AudioStream" uid="uid://bwgoippum6cgf" path="res://Assets/Audio/SFX/Player/Knife Sword Katana stab.mp3" id="30_2jnj1"]
-[ext_resource type="Script" uid="uid://c0udclb84tqt1" path="res://Scripts/UI/Overlay/jump_ui.gd" id="38_m6ahd"]
+[ext_resource type="Script" path="res://Scripts/UI/Overlay/jump_ui.gd" id="38_m6ahd"]
 [ext_resource type="PackedScene" uid="uid://cg5703l8qujlb" path="res://Assets/Particles/BloodParticle.tscn" id="38_ogmfp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lfmf2"]
@@ -1136,42 +1136,13 @@ holder = NodePath("../Holder")
 [node name="Idling" type="Node" parent="FiniteStateMachine" node_paths=PackedStringArray("dash_cooldown", "jumpsfx")]
 script = ExtResource("10_2jnj1")
 dash_cooldown = NodePath("../../Timers/DashCooldown")
-fall_speed_threshold = null
-max_fall_speed = null
-max_fall_damage = null
-max_airglide_velocity = null
-run_particle_offset = null
-move_speed = null
-jump_force = null
-brake_force = null
-air_brake_force = null
 jumpsfx = NodePath("../../jumpsfx")
 can_move = false
-can_jump = null
-in_anim = null
-is_gravity = null
-can_shoot = null
-airsStrafe = null
 
 [node name="Walking" type="Node" parent="FiniteStateMachine" node_paths=PackedStringArray("dash_cooldown", "jumpsfx")]
 script = ExtResource("11_enij7")
 dash_cooldown = NodePath("../../Timers/DashCooldown")
-fall_speed_threshold = null
-max_fall_speed = null
-max_fall_damage = null
-max_airglide_velocity = null
-run_particle_offset = null
-move_speed = null
-jump_force = null
-brake_force = null
-air_brake_force = null
 jumpsfx = NodePath("../../jumpsfx")
-can_move = null
-can_jump = null
-in_anim = null
-is_gravity = null
-can_shoot = null
-airsStrafe = null
 
 [node name="Falling" type="Node" parent="FiniteStateMachine" node_paths=PackedStringArray("dash_cooldown", "landing_sfx", "jumpsfx")]
 script = ExtResource("12_mwii3")

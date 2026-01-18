@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://j6du3niuxs2r"]
+[gd_scene load_steps=54 format=3 uid="uid://j6du3niuxs2r"]
 
 [ext_resource type="Script" uid="uid://c2jeph0pjh467" path="res://Scripts/Level/playtest_level.gd" id="1_a337h"]
 [ext_resource type="Script" uid="uid://byn1je7flnjo3" path="res://Scripts/Central/game_manager.gd" id="2_tcjxv"]
@@ -27,11 +27,14 @@
 [ext_resource type="Texture2D" uid="uid://c8dol58rb8t5j" path="res://Assets/Sprites/Magic Bamboo/+5 hp magic bamboo.png" id="22_c21fn"]
 [ext_resource type="AudioStream" uid="uid://cbtn1bitrynwi" path="res://Assets/Audio/Music/sample.wav" id="23_hsbfp"]
 [ext_resource type="Script" uid="uid://b7008awu7lly6" path="res://Scenes/Level/next_level.gd" id="24_pqc52"]
+[ext_resource type="Texture2D" uid="uid://dmv57vx1668nw" path="res://Assets/Sprites/Magic Bamboo/+ 15 hp magic bamboo.png" id="25_hoehn"]
 [ext_resource type="Script" uid="uid://hfj0hgwiyiqu" path="res://Scripts/Central/event_trigger.gd" id="25_tr82u"]
 [ext_resource type="Script" uid="uid://cbirdwbh5p7se" path="res://Scripts/Obstacles/gate_crystal.gd" id="26_tdunj"]
 [ext_resource type="PackedScene" uid="uid://cl45lm0hg20kf" path="res://Scenes/Items/soul.tscn" id="27_imhjm"]
 [ext_resource type="SpriteFrames" uid="uid://cgtj4wt3ql8r1" path="res://Resources/Wisps/Fire_Wisp.tres" id="28_demn2"]
 [ext_resource type="PackedScene" uid="uid://t6qqa47vckdt" path="res://Scenes/Enemies/husk.tscn" id="29_8n4ft"]
+[ext_resource type="Shader" uid="uid://o6ancnl5jgcr" path="res://Shaders/Blink.gdshader" id="34_qgbq7"]
+[ext_resource type="Texture2D" uid="uid://utw0u8msxwh0" path="res://Assets/Sprites/Magic Bamboo/+25 hp magic bamboo.png" id="35_as8vh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_b4qox"]
 texture = ExtResource("3_hrj5t")
@@ -536,6 +539,36 @@ size = Vector2(16, 32)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j1inx"]
 size = Vector2(96.5, 90.25)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_as8vh"]
+resource_local_to_scene = true
+shader = ExtResource("34_qgbq7")
+shader_parameter/blink_color = Color(1, 1, 1, 1)
+shader_parameter/blink_intensity = 0.0
+shader_parameter/damage_active = false
+shader_parameter/damage_time = 0.0
+shader_parameter/shake_intensity = 0.0
+shader_parameter/distortion = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qgbq7"]
+resource_local_to_scene = true
+shader = ExtResource("34_qgbq7")
+shader_parameter/blink_color = Color(1, 1, 1, 1)
+shader_parameter/blink_intensity = 0.0
+shader_parameter/damage_active = false
+shader_parameter/damage_time = 0.0
+shader_parameter/shake_intensity = 0.0
+shader_parameter/distortion = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_k5ql6"]
+resource_local_to_scene = true
+shader = ExtResource("34_qgbq7")
+shader_parameter/blink_color = Color(1, 1, 1, 1)
+shader_parameter/blink_intensity = 0.0
+shader_parameter/damage_active = false
+shader_parameter/damage_time = 0.0
+shader_parameter/shake_intensity = 0.0
+shader_parameter/distortion = 0.0
+
 [node name="Level" type="Node2D"]
 script = ExtResource("1_a337h")
 
@@ -755,7 +788,7 @@ position = Vector2(-1, -17)
 z_index = 5
 position = Vector2(153, 121)
 gravity_scale = 0.0
-texture = ExtResource("22_c21fn")
+texture = ExtResource("25_hoehn")
 heal_amount = 5
 COLOR = Color(0, 0.59607846, 0.8627451, 1)
 
@@ -764,16 +797,16 @@ z_index = 5
 position = Vector2(393, 249)
 gravity_scale = 0.0
 texture = ExtResource("22_c21fn")
-heal_amount = 5
-COLOR = Color(0.70023185, 0.006506074, 0.19450584, 1)
+heal_amount = 10
+COLOR = Color(0, 0.8039216, 0.9764706, 1)
 
 [node name="MagicBamboo3" parent="Obstacles/MagicBamboo" instance=ExtResource("21_fo8ia")]
 z_index = 5
 position = Vector2(577, 8)
 gravity_scale = 0.0
 texture = ExtResource("22_c21fn")
-heal_amount = 5
-COLOR = Color(0.9564226, 0.9129138, 2.3102762e-06, 1)
+heal_amount = 10
+COLOR = Color(0, 0.8039216, 0.9764706, 1)
 
 [node name="Level1Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("23_hsbfp")
@@ -884,9 +917,24 @@ custom_sprite_frames = ExtResource("28_demn2")
 z_index = 7
 position = Vector2(1488, 408)
 
+[node name="AnimatedSprite2D" parent="Enemies/Enemy" index="1"]
+material = SubResource("ShaderMaterial_as8vh")
+
+[node name="MagicBamboo" parent="Enemies/Enemy/Drops" index="0"]
+texture = ExtResource("25_hoehn")
+heal_amount = 5
+drop_chance = 15
+
 [node name="Enemy2" parent="Enemies" instance=ExtResource("29_8n4ft")]
 z_index = 7
 position = Vector2(1544, 408)
+
+[node name="AnimatedSprite2D" parent="Enemies/Enemy2" index="1"]
+material = SubResource("ShaderMaterial_qgbq7")
+
+[node name="MagicBamboo" parent="Enemies/Enemy2/Drops" index="0"]
+COLOR = Color(0, 0.8039216, 0.9764706, 1)
+drop_chance = 15
 
 [node name="Enemy3" parent="Enemies" instance=ExtResource("29_8n4ft")]
 z_index = 7
@@ -896,8 +944,20 @@ collision_layer = 256
 walk_speed = 100
 sprint_speed = 100
 
+[node name="AnimatedSprite2D" parent="Enemies/Enemy3" index="1"]
+material = SubResource("ShaderMaterial_k5ql6")
+
+[node name="MagicBamboo" parent="Enemies/Enemy3/Drops" index="0"]
+texture = ExtResource("35_as8vh")
+heal_amount = 20
+drop_chance = 10
+
 [connection signal="body_entered" from="killzone" to="killzone" method="_on_body_entered"]
 [connection signal="body_entered" from="Next_level" to="Next_level" method="_on_body_entered"]
 [connection signal="body_entered" from="Events/Event_Trigger" to="Events/Event_Trigger" method="_on_body_entered"]
 [connection signal="body_entered" from="Events/Key1" to="Events/Key1" method="_on_body_entered"]
 [connection signal="body_entered" from="Events/Gate_Crystal1/UnlockArea" to="Events/Gate_Crystal1" method="_on_unlock_area_body_entered"]
+
+[editable path="Enemies/Enemy"]
+[editable path="Enemies/Enemy2"]
+[editable path="Enemies/Enemy3"]

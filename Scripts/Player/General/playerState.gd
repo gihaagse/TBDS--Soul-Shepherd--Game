@@ -142,8 +142,8 @@ func movement(delta:float):
 		custom_gravity = Vector2(0,980)
 		if fall_speed > fall_speed_threshold:
 			var damage_ratio = clamp((fall_speed - fall_speed_threshold) / (max_fall_speed - fall_speed_threshold), 0, 1)
-			var damage = damage_ratio * max_fall_damage 
-
+			var damage = clamp(damage_ratio * max_fall_damage * 2, 0, 99)
+			
 			if hp and hp.has_method("take_damage"):
 				#print("taking fall damage: ", damage)
 				hp.take_damage(damage, hp.DamageType.FALL)

@@ -7,7 +7,7 @@
 [ext_resource type="FontFile" uid="uid://x2dwsfc3en6q" path="res://Assets/Tutorial Open Assets/brackeys_platformer_assets/fonts/PixelOperator8.ttf" id="4_6hc3a"]
 [ext_resource type="Texture2D" uid="uid://cw7w05q12u5bv" path="res://Assets/Sprites/husk.png" id="4_tq37w"]
 [ext_resource type="PackedScene" uid="uid://dm61xmst0522o" path="res://Scenes/Items/magic_bamboo.tscn" id="7_adlby"]
-[ext_resource type="Texture2D" uid="uid://utw0u8msxwh0" path="res://Assets/Sprites/Magic Bamboo/+25 hp magic bamboo.png" id="8_pub4n"]
+[ext_resource type="Texture2D" uid="uid://c8dol58rb8t5j" path="res://Assets/Sprites/Magic Bamboo/+5 hp magic bamboo.png" id="8_m8kdi"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6hc3a"]
 resource_local_to_scene = true
@@ -294,20 +294,11 @@ visible = false
 z_index = 5
 
 [node name="MagicBamboo" parent="Drops" instance=ExtResource("7_adlby")]
-texture = ExtResource("8_pub4n")
-heal_amount = 25
+texture = ExtResource("8_m8kdi")
+heal_amount = 10
 COLOR = Color(0.7921569, 0.32156864, 0.7882353, 1)
-drop_chance = 50
+drop_chance = 25
 is_active = false
-
-[node name="MagicBamboo2" parent="Drops" instance=ExtResource("7_adlby")]
-texture = ExtResource("8_pub4n")
-heal_amount = 25
-COLOR = Color(0.7921569, 0.32156864, 0.7882353, 1)
-drop_chance = 50
-is_active = false
-
-[node name="Tollie" type="Node2D" parent="Drops"]
 
 [connection signal="hp_changed" from="Health" to="." method="_on_health_hp_changed"]
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
