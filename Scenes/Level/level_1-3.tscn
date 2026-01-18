@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://dyxv627b4icnf"]
+[gd_scene load_steps=46 format=3 uid="uid://dyxv627b4icnf"]
 
 [ext_resource type="Script" uid="uid://c2jeph0pjh467" path="res://Scripts/Level/playtest_level.gd" id="1_oqnoi"]
 [ext_resource type="Resource" uid="uid://bbgldcvdisw3m" path="res://Resources/AbilityUnlocking/level_1-3.tres" id="2_4mtjj"]
@@ -20,9 +20,11 @@
 [ext_resource type="PackedScene" uid="uid://c64nl2fkq45ge" path="res://Scenes/UI/Overlay/AbilityInfoButton.tscn" id="17_6u6t5"]
 [ext_resource type="PackedScene" uid="uid://bpp47tnrfdrab" path="res://Scenes/UI/Components/player_hud.tscn" id="18_qfnql"]
 [ext_resource type="FontFile" uid="uid://p47ydk5quyq2" path="res://Assets/Tutorial Open Assets/brackeys_platformer_assets/fonts/PixelOperator8-Bold.ttf" id="19_j1vxt"]
-[ext_resource type="PackedScene" uid="uid://5jrffwap8tjk" path="res://Scenes/Background/parralax_background.tscn" id="20_ex80p"]
 [ext_resource type="Script" uid="uid://bpkjqkjnq8o6g" path="res://Scripts/Player/General/killzone.gd" id="21_hhr80"]
+[ext_resource type="Texture2D" uid="uid://cp8w704xccmt3" path="res://Assets/Background/bamboo_background.png" id="21_x3bjw"]
 [ext_resource type="AudioStream" uid="uid://cg3qpni1dsx7g" path="res://Assets/Audio/Music/Rush 1-2.wav" id="22_g30dl"]
+[ext_resource type="Texture2D" uid="uid://bvglohh8et0el" path="res://Assets/Background/bamboo2_background.png" id="22_mcfix"]
+[ext_resource type="Texture2D" uid="uid://b7ugr2cytodl8" path="res://Assets/Background/forest_background.png" id="23_5emvd"]
 [ext_resource type="Script" uid="uid://hfj0hgwiyiqu" path="res://Scripts/Central/event_trigger.gd" id="23_qc3ue"]
 [ext_resource type="PackedScene" uid="uid://c34kdnga4axvp" path="res://Scenes/Obstacles/obstacle_falling_tiles.tscn" id="24_epfbu"]
 [ext_resource type="PackedScene" uid="uid://d2jbqn300os54" path="res://Scenes/Obstacles/obstacle_spike.tscn" id="25_nvcff"]
@@ -688,9 +690,41 @@ theme_override_font_sizes/font_size = 20
 text = "Current Level: 
 1-3"
 
-[node name="ParralaxBackground" parent="." instance=ExtResource("20_ex80p")]
+[node name="ParralaxBackground" type="Node2D" parent="."]
 z_index = 1
 position = Vector2(0, 324)
+
+[node name="Parallax2D" type="Parallax2D" parent="ParralaxBackground"]
+z_index = 1
+scroll_scale = Vector2(0.05, 0.01)
+repeat_size = Vector2(320, 0)
+repeat_times = 5
+
+[node name="Sprite2D" type="Sprite2D" parent="ParralaxBackground/Parallax2D"]
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("21_x3bjw")
+
+[node name="Parallax2D2" type="Parallax2D" parent="ParralaxBackground"]
+z_index = 2
+scroll_scale = Vector2(0.1, 0.01)
+repeat_size = Vector2(320, 0)
+repeat_times = 5
+
+[node name="Sprite2D" type="Sprite2D" parent="ParralaxBackground/Parallax2D2"]
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("22_mcfix")
+offset = Vector2(17.195, 0)
+
+[node name="Parallax2D3" type="Parallax2D" parent="ParralaxBackground"]
+z_index = 3
+scroll_scale = Vector2(0.2, 0.01)
+repeat_size = Vector2(320, 0)
+repeat_times = 5
+
+[node name="Sprite2D" type="Sprite2D" parent="ParralaxBackground/Parallax2D3"]
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("23_5emvd")
+offset = Vector2(17.195, 0)
 
 [node name="killzone" type="Area2D" parent="."]
 position = Vector2(1408, 464)
