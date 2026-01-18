@@ -1138,45 +1138,9 @@ material = SubResource("ShaderMaterial_dx8gk")
 position = Vector2(0, 4)
 texture = ExtResource("25_wlbov")
 
-[node name="obstacle_spike17" type="Area2D" parent="Obstacles/spikes"]
-z_index = 6
-position = Vector2(1224, 44)
-scale = Vector2(0.8, 1)
-collision_layer = 2048
-collision_mask = 4
-script = ExtResource("22_woqaf")
-damage_trap = 100
-effect_type = Array[int]([0, 1, 2, 3])
-active_for = 2.0
-activation_delay = 0.2
-one_time_use = 1000000
-reuse_cooldown = 1.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacles/spikes/obstacle_spike17"]
-position = Vector2(0, -14)
-shape = SubResource("RectangleShape2D_wwxgf")
-
-[node name="MainSpirte" type="Sprite2D" parent="Obstacles/spikes/obstacle_spike17"]
-position = Vector2(0, -5)
-scale = Vector2(1.4, 1)
-texture = ExtResource("23_5k5x7")
-
-[node name="Spikes" type="Area2D" parent="Obstacles/spikes/obstacle_spike17"]
-collision_layer = 2048
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacles/spikes/obstacle_spike17/Spikes"]
-position = Vector2(0, 25)
-shape = SubResource("RectangleShape2D_q62ug")
-
-[node name="SpikesSprite" type="Sprite2D" parent="Obstacles/spikes/obstacle_spike17/Spikes"]
-z_index = -1
-material = SubResource("ShaderMaterial_dx8gk")
-position = Vector2(0, 4)
-texture = ExtResource("25_wlbov")
-
 [node name="obstacle_spike18" type="Area2D" parent="Obstacles/spikes"]
 z_index = 6
-position = Vector2(1224, 44)
+position = Vector2(1221, 45)
 scale = Vector2(0.8, 1)
 collision_layer = 2048
 collision_mask = 4
@@ -1832,9 +1796,6 @@ shape = SubResource("RectangleShape2D_v2jrc")
 [connection signal="body_entered" from="Obstacles/spikes/obstacle_spike3" to="Obstacles/spikes/obstacle_spike3" method="_on_body_entered"]
 [connection signal="body_exited" from="Obstacles/spikes/obstacle_spike3" to="Obstacles/spikes/obstacle_spike3" method="_on_body_exited"]
 [connection signal="body_entered" from="Obstacles/spikes/obstacle_spike3/Spikes" to="Obstacles/spikes/obstacle_spike3" method="_on_spikes_body_entered"]
-[connection signal="body_entered" from="Obstacles/spikes/obstacle_spike17" to="Obstacles/spikes/obstacle_spike17" method="_on_body_entered"]
-[connection signal="body_exited" from="Obstacles/spikes/obstacle_spike17" to="Obstacles/spikes/obstacle_spike17" method="_on_body_exited"]
-[connection signal="body_entered" from="Obstacles/spikes/obstacle_spike17/Spikes" to="Obstacles/spikes/obstacle_spike17" method="_on_spikes_body_entered"]
 [connection signal="body_entered" from="Obstacles/spikes/obstacle_spike18" to="Obstacles/spikes/obstacle_spike18" method="_on_body_entered"]
 [connection signal="body_exited" from="Obstacles/spikes/obstacle_spike18" to="Obstacles/spikes/obstacle_spike18" method="_on_body_exited"]
 [connection signal="body_entered" from="Obstacles/spikes/obstacle_spike18/Spikes" to="Obstacles/spikes/obstacle_spike18" method="_on_spikes_body_entered"]
