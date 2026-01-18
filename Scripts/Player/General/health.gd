@@ -34,6 +34,8 @@ func take_damage(dmg : int, damage_type: DamageType = DamageType.NORMAL):
 		#Engine.time_scale = .2
 		#timer.start()
 	elif(hp <= 0):
+		if self.get_parent().has_method("_on_npc_died"):
+			self.get_parent()._on_npc_died()
 		get_parent().queue_free()
 
 func _on_player_player_hit(dmg) -> void:

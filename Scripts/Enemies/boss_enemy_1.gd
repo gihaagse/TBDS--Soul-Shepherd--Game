@@ -2,6 +2,7 @@ extends enemy
 
 class_name boss_enemy_1
 
+@export var dialogue: DialogueResource
 @export var jump_speed: int = -125.0
 @onready var JumpTimer : Timer = $JumpTimer
 var just_jumped: bool = false
@@ -61,3 +62,7 @@ func _on_stage_3_timer_timeout() -> void:
 func _boss_hit() -> void:
 	#await get_tree().create_timer(0.5).timeout
 	pre_shoot()
+
+func _on_npc_died():
+	if dialogue:
+		DialogueManager.start_dialogue(dialogue)
