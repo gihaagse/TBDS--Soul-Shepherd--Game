@@ -5,6 +5,7 @@ extends Node2D
 @onready var tile_map: TileMap = $TileMap
 @onready var camera_main: CameraMain = $CameraMain
 @onready var obstacle_spike_right: Area2D = %obstacle_spike_right
+@export var dialogue: DialogueResource
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -13,6 +14,7 @@ func _ready() -> void:
 	CheckPointManager.register_root_obstacle(obstacles)
 	add_carried_abilities()
 	KeyManager.boss_death.connect(_on_boss_defeated)
+	DialogueManager.start_dialogue(dialogue)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -33,7 +35,6 @@ func _on_boss_defeated():
 	tile_map.erase_cell(0, Vector2i(32,16))
 	tile_map.erase_cell(0, Vector2i(32,17))
 	
-	await get_tree().create_timer(1.0).timeout
 	
 	var old_pos = camera_main.global_position
 	var was_smoothed = camera_main.limit_smoothed

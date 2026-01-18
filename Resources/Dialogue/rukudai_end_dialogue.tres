@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b1dbmwvbqweuo" path="res://Scripts/DialogueSystem/PlayerOption.gd" id="1_xhy0s"]
 [ext_resource type="Script" uid="uid://blm225otwjvl" path="res://Scripts/DialogueSystem/DialogueEntry.gd" id="2_n6jbp"]
-[ext_resource type="Texture2D" uid="uid://dlveoe57gdkpl" path="res://Assets/Icons/tweakboo.png" id="3_xhy0s"]
+[ext_resource type="Texture2D" uid="uid://dxsl5hja5kopi" path="res://Assets/Icons/final_boss_speech_scaled_16x_pngcrushed.png" id="3_xhy0s"]
 [ext_resource type="Script" uid="uid://dqkie63v0gtnn" path="res://Scripts/DialogueSystem/DialogueResource.gd" id="4_06yhm"]
 
 [sub_resource type="Resource" id="Resource_yjq8i"]

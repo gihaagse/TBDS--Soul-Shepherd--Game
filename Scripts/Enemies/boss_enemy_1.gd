@@ -67,5 +67,5 @@ func _on_npc_died():
 	KeyManager.boss_death.emit()
 	print("npc died script")
 	if dialogue:
-		await get_tree().create_timer(1).timeout
+		#await get_tree().create_timer(1).timeout
 		DialogueManager.start_dialogue(dialogue)

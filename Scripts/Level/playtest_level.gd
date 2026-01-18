@@ -14,6 +14,7 @@ func _ready() -> void:
 	add_carried_abilities()
 	KeyManager.boss_death.connect(_on_boss_defeated)
 
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
@@ -31,7 +32,6 @@ func _on_boss_defeated():
 		obstacle_spike_2.queue_free()
 	tile_map.erase_cell(0, Vector2i(32,16))
 	tile_map.erase_cell(0, Vector2i(32,17))
-	await get_tree().create_timer(1.0).timeout
 	
 	var old_pos = camera_main.global_position
 	var was_smoothed = camera_main.limit_smoothed

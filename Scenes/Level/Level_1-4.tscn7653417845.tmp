@@ -1,42 +1,40 @@
-[gd_scene load_steps=50 format=3 uid="uid://cn7w4buy17lru"]
+[gd_scene load_steps=48 format=3 uid="uid://nul54hp1pd74"]
 
-[ext_resource type="Script" uid="uid://q1uneais5pkw" path="res://Scripts/Level/level_2_4.gd" id="1_bk1ae"]
-[ext_resource type="Resource" uid="uid://cqj346gl3g3lh" path="res://Resources/Dialogue/rukudai_end_dialogue.tres" id="2_g1df0"]
-[ext_resource type="Resource" uid="uid://cp18gtlpu6kpa" path="res://Resources/AbilityUnlocking/Arena.tres" id="2_hjixd"]
-[ext_resource type="Script" uid="uid://byn1je7flnjo3" path="res://Scripts/Central/game_manager.gd" id="2_v8ysi"]
-[ext_resource type="Texture2D" uid="uid://dfdfu6o1j3apv" path="res://Assets/Sprites/Playtest1.png" id="3_1joos"]
-[ext_resource type="Texture2D" uid="uid://j1w6x4hpn3ou" path="res://Assets/Icons/Sung Chin Woo Icon.png" id="4_bk1ae"]
-[ext_resource type="Script" uid="uid://dtfsguwdnfr7m" path="res://Scripts/CheckPoints/start.gd" id="5_g1df0"]
-[ext_resource type="PackedScene" uid="uid://c5ongupm07qh3" path="res://Scenes/Player/player.tscn" id="6_hjixd"]
-[ext_resource type="Script" uid="uid://b2b6rmyyluckx" path="res://Scripts/Player/General/camera_2d.gd" id="7_2mhsu"]
-[ext_resource type="Script" uid="uid://ce43l01wboarg" path="res://Scripts/UI/Overlay/canvas_layer.gd" id="8_epnbd"]
-[ext_resource type="FontFile" uid="uid://x2dwsfc3en6q" path="res://Assets/Tutorial Open Assets/brackeys_platformer_assets/fonts/PixelOperator8.ttf" id="9_3dbv4"]
-[ext_resource type="PackedScene" uid="uid://dbawdw77kghcn" path="res://Scenes/UI/GameMenus/Pause_Menu.tscn" id="10_8gm36"]
-[ext_resource type="PackedScene" uid="uid://brc3fv7pjl1bv" path="res://Scenes/UI/GameMenus/Options_Menu.tscn" id="11_rfqn5"]
-[ext_resource type="PackedScene" uid="uid://b1wpf7mxi7ax8" path="res://Scenes/UI/Overlay/ability_debug_menu.tscn" id="12_r4l7a"]
-[ext_resource type="PackedScene" uid="uid://bdqpqswjpdvot" path="res://Scenes/UI/Overlay/ability_grid.tscn" id="13_ti57k"]
-[ext_resource type="PackedScene" uid="uid://3nx8i28smrqo" path="res://Scenes/UI/GameMenus/Ability_Info.tscn" id="14_4hjlc"]
-[ext_resource type="PackedScene" uid="uid://bajjogst0v58d" path="res://Scenes/UI/Overlay/CheckPointRespawnUI.tscn" id="15_0rpq4"]
-[ext_resource type="PackedScene" uid="uid://c64nl2fkq45ge" path="res://Scenes/UI/Overlay/AbilityInfoButton.tscn" id="16_2urw7"]
-[ext_resource type="PackedScene" uid="uid://bpp47tnrfdrab" path="res://Scenes/UI/Components/player_hud.tscn" id="17_y4hvd"]
-[ext_resource type="FontFile" uid="uid://p47ydk5quyq2" path="res://Assets/Tutorial Open Assets/brackeys_platformer_assets/fonts/PixelOperator8-Bold.ttf" id="18_jnwb2"]
-[ext_resource type="PackedScene" uid="uid://ndkp1vfqmr4g" path="res://Scenes/Dialogue/DialogueUI.tscn" id="19_bk1ae"]
-[ext_resource type="Texture2D" uid="uid://ccx5i1mil6ubv" path="res://Assets/Backgrounds/boss_arena_background.png" id="19_c1bun"]
-[ext_resource type="Script" uid="uid://bpkjqkjnq8o6g" path="res://Scripts/Player/General/killzone.gd" id="20_yfwo2"]
-[ext_resource type="AudioStream" uid="uid://cbtn1bitrynwi" path="res://Assets/Audio/Music/sample.wav" id="21_qvfkl"]
-[ext_resource type="PackedScene" uid="uid://dm61xmst0522o" path="res://Scenes/Items/magic_bamboo.tscn" id="22_m6idh"]
-[ext_resource type="Texture2D" uid="uid://c8dol58rb8t5j" path="res://Assets/Sprites/Magic Bamboo/+5 hp magic bamboo.png" id="23_g587m"]
-[ext_resource type="Script" uid="uid://gaqqlslhdr4g" path="res://Scripts/Obstacles/obstacle_spike.gd" id="24_hhd7p"]
-[ext_resource type="Texture2D" uid="uid://s45ti6i317cc" path="res://Assets/Sprites/Obstacles/bamboo_trap_floor.png" id="25_o2ixl"]
-[ext_resource type="Shader" uid="uid://80wr7vuod76p" path="res://Shaders/spike_color.gdshader" id="26_gnwlx"]
-[ext_resource type="Texture2D" uid="uid://5j8r6plk7dru" path="res://Assets/Sprites/Obstacles/Spikes.png" id="27_e6hdf"]
-[ext_resource type="Script" uid="uid://b7008awu7lly6" path="res://Scenes/Level/next_level.gd" id="28_gqvix"]
-[ext_resource type="PackedScene" uid="uid://b76woqie8uxl7" path="res://Scenes/Enemies/final_boss.tscn" id="29_eigns"]
-[ext_resource type="Script" uid="uid://hfj0hgwiyiqu" path="res://Scripts/Central/event_trigger.gd" id="31_hjixd"]
-[ext_resource type="Script" uid="uid://cbirdwbh5p7se" path="res://Scripts/Obstacles/gate_crystal.gd" id="32_2mhsu"]
+[ext_resource type="Script" uid="uid://c2jeph0pjh467" path="res://Scripts/Level/playtest_level.gd" id="1_p2j2u"]
+[ext_resource type="Script" uid="uid://byn1je7flnjo3" path="res://Scripts/Central/game_manager.gd" id="2_bfh1j"]
+[ext_resource type="Texture2D" uid="uid://dfdfu6o1j3apv" path="res://Assets/Sprites/Playtest1.png" id="3_pw0tg"]
+[ext_resource type="Texture2D" uid="uid://j1w6x4hpn3ou" path="res://Assets/Icons/Sung Chin Woo Icon.png" id="4_fmdk8"]
+[ext_resource type="Script" uid="uid://dtfsguwdnfr7m" path="res://Scripts/CheckPoints/start.gd" id="5_nm7s6"]
+[ext_resource type="PackedScene" uid="uid://c5ongupm07qh3" path="res://Scenes/Player/player.tscn" id="6_xr5la"]
+[ext_resource type="Script" uid="uid://b2b6rmyyluckx" path="res://Scripts/Player/General/camera_2d.gd" id="7_qeoee"]
+[ext_resource type="Script" uid="uid://ce43l01wboarg" path="res://Scripts/UI/Overlay/canvas_layer.gd" id="8_3deo8"]
+[ext_resource type="FontFile" uid="uid://x2dwsfc3en6q" path="res://Assets/Tutorial Open Assets/brackeys_platformer_assets/fonts/PixelOperator8.ttf" id="9_eyp8y"]
+[ext_resource type="PackedScene" uid="uid://dbawdw77kghcn" path="res://Scenes/UI/GameMenus/Pause_Menu.tscn" id="10_wjdug"]
+[ext_resource type="PackedScene" uid="uid://brc3fv7pjl1bv" path="res://Scenes/UI/GameMenus/Options_Menu.tscn" id="11_xhm14"]
+[ext_resource type="PackedScene" uid="uid://b1wpf7mxi7ax8" path="res://Scenes/UI/Overlay/ability_debug_menu.tscn" id="12_calfh"]
+[ext_resource type="PackedScene" uid="uid://bdqpqswjpdvot" path="res://Scenes/UI/Overlay/ability_grid.tscn" id="13_oauaa"]
+[ext_resource type="PackedScene" uid="uid://3nx8i28smrqo" path="res://Scenes/UI/GameMenus/Ability_Info.tscn" id="14_i5nic"]
+[ext_resource type="PackedScene" uid="uid://bajjogst0v58d" path="res://Scenes/UI/Overlay/CheckPointRespawnUI.tscn" id="15_i55uw"]
+[ext_resource type="PackedScene" uid="uid://c64nl2fkq45ge" path="res://Scenes/UI/Overlay/AbilityInfoButton.tscn" id="16_keclr"]
+[ext_resource type="PackedScene" uid="uid://bpp47tnrfdrab" path="res://Scenes/UI/Components/player_hud.tscn" id="17_txocl"]
+[ext_resource type="FontFile" uid="uid://p47ydk5quyq2" path="res://Assets/Tutorial Open Assets/brackeys_platformer_assets/fonts/PixelOperator8-Bold.ttf" id="18_vepe8"]
+[ext_resource type="Texture2D" uid="uid://ccx5i1mil6ubv" path="res://Assets/Backgrounds/boss_arena_background.png" id="19_dbf7t"]
+[ext_resource type="PackedScene" uid="uid://ndkp1vfqmr4g" path="res://Scenes/Dialogue/DialogueUI.tscn" id="19_pw0tg"]
+[ext_resource type="Script" uid="uid://bpkjqkjnq8o6g" path="res://Scripts/Player/General/killzone.gd" id="20_xto7o"]
+[ext_resource type="AudioStream" uid="uid://cbtn1bitrynwi" path="res://Assets/Audio/Music/sample.wav" id="21_pnbfv"]
+[ext_resource type="PackedScene" uid="uid://dm61xmst0522o" path="res://Scenes/Items/magic_bamboo.tscn" id="22_ysjws"]
+[ext_resource type="Texture2D" uid="uid://c8dol58rb8t5j" path="res://Assets/Sprites/Magic Bamboo/+5 hp magic bamboo.png" id="23_0tr4f"]
+[ext_resource type="Script" uid="uid://gaqqlslhdr4g" path="res://Scripts/Obstacles/obstacle_spike.gd" id="24_o3vio"]
+[ext_resource type="Texture2D" uid="uid://s45ti6i317cc" path="res://Assets/Sprites/Obstacles/bamboo_trap_floor.png" id="25_7qnir"]
+[ext_resource type="Shader" uid="uid://80wr7vuod76p" path="res://Shaders/spike_color.gdshader" id="26_05rg0"]
+[ext_resource type="Texture2D" uid="uid://5j8r6plk7dru" path="res://Assets/Sprites/Obstacles/Spikes.png" id="27_nrt8h"]
+[ext_resource type="Script" uid="uid://b7008awu7lly6" path="res://Scenes/Level/next_level.gd" id="28_4tego"]
+[ext_resource type="PackedScene" uid="uid://bu78o5fps1jsf" path="res://Scenes/Enemies/boss_enemy_1.tscn" id="29_bfh1j"]
+[ext_resource type="Script" uid="uid://hfj0hgwiyiqu" path="res://Scripts/Central/event_trigger.gd" id="30_fmdk8"]
+[ext_resource type="Script" uid="uid://cbirdwbh5p7se" path="res://Scripts/Obstacles/gate_crystal.gd" id="31_nm7s6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pwjgu"]
-texture = ExtResource("3_1joos")
+texture = ExtResource("3_pw0tg")
 10:0/0 = 0
 11:0/0 = 0
 12:0/0 = 0
@@ -260,7 +258,7 @@ texture = ExtResource("3_1joos")
 12:10/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qv0da"]
-texture = ExtResource("4_bk1ae")
+texture = ExtResource("4_fmdk8")
 7:4/0 = 0
 7:4/0/physics_layer_1/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 3:8/0 = 0
@@ -452,7 +450,7 @@ size = Vector2(54, 25)
 size = Vector2(54, 44)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ps4u4"]
-shader = ExtResource("26_gnwlx")
+shader = ExtResource("26_05rg0")
 shader_parameter/tint_color = Color(2.219907, 0, 0.39831704, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1v0ja"]
@@ -510,19 +508,17 @@ size = Vector2(96.5, 90.25)
 size = Vector2(42.5, 62)
 
 [node name="Level" type="Node2D"]
-script = ExtResource("1_bk1ae")
-carried_abilities = ExtResource("2_hjixd")
-dialogue = ExtResource("2_g1df0")
+script = ExtResource("1_p2j2u")
 
 [node name="GameManager" type="Node" parent="."]
 unique_name_in_owner = true
-script = ExtResource("2_v8ysi")
+script = ExtResource("2_bfh1j")
 
 [node name="TileMap" type="TileMap" parent="."]
 z_index = 5
 tile_set = SubResource("TileSet_y3hmm")
 format = 2
-layer_0/tile_data = PackedInt32Array(983045, 786432, 8, 983046, 851968, 8, 983047, 917504, 8, 983048, 786432, 8, 983049, 851968, 8, 1048581, 65536, 2, 327679, 458752, 2, 393215, 458752, 2, 458751, 458752, 2, 524287, 458752, 2, 589823, 458752, 2, 655359, 458752, 2, 720895, 458752, 2, 786431, 458752, 2, 851967, 458752, 2, 917503, 458752, 2, 983039, 458752, 2, 1048575, 589824, 2, 1114111, 589824, 2, 1179647, 589824, 2, 1245183, 589824, 2, 1310719, 589824, 2, 983050, 917504, 8, 983051, 786432, 8, 983052, 851968, 8, 983053, 917504, 8, 983054, 786432, 8, 983055, 851968, 8, 983056, 917504, 8, 1114117, 65536, 2, 1048582, 131072, 5, 1114118, 65536, 2, 1048583, 65536, 2, 1114119, 65536, 2, 1048584, 65536, 2, 1114120, 65536, 2, 1048585, 65536, 2, 1114121, 131072, 5, 1048586, 65536, 2, 1114122, 65536, 2, 1048587, 65536, 2, 1114123, 131072, 5, 1048588, 65536, 2, 1114124, 65536, 2, 1048589, 65536, 2, 1114125, 65536, 2, 1048590, 65536, 2, 1114126, 65536, 2, 1048591, 65536, 2, 1114127, 131072, 5, 1048592, 65536, 2, 1114128, 65536, 2, 1179648, 65536, 1, 1179649, 65536, 1, 1179650, 65536, 1, 1179651, 65536, 1, 1179652, 65536, 2, 983057, 851968, 8, 983058, 851968, 8, 983059, 851968, 8, 983060, 851968, 8, 983061, 851968, 8, 983062, 851968, 8, 983063, 851968, 8, 983064, 851968, 8, 983065, 851968, 8, 983066, 851968, 8, 1048593, 65536, 2, 1114129, 65536, 2, 1048594, 65536, 2, 1114130, 65536, 2, 1048595, 65536, 2, 1114131, 65536, 2, 1048596, 65536, 2, 1114132, 65536, 2, 1048597, 65536, 2, 1114133, 65536, 2, 1048598, 65536, 2, 1114134, 65536, 2, 1048599, 65536, 2, 1114135, 65536, 2, 1048600, 65536, 2, 1114136, 65536, 2, 1048601, 65536, 2, 1114137, 65536, 2, 1048602, 65536, 2, 1114138, 65536, 2, 1179653, 65536, 2, 1245189, 65536, 2, 1310725, 65536, 2, 1179654, 65536, 2, 1245190, 65536, 2, 1310726, 65536, 2, 1179655, 65536, 2, 1245191, 65536, 2, 1310727, 65536, 2, 1179656, 65536, 2, 1245192, 65536, 2, 1310728, 65536, 2, 1179657, 65536, 2, 1245193, 65536, 2, 1310729, 65536, 2, 1179658, 65536, 2, 1245194, 65536, 2, 1310730, 65536, 2, 1179659, 65536, 2, 1245195, 65536, 2, 1310731, 65536, 2, 1179660, 65536, 2, 1245196, 65536, 2, 1310732, 65536, 2, 1179661, 65536, 2, 1245197, 65536, 2, 1310733, 65536, 2, 1179662, 65536, 2, 1245198, 65536, 2, 1310734, 65536, 2, 1179663, 65536, 2, 1245199, 65536, 2, 1310735, 65536, 2, 1179664, 65536, 2, 1245200, 65536, 2, 1310736, 65536, 2, 1179665, 65536, 2, 1245201, 65536, 2, 1310737, 65536, 2, 1179666, 65536, 2, 1245202, 65536, 2, 1310738, 65536, 2, 1179667, 65536, 2, 1245203, 65536, 2, 1310739, 65536, 2, 1179668, 65536, 2, 1245204, 65536, 2, 1310740, 65536, 2, 1179669, 65536, 2, 1245205, 65536, 2, 1310741, 65536, 2, 1179670, 65536, 2, 1245206, 65536, 2, 1310742, 65536, 2, 1179671, 65536, 2, 1245207, 65536, 2, 1310743, 65536, 2, 1179672, 65536, 2, 1245208, 65536, 2, 1310744, 65536, 2, 1179673, 65536, 2, 1245209, 65536, 2, 1310745, 65536, 2, 1179674, 65536, 2, 1245210, 65536, 2, 1310746, 65536, 2, 1245184, 65536, 2, 1310720, 65536, 2, 1376256, 65536, 2, 1441792, 65536, 2, 1507328, 65536, 2, 1245185, 65536, 2, 1310721, 65536, 2, 1376257, 65536, 2, 1441793, 65536, 2, 1507329, 65536, 2, 1245186, 65536, 2, 1310722, 65536, 2, 1376258, 65536, 2, 1441794, 65536, 2, 1507330, 65536, 2, 1245187, 65536, 2, 1310723, 65536, 2, 1376259, 65536, 2, 1441795, 65536, 2, 1507331, 65536, 2, 1245188, 65536, 2, 1310724, 65536, 2, 1376260, 65536, 2, 1441796, 65536, 2, 1507332, 65536, 2, 1376261, 65536, 2, 1441797, 65536, 2, 1507333, 65536, 2, 1376262, 65536, 2, 1441798, 65536, 2, 1507334, 65536, 2, 1376263, 65536, 2, 1441799, 65536, 2, 1507335, 65536, 2, 1376264, 65536, 2, 1441800, 65536, 2, 1507336, 65536, 2, 1376265, 65536, 2, 1441801, 65536, 2, 1507337, 65536, 2, 1376266, 65536, 2, 1441802, 65536, 2, 1507338, 65536, 2, 1376267, 65536, 2, 1441803, 65536, 2, 1507339, 65536, 2, 1376268, 65536, 2, 1441804, 65536, 2, 1507340, 65536, 2, 1376269, 65536, 2, 1441805, 65536, 2, 1507341, 65536, 2, 1376270, 65536, 2, 1441806, 65536, 2, 1507342, 65536, 2, 1376271, 65536, 2, 1441807, 65536, 2, 1507343, 65536, 2, 1376272, 65536, 2, 1441808, 65536, 2, 1507344, 65536, 2, 1376273, 65536, 2, 1441809, 65536, 2, 1507345, 65536, 2, 1376274, 65536, 2, 1441810, 65536, 2, 1507346, 65536, 2, 1376275, 65536, 2, 1441811, 65536, 2, 1507347, 65536, 2, 1376276, 65536, 2, 1441812, 65536, 2, 1507348, 65536, 2, 1376277, 65536, 2, 1441813, 65536, 2, 1507349, 65536, 2, 1376278, 65536, 2, 1441814, 65536, 2, 1507350, 65536, 2, 1376279, 65536, 2, 1441815, 65536, 2, 1507351, 65536, 2, 1376280, 65536, 2, 1441816, 65536, 2, 1507352, 65536, 2, 1376281, 65536, 2, 1441817, 65536, 2, 1507353, 65536, 2, 1376282, 65536, 2, 1441818, 65536, 2, 1507354, 65536, 2, 1245211, 65536, 2, 1310747, 65536, 2, 1376283, 65536, 2, 1441819, 65536, 2, 1507355, 65536, 2, 1245212, 65536, 2, 1310748, 65536, 2, 1376284, 65536, 2, 1441820, 65536, 2, 1507356, 65536, 2, 1245213, 65536, 2, 1310749, 65536, 2, 1376285, 65536, 2, 1441821, 65536, 2, 1507357, 65536, 2, 1245214, 65536, 2, 1310750, 65536, 2, 1376286, 65536, 2, 1441822, 65536, 2, 1507358, 65536, 2, 1245215, 65536, 2, 1310751, 65536, 2, 1376287, 65536, 2, 1441823, 65536, 2, 1507359, 65536, 2, 1245216, 458752, 2, 1310752, 458752, 2, 1376288, 458752, 2, 1441824, 458752, 2, 1507360, 458752, 2, 1245217, 65536, 2, 1310753, 65536, 2, 1376289, 65536, 2, 1441825, 65536, 2, 1507361, 65536, 2, 1179675, 65536, 2, 1179676, 65536, 1, 1179677, 65536, 1, 1179678, 65536, 1, 1179679, 65536, 1, 655392, 458752, 2, 720928, 458752, 2, 786464, 458752, 2, 852000, 458752, 2, 917536, 458752, 2, 983072, 458752, 2, 196640, 458752, 2, 262176, 458752, 2, 327712, 458752, 2, 393248, 458752, 2, 458784, 458752, 2, 524320, 458752, 2, 589856, 458752, 2, 1179680, 458752, 2, 1376255, 458752, 2, 1441791, 458752, 2, 1507327, 458752, 2, 1572863, 458752, 2, 983044, 851968, 8, 1048580, 65536, 2, 1114116, 65536, 2, 1048603, 65536, 2, 1114139, 65536, 2, 983067, 851968, 8, 1179681, 524288, 7, 1114145, 524288, 6, 983073, 524288, 5, 1048609, 524288, 6, 983074, 589824, 5, 983075, 655360, 5, 1048611, 655360, 6, 1114147, 655360, 6, 1179683, 655360, 7, 1245218, 65536, 2, 1310754, 65536, 2, 1376290, 65536, 2, 1441826, 65536, 2, 1507362, 65536, 2, 1507363, 65536, 2, 1441827, 65536, 2, 1376291, 65536, 2, 1245219, 65536, 2, 1310755, 65536, 2, 1245220, 65536, 2, 1310756, 65536, 2, 1376292, 65536, 2, 1441828, 65536, 2, 1507364, 65536, 2, 1507365, 65536, 2, 1441829, 65536, 2, 1376293, 65536, 2, 1310757, 65536, 2, 1245221, 65536, 2, 1245222, 65536, 2, 1310758, 65536, 2, 1376294, 65536, 2, 1441830, 65536, 2, 1507366, 65536, 2, 1048608, 524288, 2, 1114144, 524288, 2)
+layer_0/tile_data = PackedInt32Array(983045, 786432, 8, 983046, 851968, 8, 983047, 917504, 8, 983048, 786432, 8, 983049, 851968, 8, 1048581, 65536, 2, 327679, 458752, 2, 393215, 458752, 2, 458751, 458752, 2, 524287, 458752, 2, 589823, 458752, 2, 655359, 458752, 2, 720895, 458752, 2, 786431, 458752, 2, 851967, 458752, 2, 917503, 458752, 2, 983039, 458752, 2, 1048575, 589824, 2, 1114111, 589824, 2, 1179647, 589824, 2, 1245183, 589824, 2, 1310719, 589824, 2, 983050, 917504, 8, 983051, 786432, 8, 983052, 851968, 8, 983053, 917504, 8, 983054, 786432, 8, 983055, 851968, 8, 983056, 917504, 8, 1114117, 65536, 2, 1048582, 131072, 5, 1114118, 65536, 2, 1048583, 65536, 2, 1114119, 65536, 2, 1048584, 65536, 2, 1114120, 65536, 2, 1048585, 65536, 2, 1114121, 131072, 5, 1048586, 65536, 2, 1114122, 65536, 2, 1048587, 65536, 2, 1114123, 131072, 5, 1048588, 65536, 2, 1114124, 65536, 2, 1048589, 65536, 2, 1114125, 65536, 2, 1048590, 65536, 2, 1114126, 65536, 2, 1048591, 65536, 2, 1114127, 131072, 5, 1048592, 65536, 2, 1114128, 65536, 2, 1179648, 65536, 1, 1179649, 65536, 1, 1179650, 65536, 1, 1179651, 65536, 1, 1179652, 65536, 2, 983057, 851968, 8, 983058, 851968, 8, 983059, 851968, 8, 983060, 851968, 8, 983061, 851968, 8, 983062, 851968, 8, 983063, 851968, 8, 983064, 851968, 8, 983065, 851968, 8, 983066, 851968, 8, 1048593, 65536, 2, 1114129, 65536, 2, 1048594, 65536, 2, 1114130, 65536, 2, 1048595, 65536, 2, 1114131, 65536, 2, 1048596, 65536, 2, 1114132, 65536, 2, 1048597, 65536, 2, 1114133, 65536, 2, 1048598, 65536, 2, 1114134, 65536, 2, 1048599, 65536, 2, 1114135, 65536, 2, 1048600, 65536, 2, 1114136, 65536, 2, 1048601, 65536, 2, 1114137, 65536, 2, 1048602, 65536, 2, 1114138, 65536, 2, 1179653, 65536, 2, 1245189, 65536, 2, 1310725, 65536, 2, 1179654, 65536, 2, 1245190, 65536, 2, 1310726, 65536, 2, 1179655, 65536, 2, 1245191, 65536, 2, 1310727, 65536, 2, 1179656, 65536, 2, 1245192, 65536, 2, 1310728, 65536, 2, 1179657, 65536, 2, 1245193, 65536, 2, 1310729, 65536, 2, 1179658, 65536, 2, 1245194, 65536, 2, 1310730, 65536, 2, 1179659, 65536, 2, 1245195, 65536, 2, 1310731, 65536, 2, 1179660, 65536, 2, 1245196, 65536, 2, 1310732, 65536, 2, 1179661, 65536, 2, 1245197, 65536, 2, 1310733, 65536, 2, 1179662, 65536, 2, 1245198, 65536, 2, 1310734, 65536, 2, 1179663, 65536, 2, 1245199, 65536, 2, 1310735, 65536, 2, 1179664, 65536, 2, 1245200, 65536, 2, 1310736, 65536, 2, 1179665, 65536, 2, 1245201, 65536, 2, 1310737, 65536, 2, 1179666, 65536, 2, 1245202, 65536, 2, 1310738, 65536, 2, 1179667, 65536, 2, 1245203, 65536, 2, 1310739, 65536, 2, 1179668, 65536, 2, 1245204, 65536, 2, 1310740, 65536, 2, 1179669, 65536, 2, 1245205, 65536, 2, 1310741, 65536, 2, 1179670, 65536, 2, 1245206, 65536, 2, 1310742, 65536, 2, 1179671, 65536, 2, 1245207, 65536, 2, 1310743, 65536, 2, 1179672, 65536, 2, 1245208, 65536, 2, 1310744, 65536, 2, 1179673, 65536, 2, 1245209, 65536, 2, 1310745, 65536, 2, 1179674, 65536, 2, 1245210, 65536, 2, 1310746, 65536, 2, 1245184, 65536, 2, 1310720, 65536, 2, 1376256, 65536, 2, 1441792, 65536, 2, 1507328, 65536, 2, 1245185, 65536, 2, 1310721, 65536, 2, 1376257, 65536, 2, 1441793, 65536, 2, 1507329, 65536, 2, 1245186, 65536, 2, 1310722, 65536, 2, 1376258, 65536, 2, 1441794, 65536, 2, 1507330, 65536, 2, 1245187, 65536, 2, 1310723, 65536, 2, 1376259, 65536, 2, 1441795, 65536, 2, 1507331, 65536, 2, 1245188, 65536, 2, 1310724, 65536, 2, 1376260, 65536, 2, 1441796, 65536, 2, 1507332, 65536, 2, 1376261, 65536, 2, 1441797, 65536, 2, 1507333, 65536, 2, 1376262, 65536, 2, 1441798, 65536, 2, 1507334, 65536, 2, 1376263, 65536, 2, 1441799, 65536, 2, 1507335, 65536, 2, 1376264, 65536, 2, 1441800, 65536, 2, 1507336, 65536, 2, 1376265, 65536, 2, 1441801, 65536, 2, 1507337, 65536, 2, 1376266, 65536, 2, 1441802, 65536, 2, 1507338, 65536, 2, 1376267, 65536, 2, 1441803, 65536, 2, 1507339, 65536, 2, 1376268, 65536, 2, 1441804, 65536, 2, 1507340, 65536, 2, 1376269, 65536, 2, 1441805, 65536, 2, 1507341, 65536, 2, 1376270, 65536, 2, 1441806, 65536, 2, 1507342, 65536, 2, 1376271, 65536, 2, 1441807, 65536, 2, 1507343, 65536, 2, 1376272, 65536, 2, 1441808, 65536, 2, 1507344, 65536, 2, 1376273, 65536, 2, 1441809, 65536, 2, 1507345, 65536, 2, 1376274, 65536, 2, 1441810, 65536, 2, 1507346, 65536, 2, 1376275, 65536, 2, 1441811, 65536, 2, 1507347, 65536, 2, 1376276, 65536, 2, 1441812, 65536, 2, 1507348, 65536, 2, 1376277, 65536, 2, 1441813, 65536, 2, 1507349, 65536, 2, 1376278, 65536, 2, 1441814, 65536, 2, 1507350, 65536, 2, 1376279, 65536, 2, 1441815, 65536, 2, 1507351, 65536, 2, 1376280, 65536, 2, 1441816, 65536, 2, 1507352, 65536, 2, 1376281, 65536, 2, 1441817, 65536, 2, 1507353, 65536, 2, 1376282, 65536, 2, 1441818, 65536, 2, 1507354, 65536, 2, 1245211, 65536, 2, 1310747, 65536, 2, 1376283, 65536, 2, 1441819, 65536, 2, 1507355, 65536, 2, 1245212, 65536, 2, 1310748, 65536, 2, 1376284, 65536, 2, 1441820, 65536, 2, 1507356, 65536, 2, 1245213, 65536, 2, 1310749, 65536, 2, 1376285, 65536, 2, 1441821, 65536, 2, 1507357, 65536, 2, 1245214, 65536, 2, 1310750, 65536, 2, 1376286, 65536, 2, 1441822, 65536, 2, 1507358, 65536, 2, 1245215, 65536, 2, 1310751, 65536, 2, 1376287, 65536, 2, 1441823, 65536, 2, 1507359, 65536, 2, 1245216, 458752, 2, 1310752, 458752, 2, 1376288, 458752, 2, 1441824, 458752, 2, 1507360, 458752, 2, 1245217, 65536, 2, 1310753, 65536, 2, 1376289, 65536, 2, 1441825, 65536, 2, 1507361, 65536, 2, 1179675, 65536, 2, 1179676, 65536, 1, 1179677, 65536, 1, 1179678, 65536, 1, 1179679, 65536, 1, 655392, 458752, 2, 720928, 458752, 2, 786464, 458752, 2, 852000, 458752, 2, 917536, 458752, 2, 983072, 458752, 2, 196640, 458752, 2, 262176, 458752, 2, 327712, 458752, 2, 393248, 458752, 2, 458784, 458752, 2, 524320, 458752, 2, 589856, 458752, 2, 1179680, 458752, 2, 1376255, 458752, 2, 1441791, 458752, 2, 1507327, 458752, 2, 1572863, 458752, 2, 983044, 851968, 8, 1048580, 65536, 2, 1114116, 65536, 2, 1048603, 65536, 2, 1114139, 65536, 2, 983067, 851968, 8, 786441, 65536, 10, 786442, 65536, 10, 786443, 65536, 10, 786444, 65536, 10, 786452, 65536, 10, 786453, 65536, 10, 786454, 65536, 10, 786451, 65536, 10, 1179681, 524288, 7, 1114145, 524288, 6, 983073, 524288, 5, 1048609, 524288, 6, 983074, 589824, 5, 983075, 655360, 5, 1048611, 655360, 6, 1114147, 655360, 6, 1179683, 655360, 7, 1245218, 65536, 2, 1310754, 65536, 2, 1376290, 65536, 2, 1441826, 65536, 2, 1507362, 65536, 2, 1507363, 65536, 2, 1441827, 65536, 2, 1376291, 65536, 2, 1245219, 65536, 2, 1310755, 65536, 2, 1245220, 65536, 2, 1310756, 65536, 2, 1376292, 65536, 2, 1441828, 65536, 2, 1507364, 65536, 2, 1507365, 65536, 2, 1441829, 65536, 2, 1376293, 65536, 2, 1310757, 65536, 2, 1245221, 65536, 2, 1245222, 65536, 2, 1310758, 65536, 2, 1376294, 65536, 2, 1441830, 65536, 2, 1507366, 65536, 2, 1048608, 524288, 2, 1114144, 524288, 2)
 layer_1/name = "Border_Vertical"
 layer_1/modulate = Color(1, 1, 1, 0)
 layer_2/name = "Border_Horizontal"
@@ -533,9 +529,9 @@ z_index = 10
 
 [node name="Start" type="Marker2D" parent="CheckPoints"]
 position = Vector2(136, 229)
-script = ExtResource("5_g1df0")
+script = ExtResource("5_nm7s6")
 
-[node name="Player" parent="." instance=ExtResource("6_hjixd")]
+[node name="Player" parent="." instance=ExtResource("6_xr5la")]
 position = Vector2(136, 229)
 
 [node name="CameraMain" type="Camera2D" parent="." node_paths=PackedStringArray("player")]
@@ -545,18 +541,18 @@ limit_right = 512
 drag_vertical_offset = -0.2
 drag_top_margin = 0.0
 drag_bottom_margin = 0.6
-script = ExtResource("7_2mhsu")
+script = ExtResource("7_qeoee")
 player = NodePath("../Player")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 process_mode = 3
-script = ExtResource("8_epnbd")
+script = ExtResource("8_3deo8")
 
 [node name="Current State" type="Label" parent="CanvasLayer"]
 visible = false
 offset_right = 40.0
 offset_bottom = 23.0
-theme_override_fonts/font = ExtResource("9_3dbv4")
+theme_override_fonts/font = ExtResource("9_eyp8y")
 theme_override_font_sizes/font_size = 32
 text = "State: "
 
@@ -565,7 +561,7 @@ visible = false
 offset_top = 38.0
 offset_right = 168.0
 offset_bottom = 70.0
-theme_override_fonts/font = ExtResource("9_3dbv4")
+theme_override_fonts/font = ExtResource("9_eyp8y")
 theme_override_font_sizes/font_size = 32
 text = "Equip: "
 
@@ -577,7 +573,7 @@ anchor_bottom = 1.0
 offset_top = -32.0
 offset_right = 76.0
 grow_vertical = 0
-theme_override_fonts/font = ExtResource("9_3dbv4")
+theme_override_fonts/font = ExtResource("9_eyp8y")
 theme_override_font_sizes/font_size = 32
 text = "HP:"
 
@@ -605,17 +601,17 @@ offset_right = 20.0
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("9_3dbv4")
+theme_override_fonts/font = ExtResource("9_eyp8y")
 theme_override_font_sizes/font_size = 64
 text = "Game Over"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("10_8gm36")]
+[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("10_wjdug")]
 visible = false
 z_index = 6
 
-[node name="OptionsMenu" parent="CanvasLayer" instance=ExtResource("11_rfqn5")]
+[node name="OptionsMenu" parent="CanvasLayer" instance=ExtResource("11_xhm14")]
 visible = false
 
 [node name="DashTimer" type="Label" parent="CanvasLayer"]
@@ -629,7 +625,7 @@ grow_horizontal = 0
 text = "Dash Timer"
 horizontal_alignment = 2
 
-[node name="AbilityDebugMenu" parent="CanvasLayer" instance=ExtResource("12_r4l7a")]
+[node name="AbilityDebugMenu" parent="CanvasLayer" instance=ExtResource("12_calfh")]
 visible = false
 anchors_preset = 5
 anchor_left = 0.5
@@ -637,24 +633,24 @@ anchor_right = 0.5
 anchor_bottom = 0.0
 grow_vertical = 1
 
-[node name="AbilityGrid" parent="CanvasLayer" instance=ExtResource("13_ti57k")]
+[node name="AbilityGrid" parent="CanvasLayer" instance=ExtResource("13_oauaa")]
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
 grow_horizontal = 0
 grow_vertical = 0
 
-[node name="Ability_info" parent="CanvasLayer" instance=ExtResource("14_4hjlc")]
+[node name="Ability_info" parent="CanvasLayer" instance=ExtResource("14_i5nic")]
 visible = false
 
-[node name="CheckPointRespawnUI" parent="CanvasLayer" instance=ExtResource("15_0rpq4")]
+[node name="CheckPointRespawnUI" parent="CanvasLayer" instance=ExtResource("15_i55uw")]
 visible = false
 
-[node name="AbilityInfoButton" parent="CanvasLayer" instance=ExtResource("16_2urw7")]
+[node name="AbilityInfoButton" parent="CanvasLayer" instance=ExtResource("16_keclr")]
 offset_top = -224.0
 offset_bottom = -184.0
 
-[node name="PlayerHUD" parent="CanvasLayer" instance=ExtResource("17_y4hvd")]
+[node name="PlayerHUD" parent="CanvasLayer" instance=ExtResource("17_txocl")]
 offset_left = 12.0
 offset_top = 446.0
 offset_right = -1140.0
@@ -666,12 +662,12 @@ offset_left = 8.0
 offset_top = 10.0
 offset_right = 276.0
 offset_bottom = 72.0
-theme_override_fonts/font = ExtResource("18_jnwb2")
+theme_override_fonts/font = ExtResource("18_vepe8")
 theme_override_font_sizes/font_size = 20
 text = "Current Level:
-Final Boss Arena "
+Boss Arena 1"
 
-[node name="DialogueUI" parent="." instance=ExtResource("19_bk1ae")]
+[node name="DialogueUI" parent="." instance=ExtResource("19_pw0tg")]
 visible = false
 
 [node name="ParralaxBackground" type="Node2D" parent="."]
@@ -686,18 +682,18 @@ repeat_times = 5
 
 [node name="Sprite2D" type="Sprite2D" parent="ParralaxBackground/Parallax2D"]
 position = Vector2(259, 0)
-texture = ExtResource("19_c1bun")
+texture = ExtResource("19_dbf7t")
 
 [node name="killzone" type="Area2D" parent="."]
 position = Vector2(730, 400)
 collision_mask = 4
-script = ExtResource("20_yfwo2")
+script = ExtResource("20_xto7o")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="killzone"]
 shape = SubResource("WorldBoundaryShape2D_5ljwd")
 
 [node name="Level1Music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("21_qvfkl")
+stream = ExtResource("21_pnbfv")
 volume_db = -30.0
 autoplay = true
 bus = &"Music"
@@ -708,10 +704,10 @@ bus = &"Music"
 z_index = 4
 position = Vector2(-1, -17)
 
-[node name="MagicBamboo" parent="Obstacles/MagicBamboo" instance=ExtResource("22_m6idh")]
+[node name="MagicBamboo" parent="Obstacles/MagicBamboo" instance=ExtResource("22_ysjws")]
 z_index = 5
 position = Vector2(-112, -123)
-texture = ExtResource("23_g587m")
+texture = ExtResource("23_0tr4f")
 heal_amount = 5
 COLOR = Color(0, 0.59607846, 0.8627451, 1)
 
@@ -721,7 +717,7 @@ position = Vector2(30, 285)
 scale = Vector2(0.8, 1)
 collision_layer = 2048
 collision_mask = 4
-script = ExtResource("24_hhd7p")
+script = ExtResource("24_o3vio")
 damage_trap = 100
 effect_type = Array[int]([0, 1, 2, 3])
 active_for = 2.0
@@ -736,7 +732,7 @@ shape = SubResource("RectangleShape2D_3qb7m")
 [node name="MainSpirte" type="Sprite2D" parent="Obstacles/obstacle_spike"]
 position = Vector2(0, -5)
 scale = Vector2(1.4, 1)
-texture = ExtResource("25_o2ixl")
+texture = ExtResource("25_7qnir")
 
 [node name="Spikes" type="Area2D" parent="Obstacles/obstacle_spike"]
 collision_layer = 2048
@@ -749,18 +745,24 @@ shape = SubResource("RectangleShape2D_qqdfe")
 z_index = -1
 material = SubResource("ShaderMaterial_ps4u4")
 position = Vector2(0, 4)
-texture = ExtResource("27_e6hdf")
+texture = ExtResource("27_nrt8h")
 
 [node name="Next_level" type="Area2D" parent="."]
 visible = false
 position = Vector2(3808, 48)
 collision_mask = 4
-script = ExtResource("28_gqvix")
+script = ExtResource("28_4tego")
 level_name = "level_1-2"
 next_level = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Next_level"]
 shape = SubResource("RectangleShape2D_1v0ja")
+
+[node name="boss_enemy_1" parent="." instance=ExtResource("29_bfh1j")]
+z_index = 5
+position = Vector2(363, 228)
+collision_layer = 131073
+collision_mask = 131077
 
 [node name="BossBorder" type="StaticBody2D" parent="."]
 collision_layer = 131072
@@ -787,27 +789,27 @@ libraries = {
 z_index = 5
 position = Vector2(990, -57)
 collision_mask = 4100
-script = ExtResource("31_hjixd")
+script = ExtResource("30_fmdk8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Events/Key1"]
 shape = SubResource("RectangleShape2D_xr5la")
 
 [node name="Sprite2D" type="Sprite2D" parent="Events/Key1"]
 position = Vector2(2, 0)
-texture = ExtResource("3_1joos")
+texture = ExtResource("3_pw0tg")
 region_enabled = true
 region_rect = Rect2(128, 128, 16, 16)
 
 [node name="Gate_Crystal1" type="StaticBody2D" parent="Events"]
 z_index = 5
 position = Vector2(552, 276)
-script = ExtResource("32_2mhsu")
+script = ExtResource("31_nm7s6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Events/Gate_Crystal1"]
 shape = SubResource("RectangleShape2D_qeoee")
 
 [node name="Sprite2D" type="Sprite2D" parent="Events/Gate_Crystal1"]
-texture = ExtResource("3_1joos")
+texture = ExtResource("3_pw0tg")
 region_enabled = true
 region_rect = Rect2(144, 96, 16, 32)
 
@@ -824,28 +826,21 @@ shape = SubResource("RectangleShape2D_3deo8")
 z_index = 10
 position = Vector2(614, 270)
 collision_mask = 4
-script = ExtResource("28_gqvix")
-level_name = "end_scene"
-next_part = 4
+script = ExtResource("28_4tego")
+level_name = "Level_2-1"
+next_part = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Next_level2"]
-position = Vector2(-43, 2)
+position = Vector2(-43, 8)
 shape = SubResource("RectangleShape2D_fmdk8")
 
-[node name="Final_boss" parent="." instance=ExtResource("29_eigns")]
-z_index = 4
-position = Vector2(365, 219)
-collision_layer = 131073
-collision_mask = 131077
-
-[node name="obstacle_spike_right" type="Area2D" parent="."]
-unique_name_in_owner = true
+[node name="obstacle_spike2" type="Area2D" parent="."]
 z_index = 5
 position = Vector2(481, 285)
 scale = Vector2(0.8, 1)
 collision_layer = 2048
 collision_mask = 4
-script = ExtResource("24_hhd7p")
+script = ExtResource("24_o3vio")
 damage_trap = 100
 effect_type = Array[int]([0, 1, 2, 3])
 active_for = 2.0
@@ -853,27 +848,27 @@ activation_delay = 0.2
 one_time_use = 1000000
 reuse_cooldown = 1.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="obstacle_spike_right"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="obstacle_spike2"]
 position = Vector2(0, -14)
 shape = SubResource("RectangleShape2D_3qb7m")
 
-[node name="MainSpirte" type="Sprite2D" parent="obstacle_spike_right"]
+[node name="MainSpirte" type="Sprite2D" parent="obstacle_spike2"]
 position = Vector2(0, -5)
 scale = Vector2(1.4, 1)
-texture = ExtResource("25_o2ixl")
+texture = ExtResource("25_7qnir")
 
-[node name="Spikes" type="Area2D" parent="obstacle_spike_right"]
+[node name="Spikes" type="Area2D" parent="obstacle_spike2"]
 collision_layer = 2048
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="obstacle_spike_right/Spikes"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="obstacle_spike2/Spikes"]
 position = Vector2(0, 25)
 shape = SubResource("RectangleShape2D_qqdfe")
 
-[node name="SpikesSprite" type="Sprite2D" parent="obstacle_spike_right/Spikes"]
+[node name="SpikesSprite" type="Sprite2D" parent="obstacle_spike2/Spikes"]
 z_index = -1
 material = SubResource("ShaderMaterial_ps4u4")
 position = Vector2(0, 4)
-texture = ExtResource("27_e6hdf")
+texture = ExtResource("27_nrt8h")
 
 [connection signal="body_entered" from="killzone" to="killzone" method="_on_body_entered"]
 [connection signal="body_entered" from="Obstacles/obstacle_spike" to="Obstacles/obstacle_spike" method="_on_body_entered"]
@@ -883,6 +878,6 @@ texture = ExtResource("27_e6hdf")
 [connection signal="body_entered" from="Events/Key1" to="Events/Key1" method="_on_body_entered"]
 [connection signal="body_entered" from="Events/Gate_Crystal1/UnlockArea" to="Events/Gate_Crystal1" method="_on_unlock_area_body_entered"]
 [connection signal="body_entered" from="Next_level2" to="Next_level2" method="_on_body_entered"]
-[connection signal="body_entered" from="obstacle_spike_right" to="obstacle_spike_right" method="_on_body_entered"]
-[connection signal="body_exited" from="obstacle_spike_right" to="obstacle_spike_right" method="_on_body_exited"]
-[connection signal="body_entered" from="obstacle_spike_right/Spikes" to="obstacle_spike_right" method="_on_spikes_body_entered"]
+[connection signal="body_entered" from="obstacle_spike2" to="obstacle_spike2" method="_on_body_entered"]
+[connection signal="body_exited" from="obstacle_spike2" to="obstacle_spike2" method="_on_body_exited"]
+[connection signal="body_entered" from="obstacle_spike2/Spikes" to="obstacle_spike2" method="_on_spikes_body_entered"]
