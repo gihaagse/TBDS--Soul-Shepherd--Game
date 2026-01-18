@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://goes5l2sfyvw" path="res://Assets/Sprites/Tileset1.png" id="4_a2fb7"]
 [ext_resource type="PackedScene" uid="uid://c45jpc3kaflr4" path="res://Scenes/CheckPoints/CheckPoint.tscn" id="4_fefyl"]
 [ext_resource type="Script" uid="uid://dtfsguwdnfr7m" path="res://Scripts/CheckPoints/start.gd" id="5_llcl8"]
-[ext_resource type="Shader" uid="uid://b4k5pl844vedq" path="res://Shaders/water_shader_vertical_waves.gdshader" id="6_t4r76"]
+[ext_resource type="Shader" path="res://Shaders/water_shader_vertical_waves.gdshader" id="6_t4r76"]
 [ext_resource type="PackedScene" uid="uid://c5ongupm07qh3" path="res://Scenes/Player/player.tscn" id="6_w71j4"]
 [ext_resource type="Script" uid="uid://ce43l01wboarg" path="res://Scripts/UI/Overlay/canvas_layer.gd" id="7_3r3yc"]
 [ext_resource type="FontFile" uid="uid://x2dwsfc3en6q" path="res://Assets/Tutorial Open Assets/brackeys_platformer_assets/fonts/PixelOperator8.ttf" id="8_qftv3"]
@@ -24,7 +24,6 @@
 [ext_resource type="PackedScene" uid="uid://bpp47tnrfdrab" path="res://Scenes/UI/Components/player_hud.tscn" id="18_bnvaj"]
 [ext_resource type="FontFile" uid="uid://p47ydk5quyq2" path="res://Assets/Tutorial Open Assets/brackeys_platformer_assets/fonts/PixelOperator8-Bold.ttf" id="19_3fxnq"]
 [ext_resource type="Script" uid="uid://hfj0hgwiyiqu" path="res://Scripts/Central/event_trigger.gd" id="19_8qp3c"]
-[ext_resource type="AudioStream" uid="uid://cg3qpni1dsx7g" path="res://Assets/Audio/Music/Rush 1-2.wav" id="19_yidc1"]
 [ext_resource type="Script" uid="uid://b7008awu7lly6" path="res://Scenes/Level/next_level.gd" id="20_76nua"]
 [ext_resource type="Texture2D" uid="uid://cp8w704xccmt3" path="res://Assets/Background/bamboo_background.png" id="20_t4r76"]
 [ext_resource type="Texture2D" uid="uid://bvglohh8et0el" path="res://Assets/Background/bamboo2_background.png" id="21_a2fb7"]
@@ -34,6 +33,7 @@
 [ext_resource type="PackedScene" uid="uid://d2jbqn300os54" path="res://Scenes/Obstacles/obstacle_spike.tscn" id="22_w8ssc"]
 [ext_resource type="SpriteFrames" uid="uid://btqrxjedotkrq" path="res://Resources/Wisps/Water_Wisp.tres" id="25_qftv3"]
 [ext_resource type="PackedScene" uid="uid://dm61xmst0522o" path="res://Scenes/Items/magic_bamboo.tscn" id="26_3fxnq"]
+[ext_resource type="AudioStream" uid="uid://c3hxe2rpfpo3m" path="res://Assets/Audio/Music/1-2 Rush.wav" id="27_5p2mm"]
 [ext_resource type="Texture2D" uid="uid://c8dol58rb8t5j" path="res://Assets/Sprites/Magic Bamboo/+5 hp magic bamboo.png" id="27_6ilrh"]
 [ext_resource type="PackedScene" uid="uid://t6qqa47vckdt" path="res://Scenes/Enemies/husk.tscn" id="33_6ilrh"]
 [ext_resource type="PackedScene" uid="uid://bdhxnuny30cml" path="res://Scenes/Items/scroll.tscn" id="37_5p2mm"]
@@ -1391,7 +1391,7 @@ position = Vector2(8, 0)
 shape = SubResource("RectangleShape2D_17ga6")
 
 [node name="Level1Music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("19_yidc1")
+stream = ExtResource("27_5p2mm")
 volume_db = -30.0
 autoplay = true
 bus = &"Music"

@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://j1w6x4hpn3ou" path="res://Assets/Icons/Sung Chin Woo Icon.png" id="4_0a8bn"]
 [ext_resource type="Texture2D" uid="uid://goes5l2sfyvw" path="res://Assets/Sprites/Tileset1.png" id="4_5emvd"]
 [ext_resource type="PackedScene" uid="uid://c45jpc3kaflr4" path="res://Scenes/CheckPoints/CheckPoint.tscn" id="5_x3bjw"]
-[ext_resource type="Shader" uid="uid://b4k5pl844vedq" path="res://Shaders/water_shader_vertical_waves.gdshader" id="6_5emvd"]
+[ext_resource type="Shader" path="res://Shaders/water_shader_vertical_waves.gdshader" id="6_5emvd"]
 [ext_resource type="Script" uid="uid://dtfsguwdnfr7m" path="res://Scripts/CheckPoints/start.gd" id="6_mcfix"]
 [ext_resource type="PackedScene" uid="uid://c5ongupm07qh3" path="res://Scenes/Player/player.tscn" id="7_5emvd"]
 [ext_resource type="Script" uid="uid://b2b6rmyyluckx" path="res://Scripts/Player/General/camera_2d.gd" id="8_00man"]
@@ -24,7 +24,6 @@
 [ext_resource type="FontFile" uid="uid://p47ydk5quyq2" path="res://Assets/Tutorial Open Assets/brackeys_platformer_assets/fonts/PixelOperator8-Bold.ttf" id="19_j1vxt"]
 [ext_resource type="Script" uid="uid://bpkjqkjnq8o6g" path="res://Scripts/Player/General/killzone.gd" id="21_hhr80"]
 [ext_resource type="Texture2D" uid="uid://cp8w704xccmt3" path="res://Assets/Background/bamboo_background.png" id="21_x3bjw"]
-[ext_resource type="AudioStream" uid="uid://cg3qpni1dsx7g" path="res://Assets/Audio/Music/Rush 1-2.wav" id="22_g30dl"]
 [ext_resource type="Texture2D" uid="uid://bvglohh8et0el" path="res://Assets/Background/bamboo2_background.png" id="22_mcfix"]
 [ext_resource type="Texture2D" uid="uid://b7ugr2cytodl8" path="res://Assets/Background/forest_background.png" id="23_5emvd"]
 [ext_resource type="Script" uid="uid://hfj0hgwiyiqu" path="res://Scripts/Central/event_trigger.gd" id="23_qc3ue"]
@@ -34,6 +33,7 @@
 [ext_resource type="Script" uid="uid://b7008awu7lly6" path="res://Scenes/Level/next_level.gd" id="26_s7l10"]
 [ext_resource type="Texture2D" uid="uid://c8dol58rb8t5j" path="res://Assets/Sprites/Magic Bamboo/+5 hp magic bamboo.png" id="27_4mtjj"]
 [ext_resource type="PackedScene" uid="uid://cl45lm0hg20kf" path="res://Scenes/Items/soul.tscn" id="27_iidxh"]
+[ext_resource type="AudioStream" uid="uid://clmk0lxioqwa7" path="res://Assets/Audio/Music/1-3 Rumbleless Jungle.wav" id="27_twck0"]
 [ext_resource type="SpriteFrames" uid="uid://cgtj4wt3ql8r1" path="res://Resources/Wisps/Fire_Wisp.tres" id="28_ibx2y"]
 [ext_resource type="PackedScene" uid="uid://bfks2a63jpch2" path="res://Scenes/Enemies/orc.tscn" id="29_60q73"]
 [ext_resource type="PackedScene" uid="uid://bdhxnuny30cml" path="res://Scenes/Items/scroll.tscn" id="37_twck0"]
@@ -1227,7 +1227,7 @@ texture = ExtResource("23_5emvd")
 offset = Vector2(17.195, 0)
 
 [node name="Level1Music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("22_g30dl")
+stream = ExtResource("27_twck0")
 volume_db = -30.0
 autoplay = true
 bus = &"Music"

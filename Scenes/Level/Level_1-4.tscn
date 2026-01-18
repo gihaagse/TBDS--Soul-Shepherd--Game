@@ -22,9 +22,9 @@
 [ext_resource type="Texture2D" uid="uid://ccx5i1mil6ubv" path="res://Assets/Backgrounds/boss_arena_background.png" id="19_dbf7t"]
 [ext_resource type="PackedScene" uid="uid://ndkp1vfqmr4g" path="res://Scenes/Dialogue/DialogueUI.tscn" id="19_pw0tg"]
 [ext_resource type="Script" uid="uid://bpkjqkjnq8o6g" path="res://Scripts/Player/General/killzone.gd" id="20_xto7o"]
-[ext_resource type="AudioStream" uid="uid://cbtn1bitrynwi" path="res://Assets/Audio/Music/sample.wav" id="21_pnbfv"]
 [ext_resource type="PackedScene" uid="uid://dm61xmst0522o" path="res://Scenes/Items/magic_bamboo.tscn" id="22_ysjws"]
 [ext_resource type="Texture2D" uid="uid://c8dol58rb8t5j" path="res://Assets/Sprites/Magic Bamboo/+5 hp magic bamboo.png" id="23_0tr4f"]
+[ext_resource type="AudioStream" uid="uid://f1brhj7mhajb" path="res://Assets/Audio/Music/1-4 Headmonk - First Boss.wav" id="23_xr5la"]
 [ext_resource type="Script" uid="uid://gaqqlslhdr4g" path="res://Scripts/Obstacles/obstacle_spike.gd" id="24_o3vio"]
 [ext_resource type="Texture2D" uid="uid://s45ti6i317cc" path="res://Assets/Sprites/Obstacles/bamboo_trap_floor.png" id="25_7qnir"]
 [ext_resource type="Shader" uid="uid://80wr7vuod76p" path="res://Shaders/spike_color.gdshader" id="26_05rg0"]
@@ -695,7 +695,7 @@ script = ExtResource("20_xto7o")
 shape = SubResource("WorldBoundaryShape2D_5ljwd")
 
 [node name="Level1Music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("21_pnbfv")
+stream = ExtResource("23_xr5la")
 volume_db = -30.0
 autoplay = true
 bus = &"Music"

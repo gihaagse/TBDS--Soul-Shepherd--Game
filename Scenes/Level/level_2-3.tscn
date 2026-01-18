@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://df7x13ignki5d"]
+[gd_scene load_steps=45 format=3 uid="uid://df7x13ignki5d"]
 
 [ext_resource type="Script" uid="uid://dhm65txe15dn0" path="res://Scenes/Level/level_2_3.gd" id="1_3yx86"]
 [ext_resource type="Resource" uid="uid://4v7wvh5s6b0b" path="res://Resources/AbilityUnlocking/level_2-3.tres" id="2_6hcqd"]
@@ -36,6 +36,7 @@
 [ext_resource type="Resource" uid="uid://b6gut84bheyp0" path="res://Resources/Scroll/scroll12.tres" id="27_pdsuj"]
 [ext_resource type="Script" uid="uid://b7008awu7lly6" path="res://Scenes/Level/next_level.gd" id="28_1joaj"]
 [ext_resource type="Resource" uid="uid://dtmcjwc62dpe8" path="res://Resources/Scroll/scroll13.tres" id="28_p4xu6"]
+[ext_resource type="AudioStream" uid="uid://dkt42bmkvj04d" path="res://Assets/Audio/Music/2-3 Mountainrunner.wav" id="37_d67lg"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_iy8e7"]
 distance = -17.0
@@ -631,6 +632,12 @@ next_part = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Next_level"]
 shape = SubResource("RectangleShape2D_58mxi")
+
+[node name="Level1Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("37_d67lg")
+volume_db = -30.0
+autoplay = true
+bus = &"Music"
 
 [connection signal="body_entered" from="killzone" to="killzone" method="_on_body_entered"]
 [connection signal="body_entered" from="Next_level" to="Next_level" method="_on_body_entered"]

@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cp0y4pviekhge"]
+[gd_scene load_steps=5 format=3 uid="uid://cp0y4pviekhge"]
 
 [ext_resource type="Script" uid="uid://cfwvl6yccstdr" path="res://Scripts/UI/GameMenus/end_scene.gd" id="1_mbyqo"]
 [ext_resource type="Texture2D" uid="uid://c4d52ui881gs1" path="res://Assets/Backgrounds/Endingpanel1.png" id="2_mbyqo"]
 [ext_resource type="FontFile" uid="uid://x2dwsfc3en6q" path="res://Assets/Tutorial Open Assets/brackeys_platformer_assets/fonts/PixelOperator8.ttf" id="3_he1ek"]
+[ext_resource type="AudioStream" uid="uid://dyn83w4vc4oog" path="res://Assets/Audio/Music/2-5 Goodbye Soul Shepherd, Best Version.wav" id="4_1wibg"]
 
 [node name="EndScene" type="Control"]
 layout_mode = 3
@@ -101,3 +102,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_1wibg")
+volume_db = -30.0
+autoplay = true
+bus = &"Music"

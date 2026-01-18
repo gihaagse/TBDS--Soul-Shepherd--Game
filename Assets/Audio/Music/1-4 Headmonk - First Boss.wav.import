@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://f1brhj7mhajb"
+path="res://.godot/imported/1-4 Headmonk - First Boss.wav-6a600092f9cd2a8838e399d6488b581c.sample"
+
+[deps]
+
+source_file="res://Assets/Audio/Music/1-4 Headmonk - First Boss.wav"
+dest_files=["res://.godot/imported/1-4 Headmonk - First Boss.wav-6a600092f9cd2a8838e399d6488b581c.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=2
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
