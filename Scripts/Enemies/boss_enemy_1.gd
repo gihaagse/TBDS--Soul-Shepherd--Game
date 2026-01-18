@@ -12,8 +12,7 @@ func _ready() -> void:
 	JumpTimer.start()
 	speed = 0
 	stage = 1
-	if stage > 1:
-		health.hp = 200
+	health.hp = 250
 
 
 func _process(_delta: float) -> void:
@@ -25,6 +24,11 @@ func _process(_delta: float) -> void:
 		just_jumped = false
 		if stage > 2:
 			$stage_3_timer.start()
+	if health.hp <= 200 and health.hp > 100 and stage != 2:
+		stage = 2
+	if health.hp <= 100 and stage != 3:
+		stage = 3
+	
 
 func _on_jump_timer_timeout() -> void:
 	$JumpChecker.position.x = dir*speed

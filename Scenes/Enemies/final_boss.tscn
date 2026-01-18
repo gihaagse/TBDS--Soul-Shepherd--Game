@@ -517,11 +517,21 @@ disabled = true
 [node name="WalkTimer" type="Timer" parent="."]
 one_shot = true
 
-[node name="ShockwaveGround" parent="." instance=ExtResource("10_1nrsg")]
-position = Vector2(-1, 15)
-emitting = false
+[node name="ShockwaveGroundLeft" parent="." instance=ExtResource("10_1nrsg")]
+position = Vector2(1, 15)
+scale = Vector2(-1, -1)
+texture = null
 
-[node name="ShockwaveAir" parent="." instance=ExtResource("11_jnvov")]
+[node name="ShockwaveGroundRight" parent="." instance=ExtResource("10_1nrsg")]
+position = Vector2(-1, 15)
+texture = null
+
+[node name="ShockwaveAirLeft" parent="." instance=ExtResource("11_jnvov")]
+scale = Vector2(-1, -1)
+texture = null
+
+[node name="ShockwaveAirRight" parent="." instance=ExtResource("11_jnvov")]
+texture = null
 
 [connection signal="hp_changed" from="Health" to="." method="_on_health_hp_changed"]
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

@@ -16,9 +16,7 @@ func _ready() -> void:
 	super._ready()
 	JumpTimer.start()
 	speed = 0
-	stage = 1
-	if stage > 1:
-		health.hp = 200
+	health.hp = 200
 
 func _process(_delta: float) -> void:
 	super._process(_delta)
@@ -66,7 +64,6 @@ func pre_shoot():
 		else:
 			sprite.stop()
 			sprite.play("Clap")
-			print("sprite: " + str(sprite.get_animation()))
 			shoot("clap")
 
 func shoot(attack: String):
@@ -80,9 +77,13 @@ func shoot(attack: String):
 			ShockwaveArea.set_disabled(false)
 		else:
 			ShockwaveArea.set_disabled(false)
+		$ShockwaveAirLeft.emit_particle()
+		$ShockwaveAirRight.emit_particle()
 	elif attack == "ground_attack":
 		ShockwaveArea.position.y = 8.64
 		ShockwaveArea.set_disabled(false)
+		$ShockwaveGroundLeft.emit_particle()
+		$ShockwaveGroundRight.emit_particle()
 	elif attack == "punch":
 		sprite.play("Attack_punch")
 		WalkTimer.start(1)
@@ -115,7 +116,7 @@ func _on_walk_timer_timeout() -> void:
 
 func _on_shockwave_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
-		player.hp.take_damage(10)
+		player.hp.take_damage(30)
 		
 func _boss_hit() -> void:
 	shoot("projectile")

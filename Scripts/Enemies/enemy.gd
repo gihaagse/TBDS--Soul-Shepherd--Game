@@ -11,8 +11,8 @@ class_name enemy
 @onready var label: Label = $Label
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var gpu_particles_2d: GPUParticles2D = $GPUParticles2D
-@export var walk_speed : int = 40
-@export var sprint_speed : int = 60
+@export var walk_speed : int = 50
+@export var sprint_speed : int = 70
 var speed : int = 0
 @export var dir : int = 1
 var player: CharacterBody2D = null
@@ -174,7 +174,7 @@ func _on_top_check_cooldown_timeout() -> void:
 	_player_on_top()
 
 func _player_on_top() -> void:
-	player.hp.take_damage(10)
+	player.hp.take_damage(30)
 	playerOnTop = true
 	$TopCheckCooldown.start()
 

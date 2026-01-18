@@ -76,7 +76,7 @@ func _on_body_entered(collision: KinematicCollision2D) -> void:
 	var hp = coll.get_node_or_null("Health")
 	if hp and hp.has_method("take_damage") and coll.collision_layer & (1<<0):
 		print("Body Working_code :D")
-		hp.take_damage(10)
+		hp.take_damage(30)
 		collision_mask = (0<<0) | (1<<2)
 		queue_free()
 		direction = -direction
@@ -103,7 +103,7 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 	var hp = area.get_node_or_null("Health")
 	if hp and hp.has_method("take_damage"):
 		print("Area2D Working_code :D")
-		hp.take_damage(10)
+		hp.take_damage(30)
 		despawn.start()
 		direction = -direction
 	else:
