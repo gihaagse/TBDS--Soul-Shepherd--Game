@@ -104,7 +104,6 @@ func _on_continue_timer_timeout():
 	if not typing_complete: 
 		_type_text()
 	else:
-		print("10s done!")
 		continue_panel.visible = false
 		$Panel2.visible = true
 		$GameStartTimer.start()
