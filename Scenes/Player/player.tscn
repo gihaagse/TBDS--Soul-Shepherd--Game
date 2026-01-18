@@ -36,7 +36,7 @@
 [ext_resource type="PackedScene" uid="uid://cde6qxgsfv3w" path="res://Scenes/Effects/dash_lines.tscn" id="26_ythyg"]
 [ext_resource type="PackedScene" uid="uid://b3qfe4rcpk6rv" path="res://Scenes/Effects/dash_smoke.tscn" id="27_bmb2s"]
 [ext_resource type="AudioStream" uid="uid://bwgoippum6cgf" path="res://Assets/Audio/SFX/Player/Knife Sword Katana stab.mp3" id="30_2jnj1"]
-[ext_resource type="Script" path="res://Scripts/UI/Overlay/jump_ui.gd" id="38_m6ahd"]
+[ext_resource type="Script" uid="uid://c0udclb84tqt1" path="res://Scripts/UI/Overlay/jump_ui.gd" id="38_m6ahd"]
 [ext_resource type="PackedScene" uid="uid://cg5703l8qujlb" path="res://Assets/Particles/BloodParticle.tscn" id="38_ogmfp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lfmf2"]
@@ -1065,7 +1065,7 @@ alpha_curve = SubResource("CurveTexture_sm0op")
 load_path = "res://.godot/imported/green_ball.png-faf5193f9c80959af8ce2bec1f312451.ctex"
 
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("finite_state_machine", "hp") groups=["Player"]]
-z_index = 7
+z_index = 10
 collision_layer = 5
 floor_constant_speed = true
 floor_snap_length = 4.0

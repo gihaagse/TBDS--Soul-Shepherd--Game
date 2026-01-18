@@ -28,6 +28,8 @@ func _process(_delta: float) -> void:
 	pass
 
 func _on_start_pressed() -> void:
+	SaveData.reset_game()
+	SaveData.saving.emit()
 	continue_panel.visible = true
 	continue_text_label.text = ""  
 	current_char = 0

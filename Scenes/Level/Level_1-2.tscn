@@ -37,10 +37,12 @@
 [ext_resource type="PackedScene" uid="uid://dm61xmst0522o" path="res://Scenes/Items/magic_bamboo.tscn" id="26_3fxnq"]
 [ext_resource type="AudioStream" uid="uid://c3hxe2rpfpo3m" path="res://Assets/Audio/Music/1-2 Rush.wav" id="27_5p2mm"]
 [ext_resource type="Texture2D" uid="uid://c8dol58rb8t5j" path="res://Assets/Sprites/Magic Bamboo/+5 hp magic bamboo.png" id="27_6ilrh"]
-[ext_resource type="PackedScene" uid="uid://t6qqa47vckdt" path="res://Scenes/Enemies/husk.tscn" id="33_6ilrh"]
 [ext_resource type="PackedScene" uid="uid://bdhxnuny30cml" path="res://Scenes/Items/scroll.tscn" id="37_5p2mm"]
 [ext_resource type="Resource" uid="uid://db2nuuqxfa352" path="res://Resources/Scroll/scroll3.tres" id="38_0mbwr"]
+[ext_resource type="PackedScene" uid="uid://bkb1hbs8mvgj2" path="res://Scenes/Enemies/ninja.tscn" id="39_2fslo"]
 [ext_resource type="Resource" uid="uid://bwhfvf26i0ep5" path="res://Resources/Scroll/scroll4.tres" id="39_sqksc"]
+[ext_resource type="PackedScene" uid="uid://dgm6tcibml5l" path="res://Scenes/Enemies/dragon_fly_enemy.tscn" id="40_47nwx"]
+[ext_resource type="PackedScene" uid="uid://bllnww8iurqf2" path="res://Scenes/Enemies/monk.tscn" id="41_ma5lh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_myhti"]
 texture = ExtResource("4_a2fb7")
@@ -1767,10 +1769,49 @@ region_rect = Rect2(64, 160, 16, 16)
 
 [node name="Enemies" type="Node2D" parent="."]
 
-[node name="Enemy" parent="Enemies" instance=ExtResource("33_6ilrh")]
+[node name="Enemy" parent="Enemies" instance=ExtResource("39_2fslo")]
 z_index = 7
-position = Vector2(8368, 434)
-can_move = false
+position = Vector2(2328, 384)
+
+[node name="Enemy2" parent="Enemies" instance=ExtResource("39_2fslo")]
+z_index = 7
+position = Vector2(2544, 392)
+
+[node name="Dragon Enemy" parent="Enemies" instance=ExtResource("40_47nwx")]
+z_index = 7
+position = Vector2(3776, 440)
+
+[node name="Enemy3" parent="Enemies" instance=ExtResource("39_2fslo")]
+z_index = 7
+position = Vector2(4808, 432)
+
+[node name="Enemy4" parent="Enemies" instance=ExtResource("39_2fslo")]
+z_index = 7
+position = Vector2(4984, 432)
+
+[node name="Enemy5" parent="Enemies" instance=ExtResource("41_ma5lh")]
+z_index = 7
+position = Vector2(5448, 392)
+
+[node name="Enemy6" parent="Enemies" instance=ExtResource("41_ma5lh")]
+z_index = 7
+position = Vector2(5656, 424)
+
+[node name="Enemy7" parent="Enemies" instance=ExtResource("39_2fslo")]
+z_index = 7
+position = Vector2(7256, 384)
+
+[node name="Enemy8" parent="Enemies" instance=ExtResource("39_2fslo")]
+z_index = 7
+position = Vector2(7472, 384)
+
+[node name="Dragon Enemy2" parent="Enemies" instance=ExtResource("40_47nwx")]
+z_index = 7
+position = Vector2(10016, 408)
+
+[node name="Enemy9" parent="Enemies" instance=ExtResource("39_2fslo")]
+z_index = 7
+position = Vector2(9560, 272)
 
 [node name="Scrolls" type="Node2D" parent="."]
 

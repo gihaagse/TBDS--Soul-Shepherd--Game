@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=3 uid="uid://lahfkubql7vo"]
+[gd_scene load_steps=59 format=3 uid="uid://lahfkubql7vo"]
 
 [ext_resource type="Script" uid="uid://beypopj8ttlnq" path="res://Scripts/Level/playtest_2.gd" id="1_5dr80"]
 [ext_resource type="Script" uid="uid://byn1je7flnjo3" path="res://Scripts/Central/game_manager.gd" id="2_fiy4m"]
@@ -38,6 +38,8 @@
 [ext_resource type="PackedScene" uid="uid://bdhxnuny30cml" path="res://Scenes/Items/scroll.tscn" id="35_fmhbg"]
 [ext_resource type="Resource" uid="uid://c1oql5tsw3f8k" path="res://Resources/Scroll/scroll1.tres" id="36_lpv7w"]
 [ext_resource type="Resource" uid="uid://djemipvmm5y8y" path="res://Resources/Scroll/scroll2.tres" id="37_w85r1"]
+[ext_resource type="PackedScene" uid="uid://bllnww8iurqf2" path="res://Scenes/Enemies/monk.tscn" id="39_mn8ec"]
+[ext_resource type="PackedScene" uid="uid://bkb1hbs8mvgj2" path="res://Scenes/Enemies/ninja.tscn" id="40_hyn4w"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j3um3"]
 texture = ExtResource("2_w85r1")
@@ -1391,6 +1393,60 @@ dialogue = ExtResource("36_lpv7w")
 z_index = 20
 position = Vector2(5776, 176)
 dialogue = ExtResource("37_w85r1")
+
+[node name="Enemies" type="Node" parent="."]
+
+[node name="Enemy" parent="Enemies" instance=ExtResource("39_mn8ec")]
+z_index = 7
+position = Vector2(672, 184)
+
+[node name="Enemy2" parent="Enemies" instance=ExtResource("39_mn8ec")]
+z_index = 7
+position = Vector2(1240, 144)
+
+[node name="Enemy3" parent="Enemies" instance=ExtResource("39_mn8ec")]
+z_index = 7
+position = Vector2(1688, 88)
+
+[node name="Enemy4" parent="Enemies" instance=ExtResource("39_mn8ec")]
+z_index = 7
+position = Vector2(1904, 88)
+
+[node name="Enemy5" parent="Enemies" instance=ExtResource("40_hyn4w")]
+z_index = 7
+position = Vector2(2576, 56)
+
+[node name="Enemy6" parent="Enemies" instance=ExtResource("40_hyn4w")]
+z_index = 7
+position = Vector2(2648, 56)
+
+[node name="Enemy7" parent="Enemies" instance=ExtResource("39_mn8ec")]
+z_index = 7
+position = Vector2(3368, 24)
+
+[node name="Enemy8" parent="Enemies" instance=ExtResource("39_mn8ec")]
+z_index = 7
+position = Vector2(3520, 56)
+
+[node name="Enemy9" parent="Enemies" instance=ExtResource("40_hyn4w")]
+z_index = 7
+position = Vector2(3808, 53)
+
+[node name="Enemy10" parent="Enemies" instance=ExtResource("40_hyn4w")]
+z_index = 7
+position = Vector2(3904, 53)
+
+[node name="Enemy11" parent="Enemies" instance=ExtResource("39_mn8ec")]
+z_index = 7
+position = Vector2(4952, -112)
+
+[node name="Enemy12" parent="Enemies" instance=ExtResource("39_mn8ec")]
+z_index = 7
+position = Vector2(5568, -219)
+
+[node name="Enemy13" parent="Enemies" instance=ExtResource("39_mn8ec")]
+z_index = 7
+position = Vector2(5800, -216)
 
 [connection signal="body_entered" from="DeathBoxes/killzone" to="DeathBoxes/killzone" method="_on_body_entered"]
 [connection signal="body_entered" from="DeathBoxes/killzone2" to="DeathBoxes/killzone2" method="_on_body_entered"]
