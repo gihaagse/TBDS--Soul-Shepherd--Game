@@ -12,7 +12,7 @@ var just_jumped: bool = false
 func _ready() -> void:
 	health.hp_changed.connect(_boss_hit)
 	$in_range_shoot_timer.wait_time = 1
-	projectile = load("res://Scenes/Weapons/enemy_hat_projectile.tscn")
+	projectile = load("res://Scenes/Weapons/boss_enemy_projectile.tscn")
 	super._ready()
 	JumpTimer.start()
 	speed = 0
