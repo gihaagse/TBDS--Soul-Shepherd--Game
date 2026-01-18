@@ -77,13 +77,13 @@ func shoot(attack: String):
 			ShockwaveArea.set_disabled(false)
 		else:
 			ShockwaveArea.set_disabled(false)
-		$ShockwaveAirLeft.emit_particle()
-		$ShockwaveAirRight.emit_particle()
+		$ShockwaveAirLeft.set_emitting(true)
+		$ShockwaveAirRight.set_emitting(true)
 	elif attack == "ground_attack":
 		ShockwaveArea.position.y = 8.64
 		ShockwaveArea.set_disabled(false)
-		$ShockwaveGroundLeft.emit_particle()
-		$ShockwaveGroundRight.emit_particle()
+		$ShockwaveGroundLeft.set_emitting(true)
+		$ShockwaveGroundRight.set_emitting(true)
 	elif attack == "punch":
 		sprite.play("Attack_punch")
 		WalkTimer.start(1)

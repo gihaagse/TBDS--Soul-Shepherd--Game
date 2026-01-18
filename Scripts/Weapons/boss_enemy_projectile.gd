@@ -1,5 +1,5 @@
 extends CharacterBody2D
-class_name Enemy_projectile
+class_name Boss_enemy_projectile
 
 @export var speed : float = 100.0
 @export var sprite : AnimatedSprite2D
