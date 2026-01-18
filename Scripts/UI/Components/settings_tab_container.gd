@@ -66,6 +66,10 @@ func _update_level_label() -> void:
 	var section = SaveData.get_last_section()
 	if section == "0-0":
 		continue_level_label.text = "Last Level: Tutorial"
+	elif section == "1-4":
+		continue_level_label.text = "Last Level: Boss 1"
+	elif section == "2-4":
+		continue_level_label.text = "Last Level: Final Boss"
 	else:
 		continue_level_label.text = "Last Level: level %s" % section
 	show_lore()

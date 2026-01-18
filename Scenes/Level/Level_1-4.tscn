@@ -747,42 +747,6 @@ material = SubResource("ShaderMaterial_ps4u4")
 position = Vector2(0, 4)
 texture = ExtResource("27_nrt8h")
 
-[node name="obstacle_spike2" type="Area2D" parent="Obstacles"]
-z_index = 5
-position = Vector2(481, 285)
-scale = Vector2(0.8, 1)
-collision_layer = 2048
-collision_mask = 4
-script = ExtResource("24_o3vio")
-damage_trap = 100
-effect_type = Array[int]([0, 1, 2, 3])
-active_for = 2.0
-activation_delay = 0.2
-one_time_use = 1000000
-reuse_cooldown = 1.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacles/obstacle_spike2"]
-position = Vector2(0, -14)
-shape = SubResource("RectangleShape2D_3qb7m")
-
-[node name="MainSpirte" type="Sprite2D" parent="Obstacles/obstacle_spike2"]
-position = Vector2(0, -5)
-scale = Vector2(1.4, 1)
-texture = ExtResource("25_7qnir")
-
-[node name="Spikes" type="Area2D" parent="Obstacles/obstacle_spike2"]
-collision_layer = 2048
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacles/obstacle_spike2/Spikes"]
-position = Vector2(0, 25)
-shape = SubResource("RectangleShape2D_qqdfe")
-
-[node name="SpikesSprite" type="Sprite2D" parent="Obstacles/obstacle_spike2/Spikes"]
-z_index = -1
-material = SubResource("ShaderMaterial_ps4u4")
-position = Vector2(0, 4)
-texture = ExtResource("27_nrt8h")
-
 [node name="Next_level" type="Area2D" parent="."]
 visible = false
 position = Vector2(3808, 48)
@@ -867,17 +831,53 @@ level_name = "Level_2-1"
 next_part = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Next_level2"]
-position = Vector2(-65, 4)
+position = Vector2(-43, 8)
 shape = SubResource("RectangleShape2D_fmdk8")
+
+[node name="obstacle_spike2" type="Area2D" parent="."]
+z_index = 5
+position = Vector2(481, 285)
+scale = Vector2(0.8, 1)
+collision_layer = 2048
+collision_mask = 4
+script = ExtResource("24_o3vio")
+damage_trap = 100
+effect_type = Array[int]([0, 1, 2, 3])
+active_for = 2.0
+activation_delay = 0.2
+one_time_use = 1000000
+reuse_cooldown = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="obstacle_spike2"]
+position = Vector2(0, -14)
+shape = SubResource("RectangleShape2D_3qb7m")
+
+[node name="MainSpirte" type="Sprite2D" parent="obstacle_spike2"]
+position = Vector2(0, -5)
+scale = Vector2(1.4, 1)
+texture = ExtResource("25_7qnir")
+
+[node name="Spikes" type="Area2D" parent="obstacle_spike2"]
+collision_layer = 2048
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="obstacle_spike2/Spikes"]
+position = Vector2(0, 25)
+shape = SubResource("RectangleShape2D_qqdfe")
+
+[node name="SpikesSprite" type="Sprite2D" parent="obstacle_spike2/Spikes"]
+z_index = -1
+material = SubResource("ShaderMaterial_ps4u4")
+position = Vector2(0, 4)
+texture = ExtResource("27_nrt8h")
 
 [connection signal="body_entered" from="killzone" to="killzone" method="_on_body_entered"]
 [connection signal="body_entered" from="Obstacles/obstacle_spike" to="Obstacles/obstacle_spike" method="_on_body_entered"]
 [connection signal="body_exited" from="Obstacles/obstacle_spike" to="Obstacles/obstacle_spike" method="_on_body_exited"]
 [connection signal="body_entered" from="Obstacles/obstacle_spike/Spikes" to="Obstacles/obstacle_spike" method="_on_spikes_body_entered"]
-[connection signal="body_entered" from="Obstacles/obstacle_spike2" to="Obstacles/obstacle_spike2" method="_on_body_entered"]
-[connection signal="body_exited" from="Obstacles/obstacle_spike2" to="Obstacles/obstacle_spike2" method="_on_body_exited"]
-[connection signal="body_entered" from="Obstacles/obstacle_spike2/Spikes" to="Obstacles/obstacle_spike2" method="_on_spikes_body_entered"]
 [connection signal="body_entered" from="Next_level" to="Next_level" method="_on_body_entered"]
 [connection signal="body_entered" from="Events/Key1" to="Events/Key1" method="_on_body_entered"]
 [connection signal="body_entered" from="Events/Gate_Crystal1/UnlockArea" to="Events/Gate_Crystal1" method="_on_unlock_area_body_entered"]
 [connection signal="body_entered" from="Next_level2" to="Next_level2" method="_on_body_entered"]
+[connection signal="body_entered" from="obstacle_spike2" to="obstacle_spike2" method="_on_body_entered"]
+[connection signal="body_exited" from="obstacle_spike2" to="obstacle_spike2" method="_on_body_exited"]
+[connection signal="body_entered" from="obstacle_spike2/Spikes" to="obstacle_spike2" method="_on_spikes_body_entered"]

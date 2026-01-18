@@ -2,6 +2,7 @@ extends enemy
 
 class_name final_boss
 
+@export var dialogue: DialogueResource
 @export var jump_speed: int = -125.0
 @onready var JumpTimer : Timer = $JumpTimer
 @onready var WalkTimer: Timer = $WalkTimer
@@ -120,3 +121,9 @@ func _on_shockwave_body_entered(body: Node2D) -> void:
 		
 func _boss_hit() -> void:
 	shoot("projectile")
+	
+func _on_npc_died():
+	KeyManager.boss_death.emit()
+	if dialogue:
+		await get_tree().create_timer(1).timeout
+		DialogueManager.start_dialogue(dialogue)
