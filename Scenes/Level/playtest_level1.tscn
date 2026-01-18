@@ -661,7 +661,7 @@ position = Vector2(-1, -17)
 z_index = 5
 position = Vector2(-112, -123)
 texture = ExtResource("23_22koj")
-heal_amount = 5
+heal_amount = 10
 COLOR = Color(0, 0.59607846, 0.8627451, 1)
 
 [node name="ParralaxBackground" parent="." instance=ExtResource("24_m8gdt")]

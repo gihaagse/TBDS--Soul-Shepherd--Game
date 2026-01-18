@@ -16,7 +16,6 @@ func drop_item(item, position: Vector2):
 			return
 			
 		var new_parent = CheckPointManager.get_root().get_node("MagicBamboo")
-		print(CheckPointManager.get_root().get_node("MagicBamboo"))
 		var drop_instance : MagicBamboo = item.duplicate()
 		drop_instance.global_position = position
 		if ("is_active" in drop_instance):

@@ -16,7 +16,7 @@ func updateLabel(text):
 	if text:
 		stateLabel.text = "State: " + str(text)
 func updateEquip(text):
-	if text:
+	if text and equipLabel:
 		equipLabel.text = "Equipment: " + str(text)
 		
 func updateHP(hp):
