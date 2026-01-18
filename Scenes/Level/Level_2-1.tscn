@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=3 uid="uid://j6du3niuxs2r"]
+[gd_scene load_steps=58 format=3 uid="uid://j6du3niuxs2r"]
 
 [ext_resource type="Script" uid="uid://c2jeph0pjh467" path="res://Scripts/Level/playtest_level.gd" id="1_a337h"]
 [ext_resource type="Script" uid="uid://byn1je7flnjo3" path="res://Scripts/Central/game_manager.gd" id="2_tcjxv"]
@@ -32,7 +32,11 @@
 [ext_resource type="PackedScene" uid="uid://cl45lm0hg20kf" path="res://Scenes/Items/soul.tscn" id="27_imhjm"]
 [ext_resource type="SpriteFrames" uid="uid://cgtj4wt3ql8r1" path="res://Resources/Wisps/Fire_Wisp.tres" id="28_demn2"]
 [ext_resource type="PackedScene" uid="uid://t6qqa47vckdt" path="res://Scenes/Enemies/husk.tscn" id="29_8n4ft"]
+[ext_resource type="PackedScene" uid="uid://dgm6tcibml5l" path="res://Scenes/Enemies/dragon_fly_enemy.tscn" id="33_51upf"]
 [ext_resource type="PackedScene" uid="uid://cy60eohui7ya1" path="res://Scenes/Background/parralax_background_2-1.tscn" id="33_hoehn"]
+[ext_resource type="PackedScene" uid="uid://bdhxnuny30cml" path="res://Scenes/Items/scroll.tscn" id="34_as8vh"]
+[ext_resource type="Resource" uid="uid://bia18b6nkuq2v" path="res://Resources/Scroll/scroll7.tres" id="35_51upf"]
+[ext_resource type="Resource" uid="uid://bldj55wy85i6y" path="res://Resources/Scroll/scroll8.tres" id="36_k5ql6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_b4qox"]
 texture = ExtResource("3_hrj5t")
@@ -1119,7 +1123,6 @@ tile_set = SubResource("TileSet_51upf")
 format = 2
 layer_0/tile_data = PackedInt32Array(1376308, 327680, 1, 1376317, 393216, 1, 1376289, 327680, 1, 1441825, 327680, 2, 1507361, 327680, 2, 1572897, 327680, 2, 1638433, 327680, 2, 1703969, 327680, 2, 1376290, 393216, 2, 1441826, 327680, 2, 1507362, 327680, 2, 1572898, 327680, 2, 1638434, 327680, 2, 1703970, 327680, 2, 1376291, 393216, 2, 1441827, 327680, 2, 1507363, 327680, 2, 1572899, 327680, 2, 1638435, 327680, 2, 1703971, 327680, 2, 1376292, 393216, 2, 1441828, 327680, 2, 1507364, 327680, 2, 1572900, 327680, 2, 1638436, 327680, 2, 1703972, 327680, 2, 1376293, 393216, 2, 1441829, 327680, 2, 1507365, 327680, 2, 1572901, 327680, 2, 1638437, 327680, 2, 1703973, 327680, 2, 1376294, 393216, 2, 1441830, 327680, 2, 1507366, 327680, 2, 1572902, 327680, 2, 1638438, 327680, 2, 1703974, 327680, 2, 1376295, 393216, 2, 1441831, 327680, 2, 1507367, 327680, 2, 1572903, 327680, 2, 1638439, 327680, 2, 1703975, 327680, 2, 1376296, 393216, 2, 1441832, 327680, 2, 1507368, 327680, 2, 1572904, 327680, 2, 1638440, 327680, 2, 1703976, 327680, 2, 1376297, 393216, 1, 1441833, 327680, 2, 1507369, 327680, 2, 1572905, 327680, 2, 1638441, 327680, 2, 1703977, 327680, 2, 1441844, 327680, 2, 1507380, 327680, 2, 1572916, 327680, 2, 1638452, 327680, 2, 1703988, 327680, 2, 1441845, 327680, 2, 1507381, 327680, 2, 1572917, 327680, 2, 1638453, 327680, 2, 1703989, 327680, 2, 1441846, 327680, 2, 1507382, 327680, 2, 1572918, 327680, 2, 1638454, 327680, 2, 1703990, 327680, 2, 1441847, 327680, 2, 1507383, 327680, 2, 1572919, 327680, 2, 1638455, 327680, 2, 1703991, 327680, 2, 1441848, 327680, 2, 1507384, 327680, 2, 1572920, 327680, 2, 1638456, 327680, 2, 1703992, 327680, 2, 1441849, 327680, 2, 1507385, 327680, 2, 1572921, 327680, 2, 1638457, 327680, 2, 1703993, 327680, 2, 1441850, 327680, 2, 1507386, 327680, 2, 1572922, 327680, 2, 1638458, 327680, 2, 1703994, 327680, 2, 1441851, 327680, 2, 1507387, 327680, 2, 1572923, 327680, 2, 1638459, 327680, 2, 1703995, 327680, 2, 1441852, 327680, 2, 1507388, 327680, 2, 1572924, 327680, 2, 1638460, 327680, 2, 1703996, 327680, 2, 1441853, 327680, 2, 1507389, 327680, 2, 1572925, 327680, 2, 1638461, 327680, 2, 1703997, 327680, 2, 1376309, 393216, 2, 1376310, 393216, 2, 1376311, 393216, 2, 1376312, 393216, 2, 1376313, 393216, 2, 1376314, 393216, 2, 1376315, 393216, 2, 1376316, 393216, 2, 1310833, 327680, 1, 1310834, 393216, 1, 1376369, 327680, 2, 1441905, 327680, 2, 1507441, 327680, 2, 1572977, 327680, 2, 1638513, 327680, 2, 1704049, 327680, 2, 1769585, 327680, 2, 1835121, 327680, 2, 1900657, 327680, 2, 1966193, 327680, 2, 2031729, 327680, 2, 2097265, 327680, 2, 2162801, 327680, 2, 1376370, 327680, 2, 1441906, 327680, 2, 1507442, 327680, 2, 1572978, 327680, 2, 1638514, 327680, 2, 1704050, 327680, 2, 1769586, 327680, 2, 1835122, 327680, 2, 1900658, 327680, 2, 1966194, 327680, 2, 2031730, 327680, 2, 2097266, 327680, 2, 2162802, 327680, 2)
 layer_1/name = "Border_Vertical"
-layer_1/tile_data = PackedInt32Array(786576, 458754, 4, 786577, 458754, 4, 786578, 458754, 4, 786579, 458754, 4, 786580, 458754, 4, 786581, 458754, 4, 786582, 458754, 4, 786583, 458754, 4, 786584, 458754, 4, 786585, 458754, 4, 786586, 458754, 4, 786587, 458754, 4, 786588, 458754, 4, 786589, 458754, 4, 786590, 458754, 4, 786591, 458754, 4, 786592, 458754, 4, 786593, 458754, 4, 721058, 458754, 4, 655523, 458754, 4, 589988, 458754, 4, 524453, 458754, 4, 458918, 458754, 4, 393383, 458754, 4, 327848, 458754, 4, 262313, 458754, 4, 196778, 458754, 4, 196779, 458754, 4, 196780, 458754, 4, 196781, 458754, 4, 196782, 458754, 4, 196783, 458754, 4, 196784, 458754, 4, 196785, 458754, 4, 131249, 458754, 4, 131250, 458754, 4, 131251, 458754, 4, 131252, 458754, 4, 131253, 458754, 4, 131254, 458754, 4, 131255, 458754, 4, 131256, 458754, 4, 131257, 458754, 4, 131258, 458754, 4, 196794, 458754, 4, 196795, 458754, 4, 196796, 458754, 4, 196797, 458754, 4, 196798, 458754, 4, 196799, 458754, 4, 196800, 458754, 4, 196801, 458754, 4, 196802, 458754, 4, 196803, 458754, 4, 196804, 458754, 4, 196805, 458754, 4, 196806, 458754, 4, 196807, 458754, 4, 196808, 458754, 4, 196809, 458754, 4, 196810, 458754, 4, 196811, 458754, 4)
 layer_2/name = "Border_Horizontal"
 layer_2/modulate = Color(1, 1, 1, 0)
 layer_2/tile_data = PackedInt32Array(65535, 458754, 11, 131071, 458754, 11, 196607, 458754, 11, 262143, 458754, 11, 327679, 458754, 11, 393215, 458754, 11, 458751, 458754, 11, -393013, 458754, 11, -327477, 458754, 11, -261941, 458754, 11, -196405, 458754, 11, -130869, 458754, 11, -65333, 458754, 11, 203, 458754, 11, 65739, 458754, 11, 131275, 458754, 11)
@@ -1136,6 +1139,7 @@ position = Vector2(36, 200)
 script = ExtResource("6_qgbq7")
 
 [node name="Player" parent="." instance=ExtResource("7_as8vh")]
+z_index = 10
 position = Vector2(36, 200)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -1320,14 +1324,6 @@ texture = ExtResource("22_c21fn")
 heal_amount = 5
 COLOR = Color(0, 0.59607846, 0.8627451, 1)
 
-[node name="MagicBamboo2" parent="Obstacles/MagicBamboo" instance=ExtResource("21_fo8ia")]
-z_index = 5
-position = Vector2(393, 249)
-gravity_scale = 0.0
-texture = ExtResource("22_c21fn")
-heal_amount = 5
-COLOR = Color(0.70023185, 0.006506074, 0.19450584, 1)
-
 [node name="MagicBamboo3" parent="Obstacles/MagicBamboo" instance=ExtResource("21_fo8ia")]
 z_index = 5
 position = Vector2(577, 8)
@@ -1457,8 +1453,44 @@ collision_layer = 256
 walk_speed = 100
 sprint_speed = 100
 
+[node name="Dragon Enemy" parent="Enemies" instance=ExtResource("33_51upf")]
+z_index = 7
+position = Vector2(267, 281)
+
+[node name="Dragon Enemy2" parent="Enemies" instance=ExtResource("33_51upf")]
+z_index = 7
+position = Vector2(1112, 282)
+
+[node name="Dragon Enemy3" parent="Enemies" instance=ExtResource("33_51upf")]
+z_index = 7
+position = Vector2(1721, 168)
+
+[node name="Dragon Enemy4" parent="Enemies" instance=ExtResource("33_51upf")]
+z_index = 7
+position = Vector2(1127, 173)
+
+[node name="Dragon Enemy5" parent="Enemies" instance=ExtResource("33_51upf")]
+z_index = 7
+position = Vector2(1208, -178)
+
+[node name="Dragon Enemy6" parent="Enemies" instance=ExtResource("33_51upf")]
+z_index = 7
+position = Vector2(1656, -174)
+
 [node name="ParralaxBackground" parent="." instance=ExtResource("33_hoehn")]
 position = Vector2(1, 314)
+
+[node name="Scrolls" type="Node2D" parent="."]
+
+[node name="Scroll7" parent="Scrolls" instance=ExtResource("34_as8vh")]
+z_index = 20
+position = Vector2(1736, 285)
+dialogue = ExtResource("35_51upf")
+
+[node name="Scroll8" parent="Scrolls" instance=ExtResource("34_as8vh")]
+z_index = 20
+position = Vector2(391, 238)
+dialogue = ExtResource("36_k5ql6")
 
 [connection signal="body_entered" from="killzone" to="killzone" method="_on_body_entered"]
 [connection signal="body_entered" from="Next_level" to="Next_level" method="_on_body_entered"]
