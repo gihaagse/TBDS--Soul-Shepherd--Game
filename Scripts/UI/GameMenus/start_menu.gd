@@ -42,7 +42,7 @@ func _on_start_pressed() -> void:
 func _on_continue_pressed() -> void:
 	#print("continuing...")
 	var section := SaveData.get_last_section()  
-	var scene_path := "res://Scenes/Level/Level_%s.tscn" % section 
+	var scene_path := "res://Scenes/Level/level_%s.tscn" % section 
    
 	if section == "0-0":  
 		continue_panel.visible = true
@@ -54,7 +54,7 @@ func _on_continue_pressed() -> void:
 	if ResourceLoader.exists(scene_path):
 		get_tree().change_scene_to_file.bind(scene_path).call_deferred()
 	else:
-		get_tree().change_scene_to_file.bind("res://Scenes/Level/Level_0-0.tscn").call_deferred()
+		get_tree().change_scene_to_file.bind("res://Scenes/Level/level_0-0.tscn").call_deferred()
 
 
 
@@ -87,7 +87,7 @@ func regain_menu_focus():
 		
 		
 func _on_game_start_timer_timeout() -> void:
-	get_tree().change_scene_to_file.bind("res://Scenes/Level/Level_0-0.tscn").call_deferred()
+	get_tree().change_scene_to_file.bind("res://Scenes/Level/level_0-0.tscn").call_deferred()
 	#get_tree().change_scene_to_file("res://Scenes/Level/playtest2.tscn")d
 	Engine.time_scale = 1
 

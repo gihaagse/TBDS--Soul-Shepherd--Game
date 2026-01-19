@@ -28,8 +28,8 @@ func _process(delta: float) -> void:
 	if paused:
 		return
 		
-	if Input.is_action_just_pressed("AbilityDebug"):
-		ability_debug_menu.visible = !ability_debug_menu.visible
+	#if Input.is_action_just_pressed("AbilityDebug"):
+		#ability_debug_menu.visible = !ability_debug_menu.visible
 		
 	if is_timer_on:
 		dash_timer.visible = true

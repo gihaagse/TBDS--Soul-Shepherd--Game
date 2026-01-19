@@ -1,48 +1,48 @@
 [gd_scene load_steps=59 format=3 uid="uid://lahfkubql7vo"]
 
-[ext_resource type="Script" uid="uid://beypopj8ttlnq" path="res://Scripts/Level/playtest_2.gd" id="1_5dr80"]
-[ext_resource type="Script" uid="uid://byn1je7flnjo3" path="res://Scripts/Central/game_manager.gd" id="2_fiy4m"]
-[ext_resource type="Texture2D" uid="uid://goes5l2sfyvw" path="res://Assets/Sprites/Tileset1.png" id="2_w85r1"]
-[ext_resource type="Texture2D" uid="uid://dfdfu6o1j3apv" path="res://Assets/Sprites/Playtest1.png" id="3_761oq"]
-[ext_resource type="Texture2D" uid="uid://j1w6x4hpn3ou" path="res://Assets/Icons/Sung Chin Woo Icon.png" id="4_jfsde"]
-[ext_resource type="Shader" uid="uid://b4k5pl844vedq" path="res://Shaders/water_shader_vertical_waves.gdshader" id="4_xdu28"]
-[ext_resource type="PackedScene" uid="uid://c45jpc3kaflr4" path="res://Scenes/CheckPoints/CheckPoint.tscn" id="5_imv4w"]
-[ext_resource type="Script" uid="uid://dtfsguwdnfr7m" path="res://Scripts/CheckPoints/start.gd" id="6_26g8j"]
-[ext_resource type="PackedScene" uid="uid://c5ongupm07qh3" path="res://Scenes/Player/player.tscn" id="7_6skth"]
-[ext_resource type="Script" uid="uid://ce43l01wboarg" path="res://Scripts/UI/Overlay/canvas_layer.gd" id="8_5dr80"]
-[ext_resource type="FontFile" uid="uid://x2dwsfc3en6q" path="res://Assets/Tutorial Open Assets/brackeys_platformer_assets/fonts/PixelOperator8.ttf" id="9_b6pkf"]
-[ext_resource type="PackedScene" uid="uid://dbawdw77kghcn" path="res://Scenes/UI/GameMenus/Pause_Menu.tscn" id="10_j1x2j"]
-[ext_resource type="PackedScene" uid="uid://brc3fv7pjl1bv" path="res://Scenes/UI/GameMenus/Options_Menu.tscn" id="11_8jqki"]
-[ext_resource type="PackedScene" uid="uid://b1wpf7mxi7ax8" path="res://Scenes/UI/Overlay/ability_debug_menu.tscn" id="12_xdu28"]
-[ext_resource type="PackedScene" uid="uid://bdqpqswjpdvot" path="res://Scenes/UI/Overlay/ability_grid.tscn" id="13_s0mbj"]
-[ext_resource type="PackedScene" uid="uid://c64nl2fkq45ge" path="res://Scenes/UI/Overlay/AbilityInfoButton.tscn" id="14_b6pkf"]
-[ext_resource type="PackedScene" uid="uid://3nx8i28smrqo" path="res://Scenes/UI/GameMenus/Ability_Info.tscn" id="14_fmhbg"]
-[ext_resource type="PackedScene" uid="uid://bpp47tnrfdrab" path="res://Scenes/UI/Components/player_hud.tscn" id="15_j1x2j"]
-[ext_resource type="PackedScene" uid="uid://bajjogst0v58d" path="res://Scenes/UI/Overlay/CheckPointRespawnUI.tscn" id="15_lpv7w"]
-[ext_resource type="FontFile" uid="uid://p47ydk5quyq2" path="res://Assets/Tutorial Open Assets/brackeys_platformer_assets/fonts/PixelOperator8-Bold.ttf" id="16_8jqki"]
-[ext_resource type="Script" uid="uid://b2b6rmyyluckx" path="res://Scripts/Player/General/camera_2d.gd" id="16_w85r1"]
-[ext_resource type="PackedScene" uid="uid://5jrffwap8tjk" path="res://Scenes/Background/parralax_background.tscn" id="17_ab6ox"]
-[ext_resource type="Script" uid="uid://bpkjqkjnq8o6g" path="res://Scripts/Player/General/killzone.gd" id="18_mn8ec"]
-[ext_resource type="PackedScene" uid="uid://d3ww40qkxw5eq" path="res://Scenes/Dialogue/dialogue_interact.tscn" id="19_xdu28"]
-[ext_resource type="Resource" uid="uid://dgfnxjhqxasj7" path="res://Resources/Dialogue/FriendlyMonk1.tres" id="20_s0mbj"]
-[ext_resource type="Texture2D" uid="uid://bpawmr3tt1vu8" path="res://Assets/Sprites/Dialogue Sprites/monk_sitting_sprite.png" id="21_fmhbg"]
-[ext_resource type="PackedScene" uid="uid://ndkp1vfqmr4g" path="res://Scenes/Dialogue/DialogueUI.tscn" id="22_lpv7w"]
-[ext_resource type="PackedScene" uid="uid://dpatdmh4s5sg5" path="res://Scenes/GrapplingSystem/GrapplingHookSystem.tscn" id="27_hyn4w"]
-[ext_resource type="AudioStream" uid="uid://bccfyoxchtj6i" path="res://Assets/Audio/Music/1-1 Trample The Temple.wav" id="27_w85r1"]
-[ext_resource type="Script" uid="uid://b7008awu7lly6" path="res://Scenes/Level/next_level.gd" id="31_b6pkf"]
-[ext_resource type="PackedScene" uid="uid://dm61xmst0522o" path="res://Scenes/Items/magic_bamboo.tscn" id="31_j1x2j"]
-[ext_resource type="Texture2D" uid="uid://c8dol58rb8t5j" path="res://Assets/Sprites/Magic Bamboo/+5 hp magic bamboo.png" id="32_8jqki"]
-[ext_resource type="PackedScene" uid="uid://cl45lm0hg20kf" path="res://Scenes/Items/soul.tscn" id="32_xdu28"]
-[ext_resource type="SpriteFrames" uid="uid://cgtj4wt3ql8r1" path="res://Resources/Wisps/Fire_Wisp.tres" id="33_s0mbj"]
-[ext_resource type="SpriteFrames" uid="uid://dg0vx2sffi824" path="res://Resources/Wisps/Green_Wisp.tres" id="34_fmhbg"]
-[ext_resource type="PackedScene" uid="uid://bdhxnuny30cml" path="res://Scenes/Items/scroll.tscn" id="35_fmhbg"]
-[ext_resource type="Resource" uid="uid://c1oql5tsw3f8k" path="res://Resources/Scroll/scroll1.tres" id="36_lpv7w"]
-[ext_resource type="Resource" uid="uid://djemipvmm5y8y" path="res://Resources/Scroll/scroll2.tres" id="37_w85r1"]
-[ext_resource type="PackedScene" uid="uid://bllnww8iurqf2" path="res://Scenes/Enemies/monk.tscn" id="39_mn8ec"]
-[ext_resource type="PackedScene" uid="uid://bkb1hbs8mvgj2" path="res://Scenes/Enemies/ninja.tscn" id="40_hyn4w"]
+[ext_resource type="Script" uid="uid://beypopj8ttlnq" path="res://Scripts/Level/playtest_2.gd" id="1_3bhc2"]
+[ext_resource type="Texture2D" uid="uid://goes5l2sfyvw" path="res://Assets/Sprites/Tileset1.png" id="2_06l72"]
+[ext_resource type="Texture2D" uid="uid://j1w6x4hpn3ou" path="res://Assets/Icons/Sung Chin Woo Icon.png" id="3_xw1pn"]
+[ext_resource type="Shader" path="res://Shaders/water_shader_vertical_waves.gdshader" id="4_82cu6"]
+[ext_resource type="Texture2D" uid="uid://dfdfu6o1j3apv" path="res://Assets/Sprites/Playtest1.png" id="5_h605c"]
+[ext_resource type="Script" uid="uid://byn1je7flnjo3" path="res://Scripts/Central/game_manager.gd" id="6_ein1i"]
+[ext_resource type="PackedScene" uid="uid://c5ongupm07qh3" path="res://Scenes/Player/player.tscn" id="7_7ti17"]
+[ext_resource type="Script" uid="uid://ce43l01wboarg" path="res://Scripts/UI/Overlay/canvas_layer.gd" id="8_ohddo"]
+[ext_resource type="FontFile" uid="uid://x2dwsfc3en6q" path="res://Assets/Tutorial Open Assets/brackeys_platformer_assets/fonts/PixelOperator8.ttf" id="9_ra0wt"]
+[ext_resource type="PackedScene" uid="uid://dbawdw77kghcn" path="res://Scenes/UI/GameMenus/Pause_Menu.tscn" id="10_uago6"]
+[ext_resource type="PackedScene" uid="uid://brc3fv7pjl1bv" path="res://Scenes/UI/GameMenus/Options_Menu.tscn" id="11_wi8d4"]
+[ext_resource type="PackedScene" uid="uid://b1wpf7mxi7ax8" path="res://Scenes/UI/Overlay/ability_debug_menu.tscn" id="12_talsm"]
+[ext_resource type="PackedScene" uid="uid://bdqpqswjpdvot" path="res://Scenes/UI/Overlay/ability_grid.tscn" id="13_wy6ud"]
+[ext_resource type="PackedScene" uid="uid://3nx8i28smrqo" path="res://Scenes/UI/GameMenus/Ability_Info.tscn" id="14_m2o66"]
+[ext_resource type="PackedScene" uid="uid://bajjogst0v58d" path="res://Scenes/UI/Overlay/CheckPointRespawnUI.tscn" id="15_o3yor"]
+[ext_resource type="PackedScene" uid="uid://c64nl2fkq45ge" path="res://Scenes/UI/Overlay/AbilityInfoButton.tscn" id="16_p65wb"]
+[ext_resource type="PackedScene" uid="uid://bpp47tnrfdrab" path="res://Scenes/UI/Components/player_hud.tscn" id="17_botao"]
+[ext_resource type="FontFile" uid="uid://p47ydk5quyq2" path="res://Assets/Tutorial Open Assets/brackeys_platformer_assets/fonts/PixelOperator8-Bold.ttf" id="18_r1nat"]
+[ext_resource type="Script" uid="uid://b2b6rmyyluckx" path="res://Scripts/Player/General/camera_2d.gd" id="19_h4eji"]
+[ext_resource type="PackedScene" uid="uid://5jrffwap8tjk" path="res://Scenes/Background/parralax_background.tscn" id="20_ljx1q"]
+[ext_resource type="PackedScene" uid="uid://d3ww40qkxw5eq" path="res://Scenes/Dialogue/dialogue_interact.tscn" id="21_h65ym"]
+[ext_resource type="Resource" uid="uid://dgfnxjhqxasj7" path="res://Resources/Dialogue/FriendlyMonk1.tres" id="22_unx8f"]
+[ext_resource type="Texture2D" uid="uid://bpawmr3tt1vu8" path="res://Assets/Sprites/Dialogue Sprites/monk_sitting_sprite.png" id="23_v3vmg"]
+[ext_resource type="PackedScene" uid="uid://ndkp1vfqmr4g" path="res://Scenes/Dialogue/DialogueUI.tscn" id="24_16yup"]
+[ext_resource type="Script" uid="uid://bpkjqkjnq8o6g" path="res://Scripts/Player/General/killzone.gd" id="25_xou5b"]
+[ext_resource type="PackedScene" uid="uid://dpatdmh4s5sg5" path="res://Scenes/GrapplingSystem/GrapplingHookSystem.tscn" id="26_vkmvt"]
+[ext_resource type="AudioStream" uid="uid://bccfyoxchtj6i" path="res://Assets/Audio/Music/1-1 Trample The Temple.wav" id="27_wudrg"]
+[ext_resource type="PackedScene" uid="uid://c45jpc3kaflr4" path="res://Scenes/CheckPoints/CheckPoint.tscn" id="28_jgcn7"]
+[ext_resource type="Script" uid="uid://dtfsguwdnfr7m" path="res://Scripts/CheckPoints/start.gd" id="29_jhudb"]
+[ext_resource type="PackedScene" uid="uid://dm61xmst0522o" path="res://Scenes/Items/magic_bamboo.tscn" id="30_dqmnx"]
+[ext_resource type="Texture2D" uid="uid://c8dol58rb8t5j" path="res://Assets/Sprites/Magic Bamboo/+5 hp magic bamboo.png" id="31_ac6l3"]
+[ext_resource type="Script" uid="uid://b7008awu7lly6" path="res://Scenes/Level/next_level.gd" id="32_t7not"]
+[ext_resource type="PackedScene" uid="uid://cl45lm0hg20kf" path="res://Scenes/Items/soul.tscn" id="33_8vkn1"]
+[ext_resource type="SpriteFrames" uid="uid://cgtj4wt3ql8r1" path="res://Resources/Wisps/Fire_Wisp.tres" id="34_0palk"]
+[ext_resource type="SpriteFrames" uid="uid://dg0vx2sffi824" path="res://Resources/Wisps/Green_Wisp.tres" id="35_j0vdp"]
+[ext_resource type="PackedScene" uid="uid://bdhxnuny30cml" path="res://Scenes/Items/scroll.tscn" id="36_f2i5l"]
+[ext_resource type="Resource" uid="uid://c1oql5tsw3f8k" path="res://Resources/Scroll/scroll1.tres" id="37_bwaso"]
+[ext_resource type="Resource" uid="uid://djemipvmm5y8y" path="res://Resources/Scroll/scroll2.tres" id="38_m24j7"]
+[ext_resource type="PackedScene" uid="uid://bllnww8iurqf2" path="res://Scenes/Enemies/monk.tscn" id="39_8bk4t"]
+[ext_resource type="PackedScene" uid="uid://bkb1hbs8mvgj2" path="res://Scenes/Enemies/ninja.tscn" id="40_icjut"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j3um3"]
-texture = ExtResource("2_w85r1")
+texture = ExtResource("2_06l72")
 10:0/0 = 0
 11:0/0 = 0
 12:0/0 = 0
@@ -287,7 +287,7 @@ texture = ExtResource("2_w85r1")
 15:10/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5dcil"]
-texture = ExtResource("4_jfsde")
+texture = ExtResource("3_xw1pn")
 7:4/0 = 0
 7:4/0/physics_layer_1/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 3:8/0 = 0
@@ -470,7 +470,7 @@ sources/0 = SubResource("TileSetAtlasSource_j3um3")
 sources/2 = SubResource("TileSetAtlasSource_5dcil")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_s0mbj"]
-shader = ExtResource("4_xdu28")
+shader = ExtResource("4_82cu6")
 shader_parameter/wave_height = 0.06
 shader_parameter/wave_frequency = 5.0
 shader_parameter/wave_speed = 1.5
@@ -479,7 +479,7 @@ shader_parameter/texture_wave_strength = 0.00499999988824
 shader_parameter/animation_speed = 1.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xdu28"]
-texture = ExtResource("3_761oq")
+texture = ExtResource("5_h605c")
 10:0/0 = 0
 11:0/0 = 0
 12:0/0 = 0
@@ -692,7 +692,7 @@ texture = ExtResource("3_761oq")
 3:7/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_s0mbj"]
-texture = ExtResource("4_jfsde")
+texture = ExtResource("3_xw1pn")
 7:4/0 = 0
 7:4/0/physics_layer_1/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 3:8/0 = 0
@@ -961,7 +961,7 @@ _data = {
 size = Vector2(48, 16)
 
 [node name="Level" type="Node2D" node_paths=PackedStringArray("start")]
-script = ExtResource("1_5dr80")
+script = ExtResource("1_3bhc2")
 start = NodePath("CheckPoints/Start")
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -987,20 +987,20 @@ layer_2/name = "Border_Horizontal"
 
 [node name="GameManager" type="Node" parent="."]
 unique_name_in_owner = true
-script = ExtResource("2_fiy4m")
+script = ExtResource("6_ein1i")
 
-[node name="Player" parent="." instance=ExtResource("7_6skth")]
+[node name="Player" parent="." instance=ExtResource("7_7ti17")]
 position = Vector2(16, 217)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 process_mode = 3
-script = ExtResource("8_5dr80")
+script = ExtResource("8_ohddo")
 
 [node name="Current State" type="Label" parent="CanvasLayer"]
 visible = false
 offset_right = 40.0
 offset_bottom = 23.0
-theme_override_fonts/font = ExtResource("9_b6pkf")
+theme_override_fonts/font = ExtResource("9_ra0wt")
 theme_override_font_sizes/font_size = 32
 text = "State: "
 
@@ -1009,7 +1009,7 @@ visible = false
 offset_top = 38.0
 offset_right = 168.0
 offset_bottom = 70.0
-theme_override_fonts/font = ExtResource("9_b6pkf")
+theme_override_fonts/font = ExtResource("9_ra0wt")
 theme_override_font_sizes/font_size = 32
 text = "Equip: "
 
@@ -1021,7 +1021,7 @@ anchor_bottom = 1.0
 offset_top = -32.0
 offset_right = 76.0
 grow_vertical = 0
-theme_override_fonts/font = ExtResource("9_b6pkf")
+theme_override_fonts/font = ExtResource("9_ra0wt")
 theme_override_font_sizes/font_size = 32
 text = "HP:"
 
@@ -1049,17 +1049,17 @@ offset_right = 20.0
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("9_b6pkf")
+theme_override_fonts/font = ExtResource("9_ra0wt")
 theme_override_font_sizes/font_size = 64
 text = "Game Over"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("10_j1x2j")]
+[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("10_uago6")]
 visible = false
 z_index = 6
 
-[node name="OptionsMenu" parent="CanvasLayer" instance=ExtResource("11_8jqki")]
+[node name="OptionsMenu" parent="CanvasLayer" instance=ExtResource("11_wi8d4")]
 visible = false
 
 [node name="DashTimer" type="Label" parent="CanvasLayer"]
@@ -1073,7 +1073,7 @@ grow_horizontal = 0
 text = "Dash Timer"
 horizontal_alignment = 2
 
-[node name="AbilityDebugMenu" parent="CanvasLayer" instance=ExtResource("12_xdu28")]
+[node name="AbilityDebugMenu" parent="CanvasLayer" instance=ExtResource("12_talsm")]
 visible = false
 anchors_preset = 5
 anchor_left = 0.5
@@ -1081,24 +1081,24 @@ anchor_right = 0.5
 anchor_bottom = 0.0
 grow_vertical = 1
 
-[node name="AbilityGrid" parent="CanvasLayer" instance=ExtResource("13_s0mbj")]
+[node name="AbilityGrid" parent="CanvasLayer" instance=ExtResource("13_wy6ud")]
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
 grow_horizontal = 0
 grow_vertical = 0
 
-[node name="Ability_info" parent="CanvasLayer" instance=ExtResource("14_fmhbg")]
+[node name="Ability_info" parent="CanvasLayer" instance=ExtResource("14_m2o66")]
 visible = false
 
-[node name="CheckPointRespawnUI" parent="CanvasLayer" instance=ExtResource("15_lpv7w")]
+[node name="CheckPointRespawnUI" parent="CanvasLayer" instance=ExtResource("15_o3yor")]
 visible = false
 
-[node name="AbilityInfoButton" parent="CanvasLayer" instance=ExtResource("14_b6pkf")]
+[node name="AbilityInfoButton" parent="CanvasLayer" instance=ExtResource("16_p65wb")]
 offset_top = -224.0
 offset_bottom = -184.0
 
-[node name="PlayerHUD" parent="CanvasLayer" instance=ExtResource("15_j1x2j")]
+[node name="PlayerHUD" parent="CanvasLayer" instance=ExtResource("17_botao")]
 offset_left = 12.0
 offset_top = 446.0
 offset_right = -1140.0
@@ -1110,7 +1110,7 @@ offset_left = 8.0
 offset_top = 10.0
 offset_right = 276.0
 offset_bottom = 72.0
-theme_override_fonts/font = ExtResource("16_8jqki")
+theme_override_fonts/font = ExtResource("18_r1nat")
 theme_override_font_sizes/font_size = 20
 text = "Current Level: 
 1-1"
@@ -1122,27 +1122,27 @@ limit_right = 6432
 drag_vertical_offset = -0.2
 drag_top_margin = 0.0
 drag_bottom_margin = 0.5
-script = ExtResource("16_w85r1")
+script = ExtResource("19_h4eji")
 player = NodePath("../Player")
 base_offset = Vector2(30, 30)
 ground_cam_offset = -50.0
 right_cam_offset = -60.0
 
-[node name="ParralaxBackground" parent="." instance=ExtResource("17_ab6ox")]
+[node name="ParralaxBackground" parent="." instance=ExtResource("20_ljx1q")]
 z_index = 1
 position = Vector2(0, 324)
 
-[node name="DialogueInteract" parent="." instance=ExtResource("19_xdu28")]
+[node name="DialogueInteract" parent="." instance=ExtResource("21_h65ym")]
 z_index = 5
 position = Vector2(128, 228)
-dialogue = ExtResource("20_s0mbj")
+dialogue = ExtResource("22_unx8f")
 
 [node name="Sprite2D" parent="DialogueInteract" index="2"]
 position = Vector2(-1, 1)
 scale = Vector2(0.085, 0.085)
-texture = ExtResource("21_fmhbg")
+texture = ExtResource("23_v3vmg")
 
-[node name="DialogueUI" parent="." instance=ExtResource("22_lpv7w")]
+[node name="DialogueUI" parent="." instance=ExtResource("24_16yup")]
 visible = false
 
 [node name="DeathBoxes" type="Node" parent="."]
@@ -1152,7 +1152,7 @@ modulate = Color(0.46909875, 0.020395478, 0.13279754, 1)
 z_index = 6
 position = Vector2(456, 232)
 collision_mask = 4
-script = ExtResource("18_mn8ec")
+script = ExtResource("25_xou5b")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeathBoxes/killzone"]
 shape = SubResource("RectangleShape2D_xdu28")
@@ -1162,7 +1162,7 @@ modulate = Color(0.46909875, 0.020395478, 0.13279754, 1)
 z_index = 6
 position = Vector2(1032, 222)
 collision_mask = 4
-script = ExtResource("18_mn8ec")
+script = ExtResource("25_xou5b")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeathBoxes/killzone2"]
 shape = SubResource("RectangleShape2D_xdu28")
@@ -1172,7 +1172,7 @@ modulate = Color(0.46909875, 0.020395478, 0.13279754, 1)
 z_index = 6
 position = Vector2(1690, 176)
 collision_mask = 4
-script = ExtResource("18_mn8ec")
+script = ExtResource("25_xou5b")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeathBoxes/killzone3"]
 shape = SubResource("RectangleShape2D_xdu28")
@@ -1182,7 +1182,7 @@ modulate = Color(0.46909875, 0.020395478, 0.13279754, 1)
 z_index = 6
 position = Vector2(2336, 190)
 collision_mask = 4
-script = ExtResource("18_mn8ec")
+script = ExtResource("25_xou5b")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeathBoxes/killzone4"]
 shape = SubResource("RectangleShape2D_xdu28")
@@ -1192,7 +1192,7 @@ modulate = Color(0.46909875, 0.020395478, 0.13279754, 1)
 z_index = 6
 position = Vector2(3288, 95)
 collision_mask = 4
-script = ExtResource("18_mn8ec")
+script = ExtResource("25_xou5b")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeathBoxes/killzone5"]
 shape = SubResource("RectangleShape2D_s0mbj")
@@ -1202,7 +1202,7 @@ modulate = Color(0.46909875, 0.020395478, 0.13279754, 1)
 z_index = 6
 position = Vector2(3448, 111)
 collision_mask = 4
-script = ExtResource("18_mn8ec")
+script = ExtResource("25_xou5b")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeathBoxes/killzone6"]
 shape = SubResource("RectangleShape2D_s0mbj")
@@ -1212,7 +1212,7 @@ modulate = Color(0.46909875, 0.020395478, 0.13279754, 1)
 z_index = 6
 position = Vector2(3640, 131)
 collision_mask = 4
-script = ExtResource("18_mn8ec")
+script = ExtResource("25_xou5b")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeathBoxes/killzone7"]
 shape = SubResource("RectangleShape2D_fmhbg")
@@ -1222,7 +1222,7 @@ modulate = Color(0.46909875, 0.020395478, 0.13279754, 1)
 z_index = 6
 position = Vector2(4112, 144)
 collision_mask = 4
-script = ExtResource("18_mn8ec")
+script = ExtResource("25_xou5b")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeathBoxes/killzone8"]
 shape = SubResource("RectangleShape2D_fmhbg")
@@ -1232,7 +1232,7 @@ modulate = Color(0.46909875, 0.020395478, 0.13279754, 1)
 z_index = 6
 position = Vector2(4720, -4)
 collision_mask = 4
-script = ExtResource("18_mn8ec")
+script = ExtResource("25_xou5b")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeathBoxes/killzone9"]
 shape = SubResource("RectangleShape2D_lpv7w")
@@ -1242,7 +1242,7 @@ modulate = Color(0.46909875, 0.020395478, 0.13279754, 1)
 z_index = 6
 position = Vector2(5552, 241)
 collision_mask = 4
-script = ExtResource("18_mn8ec")
+script = ExtResource("25_xou5b")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeathBoxes/killzone10"]
 shape = SubResource("RectangleShape2D_w85r1")
@@ -1252,16 +1252,16 @@ modulate = Color(0.46909875, 0.020395478, 0.13279754, 1)
 z_index = 6
 position = Vector2(6128, 58)
 collision_mask = 4
-script = ExtResource("18_mn8ec")
+script = ExtResource("25_xou5b")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeathBoxes/killzone11"]
 shape = SubResource("RectangleShape2D_ab6ox")
 
-[node name="GrapplingHookSystem" parent="." node_paths=PackedStringArray("player_ref") instance=ExtResource("27_hyn4w")]
+[node name="GrapplingHookSystem" parent="." node_paths=PackedStringArray("player_ref") instance=ExtResource("26_vkmvt")]
 player_ref = NodePath("../Player")
 
 [node name="Level1Music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("27_w85r1")
+stream = ExtResource("27_wudrg")
 volume_db = -50.0
 autoplay = true
 bus = &"Music"
@@ -1269,25 +1269,25 @@ bus = &"Music"
 [node name="CheckPoints" type="Node2D" parent="."]
 z_index = 10
 
-[node name="Area2D" parent="CheckPoints" instance=ExtResource("5_imv4w")]
+[node name="Area2D" parent="CheckPoints" instance=ExtResource("28_jgcn7")]
 position = Vector2(1504, 103)
 checkppoint_id = 1
 
-[node name="Area2D2" parent="CheckPoints" instance=ExtResource("5_imv4w")]
+[node name="Area2D2" parent="CheckPoints" instance=ExtResource("28_jgcn7")]
 position = Vector2(2891, -25)
 checkppoint_id = 2
 
-[node name="Area2D3" parent="CheckPoints" instance=ExtResource("5_imv4w")]
+[node name="Area2D3" parent="CheckPoints" instance=ExtResource("28_jgcn7")]
 position = Vector2(4280, -122)
 checkppoint_id = 3
 
-[node name="Area2D4" parent="CheckPoints" instance=ExtResource("5_imv4w")]
+[node name="Area2D4" parent="CheckPoints" instance=ExtResource("28_jgcn7")]
 position = Vector2(5876, -201)
 checkppoint_id = 4
 
 [node name="Start" type="Marker2D" parent="CheckPoints"]
 position = Vector2(15, 216)
-script = ExtResource("6_26g8j")
+script = ExtResource("29_jhudb")
 
 [node name="Obstacles" type="Node2D" parent="."]
 
@@ -1295,18 +1295,18 @@ script = ExtResource("6_26g8j")
 z_index = 4
 position = Vector2(-1, -17)
 
-[node name="MagicBamboo" parent="Obstacles/MagicBamboo" instance=ExtResource("31_j1x2j")]
+[node name="MagicBamboo" parent="Obstacles/MagicBamboo" instance=ExtResource("30_dqmnx")]
 z_index = 5
 position = Vector2(-112, -123)
-texture = ExtResource("32_8jqki")
+texture = ExtResource("31_ac6l3")
 heal_amount = 5
 COLOR = Color(0, 0.59607846, 0.8627451, 1)
 
 [node name="Next_level" type="Area2D" parent="."]
 position = Vector2(6375, 0)
 collision_mask = 4
-script = ExtResource("31_b6pkf")
-level_name = "Level_1-2"
+script = ExtResource("32_t7not")
+level_name = "level_1-2"
 next_level = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Next_level"]
@@ -1326,18 +1326,18 @@ position = Vector2(4152, 88)
 
 [node name="Sprite2D" type="Sprite2D" parent="Moving_platforms/Moving_Platform"]
 position = Vector2(16, 0)
-texture = ExtResource("3_761oq")
+texture = ExtResource("5_h605c")
 region_enabled = true
 region_rect = Rect2(64, 160, 16, 16)
 
 [node name="Sprite2D2" type="Sprite2D" parent="Moving_platforms/Moving_Platform"]
-texture = ExtResource("3_761oq")
+texture = ExtResource("5_h605c")
 region_enabled = true
 region_rect = Rect2(64, 160, 16, 16)
 
 [node name="Sprite2D3" type="Sprite2D" parent="Moving_platforms/Moving_Platform"]
 position = Vector2(-16, 0)
-texture = ExtResource("3_761oq")
+texture = ExtResource("5_h605c")
 region_enabled = true
 region_rect = Rect2(64, 160, 16, 16)
 
@@ -1350,18 +1350,18 @@ position = Vector2(5464, -201)
 
 [node name="Sprite2D" type="Sprite2D" parent="Moving_platforms/Moving_Platform2"]
 position = Vector2(16, 0)
-texture = ExtResource("3_761oq")
+texture = ExtResource("5_h605c")
 region_enabled = true
 region_rect = Rect2(64, 160, 16, 16)
 
 [node name="Sprite2D2" type="Sprite2D" parent="Moving_platforms/Moving_Platform2"]
-texture = ExtResource("3_761oq")
+texture = ExtResource("5_h605c")
 region_enabled = true
 region_rect = Rect2(64, 160, 16, 16)
 
 [node name="Sprite2D3" type="Sprite2D" parent="Moving_platforms/Moving_Platform2"]
 position = Vector2(-16, 0)
-texture = ExtResource("3_761oq")
+texture = ExtResource("5_h605c")
 region_enabled = true
 region_rect = Rect2(64, 160, 16, 16)
 
@@ -1370,80 +1370,80 @@ shape = SubResource("RectangleShape2D_mn8ec")
 
 [node name="Souls" type="Node2D" parent="."]
 
-[node name="Dash" parent="Souls" instance=ExtResource("32_xdu28")]
+[node name="Dash" parent="Souls" instance=ExtResource("33_8vkn1")]
 position = Vector2(1690.0001, -88)
 scale = Vector2(0.765, 0.765)
 ability = 7
-custom_sprite_frames = ExtResource("33_s0mbj")
+custom_sprite_frames = ExtResource("34_0palk")
 
-[node name="Glide" parent="Souls" instance=ExtResource("32_xdu28")]
+[node name="Glide" parent="Souls" instance=ExtResource("33_8vkn1")]
 position = Vector2(5680, -376)
 scale = Vector2(0.765, 0.765)
-custom_sprite_frames = ExtResource("34_fmhbg")
+custom_sprite_frames = ExtResource("35_j0vdp")
 
 [node name="Scrolls" type="Node2D" parent="."]
 
-[node name="Scroll1" parent="Scrolls" instance=ExtResource("35_fmhbg")]
+[node name="Scroll1" parent="Scrolls" instance=ExtResource("36_f2i5l")]
 z_index = 20
 position = Vector2(2279, -62)
-dialogue = ExtResource("36_lpv7w")
+dialogue = ExtResource("37_bwaso")
 
-[node name="Scroll2" parent="Scrolls" instance=ExtResource("35_fmhbg")]
+[node name="Scroll2" parent="Scrolls" instance=ExtResource("36_f2i5l")]
 z_index = 20
 position = Vector2(5776, 176)
-dialogue = ExtResource("37_w85r1")
+dialogue = ExtResource("38_m24j7")
 
 [node name="Enemies" type="Node" parent="."]
 
-[node name="Enemy" parent="Enemies" instance=ExtResource("39_mn8ec")]
+[node name="Enemy" parent="Enemies" instance=ExtResource("39_8bk4t")]
 z_index = 7
 position = Vector2(672, 184)
 
-[node name="Enemy2" parent="Enemies" instance=ExtResource("39_mn8ec")]
+[node name="Enemy2" parent="Enemies" instance=ExtResource("39_8bk4t")]
 z_index = 7
 position = Vector2(1240, 144)
 
-[node name="Enemy3" parent="Enemies" instance=ExtResource("39_mn8ec")]
+[node name="Enemy3" parent="Enemies" instance=ExtResource("39_8bk4t")]
 z_index = 7
 position = Vector2(1688, 88)
 
-[node name="Enemy4" parent="Enemies" instance=ExtResource("39_mn8ec")]
+[node name="Enemy4" parent="Enemies" instance=ExtResource("39_8bk4t")]
 z_index = 7
 position = Vector2(1904, 88)
 
-[node name="Enemy5" parent="Enemies" instance=ExtResource("40_hyn4w")]
+[node name="Enemy5" parent="Enemies" instance=ExtResource("40_icjut")]
 z_index = 7
 position = Vector2(2576, 56)
 
-[node name="Enemy6" parent="Enemies" instance=ExtResource("40_hyn4w")]
+[node name="Enemy6" parent="Enemies" instance=ExtResource("40_icjut")]
 z_index = 7
 position = Vector2(2648, 56)
 
-[node name="Enemy7" parent="Enemies" instance=ExtResource("39_mn8ec")]
+[node name="Enemy7" parent="Enemies" instance=ExtResource("39_8bk4t")]
 z_index = 7
 position = Vector2(3368, 24)
 
-[node name="Enemy8" parent="Enemies" instance=ExtResource("39_mn8ec")]
+[node name="Enemy8" parent="Enemies" instance=ExtResource("39_8bk4t")]
 z_index = 7
 position = Vector2(3520, 56)
 
-[node name="Enemy9" parent="Enemies" instance=ExtResource("40_hyn4w")]
+[node name="Enemy9" parent="Enemies" instance=ExtResource("40_icjut")]
 z_index = 7
 position = Vector2(3808, 53)
 
-[node name="Enemy10" parent="Enemies" instance=ExtResource("40_hyn4w")]
+[node name="Enemy10" parent="Enemies" instance=ExtResource("40_icjut")]
 z_index = 7
 position = Vector2(3904, 53)
 
-[node name="Enemy11" parent="Enemies" instance=ExtResource("39_mn8ec")]
+[node name="Enemy11" parent="Enemies" instance=ExtResource("39_8bk4t")]
 z_index = 7
 position = Vector2(4952, -112)
 
-[node name="Enemy12" parent="Enemies" instance=ExtResource("39_mn8ec")]
+[node name="Enemy12" parent="Enemies" instance=ExtResource("39_8bk4t")]
 z_index = 7
 position = Vector2(5568, -219)
 
-[node name="Enemy13" parent="Enemies" instance=ExtResource("39_mn8ec")]
+[node name="Enemy13" parent="Enemies" instance=ExtResource("39_8bk4t")]
 z_index = 7
 position = Vector2(5800, -216)
 

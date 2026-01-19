@@ -1,41 +1,41 @@
 [gd_scene load_steps=49 format=3 uid="uid://nul54hp1pd74"]
 
-[ext_resource type="Script" uid="uid://c2jeph0pjh467" path="res://Scripts/Level/playtest_level.gd" id="1_p2j2u"]
-[ext_resource type="Script" uid="uid://byn1je7flnjo3" path="res://Scripts/Central/game_manager.gd" id="2_bfh1j"]
-[ext_resource type="Resource" uid="uid://cp18gtlpu6kpa" path="res://Resources/AbilityUnlocking/Arena.tres" id="2_xr5la"]
-[ext_resource type="Texture2D" uid="uid://dfdfu6o1j3apv" path="res://Assets/Sprites/Playtest1.png" id="3_pw0tg"]
-[ext_resource type="Texture2D" uid="uid://j1w6x4hpn3ou" path="res://Assets/Icons/Sung Chin Woo Icon.png" id="4_fmdk8"]
-[ext_resource type="Script" uid="uid://dtfsguwdnfr7m" path="res://Scripts/CheckPoints/start.gd" id="5_nm7s6"]
-[ext_resource type="PackedScene" uid="uid://c5ongupm07qh3" path="res://Scenes/Player/player.tscn" id="6_xr5la"]
-[ext_resource type="Script" uid="uid://b2b6rmyyluckx" path="res://Scripts/Player/General/camera_2d.gd" id="7_qeoee"]
-[ext_resource type="Script" uid="uid://ce43l01wboarg" path="res://Scripts/UI/Overlay/canvas_layer.gd" id="8_3deo8"]
-[ext_resource type="FontFile" uid="uid://x2dwsfc3en6q" path="res://Assets/Tutorial Open Assets/brackeys_platformer_assets/fonts/PixelOperator8.ttf" id="9_eyp8y"]
-[ext_resource type="PackedScene" uid="uid://dbawdw77kghcn" path="res://Scenes/UI/GameMenus/Pause_Menu.tscn" id="10_wjdug"]
-[ext_resource type="PackedScene" uid="uid://brc3fv7pjl1bv" path="res://Scenes/UI/GameMenus/Options_Menu.tscn" id="11_xhm14"]
-[ext_resource type="PackedScene" uid="uid://b1wpf7mxi7ax8" path="res://Scenes/UI/Overlay/ability_debug_menu.tscn" id="12_calfh"]
-[ext_resource type="PackedScene" uid="uid://bdqpqswjpdvot" path="res://Scenes/UI/Overlay/ability_grid.tscn" id="13_oauaa"]
-[ext_resource type="PackedScene" uid="uid://3nx8i28smrqo" path="res://Scenes/UI/GameMenus/Ability_Info.tscn" id="14_i5nic"]
-[ext_resource type="PackedScene" uid="uid://bajjogst0v58d" path="res://Scenes/UI/Overlay/CheckPointRespawnUI.tscn" id="15_i55uw"]
-[ext_resource type="PackedScene" uid="uid://c64nl2fkq45ge" path="res://Scenes/UI/Overlay/AbilityInfoButton.tscn" id="16_keclr"]
-[ext_resource type="PackedScene" uid="uid://bpp47tnrfdrab" path="res://Scenes/UI/Components/player_hud.tscn" id="17_txocl"]
-[ext_resource type="FontFile" uid="uid://p47ydk5quyq2" path="res://Assets/Tutorial Open Assets/brackeys_platformer_assets/fonts/PixelOperator8-Bold.ttf" id="18_vepe8"]
-[ext_resource type="Texture2D" uid="uid://ccx5i1mil6ubv" path="res://Assets/Backgrounds/boss_arena_background.png" id="19_dbf7t"]
-[ext_resource type="PackedScene" uid="uid://ndkp1vfqmr4g" path="res://Scenes/Dialogue/DialogueUI.tscn" id="19_pw0tg"]
-[ext_resource type="Script" uid="uid://bpkjqkjnq8o6g" path="res://Scripts/Player/General/killzone.gd" id="20_xto7o"]
-[ext_resource type="PackedScene" uid="uid://dm61xmst0522o" path="res://Scenes/Items/magic_bamboo.tscn" id="22_ysjws"]
-[ext_resource type="Texture2D" uid="uid://c8dol58rb8t5j" path="res://Assets/Sprites/Magic Bamboo/+5 hp magic bamboo.png" id="23_0tr4f"]
-[ext_resource type="AudioStream" uid="uid://f1brhj7mhajb" path="res://Assets/Audio/Music/1-4 Headmonk - First Boss.wav" id="23_xr5la"]
-[ext_resource type="Script" uid="uid://gaqqlslhdr4g" path="res://Scripts/Obstacles/obstacle_spike.gd" id="24_o3vio"]
-[ext_resource type="Texture2D" uid="uid://s45ti6i317cc" path="res://Assets/Sprites/Obstacles/bamboo_trap_floor.png" id="25_7qnir"]
-[ext_resource type="Shader" uid="uid://80wr7vuod76p" path="res://Shaders/spike_color.gdshader" id="26_05rg0"]
-[ext_resource type="Texture2D" uid="uid://5j8r6plk7dru" path="res://Assets/Sprites/Obstacles/Spikes.png" id="27_nrt8h"]
-[ext_resource type="Script" uid="uid://b7008awu7lly6" path="res://Scenes/Level/next_level.gd" id="28_4tego"]
-[ext_resource type="PackedScene" uid="uid://bu78o5fps1jsf" path="res://Scenes/Enemies/boss_enemy_1.tscn" id="29_bfh1j"]
-[ext_resource type="Script" uid="uid://hfj0hgwiyiqu" path="res://Scripts/Central/event_trigger.gd" id="30_fmdk8"]
-[ext_resource type="Script" uid="uid://cbirdwbh5p7se" path="res://Scripts/Obstacles/gate_crystal.gd" id="31_nm7s6"]
+[ext_resource type="Script" uid="uid://c2jeph0pjh467" path="res://Scripts/Level/playtest_level.gd" id="1_e0jir"]
+[ext_resource type="Resource" uid="uid://cp18gtlpu6kpa" path="res://Resources/AbilityUnlocking/Arena.tres" id="2_7x80c"]
+[ext_resource type="Script" uid="uid://byn1je7flnjo3" path="res://Scripts/Central/game_manager.gd" id="3_7ejdi"]
+[ext_resource type="Texture2D" uid="uid://dfdfu6o1j3apv" path="res://Assets/Sprites/Playtest1.png" id="4_28yfy"]
+[ext_resource type="Texture2D" uid="uid://j1w6x4hpn3ou" path="res://Assets/Icons/Sung Chin Woo Icon.png" id="5_us348"]
+[ext_resource type="Script" uid="uid://dtfsguwdnfr7m" path="res://Scripts/CheckPoints/start.gd" id="6_wra01"]
+[ext_resource type="PackedScene" uid="uid://c5ongupm07qh3" path="res://Scenes/Player/player.tscn" id="7_m7mie"]
+[ext_resource type="Script" uid="uid://b2b6rmyyluckx" path="res://Scripts/Player/General/camera_2d.gd" id="8_325pj"]
+[ext_resource type="Script" uid="uid://ce43l01wboarg" path="res://Scripts/UI/Overlay/canvas_layer.gd" id="9_da04k"]
+[ext_resource type="FontFile" uid="uid://x2dwsfc3en6q" path="res://Assets/Tutorial Open Assets/brackeys_platformer_assets/fonts/PixelOperator8.ttf" id="10_ydd55"]
+[ext_resource type="PackedScene" uid="uid://dbawdw77kghcn" path="res://Scenes/UI/GameMenus/Pause_Menu.tscn" id="11_mgxrl"]
+[ext_resource type="PackedScene" uid="uid://brc3fv7pjl1bv" path="res://Scenes/UI/GameMenus/Options_Menu.tscn" id="12_0kgfx"]
+[ext_resource type="PackedScene" uid="uid://b1wpf7mxi7ax8" path="res://Scenes/UI/Overlay/ability_debug_menu.tscn" id="13_uh2n7"]
+[ext_resource type="PackedScene" uid="uid://bdqpqswjpdvot" path="res://Scenes/UI/Overlay/ability_grid.tscn" id="14_xxbk2"]
+[ext_resource type="PackedScene" uid="uid://3nx8i28smrqo" path="res://Scenes/UI/GameMenus/Ability_Info.tscn" id="15_3t7ny"]
+[ext_resource type="PackedScene" uid="uid://bajjogst0v58d" path="res://Scenes/UI/Overlay/CheckPointRespawnUI.tscn" id="16_0vdgm"]
+[ext_resource type="PackedScene" uid="uid://c64nl2fkq45ge" path="res://Scenes/UI/Overlay/AbilityInfoButton.tscn" id="17_osanp"]
+[ext_resource type="PackedScene" uid="uid://bpp47tnrfdrab" path="res://Scenes/UI/Components/player_hud.tscn" id="18_7wvus"]
+[ext_resource type="FontFile" uid="uid://p47ydk5quyq2" path="res://Assets/Tutorial Open Assets/brackeys_platformer_assets/fonts/PixelOperator8-Bold.ttf" id="19_oglea"]
+[ext_resource type="PackedScene" uid="uid://ndkp1vfqmr4g" path="res://Scenes/Dialogue/DialogueUI.tscn" id="20_nduom"]
+[ext_resource type="Texture2D" uid="uid://ccx5i1mil6ubv" path="res://Assets/Backgrounds/boss_arena_background.png" id="21_jiko5"]
+[ext_resource type="Script" uid="uid://bpkjqkjnq8o6g" path="res://Scripts/Player/General/killzone.gd" id="22_cufwy"]
+[ext_resource type="AudioStream" uid="uid://f1brhj7mhajb" path="res://Assets/Audio/Music/1-4 Headmonk - First Boss.wav" id="23_d1mb4"]
+[ext_resource type="PackedScene" uid="uid://dm61xmst0522o" path="res://Scenes/Items/magic_bamboo.tscn" id="24_jtxcs"]
+[ext_resource type="Texture2D" uid="uid://c8dol58rb8t5j" path="res://Assets/Sprites/Magic Bamboo/+5 hp magic bamboo.png" id="25_2gwup"]
+[ext_resource type="Script" uid="uid://gaqqlslhdr4g" path="res://Scripts/Obstacles/obstacle_spike.gd" id="26_hopaj"]
+[ext_resource type="Texture2D" uid="uid://s45ti6i317cc" path="res://Assets/Sprites/Obstacles/bamboo_trap_floor.png" id="27_gqcgh"]
+[ext_resource type="Shader" uid="uid://80wr7vuod76p" path="res://Shaders/spike_color.gdshader" id="28_n4dbg"]
+[ext_resource type="Texture2D" uid="uid://5j8r6plk7dru" path="res://Assets/Sprites/Obstacles/Spikes.png" id="29_x5rc4"]
+[ext_resource type="Script" uid="uid://b7008awu7lly6" path="res://Scenes/Level/next_level.gd" id="30_mou1t"]
+[ext_resource type="PackedScene" uid="uid://bu78o5fps1jsf" path="res://Scenes/Enemies/boss_enemy_1.tscn" id="31_j6n01"]
+[ext_resource type="Script" uid="uid://hfj0hgwiyiqu" path="res://Scripts/Central/event_trigger.gd" id="32_wnfm4"]
+[ext_resource type="Script" uid="uid://cbirdwbh5p7se" path="res://Scripts/Obstacles/gate_crystal.gd" id="33_j6da3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pwjgu"]
-texture = ExtResource("3_pw0tg")
+texture = ExtResource("4_28yfy")
 10:0/0 = 0
 11:0/0 = 0
 12:0/0 = 0
@@ -259,7 +259,7 @@ texture = ExtResource("3_pw0tg")
 12:10/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qv0da"]
-texture = ExtResource("4_fmdk8")
+texture = ExtResource("5_us348")
 7:4/0 = 0
 7:4/0/physics_layer_1/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 3:8/0 = 0
@@ -451,7 +451,7 @@ size = Vector2(54, 25)
 size = Vector2(54, 44)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ps4u4"]
-shader = ExtResource("26_05rg0")
+shader = ExtResource("28_n4dbg")
 shader_parameter/tint_color = Color(2.219907, 0, 0.39831704, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1v0ja"]
@@ -509,12 +509,12 @@ size = Vector2(96.5, 90.25)
 size = Vector2(42.5, 62)
 
 [node name="Level" type="Node2D"]
-script = ExtResource("1_p2j2u")
-carried_abilities = ExtResource("2_xr5la")
+script = ExtResource("1_e0jir")
+carried_abilities = ExtResource("2_7x80c")
 
 [node name="GameManager" type="Node" parent="."]
 unique_name_in_owner = true
-script = ExtResource("2_bfh1j")
+script = ExtResource("3_7ejdi")
 
 [node name="TileMap" type="TileMap" parent="."]
 z_index = 5
@@ -531,9 +531,9 @@ z_index = 10
 
 [node name="Start" type="Marker2D" parent="CheckPoints"]
 position = Vector2(136, 229)
-script = ExtResource("5_nm7s6")
+script = ExtResource("6_wra01")
 
-[node name="Player" parent="." instance=ExtResource("6_xr5la")]
+[node name="Player" parent="." instance=ExtResource("7_m7mie")]
 position = Vector2(136, 229)
 
 [node name="CameraMain" type="Camera2D" parent="." node_paths=PackedStringArray("player")]
@@ -543,18 +543,18 @@ limit_right = 512
 drag_vertical_offset = -0.2
 drag_top_margin = 0.0
 drag_bottom_margin = 0.6
-script = ExtResource("7_qeoee")
+script = ExtResource("8_325pj")
 player = NodePath("../Player")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 process_mode = 3
-script = ExtResource("8_3deo8")
+script = ExtResource("9_da04k")
 
 [node name="Current State" type="Label" parent="CanvasLayer"]
 visible = false
 offset_right = 40.0
 offset_bottom = 23.0
-theme_override_fonts/font = ExtResource("9_eyp8y")
+theme_override_fonts/font = ExtResource("10_ydd55")
 theme_override_font_sizes/font_size = 32
 text = "State: "
 
@@ -563,7 +563,7 @@ visible = false
 offset_top = 38.0
 offset_right = 168.0
 offset_bottom = 70.0
-theme_override_fonts/font = ExtResource("9_eyp8y")
+theme_override_fonts/font = ExtResource("10_ydd55")
 theme_override_font_sizes/font_size = 32
 text = "Equip: "
 
@@ -575,7 +575,7 @@ anchor_bottom = 1.0
 offset_top = -32.0
 offset_right = 76.0
 grow_vertical = 0
-theme_override_fonts/font = ExtResource("9_eyp8y")
+theme_override_fonts/font = ExtResource("10_ydd55")
 theme_override_font_sizes/font_size = 32
 text = "HP:"
 
@@ -603,17 +603,17 @@ offset_right = 20.0
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("9_eyp8y")
+theme_override_fonts/font = ExtResource("10_ydd55")
 theme_override_font_sizes/font_size = 64
 text = "Game Over"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("10_wjdug")]
+[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("11_mgxrl")]
 visible = false
 z_index = 6
 
-[node name="OptionsMenu" parent="CanvasLayer" instance=ExtResource("11_xhm14")]
+[node name="OptionsMenu" parent="CanvasLayer" instance=ExtResource("12_0kgfx")]
 visible = false
 
 [node name="DashTimer" type="Label" parent="CanvasLayer"]
@@ -627,7 +627,7 @@ grow_horizontal = 0
 text = "Dash Timer"
 horizontal_alignment = 2
 
-[node name="AbilityDebugMenu" parent="CanvasLayer" instance=ExtResource("12_calfh")]
+[node name="AbilityDebugMenu" parent="CanvasLayer" instance=ExtResource("13_uh2n7")]
 visible = false
 anchors_preset = 5
 anchor_left = 0.5
@@ -635,24 +635,24 @@ anchor_right = 0.5
 anchor_bottom = 0.0
 grow_vertical = 1
 
-[node name="AbilityGrid" parent="CanvasLayer" instance=ExtResource("13_oauaa")]
+[node name="AbilityGrid" parent="CanvasLayer" instance=ExtResource("14_xxbk2")]
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
 grow_horizontal = 0
 grow_vertical = 0
 
-[node name="Ability_info" parent="CanvasLayer" instance=ExtResource("14_i5nic")]
+[node name="Ability_info" parent="CanvasLayer" instance=ExtResource("15_3t7ny")]
 visible = false
 
-[node name="CheckPointRespawnUI" parent="CanvasLayer" instance=ExtResource("15_i55uw")]
+[node name="CheckPointRespawnUI" parent="CanvasLayer" instance=ExtResource("16_0vdgm")]
 visible = false
 
-[node name="AbilityInfoButton" parent="CanvasLayer" instance=ExtResource("16_keclr")]
+[node name="AbilityInfoButton" parent="CanvasLayer" instance=ExtResource("17_osanp")]
 offset_top = -224.0
 offset_bottom = -184.0
 
-[node name="PlayerHUD" parent="CanvasLayer" instance=ExtResource("17_txocl")]
+[node name="PlayerHUD" parent="CanvasLayer" instance=ExtResource("18_7wvus")]
 offset_left = 12.0
 offset_top = 446.0
 offset_right = -1140.0
@@ -664,12 +664,12 @@ offset_left = 8.0
 offset_top = 10.0
 offset_right = 276.0
 offset_bottom = 72.0
-theme_override_fonts/font = ExtResource("18_vepe8")
+theme_override_fonts/font = ExtResource("19_oglea")
 theme_override_font_sizes/font_size = 20
 text = "Current Level:
 Boss Arena 1"
 
-[node name="DialogueUI" parent="." instance=ExtResource("19_pw0tg")]
+[node name="DialogueUI" parent="." instance=ExtResource("20_nduom")]
 visible = false
 
 [node name="ParralaxBackground" type="Node2D" parent="."]
@@ -684,18 +684,18 @@ repeat_times = 5
 
 [node name="Sprite2D" type="Sprite2D" parent="ParralaxBackground/Parallax2D"]
 position = Vector2(259, 0)
-texture = ExtResource("19_dbf7t")
+texture = ExtResource("21_jiko5")
 
 [node name="killzone" type="Area2D" parent="."]
 position = Vector2(730, 400)
 collision_mask = 4
-script = ExtResource("20_xto7o")
+script = ExtResource("22_cufwy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="killzone"]
 shape = SubResource("WorldBoundaryShape2D_5ljwd")
 
 [node name="Level1Music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("23_xr5la")
+stream = ExtResource("23_d1mb4")
 volume_db = -30.0
 autoplay = true
 bus = &"Music"
@@ -706,10 +706,10 @@ bus = &"Music"
 z_index = 4
 position = Vector2(-1, -17)
 
-[node name="MagicBamboo" parent="Obstacles/MagicBamboo" instance=ExtResource("22_ysjws")]
+[node name="MagicBamboo" parent="Obstacles/MagicBamboo" instance=ExtResource("24_jtxcs")]
 z_index = 5
 position = Vector2(-112, -123)
-texture = ExtResource("23_0tr4f")
+texture = ExtResource("25_2gwup")
 heal_amount = 5
 COLOR = Color(0, 0.59607846, 0.8627451, 1)
 
@@ -719,7 +719,7 @@ position = Vector2(30, 285)
 scale = Vector2(0.8, 1)
 collision_layer = 2048
 collision_mask = 4
-script = ExtResource("24_o3vio")
+script = ExtResource("26_hopaj")
 damage_trap = 100
 effect_type = Array[int]([0, 1, 2, 3])
 active_for = 2.0
@@ -734,7 +734,7 @@ shape = SubResource("RectangleShape2D_3qb7m")
 [node name="MainSpirte" type="Sprite2D" parent="Obstacles/obstacle_spike"]
 position = Vector2(0, -5)
 scale = Vector2(1.4, 1)
-texture = ExtResource("25_7qnir")
+texture = ExtResource("27_gqcgh")
 
 [node name="Spikes" type="Area2D" parent="Obstacles/obstacle_spike"]
 collision_layer = 2048
@@ -747,20 +747,20 @@ shape = SubResource("RectangleShape2D_qqdfe")
 z_index = -1
 material = SubResource("ShaderMaterial_ps4u4")
 position = Vector2(0, 4)
-texture = ExtResource("27_nrt8h")
+texture = ExtResource("29_x5rc4")
 
 [node name="Next_level" type="Area2D" parent="."]
 visible = false
 position = Vector2(3808, 48)
 collision_mask = 4
-script = ExtResource("28_4tego")
+script = ExtResource("30_mou1t")
 level_name = "level_2-1"
 next_part = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Next_level"]
 shape = SubResource("RectangleShape2D_1v0ja")
 
-[node name="boss_enemy_1" parent="." instance=ExtResource("29_bfh1j")]
+[node name="boss_enemy_1" parent="." instance=ExtResource("31_j6n01")]
 z_index = 5
 position = Vector2(363, 228)
 collision_layer = 131073
@@ -791,28 +791,28 @@ libraries = {
 z_index = 5
 position = Vector2(990, -57)
 collision_mask = 4100
-script = ExtResource("30_fmdk8")
+script = ExtResource("32_wnfm4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Events/Key1"]
 shape = SubResource("RectangleShape2D_xr5la")
 
 [node name="Sprite2D" type="Sprite2D" parent="Events/Key1"]
 position = Vector2(2, 0)
-texture = ExtResource("3_pw0tg")
+texture = ExtResource("4_28yfy")
 region_enabled = true
 region_rect = Rect2(128, 128, 16, 16)
 
 [node name="Gate_Crystal1" type="StaticBody2D" parent="Events"]
 z_index = 5
 position = Vector2(552, 276)
-script = ExtResource("31_nm7s6")
+script = ExtResource("33_j6da3")
 level_id = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Events/Gate_Crystal1"]
 shape = SubResource("RectangleShape2D_qeoee")
 
 [node name="Sprite2D" type="Sprite2D" parent="Events/Gate_Crystal1"]
-texture = ExtResource("3_pw0tg")
+texture = ExtResource("4_28yfy")
 region_enabled = true
 region_rect = Rect2(144, 96, 16, 32)
 
@@ -829,8 +829,8 @@ shape = SubResource("RectangleShape2D_3deo8")
 z_index = 10
 position = Vector2(614, 270)
 collision_mask = 4
-script = ExtResource("28_4tego")
-level_name = "Level_2-1"
+script = ExtResource("30_mou1t")
+level_name = "level_2-1"
 next_part = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Next_level2"]
@@ -843,7 +843,7 @@ position = Vector2(481, 285)
 scale = Vector2(0.8, 1)
 collision_layer = 2048
 collision_mask = 4
-script = ExtResource("24_o3vio")
+script = ExtResource("26_hopaj")
 damage_trap = 100
 effect_type = Array[int]([0, 1, 2, 3])
 active_for = 2.0
@@ -858,7 +858,7 @@ shape = SubResource("RectangleShape2D_3qb7m")
 [node name="MainSpirte" type="Sprite2D" parent="obstacle_spike2"]
 position = Vector2(0, -5)
 scale = Vector2(1.4, 1)
-texture = ExtResource("25_7qnir")
+texture = ExtResource("27_gqcgh")
 
 [node name="Spikes" type="Area2D" parent="obstacle_spike2"]
 collision_layer = 2048
@@ -871,7 +871,7 @@ shape = SubResource("RectangleShape2D_qqdfe")
 z_index = -1
 material = SubResource("ShaderMaterial_ps4u4")
 position = Vector2(0, 4)
-texture = ExtResource("27_nrt8h")
+texture = ExtResource("29_x5rc4")
 
 [connection signal="body_entered" from="killzone" to="killzone" method="_on_body_entered"]
 [connection signal="body_entered" from="Obstacles/obstacle_spike" to="Obstacles/obstacle_spike" method="_on_body_entered"]

@@ -1,50 +1,50 @@
 [gd_scene load_steps=70 format=3 uid="uid://jy7lpdbdrphw"]
 
-[ext_resource type="Script" uid="uid://c2jeph0pjh467" path="res://Scripts/Level/playtest_level.gd" id="1_lwhji"]
-[ext_resource type="Script" uid="uid://byn1je7flnjo3" path="res://Scripts/Central/game_manager.gd" id="2_hi12w"]
-[ext_resource type="Resource" uid="uid://w4w68vjoa8rp" path="res://Resources/AbilityUnlocking/level_2-2.tres" id="2_nju6f"]
-[ext_resource type="Texture2D" uid="uid://dfdfu6o1j3apv" path="res://Assets/Sprites/Playtest1.png" id="3_oxqp5"]
-[ext_resource type="Texture2D" uid="uid://j1w6x4hpn3ou" path="res://Assets/Icons/Sung Chin Woo Icon.png" id="4_f53dv"]
-[ext_resource type="PackedScene" uid="uid://c45jpc3kaflr4" path="res://Scenes/CheckPoints/CheckPoint.tscn" id="5_ov71p"]
-[ext_resource type="Script" uid="uid://dtfsguwdnfr7m" path="res://Scripts/CheckPoints/start.gd" id="6_aylqp"]
-[ext_resource type="Shader" uid="uid://b4k5pl844vedq" path="res://Shaders/water_shader_vertical_waves.gdshader" id="6_n2dxn"]
-[ext_resource type="PackedScene" uid="uid://c5ongupm07qh3" path="res://Scenes/Player/player.tscn" id="7_nju6f"]
-[ext_resource type="Script" uid="uid://ce43l01wboarg" path="res://Scripts/UI/Overlay/canvas_layer.gd" id="8_u45l3"]
-[ext_resource type="FontFile" uid="uid://x2dwsfc3en6q" path="res://Assets/Tutorial Open Assets/brackeys_platformer_assets/fonts/PixelOperator8.ttf" id="9_n2dxn"]
-[ext_resource type="PackedScene" uid="uid://dbawdw77kghcn" path="res://Scenes/UI/GameMenus/Pause_Menu.tscn" id="10_0vnpx"]
-[ext_resource type="PackedScene" uid="uid://brc3fv7pjl1bv" path="res://Scenes/UI/GameMenus/Options_Menu.tscn" id="11_1ohej"]
-[ext_resource type="PackedScene" uid="uid://b1wpf7mxi7ax8" path="res://Scenes/UI/Overlay/ability_debug_menu.tscn" id="12_qovpi"]
-[ext_resource type="PackedScene" uid="uid://bdqpqswjpdvot" path="res://Scenes/UI/Overlay/ability_grid.tscn" id="13_l63tk"]
-[ext_resource type="PackedScene" uid="uid://3nx8i28smrqo" path="res://Scenes/UI/GameMenus/Ability_Info.tscn" id="14_v2jrc"]
-[ext_resource type="PackedScene" uid="uid://bajjogst0v58d" path="res://Scenes/UI/Overlay/CheckPointRespawnUI.tscn" id="15_rwm1q"]
-[ext_resource type="Script" uid="uid://b2b6rmyyluckx" path="res://Scripts/Player/General/camera_2d.gd" id="16_64hvq"]
-[ext_resource type="PackedScene" uid="uid://c64nl2fkq45ge" path="res://Scenes/UI/Overlay/AbilityInfoButton.tscn" id="16_f53dv"]
-[ext_resource type="PackedScene" uid="uid://bpp47tnrfdrab" path="res://Scenes/UI/Components/player_hud.tscn" id="17_ov71p"]
-[ext_resource type="Script" uid="uid://bpkjqkjnq8o6g" path="res://Scripts/Player/General/killzone.gd" id="18_3utw7"]
-[ext_resource type="FontFile" uid="uid://p47ydk5quyq2" path="res://Assets/Tutorial Open Assets/brackeys_platformer_assets/fonts/PixelOperator8-Bold.ttf" id="18_aylqp"]
-[ext_resource type="Script" uid="uid://hfj0hgwiyiqu" path="res://Scripts/Central/event_trigger.gd" id="20_duqxh"]
-[ext_resource type="PackedScene" uid="uid://c34kdnga4axvp" path="res://Scenes/Obstacles/obstacle_falling_tiles.tscn" id="21_57ull"]
-[ext_resource type="Script" uid="uid://gaqqlslhdr4g" path="res://Scripts/Obstacles/obstacle_spike.gd" id="22_woqaf"]
-[ext_resource type="Texture2D" uid="uid://s45ti6i317cc" path="res://Assets/Sprites/Obstacles/bamboo_trap_floor.png" id="23_5k5x7"]
-[ext_resource type="AudioStream" uid="uid://c1iuo2tokinc4" path="res://Assets/Audio/Music/2-2 Travel The Temple.wav" id="23_qovpi"]
-[ext_resource type="Shader" uid="uid://80wr7vuod76p" path="res://Shaders/spike_color.gdshader" id="24_o6xlu"]
-[ext_resource type="Texture2D" uid="uid://5j8r6plk7dru" path="res://Assets/Sprites/Obstacles/Spikes.png" id="25_wlbov"]
-[ext_resource type="PackedScene" uid="uid://dm61xmst0522o" path="res://Scenes/Items/magic_bamboo.tscn" id="26_xbulm"]
-[ext_resource type="Texture2D" uid="uid://c8dol58rb8t5j" path="res://Assets/Sprites/Magic Bamboo/+5 hp magic bamboo.png" id="27_klmf3"]
-[ext_resource type="Script" uid="uid://b7008awu7lly6" path="res://Scenes/Level/next_level.gd" id="28_drrrq"]
-[ext_resource type="PackedScene" uid="uid://cl45lm0hg20kf" path="res://Scenes/Items/soul.tscn" id="29_dbt3o"]
-[ext_resource type="SpriteFrames" uid="uid://cgtj4wt3ql8r1" path="res://Resources/Wisps/Fire_Wisp.tres" id="30_nmhk6"]
-[ext_resource type="PackedScene" uid="uid://t6qqa47vckdt" path="res://Scenes/Enemies/husk.tscn" id="31_y3dvd"]
-[ext_resource type="Script" uid="uid://cstgtmfhmy3fb" path="res://Scripts/Obstacles/camera_drag_zone.gd" id="35_aylqp"]
-[ext_resource type="PackedScene" uid="uid://dn8a3x4q0yekn" path="res://Scenes/Obstacles/camera_drag_zone.tscn" id="35_ov71p"]
-[ext_resource type="Script" uid="uid://cbirdwbh5p7se" path="res://Scripts/Obstacles/gate_crystal.gd" id="38_u45l3"]
-[ext_resource type="PackedScene" uid="uid://du22uckdgymx7" path="res://Scenes/Background/parralax_background_2-2.tscn" id="39_n2dxn"]
-[ext_resource type="PackedScene" uid="uid://bdhxnuny30cml" path="res://Scenes/Items/scroll.tscn" id="40_qovpi"]
-[ext_resource type="Resource" uid="uid://bfday7yf54w1b" path="res://Resources/Scroll/scroll9.tres" id="41_l63tk"]
-[ext_resource type="Resource" uid="uid://dhm4l8ekfvix3" path="res://Resources/Scroll/scroll10.tres" id="42_v2jrc"]
+[ext_resource type="Script" uid="uid://c2jeph0pjh467" path="res://Scripts/Level/playtest_level.gd" id="1_djx44"]
+[ext_resource type="Resource" uid="uid://w4w68vjoa8rp" path="res://Resources/AbilityUnlocking/level_2-2.tres" id="2_rbnks"]
+[ext_resource type="Script" uid="uid://byn1je7flnjo3" path="res://Scripts/Central/game_manager.gd" id="3_0x1ky"]
+[ext_resource type="Texture2D" uid="uid://dfdfu6o1j3apv" path="res://Assets/Sprites/Playtest1.png" id="4_ck23q"]
+[ext_resource type="Texture2D" uid="uid://j1w6x4hpn3ou" path="res://Assets/Icons/Sung Chin Woo Icon.png" id="5_hwg72"]
+[ext_resource type="Shader" path="res://Shaders/water_shader_vertical_waves.gdshader" id="6_jgs2h"]
+[ext_resource type="PackedScene" uid="uid://c45jpc3kaflr4" path="res://Scenes/CheckPoints/CheckPoint.tscn" id="7_0m717"]
+[ext_resource type="Script" uid="uid://dtfsguwdnfr7m" path="res://Scripts/CheckPoints/start.gd" id="8_jmqil"]
+[ext_resource type="PackedScene" uid="uid://c5ongupm07qh3" path="res://Scenes/Player/player.tscn" id="9_b5jt3"]
+[ext_resource type="Script" uid="uid://ce43l01wboarg" path="res://Scripts/UI/Overlay/canvas_layer.gd" id="10_6ad5f"]
+[ext_resource type="FontFile" uid="uid://x2dwsfc3en6q" path="res://Assets/Tutorial Open Assets/brackeys_platformer_assets/fonts/PixelOperator8.ttf" id="11_uv6vg"]
+[ext_resource type="PackedScene" uid="uid://dbawdw77kghcn" path="res://Scenes/UI/GameMenus/Pause_Menu.tscn" id="12_liebc"]
+[ext_resource type="PackedScene" uid="uid://brc3fv7pjl1bv" path="res://Scenes/UI/GameMenus/Options_Menu.tscn" id="13_skm0u"]
+[ext_resource type="PackedScene" uid="uid://b1wpf7mxi7ax8" path="res://Scenes/UI/Overlay/ability_debug_menu.tscn" id="14_q124m"]
+[ext_resource type="PackedScene" uid="uid://bdqpqswjpdvot" path="res://Scenes/UI/Overlay/ability_grid.tscn" id="15_weloe"]
+[ext_resource type="PackedScene" uid="uid://3nx8i28smrqo" path="res://Scenes/UI/GameMenus/Ability_Info.tscn" id="16_4fpnt"]
+[ext_resource type="PackedScene" uid="uid://bajjogst0v58d" path="res://Scenes/UI/Overlay/CheckPointRespawnUI.tscn" id="17_d3xax"]
+[ext_resource type="PackedScene" uid="uid://c64nl2fkq45ge" path="res://Scenes/UI/Overlay/AbilityInfoButton.tscn" id="18_n4eta"]
+[ext_resource type="PackedScene" uid="uid://bpp47tnrfdrab" path="res://Scenes/UI/Components/player_hud.tscn" id="19_wivco"]
+[ext_resource type="FontFile" uid="uid://p47ydk5quyq2" path="res://Assets/Tutorial Open Assets/brackeys_platformer_assets/fonts/PixelOperator8-Bold.ttf" id="20_05uvt"]
+[ext_resource type="Script" uid="uid://b2b6rmyyluckx" path="res://Scripts/Player/General/camera_2d.gd" id="21_fqu87"]
+[ext_resource type="Script" uid="uid://bpkjqkjnq8o6g" path="res://Scripts/Player/General/killzone.gd" id="22_fkjjl"]
+[ext_resource type="AudioStream" uid="uid://c1iuo2tokinc4" path="res://Assets/Audio/Music/2-2 Travel The Temple.wav" id="23_oui5e"]
+[ext_resource type="PackedScene" uid="uid://c34kdnga4axvp" path="res://Scenes/Obstacles/obstacle_falling_tiles.tscn" id="24_1pvt7"]
+[ext_resource type="Script" uid="uid://gaqqlslhdr4g" path="res://Scripts/Obstacles/obstacle_spike.gd" id="25_j4vbb"]
+[ext_resource type="Texture2D" uid="uid://s45ti6i317cc" path="res://Assets/Sprites/Obstacles/bamboo_trap_floor.png" id="26_p25nv"]
+[ext_resource type="Shader" uid="uid://80wr7vuod76p" path="res://Shaders/spike_color.gdshader" id="27_pucdp"]
+[ext_resource type="Texture2D" uid="uid://5j8r6plk7dru" path="res://Assets/Sprites/Obstacles/Spikes.png" id="28_5su5f"]
+[ext_resource type="PackedScene" uid="uid://dm61xmst0522o" path="res://Scenes/Items/magic_bamboo.tscn" id="29_ycvfy"]
+[ext_resource type="Texture2D" uid="uid://c8dol58rb8t5j" path="res://Assets/Sprites/Magic Bamboo/+5 hp magic bamboo.png" id="30_fwjsy"]
+[ext_resource type="Script" uid="uid://b7008awu7lly6" path="res://Scenes/Level/next_level.gd" id="31_p3qi1"]
+[ext_resource type="PackedScene" uid="uid://cl45lm0hg20kf" path="res://Scenes/Items/soul.tscn" id="32_wwgsw"]
+[ext_resource type="SpriteFrames" uid="uid://cgtj4wt3ql8r1" path="res://Resources/Wisps/Fire_Wisp.tres" id="33_sj3uu"]
+[ext_resource type="PackedScene" uid="uid://t6qqa47vckdt" path="res://Scenes/Enemies/husk.tscn" id="34_mnuk5"]
+[ext_resource type="Script" path="res://Scripts/Obstacles/camera_drag_zone.gd" id="35_nncpe"]
+[ext_resource type="PackedScene" uid="uid://dn8a3x4q0yekn" path="res://Scenes/Obstacles/camera_drag_zone.tscn" id="36_u0bag"]
+[ext_resource type="Script" uid="uid://hfj0hgwiyiqu" path="res://Scripts/Central/event_trigger.gd" id="37_0bisf"]
+[ext_resource type="Script" uid="uid://cbirdwbh5p7se" path="res://Scripts/Obstacles/gate_crystal.gd" id="38_2y3r1"]
+[ext_resource type="PackedScene" uid="uid://du22uckdgymx7" path="res://Scenes/Background/parralax_background_2-2.tscn" id="39_pixuu"]
+[ext_resource type="PackedScene" uid="uid://bdhxnuny30cml" path="res://Scenes/Items/scroll.tscn" id="40_clnyk"]
+[ext_resource type="Resource" uid="uid://bfday7yf54w1b" path="res://Resources/Scroll/scroll9.tres" id="41_d5p0u"]
+[ext_resource type="Resource" uid="uid://dhm4l8ekfvix3" path="res://Resources/Scroll/scroll10.tres" id="42_vyx14"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ekp0b"]
-texture = ExtResource("3_oxqp5")
+texture = ExtResource("4_ck23q")
 10:0/0 = 0
 11:0/0 = 0
 12:0/0 = 0
@@ -265,7 +265,7 @@ texture = ExtResource("3_oxqp5")
 3:4/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_euno3"]
-texture = ExtResource("4_f53dv")
+texture = ExtResource("5_hwg72")
 7:4/0 = 0
 7:4/0/physics_layer_1/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 3:8/0 = 0
@@ -449,7 +449,7 @@ sources/0 = SubResource("TileSetAtlasSource_ekp0b")
 sources/2 = SubResource("TileSetAtlasSource_euno3")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0vnpx"]
-shader = ExtResource("6_n2dxn")
+shader = ExtResource("6_jgs2h")
 shader_parameter/wave_height = 0.06
 shader_parameter/wave_frequency = 5.0
 shader_parameter/wave_speed = 1.5
@@ -458,7 +458,7 @@ shader_parameter/texture_wave_strength = 0.00499999988824
 shader_parameter/animation_speed = 1.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1ohej"]
-texture = ExtResource("3_oxqp5")
+texture = ExtResource("4_ck23q")
 10:0/0 = 0
 11:0/0 = 0
 12:0/0 = 0
@@ -671,7 +671,7 @@ texture = ExtResource("3_oxqp5")
 3:7/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qovpi"]
-texture = ExtResource("4_f53dv")
+texture = ExtResource("5_hwg72")
 7:4/0 = 0
 7:4/0/physics_layer_1/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 3:8/0 = 0
@@ -866,15 +866,15 @@ size = Vector2(54, 25)
 size = Vector2(54, 44)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_dx8gk"]
-shader = ExtResource("24_o6xlu")
+shader = ExtResource("27_pucdp")
 shader_parameter/tint_color = Color(2.219907, 0, 0.39831704, 1)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_231ic"]
-shader = ExtResource("24_o6xlu")
+shader = ExtResource("27_pucdp")
 shader_parameter/tint_color = Color(2.22, 0, 0.398, 1)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_o1dhy"]
-shader = ExtResource("24_o6xlu")
+shader = ExtResource("27_pucdp")
 shader_parameter/tint_color = Color(1, 1, 1, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_miuwv"]
@@ -1007,12 +1007,12 @@ size = Vector2(16, 32)
 size = Vector2(96.5, 90.25)
 
 [node name="Level" type="Node2D"]
-script = ExtResource("1_lwhji")
-carried_abilities = ExtResource("2_nju6f")
+script = ExtResource("1_djx44")
+carried_abilities = ExtResource("2_rbnks")
 
 [node name="GameManager" type="Node" parent="."]
 unique_name_in_owner = true
-script = ExtResource("2_hi12w")
+script = ExtResource("3_0x1ky")
 
 [node name="TileMap" type="TileMap" parent="."]
 z_index = 5
@@ -1041,38 +1041,38 @@ layer_2/name = "Border_Horizontal"
 [node name="CheckPoints" type="Node2D" parent="."]
 z_index = 10
 
-[node name="Area2D2" parent="CheckPoints" instance=ExtResource("5_ov71p")]
+[node name="Area2D2" parent="CheckPoints" instance=ExtResource("7_0m717")]
 position = Vector2(648, -89)
 checkppoint_id = 1
 
-[node name="Area2D3" parent="CheckPoints" instance=ExtResource("5_ov71p")]
+[node name="Area2D3" parent="CheckPoints" instance=ExtResource("7_0m717")]
 position = Vector2(2221, 8)
 checkppoint_id = 3
 
-[node name="Area2D4" parent="CheckPoints" instance=ExtResource("5_ov71p")]
+[node name="Area2D4" parent="CheckPoints" instance=ExtResource("7_0m717")]
 position = Vector2(2840, -201)
 checkppoint_id = 4
 
-[node name="Area2D5" parent="CheckPoints" instance=ExtResource("5_ov71p")]
+[node name="Area2D5" parent="CheckPoints" instance=ExtResource("7_0m717")]
 position = Vector2(1240, 151)
 checkppoint_id = 2
 
 [node name="Start" type="Marker2D" parent="CheckPoints"]
 position = Vector2(75, 219)
-script = ExtResource("6_aylqp")
+script = ExtResource("8_jmqil")
 
-[node name="Player" parent="." instance=ExtResource("7_nju6f")]
+[node name="Player" parent="." instance=ExtResource("9_b5jt3")]
 position = Vector2(75, 219)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 process_mode = 3
-script = ExtResource("8_u45l3")
+script = ExtResource("10_6ad5f")
 
 [node name="Current State" type="Label" parent="CanvasLayer"]
 visible = false
 offset_right = 40.0
 offset_bottom = 23.0
-theme_override_fonts/font = ExtResource("9_n2dxn")
+theme_override_fonts/font = ExtResource("11_uv6vg")
 theme_override_font_sizes/font_size = 32
 text = "State: "
 
@@ -1081,7 +1081,7 @@ visible = false
 offset_top = 38.0
 offset_right = 168.0
 offset_bottom = 70.0
-theme_override_fonts/font = ExtResource("9_n2dxn")
+theme_override_fonts/font = ExtResource("11_uv6vg")
 theme_override_font_sizes/font_size = 32
 text = "Equip: "
 
@@ -1093,7 +1093,7 @@ anchor_bottom = 1.0
 offset_top = -32.0
 offset_right = 76.0
 grow_vertical = 0
-theme_override_fonts/font = ExtResource("9_n2dxn")
+theme_override_fonts/font = ExtResource("11_uv6vg")
 theme_override_font_sizes/font_size = 32
 text = "HP:"
 
@@ -1121,17 +1121,17 @@ offset_right = 20.0
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("9_n2dxn")
+theme_override_fonts/font = ExtResource("11_uv6vg")
 theme_override_font_sizes/font_size = 64
 text = "Game Over"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("10_0vnpx")]
+[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("12_liebc")]
 visible = false
 z_index = 6
 
-[node name="OptionsMenu" parent="CanvasLayer" instance=ExtResource("11_1ohej")]
+[node name="OptionsMenu" parent="CanvasLayer" instance=ExtResource("13_skm0u")]
 visible = false
 
 [node name="DashTimer" type="Label" parent="CanvasLayer"]
@@ -1145,7 +1145,7 @@ grow_horizontal = 0
 text = "Dash Timer"
 horizontal_alignment = 2
 
-[node name="AbilityDebugMenu" parent="CanvasLayer" instance=ExtResource("12_qovpi")]
+[node name="AbilityDebugMenu" parent="CanvasLayer" instance=ExtResource("14_q124m")]
 visible = false
 anchors_preset = 5
 anchor_left = 0.5
@@ -1153,24 +1153,24 @@ anchor_right = 0.5
 anchor_bottom = 0.0
 grow_vertical = 1
 
-[node name="AbilityGrid" parent="CanvasLayer" instance=ExtResource("13_l63tk")]
+[node name="AbilityGrid" parent="CanvasLayer" instance=ExtResource("15_weloe")]
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
 grow_horizontal = 0
 grow_vertical = 0
 
-[node name="Ability_info" parent="CanvasLayer" instance=ExtResource("14_v2jrc")]
+[node name="Ability_info" parent="CanvasLayer" instance=ExtResource("16_4fpnt")]
 visible = false
 
-[node name="CheckPointRespawnUI" parent="CanvasLayer" instance=ExtResource("15_rwm1q")]
+[node name="CheckPointRespawnUI" parent="CanvasLayer" instance=ExtResource("17_d3xax")]
 visible = false
 
-[node name="AbilityInfoButton" parent="CanvasLayer" instance=ExtResource("16_f53dv")]
+[node name="AbilityInfoButton" parent="CanvasLayer" instance=ExtResource("18_n4eta")]
 offset_top = -224.0
 offset_bottom = -184.0
 
-[node name="PlayerHUD" parent="CanvasLayer" instance=ExtResource("17_ov71p")]
+[node name="PlayerHUD" parent="CanvasLayer" instance=ExtResource("19_wivco")]
 offset_left = 12.0
 offset_top = 446.0
 offset_right = -1140.0
@@ -1182,7 +1182,7 @@ offset_left = 8.0
 offset_top = 10.0
 offset_right = 276.0
 offset_bottom = 72.0
-theme_override_fonts/font = ExtResource("18_aylqp")
+theme_override_fonts/font = ExtResource("20_05uvt")
 theme_override_font_sizes/font_size = 20
 text = "Current Level: 
 2-2"
@@ -1194,13 +1194,13 @@ limit_right = 3632
 drag_vertical_offset = -0.2
 drag_top_margin = 0.0
 drag_bottom_margin = 0.6
-script = ExtResource("16_64hvq")
+script = ExtResource("21_fqu87")
 player = NodePath("../Player")
 
 [node name="killzone" type="Area2D" parent="."]
 position = Vector2(730, 400)
 collision_mask = 4
-script = ExtResource("18_3utw7")
+script = ExtResource("22_fkjjl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="killzone"]
 position = Vector2(166, 200)
@@ -1209,13 +1209,13 @@ shape = SubResource("WorldBoundaryShape2D_flvdr")
 [node name="killzone2" type="Area2D" parent="."]
 position = Vector2(3144, -104)
 collision_mask = 4
-script = ExtResource("18_3utw7")
+script = ExtResource("22_fkjjl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="killzone2"]
 shape = SubResource("RectangleShape2D_1ohej")
 
 [node name="Level1Music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("23_qovpi")
+stream = ExtResource("23_oui5e")
 volume_db = -30.0
 autoplay = true
 bus = &"Music"
@@ -1226,66 +1226,66 @@ bus = &"Music"
 z_index = 6
 position = Vector2(3008, -216)
 
-[node name="obstacle_falling_tiles" parent="Obstacles/falling_tiles" instance=ExtResource("21_57ull")]
+[node name="obstacle_falling_tiles" parent="Obstacles/falling_tiles" instance=ExtResource("24_1pvt7")]
 position = Vector2(-32, 0)
 
-[node name="obstacle_falling_tiles2" parent="Obstacles/falling_tiles" instance=ExtResource("21_57ull")]
+[node name="obstacle_falling_tiles2" parent="Obstacles/falling_tiles" instance=ExtResource("24_1pvt7")]
 position = Vector2(-16, 0)
 
-[node name="obstacle_falling_tiles3" parent="Obstacles/falling_tiles" instance=ExtResource("21_57ull")]
+[node name="obstacle_falling_tiles3" parent="Obstacles/falling_tiles" instance=ExtResource("24_1pvt7")]
 
-[node name="obstacle_falling_tiles4" parent="Obstacles/falling_tiles" instance=ExtResource("21_57ull")]
+[node name="obstacle_falling_tiles4" parent="Obstacles/falling_tiles" instance=ExtResource("24_1pvt7")]
 position = Vector2(16, 0)
 
-[node name="obstacle_falling_tiles5" parent="Obstacles/falling_tiles" instance=ExtResource("21_57ull")]
+[node name="obstacle_falling_tiles5" parent="Obstacles/falling_tiles" instance=ExtResource("24_1pvt7")]
 position = Vector2(32, 0)
 
-[node name="obstacle_falling_tiles6" parent="Obstacles/falling_tiles" instance=ExtResource("21_57ull")]
+[node name="obstacle_falling_tiles6" parent="Obstacles/falling_tiles" instance=ExtResource("24_1pvt7")]
 position = Vector2(120, 0)
 
-[node name="obstacle_falling_tiles7" parent="Obstacles/falling_tiles" instance=ExtResource("21_57ull")]
+[node name="obstacle_falling_tiles7" parent="Obstacles/falling_tiles" instance=ExtResource("24_1pvt7")]
 position = Vector2(136, 0)
 
-[node name="obstacle_falling_tiles8" parent="Obstacles/falling_tiles" instance=ExtResource("21_57ull")]
+[node name="obstacle_falling_tiles8" parent="Obstacles/falling_tiles" instance=ExtResource("24_1pvt7")]
 position = Vector2(168, -32)
 
-[node name="obstacle_falling_tiles9" parent="Obstacles/falling_tiles" instance=ExtResource("21_57ull")]
+[node name="obstacle_falling_tiles9" parent="Obstacles/falling_tiles" instance=ExtResource("24_1pvt7")]
 position = Vector2(184, -32)
 
-[node name="obstacle_falling_tiles10" parent="Obstacles/falling_tiles" instance=ExtResource("21_57ull")]
+[node name="obstacle_falling_tiles10" parent="Obstacles/falling_tiles" instance=ExtResource("24_1pvt7")]
 position = Vector2(104, -64)
 
-[node name="obstacle_falling_tiles11" parent="Obstacles/falling_tiles" instance=ExtResource("21_57ull")]
+[node name="obstacle_falling_tiles11" parent="Obstacles/falling_tiles" instance=ExtResource("24_1pvt7")]
 position = Vector2(88, -64)
 
-[node name="obstacle_falling_tiles12" parent="Obstacles/falling_tiles" instance=ExtResource("21_57ull")]
+[node name="obstacle_falling_tiles12" parent="Obstacles/falling_tiles" instance=ExtResource("24_1pvt7")]
 position = Vector2(72, -64)
 
-[node name="obstacle_falling_tiles13" parent="Obstacles/falling_tiles" instance=ExtResource("21_57ull")]
+[node name="obstacle_falling_tiles13" parent="Obstacles/falling_tiles" instance=ExtResource("24_1pvt7")]
 position = Vector2(40, -96)
 
-[node name="obstacle_falling_tiles14" parent="Obstacles/falling_tiles" instance=ExtResource("21_57ull")]
+[node name="obstacle_falling_tiles14" parent="Obstacles/falling_tiles" instance=ExtResource("24_1pvt7")]
 position = Vector2(72, -128)
 
-[node name="obstacle_falling_tiles15" parent="Obstacles/falling_tiles" instance=ExtResource("21_57ull")]
+[node name="obstacle_falling_tiles15" parent="Obstacles/falling_tiles" instance=ExtResource("24_1pvt7")]
 position = Vector2(184, -128)
 
-[node name="obstacle_falling_tiles16" parent="Obstacles/falling_tiles" instance=ExtResource("21_57ull")]
+[node name="obstacle_falling_tiles16" parent="Obstacles/falling_tiles" instance=ExtResource("24_1pvt7")]
 position = Vector2(296, -128)
 
-[node name="obstacle_falling_tiles17" parent="Obstacles/falling_tiles" instance=ExtResource("21_57ull")]
+[node name="obstacle_falling_tiles17" parent="Obstacles/falling_tiles" instance=ExtResource("24_1pvt7")]
 position = Vector2(360, -72)
 
-[node name="obstacle_falling_tiles18" parent="Obstacles/falling_tiles" instance=ExtResource("21_57ull")]
+[node name="obstacle_falling_tiles18" parent="Obstacles/falling_tiles" instance=ExtResource("24_1pvt7")]
 position = Vector2(376, -72)
 
-[node name="obstacle_falling_tiles19" parent="Obstacles/falling_tiles" instance=ExtResource("21_57ull")]
+[node name="obstacle_falling_tiles19" parent="Obstacles/falling_tiles" instance=ExtResource("24_1pvt7")]
 position = Vector2(392, -72)
 
-[node name="obstacle_falling_tiles20" parent="Obstacles/falling_tiles" instance=ExtResource("21_57ull")]
+[node name="obstacle_falling_tiles20" parent="Obstacles/falling_tiles" instance=ExtResource("24_1pvt7")]
 position = Vector2(408, -72)
 
-[node name="obstacle_falling_tiles21" parent="Obstacles/falling_tiles" instance=ExtResource("21_57ull")]
+[node name="obstacle_falling_tiles21" parent="Obstacles/falling_tiles" instance=ExtResource("24_1pvt7")]
 position = Vector2(424, -72)
 
 [node name="spikes" type="Node2D" parent="Obstacles"]
@@ -1296,7 +1296,7 @@ position = Vector2(743, 141)
 scale = Vector2(0.8, 1)
 collision_layer = 2048
 collision_mask = 4
-script = ExtResource("22_woqaf")
+script = ExtResource("25_j4vbb")
 damage_trap = 100
 effect_type = Array[int]([0, 1, 2, 3])
 active_for = 2.0
@@ -1311,7 +1311,7 @@ shape = SubResource("RectangleShape2D_wwxgf")
 [node name="MainSpirte" type="Sprite2D" parent="Obstacles/spikes/obstacle_spike"]
 position = Vector2(0, -5)
 scale = Vector2(1.4, 1)
-texture = ExtResource("23_5k5x7")
+texture = ExtResource("26_p25nv")
 
 [node name="Spikes" type="Area2D" parent="Obstacles/spikes/obstacle_spike"]
 collision_layer = 2048
@@ -1324,7 +1324,7 @@ shape = SubResource("RectangleShape2D_q62ug")
 z_index = -1
 material = SubResource("ShaderMaterial_dx8gk")
 position = Vector2(0, 4)
-texture = ExtResource("25_wlbov")
+texture = ExtResource("28_5su5f")
 
 [node name="obstacle_spike14" type="Area2D" parent="Obstacles/spikes"]
 z_index = 6
@@ -1333,7 +1333,7 @@ rotation = 1.5707964
 scale = Vector2(0.8, 1)
 collision_layer = 2048
 collision_mask = 4
-script = ExtResource("22_woqaf")
+script = ExtResource("25_j4vbb")
 damage_trap = 100
 effect_type = Array[int]([0, 1, 2, 3])
 active_for = 2.0
@@ -1348,7 +1348,7 @@ shape = SubResource("RectangleShape2D_wwxgf")
 [node name="MainSpirte" type="Sprite2D" parent="Obstacles/spikes/obstacle_spike14"]
 position = Vector2(0, -5)
 scale = Vector2(1.4, 1)
-texture = ExtResource("23_5k5x7")
+texture = ExtResource("26_p25nv")
 
 [node name="Spikes" type="Area2D" parent="Obstacles/spikes/obstacle_spike14"]
 collision_layer = 2048
@@ -1361,7 +1361,7 @@ shape = SubResource("RectangleShape2D_q62ug")
 z_index = -1
 material = SubResource("ShaderMaterial_dx8gk")
 position = Vector2(0, 4)
-texture = ExtResource("25_wlbov")
+texture = ExtResource("28_5su5f")
 
 [node name="obstacle_spike15" type="Area2D" parent="Obstacles/spikes"]
 z_index = 6
@@ -1370,7 +1370,7 @@ rotation = -1.5707964
 scale = Vector2(0.8, 1)
 collision_layer = 2048
 collision_mask = 4
-script = ExtResource("22_woqaf")
+script = ExtResource("25_j4vbb")
 damage_trap = 100
 effect_type = Array[int]([0, 1, 2, 3])
 active_for = 2.0
@@ -1385,7 +1385,7 @@ shape = SubResource("RectangleShape2D_wwxgf")
 [node name="MainSpirte" type="Sprite2D" parent="Obstacles/spikes/obstacle_spike15"]
 position = Vector2(0, -5)
 scale = Vector2(1.4, 1)
-texture = ExtResource("23_5k5x7")
+texture = ExtResource("26_p25nv")
 
 [node name="Spikes" type="Area2D" parent="Obstacles/spikes/obstacle_spike15"]
 collision_layer = 2048
@@ -1398,7 +1398,7 @@ shape = SubResource("RectangleShape2D_q62ug")
 z_index = -1
 material = SubResource("ShaderMaterial_dx8gk")
 position = Vector2(0, 4)
-texture = ExtResource("25_wlbov")
+texture = ExtResource("28_5su5f")
 
 [node name="obstacle_spike16" type="Area2D" parent="Obstacles/spikes"]
 z_index = 6
@@ -1407,7 +1407,7 @@ rotation = -4.712389
 scale = Vector2(0.8, 1)
 collision_layer = 2048
 collision_mask = 4
-script = ExtResource("22_woqaf")
+script = ExtResource("25_j4vbb")
 damage_trap = 100
 effect_type = Array[int]([0, 1, 2, 3])
 active_for = 2.0
@@ -1422,7 +1422,7 @@ shape = SubResource("RectangleShape2D_wwxgf")
 [node name="MainSpirte" type="Sprite2D" parent="Obstacles/spikes/obstacle_spike16"]
 position = Vector2(0, -5)
 scale = Vector2(1.4, 1)
-texture = ExtResource("23_5k5x7")
+texture = ExtResource("26_p25nv")
 
 [node name="Spikes" type="Area2D" parent="Obstacles/spikes/obstacle_spike16"]
 collision_layer = 2048
@@ -1435,7 +1435,7 @@ shape = SubResource("RectangleShape2D_q62ug")
 z_index = -1
 material = SubResource("ShaderMaterial_dx8gk")
 position = Vector2(0, 4)
-texture = ExtResource("25_wlbov")
+texture = ExtResource("28_5su5f")
 
 [node name="obstacle_spike2" type="Area2D" parent="Obstacles/spikes"]
 z_index = 6
@@ -1444,7 +1444,7 @@ rotation = 3.1415927
 scale = Vector2(0.8, 1)
 collision_layer = 2048
 collision_mask = 4
-script = ExtResource("22_woqaf")
+script = ExtResource("25_j4vbb")
 damage_trap = 100
 effect_type = Array[int]([0, 1, 2, 3])
 active_for = 2.0
@@ -1459,7 +1459,7 @@ shape = SubResource("RectangleShape2D_wwxgf")
 [node name="MainSpirte" type="Sprite2D" parent="Obstacles/spikes/obstacle_spike2"]
 position = Vector2(0, -5)
 scale = Vector2(1.4, 1)
-texture = ExtResource("23_5k5x7")
+texture = ExtResource("26_p25nv")
 
 [node name="Spikes" type="Area2D" parent="Obstacles/spikes/obstacle_spike2"]
 collision_layer = 2048
@@ -1472,7 +1472,7 @@ shape = SubResource("RectangleShape2D_q62ug")
 z_index = -1
 material = SubResource("ShaderMaterial_231ic")
 position = Vector2(0, 4)
-texture = ExtResource("25_wlbov")
+texture = ExtResource("28_5su5f")
 
 [node name="obstacle_spike13" type="Area2D" parent="Obstacles/spikes"]
 z_index = 6
@@ -1481,7 +1481,7 @@ rotation = 3.1415927
 scale = Vector2(0.8, 1)
 collision_layer = 2048
 collision_mask = 4
-script = ExtResource("22_woqaf")
+script = ExtResource("25_j4vbb")
 damage_trap = 100
 effect_type = Array[int]([0, 1, 2, 3])
 active_for = 2.0
@@ -1496,7 +1496,7 @@ shape = SubResource("RectangleShape2D_wwxgf")
 [node name="MainSpirte" type="Sprite2D" parent="Obstacles/spikes/obstacle_spike13"]
 position = Vector2(0, -5)
 scale = Vector2(1.4, 1)
-texture = ExtResource("23_5k5x7")
+texture = ExtResource("26_p25nv")
 
 [node name="Spikes" type="Area2D" parent="Obstacles/spikes/obstacle_spike13"]
 collision_layer = 2048
@@ -1509,7 +1509,7 @@ shape = SubResource("RectangleShape2D_q62ug")
 z_index = -1
 material = SubResource("ShaderMaterial_231ic")
 position = Vector2(0, 4)
-texture = ExtResource("25_wlbov")
+texture = ExtResource("28_5su5f")
 
 [node name="obstacle_spike3" type="Area2D" parent="Obstacles/spikes"]
 z_index = 6
@@ -1517,7 +1517,7 @@ position = Vector2(840, 141)
 scale = Vector2(0.8, 1)
 collision_layer = 2048
 collision_mask = 4
-script = ExtResource("22_woqaf")
+script = ExtResource("25_j4vbb")
 damage_trap = 100
 effect_type = Array[int]([0, 1, 2, 3])
 active_for = 2.0
@@ -1532,7 +1532,7 @@ shape = SubResource("RectangleShape2D_wwxgf")
 [node name="MainSpirte" type="Sprite2D" parent="Obstacles/spikes/obstacle_spike3"]
 position = Vector2(0, -5)
 scale = Vector2(1.4, 1)
-texture = ExtResource("23_5k5x7")
+texture = ExtResource("26_p25nv")
 
 [node name="Spikes" type="Area2D" parent="Obstacles/spikes/obstacle_spike3"]
 collision_layer = 2048
@@ -1545,7 +1545,7 @@ shape = SubResource("RectangleShape2D_q62ug")
 z_index = -1
 material = SubResource("ShaderMaterial_dx8gk")
 position = Vector2(0, 4)
-texture = ExtResource("25_wlbov")
+texture = ExtResource("28_5su5f")
 
 [node name="obstacle_spike18" type="Area2D" parent="Obstacles/spikes"]
 z_index = 6
@@ -1553,7 +1553,7 @@ position = Vector2(1221, 45)
 scale = Vector2(0.8, 1)
 collision_layer = 2048
 collision_mask = 4
-script = ExtResource("22_woqaf")
+script = ExtResource("25_j4vbb")
 damage_trap = 100
 effect_type = Array[int]([0, 1, 2, 3])
 active_for = 2.0
@@ -1568,7 +1568,7 @@ shape = SubResource("RectangleShape2D_wwxgf")
 [node name="MainSpirte" type="Sprite2D" parent="Obstacles/spikes/obstacle_spike18"]
 position = Vector2(0, -5)
 scale = Vector2(1.4, 1)
-texture = ExtResource("23_5k5x7")
+texture = ExtResource("26_p25nv")
 
 [node name="Spikes" type="Area2D" parent="Obstacles/spikes/obstacle_spike18"]
 collision_layer = 2048
@@ -1581,7 +1581,7 @@ shape = SubResource("RectangleShape2D_q62ug")
 z_index = -1
 material = SubResource("ShaderMaterial_dx8gk")
 position = Vector2(0, 4)
-texture = ExtResource("25_wlbov")
+texture = ExtResource("28_5su5f")
 
 [node name="obstacle_spike4" type="Area2D" parent="Obstacles/spikes"]
 z_index = 6
@@ -1590,7 +1590,7 @@ rotation = 3.1415927
 scale = Vector2(0.8, 1)
 collision_layer = 2048
 collision_mask = 4
-script = ExtResource("22_woqaf")
+script = ExtResource("25_j4vbb")
 damage_trap = 100
 effect_type = Array[int]([0, 1, 2, 3])
 active_for = 2.0
@@ -1605,7 +1605,7 @@ shape = SubResource("RectangleShape2D_wwxgf")
 [node name="MainSpirte" type="Sprite2D" parent="Obstacles/spikes/obstacle_spike4"]
 position = Vector2(0, -5)
 scale = Vector2(1.4, 1)
-texture = ExtResource("23_5k5x7")
+texture = ExtResource("26_p25nv")
 
 [node name="Spikes" type="Area2D" parent="Obstacles/spikes/obstacle_spike4"]
 collision_layer = 2048
@@ -1618,7 +1618,7 @@ shape = SubResource("RectangleShape2D_q62ug")
 z_index = -1
 material = SubResource("ShaderMaterial_231ic")
 position = Vector2(0, 4)
-texture = ExtResource("25_wlbov")
+texture = ExtResource("28_5su5f")
 
 [node name="obstacle_spike5" type="Area2D" parent="Obstacles/spikes"]
 z_index = 6
@@ -1627,7 +1627,7 @@ rotation = -1.5707964
 scale = Vector2(0.8, 1)
 collision_layer = 2048
 collision_mask = 4
-script = ExtResource("22_woqaf")
+script = ExtResource("25_j4vbb")
 damage_trap = 10
 effect_type = Array[int]([0, 1, 2, 3])
 active_for = 2.0
@@ -1642,7 +1642,7 @@ shape = SubResource("RectangleShape2D_wwxgf")
 [node name="MainSpirte" type="Sprite2D" parent="Obstacles/spikes/obstacle_spike5"]
 position = Vector2(0, -5)
 scale = Vector2(1.4, 1)
-texture = ExtResource("23_5k5x7")
+texture = ExtResource("26_p25nv")
 
 [node name="Spikes" type="Area2D" parent="Obstacles/spikes/obstacle_spike5"]
 collision_layer = 2048
@@ -1655,7 +1655,7 @@ shape = SubResource("RectangleShape2D_q62ug")
 z_index = -1
 material = SubResource("ShaderMaterial_o1dhy")
 position = Vector2(1.09278474e-07, 5)
-texture = ExtResource("25_wlbov")
+texture = ExtResource("28_5su5f")
 
 [node name="obstacle_spike12" type="Area2D" parent="Obstacles/spikes"]
 z_index = 6
@@ -1664,7 +1664,7 @@ rotation = -1.5707964
 scale = Vector2(0.8, 1)
 collision_layer = 2048
 collision_mask = 4
-script = ExtResource("22_woqaf")
+script = ExtResource("25_j4vbb")
 damage_trap = 10
 effect_type = Array[int]([0, 1, 2, 3])
 active_for = 2.0
@@ -1679,7 +1679,7 @@ shape = SubResource("RectangleShape2D_wwxgf")
 [node name="MainSpirte" type="Sprite2D" parent="Obstacles/spikes/obstacle_spike12"]
 position = Vector2(0, -5)
 scale = Vector2(1.4, 1)
-texture = ExtResource("23_5k5x7")
+texture = ExtResource("26_p25nv")
 
 [node name="Spikes" type="Area2D" parent="Obstacles/spikes/obstacle_spike12"]
 collision_layer = 2048
@@ -1692,7 +1692,7 @@ shape = SubResource("RectangleShape2D_q62ug")
 z_index = -1
 material = SubResource("ShaderMaterial_o1dhy")
 position = Vector2(1.09278474e-07, 5)
-texture = ExtResource("25_wlbov")
+texture = ExtResource("28_5su5f")
 
 [node name="obstacle_spike6" type="Area2D" parent="Obstacles/spikes"]
 z_index = 6
@@ -1701,7 +1701,7 @@ rotation = -4.712389
 scale = Vector2(0.8, 1)
 collision_layer = 2048
 collision_mask = 4
-script = ExtResource("22_woqaf")
+script = ExtResource("25_j4vbb")
 damage_trap = 10
 effect_type = Array[int]([0, 1, 2, 3])
 active_for = 2.0
@@ -1716,7 +1716,7 @@ shape = SubResource("RectangleShape2D_wwxgf")
 [node name="MainSpirte" type="Sprite2D" parent="Obstacles/spikes/obstacle_spike6"]
 position = Vector2(0, -5)
 scale = Vector2(1.4, 1)
-texture = ExtResource("23_5k5x7")
+texture = ExtResource("26_p25nv")
 
 [node name="Spikes" type="Area2D" parent="Obstacles/spikes/obstacle_spike6"]
 collision_layer = 2048
@@ -1729,7 +1729,7 @@ shape = SubResource("RectangleShape2D_q62ug")
 z_index = -1
 material = SubResource("ShaderMaterial_o1dhy")
 position = Vector2(1.09278474e-07, 5)
-texture = ExtResource("25_wlbov")
+texture = ExtResource("28_5su5f")
 
 [node name="obstacle_spike7" type="Area2D" parent="Obstacles/spikes"]
 z_index = 6
@@ -1738,7 +1738,7 @@ rotation = -3.1415927
 scale = Vector2(0.8, 1)
 collision_layer = 2048
 collision_mask = 4
-script = ExtResource("22_woqaf")
+script = ExtResource("25_j4vbb")
 damage_trap = 10
 effect_type = Array[int]([0, 1, 2, 3])
 active_for = 2.0
@@ -1753,7 +1753,7 @@ shape = SubResource("RectangleShape2D_wwxgf")
 [node name="MainSpirte" type="Sprite2D" parent="Obstacles/spikes/obstacle_spike7"]
 position = Vector2(0, -5)
 scale = Vector2(1.4, 1)
-texture = ExtResource("23_5k5x7")
+texture = ExtResource("26_p25nv")
 
 [node name="Spikes" type="Area2D" parent="Obstacles/spikes/obstacle_spike7"]
 collision_layer = 2048
@@ -1766,7 +1766,7 @@ shape = SubResource("RectangleShape2D_q62ug")
 z_index = -1
 material = SubResource("ShaderMaterial_o1dhy")
 position = Vector2(1.09278474e-07, 5)
-texture = ExtResource("25_wlbov")
+texture = ExtResource("28_5su5f")
 
 [node name="obstacle_spike8" type="Area2D" parent="Obstacles/spikes"]
 z_index = 6
@@ -1775,7 +1775,7 @@ rotation = -3.1415927
 scale = Vector2(0.8, 1)
 collision_layer = 2048
 collision_mask = 4
-script = ExtResource("22_woqaf")
+script = ExtResource("25_j4vbb")
 damage_trap = 10
 effect_type = Array[int]([0, 1, 2, 3])
 active_for = 2.0
@@ -1790,7 +1790,7 @@ shape = SubResource("RectangleShape2D_wwxgf")
 [node name="MainSpirte" type="Sprite2D" parent="Obstacles/spikes/obstacle_spike8"]
 position = Vector2(0, -5)
 scale = Vector2(1.4, 1)
-texture = ExtResource("23_5k5x7")
+texture = ExtResource("26_p25nv")
 
 [node name="Spikes" type="Area2D" parent="Obstacles/spikes/obstacle_spike8"]
 collision_layer = 2048
@@ -1803,7 +1803,7 @@ shape = SubResource("RectangleShape2D_q62ug")
 z_index = -1
 material = SubResource("ShaderMaterial_o1dhy")
 position = Vector2(1.09278474e-07, 5)
-texture = ExtResource("25_wlbov")
+texture = ExtResource("28_5su5f")
 
 [node name="obstacle_spike9" type="Area2D" parent="Obstacles/spikes"]
 z_index = 6
@@ -1812,7 +1812,7 @@ rotation = -3.1415927
 scale = Vector2(0.8, 1)
 collision_layer = 2048
 collision_mask = 4
-script = ExtResource("22_woqaf")
+script = ExtResource("25_j4vbb")
 damage_trap = 10
 effect_type = Array[int]([0, 1, 2, 3])
 active_for = 2.0
@@ -1827,7 +1827,7 @@ shape = SubResource("RectangleShape2D_wwxgf")
 [node name="MainSpirte" type="Sprite2D" parent="Obstacles/spikes/obstacle_spike9"]
 position = Vector2(0, -5)
 scale = Vector2(1.4, 1)
-texture = ExtResource("23_5k5x7")
+texture = ExtResource("26_p25nv")
 
 [node name="Spikes" type="Area2D" parent="Obstacles/spikes/obstacle_spike9"]
 collision_layer = 2048
@@ -1840,7 +1840,7 @@ shape = SubResource("RectangleShape2D_q62ug")
 z_index = -1
 material = SubResource("ShaderMaterial_o1dhy")
 position = Vector2(1.09278474e-07, 5)
-texture = ExtResource("25_wlbov")
+texture = ExtResource("28_5su5f")
 
 [node name="obstacle_spike10" type="Area2D" parent="Obstacles/spikes"]
 z_index = 6
@@ -1849,7 +1849,7 @@ rotation = -3.1415927
 scale = Vector2(0.8, 1)
 collision_layer = 2048
 collision_mask = 4
-script = ExtResource("22_woqaf")
+script = ExtResource("25_j4vbb")
 damage_trap = 10
 effect_type = Array[int]([0, 1, 2, 3])
 active_for = 2.0
@@ -1864,7 +1864,7 @@ shape = SubResource("RectangleShape2D_wwxgf")
 [node name="MainSpirte" type="Sprite2D" parent="Obstacles/spikes/obstacle_spike10"]
 position = Vector2(0, -5)
 scale = Vector2(1.4, 1)
-texture = ExtResource("23_5k5x7")
+texture = ExtResource("26_p25nv")
 
 [node name="Spikes" type="Area2D" parent="Obstacles/spikes/obstacle_spike10"]
 collision_layer = 2048
@@ -1877,7 +1877,7 @@ shape = SubResource("RectangleShape2D_q62ug")
 z_index = -1
 material = SubResource("ShaderMaterial_o1dhy")
 position = Vector2(1.09278474e-07, 5)
-texture = ExtResource("25_wlbov")
+texture = ExtResource("28_5su5f")
 
 [node name="obstacle_spike11" type="Area2D" parent="Obstacles/spikes"]
 z_index = 6
@@ -1886,7 +1886,7 @@ rotation = -3.1415927
 scale = Vector2(0.8, 1)
 collision_layer = 2048
 collision_mask = 4
-script = ExtResource("22_woqaf")
+script = ExtResource("25_j4vbb")
 damage_trap = 10
 effect_type = Array[int]([0, 1, 2, 3])
 active_for = 2.0
@@ -1901,7 +1901,7 @@ shape = SubResource("RectangleShape2D_wwxgf")
 [node name="MainSpirte" type="Sprite2D" parent="Obstacles/spikes/obstacle_spike11"]
 position = Vector2(0, -5)
 scale = Vector2(1.4, 1)
-texture = ExtResource("23_5k5x7")
+texture = ExtResource("26_p25nv")
 
 [node name="Spikes" type="Area2D" parent="Obstacles/spikes/obstacle_spike11"]
 collision_layer = 2048
@@ -1914,16 +1914,16 @@ shape = SubResource("RectangleShape2D_q62ug")
 z_index = -1
 material = SubResource("ShaderMaterial_o1dhy")
 position = Vector2(1.09278474e-07, 5)
-texture = ExtResource("25_wlbov")
+texture = ExtResource("28_5su5f")
 
 [node name="MagicBamboo" type="Node2D" parent="Obstacles"]
 z_index = 4
 position = Vector2(-1, -17)
 
-[node name="MagicBamboo" parent="Obstacles/MagicBamboo" instance=ExtResource("26_xbulm")]
+[node name="MagicBamboo" parent="Obstacles/MagicBamboo" instance=ExtResource("29_ycvfy")]
 z_index = 5
 position = Vector2(-112, -123)
-texture = ExtResource("27_klmf3")
+texture = ExtResource("30_fwjsy")
 heal_amount = 5
 COLOR = Color(0, 0.59607846, 0.8627451, 1)
 
@@ -1931,17 +1931,17 @@ COLOR = Color(0, 0.59607846, 0.8627451, 1)
 z_index = 4
 position = Vector2(1183, 135)
 
-[node name="MagicBamboo" parent="Obstacles/MagicBamboo2" instance=ExtResource("26_xbulm")]
+[node name="MagicBamboo" parent="Obstacles/MagicBamboo2" instance=ExtResource("29_ycvfy")]
 z_index = 5
-texture = ExtResource("27_klmf3")
+texture = ExtResource("30_fwjsy")
 heal_amount = 5
 COLOR = Color(0, 0.59607846, 0.8627451, 1)
 
 [node name="Next_level" type="Area2D" parent="."]
 position = Vector2(3616, -288)
 collision_mask = 4
-script = ExtResource("28_drrrq")
-level_name = "Level_2-3"
+script = ExtResource("31_p3qi1")
+level_name = "level_2-3"
 next_part = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Next_level"]
@@ -1949,43 +1949,43 @@ shape = SubResource("RectangleShape2D_miuwv")
 
 [node name="Souls" type="Node2D" parent="."]
 
-[node name="Dash" parent="Souls" instance=ExtResource("29_dbt3o")]
+[node name="Dash" parent="Souls" instance=ExtResource("32_wwgsw")]
 position = Vector2(328, 58)
 scale = Vector2(0.765, 0.765)
 ability = 7
-custom_sprite_frames = ExtResource("30_nmhk6")
+custom_sprite_frames = ExtResource("33_sj3uu")
 
 [node name="Enemies" type="Node" parent="."]
 
-[node name="Enemy" parent="Enemies" instance=ExtResource("31_y3dvd")]
+[node name="Enemy" parent="Enemies" instance=ExtResource("34_mnuk5")]
 z_index = 7
 position = Vector2(2080, 135)
 
-[node name="Enemy3" parent="Enemies" instance=ExtResource("31_y3dvd")]
+[node name="Enemy3" parent="Enemies" instance=ExtResource("34_mnuk5")]
 z_index = 7
 position = Vector2(776, -264)
 
-[node name="Enemy4" parent="Enemies" instance=ExtResource("31_y3dvd")]
+[node name="Enemy4" parent="Enemies" instance=ExtResource("34_mnuk5")]
 z_index = 7
 position = Vector2(874, -296)
 
-[node name="Enemy5" parent="Enemies" instance=ExtResource("31_y3dvd")]
+[node name="Enemy5" parent="Enemies" instance=ExtResource("34_mnuk5")]
 z_index = 7
 position = Vector2(941, -264)
 
-[node name="Enemy6" parent="Enemies" instance=ExtResource("31_y3dvd")]
+[node name="Enemy6" parent="Enemies" instance=ExtResource("34_mnuk5")]
 z_index = 7
 position = Vector2(982, -264)
 
-[node name="Enemy7" parent="Enemies" instance=ExtResource("31_y3dvd")]
+[node name="Enemy7" parent="Enemies" instance=ExtResource("34_mnuk5")]
 z_index = 7
 position = Vector2(1033, -280)
 
-[node name="Enemy8" parent="Enemies" instance=ExtResource("31_y3dvd")]
+[node name="Enemy8" parent="Enemies" instance=ExtResource("34_mnuk5")]
 z_index = 7
 position = Vector2(1093, -264)
 
-[node name="Enemy2" parent="Enemies" instance=ExtResource("31_y3dvd")]
+[node name="Enemy2" parent="Enemies" instance=ExtResource("34_mnuk5")]
 z_index = 7
 position = Vector2(2391, 135)
 
@@ -1993,7 +1993,7 @@ position = Vector2(2391, 135)
 position = Vector2(576, 136)
 collision_layer = 0
 collision_mask = 4
-script = ExtResource("35_aylqp")
+script = ExtResource("35_nncpe")
 vert_drag_bottom = 0.6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CameraDragZoneCheck4"]
@@ -2004,7 +2004,7 @@ shape = SubResource("RectangleShape2D_0vnpx")
 position = Vector2(2191, 113)
 collision_layer = 0
 collision_mask = 4
-script = ExtResource("35_aylqp")
+script = ExtResource("35_nncpe")
 vert_drag_bottom = 0.6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CameraDragZoneCheck2"]
@@ -2015,7 +2015,7 @@ shape = SubResource("RectangleShape2D_nju6f")
 position = Vector2(1240, 131)
 collision_layer = 0
 collision_mask = 4
-script = ExtResource("35_aylqp")
+script = ExtResource("35_nncpe")
 vert_drag_bottom = 0.6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CameraDragZoneCheck5"]
@@ -2025,14 +2025,14 @@ shape = SubResource("RectangleShape2D_nju6f")
 position = Vector2(2520, 136)
 collision_layer = 0
 collision_mask = 4
-script = ExtResource("35_aylqp")
+script = ExtResource("35_nncpe")
 vert_drag_bottom = 0.6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CameraDragZoneCheck3"]
 position = Vector2(-16, 0)
 shape = SubResource("RectangleShape2D_u45l3")
 
-[node name="CameraDragZone" parent="." instance=ExtResource("35_ov71p")]
+[node name="CameraDragZone" parent="." instance=ExtResource("36_u0bag")]
 position = Vector2(1372, 94)
 vert_drag_bottom = 0.2
 
@@ -2040,7 +2040,7 @@ vert_drag_bottom = 0.2
 position = Vector2(552, 78)
 collision_layer = 0
 collision_mask = 4
-script = ExtResource("35_aylqp")
+script = ExtResource("35_nncpe")
 vert_drag_bottom = 0.2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CameraDragZone6"]
@@ -2050,21 +2050,21 @@ shape = SubResource("RectangleShape2D_n2dxn")
 position = Vector2(2519, 102)
 collision_layer = 0
 collision_mask = 4
-script = ExtResource("35_aylqp")
+script = ExtResource("35_nncpe")
 vert_drag_bottom = 0.2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CameraDragZone5"]
 shape = SubResource("RectangleShape2D_aylqp")
 
-[node name="CameraDragZone2" parent="." instance=ExtResource("35_ov71p")]
+[node name="CameraDragZone2" parent="." instance=ExtResource("36_u0bag")]
 position = Vector2(1352, 94)
 vert_drag_bottom = 0.6
 
-[node name="CameraDragZone3" parent="." instance=ExtResource("35_ov71p")]
+[node name="CameraDragZone3" parent="." instance=ExtResource("36_u0bag")]
 position = Vector2(1783, 94)
 vert_drag_bottom = 0.2
 
-[node name="CameraDragZone4" parent="." instance=ExtResource("35_ov71p")]
+[node name="CameraDragZone4" parent="." instance=ExtResource("36_u0bag")]
 position = Vector2(1803, 94)
 vert_drag_bottom = 0.6
 
@@ -2077,13 +2077,13 @@ libraries = {
 z_index = 5
 position = Vector2(679, -104)
 collision_mask = 4100
-script = ExtResource("20_duqxh")
+script = ExtResource("37_0bisf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Events/Key1"]
 shape = SubResource("RectangleShape2D_qovpi")
 
 [node name="Sprite2D" type="Sprite2D" parent="Events/Key1"]
-texture = ExtResource("3_oxqp5")
+texture = ExtResource("4_ck23q")
 region_enabled = true
 region_rect = Rect2(128, 128, 16, 16)
 
@@ -2091,13 +2091,13 @@ region_rect = Rect2(128, 128, 16, 16)
 z_index = 5
 position = Vector2(1808, 496)
 collision_mask = 4100
-script = ExtResource("20_duqxh")
+script = ExtResource("37_0bisf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Events/Key2"]
 shape = SubResource("RectangleShape2D_qovpi")
 
 [node name="Sprite2D" type="Sprite2D" parent="Events/Key2"]
-texture = ExtResource("3_oxqp5")
+texture = ExtResource("4_ck23q")
 region_enabled = true
 region_rect = Rect2(128, 128, 16, 16)
 
@@ -2105,27 +2105,27 @@ region_rect = Rect2(128, 128, 16, 16)
 z_index = 5
 position = Vector2(2696, -208)
 collision_mask = 4100
-script = ExtResource("20_duqxh")
+script = ExtResource("37_0bisf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Events/Key3"]
 shape = SubResource("RectangleShape2D_qovpi")
 
 [node name="Sprite2D" type="Sprite2D" parent="Events/Key3"]
-texture = ExtResource("3_oxqp5")
+texture = ExtResource("4_ck23q")
 region_enabled = true
 region_rect = Rect2(128, 128, 16, 16)
 
 [node name="Gate_Crystal1" type="StaticBody2D" parent="Events"]
 z_index = 5
 position = Vector2(1048, 127)
-script = ExtResource("38_u45l3")
+script = ExtResource("38_2y3r1")
 level_id = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Events/Gate_Crystal1"]
 shape = SubResource("RectangleShape2D_l63tk")
 
 [node name="Sprite2D" type="Sprite2D" parent="Events/Gate_Crystal1"]
-texture = ExtResource("3_oxqp5")
+texture = ExtResource("4_ck23q")
 region_enabled = true
 region_rect = Rect2(144, 96, 16, 32)
 
@@ -2140,7 +2140,7 @@ shape = SubResource("RectangleShape2D_v2jrc")
 [node name="Gate_Crystal2" type="StaticBody2D" parent="Events"]
 z_index = 5
 position = Vector2(1880, 128)
-script = ExtResource("38_u45l3")
+script = ExtResource("38_2y3r1")
 door_id = 1
 level_id = 4
 
@@ -2148,7 +2148,7 @@ level_id = 4
 shape = SubResource("RectangleShape2D_l63tk")
 
 [node name="Sprite2D" type="Sprite2D" parent="Events/Gate_Crystal2"]
-texture = ExtResource("3_oxqp5")
+texture = ExtResource("4_ck23q")
 region_enabled = true
 region_rect = Rect2(144, 96, 16, 32)
 
@@ -2163,7 +2163,7 @@ shape = SubResource("RectangleShape2D_v2jrc")
 [node name="Gate_Crystal3" type="StaticBody2D" parent="Events"]
 z_index = 5
 position = Vector2(3608, -288)
-script = ExtResource("38_u45l3")
+script = ExtResource("38_2y3r1")
 door_id = 2
 level_id = 4
 
@@ -2171,7 +2171,7 @@ level_id = 4
 shape = SubResource("RectangleShape2D_l63tk")
 
 [node name="Sprite2D" type="Sprite2D" parent="Events/Gate_Crystal3"]
-texture = ExtResource("3_oxqp5")
+texture = ExtResource("4_ck23q")
 region_enabled = true
 region_rect = Rect2(144, 96, 16, 32)
 
@@ -2183,20 +2183,20 @@ collision_mask = 5
 position = Vector2(0, -30)
 shape = SubResource("RectangleShape2D_v2jrc")
 
-[node name="ParralaxBackground" parent="." instance=ExtResource("39_n2dxn")]
+[node name="ParralaxBackground" parent="." instance=ExtResource("39_pixuu")]
 position = Vector2(0, 322)
 
 [node name="Scrolls" type="Node2D" parent="."]
 
-[node name="Scroll9" parent="Scrolls" instance=ExtResource("40_qovpi")]
+[node name="Scroll9" parent="Scrolls" instance=ExtResource("40_clnyk")]
 z_index = 20
 position = Vector2(1234, -350)
-dialogue = ExtResource("41_l63tk")
+dialogue = ExtResource("41_d5p0u")
 
-[node name="Scroll10" parent="Scrolls" instance=ExtResource("40_qovpi")]
+[node name="Scroll10" parent="Scrolls" instance=ExtResource("40_clnyk")]
 z_index = 20
 position = Vector2(1288, 343)
-dialogue = ExtResource("42_v2jrc")
+dialogue = ExtResource("42_vyx14")
 
 [connection signal="body_entered" from="killzone" to="killzone" method="_on_body_entered"]
 [connection signal="body_entered" from="killzone2" to="killzone2" method="_on_body_entered"]

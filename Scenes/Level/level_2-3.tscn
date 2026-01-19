@@ -186,7 +186,6 @@ script = ExtResource("4_gb2tu")
 player = NodePath("../Player")
 
 [node name="Player" parent="." instance=ExtResource("5_voudn")]
-z_index = 10
 position = Vector2(48, 296)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -627,7 +626,7 @@ shape = SubResource("RectangleShape2D_v8vj6")
 position = Vector2(4953, -2127)
 collision_mask = 4
 script = ExtResource("28_1joaj")
-level_name = "Level_2-4"
+level_name = "level_2-4"
 next_part = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Next_level"]

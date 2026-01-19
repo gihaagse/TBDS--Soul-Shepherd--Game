@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://j1w6x4hpn3ou" path="res://Assets/Icons/Sung Chin Woo Icon.png" id="4_0a8bn"]
 [ext_resource type="Texture2D" uid="uid://goes5l2sfyvw" path="res://Assets/Sprites/Tileset1.png" id="4_5emvd"]
 [ext_resource type="PackedScene" uid="uid://c45jpc3kaflr4" path="res://Scenes/CheckPoints/CheckPoint.tscn" id="5_x3bjw"]
-[ext_resource type="Shader" uid="uid://b4k5pl844vedq" path="res://Shaders/water_shader_vertical_waves.gdshader" id="6_5emvd"]
+[ext_resource type="Shader" path="res://Shaders/water_shader_vertical_waves.gdshader" id="6_5emvd"]
 [ext_resource type="Script" uid="uid://dtfsguwdnfr7m" path="res://Scripts/CheckPoints/start.gd" id="6_mcfix"]
 [ext_resource type="PackedScene" uid="uid://c5ongupm07qh3" path="res://Scenes/Player/player.tscn" id="7_5emvd"]
 [ext_resource type="Script" uid="uid://b2b6rmyyluckx" path="res://Scripts/Player/General/camera_2d.gd" id="8_00man"]
@@ -1058,7 +1058,6 @@ position = Vector2(75, 219)
 script = ExtResource("6_mcfix")
 
 [node name="Player" parent="." instance=ExtResource("7_5emvd")]
-z_index = 10
 position = Vector2(78, 229)
 
 [node name="CameraMain" type="Camera2D" parent="." node_paths=PackedStringArray("player")]
@@ -1487,7 +1486,7 @@ COLOR = Color(0, 0.59607846, 0.8627451, 1)
 position = Vector2(5848, -112)
 collision_mask = 4
 script = ExtResource("26_s7l10")
-level_name = "Level_1-4"
+level_name = "level_1-4"
 next_level = 1
 next_part = 4
 

@@ -1,47 +1,47 @@
 [gd_scene load_steps=60 format=3 uid="uid://j6du3niuxs2r"]
 
-[ext_resource type="Script" uid="uid://c2jeph0pjh467" path="res://Scripts/Level/playtest_level.gd" id="1_a337h"]
-[ext_resource type="Resource" uid="uid://ch7yv6txyd3tq" path="res://Resources/Dialogue/2-1-start-dialogue.tres" id="2_65b1w"]
-[ext_resource type="Script" uid="uid://byn1je7flnjo3" path="res://Scripts/Central/game_manager.gd" id="2_tcjxv"]
-[ext_resource type="Texture2D" uid="uid://dfdfu6o1j3apv" path="res://Assets/Sprites/Playtest1.png" id="3_hrj5t"]
-[ext_resource type="Texture2D" uid="uid://c3jf58yvjljmy" path="res://Assets/Sprites/tileset2.png" id="4_hoehn"]
-[ext_resource type="Texture2D" uid="uid://j1w6x4hpn3ou" path="res://Assets/Icons/Sung Chin Woo Icon.png" id="4_wdtcg"]
-[ext_resource type="PackedScene" uid="uid://c45jpc3kaflr4" path="res://Scenes/CheckPoints/CheckPoint.tscn" id="5_hoehn"]
-[ext_resource type="Shader" path="res://Shaders/water_shader_vertical_waves.gdshader" id="6_hoehn"]
-[ext_resource type="Script" uid="uid://dtfsguwdnfr7m" path="res://Scripts/CheckPoints/start.gd" id="6_qgbq7"]
-[ext_resource type="PackedScene" uid="uid://c5ongupm07qh3" path="res://Scenes/Player/player.tscn" id="7_as8vh"]
-[ext_resource type="Script" uid="uid://ce43l01wboarg" path="res://Scripts/UI/Overlay/canvas_layer.gd" id="8_k5ql6"]
-[ext_resource type="FontFile" uid="uid://x2dwsfc3en6q" path="res://Assets/Tutorial Open Assets/brackeys_platformer_assets/fonts/PixelOperator8.ttf" id="9_51upf"]
-[ext_resource type="PackedScene" uid="uid://dbawdw77kghcn" path="res://Scenes/UI/GameMenus/Pause_Menu.tscn" id="10_65b1w"]
-[ext_resource type="PackedScene" uid="uid://brc3fv7pjl1bv" path="res://Scenes/UI/GameMenus/Options_Menu.tscn" id="11_s4fgd"]
-[ext_resource type="PackedScene" uid="uid://b1wpf7mxi7ax8" path="res://Scenes/UI/Overlay/ability_debug_menu.tscn" id="12_haa5n"]
-[ext_resource type="PackedScene" uid="uid://bdqpqswjpdvot" path="res://Scenes/UI/Overlay/ability_grid.tscn" id="13_k4re7"]
-[ext_resource type="PackedScene" uid="uid://3nx8i28smrqo" path="res://Scenes/UI/GameMenus/Ability_Info.tscn" id="14_oeoth"]
-[ext_resource type="PackedScene" uid="uid://bajjogst0v58d" path="res://Scenes/UI/Overlay/CheckPointRespawnUI.tscn" id="15_l0enr"]
-[ext_resource type="Script" uid="uid://b2b6rmyyluckx" path="res://Scripts/Player/General/camera_2d.gd" id="16_ml4sm"]
-[ext_resource type="PackedScene" uid="uid://c64nl2fkq45ge" path="res://Scenes/UI/Overlay/AbilityInfoButton.tscn" id="16_wdtcg"]
-[ext_resource type="PackedScene" uid="uid://bpp47tnrfdrab" path="res://Scenes/UI/Components/player_hud.tscn" id="17_hoehn"]
-[ext_resource type="FontFile" uid="uid://p47ydk5quyq2" path="res://Assets/Tutorial Open Assets/brackeys_platformer_assets/fonts/PixelOperator8-Bold.ttf" id="18_qgbq7"]
-[ext_resource type="Script" uid="uid://bpkjqkjnq8o6g" path="res://Scripts/Player/General/killzone.gd" id="18_vpnas"]
-[ext_resource type="PackedScene" uid="uid://c34kdnga4axvp" path="res://Scenes/Obstacles/obstacle_falling_tiles.tscn" id="19_78fjt"]
-[ext_resource type="PackedScene" uid="uid://dm61xmst0522o" path="res://Scenes/Items/magic_bamboo.tscn" id="21_fo8ia"]
-[ext_resource type="Texture2D" uid="uid://c8dol58rb8t5j" path="res://Assets/Sprites/Magic Bamboo/+5 hp magic bamboo.png" id="22_c21fn"]
-[ext_resource type="PackedScene" uid="uid://ndkp1vfqmr4g" path="res://Scenes/Dialogue/DialogueUI.tscn" id="22_s4fgd"]
-[ext_resource type="Script" uid="uid://b7008awu7lly6" path="res://Scenes/Level/next_level.gd" id="24_pqc52"]
-[ext_resource type="Script" uid="uid://hfj0hgwiyiqu" path="res://Scripts/Central/event_trigger.gd" id="25_tr82u"]
-[ext_resource type="AudioStream" uid="uid://crqxhwi0bk28r" path="res://Assets/Audio/Music/2-1 Spelunkin'.wav" id="26_51upf"]
-[ext_resource type="Script" uid="uid://cbirdwbh5p7se" path="res://Scripts/Obstacles/gate_crystal.gd" id="26_tdunj"]
-[ext_resource type="PackedScene" uid="uid://cl45lm0hg20kf" path="res://Scenes/Items/soul.tscn" id="27_imhjm"]
-[ext_resource type="SpriteFrames" uid="uid://cgtj4wt3ql8r1" path="res://Resources/Wisps/Fire_Wisp.tres" id="28_demn2"]
-[ext_resource type="PackedScene" uid="uid://t6qqa47vckdt" path="res://Scenes/Enemies/husk.tscn" id="29_8n4ft"]
-[ext_resource type="PackedScene" uid="uid://dgm6tcibml5l" path="res://Scenes/Enemies/dragon_fly_enemy.tscn" id="33_51upf"]
-[ext_resource type="PackedScene" uid="uid://cy60eohui7ya1" path="res://Scenes/Background/parralax_background_2-1.tscn" id="33_hoehn"]
-[ext_resource type="PackedScene" uid="uid://bdhxnuny30cml" path="res://Scenes/Items/scroll.tscn" id="34_as8vh"]
-[ext_resource type="Resource" uid="uid://bia18b6nkuq2v" path="res://Resources/Scroll/scroll7.tres" id="35_51upf"]
-[ext_resource type="Resource" uid="uid://bldj55wy85i6y" path="res://Resources/Scroll/scroll8.tres" id="36_k5ql6"]
+[ext_resource type="Script" uid="uid://c2jeph0pjh467" path="res://Scripts/Level/playtest_level.gd" id="1_b4reu"]
+[ext_resource type="Resource" uid="uid://ch7yv6txyd3tq" path="res://Resources/Dialogue/2-1-start-dialogue.tres" id="2_iq1np"]
+[ext_resource type="Script" uid="uid://byn1je7flnjo3" path="res://Scripts/Central/game_manager.gd" id="3_pyomo"]
+[ext_resource type="Texture2D" uid="uid://dfdfu6o1j3apv" path="res://Assets/Sprites/Playtest1.png" id="4_lvgjw"]
+[ext_resource type="Texture2D" uid="uid://c3jf58yvjljmy" path="res://Assets/Sprites/tileset2.png" id="5_xlknf"]
+[ext_resource type="Texture2D" uid="uid://j1w6x4hpn3ou" path="res://Assets/Icons/Sung Chin Woo Icon.png" id="6_w8tj1"]
+[ext_resource type="Shader" path="res://Shaders/water_shader_vertical_waves.gdshader" id="7_1uqqb"]
+[ext_resource type="PackedScene" uid="uid://c45jpc3kaflr4" path="res://Scenes/CheckPoints/CheckPoint.tscn" id="8_la7aj"]
+[ext_resource type="Script" uid="uid://dtfsguwdnfr7m" path="res://Scripts/CheckPoints/start.gd" id="9_ct3gw"]
+[ext_resource type="PackedScene" uid="uid://c5ongupm07qh3" path="res://Scenes/Player/player.tscn" id="10_j2mfv"]
+[ext_resource type="Script" uid="uid://ce43l01wboarg" path="res://Scripts/UI/Overlay/canvas_layer.gd" id="11_hw281"]
+[ext_resource type="FontFile" uid="uid://x2dwsfc3en6q" path="res://Assets/Tutorial Open Assets/brackeys_platformer_assets/fonts/PixelOperator8.ttf" id="12_mk6cr"]
+[ext_resource type="PackedScene" uid="uid://dbawdw77kghcn" path="res://Scenes/UI/GameMenus/Pause_Menu.tscn" id="13_vnb2e"]
+[ext_resource type="PackedScene" uid="uid://brc3fv7pjl1bv" path="res://Scenes/UI/GameMenus/Options_Menu.tscn" id="14_jyrgg"]
+[ext_resource type="PackedScene" uid="uid://b1wpf7mxi7ax8" path="res://Scenes/UI/Overlay/ability_debug_menu.tscn" id="15_grytn"]
+[ext_resource type="PackedScene" uid="uid://bdqpqswjpdvot" path="res://Scenes/UI/Overlay/ability_grid.tscn" id="16_lj0sb"]
+[ext_resource type="PackedScene" uid="uid://3nx8i28smrqo" path="res://Scenes/UI/GameMenus/Ability_Info.tscn" id="17_er8uy"]
+[ext_resource type="PackedScene" uid="uid://bajjogst0v58d" path="res://Scenes/UI/Overlay/CheckPointRespawnUI.tscn" id="18_umies"]
+[ext_resource type="PackedScene" uid="uid://c64nl2fkq45ge" path="res://Scenes/UI/Overlay/AbilityInfoButton.tscn" id="19_2o55h"]
+[ext_resource type="PackedScene" uid="uid://bpp47tnrfdrab" path="res://Scenes/UI/Components/player_hud.tscn" id="20_r5qr7"]
+[ext_resource type="FontFile" uid="uid://p47ydk5quyq2" path="res://Assets/Tutorial Open Assets/brackeys_platformer_assets/fonts/PixelOperator8-Bold.ttf" id="21_oxk0m"]
+[ext_resource type="PackedScene" uid="uid://ndkp1vfqmr4g" path="res://Scenes/Dialogue/DialogueUI.tscn" id="22_06yil"]
+[ext_resource type="Script" uid="uid://b2b6rmyyluckx" path="res://Scripts/Player/General/camera_2d.gd" id="23_4inea"]
+[ext_resource type="Script" uid="uid://bpkjqkjnq8o6g" path="res://Scripts/Player/General/killzone.gd" id="24_f5xwu"]
+[ext_resource type="PackedScene" uid="uid://c34kdnga4axvp" path="res://Scenes/Obstacles/obstacle_falling_tiles.tscn" id="25_0l766"]
+[ext_resource type="PackedScene" uid="uid://dm61xmst0522o" path="res://Scenes/Items/magic_bamboo.tscn" id="26_ho5x2"]
+[ext_resource type="Texture2D" uid="uid://c8dol58rb8t5j" path="res://Assets/Sprites/Magic Bamboo/+5 hp magic bamboo.png" id="27_n8dwm"]
+[ext_resource type="AudioStream" uid="uid://crqxhwi0bk28r" path="res://Assets/Audio/Music/2-1 Spelunkin'.wav" id="28_ew1am"]
+[ext_resource type="Script" uid="uid://b7008awu7lly6" path="res://Scenes/Level/next_level.gd" id="29_tppol"]
+[ext_resource type="Script" uid="uid://hfj0hgwiyiqu" path="res://Scripts/Central/event_trigger.gd" id="30_eyv4x"]
+[ext_resource type="Script" uid="uid://cbirdwbh5p7se" path="res://Scripts/Obstacles/gate_crystal.gd" id="31_ltpos"]
+[ext_resource type="PackedScene" uid="uid://cl45lm0hg20kf" path="res://Scenes/Items/soul.tscn" id="32_k5kvy"]
+[ext_resource type="SpriteFrames" uid="uid://cgtj4wt3ql8r1" path="res://Resources/Wisps/Fire_Wisp.tres" id="33_nrxj5"]
+[ext_resource type="PackedScene" uid="uid://t6qqa47vckdt" path="res://Scenes/Enemies/husk.tscn" id="34_iull5"]
+[ext_resource type="PackedScene" uid="uid://dgm6tcibml5l" path="res://Scenes/Enemies/dragon_fly_enemy.tscn" id="35_3mcn0"]
+[ext_resource type="PackedScene" uid="uid://cy60eohui7ya1" path="res://Scenes/Background/parralax_background_2-1.tscn" id="36_x1o57"]
+[ext_resource type="PackedScene" uid="uid://bdhxnuny30cml" path="res://Scenes/Items/scroll.tscn" id="37_xw8ol"]
+[ext_resource type="Resource" uid="uid://bia18b6nkuq2v" path="res://Resources/Scroll/scroll7.tres" id="38_b525h"]
+[ext_resource type="Resource" uid="uid://bldj55wy85i6y" path="res://Resources/Scroll/scroll8.tres" id="39_c11rd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_b4qox"]
-texture = ExtResource("3_hrj5t")
+texture = ExtResource("4_lvgjw")
 10:0/0 = 0
 11:0/0 = 0
 12:0/0 = 0
@@ -267,7 +267,7 @@ texture = ExtResource("3_hrj5t")
 12:10/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qgbq7"]
-texture = ExtResource("4_hoehn")
+texture = ExtResource("5_xlknf")
 1:0/0 = 0
 1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, 8, 0, 8, 8)
 2:0/0 = 0
@@ -415,7 +415,7 @@ texture = ExtResource("4_hoehn")
 13:7/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jok4q"]
-texture = ExtResource("4_wdtcg")
+texture = ExtResource("6_w8tj1")
 7:4/0 = 0
 7:4/0/physics_layer_1/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 3:8/0 = 0
@@ -600,7 +600,7 @@ sources/2 = SubResource("TileSetAtlasSource_jok4q")
 sources/1 = SubResource("TileSetAtlasSource_qgbq7")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qgbq7"]
-shader = ExtResource("6_hoehn")
+shader = ExtResource("7_1uqqb")
 shader_parameter/wave_height = 0.06
 shader_parameter/wave_frequency = 5.0
 shader_parameter/wave_speed = 1.5
@@ -609,7 +609,7 @@ shader_parameter/texture_wave_strength = 0.00499999988824
 shader_parameter/animation_speed = 1.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_as8vh"]
-texture = ExtResource("3_hrj5t")
+texture = ExtResource("4_lvgjw")
 10:0/0 = 0
 11:0/0 = 0
 12:0/0 = 0
@@ -822,7 +822,7 @@ texture = ExtResource("3_hrj5t")
 3:7/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k5ql6"]
-texture = ExtResource("4_wdtcg")
+texture = ExtResource("6_w8tj1")
 7:4/0 = 0
 7:4/0/physics_layer_1/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 3:8/0 = 0
@@ -1100,12 +1100,12 @@ size = Vector2(16, 32)
 size = Vector2(96.5, 90.25)
 
 [node name="Level" type="Node2D"]
-script = ExtResource("1_a337h")
-dialogue = ExtResource("2_65b1w")
+script = ExtResource("1_b4reu")
+dialogue = ExtResource("2_iq1np")
 
 [node name="GameManager" type="Node" parent="."]
 unique_name_in_owner = true
-script = ExtResource("2_tcjxv")
+script = ExtResource("3_pyomo")
 
 [node name="TileMap" type="TileMap" parent="."]
 z_index = 5
@@ -1133,26 +1133,26 @@ layer_2/tile_data = PackedInt32Array(65535, 458754, 11, 131071, 458754, 11, 1966
 [node name="CheckPoints" type="Node2D" parent="."]
 z_index = 10
 
-[node name="Area2D" parent="CheckPoints" instance=ExtResource("5_hoehn")]
+[node name="Area2D" parent="CheckPoints" instance=ExtResource("8_la7aj")]
 position = Vector2(750, 328)
 checkppoint_id = 1
 
 [node name="Start" type="Marker2D" parent="CheckPoints"]
 position = Vector2(36, 200)
-script = ExtResource("6_qgbq7")
+script = ExtResource("9_ct3gw")
 
-[node name="Player" parent="." instance=ExtResource("7_as8vh")]
+[node name="Player" parent="." instance=ExtResource("10_j2mfv")]
 position = Vector2(36, 200)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 process_mode = 3
-script = ExtResource("8_k5ql6")
+script = ExtResource("11_hw281")
 
 [node name="Current State" type="Label" parent="CanvasLayer"]
 visible = false
 offset_right = 40.0
 offset_bottom = 23.0
-theme_override_fonts/font = ExtResource("9_51upf")
+theme_override_fonts/font = ExtResource("12_mk6cr")
 theme_override_font_sizes/font_size = 32
 text = "State: "
 
@@ -1161,7 +1161,7 @@ visible = false
 offset_top = 38.0
 offset_right = 168.0
 offset_bottom = 70.0
-theme_override_fonts/font = ExtResource("9_51upf")
+theme_override_fonts/font = ExtResource("12_mk6cr")
 theme_override_font_sizes/font_size = 32
 text = "Equip: "
 
@@ -1173,7 +1173,7 @@ anchor_bottom = 1.0
 offset_top = -32.0
 offset_right = 76.0
 grow_vertical = 0
-theme_override_fonts/font = ExtResource("9_51upf")
+theme_override_fonts/font = ExtResource("12_mk6cr")
 theme_override_font_sizes/font_size = 32
 text = "HP:"
 
@@ -1201,17 +1201,17 @@ offset_right = 20.0
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("9_51upf")
+theme_override_fonts/font = ExtResource("12_mk6cr")
 theme_override_font_sizes/font_size = 64
 text = "Game Over"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("10_65b1w")]
+[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("13_vnb2e")]
 visible = false
 z_index = 6
 
-[node name="OptionsMenu" parent="CanvasLayer" instance=ExtResource("11_s4fgd")]
+[node name="OptionsMenu" parent="CanvasLayer" instance=ExtResource("14_jyrgg")]
 visible = false
 
 [node name="DashTimer" type="Label" parent="CanvasLayer"]
@@ -1225,7 +1225,7 @@ grow_horizontal = 0
 text = "Dash Timer"
 horizontal_alignment = 2
 
-[node name="AbilityDebugMenu" parent="CanvasLayer" instance=ExtResource("12_haa5n")]
+[node name="AbilityDebugMenu" parent="CanvasLayer" instance=ExtResource("15_grytn")]
 visible = false
 anchors_preset = 5
 anchor_left = 0.5
@@ -1233,24 +1233,24 @@ anchor_right = 0.5
 anchor_bottom = 0.0
 grow_vertical = 1
 
-[node name="AbilityGrid" parent="CanvasLayer" instance=ExtResource("13_k4re7")]
+[node name="AbilityGrid" parent="CanvasLayer" instance=ExtResource("16_lj0sb")]
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
 grow_horizontal = 0
 grow_vertical = 0
 
-[node name="Ability_info" parent="CanvasLayer" instance=ExtResource("14_oeoth")]
+[node name="Ability_info" parent="CanvasLayer" instance=ExtResource("17_er8uy")]
 visible = false
 
-[node name="CheckPointRespawnUI" parent="CanvasLayer" instance=ExtResource("15_l0enr")]
+[node name="CheckPointRespawnUI" parent="CanvasLayer" instance=ExtResource("18_umies")]
 visible = false
 
-[node name="AbilityInfoButton" parent="CanvasLayer" instance=ExtResource("16_wdtcg")]
+[node name="AbilityInfoButton" parent="CanvasLayer" instance=ExtResource("19_2o55h")]
 offset_top = -224.0
 offset_bottom = -184.0
 
-[node name="PlayerHUD" parent="CanvasLayer" instance=ExtResource("17_hoehn")]
+[node name="PlayerHUD" parent="CanvasLayer" instance=ExtResource("20_r5qr7")]
 offset_left = 12.0
 offset_top = 446.0
 offset_right = -1140.0
@@ -1262,25 +1262,25 @@ offset_left = 8.0
 offset_top = 10.0
 offset_right = 276.0
 offset_bottom = 72.0
-theme_override_fonts/font = ExtResource("18_qgbq7")
+theme_override_fonts/font = ExtResource("21_oxk0m")
 theme_override_font_sizes/font_size = 20
 text = "Current Level: 
 2-1"
 
-[node name="DialogueUI" parent="." instance=ExtResource("22_s4fgd")]
+[node name="DialogueUI" parent="." instance=ExtResource("22_06yil")]
 visible = false
 
 [node name="CameraMain" type="Camera2D" parent="." node_paths=PackedStringArray("player")]
 zoom = Vector2(3, 3)
 limit_left = 0
 limit_right = 3820
-script = ExtResource("16_ml4sm")
+script = ExtResource("23_4inea")
 player = NodePath("../Player")
 
 [node name="killzone" type="Area2D" parent="."]
 position = Vector2(758, 356)
 collision_mask = 4
-script = ExtResource("18_vpnas")
+script = ExtResource("24_f5xwu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="killzone"]
 shape = SubResource("RectangleShape2D_hoehn")
@@ -1291,54 +1291,54 @@ shape = SubResource("RectangleShape2D_hoehn")
 z_index = 6
 position = Vector2(872, 328)
 
-[node name="obstacle_falling_tiles" parent="Obstacles/falling_tiles" instance=ExtResource("19_78fjt")]
+[node name="obstacle_falling_tiles" parent="Obstacles/falling_tiles" instance=ExtResource("25_0l766")]
 position = Vector2(-32, 0)
 
-[node name="obstacle_falling_tiles2" parent="Obstacles/falling_tiles" instance=ExtResource("19_78fjt")]
+[node name="obstacle_falling_tiles2" parent="Obstacles/falling_tiles" instance=ExtResource("25_0l766")]
 position = Vector2(-16, 0)
 
-[node name="obstacle_falling_tiles3" parent="Obstacles/falling_tiles" instance=ExtResource("19_78fjt")]
+[node name="obstacle_falling_tiles3" parent="Obstacles/falling_tiles" instance=ExtResource("25_0l766")]
 
-[node name="obstacle_falling_tiles4" parent="Obstacles/falling_tiles" instance=ExtResource("19_78fjt")]
+[node name="obstacle_falling_tiles4" parent="Obstacles/falling_tiles" instance=ExtResource("25_0l766")]
 position = Vector2(16, 0)
 
-[node name="obstacle_falling_tiles5" parent="Obstacles/falling_tiles" instance=ExtResource("19_78fjt")]
+[node name="obstacle_falling_tiles5" parent="Obstacles/falling_tiles" instance=ExtResource("25_0l766")]
 position = Vector2(32, 0)
 
 [node name="falling_tiles2" type="Node2D" parent="Obstacles"]
 z_index = 6
 position = Vector2(536, 136)
 
-[node name="obstacle_falling_tiles2" parent="Obstacles/falling_tiles2" instance=ExtResource("19_78fjt")]
+[node name="obstacle_falling_tiles2" parent="Obstacles/falling_tiles2" instance=ExtResource("25_0l766")]
 position = Vector2(-16, 0)
 
-[node name="obstacle_falling_tiles3" parent="Obstacles/falling_tiles2" instance=ExtResource("19_78fjt")]
+[node name="obstacle_falling_tiles3" parent="Obstacles/falling_tiles2" instance=ExtResource("25_0l766")]
 
-[node name="obstacle_falling_tiles4" parent="Obstacles/falling_tiles2" instance=ExtResource("19_78fjt")]
+[node name="obstacle_falling_tiles4" parent="Obstacles/falling_tiles2" instance=ExtResource("25_0l766")]
 position = Vector2(16, 0)
 
 [node name="MagicBamboo" type="Node2D" parent="Obstacles"]
 z_index = 4
 position = Vector2(-1, -17)
 
-[node name="MagicBamboo" parent="Obstacles/MagicBamboo" instance=ExtResource("21_fo8ia")]
+[node name="MagicBamboo" parent="Obstacles/MagicBamboo" instance=ExtResource("26_ho5x2")]
 z_index = 5
 position = Vector2(153, 121)
 gravity_scale = 0.0
-texture = ExtResource("22_c21fn")
+texture = ExtResource("27_n8dwm")
 heal_amount = 5
 COLOR = Color(0, 0.59607846, 0.8627451, 1)
 
-[node name="MagicBamboo3" parent="Obstacles/MagicBamboo" instance=ExtResource("21_fo8ia")]
+[node name="MagicBamboo3" parent="Obstacles/MagicBamboo" instance=ExtResource("26_ho5x2")]
 z_index = 5
 position = Vector2(577, 8)
 gravity_scale = 0.0
-texture = ExtResource("22_c21fn")
+texture = ExtResource("27_n8dwm")
 heal_amount = 5
 COLOR = Color(0.9564226, 0.9129138, 2.3102762e-06, 1)
 
 [node name="Level1Music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("26_51upf")
+stream = ExtResource("28_ew1am")
 volume_db = -30.0
 autoplay = true
 bus = &"Music"
@@ -1346,8 +1346,8 @@ bus = &"Music"
 [node name="Next_level" type="Area2D" parent="."]
 position = Vector2(1824, 336)
 collision_mask = 4
-script = ExtResource("24_pqc52")
-level_name = "Level_2-2"
+script = ExtResource("29_tppol")
+level_name = "level_2-2"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Next_level"]
 shape = SubResource("RectangleShape2D_1v0ja")
@@ -1365,18 +1365,18 @@ position = Vector2(808, 216)
 
 [node name="Sprite2D" type="Sprite2D" parent="MovingPlatforms/Moving_Platform"]
 position = Vector2(16, 0)
-texture = ExtResource("3_hrj5t")
+texture = ExtResource("4_lvgjw")
 region_enabled = true
 region_rect = Rect2(64, 160, 16, 16)
 
 [node name="Sprite2D2" type="Sprite2D" parent="MovingPlatforms/Moving_Platform"]
-texture = ExtResource("3_hrj5t")
+texture = ExtResource("4_lvgjw")
 region_enabled = true
 region_rect = Rect2(64, 160, 16, 16)
 
 [node name="Sprite2D3" type="Sprite2D" parent="MovingPlatforms/Moving_Platform"]
 position = Vector2(-16, 0)
-texture = ExtResource("3_hrj5t")
+texture = ExtResource("4_lvgjw")
 region_enabled = true
 region_rect = Rect2(64, 160, 16, 16)
 
@@ -1391,7 +1391,7 @@ libraries = {
 [node name="Event_Trigger" type="Area2D" parent="Events"]
 position = Vector2(95, 229)
 collision_mask = 4
-script = ExtResource("25_tr82u")
+script = ExtResource("30_eyv4x")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Events/Event_Trigger"]
 shape = SubResource("RectangleShape2D_7y4qy")
@@ -1400,13 +1400,13 @@ shape = SubResource("RectangleShape2D_7y4qy")
 z_index = 5
 position = Vector2(1744, -152)
 collision_mask = 4100
-script = ExtResource("25_tr82u")
+script = ExtResource("30_eyv4x")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Events/Key1"]
 shape = SubResource("RectangleShape2D_qkp6a")
 
 [node name="Sprite2D" type="Sprite2D" parent="Events/Key1"]
-texture = ExtResource("3_hrj5t")
+texture = ExtResource("4_lvgjw")
 region_enabled = true
 region_rect = Rect2(128, 128, 16, 16)
 
@@ -1414,13 +1414,13 @@ region_rect = Rect2(128, 128, 16, 16)
 z_index = 5
 position = Vector2(1824, 312)
 rotation = -1.5707964
-script = ExtResource("26_tdunj")
+script = ExtResource("31_ltpos")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Events/Gate_Crystal1"]
 shape = SubResource("RectangleShape2D_obal1")
 
 [node name="Sprite2D" type="Sprite2D" parent="Events/Gate_Crystal1"]
-texture = ExtResource("3_hrj5t")
+texture = ExtResource("4_lvgjw")
 region_enabled = true
 region_rect = Rect2(144, 96, 16, 32)
 
@@ -1434,23 +1434,23 @@ shape = SubResource("RectangleShape2D_j1inx")
 
 [node name="Souls" type="Node2D" parent="."]
 
-[node name="WallJump" parent="Souls" instance=ExtResource("27_imhjm")]
+[node name="WallJump" parent="Souls" instance=ExtResource("32_k5kvy")]
 position = Vector2(1239, 296)
 scale = Vector2(0.765, 0.765)
 ability = 10
-custom_sprite_frames = ExtResource("28_demn2")
+custom_sprite_frames = ExtResource("33_nrxj5")
 
 [node name="Enemies" type="Node2D" parent="."]
 
-[node name="Enemy" parent="Enemies" instance=ExtResource("29_8n4ft")]
+[node name="Enemy" parent="Enemies" instance=ExtResource("34_iull5")]
 z_index = 7
 position = Vector2(1488, 408)
 
-[node name="Enemy2" parent="Enemies" instance=ExtResource("29_8n4ft")]
+[node name="Enemy2" parent="Enemies" instance=ExtResource("34_iull5")]
 z_index = 7
 position = Vector2(1544, 408)
 
-[node name="Enemy3" parent="Enemies" instance=ExtResource("29_8n4ft")]
+[node name="Enemy3" parent="Enemies" instance=ExtResource("34_iull5")]
 z_index = 7
 position = Vector2(1416, 192)
 scale = Vector2(2, 2)
@@ -1458,44 +1458,44 @@ collision_layer = 256
 walk_speed = 100
 sprint_speed = 100
 
-[node name="Dragon Enemy" parent="Enemies" instance=ExtResource("33_51upf")]
+[node name="Dragon Enemy" parent="Enemies" instance=ExtResource("35_3mcn0")]
 z_index = 7
 position = Vector2(267, 281)
 
-[node name="Dragon Enemy2" parent="Enemies" instance=ExtResource("33_51upf")]
+[node name="Dragon Enemy2" parent="Enemies" instance=ExtResource("35_3mcn0")]
 z_index = 7
 position = Vector2(1112, 282)
 
-[node name="Dragon Enemy3" parent="Enemies" instance=ExtResource("33_51upf")]
+[node name="Dragon Enemy3" parent="Enemies" instance=ExtResource("35_3mcn0")]
 z_index = 7
 position = Vector2(1721, 168)
 
-[node name="Dragon Enemy4" parent="Enemies" instance=ExtResource("33_51upf")]
+[node name="Dragon Enemy4" parent="Enemies" instance=ExtResource("35_3mcn0")]
 z_index = 7
 position = Vector2(1127, 173)
 
-[node name="Dragon Enemy5" parent="Enemies" instance=ExtResource("33_51upf")]
+[node name="Dragon Enemy5" parent="Enemies" instance=ExtResource("35_3mcn0")]
 z_index = 7
 position = Vector2(1208, -178)
 
-[node name="Dragon Enemy6" parent="Enemies" instance=ExtResource("33_51upf")]
+[node name="Dragon Enemy6" parent="Enemies" instance=ExtResource("35_3mcn0")]
 z_index = 7
 position = Vector2(1656, -174)
 
-[node name="ParralaxBackground" parent="." instance=ExtResource("33_hoehn")]
+[node name="ParralaxBackground" parent="." instance=ExtResource("36_x1o57")]
 position = Vector2(1, 314)
 
 [node name="Scrolls" type="Node2D" parent="."]
 
-[node name="Scroll7" parent="Scrolls" instance=ExtResource("34_as8vh")]
+[node name="Scroll7" parent="Scrolls" instance=ExtResource("37_xw8ol")]
 z_index = 20
 position = Vector2(1736, 285)
-dialogue = ExtResource("35_51upf")
+dialogue = ExtResource("38_b525h")
 
-[node name="Scroll8" parent="Scrolls" instance=ExtResource("34_as8vh")]
+[node name="Scroll8" parent="Scrolls" instance=ExtResource("37_xw8ol")]
 z_index = 20
 position = Vector2(391, 238)
-dialogue = ExtResource("36_k5ql6")
+dialogue = ExtResource("39_c11rd")
 
 [connection signal="body_entered" from="killzone" to="killzone" method="_on_body_entered"]
 [connection signal="body_entered" from="Next_level" to="Next_level" method="_on_body_entered"]
