@@ -1,7 +1,7 @@
 extends Node
 
 enum DoorID {DOOR1, DOOR2, DOOR3, DOOR4, DOOR5 }
-enum LevelID {LEVEL1_1, LEVEL1_2, LEVEL1_3, LEVEL2_1, LEVEL2_2, LEVEL2_3 }
+enum LevelID {LEVEL1_1, LEVEL1_2, LEVEL1_3, LEVEL1_4, LEVEL2_1, LEVEL2_2, LEVEL2_3, LEVEL2_4}
 
 var key_scene: PackedScene = preload("res://Scenes/Items/key.tscn")
 var current_active_key

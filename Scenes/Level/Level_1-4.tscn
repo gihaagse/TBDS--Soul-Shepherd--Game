@@ -806,6 +806,7 @@ region_rect = Rect2(128, 128, 16, 16)
 z_index = 5
 position = Vector2(552, 276)
 script = ExtResource("31_nm7s6")
+level_id = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Events/Gate_Crystal1"]
 shape = SubResource("RectangleShape2D_qeoee")
