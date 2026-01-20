@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://byn1je7flnjo3" path="res://Scripts/Central/game_manager.gd" id="2_14yme"]
 [ext_resource type="Texture2D" uid="uid://dfdfu6o1j3apv" path="res://Assets/Sprites/Playtest1.png" id="3_378vk"]
 [ext_resource type="Texture2D" uid="uid://j1w6x4hpn3ou" path="res://Assets/Icons/Sung Chin Woo Icon.png" id="4_1o1dt"]
-[ext_resource type="Shader" path="res://Shaders/water_shader_vertical_waves.gdshader" id="5_r56td"]
+[ext_resource type="Shader" uid="uid://b4k5pl844vedq" path="res://Shaders/water_shader_vertical_waves.gdshader" id="5_r56td"]
 [ext_resource type="PackedScene" uid="uid://c45jpc3kaflr4" path="res://Scenes/CheckPoints/CheckPoint.tscn" id="6_nlcna"]
 [ext_resource type="Script" uid="uid://dtfsguwdnfr7m" path="res://Scripts/CheckPoints/start.gd" id="7_jiebg"]
 [ext_resource type="PackedScene" uid="uid://c5ongupm07qh3" path="res://Scenes/Player/player.tscn" id="8_jlpj5"]
