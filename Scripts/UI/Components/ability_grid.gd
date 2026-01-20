@@ -1,7 +1,7 @@
 extends Control
 
 @export var cooldown_indicator_scene: PackedScene = preload("res://Scenes/UI/Components/ability_icon_timers.tscn")
-@export var icons_path: String = "res://assets/icons/abilities"
+@export var icons_path: String = "res://Assets/Icons/Abilities"
 @onready var grid_container: GridContainer = $GridContainer
 
 var ability_icons = {}
@@ -24,23 +24,17 @@ func _process(delta: float) -> void:
 	_update_ui()
 	
 func load_ability_icons(path: String) -> Dictionary:
-	var icons = {}
-	var dir = DirAccess.open(path)
-	if not dir:
-		push_error("Map niet gevonden: %s" % path)
-		return icons
-	dir.list_dir_begin()
-	var file_name = dir.get_next()
-	while file_name != "":
-		if not dir.current_is_dir():
-			if file_name.to_lower().ends_with(".png") or file_name.to_lower().ends_with(".jpg"):
-				var ability_name = file_name.get_basename()
-				var ability_value = AbilityData.get_value_from_ability_name(ability_name)
-				var texture_path = path + "/" + file_name
-				icons[ability_value] = load(texture_path)
-		file_name = dir.get_next()
-	dir.list_dir_end()
-	return icons
+	return {
+		11: preload("res://Assets/Icons/Abilities/Airgliding.png"),
+		6: preload("res://Assets/Icons/Abilities/archery.png"),
+		4: preload("res://Assets/Icons/Abilities/attack1.png"),
+		7: preload("res://Assets/Icons/Abilities/dash.png"),
+		9: preload("res://Assets/Icons/Abilities/DoubleJump.png"),
+		10: preload("res://Assets/Icons/Abilities/walljump.png"),
+		8: preload("res://Assets/Icons/Abilities/WallSliding.png")
+	}
+
+	
 
 func _update_ui() -> void:
 	for ability in active_indicators.keys():
