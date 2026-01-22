@@ -142,6 +142,9 @@ COLOR = Color(0.792157, 0.321569, 0.788235, 1)
 drop_chance = 25
 is_active = false
 
+[node name="AttackTimer" type="Timer" parent="."]
+wait_time = 0.5
+
 [connection signal="hp_changed" from="Health" to="." method="_on_health_hp_changed"]
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="timeout" from="TopCheckCooldown" to="." method="_on_top_check_cooldown_timeout"]

@@ -291,10 +291,13 @@ z_index = 5
 texture = ExtResource("8_g5rad")
 heal_amount = 25
 COLOR = Color(0.792157, 0.321569, 0.788235, 1)
-drop_chance = 100
+drop_chance = 75
 is_active = false
 
 [node name="Tollie" type="Node2D" parent="Drops"]
+
+[node name="AttackTimer" type="Timer" parent="."]
+wait_time = 0.5
 
 [connection signal="hp_changed" from="Health" to="." method="_on_health_hp_changed"]
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

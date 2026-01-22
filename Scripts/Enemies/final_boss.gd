@@ -9,6 +9,8 @@ class_name final_boss
 @onready var ShockwaveArea : CollisionShape2D = $Shockwave/CollisionShape2D
 @onready var player_hp = load("res://Scripts/Player/General/health.gd")
 var just_jumped: bool = false
+var random_number: int
+var is_attacking: bool = false
 
 func _ready() -> void:
 	health.hp_changed.connect(_boss_hit)
@@ -53,21 +55,27 @@ func jump(small_jump_speed = null):
 	sprite.play("Jumping")
 
 func pre_shoot():
-	if raycastcheckleft.is_colliding() and (raycastcheckleft.get_collision_point().x - global_position.x >= -20):
+	if raycastcheckleft.is_colliding() and (raycastcheckleft.get_collision_point().x - global_position.x >= -20) and !is_attacking:
+		is_attacking = true
 		shoot("punch")
 		can_move = false
-	elif raycastcheckright.is_colliding() and (raycastcheckright.get_collision_point().x - global_position.x <= 20):
+	elif raycastcheckright.is_colliding() and (raycastcheckright.get_collision_point().x - global_position.x <= 20) and !is_attacking:
+		is_attacking = true
 		shoot("punch")
 		can_move = false
-	else:
-		if randi_range(1,2) == 1:
+	elif !is_attacking:
+		is_attacking = true
+		random_number = randi_range(1,2)
+		if random_number == 1:
 			can_move = false
 			jump(-200)
 			just_jumped = true
 		else:
+			can_move = false
 			sprite.stop()
 			sprite.play("Clap")
 			$ClapTimer.start()
+		print(random_number)
 
 func shoot(attack: String):
 	if attack == "clap":
@@ -83,11 +91,13 @@ func shoot(attack: String):
 			ShockwaveArea.set_disabled(false)
 		$ShockwaveAirLeft.set_emitting(true)
 		$ShockwaveAirRight.set_emitting(true)
+		print("---")
 	elif attack == "ground_attack":
 		ShockwaveArea.position.y = 8.64
 		ShockwaveArea.set_disabled(false)
 		$ShockwaveGroundLeft.set_emitting(true)
 		$ShockwaveGroundRight.set_emitting(true)
+		print("---")
 	elif attack == "punch":
 		sprite.play("Attack_punch")
 		WalkTimer.start(1)
@@ -110,6 +120,7 @@ func shoot(attack: String):
 		latest_hat.direction = dir
 		latest_hat.boss_stage = 1
 		main.add_child.call_deferred(latest_hat)
+	is_attacking = false
 	
 func _on_animated_sprite_2d_animation_finished(anim_name: String) -> void:
 	sprite.play("Idle")

@@ -261,6 +261,9 @@ theme_override_colors/font_outline_color = Color(1, 0, 0, 1)
 theme_override_styles/fill = SubResource("StyleBoxFlat_tq37w")
 show_percentage = false
 
+[node name="AttackTimer" type="Timer" parent="."]
+wait_time = 0.5
+
 [node name="Drops" type="Node2D" parent="."]
 visible = false
 z_index = 5
@@ -269,10 +272,11 @@ z_index = 5
 texture = ExtResource("8_pub4n")
 heal_amount = 25
 COLOR = Color(0.792157, 0.321569, 0.788235, 1)
-drop_chance = 100
+drop_chance = 75
 is_active = false
 
 [connection signal="hp_changed" from="Health" to="." method="_on_health_hp_changed"]
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="timeout" from="in_range_shoot_timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="TopCheckCooldown" to="." method="_on_top_check_cooldown_timeout"]
+[connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]
