@@ -13,7 +13,7 @@ var turn_on_body : Array[int]
 var start_pos: Vector2
 var end_pos: Vector2
 var control_point: Vector2
-@export var control_point_offset := Vector2(50, -25)
+@export var control_point_offset := Vector2(50, -20)
 var t := 0.0
 @export var duration := 1.5
 @onready var enemy_hat = load("res://Scenes/Weapons/enemy_hat_projectile.tscn")
