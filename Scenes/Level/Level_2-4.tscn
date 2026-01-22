@@ -539,7 +539,7 @@ script = ExtResource("7_olp0d")
 position = Vector2(136, 229)
 
 [node name="CameraMain" type="Camera2D" parent="." node_paths=PackedStringArray("player")]
-zoom = Vector2(4, 4)
+zoom = Vector2(3, 3)
 limit_left = 0
 limit_right = 512
 drag_vertical_offset = -0.2
