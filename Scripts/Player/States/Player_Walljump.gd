@@ -27,11 +27,9 @@ func Enter():
 	var animated_sprite = player.get_node("AnimatedSprite2D")
 	jumpsfx.playing = true
 	UtilsEffect.stretch(sprite, .2, .15)
-	UtilsEffect.freeze_frame(.075)
 	UtilsEffect.screenshake(level_camera, 1.75, .1, 28.0)
 	UtilsEffect.apply_directional_blur(animated_sprite, .125, 0.005, 25)
 	UtilsEffect.camera_zoom(level_camera, Vector2(4.075, 4.075), .15)
-	UtilsEffect.color_flash(player, .3, Color(1.0, 0.0, 0.0, 1.0), .1)
 	
 	wall_jump_particle.emitting = false
 	wall_jump_particle.restart()

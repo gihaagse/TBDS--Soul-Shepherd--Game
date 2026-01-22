@@ -32,7 +32,7 @@
 [ext_resource type="Script" uid="uid://hfj0hgwiyiqu" path="res://Scripts/Central/event_trigger.gd" id="30_eyv4x"]
 [ext_resource type="Script" uid="uid://cbirdwbh5p7se" path="res://Scripts/Obstacles/gate_crystal.gd" id="31_ltpos"]
 [ext_resource type="PackedScene" uid="uid://cl45lm0hg20kf" path="res://Scenes/Items/soul.tscn" id="32_k5kvy"]
-[ext_resource type="SpriteFrames" uid="uid://dg0vx2sffi824" path="res://Resources/Wisps/Green_Wisp.tres" id="33_s4fgd"]
+[ext_resource type="SpriteFrames" uid="uid://dg0vx2sffi824" path="res://Resources/Wisps/Green_Wisp.tres" id="33_nrxj5"]
 [ext_resource type="PackedScene" uid="uid://t6qqa47vckdt" path="res://Scenes/Enemies/husk.tscn" id="34_iull5"]
 [ext_resource type="PackedScene" uid="uid://dgm6tcibml5l" path="res://Scenes/Enemies/dragon_fly_enemy.tscn" id="35_3mcn0"]
 [ext_resource type="PackedScene" uid="uid://cy60eohui7ya1" path="res://Scenes/Background/parralax_background_2-1.tscn" id="36_x1o57"]
@@ -1438,7 +1438,7 @@ shape = SubResource("RectangleShape2D_j1inx")
 position = Vector2(1239, 296)
 scale = Vector2(0.765, 0.765)
 ability = 10
-custom_sprite_frames = ExtResource("33_s4fgd")
+custom_sprite_frames = ExtResource("33_nrxj5")
 
 [node name="Enemies" type="Node2D" parent="."]
 
