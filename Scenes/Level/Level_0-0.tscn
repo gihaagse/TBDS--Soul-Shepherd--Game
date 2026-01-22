@@ -1,4 +1,4 @@
-[gd_scene load_steps=70 format=3 uid="uid://dlo0qlmn2vs1c"]
+[gd_scene load_steps=71 format=3 uid="uid://dlo0qlmn2vs1c"]
 
 [ext_resource type="Script" uid="uid://c2jeph0pjh467" path="res://Scripts/Level/playtest_level.gd" id="1_r2yya"]
 [ext_resource type="Script" uid="uid://byn1je7flnjo3" path="res://Scripts/Central/game_manager.gd" id="2_14yme"]
@@ -20,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://bpp47tnrfdrab" path="res://Scenes/UI/Components/player_hud.tscn" id="18_u0ur2"]
 [ext_resource type="FontFile" uid="uid://p47ydk5quyq2" path="res://Assets/Tutorial Open Assets/brackeys_platformer_assets/fonts/PixelOperator8-Bold.ttf" id="19_ioiuv"]
 [ext_resource type="Script" uid="uid://b2b6rmyyluckx" path="res://Scripts/Player/General/camera_2d.gd" id="20_73q1n"]
+[ext_resource type="FontFile" uid="uid://du4o5kkhgafum" path="res://Assets/Fonts/PixelOperator8-Bold.ttf" id="20_hc8gb"]
 [ext_resource type="PackedScene" uid="uid://5jrffwap8tjk" path="res://Scenes/Background/parralax_background.tscn" id="21_ei1fj"]
 [ext_resource type="Script" uid="uid://bpkjqkjnq8o6g" path="res://Scripts/Player/General/killzone.gd" id="22_pjwt8"]
 [ext_resource type="AudioStream" uid="uid://bccfyoxchtj6i" path="res://Assets/Audio/Music/1-1 Trample The Temple.wav" id="23_lxe7r"]
@@ -1476,7 +1477,8 @@ offset_right = 0.5
 offset_bottom = 145.0
 grow_horizontal = 2
 theme_override_constants/outline_size = 10
-theme_override_font_sizes/font_size = 32
+theme_override_fonts/font = ExtResource("20_hc8gb")
+theme_override_font_sizes/font_size = 20
 horizontal_alignment = 1
 
 [node name="CameraMain" type="Camera2D" parent="." node_paths=PackedStringArray("player")]
