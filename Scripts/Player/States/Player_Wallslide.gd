@@ -44,7 +44,9 @@ func Phys_Update(_delta:float):
 	else:
 		player.velocity.y = Wallslide_cap
 	
-	var direction := Input.get_axis("Left", "Right")
+	var wall_normal := player.get_wall_normal()
+	var direction := -wall_normal.x
+
 	_play_wallslide_effects(_delta, direction)
 	
 	if Input.is_action_just_pressed("Jump") and player.is_on_wall_only():

@@ -42,10 +42,14 @@ func Enter():
 		wall_jump_particle.position = Vector2(-6.0, wall_jump_particle.position.y)
 		wall_jump_particle.rotation = 26
 		
-	var dismount = move_speed if sprite.flip_h else -move_speed
-	player.velocity = Vector2(dismount ,-jump_force)
-	sprite.flip_h = true if dismount <0 else false
+	var wall_normal := player.get_wall_normal()
+
+	var dismount := wall_normal.x * move_speed
+	player.velocity = Vector2(dismount, -jump_force)
+
+	sprite.flip_h = dismount < 0
 	weapon.position.x = -14 if sprite.flip_h else 14
+
 	timer.start()
 	
 
