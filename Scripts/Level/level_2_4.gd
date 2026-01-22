@@ -10,10 +10,10 @@ extends Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	var obstacles: Node2D = $Obstacles
-	print(obstacles)
 	CheckPointManager.register_root_obstacle(obstacles)
 	add_carried_abilities()
 	KeyManager.boss_death.connect(_on_boss_defeated)
+	await get_tree().create_timer(1).timeout
 	DialogueManager.start_dialogue(dialogue)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
