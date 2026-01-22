@@ -111,8 +111,6 @@ func _process(_delta: float) -> void:
 		sprite.play("Walking")
 	if velocity.x == 0 and !is_attacking:
 		sprite.play("Idle")
-		
-	print(is_attacking)
 
 func _on_health_hp_changed() -> void:
 	var tween = get_tree().create_tween()
@@ -128,7 +126,6 @@ func pre_shoot():
 
 func shoot(attack: String):
 	is_attacking = true
-	print("shoot " + str(is_attacking))
 	speed = 0
 	sprite.stop()
 	sprite.play("Attack_shoot")

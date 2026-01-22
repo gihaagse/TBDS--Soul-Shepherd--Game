@@ -14,7 +14,7 @@ var boss_stage : int
 
 func _ready() -> void:
 	sprite = $AnimatedSprite2D
-	direction = -1 if sprite.flip_h else 1
+	#direction = -1 if sprite.flip_h else 1
 	global_position = spawnpos
 	for num in turn_on_area:
 		area_2d.set_collision_mask_value(num, true)

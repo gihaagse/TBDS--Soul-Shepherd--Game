@@ -74,11 +74,9 @@ func pre_shoot():
 			sprite.stop()
 			sprite.play("Clap")
 			$ClapTimer.start()
-		print(random_number)
 
 func shoot(attack: String):
 	if attack == "clap":
-		print("asj;dfkjlkj")
 		can_move = false
 		ShockwaveArea.position.y = 1.97
 		WalkTimer.start(1)
@@ -90,13 +88,11 @@ func shoot(attack: String):
 			ShockwaveArea.set_disabled(false)
 		$ShockwaveAirLeft.set_emitting(true)
 		$ShockwaveAirRight.set_emitting(true)
-		print("---")
 	elif attack == "ground_attack":
 		ShockwaveArea.position.y = 8.64
 		ShockwaveArea.set_disabled(false)
 		$ShockwaveGroundLeft.set_emitting(true)
 		$ShockwaveGroundRight.set_emitting(true)
-		print("---")
 	elif attack == "punch":
 		sprite.play("Attack_punch")
 		WalkTimer.start(1)
