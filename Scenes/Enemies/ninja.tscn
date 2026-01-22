@@ -8,7 +8,7 @@
 [ext_resource type="FontFile" uid="uid://x2dwsfc3en6q" path="res://Assets/Tutorial Open Assets/brackeys_platformer_assets/fonts/PixelOperator8.ttf" id="6_7y3r3"]
 [ext_resource type="PackedScene" uid="uid://dm61xmst0522o" path="res://Scenes/Items/magic_bamboo.tscn" id="7_8drt2"]
 [ext_resource type="PackedScene" uid="uid://cg5703l8qujlb" path="res://Assets/Particles/BloodParticle.tscn" id="7_hkrva"]
-[ext_resource type="Texture2D" uid="uid://utw0u8msxwh0" path="res://Assets/Sprites/Magic Bamboo/+25 hp magic bamboo.png" id="8_g5rad"]
+[ext_resource type="Texture2D" uid="uid://dmv57vx1668nw" path="res://Assets/Sprites/Magic Bamboo/+ 15 hp magic bamboo.png" id="9_hkrva"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6hc3a"]
 resource_local_to_scene = true
@@ -288,9 +288,9 @@ visible = false
 z_index = 5
 
 [node name="MagicBamboo" parent="Drops" instance=ExtResource("7_8drt2")]
-texture = ExtResource("8_g5rad")
-heal_amount = 25
-COLOR = Color(0.792157, 0.321569, 0.788235, 1)
+texture = ExtResource("9_hkrva")
+heal_amount = 10
+COLOR = Color(0.2, 0.596078, 0.294118, 1)
 drop_chance = 50
 is_active = false
 

@@ -312,7 +312,7 @@ z_index = 5
 
 [node name="MagicBamboo" parent="Drops" instance=ExtResource("7_aesm5")]
 texture = ExtResource("8_styb1")
-heal_amount = 35
+heal_amount = 25
 COLOR = Color(0.792157, 0.321569, 0.788235, 1)
 drop_chance = 15
 is_active = false
@@ -320,6 +320,9 @@ is_active = false
 [node name="Key" parent="Drops" instance=ExtResource("9_styb1")]
 
 [node name="stage_3_timer" type="Timer" parent="."]
+wait_time = 0.5
+
+[node name="AttackTimer" type="Timer" parent="."]
 wait_time = 0.5
 
 [connection signal="hp_changed" from="Health" to="." method="_on_health_hp_changed"]

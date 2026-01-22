@@ -10,7 +10,6 @@ class_name final_boss
 @onready var player_hp = load("res://Scripts/Player/General/health.gd")
 var just_jumped: bool = false
 var random_number: int
-var is_attacking: bool = false
 
 func _ready() -> void:
 	health.hp_changed.connect(_boss_hit)

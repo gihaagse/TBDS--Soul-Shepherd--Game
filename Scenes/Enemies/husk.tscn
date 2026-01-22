@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://cw7w05q12u5bv" path="res://Assets/Sprites/husk.png" id="4_tq37w"]
 [ext_resource type="PackedScene" uid="uid://dm61xmst0522o" path="res://Scenes/Items/magic_bamboo.tscn" id="7_adlby"]
 [ext_resource type="PackedScene" uid="uid://cg5703l8qujlb" path="res://Assets/Particles/BloodParticle.tscn" id="7_v5c8x"]
-[ext_resource type="Texture2D" uid="uid://c8dol58rb8t5j" path="res://Assets/Sprites/Magic Bamboo/+5 hp magic bamboo.png" id="8_m8kdi"]
+[ext_resource type="Texture2D" uid="uid://dmv57vx1668nw" path="res://Assets/Sprites/Magic Bamboo/+ 15 hp magic bamboo.png" id="9_v5c8x"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6hc3a"]
 resource_local_to_scene = true
@@ -266,9 +266,9 @@ visible = false
 z_index = 5
 
 [node name="MagicBamboo" parent="Drops" instance=ExtResource("7_adlby")]
-texture = ExtResource("8_m8kdi")
+texture = ExtResource("9_v5c8x")
 heal_amount = 10
-COLOR = Color(0.792157, 0.321569, 0.788235, 1)
+COLOR = Color(0.2, 0.596078, 0.294118, 1)
 drop_chance = 25
 is_active = false
 

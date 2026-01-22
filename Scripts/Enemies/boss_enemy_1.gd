@@ -93,3 +93,6 @@ func _on_npc_died():
 	if dialogue:
 		#await get_tree().create_timer(1).timeout
 		DialogueManager.start_dialogue(dialogue)
+
+func _on_attack_timer_timeout() -> void:
+	pass
