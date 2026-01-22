@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=3 uid="uid://j6du3niuxs2r"]
+[gd_scene load_steps=65 format=3 uid="uid://whm0mrc5u48a"]
 
 [ext_resource type="Script" uid="uid://c2jeph0pjh467" path="res://Scripts/Level/playtest_level.gd" id="1_b4reu"]
 [ext_resource type="Resource" uid="uid://ch7yv6txyd3tq" path="res://Resources/Dialogue/2-1-start-dialogue.tres" id="2_iq1np"]
@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dfdfu6o1j3apv" path="res://Assets/Sprites/Playtest1.png" id="4_lvgjw"]
 [ext_resource type="Texture2D" uid="uid://c3jf58yvjljmy" path="res://Assets/Sprites/tileset2.png" id="5_xlknf"]
 [ext_resource type="Texture2D" uid="uid://j1w6x4hpn3ou" path="res://Assets/Icons/Sung Chin Woo Icon.png" id="6_w8tj1"]
-[ext_resource type="Shader" uid="uid://b4k5pl844vedq" path="res://Shaders/water_shader_vertical_waves.gdshader" id="7_1uqqb"]
+[ext_resource type="Shader" path="res://Shaders/water_shader_vertical_waves.gdshader" id="7_1uqqb"]
 [ext_resource type="PackedScene" uid="uid://c45jpc3kaflr4" path="res://Scenes/CheckPoints/CheckPoint.tscn" id="8_la7aj"]
 [ext_resource type="Script" uid="uid://dtfsguwdnfr7m" path="res://Scripts/CheckPoints/start.gd" id="9_ct3gw"]
 [ext_resource type="PackedScene" uid="uid://c5ongupm07qh3" path="res://Scenes/Player/player.tscn" id="10_j2mfv"]
@@ -22,6 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://bpp47tnrfdrab" path="res://Scenes/UI/Components/player_hud.tscn" id="20_r5qr7"]
 [ext_resource type="FontFile" uid="uid://p47ydk5quyq2" path="res://Assets/Tutorial Open Assets/brackeys_platformer_assets/fonts/PixelOperator8-Bold.ttf" id="21_oxk0m"]
 [ext_resource type="PackedScene" uid="uid://ndkp1vfqmr4g" path="res://Scenes/Dialogue/DialogueUI.tscn" id="22_06yil"]
+[ext_resource type="FontFile" uid="uid://cojj5fwwf0jhx" path="res://Assets/Fonts/PixelOperator8.ttf" id="22_iq1np"]
 [ext_resource type="Script" uid="uid://b2b6rmyyluckx" path="res://Scripts/Player/General/camera_2d.gd" id="23_4inea"]
 [ext_resource type="Script" uid="uid://bpkjqkjnq8o6g" path="res://Scripts/Player/General/killzone.gd" id="24_f5xwu"]
 [ext_resource type="PackedScene" uid="uid://c34kdnga4axvp" path="res://Scenes/Obstacles/obstacle_falling_tiles.tscn" id="25_0l766"]
@@ -33,6 +34,7 @@
 [ext_resource type="Script" uid="uid://cbirdwbh5p7se" path="res://Scripts/Obstacles/gate_crystal.gd" id="31_ltpos"]
 [ext_resource type="PackedScene" uid="uid://cl45lm0hg20kf" path="res://Scenes/Items/soul.tscn" id="32_k5kvy"]
 [ext_resource type="SpriteFrames" uid="uid://dg0vx2sffi824" path="res://Resources/Wisps/Green_Wisp.tres" id="33_nrxj5"]
+[ext_resource type="Script" uid="uid://b2shipmq726dd" path="res://Scripts/UI/Overlay/hide_reset_label.gd" id="33_pyomo"]
 [ext_resource type="PackedScene" uid="uid://t6qqa47vckdt" path="res://Scenes/Enemies/husk.tscn" id="34_iull5"]
 [ext_resource type="PackedScene" uid="uid://dgm6tcibml5l" path="res://Scenes/Enemies/dragon_fly_enemy.tscn" id="35_3mcn0"]
 [ext_resource type="PackedScene" uid="uid://cy60eohui7ya1" path="res://Scenes/Background/parralax_background_2-1.tscn" id="36_x1o57"]
@@ -1083,9 +1085,41 @@ tracks/1/keys = {
 }]
 }
 
+[sub_resource type="Animation" id="Animation_pyomo"]
+resource_name = "HideResetLabel"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/ResetAbilityLabel:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_lvgjw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/ResetAbilityLabel:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_m1v2j"]
 _data = {
-&"Key1": SubResource("Animation_ifyxa")
+&"HideResetLabel": SubResource("Animation_pyomo"),
+&"Key1": SubResource("Animation_ifyxa"),
+&"RESET": SubResource("Animation_lvgjw")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7y4qy"]
@@ -1097,9 +1131,12 @@ size = Vector2(200, 20)
 size = Vector2(16, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j1inx"]
-size = Vector2(96.5, 90.25)
+size = Vector2(116.250015, 90.25)
 
-[node name="Level" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lvgjw"]
+size = Vector2(126, 153)
+
+[node name="Level2" type="Node2D"]
 script = ExtResource("1_b4reu")
 dialogue = ExtResource("2_iq1np")
 
@@ -1136,6 +1173,20 @@ z_index = 10
 [node name="Area2D" parent="CheckPoints" instance=ExtResource("8_la7aj")]
 position = Vector2(750, 328)
 checkppoint_id = 1
+
+[node name="Area2D2" parent="CheckPoints" instance=ExtResource("8_la7aj")]
+position = Vector2(265, 150)
+checkppoint_id = 2
+
+[node name="CollisionShape2D" parent="CheckPoints/Area2D2" index="0"]
+position = Vector2(2, -70)
+
+[node name="Area2D3" parent="CheckPoints" instance=ExtResource("8_la7aj")]
+position = Vector2(1033, -138)
+checkppoint_id = 3
+
+[node name="CollisionShape2D" parent="CheckPoints/Area2D3" index="0"]
+position = Vector2(2, -71)
 
 [node name="Start" type="Marker2D" parent="CheckPoints"]
 position = Vector2(36, 200)
@@ -1266,6 +1317,23 @@ theme_override_fonts/font = ExtResource("21_oxk0m")
 theme_override_font_sizes/font_size = 20
 text = "Current Level: 
 2-1"
+
+[node name="ResetAbilityLabel" type="Label" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -117.0
+offset_top = -20.0
+offset_right = 117.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("22_iq1np")
+theme_override_font_sizes/font_size = 32
+text = "Your abilities have been reset!"
 
 [node name="DialogueUI" parent="." instance=ExtResource("22_06yil")]
 visible = false
@@ -1429,8 +1497,16 @@ collision_layer = 0
 collision_mask = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Events/Gate_Crystal1/UnlockArea"]
-position = Vector2(0, -30)
+position = Vector2(9.875, -30)
 shape = SubResource("RectangleShape2D_j1inx")
+
+[node name="HideResetLabel" type="Area2D" parent="Events"]
+position = Vector2(92, 200)
+script = ExtResource("33_pyomo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Events/HideResetLabel"]
+position = Vector2(44, -59.5)
+shape = SubResource("RectangleShape2D_lvgjw")
 
 [node name="Souls" type="Node2D" parent="."]
 
@@ -1502,3 +1578,7 @@ dialogue = ExtResource("39_c11rd")
 [connection signal="body_entered" from="Events/Event_Trigger" to="Events/Event_Trigger" method="_on_body_entered"]
 [connection signal="body_entered" from="Events/Key1" to="Events/Key1" method="_on_body_entered"]
 [connection signal="body_entered" from="Events/Gate_Crystal1/UnlockArea" to="Events/Gate_Crystal1" method="_on_unlock_area_body_entered"]
+[connection signal="body_entered" from="Events/HideResetLabel" to="Events/HideResetLabel" method="_on_body_entered"]
+
+[editable path="CheckPoints/Area2D2"]
+[editable path="CheckPoints/Area2D3"]

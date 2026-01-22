@@ -36,18 +36,3 @@ func _on_boss_defeated():
 	tile_map.erase_cell(0, Vector2i(32,16))
 	tile_map.erase_cell(0, Vector2i(32,17))
 	
-	var old_pos = camera_main.global_position
-	var was_smoothed = camera_main.limit_smoothed
-	
-	camera_main.limit_smoothed = false
-	camera_main.limit_right = 600
-	
-	camera_main.global_position = old_pos
-	camera_main.reset_smoothing()
-	
-	var tween = create_tween()
-	tween.tween_property(camera_main, "global_position:x", old_pos.x + 100, 2.0).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
-	tween.tween_callback(func(): 
-		camera_main.limit_smoothed = was_smoothed
-		camera_main.reset_smoothing()
-	)

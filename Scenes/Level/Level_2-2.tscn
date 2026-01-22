@@ -1,4 +1,4 @@
-[gd_scene load_steps=72 format=3 uid="uid://jy7lpdbdrphw"]
+[gd_scene load_steps=72 format=3 uid="uid://cows43dfo0ivm"]
 
 [ext_resource type="Script" uid="uid://c2jeph0pjh467" path="res://Scripts/Level/playtest_level.gd" id="1_djx44"]
 [ext_resource type="Resource" uid="uid://w4w68vjoa8rp" path="res://Resources/AbilityUnlocking/level_2-2.tres" id="2_rbnks"]
@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dfdfu6o1j3apv" path="res://Assets/Sprites/Playtest1.png" id="4_ck23q"]
 [ext_resource type="Texture2D" uid="uid://goes5l2sfyvw" path="res://Assets/Sprites/Tileset1.png" id="4_v2jrc"]
 [ext_resource type="Texture2D" uid="uid://j1w6x4hpn3ou" path="res://Assets/Icons/Sung Chin Woo Icon.png" id="5_hwg72"]
-[ext_resource type="Shader" uid="uid://b4k5pl844vedq" path="res://Shaders/water_shader_vertical_waves.gdshader" id="6_jgs2h"]
+[ext_resource type="Shader" path="res://Shaders/water_shader_vertical_waves.gdshader" id="6_jgs2h"]
 [ext_resource type="PackedScene" uid="uid://c45jpc3kaflr4" path="res://Scenes/CheckPoints/CheckPoint.tscn" id="7_0m717"]
 [ext_resource type="Script" uid="uid://dtfsguwdnfr7m" path="res://Scripts/CheckPoints/start.gd" id="8_jmqil"]
 [ext_resource type="PackedScene" uid="uid://c5ongupm07qh3" path="res://Scenes/Player/player.tscn" id="9_b5jt3"]
@@ -36,7 +36,7 @@
 [ext_resource type="SpriteFrames" uid="uid://cgtj4wt3ql8r1" path="res://Resources/Wisps/Fire_Wisp.tres" id="33_sj3uu"]
 [ext_resource type="SpriteFrames" uid="uid://dddu3nk2vhaqr" path="res://Resources/Wisps/Red_Devil_Wisp.tres" id="34_l63tk"]
 [ext_resource type="PackedScene" uid="uid://t6qqa47vckdt" path="res://Scenes/Enemies/husk.tscn" id="34_mnuk5"]
-[ext_resource type="Script" uid="uid://cstgtmfhmy3fb" path="res://Scripts/Obstacles/camera_drag_zone.gd" id="35_nncpe"]
+[ext_resource type="Script" path="res://Scripts/Obstacles/camera_drag_zone.gd" id="35_nncpe"]
 [ext_resource type="PackedScene" uid="uid://dn8a3x4q0yekn" path="res://Scenes/Obstacles/camera_drag_zone.tscn" id="36_u0bag"]
 [ext_resource type="Script" uid="uid://hfj0hgwiyiqu" path="res://Scripts/Central/event_trigger.gd" id="37_0bisf"]
 [ext_resource type="Script" uid="uid://cbirdwbh5p7se" path="res://Scripts/Obstacles/gate_crystal.gd" id="38_2y3r1"]
@@ -2177,7 +2177,7 @@ collision_layer = 0
 collision_mask = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Events/Gate_Crystal2/UnlockArea"]
-position = Vector2(0, -30)
+position = Vector2(0, -12)
 shape = SubResource("RectangleShape2D_v2jrc")
 
 [node name="Gate_Crystal3" type="StaticBody2D" parent="Events"]
@@ -2200,7 +2200,7 @@ collision_layer = 0
 collision_mask = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Events/Gate_Crystal3/UnlockArea"]
-position = Vector2(0, -30)
+position = Vector2(-3, -12)
 shape = SubResource("RectangleShape2D_v2jrc")
 
 [node name="ParralaxBackground" parent="." instance=ExtResource("39_pixuu")]
