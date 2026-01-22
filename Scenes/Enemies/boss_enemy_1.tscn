@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://bu78o5fps1jsf"]
+[gd_scene load_steps=41 format=3 uid="uid://bu78o5fps1jsf"]
 
 [ext_resource type="Script" uid="uid://cuyrxjtu26bru" path="res://Scripts/Enemies/boss_enemy_1.gd" id="1_v0yt4"]
 [ext_resource type="PackedScene" uid="uid://cvgjcwqn6k8eu" path="res://Scenes/UI/Overlay/health.tscn" id="2_rkuo3"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://oq7kaex2808h" path="res://Assets/Sprites/first_boss.png" id="5_v0yt4"]
 [ext_resource type="FontFile" uid="uid://x2dwsfc3en6q" path="res://Assets/Tutorial Open Assets/brackeys_platformer_assets/fonts/PixelOperator8.ttf" id="6_04yeg"]
 [ext_resource type="PackedScene" uid="uid://dm61xmst0522o" path="res://Scenes/Items/magic_bamboo.tscn" id="7_aesm5"]
+[ext_resource type="PackedScene" uid="uid://cg5703l8qujlb" path="res://Assets/Particles/BloodParticle.tscn" id="8_04yeg"]
 [ext_resource type="Texture2D" uid="uid://utw0u8msxwh0" path="res://Assets/Sprites/Magic Bamboo/+25 hp magic bamboo.png" id="8_styb1"]
 [ext_resource type="PackedScene" uid="uid://b4mkukb5d541r" path="res://Scenes/Items/key.tscn" id="9_styb1"]
 
@@ -205,28 +206,6 @@ animations = [{
 "speed": 15.0
 }]
 
-[sub_resource type="Gradient" id="Gradient_vumo0"]
-colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_31h1d"]
-gradient = SubResource("Gradient_vumo0")
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_dfwqp"]
-lifetime_randomness = 1.0
-particle_flag_disable_z = true
-emission_shape = 1
-emission_sphere_radius = 5.0
-direction = Vector3(0, -0.5, 0)
-spread = 90.0
-initial_velocity_min = 50.0
-initial_velocity_max = 100.0
-gravity = Vector3(0, 98, 0)
-damping_min = 50.0
-damping_max = 100.0
-scale_min = 0.2
-color = Color(1, 0.0705882, 0.133333, 1)
-color_ramp = SubResource("GradientTexture1D_31h1d")
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_3xw0u"]
 radius = 7.0
 
@@ -269,15 +248,7 @@ text = "HP: 50"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
-visible = false
-emitting = false
-amount = 20
-lifetime = 0.8
-one_shot = true
-explosiveness = 1.0
-trail_enabled = true
-process_material = SubResource("ParticleProcessMaterial_dfwqp")
+[node name="BloodParticle" parent="." instance=ExtResource("8_04yeg")]
 
 [node name="in_range_shoot_timer" type="Timer" parent="."]
 wait_time = 0.5
@@ -287,10 +258,11 @@ position = Vector2(0, -0.5)
 shape = SubResource("CircleShape2D_3xw0u")
 
 [node name="GroundCheck" type="RayCast2D" parent="."]
-position = Vector2(10, 0)
+position = Vector2(4, 0)
 target_position = Vector2(0, 10)
 
 [node name="TopCheck" type="RayCast2D" parent="."]
+scale = Vector2(3.195, 1)
 target_position = Vector2(0, -12)
 collision_mask = 4
 
@@ -348,6 +320,9 @@ is_active = false
 [node name="Key" parent="Drops" instance=ExtResource("9_styb1")]
 
 [node name="stage_3_timer" type="Timer" parent="."]
+wait_time = 0.5
+
+[node name="AttackTimer" type="Timer" parent="."]
 wait_time = 0.5
 
 [connection signal="hp_changed" from="Health" to="." method="_on_health_hp_changed"]

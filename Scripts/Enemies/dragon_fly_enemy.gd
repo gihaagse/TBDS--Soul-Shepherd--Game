@@ -20,6 +20,7 @@ var knockback_decay := 10.0
 @export var width: float = 75
 @export var height: float = 30
 var previous_position: Vector2
+@onready var gpu_particles_2d: CPUParticles2D = $BloodParticle
 
 var time := 0.0
 var start_position: Vector2
@@ -75,6 +76,8 @@ func _on_health_hp_changed() -> void:
 	var tween = get_tree().create_tween()
 	tween.tween_method(SetShader_BlinkIntensity, 1.0, 0.0, 0.5)
 
+	gpu_particles_2d.restart()
+	gpu_particles_2d.emitting = true
 	apply_knockback(player.global_position)
 	hp_bar.value = health.hp
 	

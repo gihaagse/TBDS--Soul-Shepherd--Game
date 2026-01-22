@@ -1,12 +1,13 @@
-[gd_scene load_steps=23 format=3 uid="uid://dgm6tcibml5l"]
+[gd_scene load_steps=21 format=3 uid="uid://dgm6tcibml5l"]
 
-[ext_resource type="Script" path="res://Scripts/Enemies/dragon_fly_enemy.gd" id="1_u1ejo"]
+[ext_resource type="Script" uid="uid://mywgm2hgcr4j" path="res://Scripts/Enemies/dragon_fly_enemy.gd" id="1_u1ejo"]
 [ext_resource type="PackedScene" uid="uid://cvgjcwqn6k8eu" path="res://Scenes/UI/Overlay/health.tscn" id="2_3kcs8"]
 [ext_resource type="Script" uid="uid://dlgatnu5tx5lj" path="res://Scripts/Enemies/health_enemy.gd" id="3_1u6uc"]
 [ext_resource type="Shader" uid="uid://o6ancnl5jgcr" path="res://Shaders/Blink.gdshader" id="4_qp755"]
 [ext_resource type="Texture2D" uid="uid://bxn53nopbmiwg" path="res://Assets/Sprites/dragonfly.png" id="5_u1ejo"]
+[ext_resource type="PackedScene" uid="uid://cg5703l8qujlb" path="res://Assets/Particles/BloodParticle.tscn" id="6_1u6uc"]
 [ext_resource type="PackedScene" uid="uid://dm61xmst0522o" path="res://Scenes/Items/magic_bamboo.tscn" id="6_3kcs8"]
-[ext_resource type="Texture2D" uid="uid://dmv57vx1668nw" path="res://Assets/Sprites/Magic Bamboo/+ 15 hp magic bamboo.png" id="7_1u6uc"]
+[ext_resource type="Texture2D" uid="uid://c8dol58rb8t5j" path="res://Assets/Sprites/Magic Bamboo/+5 hp magic bamboo.png" id="8_1u6uc"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6hc3a"]
 resource_local_to_scene = true
@@ -68,28 +69,6 @@ animations = [{
 "speed": 15.0
 }]
 
-[sub_resource type="Gradient" id="Gradient_vumo0"]
-colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_31h1d"]
-gradient = SubResource("Gradient_vumo0")
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_dfwqp"]
-lifetime_randomness = 1.0
-particle_flag_disable_z = true
-emission_shape = 1
-emission_sphere_radius = 5.0
-direction = Vector3(0, -0.5, 0)
-spread = 90.0
-initial_velocity_min = 50.0
-initial_velocity_max = 100.0
-gravity = Vector3(0, 98, 0)
-damping_min = 50.0
-damping_max = 100.0
-scale_min = 0.2
-color = Color(1, 0.0705882, 0.133333, 1)
-color_ramp = SubResource("GradientTexture1D_31h1d")
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_3xw0u"]
 radius = 7.0
 
@@ -118,16 +97,9 @@ material = SubResource("ShaderMaterial_6hc3a")
 sprite_frames = SubResource("SpriteFrames_wpvyt")
 animation = &"Idle"
 autoplay = "Idle"
-frame_progress = 0.68276346
+frame_progress = 0.682763
 
-[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
-emitting = false
-amount = 20
-lifetime = 0.8
-one_shot = true
-explosiveness = 1.0
-trail_enabled = true
-process_material = SubResource("ParticleProcessMaterial_dfwqp")
+[node name="BloodParticle" parent="." instance=ExtResource("6_1u6uc")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_3xw0u")
@@ -154,7 +126,7 @@ offset_top = -16.0
 offset_right = 6.0
 offset_bottom = -12.0
 theme = SubResource("Theme_tq37w")
-theme_override_colors/font_color = Color(0, 0.9490196, 0, 1)
+theme_override_colors/font_color = Color(0, 0.94902, 0, 1)
 theme_override_colors/font_outline_color = Color(1, 0, 0, 1)
 theme_override_styles/fill = SubResource("StyleBoxFlat_tq37w")
 show_percentage = false
@@ -164,11 +136,15 @@ visible = false
 z_index = 5
 
 [node name="MagicBamboo" parent="Drops" instance=ExtResource("6_3kcs8")]
-texture = ExtResource("7_1u6uc")
+texture = ExtResource("8_1u6uc")
 heal_amount = 5
-COLOR = Color(0.7921569, 0.32156864, 0.7882353, 1)
-drop_chance = 25
+COLOR = Color(0, 0.596078, 0.862745, 1)
+drop_chance = 50
 is_active = false
+
+[node name="AttackTimer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
 
 [connection signal="hp_changed" from="Health" to="." method="_on_health_hp_changed"]
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
