@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://3nx8i28smrqo"]
+[gd_scene load_steps=7 format=3 uid="uid://3nx8i28smrqo"]
 
 [ext_resource type="Script" uid="uid://crcjhie8552r3" path="res://Scripts/UI/Overlay/ability_info.gd" id="1_nsbas"]
 [ext_resource type="Shader" uid="uid://dlo4kfu6qrdn1" path="res://Shaders/Pause_Menu.gdshader" id="2_7l3wo"]
 [ext_resource type="PackedScene" uid="uid://b4argu08l2t5b" path="res://Scenes/UI/Components/ability_icon_timers.tscn" id="3_438mq"]
+[ext_resource type="FontFile" uid="uid://cojj5fwwf0jhx" path="res://Assets/Fonts/PixelOperator8.ttf" id="3_pd0t7"]
 [ext_resource type="PackedScene" uid="uid://c64nl2fkq45ge" path="res://Scenes/UI/Overlay/AbilityInfoButton.tscn" id="4_pd0t7"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_hqsf3"]
@@ -65,6 +66,7 @@ layout_mode = 2
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("3_pd0t7")
 theme_override_font_sizes/font_size = 24
 text = "This is your ability list.
 Press on the buttons to view the controls."

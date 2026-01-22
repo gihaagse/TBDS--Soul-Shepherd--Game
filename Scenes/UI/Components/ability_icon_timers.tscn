@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://b4argu08l2t5b"]
+[gd_scene load_steps=11 format=3 uid="uid://b4argu08l2t5b"]
 
 [ext_resource type="Script" uid="uid://brgr3lddynyr1" path="res://Scripts/UI/Components/ability_icon_timers.gd" id="1_an4no"]
 [ext_resource type="Texture2D" uid="uid://bomutwo83repx" path="res://Assets/Icons/icon.svg" id="1_x7buu"]
 [ext_resource type="Texture2D" uid="uid://cyxegf1knqb67" path="res://Assets/Miscellaneous/White 2x2.jpg" id="2_an4no"]
 [ext_resource type="Script" uid="uid://bm8cf3xlm7wlg" path="res://Scenes/UI/Components/IconButtonResizer.gd" id="4_65bkr"]
+[ext_resource type="FontFile" uid="uid://cojj5fwwf0jhx" path="res://Assets/Fonts/PixelOperator8.ttf" id="5_rk7uf"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_65bkr"]
 bg_color = Color(0, 0, 0, 0.39215687)
@@ -119,6 +120,7 @@ grow_vertical = 2
 size_flags_horizontal = 3
 theme_override_constants/line_spacing = -10
 theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("5_rk7uf")
 text = "text for the icon"
 vertical_alignment = 1
 
