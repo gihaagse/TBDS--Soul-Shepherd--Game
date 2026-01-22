@@ -4,5 +4,5 @@
 
 [resource]
 script = ExtResource("1_3tu5s")
-scroll_dialogue = Array[String](["The Tree of Life must be protected.", "If the impure find their way to the tree, their evil can deteriorate the tree’s roots, and create restless souls.", "These lands must be cherished and protected for the souls to depart from, so they can expedite back into our land, a trip we will all take one day.", "For those who have now returned to the tree, for those who will come back from it one day, for yourself, and for everyone. ", "Protect The Tree of Life, so all of us may one day return."])
+scroll_dialogue = Array[String](["The Tree of Life must be protected.", "If the impure find their way to the tree, their evil can deteriorate the tree’s roots, and create restless souls.", "These lands must be cherished and protected for the souls to depart from,", "so they can expedite back into our land, a trip we will all take one day.", "For those who have now returned to the tree, ", "for those who will come back from it one day, for yourself, and for everyone.", "Protect The Tree of Life, so all of us may one day return."])
 metadata/_custom_type_script = "uid://8comeh3keae4"
