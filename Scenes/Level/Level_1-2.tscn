@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://byn1je7flnjo3" path="res://Scripts/Central/game_manager.gd" id="4_oo6gb"]
 [ext_resource type="Texture2D" uid="uid://goes5l2sfyvw" path="res://Assets/Sprites/Tileset1.png" id="5_tnqi2"]
 [ext_resource type="Texture2D" uid="uid://j1w6x4hpn3ou" path="res://Assets/Icons/Sung Chin Woo Icon.png" id="6_ns2rb"]
-[ext_resource type="Shader" uid="uid://b4k5pl844vedq" path="res://Shaders/water_shader_vertical_waves.gdshader" id="7_os7cb"]
+[ext_resource type="Shader" path="res://Shaders/water_shader_vertical_waves.gdshader" id="7_os7cb"]
 [ext_resource type="Texture2D" uid="uid://dfdfu6o1j3apv" path="res://Assets/Sprites/Playtest1.png" id="8_wfp2w"]
 [ext_resource type="PackedScene" uid="uid://c45jpc3kaflr4" path="res://Scenes/CheckPoints/CheckPoint.tscn" id="9_tt718"]
 [ext_resource type="Script" uid="uid://dtfsguwdnfr7m" path="res://Scripts/CheckPoints/start.gd" id="10_vnfid"]
@@ -202,7 +202,7 @@ texture = ExtResource("5_tnqi2")
 14:8/0 = 0
 14:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 5:9/0 = 0
-5:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-6.205126, -8, 6.0252686, -8, 6.205124, 8, -6.0252686, 8)
+5:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-6.20513, -8, 6.02527, -8, 6.20512, 8, -6.02527, 8)
 6:9/0 = 0
 7:9/0 = 0
 8:9/0 = 0
@@ -228,16 +228,16 @@ texture = ExtResource("5_tnqi2")
 0:3/0 = 0
 0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 0:10/0 = 0
-0:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -3.057598, -8, -3.2374563)
+0:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -3.0576, -8, -3.23746)
 0:10/0/physics_layer_0/polygon_0/one_way = true
 1:10/0 = 0
-1:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -3.057598, -8, -3.2374563)
+1:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -3.0576, -8, -3.23746)
 1:10/0/physics_layer_0/polygon_0/one_way = true
 2:10/0 = 0
-2:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -3.057598, -8, -3.2374563)
+2:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -3.0576, -8, -3.23746)
 2:10/0/physics_layer_0/polygon_0/one_way = true
 3:10/0 = 0
-3:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -3.057598, -8, -3.2374563)
+3:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -3.0576, -8, -3.23746)
 3:10/0/physics_layer_0/polygon_0/one_way = true
 4:10/0 = 0
 4:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -475,8 +475,8 @@ shader = ExtResource("7_os7cb")
 shader_parameter/wave_height = 0.06
 shader_parameter/wave_frequency = 5.0
 shader_parameter/wave_speed = 1.5
-shader_parameter/edge_fade = 0.00999999977648
-shader_parameter/texture_wave_strength = 0.00499999988824
+shader_parameter/edge_fade = 0.01
+shader_parameter/texture_wave_strength = 0.005
 shader_parameter/animation_speed = 1.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1uwwi"]
@@ -661,13 +661,13 @@ texture = ExtResource("8_wfp2w")
 0:3/0 = 0
 0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 0:10/0 = 0
-0:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -3.057598, -8, -3.2374563)
+0:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -3.0576, -8, -3.23746)
 1:10/0 = 0
-1:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -3.057598, -8, -3.2374563)
+1:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -3.0576, -8, -3.23746)
 2:10/0 = 0
-2:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -3.057598, -8, -3.2374563)
+2:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -3.0576, -8, -3.23746)
 3:10/0 = 0
-3:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -3.057598, -8, -3.2374563)
+3:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -3.0576, -8, -3.23746)
 4:10/0 = 0
 4:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 7:3/0 = 0
@@ -918,7 +918,7 @@ tracks/0/path = NodePath("MovingPlatform/Platform:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.16666667, 0.5, 0.6666667, 1),
+"times": PackedFloat32Array(0, 0.166667, 0.5, 0.666667, 1),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(2904, 248), Vector2(2904, 248), Vector2(3176, 248), Vector2(3176, 248), Vector2(2904, 248)]
@@ -930,7 +930,7 @@ tracks/1/path = NodePath("MovingPlatform/Platform2:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.16666667, 0.5, 0.6666667, 1),
+"times": PackedFloat32Array(0, 0.166667, 0.5, 0.666667, 1),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(6312, 391), Vector2(6312, 391), Vector2(6312, 200), Vector2(6312, 200), Vector2(6312, 391)]
@@ -942,7 +942,7 @@ tracks/2/path = NodePath("MovingPlatform/Platform3:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.16666667, 0.5, 0.6666667, 1),
+"times": PackedFloat32Array(0, 0.166667, 0.5, 0.666667, 1),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(8008, 392), Vector2(8008, 392), Vector2(8280, 392), Vector2(8280, 392), Vector2(8008, 392)]
@@ -954,7 +954,7 @@ tracks/3/path = NodePath("MovingPlatform/Platform4:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.16666667, 0.5, 0.6666667, 1),
+"times": PackedFloat32Array(0, 0.166667, 0.5, 0.666667, 1),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(8680, 248), Vector2(8680, 248), Vector2(9000, 248), Vector2(9000, 248), Vector2(8680, 248)]
@@ -966,7 +966,7 @@ tracks/4/path = NodePath("MovingPlatform/Platform5:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.16666667, 0.5, 0.6666667, 1),
+"times": PackedFloat32Array(0, 0.166667, 0.5, 0.666667, 1),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(9640, 486), Vector2(9640, 486), Vector2(9896, 488), Vector2(9896, 488), Vector2(9640, 486)]
@@ -978,7 +978,7 @@ tracks/5/path = NodePath("MovingPlatform/Platform6:position")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0, 0.16666667, 0.5, 0.6666667, 1),
+"times": PackedFloat32Array(0, 0.166667, 0.5, 0.666667, 1),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(10264, 312), Vector2(10264, 312), Vector2(10264, 136), Vector2(10264, 136), Vector2(10264, 312)]
@@ -1298,7 +1298,7 @@ offset = Vector2(17.195, 0)
 [node name="DeathBoxes" type="Node" parent="."]
 
 [node name="killzone" type="Area2D" parent="DeathBoxes"]
-modulate = Color(0.46909875, 0.020395478, 0.13279754, 1)
+modulate = Color(0.469099, 0.0203955, 0.132798, 1)
 z_index = 6
 position = Vector2(442, 265)
 collision_mask = 4
@@ -1308,7 +1308,7 @@ script = ExtResource("28_du4k8")
 shape = SubResource("RectangleShape2D_0mbwr")
 
 [node name="killzone2" type="Area2D" parent="DeathBoxes"]
-modulate = Color(0.46909875, 0.020395478, 0.13279754, 1)
+modulate = Color(0.469099, 0.0203955, 0.132798, 1)
 z_index = 6
 position = Vector2(1317, 541)
 collision_mask = 4
@@ -1318,7 +1318,7 @@ script = ExtResource("28_du4k8")
 shape = SubResource("RectangleShape2D_sqksc")
 
 [node name="killzone3" type="Area2D" parent="DeathBoxes"]
-modulate = Color(0.46909875, 0.020395478, 0.13279754, 1)
+modulate = Color(0.469099, 0.0203955, 0.132798, 1)
 z_index = 6
 position = Vector2(3141, 513)
 collision_mask = 4
@@ -1328,7 +1328,7 @@ script = ExtResource("28_du4k8")
 shape = SubResource("RectangleShape2D_sqksc")
 
 [node name="killzone4" type="Area2D" parent="DeathBoxes"]
-modulate = Color(0.46909875, 0.020395478, 0.13279754, 1)
+modulate = Color(0.469099, 0.0203955, 0.132798, 1)
 z_index = 6
 position = Vector2(4272, 513)
 collision_mask = 4
@@ -1338,7 +1338,7 @@ script = ExtResource("28_du4k8")
 shape = SubResource("RectangleShape2D_2fslo")
 
 [node name="killzone5" type="Area2D" parent="DeathBoxes"]
-modulate = Color(0.46909875, 0.020395478, 0.13279754, 1)
+modulate = Color(0.469099, 0.0203955, 0.132798, 1)
 z_index = 6
 position = Vector2(5352, 428)
 collision_mask = 4
@@ -1348,7 +1348,7 @@ script = ExtResource("28_du4k8")
 shape = SubResource("RectangleShape2D_47nwx")
 
 [node name="killzone6" type="Area2D" parent="DeathBoxes"]
-modulate = Color(0.46909875, 0.020395478, 0.13279754, 1)
+modulate = Color(0.469099, 0.0203955, 0.132798, 1)
 z_index = 6
 position = Vector2(5568, 461)
 collision_mask = 4
@@ -1358,7 +1358,7 @@ script = ExtResource("28_du4k8")
 shape = SubResource("RectangleShape2D_47nwx")
 
 [node name="killzone7" type="Area2D" parent="DeathBoxes"]
-modulate = Color(0.46909875, 0.020395478, 0.13279754, 1)
+modulate = Color(0.469099, 0.0203955, 0.132798, 1)
 z_index = 6
 position = Vector2(6024, 478)
 collision_mask = 4
@@ -1368,7 +1368,7 @@ script = ExtResource("28_du4k8")
 shape = SubResource("RectangleShape2D_ma5lh")
 
 [node name="killzone8" type="Area2D" parent="DeathBoxes"]
-modulate = Color(0.46909875, 0.020395478, 0.13279754, 1)
+modulate = Color(0.469099, 0.0203955, 0.132798, 1)
 z_index = 6
 position = Vector2(6688, 272)
 collision_mask = 4
@@ -1378,7 +1378,7 @@ script = ExtResource("28_du4k8")
 shape = SubResource("RectangleShape2D_a7cjm")
 
 [node name="killzone9" type="Area2D" parent="DeathBoxes"]
-modulate = Color(0.46909875, 0.020395478, 0.13279754, 1)
+modulate = Color(0.469099, 0.0203955, 0.132798, 1)
 z_index = 6
 position = Vector2(8896, 428)
 collision_mask = 4
@@ -1389,7 +1389,7 @@ position = Vector2(8, 0)
 shape = SubResource("RectangleShape2D_pr5l2")
 
 [node name="killzone10" type="Area2D" parent="DeathBoxes"]
-modulate = Color(0.46909875, 0.020395478, 0.13279754, 1)
+modulate = Color(0.469099, 0.0203955, 0.132798, 1)
 z_index = 6
 position = Vector2(9872, 520)
 collision_mask = 4
@@ -1590,7 +1590,7 @@ z_index = 5
 position = Vector2(-112, -123)
 texture = ExtResource("34_i663j")
 heal_amount = 5
-COLOR = Color(0, 0.59607846, 0.8627451, 1)
+COLOR = Color(0, 0.596078, 0.862745, 1)
 
 [node name="Next_level" type="Area2D" parent="."]
 position = Vector2(10399, 48)
