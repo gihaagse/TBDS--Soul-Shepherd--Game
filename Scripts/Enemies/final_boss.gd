@@ -34,11 +34,10 @@ func _process(_delta: float) -> void:
 		gravity = 300
 		WalkTimer.start()
 		shoot("ground_attack")
-	if speed != 0 and ground.is_colliding() and can_move:
+	if speed != 0 and ground.is_colliding() and can_move and !is_attacking:
 		sprite.play("Walking")
-	elif speed == 0 and ground.is_colliding() and !sprite.is_playing():
+	elif speed == 0 and ground.is_colliding() and !sprite.is_playing() and !is_attacking:
 		sprite.play("Idle")
-	#print(ShockwaveArea.disabled)
 		
 func _on_jump_timer_timeout() -> void:
 	$JumpChecker.position.x = dir*speed
@@ -88,6 +87,7 @@ func shoot(attack: String):
 			ShockwaveArea.set_disabled(false)
 		$ShockwaveAirLeft.set_emitting(true)
 		$ShockwaveAirRight.set_emitting(true)
+		is_attacking = false
 	elif attack == "ground_attack":
 		ShockwaveArea.position.y = 8.64
 		ShockwaveArea.set_disabled(false)
@@ -97,6 +97,7 @@ func shoot(attack: String):
 		sprite.play("Attack_punch")
 		WalkTimer.start(1)
 		if (raycastcheckleft.is_colliding() and (raycastcheckleft.get_collision_point().x - global_position.x >= -20)) or raycastcheckright.is_colliding() and (raycastcheckright.get_collision_point().x - global_position.x <= 20):
+			await get_tree().create_timer(0,25).timeout
 			player.hp.take_damage(10)
 	elif attack == "projectile" and !raycastcheckleft.is_colliding() and !raycastcheckright.is_colliding():
 		sprite.play("Attack_shoot")
@@ -115,7 +116,7 @@ func shoot(attack: String):
 		latest_hat.direction = dir
 		latest_hat.boss_stage = 1
 		main.add_child.call_deferred(latest_hat)
-	is_attacking = false
+		is_attacking = false
 	
 func _on_animated_sprite_2d_animation_finished(anim_name: String) -> void:
 	sprite.play("Idle")
@@ -124,6 +125,7 @@ func _on_walk_timer_timeout() -> void:
 	can_move = true
 	ShockwaveArea.set_disabled(true)
 	sprite.play("Idle")
+	is_attacking = false
 
 func _on_shockwave_body_entered(body: Node2D) -> void:
 	if body.name == "Player":

@@ -361,7 +361,7 @@ z_index = 5
 texture = ExtResource("9_povus")
 heal_amount = 5
 COLOR = Color(0, 0.596078, 0.862745, 1)
-drop_chance = 33
+drop_chance = 67
 is_active = false
 
 [node name="Tollie" type="Node2D" parent="Drops"]

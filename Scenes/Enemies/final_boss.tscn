@@ -378,7 +378,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"Attack_punch",
-"speed": 30.0
+"speed": 60.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -579,8 +579,10 @@ script = ExtResource("3_1nrsg")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 material = SubResource("ShaderMaterial_6hc3a")
 sprite_frames = SubResource("SpriteFrames_wpvyt")
-animation = &"Clap"
+animation = &"Attack_punch"
 autoplay = "Idle"
+frame = 16
+frame_progress = 1.0
 
 [node name="Label" type="Label" parent="."]
 visible = false
