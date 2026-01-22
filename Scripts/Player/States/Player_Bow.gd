@@ -19,6 +19,7 @@ func Update(_delta:float):
 		state_transition.emit(self, "Walking")
 	if Input.is_action_just_pressed("Shift") and !in_anim:
 		state_transition.emit(self, "Dash")
+
 func shoot():
 	var instance = projectile.instantiate()
 	instance.sprite = sprite

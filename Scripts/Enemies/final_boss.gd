@@ -9,6 +9,7 @@ class_name final_boss
 @onready var ShockwaveArea : CollisionShape2D = $Shockwave/CollisionShape2D
 @onready var player_hp = load("res://Scripts/Player/General/health.gd")
 var just_jumped: bool = false
+var random_number: int
 
 func _ready() -> void:
 	health.hp_changed.connect(_boss_hit)
@@ -32,9 +33,9 @@ func _process(_delta: float) -> void:
 		gravity = 300
 		WalkTimer.start()
 		shoot("ground_attack")
-	if speed != 0 and ground.is_colliding() and can_move:
+	if speed != 0 and ground.is_colliding() and can_move and !is_attacking:
 		sprite.play("Walking")
-	elif speed == 0 and ground.is_colliding() and !sprite.is_playing():
+	elif speed == 0 and ground.is_colliding() and !sprite.is_playing() and !is_attacking:
 		sprite.play("Idle")
 
 func _on_jump_timer_timeout() -> void:
@@ -51,21 +52,26 @@ func jump(small_jump_speed = null):
 	sprite.play("Jumping")
 
 func pre_shoot():
-	if raycastcheckleft.is_colliding() and (raycastcheckleft.get_collision_point().x - global_position.x >= -20):
+	if raycastcheckleft.is_colliding() and (raycastcheckleft.get_collision_point().x - global_position.x >= -20) and !is_attacking:
+		is_attacking = true
 		shoot("punch")
 		can_move = false
-	elif raycastcheckright.is_colliding() and (raycastcheckright.get_collision_point().x - global_position.x <= 20):
+	elif raycastcheckright.is_colliding() and (raycastcheckright.get_collision_point().x - global_position.x <= 20) and !is_attacking:
+		is_attacking = true
 		shoot("punch")
 		can_move = false
-	else:
-		if randi_range(1,2) == 1:
+	elif !is_attacking:
+		is_attacking = true
+		random_number = randi_range(1,2)
+		if random_number == 1:
 			can_move = false
 			jump(-200)
 			just_jumped = true
 		else:
+			can_move = false
 			sprite.stop()
 			sprite.play("Clap")
-			shoot("clap")
+			$ClapTimer.start()
 
 func shoot(attack: String):
 	if attack == "clap":
@@ -80,6 +86,7 @@ func shoot(attack: String):
 			ShockwaveArea.set_disabled(false)
 		$ShockwaveAirLeft.set_emitting(true)
 		$ShockwaveAirRight.set_emitting(true)
+		is_attacking = false
 	elif attack == "ground_attack":
 		ShockwaveArea.position.y = 8.64
 		ShockwaveArea.set_disabled(false)
@@ -89,8 +96,10 @@ func shoot(attack: String):
 		sprite.play("Attack_punch")
 		WalkTimer.start(1)
 		if (raycastcheckleft.is_colliding() and (raycastcheckleft.get_collision_point().x - global_position.x >= -20)) or raycastcheckright.is_colliding() and (raycastcheckright.get_collision_point().x - global_position.x <= 20):
+			await get_tree().create_timer(0,25).timeout
 			player.hp.take_damage(10)
 	elif attack == "projectile" and !raycastcheckleft.is_colliding() and !raycastcheckright.is_colliding():
+		sprite.play("Attack_shoot")
 		if global_position.x - player.global_position.x > 0:
 			dir = -1
 		else:
@@ -106,6 +115,7 @@ func shoot(attack: String):
 		latest_hat.direction = dir
 		latest_hat.boss_stage = 1
 		main.add_child.call_deferred(latest_hat)
+		is_attacking = false
 	
 func _on_animated_sprite_2d_animation_finished(anim_name: String) -> void:
 	sprite.play("Idle")
@@ -114,6 +124,7 @@ func _on_walk_timer_timeout() -> void:
 	can_move = true
 	ShockwaveArea.set_disabled(true)
 	sprite.play("Idle")
+	is_attacking = false
 
 func _on_shockwave_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
@@ -127,3 +138,7 @@ func _on_npc_died():
 	if dialogue:
 		await get_tree().create_timer(1).timeout
 		DialogueManager.start_dialogue(dialogue)
+
+
+func _on_clap_timer_timeout() -> void:
+	shoot("clap")

@@ -6,7 +6,7 @@
 [ext_resource type="Shader" uid="uid://o6ancnl5jgcr" path="res://Shaders/Blink.gdshader" id="4_qp755"]
 [ext_resource type="Texture2D" uid="uid://bxn53nopbmiwg" path="res://Assets/Sprites/dragonfly.png" id="5_u1ejo"]
 [ext_resource type="PackedScene" uid="uid://dm61xmst0522o" path="res://Scenes/Items/magic_bamboo.tscn" id="6_3kcs8"]
-[ext_resource type="Texture2D" uid="uid://dmv57vx1668nw" path="res://Assets/Sprites/Magic Bamboo/+ 15 hp magic bamboo.png" id="7_1u6uc"]
+[ext_resource type="Texture2D" uid="uid://c8dol58rb8t5j" path="res://Assets/Sprites/Magic Bamboo/+5 hp magic bamboo.png" id="8_1u6uc"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6hc3a"]
 resource_local_to_scene = true
@@ -164,11 +164,15 @@ visible = false
 z_index = 5
 
 [node name="MagicBamboo" parent="Drops" instance=ExtResource("6_3kcs8")]
-texture = ExtResource("7_1u6uc")
+texture = ExtResource("8_1u6uc")
 heal_amount = 5
-COLOR = Color(0.7921569, 0.32156864, 0.7882353, 1)
-drop_chance = 25
+COLOR = Color(0, 0.596078, 0.862745, 1)
+drop_chance = 50
 is_active = false
+
+[node name="AttackTimer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
 
 [connection signal="hp_changed" from="Health" to="." method="_on_health_hp_changed"]
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

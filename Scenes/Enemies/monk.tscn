@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://bllnww8iurqf2"]
+[gd_scene load_steps=39 format=3 uid="uid://bllnww8iurqf2"]
 
 [ext_resource type="Script" uid="uid://bmxyqpwd3pkb0" path="res://Scripts/Enemies/monk_enemy.gd" id="1_a0dwi"]
 [ext_resource type="PackedScene" uid="uid://cvgjcwqn6k8eu" path="res://Scenes/UI/Overlay/health.tscn" id="2_y1e6x"]
@@ -7,6 +7,7 @@
 [ext_resource type="FontFile" uid="uid://x2dwsfc3en6q" path="res://Assets/Tutorial Open Assets/brackeys_platformer_assets/fonts/PixelOperator8.ttf" id="6_tjay0"]
 [ext_resource type="Texture2D" uid="uid://bcxot07cgukag" path="res://Assets/Sprites/monk.png" id="6_y1e6x"]
 [ext_resource type="PackedScene" uid="uid://dm61xmst0522o" path="res://Scenes/Items/magic_bamboo.tscn" id="7_tqvhf"]
+[ext_resource type="PackedScene" uid="uid://cg5703l8qujlb" path="res://Assets/Particles/BloodParticle.tscn" id="7_y1e6x"]
 [ext_resource type="Texture2D" uid="uid://utw0u8msxwh0" path="res://Assets/Sprites/Magic Bamboo/+25 hp magic bamboo.png" id="8_w06vo"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6hc3a"]
@@ -208,28 +209,6 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="Gradient" id="Gradient_vumo0"]
-colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_31h1d"]
-gradient = SubResource("Gradient_vumo0")
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_dfwqp"]
-lifetime_randomness = 1.0
-particle_flag_disable_z = true
-emission_shape = 1
-emission_sphere_radius = 5.0
-direction = Vector3(0, -0.5, 0)
-spread = 90.0
-initial_velocity_min = 50.0
-initial_velocity_max = 100.0
-gravity = Vector3(0, 98, 0)
-damping_min = 50.0
-damping_max = 100.0
-scale_min = 0.2
-color = Color(1, 0.0705882, 0.133333, 1)
-color_ramp = SubResource("GradientTexture1D_31h1d")
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_3xw0u"]
 radius = 7.0
 
@@ -260,7 +239,7 @@ sprite_frames = SubResource("SpriteFrames_wpvyt")
 animation = &"Walking"
 autoplay = "Idle"
 frame = 1
-frame_progress = 0.8031546
+frame_progress = 0.803155
 
 [node name="Label" type="Label" parent="."]
 visible = false
@@ -274,14 +253,7 @@ text = "HP: 50"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
-emitting = false
-amount = 20
-lifetime = 0.8
-one_shot = true
-explosiveness = 1.0
-trail_enabled = true
-process_material = SubResource("ParticleProcessMaterial_dfwqp")
+[node name="BloodParticle" parent="." instance=ExtResource("7_y1e6x")]
 
 [node name="in_range_shoot_timer" type="Timer" parent="."]
 
@@ -322,7 +294,7 @@ offset_top = -16.0
 offset_right = 6.0
 offset_bottom = -12.0
 theme = SubResource("Theme_tq37w")
-theme_override_colors/font_color = Color(0, 0.9490196, 0, 1)
+theme_override_colors/font_color = Color(0, 0.94902, 0, 1)
 theme_override_colors/font_outline_color = Color(1, 0, 0, 1)
 theme_override_styles/fill = SubResource("StyleBoxFlat_tq37w")
 show_percentage = false
@@ -334,13 +306,18 @@ z_index = 5
 [node name="MagicBamboo" parent="Drops" instance=ExtResource("7_tqvhf")]
 texture = ExtResource("8_w06vo")
 heal_amount = 25
-COLOR = Color(0.7921569, 0.32156864, 0.7882353, 1)
-drop_chance = 100
+COLOR = Color(0.792157, 0.321569, 0.788235, 1)
+drop_chance = 33
 is_active = false
 
 [node name="Tollie" type="Node2D" parent="Drops"]
+
+[node name="AttackTimer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
 
 [connection signal="hp_changed" from="Health" to="." method="_on_health_hp_changed"]
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="timeout" from="in_range_shoot_timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="TopCheckCooldown" to="." method="_on_top_check_cooldown_timeout"]
+[connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]

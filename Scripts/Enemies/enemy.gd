@@ -34,6 +34,8 @@ var projectile_index_number: int
 var latest_hat : Node
 @onready var hp_bar: ProgressBar = $ProgressBar
 var stage: int = 0
+@onready var groundPosOffset : float = ground.position.x
+var is_attacking: bool = false
 
 
 var old_hp : int
@@ -106,6 +108,11 @@ func _process(_delta: float) -> void:
 			_player_not_on_top()
 	elif TopCheck.is_colliding() and TopCheck.get_collider().name == "Player":
 		_player_on_top()
+	
+	if velocity.x != 0 and !is_attacking:
+		sprite.play("Walking")
+	if velocity.x == 0 and !is_attacking:
+		sprite.play("Idle")
 
 func _on_health_hp_changed() -> void:
 	var tween = get_tree().create_tween()
@@ -120,10 +127,11 @@ func pre_shoot():
 	shoot("")
 
 func shoot(attack: String):
+	is_attacking = true
 	speed = 0
+	sprite.stop()
 	sprite.play("Attack_shoot")
 	latest_hat = projectile.instantiate()
-	#latest_hat.sprite = spritem
 	latest_hat.spawnpos = shootPoint.global_position
 	if dir == 1:
 		latest_hat.spawnpos.x += shotOffset
@@ -132,6 +140,7 @@ func shoot(attack: String):
 	latest_hat.direction = dir
 	latest_hat.boss_stage = stage
 	main.add_child.call_deferred(latest_hat)
+	$AttackTimer.start()
 	
 func SetShader_BlinkIntensity(newValue: float):
 	sprite.material.set_shader_parameter("blink_intensity", newValue)
@@ -161,7 +170,7 @@ func _correct_sprite() -> void:
 			flippedSprite = true
 
 func _on_animated_sprite_2d_animation_finished(anim_name: String) -> void:
-	if speed != 0:
+	if velocity.x != 0:
 		sprite.play("Walking")
 	else:
 		sprite.play("Idle")
@@ -181,3 +190,7 @@ func _player_on_top() -> void:
 func _player_not_on_top() -> void:
 	playerOnTop = false
 	$TopCheckCooldown.stop()
+
+
+func _on_attack_timer_timeout() -> void:
+	is_attacking = false

@@ -16,7 +16,6 @@ func _ready() -> void:
 	health.hp = 250
 	health.hp_changed.connect(_boss_hit)
 
-
 func _process(_delta: float) -> void:
 	super._process(_delta)
 	if is_on_floor() and !ground.enabled:
@@ -30,7 +29,15 @@ func _process(_delta: float) -> void:
 		stage = 2
 	if health.hp <= 100 and stage != 3:
 		stage = 3
-	
+	if ground.is_colliding() and ground.get_collider().name == "Player":
+		jump()
+		speed = walk_speed
+	if !raycastcheckleft.is_colliding() and !raycastcheckright.is_colliding() and !ground.is_colliding():
+		JumpTimer.stop()
+	if velocity.x == 0 and (!sprite.is_playing() or sprite.animation == 'Walking'):
+		sprite.play("Idle")
+	if velocity.x != 0:
+		sprite.play("Walking")
 
 func _on_jump_timer_timeout() -> void:
 	$JumpChecker.position.x = dir*speed
@@ -69,3 +76,6 @@ func _on_npc_died():
 	if dialogue:
 		#await get_tree().create_timer(1).timeout
 		DialogueManager.start_dialogue(dialogue)
+
+func _on_attack_timer_timeout() -> void:
+	pass
