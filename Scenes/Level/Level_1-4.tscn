@@ -216,16 +216,16 @@ texture = ExtResource("4_28yfy")
 0:3/0 = 0
 0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 0:10/0 = 0
-0:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -3.057598, -8, -3.2374563)
+0:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -3.0576, -8, -3.23746)
 0:10/0/physics_layer_0/polygon_0/one_way = true
 1:10/0 = 0
-1:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -3.057598, -8, -3.2374563)
+1:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -3.0576, -8, -3.23746)
 1:10/0/physics_layer_0/polygon_0/one_way = true
 2:10/0 = 0
-2:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -3.057598, -8, -3.2374563)
+2:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -3.0576, -8, -3.23746)
 2:10/0/physics_layer_0/polygon_0/one_way = true
 3:10/0 = 0
-3:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -3.057598, -8, -3.2374563)
+3:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -3.0576, -8, -3.23746)
 4:10/0 = 0
 4:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 7:3/0 = 0
@@ -452,7 +452,7 @@ size = Vector2(54, 44)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ps4u4"]
 shader = ExtResource("28_n4dbg")
-shader_parameter/tint_color = Color(2.219907, 0, 0.39831704, 1)
+shader_parameter/tint_color = Color(2.21991, 0, 0.398317, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1v0ja"]
 size = Vector2(30, 30)
@@ -462,7 +462,7 @@ size = Vector2(3, 173.5)
 
 [sub_resource type="Animation" id="Animation_ifyxa"]
 resource_name = "Key1"
-length = 0.03333667
+length = 0.0333367
 tracks/0/type = "method"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -524,7 +524,7 @@ layer_0/tile_data = PackedInt32Array(983045, 786432, 8, 983046, 851968, 8, 98304
 layer_1/name = "Border_Vertical"
 layer_1/modulate = Color(1, 1, 1, 0)
 layer_2/name = "Border_Horizontal"
-layer_2/modulate = Color(1, 1, 1, 0.63529414)
+layer_2/modulate = Color(1, 1, 1, 0.635294)
 
 [node name="CheckPoints" type="Node2D" parent="."]
 z_index = 10
@@ -711,7 +711,7 @@ z_index = 5
 position = Vector2(-112, -123)
 texture = ExtResource("25_2gwup")
 heal_amount = 5
-COLOR = Color(0, 0.59607846, 0.8627451, 1)
+COLOR = Color(0, 0.596078, 0.862745, 1)
 
 [node name="obstacle_spike" type="Area2D" parent="Obstacles"]
 z_index = 5

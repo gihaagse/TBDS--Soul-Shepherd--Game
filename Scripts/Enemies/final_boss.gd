@@ -37,6 +37,7 @@ func _process(_delta: float) -> void:
 		sprite.play("Walking")
 	elif speed == 0 and ground.is_colliding() and !sprite.is_playing():
 		sprite.play("Idle")
+	#print(ShockwaveArea.disabled)
 		
 func _on_jump_timer_timeout() -> void:
 	$JumpChecker.position.x = dir*speed
@@ -66,10 +67,11 @@ func pre_shoot():
 		else:
 			sprite.stop()
 			sprite.play("Clap")
-			shoot("clap")
+			$ClapTimer.start()
 
 func shoot(attack: String):
 	if attack == "clap":
+		print("asj;dfkjlkj")
 		can_move = false
 		ShockwaveArea.position.y = 1.97
 		WalkTimer.start(1)
@@ -92,6 +94,7 @@ func shoot(attack: String):
 		if (raycastcheckleft.is_colliding() and (raycastcheckleft.get_collision_point().x - global_position.x >= -20)) or raycastcheckright.is_colliding() and (raycastcheckright.get_collision_point().x - global_position.x <= 20):
 			player.hp.take_damage(10)
 	elif attack == "projectile" and !raycastcheckleft.is_colliding() and !raycastcheckright.is_colliding():
+		sprite.play("Attack_shoot")
 		if global_position.x - player.global_position.x > 0:
 			dir = -1
 		else:
@@ -129,3 +132,7 @@ func _on_npc_died():
 	if dialogue:
 		await get_tree().create_timer(1).timeout
 		DialogueManager.start_dialogue(dialogue)
+
+
+func _on_clap_timer_timeout() -> void:
+	shoot("clap")

@@ -17,7 +17,6 @@ func _ready() -> void:
 	stage = 1
 	health.hp_changed.connect(_boss_hit)
 
-
 func _process(_delta: float) -> void:
 	super._process(_delta)
 	if is_on_floor() and !ground.enabled:
@@ -42,6 +41,10 @@ func _process(_delta: float) -> void:
 		speed = walk_speed
 	if !raycastcheckleft.is_colliding() and !raycastcheckright.is_colliding() and !ground.is_colliding():
 		JumpTimer.stop()
+	if velocity.x == 0 and (!sprite.is_playing() or sprite.animation == 'Walking'):
+		sprite.play("Idle")
+	if velocity.x != 0:
+		sprite.play("Walking")
 
 func _on_jump_timer_timeout() -> void:
 	$JumpChecker.position.x = dir*speed

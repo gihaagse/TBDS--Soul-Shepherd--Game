@@ -160,7 +160,7 @@ func _correct_sprite() -> void:
 			flippedSprite = true
 
 func _on_animated_sprite_2d_animation_finished(anim_name: String) -> void:
-	if speed != 0:
+	if velocity.x != 0:
 		sprite.play("Walking")
 	else:
 		sprite.play("Idle")
