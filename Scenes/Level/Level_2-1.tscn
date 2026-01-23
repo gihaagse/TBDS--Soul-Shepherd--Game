@@ -1483,6 +1483,7 @@ z_index = 5
 position = Vector2(1824, 312)
 rotation = -1.5707964
 script = ExtResource("31_ltpos")
+level_id = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Events/Gate_Crystal1"]
 shape = SubResource("RectangleShape2D_obal1")
