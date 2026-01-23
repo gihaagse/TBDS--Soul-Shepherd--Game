@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://cn7w4buy17lru"]
+[gd_scene load_steps=50 format=3 uid="uid://ce80fgufto8kv"]
 
 [ext_resource type="Script" uid="uid://q1uneais5pkw" path="res://Scripts/Level/level_2_4.gd" id="1_bxfny"]
 [ext_resource type="Resource" uid="uid://cp18gtlpu6kpa" path="res://Resources/AbilityUnlocking/Arena.tres" id="2_eifrx"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=67 format=3 uid="uid://gwyk1dfn0jtx"]
+[gd_scene load_steps=67 format=3 uid="uid://qnsyke3uepx3"]
 
 [ext_resource type="Script" uid="uid://c2jeph0pjh467" path="res://Scripts/Level/playtest_level.gd" id="1_cvbuo"]
 [ext_resource type="Resource" uid="uid://bbnx68rjbop6b" path="res://Resources/AbilityUnlocking/level_1-2.tres" id="2_1str1"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=3 uid="uid://y52f37wteovd"]
+[gd_scene load_steps=65 format=3 uid="uid://tsakpn7vqj0a"]
 
 [ext_resource type="Script" uid="uid://c2jeph0pjh467" path="res://Scripts/Level/playtest_level.gd" id="1_b4reu"]
 [ext_resource type="Resource" uid="uid://ch7yv6txyd3tq" path="res://Resources/Dialogue/2-1-start-dialogue.tres" id="2_iq1np"]
