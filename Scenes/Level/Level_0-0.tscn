@@ -866,6 +866,18 @@ Use the \"A\" and \"D\" keys or \"Left Joystick\" to move around."]
 
 [sub_resource type="Animation" id="Animation_vfbj7"]
 resource_name = "Event_Trigger10"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Tips:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Continue to the end of the level."]
+}
 
 [sub_resource type="Animation" id="Animation_trt50"]
 resource_name = "Event_Trigger2"
@@ -1590,7 +1602,9 @@ tip_label = NodePath("../../CanvasLayer/Tips")
 shape = SubResource("RectangleShape2D_487g3")
 
 [node name="Event_Trigger10" type="Area2D" parent="Events" node_paths=PackedStringArray("tip_label")]
-position = Vector2(2536, 229)
+position = Vector2(2552, 229)
+collision_layer = 0
+collision_mask = 4
 script = ExtResource("24_62yh2")
 tip = "This gate is locked.\\nYou need to find a key."
 tip_label = NodePath("../../CanvasLayer/Tips")
